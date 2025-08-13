@@ -8,24 +8,35 @@ import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from src.scrapers.jax_fish_house import JaxFishHouseScraper
+from src.scrapers.hapa_sushi import HapaSushiScraper
+from src.scrapers.tamayo import TamayoScraper
 from src.csv_manager import CSVManager
 
 def main():
     print("🍻 Sips and Steals - Happy Hour Scraper (Proof of Concept)")
     print("=" * 60)
+    print("Scraping Denver Union Station area restaurants...")
     
     # Initialize CSV manager
     csv_manager = CSVManager()
     print("✅ CSV storage initialized")
     
-    # Run Jax Fish House scraper
-    print("\n🐟 Scraping Jax Fish House...")
-    jax_scraper = JaxFishHouseScraper()
-    try:
-        jax_scraper.run()
-        print("✅ Jax Fish House scraping completed")
-    except Exception as e:
-        print(f"❌ Error scraping Jax Fish House: {e}")
+    # List of scrapers to run
+    scrapers = [
+        ("🐟", "Jax Fish House", JaxFishHouseScraper),
+        ("🍣", "Hapa Sushi", HapaSushiScraper),
+        ("🌮", "Tamayo", TamayoScraper)
+    ]
+    
+    # Run all scrapers
+    for emoji, name, scraper_class in scrapers:
+        print(f"\n{emoji} Scraping {name}...")
+        scraper = scraper_class()
+        try:
+            scraper.run()
+            print(f"✅ {name} scraping completed")
+        except Exception as e:
+            print(f"❌ Error scraping {name}: {e}")
     
     # Show what we got
     deals = csv_manager.get_all_deals()
