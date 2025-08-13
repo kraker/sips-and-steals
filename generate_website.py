@@ -109,8 +109,8 @@ def generate_html():
         body {{
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #e2e8f0;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
             min-height: 100vh;
         }}
         
@@ -139,15 +139,16 @@ def generate_html():
         }}
         
         .filters {{
-            background: white;
+            background: #2d3748;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             margin-bottom: 30px;
             display: flex;
             flex-wrap: wrap;
             gap: 15px;
             align-items: center;
+            border: 1px solid #4a5568;
         }}
         
         .filter-group {{
@@ -159,38 +160,42 @@ def generate_html():
         .filter-group label {{
             font-weight: 600;
             font-size: 0.9em;
-            color: #555;
+            color: #a0aec0;
         }}
         
         select, button {{
             padding: 8px 12px;
-            border: 2px solid #ddd;
+            border: 2px solid #4a5568;
             border-radius: 5px;
             font-size: 14px;
+            background: #1a202c;
+            color: #e2e8f0;
         }}
         
         button {{
-            background: #667eea;
+            background: #4c51bf;
             color: white;
-            border: none;
+            border: 2px solid #4c51bf;
             cursor: pointer;
             font-weight: 600;
         }}
         
         button:hover {{
-            background: #5a67d8;
+            background: #553c9a;
+            border-color: #553c9a;
         }}
         
         .area {{
-            background: white;
+            background: #2d3748;
             margin-bottom: 30px;
             border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
             overflow: hidden;
+            border: 1px solid #4a5568;
         }}
         
         .area-header {{
-            background: #667eea;
+            background: #4c51bf;
             color: white;
             padding: 20px;
             font-size: 1.5em;
@@ -198,7 +203,7 @@ def generate_html():
         }}
         
         .restaurant {{
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #4a5568;
         }}
         
         .restaurant:last-child {{
@@ -206,12 +211,12 @@ def generate_html():
         }}
         
         .restaurant-header {{
-            background: #f8f9fa;
+            background: #1a202c;
             padding: 15px 20px;
             font-size: 1.2em;
             font-weight: 600;
-            color: #333;
-            border-left: 4px solid #667eea;
+            color: #e2e8f0;
+            border-left: 4px solid #4c51bf;
         }}
         
         .deals {{
@@ -220,10 +225,12 @@ def generate_html():
         
         .deal {{
             padding: 15px;
-            border-left: 3px solid #e2e8f0;
+            border-left: 3px solid #4a5568;
             margin-bottom: 15px;
-            background: #f8f9fa;
+            background: #1a202c;
             border-radius: 0 5px 5px 0;
+            border: 1px solid #4a5568;
+            border-left: 3px solid #4a5568;
         }}
         
         .deal.happy-hour {{
@@ -246,11 +253,11 @@ def generate_html():
             font-size: 1.1em;
             font-weight: 600;
             margin-bottom: 5px;
-            color: #2d3748;
+            color: #e2e8f0;
         }}
         
         .deal-description {{
-            color: #666;
+            color: #a0aec0;
             margin-bottom: 10px;
             font-size: 0.95em;
         }}
@@ -273,7 +280,7 @@ def generate_html():
         }}
         
         .price {{
-            background: #667eea;
+            background: #4c51bf;
             color: white;
             padding: 2px 8px;
             border-radius: 12px;
