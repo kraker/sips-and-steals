@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sips and Steals - Denver Happy Hour Deals</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .tagline {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+        
+        .filters {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .filter-group label {
+            font-weight: 600;
+            font-size: 0.9em;
+            color: #555;
+        }
+        
+        select, button {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+        
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background: #5a67d8;
+        }
+        
+        .area {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .area-header {
+            background: #667eea;
+            color: white;
+            padding: 20px;
+            font-size: 1.5em;
+            font-weight: 600;
+        }
+        
+        .restaurant {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .restaurant:last-child {
+            border-bottom: none;
+        }
+        
+        .restaurant-header {
+            background: #f8f9fa;
+            padding: 15px 20px;
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #333;
+            border-left: 4px solid #667eea;
+        }
+        
+        .deals {
+            padding: 20px;
+        }
+        
+        .deal {
+            padding: 15px;
+            border-left: 3px solid #e2e8f0;
+            margin-bottom: 15px;
+            background: #f8f9fa;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .deal.happy-hour {
+            border-left-color: #48bb78;
+        }
+        
+        .deal.weekly-special {
+            border-left-color: #ed8936;
+        }
+        
+        .deal.food {
+            border-left-color: #4299e1;
+        }
+        
+        .deal.drink {
+            border-left-color: #9f7aea;
+        }
+        
+        .deal-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        
+        .deal-description {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 0.95em;
+        }
+        
+        .deal-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            font-size: 0.9em;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .meta-icon {
+            font-size: 1.1em;
+        }
+        
+        .price {
+            background: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+        
+        .time-badge {
+            background: #48bb78;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        
+        .day-badge {
+            background: #ed8936;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.85em;
+        }
+        
+        .now-open {
+            background: #e53e3e;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+        
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            opacity: 0.8;
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 2em;
+            }
+            
+            .filters {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .filter-group {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍻 Sips and Steals</h1>
+            <div class="tagline">Denver's Happy Hour Deal Finder</div>
+            <div class="tagline">Updated: August 12, 2025 at 08:42 PM</div>
+        </header>
+        
+        <div class="filters">
+            <div class="filter-group">
+                <label for="day-filter">Day:</label>
+                <select id="day-filter">
+                    <option value="">All Days</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                    <option value="Sunday">Sunday</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="time-filter">Time:</label>
+                <select id="time-filter">
+                    <option value="">All Times</option>
+                    <option value="lunch">Lunch (11am-3pm)</option>
+                    <option value="afternoon">Afternoon (3pm-6pm)</option>
+                    <option value="evening">Evening (6pm-9pm)</option>
+                    <option value="late">Late Night (9pm+)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="price-filter">Price:</label>
+                <select id="price-filter">
+                    <option value="">All Prices</option>
+                    <option value="$">$ (Under $8)</option>
+                    <option value="$$">$$ ($8-$15)</option>
+                    <option value="$$$">$$$ (Over $15)</option>
+                </select>
+            </div>
+            
+            <div class="filter-group">
+                <label for="type-filter">Type:</label>
+                <select id="type-filter">
+                    <option value="">All Types</option>
+                    <option value="happy_hour">Happy Hour</option>
+                    <option value="weekly_special">Weekly Special</option>
+                    <option value="food">Food</option>
+                    <option value="drink">Drinks</option>
+                </select>
+            </div>
+            
+            <button onclick="clearFilters()">Clear All</button>
+        </div>
+        
+        <div id="deals-container">
+
+        <div class="area">
+            <div class="area-header">📍 Union Station</div>
+
+            <div class="restaurant">
+                <div class="restaurant-header">Jax Fish House</div>
+                <div class="deals">
+
+                    <div class="deal weekly_special" 
+                         data-days="Monday" 
+                         data-start-time="" 
+                         data-price-category=""
+                         data-deal-type="weekly_special">
+                        <div class="deal-title">Monday - All Night Happy Hour</div>
+<div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Weekly Special</div></div></div>
+                    <div class="deal weekly_special" 
+                         data-days="Tuesday" 
+                         data-start-time="" 
+                         data-price-category="$$$"
+                         data-deal-type="weekly_special">
+                        <div class="deal-title">Tuesday - Tostada Tuesday</div>
+<div class="deal-description">two chile lime fish tostadas | lime aioli, pickled red onion, avocado, spring greens, citrus cremajax classic q-coin mar...</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Tuesday</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$25.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Weekly Special</div></div></div>
+                    <div class="deal weekly_special" 
+                         data-days="Wednesday" 
+                         data-start-time="" 
+                         data-price-category=""
+                         data-deal-type="weekly_special">
+                        <div class="deal-title">Wednesday - Wine Not Wednesday</div>
+<div class="deal-description">40% - 50% off select bottles of wine</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Wednesday</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Weekly Special</div></div></div>
+                    <div class="deal weekly_special" 
+                         data-days="Sunday" 
+                         data-start-time="14:00" 
+                         data-price-category=""
+                         data-deal-type="weekly_special">
+                        <div class="deal-title">Sunday - Cioppino Night</div>
+<div class="deal-description">2-9pma seafood stew featuring dungeness crab, fresh fish, mussels, clam meat, squid and shrimp, tomato-garlic broth serv...</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Sunday</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">2:00 PM - 9:00 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Weekly Special</div></div></div>
+                    <div class="deal happy_hour" 
+                         data-days="Monday" 
+                         data-start-time="All Day" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Monday All Night Happy Hour</div>
+<div class="deal-description">All day happy hour specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">All Day</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal happy_hour" 
+                         data-days="Tuesday,Wednesday,Thursday,Friday,Saturday" 
+                         data-start-time="15:00" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Weekday Happy Hour</div>
+<div class="deal-description">Happy hour specials Tuesday through Saturday</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Tuesday, Wednesday, Thursday +2 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">3:00 PM - 6:00 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal happy_hour" 
+                         data-days="Sunday" 
+                         data-start-time="14:00" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Sunday Happy Hour</div>
+<div class="deal-description">Sunday happy hour specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Sunday</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">2:00 PM - 6:00 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">CRACKERJAX OYSTERS*</div>
+<div class="deal-description">Our proprietary, house selected oyster on the half shell from the Rappahannock River Co</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$2.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">West Coast Oyster*</div>
+<div class="deal-description">selection rotates</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$3.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Chargrilled Oyster*</div>
+<div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$4.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">JAX FISH SANDWICH</div>
+<div class="deal-description">lettuce, tartar sauce, salted cucumbers</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$13.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">CHILE LIME FISH TOSTADAS</div>
+<div class="deal-description">lime aioli, pickled red onion, avocado, spring greens, citrus crema</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$13.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">French Fries</div>
+<div class="deal-description">jax shake, ketchup</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$5.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category=""
+                         data-deal-type="food">
+                        <div class="deal-title">LOBSTER & ShRIMP DEVILED EGGS</div>
+<div class="deal-description">Lobster, shrimp, pickled mustard seed, scallions</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">GRILLED SHISHITOS</div>
+<div class="deal-description">sambal aioli, tempura scallions</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$10.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Oyster Shooter*</div>
+<div class="deal-description">cucumber infused vodka, bloody mary, lemon</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$6.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Cucumber Lemon Press</div>
+<div class="deal-description">cucumber infused vodka, lemonade, soda</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$8.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">STARBERY LEMONADE</div>
+<div class="deal-description">strawberry infused vodka, lemonade</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$8.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Whiskey Tea</div>
+<div class="deal-description">earl grey infused whiskey, soda, vanilla</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$8.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">On Tap Cocktail</div>
+<div class="deal-description">hand crafted rotating draft cocktail</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$8.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">JACK RABBIT HILL MARTINI</div>
+<div class="deal-description">caprock mell vodka</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$12.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">ODELL LAGER</div>
+<div class="deal-description">can</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$5.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category=""
+                         data-deal-type="food">
+                        <div class="deal-title">Draft Beer</div>
+<div class="deal-description">$1 off</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">Sparkling</div>
+<div class="deal-description">MAS LA MOLA , “L’ATZAR” CAVA RESERVA, BRUT NATURE, PENEDES, ES</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$11.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">White</div>
+<div class="deal-description">HESS SHIRTTAIL RANCHES, CHARDONNAY, CA</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$11.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">Red</div>
+<div class="deal-description">CORTO DI PASSO, NERO DI AVOLA, SICILY, IT</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$11.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">White</div>
+<div class="deal-description">CHAIS SAINT-LAURENT, “LES JARRIERS”, SAUVIGNON BLANC, TOURAINE, FR</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$11.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div></div></div>
+            <div class="restaurant">
+                <div class="restaurant-header">Hapa Sushi</div>
+                <div class="deals">
+
+                    <div class="deal happy_hour" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="14:00" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Early Bird Happy Hour</div>
+<div class="deal-description">Daily happy hour specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">2:30 PM - 5:30 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal happy_hour" 
+                         data-days="Friday,Saturday" 
+                         data-start-time="22:00" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Night Owl Happy Hour</div>
+<div class="deal-description">Late night weekend specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Friday, Saturday</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">10:00 PM - 12:00 AM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">2 for $12 Sushi Rolls</div>
+<div class="deal-description">Choose from select sushi rolls</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$12.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Sake Cocktails</div>
+<div class="deal-description">Happy hour sake cocktail specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$7.50</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$$"
+                         data-deal-type="food">
+                        <div class="deal-title">Sake Bomb</div>
+<div class="deal-description">Traditional sake bomb</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$12.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">House Wine</div>
+<div class="deal-description">Selection of house wines</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$7.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Well Drinks</div>
+<div class="deal-description">Standard well drink specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$8.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Hot Sake</div>
+<div class="deal-description">Traditional hot sake</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$6.60</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday,Saturday,Sunday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category="$"
+                         data-deal-type="food">
+                        <div class="deal-title">Hapa Beer</div>
+<div class="deal-description">House beer special</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +4 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">💰</span><span class="price">$4.00</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div></div></div>
+            <div class="restaurant">
+                <div class="restaurant-header">Tamayo</div>
+                <div class="deals">
+
+                    <div class="deal happy_hour" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday" 
+                         data-start-time="15:00" 
+                         data-price-category=""
+                         data-deal-type="happy_hour">
+                        <div class="deal-title">Happy Hour</div>
+<div class="deal-description">Discounted drinks and flavorful Mexican bites</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +2 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">3:00 PM - 5:00 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Happy Hour</div></div></div>
+                    <div class="deal brunch" 
+                         data-days="Saturday,Sunday" 
+                         data-start-time="14:00" 
+                         data-price-category=""
+                         data-deal-type="brunch">
+                        <div class="deal-title">Weekend Brunch</div>
+<div class="deal-description">Saturday and Sunday brunch specials</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Saturday, Sunday</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">2:00 PM - 4:00 PM</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Brunch</div></div></div>
+                    <div class="deal drink" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category=""
+                         data-deal-type="drink">
+                        <div class="deal-title">Margarita Specials</div>
+<div class="deal-description">House margaritas and specialty cocktails</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +2 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Drink</div></div></div>
+                    <div class="deal food" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category=""
+                         data-deal-type="food">
+                        <div class="deal-title">Mexican Appetizers</div>
+<div class="deal-description">Discounted appetizers and small plates</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +2 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Food</div></div></div>
+                    <div class="deal drink" 
+                         data-days="Monday,Tuesday,Wednesday,Thursday,Friday" 
+                         data-start-time="Happy Hour" 
+                         data-price-category=""
+                         data-deal-type="drink">
+                        <div class="deal-title">Beer & Wine</div>
+<div class="deal-description">Happy hour pricing on beer and wine selection</div><div class="deal-meta"><div class="meta-item"><span class="meta-icon">📅</span><span class="day-badge">Monday, Tuesday, Wednesday +2 more</span></div><div class="meta-item"><span class="meta-icon">⏰</span><span class="time-badge">Happy Hour</span></div><div class="meta-item"><span class="meta-icon">🏷️</span>Drink</div></div></div></div></div></div>
+        </div>
+        
+        <div class="footer">
+            <p>🤖 Generated from live restaurant data • Total deals: 41</p>
+            <p>Data last updated: 2025-08-12 20:42:09</p>
+        </div>
+    </div>
+    
+    <script>
+        // Store original deals data
+        const dealsData = [{"restaurant": "Jax Fish House", "title": "Monday - All Night Happy Hour", "days": ["Monday"], "start_time": "", "price_category": "", "deal_type": "weekly_special"}, {"restaurant": "Jax Fish House", "title": "Tuesday - Tostada Tuesday", "days": ["Tuesday"], "start_time": "", "price_category": "$$$", "deal_type": "weekly_special"}, {"restaurant": "Jax Fish House", "title": "Wednesday - Wine Not Wednesday", "days": ["Wednesday"], "start_time": "", "price_category": "", "deal_type": "weekly_special"}, {"restaurant": "Jax Fish House", "title": "Sunday - Cioppino Night", "days": ["Sunday"], "start_time": "14:00", "price_category": "", "deal_type": "weekly_special"}, {"restaurant": "Jax Fish House", "title": "Monday All Night Happy Hour", "days": ["Monday"], "start_time": "All Day", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Jax Fish House", "title": "Weekday Happy Hour", "days": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "start_time": "15:00", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Jax Fish House", "title": "Sunday Happy Hour", "days": ["Sunday"], "start_time": "14:00", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Jax Fish House", "title": "CRACKERJAX OYSTERS*", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "West Coast Oyster*", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Chargrilled Oyster*", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "JAX FISH SANDWICH", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "CHILE LIME FISH TOSTADAS", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "French Fries", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "LOBSTER & ShRIMP DEVILED EGGS", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "GRILLED SHISHITOS", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Oyster Shooter*", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Cucumber Lemon Press", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "STARBERY LEMONADE", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Whiskey Tea", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "On Tap Cocktail", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "JACK RABBIT HILL MARTINI", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "ODELL LAGER", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Draft Beer", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Sparkling", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "White", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "Red", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Jax Fish House", "title": "White", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Early Bird Happy Hour", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "14:00", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Hapa Sushi", "title": "Night Owl Happy Hour", "days": ["Friday", "Saturday"], "start_time": "22:00", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Hapa Sushi", "title": "2 for $12 Sushi Rolls", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Sake Cocktails", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Sake Bomb", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "House Wine", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Well Drinks", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Hot Sake", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Hapa Sushi", "title": "Hapa Beer", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "start_time": "Happy Hour", "price_category": "$", "deal_type": "food"}, {"restaurant": "Tamayo", "title": "Happy Hour", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start_time": "15:00", "price_category": "", "deal_type": "happy_hour"}, {"restaurant": "Tamayo", "title": "Weekend Brunch", "days": ["Saturday", "Sunday"], "start_time": "14:00", "price_category": "", "deal_type": "brunch"}, {"restaurant": "Tamayo", "title": "Margarita Specials", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start_time": "Happy Hour", "price_category": "", "deal_type": "drink"}, {"restaurant": "Tamayo", "title": "Mexican Appetizers", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start_time": "Happy Hour", "price_category": "", "deal_type": "food"}, {"restaurant": "Tamayo", "title": "Beer & Wine", "days": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "start_time": "Happy Hour", "price_category": "", "deal_type": "drink"}];
+        
+        function filterDeals() {
+            const dayFilter = document.getElementById('day-filter').value;
+            const timeFilter = document.getElementById('time-filter').value;
+            const priceFilter = document.getElementById('price-filter').value;
+            const typeFilter = document.getElementById('type-filter').value;
+            
+            const deals = document.querySelectorAll('.deal');
+            
+            deals.forEach(deal => {
+                let visible = true;
+                
+                // Day filter
+                if (dayFilter && !deal.dataset.days.includes(dayFilter)) {
+                    visible = false;
+                }
+                
+                // Time filter
+                if (timeFilter && deal.dataset.startTime) {
+                    const startTime = deal.dataset.startTime;
+                    if (startTime !== 'Happy Hour' && startTime !== 'All Day') {
+                        const hour = parseInt(startTime.split(':')[0]);
+                        switch(timeFilter) {
+                            case 'lunch':
+                                if (hour < 11 || hour >= 15) visible = false;
+                                break;
+                            case 'afternoon':
+                                if (hour < 15 || hour >= 18) visible = false;
+                                break;
+                            case 'evening':
+                                if (hour < 18 || hour >= 21) visible = false;
+                                break;
+                            case 'late':
+                                if (hour < 21) visible = false;
+                                break;
+                        }
+                    }
+                }
+                
+                // Price filter
+                if (priceFilter && deal.dataset.priceCategory !== priceFilter) {
+                    visible = false;
+                }
+                
+                // Type filter
+                if (typeFilter && deal.dataset.dealType !== typeFilter) {
+                    visible = false;
+                }
+                
+                deal.classList.toggle('hidden', !visible);
+            });
+            
+            // Hide empty restaurants and areas
+            document.querySelectorAll('.restaurant').forEach(restaurant => {
+                const visibleDeals = restaurant.querySelectorAll('.deal:not(.hidden)');
+                restaurant.classList.toggle('hidden', visibleDeals.length === 0);
+            });
+            
+            document.querySelectorAll('.area').forEach(area => {
+                const visibleRestaurants = area.querySelectorAll('.restaurant:not(.hidden)');
+                area.classList.toggle('hidden', visibleRestaurants.length === 0);
+            });
+        }
+        
+        function clearFilters() {
+            document.getElementById('day-filter').value = '';
+            document.getElementById('time-filter').value = '';
+            document.getElementById('price-filter').value = '';
+            document.getElementById('type-filter').value = '';
+            filterDeals();
+        }
+        
+        // Add event listeners
+        document.getElementById('day-filter').addEventListener('change', filterDeals);
+        document.getElementById('time-filter').addEventListener('change', filterDeals);
+        document.getElementById('price-filter').addEventListener('change', filterDeals);
+        document.getElementById('type-filter').addEventListener('change', filterDeals);
+        
+        // Initialize with current day
+        const today = new Date().toLocaleDateString('en-US', {weekday: 'long'});
+        document.getElementById('day-filter').value = today;
+        filterDeals();
+    </script>
+</body>
+</html>
