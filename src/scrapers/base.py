@@ -4,7 +4,7 @@ from abc import ABC, abstractmethod
 from typing import List, Dict, Any
 import time
 import logging
-from src.database import Database
+from src.csv_manager import CSVManager
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -15,23 +15,12 @@ class BaseScraper(ABC):
     def __init__(self, restaurant_name: str, website_url: str):
         self.restaurant_name = restaurant_name
         self.website_url = website_url
-        self.db = Database()
+        self.csv_manager = CSVManager()
         self.session = requests.Session()
         # Be polite - add headers to look like a real browser
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
         })
-    
-    def get_or_create_restaurant(self) -> int:
-        """Get restaurant ID or create new restaurant record"""
-        restaurant = self.db.get_restaurant_by_name(self.restaurant_name)
-        if restaurant:
-            return restaurant['id']
-        else:
-            return self.db.add_restaurant(
-                name=self.restaurant_name,
-                website_url=self.website_url
-            )
     
     def fetch_page(self, url: str = None) -> BeautifulSoup:
         """Fetch and parse a webpage"""
@@ -64,27 +53,15 @@ class BaseScraper(ABC):
         logger.info(f"Starting scrape for {self.restaurant_name}")
         
         try:
-            # Get or create restaurant record
-            restaurant_id = self.get_or_create_restaurant()
-            
-            # Clear old deals for fresh data
-            self.db.clear_restaurant_deals(restaurant_id)
-            
             # Scrape new deals
             deals = self.scrape_deals()
             
-            # Save deals to database
-            for deal in deals:
-                self.db.add_deal(
-                    restaurant_id=restaurant_id,
-                    title=deal.get('title', ''),
-                    description=deal.get('description'),
-                    day_of_week=deal.get('day_of_week'),
-                    start_time=deal.get('start_time'),
-                    end_time=deal.get('end_time'),
-                    deal_type=deal.get('deal_type', 'happy_hour'),
-                    price=deal.get('price')
-                )
+            # Save deals to CSV (this automatically clears old deals for this restaurant)
+            self.csv_manager.add_deals(
+                restaurant_name=self.restaurant_name,
+                website_url=self.website_url,
+                deals=deals
+            )
             
             logger.info(f"Successfully scraped {len(deals)} deals for {self.restaurant_name}")
             

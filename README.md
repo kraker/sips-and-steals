@@ -1,43 +1,60 @@
 # Sips and Steals
 
-A web scraper that aggregates local restaurant happy hour deals and specials.
+A simple web scraper that aggregates local restaurant happy hour deals and specials.
 
 ## Target User
 Budget-conscious but social, tech-savvy deal hunters who make spontaneous "right now" decisions about where to grab drinks and food.
 
-## MVP Features
+## Proof of Concept Features
 - Scrape Denver area restaurant websites for happy hour deals
-- Store deals in SQLite database
-- Export to CSV for easy sharing and analysis
-- Command-line interface for manual runs
+- Extract real-time pricing and menu items
+- Save directly to CSV for immediate use
+- Simple command-line interface
 
 ## Tech Stack
 - Python 3.x
 - Requests + BeautifulSoup for web scraping
-- SQLite for data storage
-- Pandas for CSV export
-- Schedule for automated runs
+- Pure CSV storage (no database needed)
+- JSON-LD structured data parsing
 
 ## Project Structure
 ```
 sips-and-steals/
 ├── src/
-│   ├── scrapers/
-│   ├── database/
-│   └── exporters/
+│   ├── scrapers/           # Restaurant-specific scrapers
+│   └── csv_manager.py      # Simple CSV data management
 ├── data/
+│   └── happy_hour_deals.csv # Main data file
 ├── requirements.txt
-└── README.md
+├── run_scraper.py          # Main script
+└── view_deals.py           # Pretty print data
 ```
 
 ## Usage
 ```bash
-# Install dependencies
+# Install dependencies (just 3 packages!)
 pip install -r requirements.txt
 
-# Run scrapers
-python -m src.scrapers.run_all
+# Run the scraper
+python run_scraper.py
 
-# Export to CSV
-python -m src.exporters.csv_export
+# View the data
+python view_deals.py
+
+# Open CSV directly in Excel
+open data/happy_hour_deals.csv
 ```
+
+## Current Data Sources
+- **Jax Fish House** (LoDo) - Happy hour + weekly specials
+  - Real-time pricing ($2 oysters, $8 cocktails)
+  - Accurate timing (Mon all day, Tue-Sat 3-6pm, Sun 2-6pm)
+  - Weekly specials (Tostada Tuesday $25, Wine Wednesday 40-50% off)
+
+## Adding New Restaurants
+1. Create new scraper in `src/scrapers/`
+2. Inherit from `BaseScraper` 
+3. Implement `scrape_deals()` method
+4. Add to `run_scraper.py`
+
+Simple CSV-only approach = easy to understand, modify, and share!
