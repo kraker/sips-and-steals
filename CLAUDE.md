@@ -2,6 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Recent Work (August 15, 2025)
+- Implemented multi-page static site generator with Jinja2 templates
+- Created 117 individual restaurant profile pages from Giovanni's markdown data
+- Fixed backslash escaping issues in restaurant names and addresses
+- Removed deprecated generate_website.py in favor of generate_site.py
+- Successfully deployed changes to GitHub
+
 ## Target User
 
 **The Discerning Urban Explorer**: Our target user is a sophisticated food and beverage enthusiast who views happy hour not as budget dining, but as smart luxury. They appreciate:
