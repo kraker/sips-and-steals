@@ -5,7 +5,7 @@
 {% block content %}
     <!-- Last Updated Info -->
     <div class="updated-info">
-        Updated: {{ metadata.updated_at | dateformat }} | {{ metadata.total_restaurants }} restaurants across {{ metadata.areas | length }} areas
+        Updated: {{ metadata.updated_at | dateformat }} | {{ metadata.total_restaurants }} restaurants across {{ metadata.districts | length }} districts
     </div>
     
     <!-- Filters -->
@@ -26,11 +26,20 @@
                 </select>
             </div>
             <div>
-                <label for="area-filter">Area:</label>
-                <select id="area-filter" name="area">
-                    <option value="">All Areas</option>
-                    {% for area in metadata.areas %}
-                    <option value="{{ area | slugify }}">{{ area }}</option>
+                <label for="district-filter">District:</label>
+                <select id="district-filter" name="district">
+                    <option value="">All Districts</option>
+                    {% for district in metadata.districts %}
+                    <option value="{{ district | slugify }}">{{ district }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="neighborhood-filter">Neighborhood:</label>
+                <select id="neighborhood-filter" name="neighborhood">
+                    <option value="">All Neighborhoods</option>
+                    {% for neighborhood in neighborhoods %}
+                    <option value="{{ neighborhood | slugify }}">{{ neighborhood }}</option>
                     {% endfor %}
                 </select>
             </div>
@@ -38,13 +47,9 @@
                 <label for="cuisine-filter">Cuisine:</label>
                 <select id="cuisine-filter" name="cuisine">
                     <option value="">All Cuisines</option>
-                    <option value="sushi">Sushi</option>
-                    <option value="italian">Italian</option>
-                    <option value="mexican">Mexican</option>
-                    <option value="american">American</option>
-                    <option value="seafood">Seafood</option>
-                    <option value="asian">Asian</option>
-                    <option value="steakhouse">Steakhouse</option>
+                    {% for cuisine in cuisines %}
+                    <option value="{{ cuisine | slugify }}">{{ cuisine }}</option>
+                    {% endfor %}
                 </select>
             </div>
             <div>
@@ -53,16 +58,17 @@
         </div>
     </section>
     
-    <!-- Restaurant Listings by Area -->
-    {% for area_name, restaurants in areas.items() %}
-    <section class="area-section" data-area="{{ area_name | slugify }}">
-        <h2 class="area-title">{{ area_name }}</h2>
+    <!-- Restaurant Listings by District -->
+    {% for district_name, restaurants in areas.items() %}
+    <section class="district-section" data-district="{{ district_name | slugify }}">
+        <h2 class="district-title">{{ district_name }}</h2>
         
         <div class="restaurant-grid">
             {% for slug, restaurant in restaurants.items() %}
             <article class="restaurant-card" 
-                     data-cuisine="{{ restaurant.cuisine | lower if restaurant.cuisine else '' }}"
-                     data-area="{{ area_name | slugify }}"
+                     data-cuisine="{{ restaurant.cuisine | slugify if restaurant.cuisine else '' }}"
+                     data-district="{{ district_name | slugify }}"
+                     data-neighborhood="{{ restaurant.sub_location | slugify if restaurant.sub_location else '' }}"
                      data-times="{{ restaurant.happy_hour_times | join(' ') | lower }}">
                 
                 <h3>
@@ -115,11 +121,17 @@
     // Filter functionality
     function filterRestaurants() {
         const dayFilter = document.getElementById('day-filter').value.toLowerCase();
-        const areaFilter = document.getElementById('area-filter').value.toLowerCase();
+        const districtFilter = document.getElementById('district-filter').value.toLowerCase();
+        const neighborhoodFilter = document.getElementById('neighborhood-filter').value.toLowerCase();
         const cuisineFilter = document.getElementById('cuisine-filter').value.toLowerCase();
         
         const cards = document.querySelectorAll('.restaurant-card');
-        const sections = document.querySelectorAll('.area-section');
+        const sections = document.querySelectorAll('.district-section');
+        
+        // Update neighborhood filter based on selected district
+        if (districtFilter) {
+            updateNeighborhoodOptions(districtFilter);
+        }
         
         cards.forEach(card => {
             let show = true;
@@ -129,8 +141,13 @@
                 show = false;
             }
             
-            // Area filter
-            if (areaFilter && card.dataset.area !== areaFilter) {
+            // District filter
+            if (districtFilter && card.dataset.district !== districtFilter) {
+                show = false;
+            }
+            
+            // Neighborhood filter
+            if (neighborhoodFilter && card.dataset.neighborhood !== neighborhoodFilter) {
                 show = false;
             }
             
@@ -149,23 +166,99 @@
         });
     }
     
+    // Update neighborhood options based on selected district
+    function updateNeighborhoodOptions(selectedDistrict) {
+        const neighborhoodFilter = document.getElementById('neighborhood-filter');
+        const currentValue = neighborhoodFilter.value;
+        
+        // Get all unique neighborhoods for the selected district
+        const neighborhoods = new Set();
+        const cards = document.querySelectorAll(`.restaurant-card[data-district="${selectedDistrict}"]`);
+        
+        cards.forEach(card => {
+            if (card.dataset.neighborhood) {
+                neighborhoods.add(card.dataset.neighborhood);
+            }
+        });
+        
+        // Store original options if not already stored
+        if (!neighborhoodFilter.dataset.allOptions) {
+            const allOptions = Array.from(neighborhoodFilter.options).map(opt => ({
+                value: opt.value,
+                text: opt.text
+            }));
+            neighborhoodFilter.dataset.allOptions = JSON.stringify(allOptions);
+        }
+        
+        // Rebuild options
+        const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+        neighborhoodFilter.innerHTML = '<option value="">All Neighborhoods</option>';
+        
+        allOptions.slice(1).forEach(opt => {
+            if (neighborhoods.has(opt.value)) {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                neighborhoodFilter.appendChild(option);
+            }
+        });
+        
+        // Restore previous selection if still valid
+        if (Array.from(neighborhoodFilter.options).some(opt => opt.value === currentValue)) {
+            neighborhoodFilter.value = currentValue;
+        }
+    }
+    
     function clearFilters() {
         document.getElementById('day-filter').value = '';
-        document.getElementById('area-filter').value = '';
+        document.getElementById('district-filter').value = '';
+        document.getElementById('neighborhood-filter').value = '';
         document.getElementById('cuisine-filter').value = '';
+        
+        // Restore all neighborhood options
+        const neighborhoodFilter = document.getElementById('neighborhood-filter');
+        if (neighborhoodFilter.dataset.allOptions) {
+            const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+            neighborhoodFilter.innerHTML = '';
+            allOptions.forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                neighborhoodFilter.appendChild(option);
+            });
+        }
         
         // Show all cards and sections
         document.querySelectorAll('.restaurant-card').forEach(card => {
             card.style.display = 'block';
         });
-        document.querySelectorAll('.area-section').forEach(section => {
+        document.querySelectorAll('.district-section').forEach(section => {
             section.style.display = 'block';
         });
     }
     
     // Add event listeners
     document.getElementById('day-filter').addEventListener('change', filterRestaurants);
-    document.getElementById('area-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('district-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('neighborhood-filter').addEventListener('change', filterRestaurants);
     document.getElementById('cuisine-filter').addEventListener('change', filterRestaurants);
+    
+    // Handle district change to update neighborhood options
+    document.getElementById('district-filter').addEventListener('change', function() {
+        if (!this.value) {
+            // If no district selected, restore all neighborhoods
+            const neighborhoodFilter = document.getElementById('neighborhood-filter');
+            if (neighborhoodFilter.dataset.allOptions) {
+                const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+                neighborhoodFilter.innerHTML = '';
+                allOptions.forEach(opt => {
+                    const option = document.createElement('option');
+                    option.value = opt.value;
+                    option.text = opt.text;
+                    neighborhoodFilter.appendChild(option);
+                });
+            }
+        }
+    });
 </script>
 {% endblock %}

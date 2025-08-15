@@ -17,17 +17,27 @@ def main():
     # Parse restaurants
     restaurants_by_area = parse_all_areas(content)
     
+    # Extract neighborhoods for each district
+    districts_with_neighborhoods = {}
+    for area, restaurants in restaurants_by_area.items():
+        neighborhoods = set()
+        for restaurant in restaurants.values():
+            if restaurant.get('sub_location'):
+                neighborhoods.add(restaurant['sub_location'])
+        districts_with_neighborhoods[area] = sorted(list(neighborhoods))
+    
     # Create final optimized structure
     final_data = {
         'metadata': {
             'source': 'giovanni_happy_hours.md',
             'updated_at': datetime.now().isoformat(),
-            'areas': list(restaurants_by_area.keys()),
+            'districts': list(restaurants_by_area.keys()),
+            'districts_with_neighborhoods': districts_with_neighborhoods,
             'total_restaurants': sum(len(restaurants) for restaurants in restaurants_by_area.values()),
             'target_user': 'The Discerning Urban Explorer',
             'focus': 'Quality dining experiences at accessible prices'
         },
-        'areas': restaurants_by_area
+        'areas': restaurants_by_area  # Keep as 'areas' for backwards compatibility
     }
     
     # Save to consolidated data file
@@ -35,12 +45,17 @@ def main():
         json.dump(final_data, f, indent=2, ensure_ascii=False)
     
     print(f"✅ Restaurant data parsed successfully!")
-    print(f"📊 {final_data['metadata']['total_restaurants']} restaurants across {len(restaurants_by_area)} areas")
+    print(f"📊 {final_data['metadata']['total_restaurants']} restaurants across {len(restaurants_by_area)} districts")
     print(f"💾 Saved to data/restaurants.json")
     
-    # Print area summary
-    for area, restaurants in restaurants_by_area.items():
-        print(f"  {area}: {len(restaurants)} restaurants")
+    # Print district summary with neighborhoods
+    for district, restaurants in restaurants_by_area.items():
+        neighborhoods = districts_with_neighborhoods.get(district, [])
+        if neighborhoods:
+            print(f"  {district}: {len(restaurants)} restaurants in {len(neighborhoods)} neighborhoods")
+            print(f"    Neighborhoods: {', '.join(neighborhoods[:5])}{'...' if len(neighborhoods) > 5 else ''}")
+        else:
+            print(f"  {district}: {len(restaurants)} restaurants")
 
 def parse_all_areas(content):
     """Parse all restaurant areas from markdown content"""
@@ -95,7 +110,8 @@ def parse_restaurant_block(block, area_name):
     restaurant = {
         'name': None,
         'slug': None,
-        'area': area_name,
+        'district': area_name,  # Using 'district' for clarity
+        'area': area_name,  # Keep for backwards compatibility
         'sub_location': None,
         'address': None,
         'cuisine': None,
@@ -172,6 +188,10 @@ def parse_restaurant_block(block, area_name):
             if 'Plant-Based Options' not in restaurant['special_notes']:
                 restaurant['special_notes'].append('Plant-Based Options')
     
+    # Refine sub_location based on address if in Central district
+    if restaurant['area'] == 'Central' and restaurant['address']:
+        restaurant['sub_location'] = refine_central_neighborhood(restaurant['sub_location'], restaurant['address'])
+    
     return restaurant
 
 def is_restaurant_name(text):
@@ -216,6 +236,39 @@ def is_happy_hour_time(text):
     has_time_separators = any(char in text for char in ['-', '|', ':'])
     
     return has_time_words and has_time_separators
+
+def refine_central_neighborhood(original_location, address):
+    """Refine neighborhood identification for Central Denver based on address"""
+    if not address:
+        return original_location
+    
+    address_lower = address.lower()
+    
+    # LoDo streets (Lower Downtown)
+    lodo_streets = ['larimer', 'market', 'blake', 'wazee']
+    
+    # Check for LoDo indicators
+    if any(street in address_lower for street in lodo_streets):
+        # Streets that are clearly LoDo (1400-1500 blocks of Larimer, Market, Blake)
+        if 'larimer' in address_lower and any(num in address for num in ['1400', '1431', '1433', '1453']):
+            return 'LoDo'
+        if 'market' in address_lower and any(num in address for num in ['1550']):
+            return 'LoDo'
+        if 'blake' in address_lower and any(num in address for num in ['1514', '1520']):
+            return 'LoDo'
+        if 'wazee' in address_lower and any(num in address for num in ['1400', '1659']):
+            return 'LoDo'
+    
+    # Union Station area (1600-1700 blocks, Wynkoop area)
+    if 'wynkoop' in address_lower:
+        return 'Union Station'
+    
+    # 17th Street locations
+    if '17th st' in address_lower and '1539' in address:
+        return 'LoDo'
+    
+    # Keep original if no better match
+    return original_location if original_location else 'Central'
 
 def create_slug(name):
     """Create clean URL slug"""

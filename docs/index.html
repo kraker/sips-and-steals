@@ -111,11 +111,11 @@
             color: white;
         }
         
-        .area-section {
+        .district-section {
             margin-bottom: 2rem;
         }
         
-        .area-title {
+        .district-title {
             border-bottom: 2px solid var(--pico-primary);
             padding-bottom: 0.5rem;
             margin-bottom: 1rem;
@@ -184,7 +184,7 @@
         
     <!-- Last Updated Info -->
     <div class="updated-info">
-        Updated: August 15, 2025 at 03:23 PM | 117 restaurants across 12 areas
+        Updated: August 15, 2025 at 05:22 PM | 117 restaurants across 12 districts
     </div>
     
     <!-- Filters -->
@@ -205,9 +205,9 @@
                 </select>
             </div>
             <div>
-                <label for="area-filter">Area:</label>
-                <select id="area-filter" name="area">
-                    <option value="">All Areas</option>
+                <label for="district-filter">District:</label>
+                <select id="district-filter" name="district">
+                    <option value="">All Districts</option>
                     <option value="central">Central</option>
                     <option value="north-denver">North Denver</option>
                     <option value="northeast-denver">Northeast Denver</option>
@@ -223,16 +223,84 @@
                 </select>
             </div>
             <div>
+                <label for="neighborhood-filter">Neighborhood:</label>
+                <select id="neighborhood-filter" name="neighborhood">
+                    <option value="">All Neighborhoods</option>
+                    <option value="arvada">Arvada</option>
+                    <option value="baker">Baker</option>
+                    <option value="ballpark-five-points">Ballpark / Five Points</option>
+                    <option value="ballpark-rino">Ballpark / RiNo</option>
+                    <option value="ballpark-union-station">Ballpark / Union Station</option>
+                    <option value="belmar">Belmar</option>
+                    <option value="berkeley">Berkeley</option>
+                    <option value="cbd">CBD</option>
+                    <option value="capitol-hill">Capitol Hill</option>
+                    <option value="centennial">Centennial</option>
+                    <option value="cherry-creek">Cherry Creek</option>
+                    <option value="city-park-west">City Park West</option>
+                    <option value="civic-center">Civic Center</option>
+                    <option value="congress-park">Congress Park</option>
+                    <option value="curtis-ballpark-five-points">Curtis / Ballpark / Five Points</option>
+                    <option value="curtis-park-five-points">Curtis Park / Five Points</option>
+                    <option value="englewood">Englewood</option>
+                    <option value="five-points">Five Points</option>
+                    <option value="glendale">Glendale</option>
+                    <option value="greenwood-village">Greenwood Village</option>
+                    <option value="hampden-south">Hampden South</option>
+                    <option value="highland">Highland</option>
+                    <option value="jefferson-park">Jefferson Park</option>
+                    <option value="lincoln-park">Lincoln Park</option>
+                    <option value="littleton">Littleton</option>
+                    <option value="lodo">LoDo</option>
+                    <option value="lowry-field">Lowry Field</option>
+                    <option value="north-capitol-hill">North Capitol Hill</option>
+                    <option value="park-hill">Park Hill</option>
+                    <option value="platt-park">Platt Park</option>
+                    <option value="rino-ballpark-five-points">RiNo / Ballpark / Five Points</option>
+                    <option value="rino-five-points">RiNo / Five Points</option>
+                    <option value="south-park-hill">South Park Hill</option>
+                    <option value="southmoor-park">Southmoor Park</option>
+                    <option value="speer">Speer</option>
+                    <option value="stanley-marketplace">Stanley Marketplace</option>
+                    <option value="sunnyside">Sunnyside</option>
+                    <option value="taco-tue">Taco Tue</option>
+                    <option value="union-station">Union Station</option>
+                    <option value="washington-park">Washington Park</option>
+                    <option value="washington-park-west">Washington Park West</option>
+                    <option value="west-highland">West Highland</option>
+                    <option value="whittier">Whittier</option>
+                </select>
+            </div>
+            <div>
                 <label for="cuisine-filter">Cuisine:</label>
                 <select id="cuisine-filter" name="cuisine">
                     <option value="">All Cuisines</option>
-                    <option value="sushi">Sushi</option>
-                    <option value="italian">Italian</option>
-                    <option value="mexican">Mexican</option>
                     <option value="american">American</option>
-                    <option value="seafood">Seafood</option>
+                    <option value="american-latin">American / Latin</option>
                     <option value="asian">Asian</option>
+                    <option value="beach">Beach</option>
+                    <option value="beach-tropical">Beach / Tropical</option>
+                    <option value="brazilian">Brazilian</option>
+                    <option value="chinese">Chinese</option>
+                    <option value="cocktail-bar">Cocktail Bar</option>
+                    <option value="cocktail-bar">Cocktail bar</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="french">French</option>
+                    <option value="global">Global</option>
+                    <option value="italian">Italian</option>
+                    <option value="japanese">Japanese</option>
+                    <option value="latin-spanish">Latin / Spanish</option>
+                    <option value="mediterranean">Mediterranean</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="pizza">Pizza</option>
+                    <option value="plant-based">Plant-Based</option>
+                    <option value="seafood">Seafood</option>
                     <option value="steakhouse">Steakhouse</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="tapas">Tapas</option>
+                    <option value="tiki">Tiki</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vietnamese">Vietnamese</option>
                 </select>
             </div>
             <div>
@@ -241,14 +309,15 @@
         </div>
     </section>
     
-    <!-- Restaurant Listings by Area -->
-    <section class="area-section" data-area="central">
-        <h2 class="area-title">Central</h2>
+    <!-- Restaurant Listings by District -->
+    <section class="district-section" data-district="central">
+        <h2 class="district-title">Central</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="wed all day | tue, thu, fri, sat 5p - 6p | fri, sat 9p - 10p. bar only.">
                 
                 <h3>
@@ -256,7 +325,7 @@
                 </h3>
                 
                 <div class="location">
-Union Station<br>1520 Blake St, Denver, CO 80202                </div>
+LoDo<br>1520 Blake St, Denver, CO 80202                </div>
                 
                 <span class="cuisine">Italian</span>
                 
@@ -272,7 +341,8 @@ Union Station<br>1520 Blake St, Denver, CO 80202                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="union-station"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3 - 6 | thu, fri, sat 9 - close">
                 
                 <h3>
@@ -295,7 +365,8 @@ Union Station<br>1605 Wynkoop St, Denver, CO 80202                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="union-station"
                      data-times="sun all day & mon, tue, wed, thu, fri, sat 2  - 6">
                 
                 <h3>
@@ -323,7 +394,8 @@ Union Station<br>1616 16th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="union-station"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3:30  - 5:30">
                 
                 <h3>
@@ -346,7 +418,8 @@ Union Station<br>1600 15th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri, sat, sun 2:30  - 5:30 | fri, sat 10  - 12 am">
                 
                 <h3>
@@ -354,7 +427,7 @@ Union Station<br>1600 15th St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1514 Blake Street                </div>
+LoDo<br>1514 Blake Street                </div>
                 
                 <span class="cuisine">Sushi</span>
                 
@@ -374,7 +447,8 @@ Union Station<br>1514 Blake Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="seafood"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="tue, wed, thu, fri, sat, sun 3:30  - 5 | mon all day">
                 
                 <h3>
@@ -382,7 +456,7 @@ Union Station<br>1514 Blake Street                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1539 17th St                </div>
+LoDo<br>1539 17th St                </div>
                 
                 <span class="cuisine">Seafood</span>
                 
@@ -398,7 +472,8 @@ Union Station<br>1539 17th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri 3  - 5">
                 
                 <h3>
@@ -406,7 +481,7 @@ Union Station<br>1539 17th St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1453 Larimer St                </div>
+LoDo<br>1453 Larimer St                </div>
                 
                 <span class="cuisine">Italian</span>
                 
@@ -422,7 +497,8 @@ Union Station<br>1453 Larimer St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mediterranean"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri, sat, sun 2:30  - 5 . bar/lounge only.">
                 
                 <h3>
@@ -430,7 +506,7 @@ Union Station<br>1453 Larimer St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1431 Larimer St                </div>
+LoDo<br>1431 Larimer St                </div>
                 
                 <span class="cuisine">Mediterranean</span>
                 
@@ -450,7 +526,8 @@ Union Station<br>1431 Larimer St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="steakhouse"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="sun, mon, tue, wed, thu, fri 5:30  – 5:30  | sat, sun 3  - 5:30 | sun, mon, tue, wed, thu 9  - close">
                 
                 <h3>
@@ -458,7 +535,7 @@ Union Station<br>1431 Larimer St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1550 Market St                </div>
+LoDo<br>1550 Market St                </div>
                 
                 <span class="cuisine">Steakhouse</span>
                 
@@ -474,7 +551,8 @@ Union Station<br>1550 Market St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="steakhouse"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri 4  - 6">
                 
                 <h3>
@@ -482,7 +560,7 @@ Union Station<br>1550 Market St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1659 Wazee St                </div>
+LoDo<br>1659 Wazee St                </div>
                 
                 <span class="cuisine">Steakhouse</span>
                 
@@ -498,7 +576,8 @@ Union Station<br>1659 Wazee St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri 2  - 5  | sat, sun 2  - 4 sat, sun bottomless brunch 10:30 am - 3">
                 
                 <h3>
@@ -506,7 +585,7 @@ Union Station<br>1659 Wazee St                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1400 Larimer Street                </div>
+LoDo<br>1400 Larimer Street                </div>
                 
                 <span class="cuisine">Mexican</span>
                 
@@ -522,7 +601,8 @@ Union Station<br>1400 Larimer Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="french"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lodo"
                      data-times="mon, tue, wed, thu, fri 4 - 6">
                 
                 <h3>
@@ -530,7 +610,7 @@ Union Station<br>1400 Larimer Street                </div>
                 </h3>
                 
                 <div class="location">
-Union Station<br>1433 Larimer St                </div>
+LoDo<br>1433 Larimer St                </div>
                 
                 <span class="cuisine">French</span>
                 
@@ -546,7 +626,8 @@ Union Station<br>1433 Larimer St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-union-station"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3  - 6">
                 
                 <h3>
@@ -570,7 +651,8 @@ Ballpark / Union Station<br>1889 16th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="tapas"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-union-station"
                      data-times="mon, tue, wed, thu, fri 3  - 6">
                 
                 <h3>
@@ -594,7 +676,8 @@ Ballpark / Union Station                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-union-station"
                      data-times="mon, tue, wed, thu, fri, sat, sun open - 6:00">
                 
                 <h3>
@@ -617,7 +700,8 @@ Ballpark / Union Station<br>1803 16th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-union-station"
                      data-times="sun, mon, tue, wed, thu 4 - 6 | fri, sat 9:30 - 10:30">
                 
                 <h3>
@@ -641,7 +725,8 @@ Ballpark / Union Station<br>1825 Blake St \#100                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-union-station"
                      data-times="mon, tue, wed, thu, fri, sat, sun 4 - 6">
                 
                 <h3>
@@ -664,7 +749,8 @@ Ballpark / Union Station<br>1899 16th St Mall                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="union-station"
                      data-times="mon, tue, wed, thu, fri, sat 2p - 5p">
                 
                 <h3>
@@ -672,7 +758,7 @@ Ballpark / Union Station<br>1899 16th St Mall                </div>
                 </h3>
                 
                 <div class="location">
-Ballpark / Union Station<br>1701 Wynkoop St \#155, Denver, CO 80202                </div>
+Union Station<br>1701 Wynkoop St \#155, Denver, CO 80202                </div>
                 
                 <span class="cuisine">American</span>
                 
@@ -688,7 +774,8 @@ Ballpark / Union Station<br>1701 Wynkoop St \#155, Denver, CO 80202             
             </article>
             <article class="restaurant-card" 
                      data-cuisine="brazilian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="union-station"
                      data-times="">
                 
                 <h3>
@@ -696,7 +783,7 @@ Ballpark / Union Station<br>1701 Wynkoop St \#155, Denver, CO 80202             
                 </h3>
                 
                 <div class="location">
-Ballpark / Union Station<br>1513 Wynkoop St, Denver, CO 80202                </div>
+Union Station<br>1513 Wynkoop St, Denver, CO 80202                </div>
                 
                 <span class="cuisine">Brazilian</span>
                 
@@ -709,7 +796,8 @@ Ballpark / Union Station<br>1513 Wynkoop St, Denver, CO 80202                </d
             </article>
             <article class="restaurant-card" 
                      data-cuisine="asian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-rino"
                      data-times="mon, tue, wed, thu, fri 3 - 6\. excluding holidays">
                 
                 <h3>
@@ -733,7 +821,8 @@ Ballpark / RiNo<br>2801 Walnut St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="ballpark-five-points"
                      data-times="mon, tue, wed, thu, fri 3p - 6p. bar only, no rockies home games.">
                 
                 <h3>
@@ -759,8 +848,9 @@ Ballpark / Five Points<br>2200 Larimer St, Denver, CO 80205                </div
                 </div>
             </article>
             <article class="restaurant-card" 
-                     data-cuisine="cocktail bar"
-                     data-area="central"
+                     data-cuisine="cocktail-bar"
+                     data-district="central"
+                     data-neighborhood="cbd"
                      data-times="mon, tue, wed, thu, fri 3 - 5:30">
                 
                 <h3>
@@ -783,8 +873,9 @@ CBD<br>Republic Plaza \- Main, 370 17th St A Lobby, Denver, CO 80202            
                 </div>
             </article>
             <article class="restaurant-card" 
-                     data-cuisine="cocktail bar"
-                     data-area="central"
+                     data-cuisine="cocktail-bar"
+                     data-district="central"
+                     data-neighborhood="cbd"
                      data-times="tue, wed, thu, fri 4p - 6p">
                 
                 <h3>
@@ -808,7 +899,8 @@ CBD<br>1550 Court Pl, Denver, CO 80202                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="cbd"
                      data-times="tue, wed, thu, fri, sat 4  - 6 . bar/lounge only.">
                 
                 <h3>
@@ -836,7 +928,8 @@ CBD<br>909 17th Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="steakhouse"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="cbd"
                      data-times="mon, tue, wed, thu, fri 3  - 6 . bar, lounge, patio only.">
                 
                 <h3>
@@ -860,7 +953,8 @@ CBD<br>1801 California St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="cbd"
                      data-times="sun. mon, tue, wed, thu, fri, sat 2p - 5p">
                 
                 <h3>
@@ -883,7 +977,8 @@ CBD<br>1455 California St, Denver, CO 80202                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="global"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="city-park-west"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3 - 5">
                 
                 <h3>
@@ -911,7 +1006,8 @@ City Park West<br>1552 E 17th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="pizza"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="city-park-west"
                      data-times="mon, tue, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -935,7 +1031,8 @@ City Park West<br>1702 N Humboldt St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="civic-center"
                      data-times="mon, tue, wed, thu, fri 3  - 6">
                 
                 <h3>
@@ -963,7 +1060,8 @@ Civic Center                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="vegetarian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3  - 6 , 9  - close">
                 
                 <h3>
@@ -990,8 +1088,9 @@ Capitol Hill<br>206 E 13th Ave, Denver, CO 80203                </div>
                 </div>
             </article>
             <article class="restaurant-card" 
-                     data-cuisine="beach / tropical"
-                     data-area="central"
+                     data-cuisine="beach-tropical"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="mon, tue, wed, thu, fri, sat, sun open - 6">
                 
                 <h3>
@@ -1019,7 +1118,8 @@ Capitol Hill<br>1310 N. Pearl St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="mon all day & tue, wed, thur, fri 3  - 6">
                 
                 <h3>
@@ -1043,7 +1143,8 @@ Capitol Hill<br>215 E 7th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="mon, tue, wed, thu, fri, sat, sun 2  - 6">
                 
                 <h3>
@@ -1067,7 +1168,8 @@ Capitol Hill<br>975 Lincoln St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="tapas"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="tue all day (no drink specials) | wed, thu, fri 4  - 6">
                 
                 <h3>
@@ -1095,7 +1197,8 @@ Capitol Hill<br>925 Lincoln St, Suite C                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mediterranean"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="capitol-hill"
                      data-times="mon all day & tue, wed, thu, fri 4  - 6  & sat, sun 2  - 4">
                 
                 <h3>
@@ -1119,7 +1222,8 @@ Capitol Hill<br>233 E 7th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="vegetarian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="north-capitol-hill"
                      data-times="mon, tue, wed, thu, fri 11 am - 12 , 3  - 6">
                 
                 <h3>
@@ -1147,7 +1251,8 @@ North Capitol Hill<br>837 E 17th Ave, Denver, CO 80218                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="asian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="north-capitol-hill"
                      data-times="mon, tue, wed, thu, fri open - 6p | sat, sun 3p  - 6p">
                 
                 <h3>
@@ -1171,7 +1276,8 @@ North Capitol Hill<br>501 E 17th Avenue                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="north-capitol-hill"
                      data-times="tue, wed, thu, fri 3  - 5">
                 
                 <h3>
@@ -1195,7 +1301,8 @@ North Capitol Hill<br>500 E 19th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="baker"
                      data-times="mon, tue, wed, thu, fri, sat 2  - 6 | fri, sat 10  - 12:30 am">
                 
                 <h3>
@@ -1223,7 +1330,8 @@ Baker                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="baker"
                      data-times="mon, tue, wed, thu, fri 4 - 6">
                 
                 <h3>
@@ -1247,7 +1355,8 @@ Baker                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="lincoln-park"
                      data-times="tue, wed, thu, fri, sat, sun 3  - 6 . no hh on first fri or holiday.">
                 
                 <h3>
@@ -1275,7 +1384,8 @@ Lincoln Park                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="tiki"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="speer"
                      data-times="tue all day & wed, thu 5 - 7 | fri 4  - 6">
                 
                 <h3>
@@ -1299,7 +1409,8 @@ Speer                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="speer"
                      data-times="">
                 
                 <h3>
@@ -1324,7 +1435,8 @@ Speer<br>620 E 6th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="french"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="speer"
                      data-times="tue, wed, thu, fri, sat 4 - 5">
                 
                 <h3>
@@ -1348,7 +1460,8 @@ Speer                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="japanese"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="congress-park"
                      data-times="tue all day | wed, thu, fri, sat, sun 5  - 6:30 . bar & patio only except tue">
                 
                 <h3>
@@ -1372,7 +1485,8 @@ Congress Park<br>1160 Madison St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="congress-park"
                      data-times="tue, wed, thu, fri, sat - 3:30  - 5  (days of week not verified on website)">
                 
                 <h3>
@@ -1400,7 +1514,8 @@ Congress Park<br>2600 E 12th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="congress-park"
                      data-times="mon, tue, wed, thu, fri 4 - 7">
                 
                 <h3>
@@ -1427,7 +1542,8 @@ Congress Park<br>2412 E Colfax Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="vietnamese"
-                     data-area="central"
+                     data-district="central"
+                     data-neighborhood="congress-park"
                      data-times="wed, thu, fri, sat, sun, mon 4:30 - 6">
                 
                 <h3>
@@ -1451,13 +1567,14 @@ Congress Park<br>2550 E Colfax Ave                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="north-denver">
-        <h2 class="area-title">North Denver</h2>
+    <section class="district-section" data-district="north-denver">
+        <h2 class="district-title">North Denver</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="colorado"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="rino-five-points"
                      data-times="mon, tue, wed, thu, fri, sat, sun 4 - 6">
                 
                 <h3>
@@ -1481,7 +1598,8 @@ RiNo / Five Points                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="curtis-park-five-points"
                      data-times="mon, tue, wed, thu 4 - 6">
                 
                 <h3>
@@ -1509,7 +1627,8 @@ Curtis Park / Five Points<br>3264 Larimer St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="rino-ballpark-five-points"
                      data-times="mon, tue, wed, thu, fri 3  - 4">
                 
                 <h3>
@@ -1533,7 +1652,8 @@ RiNo / Ballpark / Five Points<br>2615 Larimer St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="rino-five-points"
                      data-times="mon, tue, wed, thu 4:30  - 6">
                 
                 <h3>
@@ -1561,7 +1681,8 @@ RiNo / Five Points<br>3350 Brighton Blvd Unit 100, Denver                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="japanese"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="curtis-ballpark-five-points"
                      data-times="mon, tue, wed, thu, fri, sat, sun 4  - 6">
                 
                 <h3>
@@ -1584,8 +1705,9 @@ Curtis / Ballpark / Five Points<br>2500 lawrence st                </div>
                 </div>
             </article>
             <article class="restaurant-card" 
-                     data-cuisine="american / latin"
-                     data-area="north-denver"
+                     data-cuisine="american-latin"
+                     data-district="north-denver"
+                     data-neighborhood="curtis-ballpark-five-points"
                      data-times="wed, thu, fri, sat, sun 5  - 6">
                 
                 <h3>
@@ -1609,7 +1731,8 @@ Curtis / Ballpark / Five Points<br>2500 Larimer St, Suite 101                </d
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="five-points"
                      data-times="mon, wed, thu 5 - 7">
                 
                 <h3>
@@ -1633,7 +1756,8 @@ Five Points<br>2590 Welton Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="north-denver"
+                     data-district="north-denver"
+                     data-neighborhood="whittier"
                      data-times="wed, thu, fri, sat 5 - 6 & sun all day">
                 
                 <h3>
@@ -1656,13 +1780,14 @@ Whittier<br>2000 E 28th Ave                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="northeast-denver">
-        <h2 class="area-title">Northeast Denver</h2>
+    <section class="district-section" data-district="northeast-denver">
+        <h2 class="district-title">Northeast Denver</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="french"
-                     data-area="northeast-denver"
+                     data-district="northeast-denver"
+                     data-neighborhood="park-hill"
                      data-times="sun, mon, tue, wed, thu, fri, sat 4 - 6 mon movie nights 6  - movie screening with a four course prix fixe menu - $65">
                 
                 <h3>
@@ -1685,8 +1810,9 @@ Park Hill<br>2267 Kearney Street in Park Hill                </div>
                 </div>
             </article>
             <article class="restaurant-card" 
-                     data-cuisine="latin / spanish"
-                     data-area="northeast-denver"
+                     data-cuisine="latin-spanish"
+                     data-district="northeast-denver"
+                     data-neighborhood="south-park-hill"
                      data-times="tue, wed, thu, fri 3  - 5">
                 
                 <h3>
@@ -1710,13 +1836,14 @@ South Park Hill<br>2245 Kearney St \#101                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="east-southeast-denver">
-        <h2 class="area-title">East & Southeast Denver</h2>
+    <section class="district-section" data-district="east-southeast-denver">
+        <h2 class="district-title">East & Southeast Denver</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="seafood"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu, fri, sat 2  - 6  & sun open - 6 fri, sat 9 - 11 - 99¢ oysters mon 11am - 9 - $1.25 oysters">
                 
                 <h3>
@@ -1740,7 +1867,8 @@ Cherry Creek<br>2625 E 2nd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="seafood"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="sun, mon, tue, wed, thu, fri 2:30p  - 6:30p">
                 
                 <h3>
@@ -1764,7 +1892,8 @@ Cherry Creek<br>201 Columbine St, Denver, CO 80206                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu, fri, sat, sun 2 - 5:30 & fri, sat 10 - 12am">
                 
                 <h3>
@@ -1792,7 +1921,8 @@ Cherry Creek<br>3030 East 2nd Ave. Suite 105                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu, fri 3 - 6\. at the bar.">
                 
                 <h3>
@@ -1816,7 +1946,8 @@ Cherry Creek                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -1840,7 +1971,8 @@ Cherry Creek<br>200 Columbine St 110                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu, fri, sat 3 - 5 sat, sun - bottomless brunch 10:30 am - 2  - $50">
                 
                 <h3>
@@ -1864,7 +1996,8 @@ Cherry Creek<br>150 Clayton Lane, Ste B                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="global"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3 - 5">
                 
                 <h3>
@@ -1892,7 +2025,8 @@ Cherry Creek<br>1552 E 17th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="chinese"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="wed all day | thu, fri, sat, sun, mon, tue 3 - 6">
                 
                 <h3>
@@ -1916,7 +2050,8 @@ Cherry Creek<br>2360 E 3rd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="cherry-creek"
                      data-times="mon, tue, wed, thu 2p - 5p">
                 
                 <h3>
@@ -1940,7 +2075,8 @@ Cherry Creek<br>249 Columbine St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="seafood"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="glendale"
                      data-times="mon all day & tue, wed, thu, fri, sat, sun 3:30  - 5">
                 
                 <h3>
@@ -1964,7 +2100,8 @@ Glendale<br>650 S Colorado Blvd                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="lowry-field"
                      data-times="mon all day | night & tue, wed, thu, fri, sat, sun 3 - 6, 8 - close">
                 
                 <h3>
@@ -1988,7 +2125,8 @@ Lowry Field                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="lowry-field"
                      data-times="mon 4 - close & tue, wed, thu 4 - 6 & fri 3 - 6">
                 
                 <h3>
@@ -2012,7 +2150,8 @@ Lowry Field<br>Lowry Hangar 2 Dining District, 84 Rampart Way                </d
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="hampden-south"
                      data-times="mon, tue, wed, thu, fri, sat, sun open - 6pm">
                 
                 <h3>
@@ -2040,7 +2179,8 @@ Hampden South<br>3535 S Yosemite St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="french"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="southmoor-park"
                      data-times="tue, wed, thu, fri, sat 2:30p  - 5p">
                 
                 <h3>
@@ -2064,7 +2204,8 @@ Southmoor Park<br>4901 S Newport St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="global"
-                     data-area="east-southeast-denver"
+                     data-district="east-southeast-denver"
+                     data-neighborhood="southmoor-park"
                      data-times="mon, tue, wed, thu, fri 3p - 6p | sat 5p - 6p tue - tapas tuesday">
                 
                 <h3>
@@ -2088,13 +2229,14 @@ Southmoor Park<br>6799 E Belleview Ave                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="south">
-        <h2 class="area-title">South</h2>
+    <section class="district-section" data-district="south">
+        <h2 class="district-title">South</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="beach"
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="washington-park"
                      data-times="fri, sat, sun, mon, tue, wed 3 - 6 & thu all day & tiki bar tue">
                 
                 <h3>
@@ -2118,7 +2260,8 @@ Washington Park<br>1052 S Gaylord St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="washington-park"
                      data-times="">
                 
                 <h3>
@@ -2138,7 +2281,8 @@ Washington Park<br>1085 S. Gaylord Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="washington-park-west"
                      data-times="mon all day & tue, wed, thu, fri, sat, sun 3 - 6, 9 - close">
                 
                 <h3>
@@ -2161,7 +2305,8 @@ Washington Park West<br>305 S Downing St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="pizza"
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="platt-park"
                      data-times="mon, tue, wed, thu, fri, sat, sun 4 - 6">
                 
                 <h3>
@@ -2189,7 +2334,8 @@ Platt Park                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="platt-park"
                      data-times="mon, tue, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -2213,7 +2359,8 @@ Platt Park<br>1518 S Pearl St.                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="american"
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="platt-park"
                      data-times="tues, wed, thu, fri, sat, sun 4 – 5:30">
                 
                 <h3>
@@ -2237,7 +2384,8 @@ Platt Park<br>1475 S Pearl St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="japanese"
-                     data-area="south"
+                     data-district="south"
+                     data-neighborhood="platt-park"
                      data-times="wed, thu, fri, sat, sun 4:30 - 6:00">
                 
                 <h3>
@@ -2261,13 +2409,14 @@ Platt Park<br>1501 S Pearl St                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="west-southwest-denver">
-        <h2 class="area-title">West & Southwest Denver</h2>
+    <section class="district-section" data-district="west-southwest-denver">
+        <h2 class="district-title">West & Southwest Denver</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="west-southwest-denver"
+                     data-district="west-southwest-denver"
+                     data-neighborhood="jefferson-park"
                      data-times="tue all day | mon, wed, thu, fri 3p - 6p.  \*not available during stadium events">
                 
                 <h3>
@@ -2290,13 +2439,14 @@ Jefferson Park<br>2298 Clay St, Denver, CO 80211                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="northwest-denver">
-        <h2 class="area-title">Northwest Denver</h2>
+    <section class="district-section" data-district="northwest-denver">
+        <h2 class="district-title">Northwest Denver</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="berkeley"
                      data-times="mon all day & tue, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -2320,7 +2470,8 @@ Berkeley<br>4499 W 38th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="asian"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="berkeley"
                      data-times="">
                 
                 <h3>
@@ -2341,7 +2492,8 @@ Berkeley<br>4262 Lowell Blvd                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="plant-based"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="berkeley"
                      data-times="mon, tue, wed, thur, fri 3  - 5">
                 
                 <h3>
@@ -2369,7 +2521,8 @@ Berkeley<br>3915 Tennyson St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mediterranean"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="">
                 
                 <h3>
@@ -2394,7 +2547,8 @@ Highland<br>2930 Umatilla St Unit \#500, Denver, CO 80211                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="japanese"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="sun, mon, tue, wed, thu 5p - 7p">
                 
                 <h3>
@@ -2418,7 +2572,8 @@ Highland<br>2400 W 32nd Ave, Denver, CO 80211                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri 2p - 5p">
                 
                 <h3>
@@ -2442,7 +2597,8 @@ Highland<br>2556 15th St, Denver, CO 80211                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="global"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="tue, wed, thu, fri, sat 3 - 5">
                 
                 <h3>
@@ -2470,7 +2626,8 @@ Highland<br>1817 Central St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="sushi"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri 4  - 6  & sat, sun 12  - 4">
                 
                 <h3>
@@ -2494,7 +2651,8 @@ Highland<br>2715 17th St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="">
                 
                 <h3>
@@ -2515,7 +2673,8 @@ Highland<br>2227 W 32nd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -2539,7 +2698,8 @@ Highland<br>1801 Central St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri 4:30  - 6">
                 
                 <h3>
@@ -2566,7 +2726,8 @@ Highland<br>1600 W 33rd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="italian"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon 4:30 - 6 & tue, wed, thu, fri 3 - 6">
                 
                 <h3>
@@ -2590,7 +2751,8 @@ Highland<br>3760 Tejon St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="global"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri 4  - 6 . rooftop only.">
                 
                 <h3>
@@ -2618,7 +2780,8 @@ Highland<br>2030 W 30th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="japanese"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="tue, wed, thu, fri 4p - 5p">
                 
                 <h3>
@@ -2642,7 +2805,8 @@ Highland<br>1900 W 32nd Ave, Denver, CO 80211                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mediterranean"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3 - 5">
                 
                 <h3>
@@ -2670,7 +2834,8 @@ Highland<br>2005 W 33rd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri, sat, sun 3 - 6 at the bar & 3 - 5 at tables">
                 
                 <h3>
@@ -2694,7 +2859,8 @@ Highland<br>3301 Tejon St                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="west-highland"
                      data-times="sun all day | mon, tue, wed, thu, fri open - 6">
                 
                 <h3>
@@ -2717,7 +2883,8 @@ West Highland<br>4132 W 38th Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="west-highland"
                      data-times="mon all day | tue, wed, thu, fri, sat, sun 4  - 6">
                 
                 <h3>
@@ -2741,7 +2908,8 @@ West Highland<br>3300 W 32nd Ave                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="asian"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="west-highland"
                      data-times="mon, tue, wed, thu, fri, sat 4 - 6">
                 
                 <h3>
@@ -2765,7 +2933,8 @@ West Highland<br>4450 W 38th Ave. Suite \#130                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="highland"
                      data-times="mon, tue, wed, thu, fri 3 – 6 | mon, tue, wed, thu 9:30 - close. at the bar.">
                 
                 <h3>
@@ -2793,7 +2962,8 @@ Highland<br>2001 w 32nd avenue                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine="mexican"
-                     data-area="northwest-denver"
+                     data-district="northwest-denver"
+                     data-neighborhood="sunnyside"
                      data-times="tue, wed, thu, fri 3 - 5">
                 
                 <h3>
@@ -2817,13 +2987,14 @@ Sunnyside<br>4001 Tejon St                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="arvada">
-        <h2 class="area-title">Arvada</h2>
+    <section class="district-section" data-district="arvada">
+        <h2 class="district-title">Arvada</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="arvada"
+                     data-district="arvada"
+                     data-neighborhood="arvada"
                      data-times="">
                 
                 <h3>
@@ -2843,13 +3014,14 @@ Arvada<br>7702 Ralston Rd                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="aurora">
-        <h2 class="area-title">Aurora</h2>
+    <section class="district-section" data-district="aurora">
+        <h2 class="district-title">Aurora</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="aurora"
+                     data-district="aurora"
+                     data-neighborhood="stanley-marketplace"
                      data-times="tue all day | night. wed, thu, fri, sat, sun 4:30  - 5:30">
                 
                 <h3>
@@ -2876,7 +3048,8 @@ Stanley Marketplace<br>2501 Dallas Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="aurora"
+                     data-district="aurora"
+                     data-neighborhood="stanley-marketplace"
                      data-times="">
                 
                 <h3>
@@ -2896,13 +3069,14 @@ Stanley Marketplace<br>2501 Dallas St                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="greenwood-village-englewood-littleton-centennial">
-        <h2 class="area-title">Greenwood Village, Englewood, Littleton, Centennial</h2>
+    <section class="district-section" data-district="greenwood-village-englewood-littleton-centennial">
+        <h2 class="district-title">Greenwood Village, Englewood, Littleton, Centennial</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="greenwood-village"
                      data-times="mon, tue, wed, thu, fri, sat, sun 2:30  - 5:30  & fri, sat 10  - 12 am">
                 
                 <h3>
@@ -2929,7 +3103,8 @@ Greenwood Village<br>5380 Greenwood Plaza Blvd. Suite 101                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="greenwood-village"
                      data-times="">
                 
                 <h3>
@@ -2949,7 +3124,8 @@ Greenwood Village<br>5370 Greenwood Plaza Blvd                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="greenwood-village"
                      data-times="">
                 
                 <h3>
@@ -2969,7 +3145,8 @@ Greenwood Village                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="englewood"
                      data-times="">
                 
                 <h3>
@@ -2989,7 +3166,8 @@ Englewood<br>3495 S. Downing St.                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="littleton"
                      data-times="">
                 
                 <h3>
@@ -3013,7 +3191,8 @@ Littleton<br>6885 South Santa Fe Drive, Suite A                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="centennial"
                      data-times="">
                 
                 <h3>
@@ -3033,7 +3212,8 @@ Centennial<br>7209 S Clinton Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="greenwood-village-englewood-littleton-centennial"
+                     data-district="greenwood-village-englewood-littleton-centennial"
+                     data-neighborhood="littleton"
                      data-times="">
                 
                 <h3>
@@ -3053,13 +3233,14 @@ Littleton<br>2439 W. Main St.                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="lakewoodwheat-ridgegolden">
-        <h2 class="area-title">Lakewood/Wheat Ridge/Golden</h2>
+    <section class="district-section" data-district="lakewoodwheat-ridgegolden">
+        <h2 class="district-title">Lakewood/Wheat Ridge/Golden</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="lakewoodwheat-ridgegolden"
+                     data-district="lakewoodwheat-ridgegolden"
+                     data-neighborhood="belmar"
                      data-times="">
                 
                 <h3>
@@ -3079,13 +3260,14 @@ Belmar<br>445 S Teller St, Lakewood                </div>
             </article>
         </div>
     </section>
-    <section class="area-section" data-area="boulder">
-        <h2 class="area-title">Boulder</h2>
+    <section class="district-section" data-district="boulder">
+        <h2 class="district-title">Boulder</h2>
         
         <div class="restaurant-grid">
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="boulder"
+                     data-district="boulder"
+                     data-neighborhood=""
                      data-times="">
                 
                 <h3>
@@ -3105,7 +3287,8 @@ Belmar<br>445 S Teller St, Lakewood                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="boulder"
+                     data-district="boulder"
+                     data-neighborhood="taco-tue"
                      data-times="">
                 
                 <h3>
@@ -3125,7 +3308,8 @@ Taco Tue<br>901 Pearl Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="boulder"
+                     data-district="boulder"
+                     data-neighborhood=""
                      data-times="">
                 
                 <h3>
@@ -3145,7 +3329,8 @@ Taco Tue<br>901 Pearl Street                </div>
             </article>
             <article class="restaurant-card" 
                      data-cuisine=""
-                     data-area="boulder"
+                     data-district="boulder"
+                     data-neighborhood=""
                      data-times="">
                 
                 <h3>
@@ -3183,11 +3368,17 @@ Taco Tue<br>901 Pearl Street                </div>
     // Filter functionality
     function filterRestaurants() {
         const dayFilter = document.getElementById('day-filter').value.toLowerCase();
-        const areaFilter = document.getElementById('area-filter').value.toLowerCase();
+        const districtFilter = document.getElementById('district-filter').value.toLowerCase();
+        const neighborhoodFilter = document.getElementById('neighborhood-filter').value.toLowerCase();
         const cuisineFilter = document.getElementById('cuisine-filter').value.toLowerCase();
         
         const cards = document.querySelectorAll('.restaurant-card');
-        const sections = document.querySelectorAll('.area-section');
+        const sections = document.querySelectorAll('.district-section');
+        
+        // Update neighborhood filter based on selected district
+        if (districtFilter) {
+            updateNeighborhoodOptions(districtFilter);
+        }
         
         cards.forEach(card => {
             let show = true;
@@ -3197,8 +3388,13 @@ Taco Tue<br>901 Pearl Street                </div>
                 show = false;
             }
             
-            // Area filter
-            if (areaFilter && card.dataset.area !== areaFilter) {
+            // District filter
+            if (districtFilter && card.dataset.district !== districtFilter) {
+                show = false;
+            }
+            
+            // Neighborhood filter
+            if (neighborhoodFilter && card.dataset.neighborhood !== neighborhoodFilter) {
                 show = false;
             }
             
@@ -3217,24 +3413,100 @@ Taco Tue<br>901 Pearl Street                </div>
         });
     }
     
+    // Update neighborhood options based on selected district
+    function updateNeighborhoodOptions(selectedDistrict) {
+        const neighborhoodFilter = document.getElementById('neighborhood-filter');
+        const currentValue = neighborhoodFilter.value;
+        
+        // Get all unique neighborhoods for the selected district
+        const neighborhoods = new Set();
+        const cards = document.querySelectorAll(`.restaurant-card[data-district="${selectedDistrict}"]`);
+        
+        cards.forEach(card => {
+            if (card.dataset.neighborhood) {
+                neighborhoods.add(card.dataset.neighborhood);
+            }
+        });
+        
+        // Store original options if not already stored
+        if (!neighborhoodFilter.dataset.allOptions) {
+            const allOptions = Array.from(neighborhoodFilter.options).map(opt => ({
+                value: opt.value,
+                text: opt.text
+            }));
+            neighborhoodFilter.dataset.allOptions = JSON.stringify(allOptions);
+        }
+        
+        // Rebuild options
+        const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+        neighborhoodFilter.innerHTML = '<option value="">All Neighborhoods</option>';
+        
+        allOptions.slice(1).forEach(opt => {
+            if (neighborhoods.has(opt.value)) {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                neighborhoodFilter.appendChild(option);
+            }
+        });
+        
+        // Restore previous selection if still valid
+        if (Array.from(neighborhoodFilter.options).some(opt => opt.value === currentValue)) {
+            neighborhoodFilter.value = currentValue;
+        }
+    }
+    
     function clearFilters() {
         document.getElementById('day-filter').value = '';
-        document.getElementById('area-filter').value = '';
+        document.getElementById('district-filter').value = '';
+        document.getElementById('neighborhood-filter').value = '';
         document.getElementById('cuisine-filter').value = '';
+        
+        // Restore all neighborhood options
+        const neighborhoodFilter = document.getElementById('neighborhood-filter');
+        if (neighborhoodFilter.dataset.allOptions) {
+            const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+            neighborhoodFilter.innerHTML = '';
+            allOptions.forEach(opt => {
+                const option = document.createElement('option');
+                option.value = opt.value;
+                option.text = opt.text;
+                neighborhoodFilter.appendChild(option);
+            });
+        }
         
         // Show all cards and sections
         document.querySelectorAll('.restaurant-card').forEach(card => {
             card.style.display = 'block';
         });
-        document.querySelectorAll('.area-section').forEach(section => {
+        document.querySelectorAll('.district-section').forEach(section => {
             section.style.display = 'block';
         });
     }
     
     // Add event listeners
     document.getElementById('day-filter').addEventListener('change', filterRestaurants);
-    document.getElementById('area-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('district-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('neighborhood-filter').addEventListener('change', filterRestaurants);
     document.getElementById('cuisine-filter').addEventListener('change', filterRestaurants);
+    
+    // Handle district change to update neighborhood options
+    document.getElementById('district-filter').addEventListener('change', function() {
+        if (!this.value) {
+            // If no district selected, restore all neighborhoods
+            const neighborhoodFilter = document.getElementById('neighborhood-filter');
+            if (neighborhoodFilter.dataset.allOptions) {
+                const allOptions = JSON.parse(neighborhoodFilter.dataset.allOptions);
+                neighborhoodFilter.innerHTML = '';
+                allOptions.forEach(opt => {
+                    const option = document.createElement('option');
+                    option.value = opt.value;
+                    option.text = opt.text;
+                    neighborhoodFilter.appendChild(option);
+                });
+            }
+        }
+    });
 </script>
 </body>
 </html>

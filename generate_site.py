@@ -54,9 +54,26 @@ def generate_index_page(env, data, output_dir):
     """Generate the main index page with restaurant grid"""
     template = env.get_template('index.html')
     
+    # Extract unique neighborhoods and cuisines for filters
+    neighborhoods = set()
+    cuisines = set()
+    
+    for area_restaurants in data['areas'].values():
+        for restaurant in area_restaurants.values():
+            if restaurant.get('sub_location'):
+                neighborhoods.add(restaurant['sub_location'])
+            if restaurant.get('cuisine'):
+                cuisines.add(restaurant['cuisine'])
+    
+    # Sort alphabetically
+    neighborhoods = sorted(list(neighborhoods))
+    cuisines = sorted(list(cuisines))
+    
     html = template.render(
         metadata=data['metadata'],
-        areas=data['areas']
+        areas=data['areas'],
+        neighborhoods=neighborhoods,
+        cuisines=cuisines
     )
     
     output_file = output_dir / 'index.html'

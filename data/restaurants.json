@@ -1,8 +1,8 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-15T15:23:02.130325",
-    "areas": [
+    "updated_at": "2025-08-15T17:22:03.375989",
+    "districts": [
       "Central",
       "North Denver",
       "Northeast Denver",
@@ -16,6 +16,75 @@
       "Lakewood/Wheat Ridge/Golden",
       "Boulder"
     ],
+    "districts_with_neighborhoods": {
+      "Central": [
+        "Baker",
+        "Ballpark / Five Points",
+        "Ballpark / RiNo",
+        "Ballpark / Union Station",
+        "CBD",
+        "Capitol Hill",
+        "City Park West",
+        "Civic Center",
+        "Congress Park",
+        "Lincoln Park",
+        "LoDo",
+        "North Capitol Hill",
+        "Speer",
+        "Union Station"
+      ],
+      "North Denver": [
+        "Curtis / Ballpark / Five Points",
+        "Curtis Park / Five Points",
+        "Five Points",
+        "RiNo / Ballpark / Five Points",
+        "RiNo / Five Points",
+        "Whittier"
+      ],
+      "Northeast Denver": [
+        "Park Hill",
+        "South Park Hill"
+      ],
+      "East & Southeast Denver": [
+        "Cherry Creek",
+        "Glendale",
+        "Hampden South",
+        "Lowry Field",
+        "Southmoor Park"
+      ],
+      "South": [
+        "Platt Park",
+        "Washington Park",
+        "Washington Park West"
+      ],
+      "West & Southwest Denver": [
+        "Jefferson Park"
+      ],
+      "Northwest Denver": [
+        "Berkeley",
+        "Highland",
+        "Sunnyside",
+        "West Highland"
+      ],
+      "Arvada": [
+        "Arvada"
+      ],
+      "Aurora": [
+        "Stanley Marketplace"
+      ],
+      "Greenwood Village, Englewood, Littleton, Centennial": [
+        "Centennial",
+        "Englewood",
+        "Greenwood Village",
+        "Littleton"
+      ],
+      "Lakewood/Wheat Ridge/Golden": [
+        "Belmar"
+      ],
+      "Boulder": [
+        "Taco Tue"
+      ]
+    },
     "total_restaurants": 117,
     "target_user": "The Discerning Urban Explorer",
     "focus": "Quality dining experiences at accessible prices"
@@ -25,8 +94,9 @@
       "jovaninas-broken-italian": {
         "name": "Jovanina's Broken Italian",
         "slug": "jovaninas-broken-italian",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1520 Blake St, Denver, CO 80202",
         "cuisine": "Italian",
         "happy_hour_times": [
@@ -38,6 +108,7 @@
       "thirsty-lion": {
         "name": "Thirsty Lion",
         "slug": "thirsty-lion",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Union Station",
         "address": "1605 Wynkoop St, Denver, CO 80202",
@@ -51,6 +122,7 @@
       "blue-sushi-sake-grill": {
         "name": "Blue Sushi Sake Grill",
         "slug": "blue-sushi-sake-grill",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Union Station",
         "address": "1616 16th St",
@@ -66,6 +138,7 @@
       "a5-steakhouse": {
         "name": "A5 Steakhouse",
         "slug": "a5-steakhouse",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Union Station",
         "address": "1600 15th St",
@@ -79,8 +152,9 @@
       "hapa-sushi": {
         "name": "Hapa Sushi",
         "slug": "hapa-sushi",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1514 Blake Street",
         "cuisine": "Sushi",
         "happy_hour_times": [
@@ -94,8 +168,9 @@
       "jax-fish-house": {
         "name": "Jax Fish House",
         "slug": "jax-fish-house",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1539 17th St",
         "cuisine": "Seafood",
         "happy_hour_times": [
@@ -107,8 +182,9 @@
       "osteria-marco": {
         "name": "Osteria Marco",
         "slug": "osteria-marco",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1453 Larimer St",
         "cuisine": "Italian",
         "happy_hour_times": [
@@ -120,8 +196,9 @@
       "rioja": {
         "name": "Rioja",
         "slug": "rioja",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1431 Larimer St",
         "cuisine": "Mediterranean",
         "happy_hour_times": [
@@ -135,8 +212,9 @@
       "stk": {
         "name": "STK",
         "slug": "stk",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1550 Market St",
         "cuisine": "Steakhouse",
         "happy_hour_times": [
@@ -148,8 +226,9 @@
       "urban-farmer": {
         "name": "Urban Farmer",
         "slug": "urban-farmer",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1659 Wazee St",
         "cuisine": "Steakhouse",
         "happy_hour_times": [
@@ -161,8 +240,9 @@
       "tamayo": {
         "name": "Tamayo",
         "slug": "tamayo",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1400 Larimer Street",
         "cuisine": "Mexican",
         "happy_hour_times": [
@@ -175,8 +255,9 @@
       "corridor-44": {
         "name": "Corridor 44",
         "slug": "corridor-44",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1433 Larimer St",
         "cuisine": "French",
         "happy_hour_times": [
@@ -188,6 +269,7 @@
       "tavernetta": {
         "name": "Tavernetta",
         "slug": "tavernetta",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Union Station",
         "address": "1889 16th St",
@@ -201,6 +283,7 @@
       "ultreia": {
         "name": "Ultreia",
         "slug": "ultreia",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Union Station",
         "address": null,
@@ -214,6 +297,7 @@
       "sunday-vinyl": {
         "name": "Sunday Vinyl",
         "slug": "sunday-vinyl",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Union Station",
         "address": "1803 16th St",
@@ -227,6 +311,7 @@
       "foraged": {
         "name": "Foraged",
         "slug": "foraged",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Union Station",
         "address": "1825 Blake St \\#100",
@@ -240,6 +325,7 @@
       "ajax-downtown": {
         "name": "Ajax Downtown",
         "slug": "ajax-downtown",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Union Station",
         "address": "1899 16th St Mall",
@@ -253,8 +339,9 @@
       "mercantile": {
         "name": "Mercantile",
         "slug": "mercantile",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Ballpark / Union Station",
+        "sub_location": "Union Station",
         "address": "1701 Wynkoop St \\#155, Denver, CO 80202",
         "cuisine": "American",
         "happy_hour_times": [
@@ -266,8 +353,9 @@
       "fogo-de-chão": {
         "name": "Fogo de Chão",
         "slug": "fogo-de-chão",
+        "district": "Central",
         "area": "Central",
-        "sub_location": "Ballpark / Union Station",
+        "sub_location": "Union Station",
         "address": "1513 Wynkoop St, Denver, CO 80202",
         "cuisine": "Brazilian",
         "happy_hour_times": [],
@@ -277,6 +365,7 @@
       "mecha-noodle-bar": {
         "name": "Mecha Noodle Bar",
         "slug": "mecha-noodle-bar",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / RiNo",
         "address": "2801 Walnut St",
@@ -290,6 +379,7 @@
       "wonderyard-garden-table": {
         "name": "Wonderyard Garden \\+ Table",
         "slug": "wonderyard-garden-table",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Ballpark / Five Points",
         "address": "2200 Larimer St, Denver, CO 80205",
@@ -305,6 +395,7 @@
       "done-deal": {
         "name": "Done Deal",
         "slug": "done-deal",
+        "district": "Central",
         "area": "Central",
         "sub_location": "CBD",
         "address": "Republic Plaza \\- Main, 370 17th St A Lobby, Denver, CO 80202",
@@ -318,6 +409,7 @@
       "bezel-bar": {
         "name": "Bezel Bar",
         "slug": "bezel-bar",
+        "district": "Central",
         "area": "Central",
         "sub_location": "CBD",
         "address": "1550 Court Pl, Denver, CO 80202",
@@ -331,6 +423,7 @@
       "panzano": {
         "name": "Panzano",
         "slug": "panzano",
+        "district": "Central",
         "area": "Central",
         "sub_location": "CBD",
         "address": "909 17th Street",
@@ -346,6 +439,7 @@
       "guard-and-grace": {
         "name": "Guard and Grace",
         "slug": "guard-and-grace",
+        "district": "Central",
         "area": "Central",
         "sub_location": "CBD",
         "address": "1801 California St",
@@ -359,6 +453,7 @@
       "corinne-denver": {
         "name": "Corinne Denver",
         "slug": "corinne-denver",
+        "district": "Central",
         "area": "Central",
         "sub_location": "CBD",
         "address": "1455 California St, Denver, CO 80202",
@@ -372,6 +467,7 @@
       "olive-finch": {
         "name": "Olive & Finch",
         "slug": "olive-finch",
+        "district": "Central",
         "area": "Central",
         "sub_location": "City Park West",
         "address": "1552 E 17th Ave",
@@ -387,6 +483,7 @@
       "white-pie": {
         "name": "White Pie",
         "slug": "white-pie",
+        "district": "Central",
         "area": "Central",
         "sub_location": "City Park West",
         "address": "1702 N Humboldt St",
@@ -400,6 +497,7 @@
       "fire-lounge": {
         "name": "Fire Lounge",
         "slug": "fire-lounge",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Civic Center",
         "address": null,
@@ -415,6 +513,7 @@
       "city-o-city": {
         "name": "City O’ City",
         "slug": "city-o-city",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "206 E 13th Ave, Denver, CO 80203",
@@ -430,6 +529,7 @@
       "bang-up-to-the-elephant": {
         "name": "Bang Up to the Elephant",
         "slug": "bang-up-to-the-elephant",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "1310 N. Pearl St",
@@ -445,6 +545,7 @@
       "wild-taco": {
         "name": "Wild taco",
         "slug": "wild-taco",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "215 E 7th Ave",
@@ -458,6 +559,7 @@
       "100-de-agave": {
         "name": "100% de Agave",
         "slug": "100-de-agave",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "975 Lincoln St",
@@ -471,6 +573,7 @@
       "9th-door": {
         "name": "9th Door",
         "slug": "9th-door",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "925 Lincoln St, Suite C",
@@ -486,6 +589,7 @@
       "vesper-lounge": {
         "name": "Vesper Lounge",
         "slug": "vesper-lounge",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Capitol Hill",
         "address": "233 E 7th Ave",
@@ -499,6 +603,7 @@
       "watercourse-foods": {
         "name": "Watercourse Foods",
         "slug": "watercourse-foods",
+        "district": "Central",
         "area": "Central",
         "sub_location": "North Capitol Hill",
         "address": "837 E 17th Ave, Denver, CO 80218",
@@ -514,6 +619,7 @@
       "ace-eat-serve": {
         "name": "Ace Eat Serve",
         "slug": "ace-eat-serve",
+        "district": "Central",
         "area": "Central",
         "sub_location": "North Capitol Hill",
         "address": "501 E 17th Avenue",
@@ -527,6 +633,7 @@
       "xiquita-restaurante-y-bar": {
         "name": "Xiquita Restaurante y Bar",
         "slug": "xiquita-restaurante-y-bar",
+        "district": "Central",
         "area": "Central",
         "sub_location": "North Capitol Hill",
         "address": "500 E 19th Ave",
@@ -540,6 +647,7 @@
       "go-fish-sushi": {
         "name": "Go Fish Sushi",
         "slug": "go-fish-sushi",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Baker",
         "address": null,
@@ -555,6 +663,7 @@
       "punchbowl-social": {
         "name": "Punchbowl Social",
         "slug": "punchbowl-social",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Baker",
         "address": null,
@@ -568,6 +677,7 @@
       "rocky-yama-sushi": {
         "name": "Rocky Yama Sushi",
         "slug": "rocky-yama-sushi",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Lincoln Park",
         "address": null,
@@ -583,6 +693,7 @@
       "adrift": {
         "name": "Adrift",
         "slug": "adrift",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Speer",
         "address": null,
@@ -596,6 +707,7 @@
       "angelos-taverna": {
         "name": "Angelo's Taverna",
         "slug": "angelos-taverna",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Speer",
         "address": "620 E 6th Ave",
@@ -609,6 +721,7 @@
       "la-forêt": {
         "name": "La Forêt",
         "slug": "la-forêt",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Speer",
         "address": null,
@@ -622,6 +735,7 @@
       "ronin-congress-park": {
         "name": "Ronin Congress Park",
         "slug": "ronin-congress-park",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Congress Park",
         "address": "1160 Madison St",
@@ -635,6 +749,7 @@
       "shells-and-sauce": {
         "name": "Shells and Sauce",
         "slug": "shells-and-sauce",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Congress Park",
         "address": "2600 E 12th Ave",
@@ -650,6 +765,7 @@
       "bar-max": {
         "name": "Bar Max",
         "slug": "bar-max",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Congress Park",
         "address": "2412 E Colfax Ave",
@@ -665,6 +781,7 @@
       "sap-sua": {
         "name": "Sap Sua",
         "slug": "sap-sua",
+        "district": "Central",
         "area": "Central",
         "sub_location": "Congress Park",
         "address": "2550 E Colfax Ave",
@@ -680,6 +797,7 @@
       "painted-rino-kitchen-bar": {
         "name": "Painted RiNo Kitchen \\+ Bar",
         "slug": "painted-rino-kitchen-bar",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "RiNo / Five Points",
         "address": null,
@@ -693,6 +811,7 @@
       "dio-mio": {
         "name": "Dio Mio",
         "slug": "dio-mio",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "Curtis Park / Five Points",
         "address": "3264 Larimer St",
@@ -708,6 +827,7 @@
       "sushi-rama": {
         "name": "Sushi Rama",
         "slug": "sushi-rama",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "RiNo / Ballpark / Five Points",
         "address": "2615 Larimer St",
@@ -721,6 +841,7 @@
       "temaki-den": {
         "name": "Temaki Den",
         "slug": "temaki-den",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "RiNo / Five Points",
         "address": "3350 Brighton Blvd Unit 100, Denver",
@@ -736,6 +857,7 @@
       "uchi": {
         "name": "Uchi",
         "slug": "uchi",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "Curtis / Ballpark / Five Points",
         "address": "2500 lawrence st",
@@ -749,6 +871,7 @@
       "work-class": {
         "name": "Work & Class",
         "slug": "work-class",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "Curtis / Ballpark / Five Points",
         "address": "2500 Larimer St, Suite 101",
@@ -762,6 +885,7 @@
       "welton-room": {
         "name": "Welton Room",
         "slug": "welton-room",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "Five Points",
         "address": "2590 Welton Street",
@@ -775,6 +899,7 @@
       "point-easy-denver": {
         "name": "Point Easy Denver",
         "slug": "point-easy-denver",
+        "district": "North Denver",
         "area": "North Denver",
         "sub_location": "Whittier",
         "address": "2000 E 28th Ave",
@@ -790,6 +915,7 @@
       "bistro-vendome": {
         "name": "Bistro Vendome",
         "slug": "bistro-vendome",
+        "district": "Northeast Denver",
         "area": "Northeast Denver",
         "sub_location": "Park Hill",
         "address": "2267 Kearney Street in Park Hill",
@@ -804,6 +930,7 @@
       "lucina-eatery-bar": {
         "name": "Lucina Eatery & Bar",
         "slug": "lucina-eatery-bar",
+        "district": "Northeast Denver",
         "area": "Northeast Denver",
         "sub_location": "South Park Hill",
         "address": "2245 Kearney St \\#101",
@@ -819,6 +946,7 @@
       "blue-island-oyster-bar": {
         "name": "Blue Island Oyster Bar",
         "slug": "blue-island-oyster-bar",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "2625 E 2nd Ave",
@@ -834,6 +962,7 @@
       "salt-water-social": {
         "name": "Salt Water Social",
         "slug": "salt-water-social",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "201 Columbine St, Denver, CO 80206",
@@ -847,6 +976,7 @@
       "hapa-sushi": {
         "name": "Hapa Sushi",
         "slug": "hapa-sushi",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "3030 East 2nd Ave. Suite 105",
@@ -862,6 +992,7 @@
       "north-italia": {
         "name": "North Italia",
         "slug": "north-italia",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": null,
@@ -875,6 +1006,7 @@
       "sol-mexican-cocina": {
         "name": "Sol Mexican Cocina",
         "slug": "sol-mexican-cocina",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "200 Columbine St 110",
@@ -888,6 +1020,7 @@
       "toro": {
         "name": "TORO",
         "slug": "toro",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "150 Clayton Lane, Ste B",
@@ -902,6 +1035,7 @@
       "olive-finch": {
         "name": "Olive & Finch",
         "slug": "olive-finch",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "1552 E 17th Ave",
@@ -917,6 +1051,7 @@
       "little-ollies": {
         "name": "Little Ollie’s",
         "slug": "little-ollies",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "2360 E 3rd Ave",
@@ -930,6 +1065,7 @@
       "local-jones": {
         "name": "Local Jones",
         "slug": "local-jones",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Cherry Creek",
         "address": "249 Columbine St",
@@ -943,6 +1079,7 @@
       "jax-fish-house": {
         "name": "Jax Fish House",
         "slug": "jax-fish-house",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Glendale",
         "address": "650 S Colorado Blvd",
@@ -956,6 +1093,7 @@
       "north-county": {
         "name": "North County",
         "slug": "north-county",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Lowry Field",
         "address": null,
@@ -969,6 +1107,7 @@
       "officers-club": {
         "name": "Officer’s Club",
         "slug": "officers-club",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Lowry Field",
         "address": "Lowry Hangar 2 Dining District, 84 Rampart Way",
@@ -982,6 +1121,7 @@
       "zanes-italian-bistro": {
         "name": "Zane’s Italian Bistro",
         "slug": "zanes-italian-bistro",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Hampden South",
         "address": "3535 S Yosemite St",
@@ -997,6 +1137,7 @@
       "le-french-dtc-belleview-station": {
         "name": "Le French DTC Belleview Station",
         "slug": "le-french-dtc-belleview-station",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Southmoor Park",
         "address": "4901 S Newport St",
@@ -1010,6 +1151,7 @@
       "ambli-global-at-bellview-station": {
         "name": "Ambli Global at Bellview Station",
         "slug": "ambli-global-at-bellview-station",
+        "district": "East & Southeast Denver",
         "area": "East & Southeast Denver",
         "sub_location": "Southmoor Park",
         "address": "6799 E Belleview Ave",
@@ -1026,6 +1168,7 @@
       "max-gill-grill": {
         "name": "Max Gill & Grill",
         "slug": "max-gill-grill",
+        "district": "South",
         "area": "South",
         "sub_location": "Washington Park",
         "address": "1052 S Gaylord St",
@@ -1039,6 +1182,7 @@
       "reivers-bar-grill": {
         "name": "Reiver’s Bar & Grill",
         "slug": "reivers-bar-grill",
+        "district": "South",
         "area": "South",
         "sub_location": "Washington Park",
         "address": "1085 S. Gaylord Street",
@@ -1050,6 +1194,7 @@
       "blackbird-public-house": {
         "name": "Blackbird Public House",
         "slug": "blackbird-public-house",
+        "district": "South",
         "area": "South",
         "sub_location": "Washington Park West",
         "address": "305 S Downing St",
@@ -1063,6 +1208,7 @@
       "joy-hill": {
         "name": "Joy Hill",
         "slug": "joy-hill",
+        "district": "South",
         "area": "South",
         "sub_location": "Platt Park",
         "address": null,
@@ -1078,6 +1224,7 @@
       "que-bueno-suerte": {
         "name": "Que Bueno Suerte",
         "slug": "que-bueno-suerte",
+        "district": "South",
         "area": "South",
         "sub_location": "Platt Park",
         "address": "1518 S Pearl St.",
@@ -1091,6 +1238,7 @@
       "jacks-on-pearl---upstairs": {
         "name": "Jack’s on Pearl \\- Upstairs",
         "slug": "jacks-on-pearl---upstairs",
+        "district": "South",
         "area": "South",
         "sub_location": "Platt Park",
         "address": "1475 S Pearl St",
@@ -1104,6 +1252,7 @@
       "ototo": {
         "name": "OTOTO",
         "slug": "ototo",
+        "district": "South",
         "area": "South",
         "sub_location": "Platt Park",
         "address": "1501 S Pearl St",
@@ -1119,6 +1268,7 @@
       "briar-common-brewery-eatery": {
         "name": "Briar Common Brewery \\+ Eatery",
         "slug": "briar-common-brewery-eatery",
+        "district": "West & Southwest Denver",
         "area": "West & Southwest Denver",
         "sub_location": "Jefferson Park",
         "address": "2298 Clay St, Denver, CO 80211",
@@ -1134,6 +1284,7 @@
       "wild-taco": {
         "name": "Wild taco",
         "slug": "wild-taco",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Berkeley",
         "address": "4499 W 38th Ave",
@@ -1147,6 +1298,7 @@
       "ginger-pig": {
         "name": "Ginger Pig",
         "slug": "ginger-pig",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Berkeley",
         "address": "4262 Lowell Blvd",
@@ -1158,6 +1310,7 @@
       "vital-root": {
         "name": "Vital Root",
         "slug": "vital-root",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Berkeley",
         "address": "3915 Tennyson St",
@@ -1173,6 +1326,7 @@
       "el-five": {
         "name": "El Five",
         "slug": "el-five",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2930 Umatilla St Unit \\#500, Denver, CO 80211",
@@ -1186,6 +1340,7 @@
       "kumoya---denver": {
         "name": "Kumoya \\- Denver",
         "slug": "kumoya---denver",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2400 W 32nd Ave, Denver, CO 80211",
@@ -1199,6 +1354,7 @@
       "alma-fonda-fina": {
         "name": "Alma Fonda Fina",
         "slug": "alma-fonda-fina",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2556 15th St, Denver, CO 80211",
@@ -1212,6 +1368,7 @@
       "the-bindery": {
         "name": "The Bindery",
         "slug": "the-bindery",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "1817 Central St",
@@ -1227,6 +1384,7 @@
       "bamboo-sushi": {
         "name": "Bamboo Sushi",
         "slug": "bamboo-sushi",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2715 17th St",
@@ -1240,6 +1398,7 @@
       "bar-dough": {
         "name": "Bar Dough",
         "slug": "bar-dough",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2227 W 32nd Ave",
@@ -1251,6 +1410,7 @@
       "my-neighbor-felix": {
         "name": "My Neighbor Felix",
         "slug": "my-neighbor-felix",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "1801 Central St",
@@ -1264,6 +1424,7 @@
       "root-down": {
         "name": "Root Down",
         "slug": "root-down",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "1600 W 33rd Ave",
@@ -1279,6 +1440,7 @@
       "gaetanos-eccellente-cucina-cocktails": {
         "name": "Gaetano’s Eccellente Cucina & Cocktails",
         "slug": "gaetanos-eccellente-cucina-cocktails",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "3760 Tejon St",
@@ -1292,6 +1454,7 @@
       "linger": {
         "name": "Linger",
         "slug": "linger",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2030 W 30th Ave",
@@ -1307,6 +1470,7 @@
       "kawa-ni": {
         "name": "Kawa Ni",
         "slug": "kawa-ni",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "1900 W 32nd Ave, Denver, CO 80211",
@@ -1320,6 +1484,7 @@
       "ashkara": {
         "name": "Ash'Kara",
         "slug": "ashkara",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2005 W 33rd Ave",
@@ -1335,6 +1500,7 @@
       "senor-bear": {
         "name": "Senor Bear",
         "slug": "senor-bear",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "3301 Tejon St",
@@ -1348,6 +1514,7 @@
       "american-elm": {
         "name": "American Elm",
         "slug": "american-elm",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "West Highland",
         "address": "4132 W 38th Ave",
@@ -1361,6 +1528,7 @@
       "tacos-tequila-whiskey": {
         "name": "Tacos Tequila Whiskey",
         "slug": "tacos-tequila-whiskey",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "West Highland",
         "address": "3300 W 32nd Ave",
@@ -1374,6 +1542,7 @@
       "glo-noodle-house": {
         "name": "Glo Noodle House",
         "slug": "glo-noodle-house",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "West Highland",
         "address": "4450 W 38th Ave. Suite \\#130",
@@ -1387,6 +1556,7 @@
       "bartaco": {
         "name": "BarTaco",
         "slug": "bartaco",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Highland",
         "address": "2001 w 32nd avenue",
@@ -1402,6 +1572,7 @@
       "necio-mexican-kitchen": {
         "name": "Necio Mexican Kitchen",
         "slug": "necio-mexican-kitchen",
+        "district": "Northwest Denver",
         "area": "Northwest Denver",
         "sub_location": "Sunnyside",
         "address": "4001 Tejon St",
@@ -1417,6 +1588,7 @@
       "cochino-taco": {
         "name": "Cochino Taco",
         "slug": "cochino-taco",
+        "district": "Arvada",
         "area": "Arvada",
         "sub_location": "Arvada",
         "address": "7702 Ralston Rd",
@@ -1430,6 +1602,7 @@
       "annette": {
         "name": "Annette",
         "slug": "annette",
+        "district": "Aurora",
         "area": "Aurora",
         "sub_location": "Stanley Marketplace",
         "address": "2501 Dallas Street",
@@ -1445,6 +1618,7 @@
       "boychik": {
         "name": "Boychik",
         "slug": "boychik",
+        "district": "Aurora",
         "area": "Aurora",
         "sub_location": "Stanley Marketplace",
         "address": "2501 Dallas St",
@@ -1458,6 +1632,7 @@
       "hapa-sushi": {
         "name": "Hapa Sushi",
         "slug": "hapa-sushi",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Greenwood Village",
         "address": "5380 Greenwood Plaza Blvd. Suite 101",
@@ -1473,6 +1648,7 @@
       "jing-denver": {
         "name": "Jing Denver",
         "slug": "jing-denver",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Greenwood Village",
         "address": "5370 Greenwood Plaza Blvd",
@@ -1484,6 +1660,7 @@
       "pizza-republica": {
         "name": "Pizza Republica",
         "slug": "pizza-republica",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Greenwood Village",
         "address": null,
@@ -1495,6 +1672,7 @@
       "cochino-taco": {
         "name": "Cochino Taco",
         "slug": "cochino-taco",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Englewood",
         "address": "3495 S. Downing St.",
@@ -1506,6 +1684,7 @@
       "angelos-taverna": {
         "name": "Angelo's Taverna",
         "slug": "angelos-taverna",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Littleton",
         "address": "6885 South Santa Fe Drive, Suite A",
@@ -1519,6 +1698,7 @@
       "my-neighbor-felix": {
         "name": "My Neighbor Felix",
         "slug": "my-neighbor-felix",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Centennial",
         "address": "7209 S Clinton Street",
@@ -1530,6 +1710,7 @@
       "blackhaus-tavern---littleton": {
         "name": "Black+Haus Tavern \\- Littleton",
         "slug": "blackhaus-tavern---littleton",
+        "district": "Greenwood Village, Englewood, Littleton, Centennial",
         "area": "Greenwood Village, Englewood, Littleton, Centennial",
         "sub_location": "Littleton",
         "address": "2439 W. Main St.",
@@ -1543,6 +1724,7 @@
       "tstreet": {
         "name": "TStreet",
         "slug": "tstreet",
+        "district": "Lakewood/Wheat Ridge/Golden",
         "area": "Lakewood/Wheat Ridge/Golden",
         "sub_location": "Belmar",
         "address": "445 S Teller St, Lakewood",
@@ -1556,6 +1738,7 @@
       "jax-fish-house": {
         "name": "Jax Fish House",
         "slug": "jax-fish-house",
+        "district": "Boulder",
         "area": "Boulder",
         "sub_location": null,
         "address": "928 Pearl St,",
@@ -1567,6 +1750,7 @@
       "my-neighbor-felix": {
         "name": "My Neighbor Felix",
         "slug": "my-neighbor-felix",
+        "district": "Boulder",
         "area": "Boulder",
         "sub_location": "Taco Tue",
         "address": "901 Pearl Street",
@@ -1578,6 +1762,7 @@
       "boulder-social": {
         "name": "Boulder Social",
         "slug": "boulder-social",
+        "district": "Boulder",
         "area": "Boulder",
         "sub_location": null,
         "address": "1600 38th Street",
@@ -1589,6 +1774,7 @@
       "bartaco": {
         "name": "BarTaco",
         "slug": "bartaco",
+        "district": "Boulder",
         "area": "Boulder",
         "sub_location": null,
         "address": "1048 pearl street, suite 101",
