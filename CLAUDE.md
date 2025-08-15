@@ -18,7 +18,7 @@ This user doesn't want "cheap eats" - they want to discover Denver's culinary ge
 
 ### Core Commands
 ```bash
-# Install dependencies
+# Install dependencies (all pip dependencies managed via requirements.txt)
 pip install -r requirements.txt
 
 # Run the main scraper
@@ -27,7 +27,13 @@ python run_scraper.py
 # View scraped data in pretty format
 python view_deals.py
 
-# Generate static HTML website
+# Parse Giovanni's markdown into structured JSON data
+python parse_giovanni.py
+
+# Generate multi-page static website with Jinja2 templates
+python generate_site.py
+
+# Legacy single-page generator (deprecated)
 python generate_website.py
 
 # Run individual test files
@@ -42,10 +48,11 @@ No formal test framework is configured. Testing is done via individual test file
 
 ### Core Components
 
-**Data Storage**: Pure CSV approach using `CSVManager` class (`src/csv_manager.py`)
-- Single CSV file at `data/happy_hour_deals.csv`
-- No database - designed for simplicity and Excel compatibility
-- Automatic deduplication by restaurant name on each scrape
+**Data Storage**: JSON-based approach organized by Denver areas
+- Restaurant data parsed from `data/giovanni_happy_hours.md` using `parse_giovanni.py`
+- Structured data stored in `data/restaurants.json` (single source of truth)
+- Location-based organization optimized for "The Discerning Urban Explorer"
+- 117 restaurants across 12 Denver areas with comprehensive metadata
 
 **Scraper Framework**: Object-oriented scraper system
 - `BaseScraper` abstract class (`src/scrapers/base.py`) provides common functionality
@@ -75,11 +82,10 @@ No formal test framework is configured. Testing is done via individual test file
 4. Add to scraper list in `run_scraper.py`
 
 **Data Processing Flow**:
-1. `run_scraper.py` orchestrates all scrapers
-2. Each scraper clears old data for its restaurant
-3. New deals scraped and saved to CSV
-4. `view_deals.py` provides formatted output
-5. `generate_website.py` creates static HTML from CSV data
+1. `parse_giovanni.py` parses markdown source into `data/restaurants.json`
+2. `generate_site.py` creates multi-page static website from JSON data using Jinja2 templates
+3. Legacy scrapers: `run_scraper.py` orchestrates individual restaurant scrapers (CSV-based)
+4. `view_deals.py` provides formatted output for legacy CSV data
 
 ### Current Restaurant Scrapers
 - **Jax Fish House**: JSON-LD structured data parsing
@@ -87,4 +93,15 @@ No formal test framework is configured. Testing is done via individual test file
 - **Tamayo**: Standard scraping implementation
 
 ### Web Output
-`generate_website.py` creates a static HTML site in `docs/index.html` with dark theme styling and mobile responsiveness, grouping deals by area (currently Union Station focus).
+**Multi-page Architecture**: 
+- `generate_site.py` creates a static site using Jinja2 templates and Pico CSS
+- Dark theme optimized for "The Discerning Urban Explorer" persona  
+- Responsive grid layout with restaurant cards displaying left-to-right
+- Individual restaurant profile pages (`docs/restaurants/{slug}.html`)
+- Semantic HTML with filtering by day, area, and cuisine
+- 117 restaurant pages + main index with location-based organization
+
+**Template System**:
+- `templates/base.html` - Base template with Pico CSS and dark theme
+- `templates/index.html` - Restaurant grid with filtering functionality  
+- `templates/restaurant.html` - Individual restaurant profile pages

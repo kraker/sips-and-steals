@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+{% block title %}Sips and Steals - Denver's Happy Hour Deal Finder{% endblock %}
+
+{% block content %}
+    <!-- Last Updated Info -->
+    <div class="updated-info">
+        Updated: {{ metadata.updated_at | dateformat }} | {{ metadata.total_restaurants }} restaurants across {{ metadata.areas | length }} areas
+    </div>
+    
+    <!-- Filters -->
+    <section class="filters">
+        <h3>Find Your Perfect Happy Hour</h3>
+        <div class="filter-row">
+            <div>
+                <label for="day-filter">Day:</label>
+                <select id="day-filter" name="day">
+                    <option value="">All Days</option>
+                    <option value="monday">Monday</option>
+                    <option value="tuesday">Tuesday</option>
+                    <option value="wednesday">Wednesday</option>
+                    <option value="thursday">Thursday</option>
+                    <option value="friday">Friday</option>
+                    <option value="saturday">Saturday</option>
+                    <option value="sunday">Sunday</option>
+                </select>
+            </div>
+            <div>
+                <label for="area-filter">Area:</label>
+                <select id="area-filter" name="area">
+                    <option value="">All Areas</option>
+                    {% for area in metadata.areas %}
+                    <option value="{{ area | slugify }}">{{ area }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div>
+                <label for="cuisine-filter">Cuisine:</label>
+                <select id="cuisine-filter" name="cuisine">
+                    <option value="">All Cuisines</option>
+                    <option value="sushi">Sushi</option>
+                    <option value="italian">Italian</option>
+                    <option value="mexican">Mexican</option>
+                    <option value="american">American</option>
+                    <option value="seafood">Seafood</option>
+                    <option value="asian">Asian</option>
+                    <option value="steakhouse">Steakhouse</option>
+                </select>
+            </div>
+            <div>
+                <button type="button" onclick="clearFilters()">Clear All</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Restaurant Listings by Area -->
+    {% for area_name, restaurants in areas.items() %}
+    <section class="area-section" data-area="{{ area_name | slugify }}">
+        <h2 class="area-title">{{ area_name }}</h2>
+        
+        <div class="restaurant-grid">
+            {% for slug, restaurant in restaurants.items() %}
+            <article class="restaurant-card" 
+                     data-cuisine="{{ restaurant.cuisine | lower if restaurant.cuisine else '' }}"
+                     data-area="{{ area_name | slugify }}"
+                     data-times="{{ restaurant.happy_hour_times | join(' ') | lower }}">
+                
+                <h3>
+                    <a href="restaurants/{{ restaurant.slug }}.html">{{ restaurant.name }}</a>
+                </h3>
+                
+                <div class="location">
+                    {% if restaurant.sub_location %}{{ restaurant.sub_location }}{% endif %}
+                    {% if restaurant.address %}<br>{{ restaurant.address }}{% endif %}
+                </div>
+                
+                {% if restaurant.cuisine %}
+                <span class="cuisine">{{ restaurant.cuisine }}</span>
+                {% endif %}
+                
+                {% if restaurant.happy_hour_times %}
+                <div class="happy-hour">
+                    <strong>Happy Hour:</strong><br>
+                    {% for time in restaurant.happy_hour_times %}
+                    {{ time }}{% if not loop.last %}<br>{% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                {% if restaurant.special_notes %}
+                <div class="tags">
+                    {% for note in restaurant.special_notes %}
+                    <span class="tag{% if 'plant-based' in note | lower %} plant-based{% endif %}">
+                        {% if 'plant-based' in note | lower %}🌱 Plant-Based{% else %}{{ note }}{% endif %}
+                    </span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                
+                <div style="margin-top: auto;">
+                    <a href="restaurants/{{ restaurant.slug }}.html" role="button" class="secondary">View Details</a>
+                    {% if restaurant.website %}
+                    <a href="{{ restaurant.website }}" target="_blank" role="button" class="outline">Website</a>
+                    {% endif %}
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+{% endblock %}
+
+{% block extra_scripts %}
+<script>
+    // Filter functionality
+    function filterRestaurants() {
+        const dayFilter = document.getElementById('day-filter').value.toLowerCase();
+        const areaFilter = document.getElementById('area-filter').value.toLowerCase();
+        const cuisineFilter = document.getElementById('cuisine-filter').value.toLowerCase();
+        
+        const cards = document.querySelectorAll('.restaurant-card');
+        const sections = document.querySelectorAll('.area-section');
+        
+        cards.forEach(card => {
+            let show = true;
+            
+            // Day filter
+            if (dayFilter && !card.dataset.times.includes(dayFilter.substring(0, 3))) {
+                show = false;
+            }
+            
+            // Area filter
+            if (areaFilter && card.dataset.area !== areaFilter) {
+                show = false;
+            }
+            
+            // Cuisine filter
+            if (cuisineFilter && card.dataset.cuisine !== cuisineFilter) {
+                show = false;
+            }
+            
+            card.style.display = show ? 'block' : 'none';
+        });
+        
+        // Hide empty sections
+        sections.forEach(section => {
+            const visibleCards = section.querySelectorAll('.restaurant-card[style="display: block"], .restaurant-card:not([style*="display: none"])');
+            section.style.display = visibleCards.length > 0 ? 'block' : 'none';
+        });
+    }
+    
+    function clearFilters() {
+        document.getElementById('day-filter').value = '';
+        document.getElementById('area-filter').value = '';
+        document.getElementById('cuisine-filter').value = '';
+        
+        // Show all cards and sections
+        document.querySelectorAll('.restaurant-card').forEach(card => {
+            card.style.display = 'block';
+        });
+        document.querySelectorAll('.area-section').forEach(section => {
+            section.style.display = 'block';
+        });
+    }
+    
+    // Add event listeners
+    document.getElementById('day-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('area-filter').addEventListener('change', filterRestaurants);
+    document.getElementById('cuisine-filter').addEventListener('change', filterRestaurants);
+</script>
+{% endblock %}

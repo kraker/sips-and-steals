@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+
+{% block title %}{{ restaurant.name }} - Sips and Steals{% endblock %}
+
+{% block extra_head %}
+<style>
+    .restaurant-header {
+        text-align: center;
+        padding: 2rem 0;
+        border-bottom: 1px solid var(--pico-muted-border-color);
+        margin-bottom: 2rem;
+    }
+    
+    .restaurant-header h1 {
+        margin-bottom: 0.5rem;
+        color: var(--pico-color);
+    }
+    
+    .restaurant-header .meta {
+        color: var(--pico-muted-color);
+        font-size: 1.1rem;
+    }
+    
+    .restaurant-details {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .detail-section {
+        background: var(--pico-code-background-color);
+        padding: 1.5rem;
+        border-radius: var(--pico-border-radius);
+    }
+    
+    .detail-section h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: var(--pico-primary);
+    }
+    
+    .info-grid {
+        display: grid;
+        gap: 0.75rem;
+    }
+    
+    .info-item {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0.5rem;
+        align-items: start;
+    }
+    
+    .info-label {
+        font-weight: 600;
+        color: var(--pico-muted-color);
+        min-width: 80px;
+    }
+    
+    .info-value {
+        color: var(--pico-color);
+    }
+    
+    .happy-hour-schedule {
+        background: var(--pico-primary);
+        color: var(--pico-primary-inverse);
+        padding: 1rem;
+        border-radius: var(--pico-border-radius);
+        margin-bottom: 1rem;
+    }
+    
+    .happy-hour-schedule h4 {
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+    }
+    
+    .schedule-item {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        font-family: var(--pico-font-family-monospace);
+    }
+    
+    .schedule-item:last-child {
+        border-bottom: none;
+    }
+    
+    .tags-section {
+        margin-bottom: 1.5rem;
+    }
+    
+    .tags {
+        display: flex;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    .tag {
+        background: var(--pico-secondary);
+        color: var(--pico-secondary-inverse);
+        padding: 0.25rem 0.75rem;
+        border-radius: var(--pico-border-radius);
+        font-size: 0.9rem;
+    }
+    
+    .tag.plant-based {
+        background: #22c55e;
+        color: white;
+    }
+    
+    .actions {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .back-link {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    
+    @media (max-width: 768px) {
+        .restaurant-details {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        
+        .actions {
+            grid-template-columns: 1fr;
+        }
+        
+        .detail-section {
+            padding: 1rem;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+    <!-- Back Navigation -->
+    <div class="back-link">
+        <a href="../index.html" role="button" class="outline">← Back to All Restaurants</a>
+    </div>
+    
+    <!-- Restaurant Header -->
+    <header class="restaurant-header">
+        <h1>{{ restaurant.name }}</h1>
+        <div class="meta">
+            {{ restaurant.area }}{% if restaurant.sub_location %} • {{ restaurant.sub_location }}{% endif %}
+            {% if restaurant.cuisine %} • {{ restaurant.cuisine }}{% endif %}
+        </div>
+    </header>
+    
+    <!-- Happy Hour Schedule (Prominent) -->
+    {% if restaurant.happy_hour_times %}
+    <section class="happy-hour-schedule">
+        <h4>🍺 Happy Hour Schedule</h4>
+        {% for time in restaurant.happy_hour_times %}
+        <div class="schedule-item">{{ time }}</div>
+        {% endfor %}
+    </section>
+    {% endif %}
+    
+    <!-- Special Tags -->
+    {% if restaurant.special_notes %}
+    <section class="tags-section">
+        <div class="tags">
+            {% for note in restaurant.special_notes %}
+            <span class="tag{% if 'plant-based' in note | lower %} plant-based{% endif %}">
+                {% if 'plant-based' in note | lower %}🌱 Plant-Based Options{% else %}{{ note }}{% endif %}
+            </span>
+            {% endfor %}
+        </div>
+    </section>
+    {% endif %}
+    
+    <!-- Restaurant Details -->
+    <div class="restaurant-details">
+        <!-- Location & Contact -->
+        <section class="detail-section">
+            <h3>📍 Location & Contact</h3>
+            <div class="info-grid">
+                {% if restaurant.address %}
+                <div class="info-item">
+                    <span class="info-label">Address:</span>
+                    <span class="info-value">{{ restaurant.address }}</span>
+                </div>
+                {% endif %}
+                
+                {% if restaurant.sub_location %}
+                <div class="info-item">
+                    <span class="info-label">Area:</span>
+                    <span class="info-value">{{ restaurant.sub_location }}</span>
+                </div>
+                {% endif %}
+                
+                <div class="info-item">
+                    <span class="info-label">District:</span>
+                    <span class="info-value">{{ restaurant.area }}</span>
+                </div>
+                
+                {% if restaurant.website %}
+                <div class="info-item">
+                    <span class="info-label">Website:</span>
+                    <span class="info-value">
+                        <a href="{{ restaurant.website }}" target="_blank">Visit Website</a>
+                    </span>
+                </div>
+                {% endif %}
+            </div>
+        </section>
+        
+        <!-- Dining Info -->
+        <section class="detail-section">
+            <h3>🍽️ Dining Info</h3>
+            <div class="info-grid">
+                {% if restaurant.cuisine %}
+                <div class="info-item">
+                    <span class="info-label">Cuisine:</span>
+                    <span class="info-value">{{ restaurant.cuisine }}</span>
+                </div>
+                {% endif %}
+                
+                <div class="info-item">
+                    <span class="info-label">Happy Hours:</span>
+                    <span class="info-value">{{ restaurant.happy_hour_times | length }} time{% if restaurant.happy_hour_times | length != 1 %}s{% endif %}</span>
+                </div>
+                
+                {% if 'Plant-Based Options' in restaurant.special_notes %}
+                <div class="info-item">
+                    <span class="info-label">Dietary:</span>
+                    <span class="info-value">🌱 Plant-Based Friendly</span>
+                </div>
+                {% endif %}
+                
+                <div class="info-item">
+                    <span class="info-label">Profile:</span>
+                    <span class="info-value">
+                        <a href="../index.html#{{ restaurant.area | slugify }}">View similar in {{ restaurant.area }}</a>
+                    </span>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <!-- Action Buttons -->
+    <section class="actions">
+        {% if restaurant.website %}
+        <a href="{{ restaurant.website }}" target="_blank" role="button">Visit Restaurant Website</a>
+        {% endif %}
+        
+        {% if restaurant.address %}
+        <a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank" role="button" class="secondary">View on Maps</a>
+        {% endif %}
+        
+        <a href="../index.html" role="button" class="outline">Browse More Deals</a>
+    </section>
+    
+    <!-- Similar Restaurants -->
+    <section>
+        <h3>More Great Options in {{ restaurant.area }}</h3>
+        <p><a href="../index.html#{{ restaurant.area | slugify }}">Explore other restaurants in {{ restaurant.area }} →</a></p>
+    </section>
+{% endblock %}

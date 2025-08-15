@@ -1,0 +1,1604 @@
+{
+  "metadata": {
+    "source": "giovanni_happy_hours.md",
+    "updated_at": "2025-08-15T15:23:02.130325",
+    "areas": [
+      "Central",
+      "North Denver",
+      "Northeast Denver",
+      "East & Southeast Denver",
+      "South",
+      "West & Southwest Denver",
+      "Northwest Denver",
+      "Arvada",
+      "Aurora",
+      "Greenwood Village, Englewood, Littleton, Centennial",
+      "Lakewood/Wheat Ridge/Golden",
+      "Boulder"
+    ],
+    "total_restaurants": 117,
+    "target_user": "The Discerning Urban Explorer",
+    "focus": "Quality dining experiences at accessible prices"
+  },
+  "areas": {
+    "Central": {
+      "jovaninas-broken-italian": {
+        "name": "Jovanina's Broken Italian",
+        "slug": "jovaninas-broken-italian",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1520 Blake St, Denver, CO 80202",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Wed All Day | Tue, Thu, Fri, Sat 5p - 6p | Fri, Sat 9p - 10p. Bar only."
+        ],
+        "website": "https://jovanina.com/#menus",
+        "special_notes": []
+      },
+      "thirsty-lion": {
+        "name": "Thirsty Lion",
+        "slug": "thirsty-lion",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1605 Wynkoop St, Denver, CO 80202",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 6 | Thu, Fri, Sat 9 - close"
+        ],
+        "website": "https://www.thirstyliongastropub.com/menu",
+        "special_notes": []
+      },
+      "blue-sushi-sake-grill": {
+        "name": "Blue Sushi Sake Grill",
+        "slug": "blue-sushi-sake-grill",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1616 16th St",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Sun All Day & Mon, Tue, Wed, Thu, Fri, Sat 2  - 6"
+        ],
+        "website": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "a5-steakhouse": {
+        "name": "A5 Steakhouse",
+        "slug": "a5-steakhouse",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1600 15th St",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3:30  - 5:30"
+        ],
+        "website": "https://www.a5denver.com/menu#menu=happy-hour",
+        "special_notes": []
+      },
+      "hapa-sushi": {
+        "name": "Hapa Sushi",
+        "slug": "hapa-sushi",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1514 Blake Street",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2:30  - 5:30 | Fri, Sat 10  - 12 am"
+        ],
+        "website": "https://hapasushi.com/pages/lodo",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "jax-fish-house": {
+        "name": "Jax Fish House",
+        "slug": "jax-fish-house",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1539 17th St",
+        "cuisine": "Seafood",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat, Sun 3:30  - 5 | Mon All Day"
+        ],
+        "website": "https://www.jaxfishhouse.com/lodo-menu/#happy-hour-lodo",
+        "special_notes": []
+      },
+      "osteria-marco": {
+        "name": "Osteria Marco",
+        "slug": "osteria-marco",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1453 Larimer St",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3  - 5"
+        ],
+        "website": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+        "special_notes": []
+      },
+      "rioja": {
+        "name": "Rioja",
+        "slug": "rioja",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1431 Larimer St",
+        "cuisine": "Mediterranean",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2:30  - 5 . Bar/Lounge Only."
+        ],
+        "website": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "stk": {
+        "name": "STK",
+        "slug": "stk",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1550 Market St",
+        "cuisine": "Steakhouse",
+        "happy_hour_times": [
+          "Sun, Mon, Tue, Wed, Thu, Fri 5:30  – 5:30  | Sat, Sun 3  - 5:30 | Sun, Mon, Tue, Wed, Thu 9  - Close"
+        ],
+        "website": "https://stksteakhouse.com/venues/denver/happy-hour/",
+        "special_notes": []
+      },
+      "urban-farmer": {
+        "name": "Urban Farmer",
+        "slug": "urban-farmer",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1659 Wazee St",
+        "cuisine": "Steakhouse",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4  - 6"
+        ],
+        "website": "https://www.urbanfarmersteakhouse.com/denver-menus/#happy-hour",
+        "special_notes": []
+      },
+      "tamayo": {
+        "name": "Tamayo",
+        "slug": "tamayo",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1400 Larimer Street",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 2  - 5  | Sat, Sun 2  - 4",
+          "Sat, Sun Bottomless brunch 10:30 am - 3"
+        ],
+        "website": "https://www.eattamayo.com/brunch",
+        "special_notes": []
+      },
+      "corridor-44": {
+        "name": "Corridor 44",
+        "slug": "corridor-44",
+        "area": "Central",
+        "sub_location": "Union Station",
+        "address": "1433 Larimer St",
+        "cuisine": "French",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4 - 6"
+        ],
+        "website": "https://www.corridor44.com/",
+        "special_notes": []
+      },
+      "tavernetta": {
+        "name": "Tavernetta",
+        "slug": "tavernetta",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1889 16th St",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3  - 6"
+        ],
+        "website": "https://www.tavernettadenver.com/menus/#happy-hour",
+        "special_notes": []
+      },
+      "ultreia": {
+        "name": "Ultreia",
+        "slug": "ultreia",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": null,
+        "cuisine": "Tapas",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3  - 6"
+        ],
+        "website": "https://ultreiadenver.com/menus/happy-hour/",
+        "special_notes": []
+      },
+      "sunday-vinyl": {
+        "name": "Sunday Vinyl",
+        "slug": "sunday-vinyl",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1803 16th St",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6:00"
+        ],
+        "website": "https://www.sundayvinyl.com/menus/#happy-hour",
+        "special_notes": []
+      },
+      "foraged": {
+        "name": "Foraged",
+        "slug": "foraged",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1825 Blake St \\#100",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Sun, Mon, Tue, Wed, Thu 4 - 6 | Fri, Sat 9:30 - 10:30"
+        ],
+        "website": "https://www.foragedrestaurant.com/drink",
+        "special_notes": []
+      },
+      "ajax-downtown": {
+        "name": "Ajax Downtown",
+        "slug": "ajax-downtown",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1899 16th St Mall",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
+        ],
+        "website": "https://www.ajaxrestaurant.com/menu/happy-hour/",
+        "special_notes": []
+      },
+      "mercantile": {
+        "name": "Mercantile",
+        "slug": "mercantile",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1701 Wynkoop St \\#155, Denver, CO 80202",
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat 2p - 5p"
+        ],
+        "website": "https://www.mercantiledenver.com/menus/#happy-hour",
+        "special_notes": []
+      },
+      "fogo-de-chão": {
+        "name": "Fogo de Chão",
+        "slug": "fogo-de-chão",
+        "area": "Central",
+        "sub_location": "Ballpark / Union Station",
+        "address": "1513 Wynkoop St, Denver, CO 80202",
+        "cuisine": "Brazilian",
+        "happy_hour_times": [],
+        "website": "https://fogodechao.com/menu-detail/?location=94&type=menu-barbook&id=4592",
+        "special_notes": []
+      },
+      "mecha-noodle-bar": {
+        "name": "Mecha Noodle Bar",
+        "slug": "mecha-noodle-bar",
+        "area": "Central",
+        "sub_location": "Ballpark / RiNo",
+        "address": "2801 Walnut St",
+        "cuisine": "Asian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 - 6\\. Excluding holidays"
+        ],
+        "website": "https://www.mechanoodlebar.com/menu",
+        "special_notes": []
+      },
+      "wonderyard-garden-table": {
+        "name": "Wonderyard Garden \\+ Table",
+        "slug": "wonderyard-garden-table",
+        "area": "Central",
+        "sub_location": "Ballpark / Five Points",
+        "address": "2200 Larimer St, Denver, CO 80205",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3p - 6p. Bar only, No Rockies home games."
+        ],
+        "website": "https://www.wonderyard.com/menu#menu=specials",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "done-deal": {
+        "name": "Done Deal",
+        "slug": "done-deal",
+        "area": "Central",
+        "sub_location": "CBD",
+        "address": "Republic Plaza \\- Main, 370 17th St A Lobby, Denver, CO 80202",
+        "cuisine": "Cocktail bar",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 - 5:30"
+        ],
+        "website": "https://www.drinkdonedeal.com/menus/#specials",
+        "special_notes": []
+      },
+      "bezel-bar": {
+        "name": "Bezel Bar",
+        "slug": "bezel-bar",
+        "area": "Central",
+        "sub_location": "CBD",
+        "address": "1550 Court Pl, Denver, CO 80202",
+        "cuisine": "Cocktail Bar",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri 4p - 6p"
+        ],
+        "website": "https://www.bezeldenver.com/our-menus",
+        "special_notes": []
+      },
+      "panzano": {
+        "name": "Panzano",
+        "slug": "panzano",
+        "area": "Central",
+        "sub_location": "CBD",
+        "address": "909 17th Street",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat 4  - 6 . Bar/Lounge Only."
+        ],
+        "website": "https://panzano-denver.com/menu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "guard-and-grace": {
+        "name": "Guard and Grace",
+        "slug": "guard-and-grace",
+        "area": "Central",
+        "sub_location": "CBD",
+        "address": "1801 California St",
+        "cuisine": "Steakhouse",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3  - 6 . Bar, Lounge, Patio only."
+        ],
+        "website": "https://www.guardandgrace.com/denver-menu",
+        "special_notes": []
+      },
+      "corinne-denver": {
+        "name": "Corinne Denver",
+        "slug": "corinne-denver",
+        "area": "Central",
+        "sub_location": "CBD",
+        "address": "1455 California St, Denver, CO 80202",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Sun. Mon, Tue, Wed, Thu, Fri, Sat 2p - 5p"
+        ],
+        "website": "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver",
+        "special_notes": []
+      },
+      "olive-finch": {
+        "name": "Olive & Finch",
+        "slug": "olive-finch",
+        "area": "Central",
+        "sub_location": "City Park West",
+        "address": "1552 E 17th Ave",
+        "cuisine": "Global",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 5"
+        ],
+        "website": "https://www.oliveandfinch.com/location/olive-finch-uptown/#happy-hour-uptown",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "white-pie": {
+        "name": "White Pie",
+        "slug": "white-pie",
+        "area": "Central",
+        "sub_location": "City Park West",
+        "address": "1702 N Humboldt St",
+        "cuisine": "Pizza",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu",
+        "special_notes": []
+      },
+      "fire-lounge": {
+        "name": "Fire Lounge",
+        "slug": "fire-lounge",
+        "area": "Central",
+        "sub_location": "Civic Center",
+        "address": null,
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3  - 6"
+        ],
+        "website": "https://www.thearthotel.com/dine-drink/fire",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "city-o-city": {
+        "name": "City O’ City",
+        "slug": "city-o-city",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "206 E 13th Ave, Denver, CO 80203",
+        "cuisine": "Vegetarian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3  - 6 , 9  - Close"
+        ],
+        "website": "https://www.cityocitydenver.com/happyhour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "bang-up-to-the-elephant": {
+        "name": "Bang Up to the Elephant",
+        "slug": "bang-up-to-the-elephant",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "1310 N. Pearl St",
+        "cuisine": "Beach / Tropical",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6"
+        ],
+        "website": "https://banguptotheelephant.restaurant/menus/specials/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "wild-taco": {
+        "name": "Wild taco",
+        "slug": "wild-taco",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "215 E 7th Ave",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon All Day & Tue, Wed, Thur, Fri 3  - 6"
+        ],
+        "website": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-food-menu",
+        "special_notes": []
+      },
+      "100-de-agave": {
+        "name": "100% de Agave",
+        "slug": "100-de-agave",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "975 Lincoln St",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2  - 6"
+        ],
+        "website": "https://100deagave.com/happy-hour/",
+        "special_notes": []
+      },
+      "9th-door": {
+        "name": "9th Door",
+        "slug": "9th-door",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "925 Lincoln St, Suite C",
+        "cuisine": "Tapas",
+        "happy_hour_times": [
+          "Tue All Day (no drink specials) | Wed, Thu, Fri 4  - 6"
+        ],
+        "website": "http://9thdoorcapitolhill.com/happyhour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "vesper-lounge": {
+        "name": "Vesper Lounge",
+        "slug": "vesper-lounge",
+        "area": "Central",
+        "sub_location": "Capitol Hill",
+        "address": "233 E 7th Ave",
+        "cuisine": "Mediterranean",
+        "happy_hour_times": [
+          "Mon All Day & Tue, Wed, Thu, Fri 4  - 6  & Sat, Sun 2  - 4"
+        ],
+        "website": "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA",
+        "special_notes": []
+      },
+      "watercourse-foods": {
+        "name": "Watercourse Foods",
+        "slug": "watercourse-foods",
+        "area": "Central",
+        "sub_location": "North Capitol Hill",
+        "address": "837 E 17th Ave, Denver, CO 80218",
+        "cuisine": "Vegetarian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 11 am - 12 , 3  - 6"
+        ],
+        "website": "https://www.watercoursefoods.com/happyhour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "ace-eat-serve": {
+        "name": "Ace Eat Serve",
+        "slug": "ace-eat-serve",
+        "area": "Central",
+        "sub_location": "North Capitol Hill",
+        "address": "501 E 17th Avenue",
+        "cuisine": "Asian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri Open - 6p | Sat, Sun 3p  - 6p"
+        ],
+        "website": "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525",
+        "special_notes": []
+      },
+      "xiquita-restaurante-y-bar": {
+        "name": "Xiquita Restaurante y Bar",
+        "slug": "xiquita-restaurante-y-bar",
+        "area": "Central",
+        "sub_location": "North Capitol Hill",
+        "address": "500 E 19th Ave",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri 3  - 5"
+        ],
+        "website": "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu",
+        "special_notes": []
+      },
+      "go-fish-sushi": {
+        "name": "Go Fish Sushi",
+        "slug": "go-fish-sushi",
+        "area": "Central",
+        "sub_location": "Baker",
+        "address": null,
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat 2  - 6 | Fri, Sat 10  - 12:30 am"
+        ],
+        "website": "https://gofishsushi.com/denver-happy-hour-menu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "punchbowl-social": {
+        "name": "Punchbowl Social",
+        "slug": "punchbowl-social",
+        "area": "Central",
+        "sub_location": "Baker",
+        "address": null,
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4 - 6"
+        ],
+        "website": "https://punchbowlsocial.com/location/denver/",
+        "special_notes": []
+      },
+      "rocky-yama-sushi": {
+        "name": "Rocky Yama Sushi",
+        "slug": "rocky-yama-sushi",
+        "area": "Central",
+        "sub_location": "Lincoln Park",
+        "address": null,
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat, Sun 3  - 6 . No HH on first Fri or Holiday."
+        ],
+        "website": "https://www.rockyyamasushi.com/happyhour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "adrift": {
+        "name": "Adrift",
+        "slug": "adrift",
+        "area": "Central",
+        "sub_location": "Speer",
+        "address": null,
+        "cuisine": "Tiki",
+        "happy_hour_times": [
+          "Tue All Day & Wed, Thu 5 - 7 | Fri 4  - 6"
+        ],
+        "website": "https://www.adriftbar.com/menus/happy-hour-menu/",
+        "special_notes": []
+      },
+      "angelos-taverna": {
+        "name": "Angelo's Taverna",
+        "slug": "angelos-taverna",
+        "area": "Central",
+        "sub_location": "Speer",
+        "address": "620 E 6th Ave",
+        "cuisine": "Italian",
+        "happy_hour_times": [],
+        "website": "https://angelosdenver.com/denver-angelo-s-taverna-denver-food-menu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "la-forêt": {
+        "name": "La Forêt",
+        "slug": "la-forêt",
+        "area": "Central",
+        "sub_location": "Speer",
+        "address": null,
+        "cuisine": "French",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat 4 - 5"
+        ],
+        "website": "https://www.laforetdenver.com/menus",
+        "special_notes": []
+      },
+      "ronin-congress-park": {
+        "name": "Ronin Congress Park",
+        "slug": "ronin-congress-park",
+        "area": "Central",
+        "sub_location": "Congress Park",
+        "address": "1160 Madison St",
+        "cuisine": "Japanese",
+        "happy_hour_times": [
+          "Tue All Day | Wed, Thu, Fri, Sat, Sun 5  - 6:30 . Bar & Patio only except Tue"
+        ],
+        "website": "https://ronincongresspark.com/menu/",
+        "special_notes": []
+      },
+      "shells-and-sauce": {
+        "name": "Shells and Sauce",
+        "slug": "shells-and-sauce",
+        "area": "Central",
+        "sub_location": "Congress Park",
+        "address": "2600 E 12th Ave",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat - 3:30  - 5  (days of week not verified on website)"
+        ],
+        "website": "https://www.shellsandsauce.net/menus/#happy-hour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "bar-max": {
+        "name": "Bar Max",
+        "slug": "bar-max",
+        "area": "Central",
+        "sub_location": "Congress Park",
+        "address": "2412 E Colfax Ave",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4 - 7"
+        ],
+        "website": "https://barmax.co/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "sap-sua": {
+        "name": "Sap Sua",
+        "slug": "sap-sua",
+        "area": "Central",
+        "sub_location": "Congress Park",
+        "address": "2550 E Colfax Ave",
+        "cuisine": "Vietnamese",
+        "happy_hour_times": [
+          "Wed, Thu, Fri, Sat, Sun, Mon 4:30 - 6"
+        ],
+        "website": "https://www.sapsua.com/menus/",
+        "special_notes": []
+      }
+    },
+    "North Denver": {
+      "painted-rino-kitchen-bar": {
+        "name": "Painted RiNo Kitchen \\+ Bar",
+        "slug": "painted-rino-kitchen-bar",
+        "area": "North Denver",
+        "sub_location": "RiNo / Five Points",
+        "address": null,
+        "cuisine": "Colorado",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
+        ],
+        "website": "https://www.cambriadenverrino.com/dining/menus",
+        "special_notes": []
+      },
+      "dio-mio": {
+        "name": "Dio Mio",
+        "slug": "dio-mio",
+        "area": "North Denver",
+        "sub_location": "Curtis Park / Five Points",
+        "address": "3264 Larimer St",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu 4 - 6"
+        ],
+        "website": "https://www.diomiopasta.com/menus",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "sushi-rama": {
+        "name": "Sushi Rama",
+        "slug": "sushi-rama",
+        "area": "North Denver",
+        "sub_location": "RiNo / Ballpark / Five Points",
+        "address": "2615 Larimer St",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3  - 4"
+        ],
+        "website": "https://sushi-rama.com/sushi-happy-hour-denver/",
+        "special_notes": []
+      },
+      "temaki-den": {
+        "name": "Temaki Den",
+        "slug": "temaki-den",
+        "area": "North Denver",
+        "sub_location": "RiNo / Five Points",
+        "address": "3350 Brighton Blvd Unit 100, Denver",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu 4:30  - 6"
+        ],
+        "website": "https://www.temakiden.com/menu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "uchi": {
+        "name": "Uchi",
+        "slug": "uchi",
+        "area": "North Denver",
+        "sub_location": "Curtis / Ballpark / Five Points",
+        "address": "2500 lawrence st",
+        "cuisine": "Japanese",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4  - 6"
+        ],
+        "website": "https://uchi.uchirestaurants.com/location/denver/menu/",
+        "special_notes": []
+      },
+      "work-class": {
+        "name": "Work & Class",
+        "slug": "work-class",
+        "area": "North Denver",
+        "sub_location": "Curtis / Ballpark / Five Points",
+        "address": "2500 Larimer St, Suite 101",
+        "cuisine": "American / Latin",
+        "happy_hour_times": [
+          "Wed, Thu, Fri, Sat, Sun 5  - 6"
+        ],
+        "website": "https://workandclassdenver.com/menus.html",
+        "special_notes": []
+      },
+      "welton-room": {
+        "name": "Welton Room",
+        "slug": "welton-room",
+        "area": "North Denver",
+        "sub_location": "Five Points",
+        "address": "2590 Welton Street",
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon, Wed, Thu 5 - 7"
+        ],
+        "website": "https://weltonroom.com/denver-welton-room-welton-room-dining",
+        "special_notes": []
+      },
+      "point-easy-denver": {
+        "name": "Point Easy Denver",
+        "slug": "point-easy-denver",
+        "area": "North Denver",
+        "sub_location": "Whittier",
+        "address": "2000 E 28th Ave",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Wed, Thu, Fri, Sat 5 - 6 & Sun All Day"
+        ],
+        "website": "https://pointeasydenver.com/menus/",
+        "special_notes": []
+      }
+    },
+    "Northeast Denver": {
+      "bistro-vendome": {
+        "name": "Bistro Vendome",
+        "slug": "bistro-vendome",
+        "area": "Northeast Denver",
+        "sub_location": "Park Hill",
+        "address": "2267 Kearney Street in Park Hill",
+        "cuisine": "French",
+        "happy_hour_times": [
+          "Sun, Mon, Tue, Wed, Thu, Fri, Sat 4 - 6",
+          "Mon Movie Nights 6  - movie screening with a four course prix fixe Menu - $65"
+        ],
+        "website": "https://bistrovendome.com/events/",
+        "special_notes": []
+      },
+      "lucina-eatery-bar": {
+        "name": "Lucina Eatery & Bar",
+        "slug": "lucina-eatery-bar",
+        "area": "Northeast Denver",
+        "sub_location": "South Park Hill",
+        "address": "2245 Kearney St \\#101",
+        "cuisine": "Latin / Spanish",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri 3  - 5"
+        ],
+        "website": "https://lucinaeatery.co/denver-park-hill-lucina-eatery-and-bar-food-menu",
+        "special_notes": []
+      }
+    },
+    "East & Southeast Denver": {
+      "blue-island-oyster-bar": {
+        "name": "Blue Island Oyster Bar",
+        "slug": "blue-island-oyster-bar",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "2625 E 2nd Ave",
+        "cuisine": "Seafood",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat 2  - 6  & Sun Open - 6",
+          "Fri, Sat 9 - 11 - 99¢ oysters",
+          "Mon 11am - 9 - $1.25 oysters"
+        ],
+        "website": "https://www.blueislandoysterbar.com/specials",
+        "special_notes": []
+      },
+      "salt-water-social": {
+        "name": "Salt Water Social",
+        "slug": "salt-water-social",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "201 Columbine St, Denver, CO 80206",
+        "cuisine": "Seafood",
+        "happy_hour_times": [
+          "Sun, Mon, Tue, Wed, Thu, Fri 2:30p  - 6:30p"
+        ],
+        "website": "https://saltwatersocial.com/menu/?menu-choice=happy-hour%20",
+        "special_notes": []
+      },
+      "hapa-sushi": {
+        "name": "Hapa Sushi",
+        "slug": "hapa-sushi",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "3030 East 2nd Ave. Suite 105",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2 - 5:30 & Fri, Sat 10 - 12am"
+        ],
+        "website": "https://hapasushi.com/pages/cherry-creek",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "north-italia": {
+        "name": "North Italia",
+        "slug": "north-italia",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": null,
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 - 6\\. At the Bar."
+        ],
+        "website": "https://www.northitalia.com/locations/denver-co-cherry-creek-shopping-center/menus/happy-hour-menu/",
+        "special_notes": []
+      },
+      "sol-mexican-cocina": {
+        "name": "Sol Mexican Cocina",
+        "slug": "sol-mexican-cocina",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "200 Columbine St 110",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://solcocina.com/solde-menus/",
+        "special_notes": []
+      },
+      "toro": {
+        "name": "TORO",
+        "slug": "toro",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "150 Clayton Lane, Ste B",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat 3 - 5",
+          "Sat, Sun - Bottomless brunch 10:30 am - 2  - $50"
+        ],
+        "website": "https://www.torodenver.com/menus/#brunch",
+        "special_notes": []
+      },
+      "olive-finch": {
+        "name": "Olive & Finch",
+        "slug": "olive-finch",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "1552 E 17th Ave",
+        "cuisine": "Global",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 5"
+        ],
+        "website": "https://www.oliveandfinch.com/location/olive-finch-cherry-creek/#happy-hour-cherry-creek",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "little-ollies": {
+        "name": "Little Ollie’s",
+        "slug": "little-ollies",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "2360 E 3rd Ave",
+        "cuisine": "Chinese",
+        "happy_hour_times": [
+          "Wed All Day | Thu, Fri, Sat, Sun, Mon, Tue 3 - 6"
+        ],
+        "website": "https://littleollies.com/menu/",
+        "special_notes": []
+      },
+      "local-jones": {
+        "name": "Local Jones",
+        "slug": "local-jones",
+        "area": "East & Southeast Denver",
+        "sub_location": "Cherry Creek",
+        "address": "249 Columbine St",
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu 2p - 5p"
+        ],
+        "website": "https://www.halcyonhotelcherrycreek.com/local-jones/menus",
+        "special_notes": []
+      },
+      "jax-fish-house": {
+        "name": "Jax Fish House",
+        "slug": "jax-fish-house",
+        "area": "East & Southeast Denver",
+        "sub_location": "Glendale",
+        "address": "650 S Colorado Blvd",
+        "cuisine": "Seafood",
+        "happy_hour_times": [
+          "Mon All Day & Tue, Wed, Thu, Fri, Sat, Sun 3:30  - 5"
+        ],
+        "website": "https://www.jaxfishhouse.com/glendale/menus/happy-hour/",
+        "special_notes": []
+      },
+      "north-county": {
+        "name": "North County",
+        "slug": "north-county",
+        "area": "East & Southeast Denver",
+        "sub_location": "Lowry Field",
+        "address": null,
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon All Day | Night & Tue, Wed, Thu, Fri, Sat, Sun 3 - 6, 8 - Close"
+        ],
+        "website": "https://www.northcountydenver.com/specials/",
+        "special_notes": []
+      },
+      "officers-club": {
+        "name": "Officer’s Club",
+        "slug": "officers-club",
+        "area": "East & Southeast Denver",
+        "sub_location": "Lowry Field",
+        "address": "Lowry Hangar 2 Dining District, 84 Rampart Way",
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Mon 4 - Close & Tue, Wed, Thu 4 - 6 & Fri 3 - 6"
+        ],
+        "website": "https://www.officersclublowry.com/menu/hh-menu/",
+        "special_notes": []
+      },
+      "zanes-italian-bistro": {
+        "name": "Zane’s Italian Bistro",
+        "slug": "zanes-italian-bistro",
+        "area": "East & Southeast Denver",
+        "sub_location": "Hampden South",
+        "address": "3535 S Yosemite St",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6pm"
+        ],
+        "website": "https://www.zanesbistro.com/happy-hours",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "le-french-dtc-belleview-station": {
+        "name": "Le French DTC Belleview Station",
+        "slug": "le-french-dtc-belleview-station",
+        "area": "East & Southeast Denver",
+        "sub_location": "Southmoor Park",
+        "address": "4901 S Newport St",
+        "cuisine": "French",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat 2:30p  - 5p"
+        ],
+        "website": "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus/#happy-hour",
+        "special_notes": []
+      },
+      "ambli-global-at-bellview-station": {
+        "name": "Ambli Global at Bellview Station",
+        "slug": "ambli-global-at-bellview-station",
+        "area": "East & Southeast Denver",
+        "sub_location": "Southmoor Park",
+        "address": "6799 E Belleview Ave",
+        "cuisine": "Global",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3p - 6p | Sat 5p - 6p",
+          "Tue - Tapas Tuesday"
+        ],
+        "website": "https://www.amblidenver.com/ambliglobalatbelleviewstation",
+        "special_notes": []
+      }
+    },
+    "South": {
+      "max-gill-grill": {
+        "name": "Max Gill & Grill",
+        "slug": "max-gill-grill",
+        "area": "South",
+        "sub_location": "Washington Park",
+        "address": "1052 S Gaylord St",
+        "cuisine": "Beach",
+        "happy_hour_times": [
+          "Fri, Sat, Sun, Mon, Tue, Wed 3 - 6 & Thu All Day & Tiki Bar Tue"
+        ],
+        "website": "https://maxgillandgrill.com/denver-max-gill-and-grill-happy-hours-specials",
+        "special_notes": []
+      },
+      "reivers-bar-grill": {
+        "name": "Reiver’s Bar & Grill",
+        "slug": "reivers-bar-grill",
+        "area": "South",
+        "sub_location": "Washington Park",
+        "address": "1085 S. Gaylord Street",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.reiversbarandgrill.com/menu#menu=happy-hour",
+        "special_notes": []
+      },
+      "blackbird-public-house": {
+        "name": "Blackbird Public House",
+        "slug": "blackbird-public-house",
+        "area": "South",
+        "sub_location": "Washington Park West",
+        "address": "305 S Downing St",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon All Day & Tue, Wed, Thu, Fri, Sat, Sun 3 - 6, 9 - close"
+        ],
+        "website": "https://www.blackbirdpublichouse.com/happy-hour-menu",
+        "special_notes": []
+      },
+      "joy-hill": {
+        "name": "Joy Hill",
+        "slug": "joy-hill",
+        "area": "South",
+        "sub_location": "Platt Park",
+        "address": null,
+        "cuisine": "Pizza",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
+        ],
+        "website": "https://www.joyhilldenver.com/happy-hour-menu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "que-bueno-suerte": {
+        "name": "Que Bueno Suerte",
+        "slug": "que-bueno-suerte",
+        "area": "South",
+        "sub_location": "Platt Park",
+        "address": "1518 S Pearl St.",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://www.quebuenosuerte.com/thefood",
+        "special_notes": []
+      },
+      "jacks-on-pearl---upstairs": {
+        "name": "Jack’s on Pearl \\- Upstairs",
+        "slug": "jacks-on-pearl---upstairs",
+        "area": "South",
+        "sub_location": "Platt Park",
+        "address": "1475 S Pearl St",
+        "cuisine": "American",
+        "happy_hour_times": [
+          "Tues, Wed, Thu, Fri, Sat, Sun 4 – 5:30"
+        ],
+        "website": "https://jacksonpearldenver.com/menus/",
+        "special_notes": []
+      },
+      "ototo": {
+        "name": "OTOTO",
+        "slug": "ototo",
+        "area": "South",
+        "sub_location": "Platt Park",
+        "address": "1501 S Pearl St",
+        "cuisine": "Japanese",
+        "happy_hour_times": [
+          "Wed, Thu, Fri, Sat, Sun 4:30 - 6:00"
+        ],
+        "website": "https://ototoden.com/our-menu/",
+        "special_notes": []
+      }
+    },
+    "West & Southwest Denver": {
+      "briar-common-brewery-eatery": {
+        "name": "Briar Common Brewery \\+ Eatery",
+        "slug": "briar-common-brewery-eatery",
+        "area": "West & Southwest Denver",
+        "sub_location": "Jefferson Park",
+        "address": "2298 Clay St, Denver, CO 80211",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Tue All Day | Mon, Wed, Thu, Fri 3p - 6p.  \\*Not available during stadium events"
+        ],
+        "website": "https://www.briarcommon.com/happyhour",
+        "special_notes": []
+      }
+    },
+    "Northwest Denver": {
+      "wild-taco": {
+        "name": "Wild taco",
+        "slug": "wild-taco",
+        "area": "Northwest Denver",
+        "sub_location": "Berkeley",
+        "address": "4499 W 38th Ave",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon All Day & Tue, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
+        "special_notes": []
+      },
+      "ginger-pig": {
+        "name": "Ginger Pig",
+        "slug": "ginger-pig",
+        "area": "Northwest Denver",
+        "sub_location": "Berkeley",
+        "address": "4262 Lowell Blvd",
+        "cuisine": "Asian",
+        "happy_hour_times": [],
+        "website": "https://www.gingerpig.com/denver-menus?menu=happy-hour",
+        "special_notes": []
+      },
+      "vital-root": {
+        "name": "Vital Root",
+        "slug": "vital-root",
+        "area": "Northwest Denver",
+        "sub_location": "Berkeley",
+        "address": "3915 Tennyson St",
+        "cuisine": "Plant-Based",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thur, Fri 3  - 5"
+        ],
+        "website": "https://www.ediblebeats.com/vital-root",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "el-five": {
+        "name": "El Five",
+        "slug": "el-five",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2930 Umatilla St Unit \\#500, Denver, CO 80211",
+        "cuisine": "Mediterranean",
+        "happy_hour_times": [],
+        "website": "https://ediblebeats.com/restaurants/el-five/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "kumoya---denver": {
+        "name": "Kumoya \\- Denver",
+        "slug": "kumoya---denver",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2400 W 32nd Ave, Denver, CO 80211",
+        "cuisine": "Japanese",
+        "happy_hour_times": [
+          "Sun, Mon, Tue, Wed, Thu 5p - 7p"
+        ],
+        "website": "https://www.kumoyadenver.com/happy-hour",
+        "special_notes": []
+      },
+      "alma-fonda-fina": {
+        "name": "Alma Fonda Fina",
+        "slug": "alma-fonda-fina",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2556 15th St, Denver, CO 80211",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 2p - 5p"
+        ],
+        "website": "https://www.almalohidenver.com/faqs",
+        "special_notes": []
+      },
+      "the-bindery": {
+        "name": "The Bindery",
+        "slug": "the-bindery",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "1817 Central St",
+        "cuisine": "Global",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri, Sat 3 - 5"
+        ],
+        "website": "https://thebinderydenver.com/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "bamboo-sushi": {
+        "name": "Bamboo Sushi",
+        "slug": "bamboo-sushi",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2715 17th St",
+        "cuisine": "Sushi",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4  - 6  & Sat, Sun 12  - 4"
+        ],
+        "website": "https://bamboosushi.com/location/lohi/happy-hour",
+        "special_notes": []
+      },
+      "bar-dough": {
+        "name": "Bar Dough",
+        "slug": "bar-dough",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2227 W 32nd Ave",
+        "cuisine": "Italian",
+        "happy_hour_times": [],
+        "website": "https://www.bardoughdenver.com/menu#menu=apertivo-hour-ordering",
+        "special_notes": []
+      },
+      "my-neighbor-felix": {
+        "name": "My Neighbor Felix",
+        "slug": "my-neighbor-felix",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "1801 Central St",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://www.myneighborfelix.com/location-lohi#menu=happy-hour",
+        "special_notes": []
+      },
+      "root-down": {
+        "name": "Root Down",
+        "slug": "root-down",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "1600 W 33rd Ave",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4:30  - 6"
+        ],
+        "website": "https://www.ediblebeats.com/root-down",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "gaetanos-eccellente-cucina-cocktails": {
+        "name": "Gaetano’s Eccellente Cucina & Cocktails",
+        "slug": "gaetanos-eccellente-cucina-cocktails",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "3760 Tejon St",
+        "cuisine": "Italian",
+        "happy_hour_times": [
+          "Mon 4:30 - 6 & Tue, Wed, Thu, Fri 3 - 6"
+        ],
+        "website": "https://gaetanositalian.com/cocktails/",
+        "special_notes": []
+      },
+      "linger": {
+        "name": "Linger",
+        "slug": "linger",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2030 W 30th Ave",
+        "cuisine": "Global",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 4  - 6 . Rooftop only."
+        ],
+        "website": "https://www.ediblebeats.com/linger",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "kawa-ni": {
+        "name": "Kawa Ni",
+        "slug": "kawa-ni",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "1900 W 32nd Ave, Denver, CO 80211",
+        "cuisine": "Japanese",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri 4p - 5p"
+        ],
+        "website": "https://www.kawanidenver.com/#menu",
+        "special_notes": []
+      },
+      "ashkara": {
+        "name": "Ash'Kara",
+        "slug": "ashkara",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2005 W 33rd Ave",
+        "cuisine": "Mediterranean",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 5"
+        ],
+        "website": "https://www.ashkaradenver.com/menu#menu=happy-hour",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "senor-bear": {
+        "name": "Senor Bear",
+        "slug": "senor-bear",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "3301 Tejon St",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 6 at the Bar & 3 - 5 at Tables"
+        ],
+        "website": "https://www.senorbeardenver.com/menu#menu=happy-hour",
+        "special_notes": []
+      },
+      "american-elm": {
+        "name": "American Elm",
+        "slug": "american-elm",
+        "area": "Northwest Denver",
+        "sub_location": "West Highland",
+        "address": "4132 W 38th Ave",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Sun All Day | Mon, Tue, Wed, Thu, Fri Open - 6"
+        ],
+        "website": "https://www.amelm.com/happyhour",
+        "special_notes": []
+      },
+      "tacos-tequila-whiskey": {
+        "name": "Tacos Tequila Whiskey",
+        "slug": "tacos-tequila-whiskey",
+        "area": "Northwest Denver",
+        "sub_location": "West Highland",
+        "address": "3300 W 32nd Ave",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon All Day | Tue, Wed, Thu, Fri, Sat, Sun 4  - 6"
+        ],
+        "website": "https://www.tacostequilawhiskey.com/dine-in-menu/#happy_hour",
+        "special_notes": []
+      },
+      "glo-noodle-house": {
+        "name": "Glo Noodle House",
+        "slug": "glo-noodle-house",
+        "area": "Northwest Denver",
+        "sub_location": "West Highland",
+        "address": "4450 W 38th Ave. Suite \\#130",
+        "cuisine": "Asian",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat 4 - 6"
+        ],
+        "website": "https://glonoodlehouse.com/menu",
+        "special_notes": []
+      },
+      "bartaco": {
+        "name": "BarTaco",
+        "slug": "bartaco",
+        "area": "Northwest Denver",
+        "sub_location": "Highland",
+        "address": "2001 w 32nd avenue",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri 3 – 6 | Mon, Tue, Wed, Thu 9:30 - Close. At the Bar."
+        ],
+        "website": "https://bartaco.com/lohihightidehour/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "necio-mexican-kitchen": {
+        "name": "Necio Mexican Kitchen",
+        "slug": "necio-mexican-kitchen",
+        "area": "Northwest Denver",
+        "sub_location": "Sunnyside",
+        "address": "4001 Tejon St",
+        "cuisine": "Mexican",
+        "happy_hour_times": [
+          "Tue, Wed, Thu, Fri 3 - 5"
+        ],
+        "website": "https://neciomexicankitchen.com/denver-denver-necio-mexican-kitchen-food-menu",
+        "special_notes": []
+      }
+    },
+    "Arvada": {
+      "cochino-taco": {
+        "name": "Cochino Taco",
+        "slug": "cochino-taco",
+        "area": "Arvada",
+        "sub_location": "Arvada",
+        "address": "7702 Ralston Rd",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://cochinotaco.com/englewood-cochino-taco-food-menu",
+        "special_notes": []
+      }
+    },
+    "Aurora": {
+      "annette": {
+        "name": "Annette",
+        "slug": "annette",
+        "area": "Aurora",
+        "sub_location": "Stanley Marketplace",
+        "address": "2501 Dallas Street",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Tue All Day | Night. Wed, Thu, Fri, Sat, Sun 4:30  - 5:30"
+        ],
+        "website": "http://www.annettescratchtotable.com/patiomenu",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "boychik": {
+        "name": "Boychik",
+        "slug": "boychik",
+        "area": "Aurora",
+        "sub_location": "Stanley Marketplace",
+        "address": "2501 Dallas St",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.boychikkitchen.com/general-9-1",
+        "special_notes": []
+      }
+    },
+    "Greenwood Village, Englewood, Littleton, Centennial": {
+      "hapa-sushi": {
+        "name": "Hapa Sushi",
+        "slug": "hapa-sushi",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Greenwood Village",
+        "address": "5380 Greenwood Plaza Blvd. Suite 101",
+        "cuisine": null,
+        "happy_hour_times": [
+          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2:30  - 5:30  & Fri, Sat 10  - 12 am"
+        ],
+        "website": "https://hapasushi.com/pages/landmark-at-greenwood-village",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "jing-denver": {
+        "name": "Jing Denver",
+        "slug": "jing-denver",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Greenwood Village",
+        "address": "5370 Greenwood Plaza Blvd",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.jingrestaurant.com/denver/menu",
+        "special_notes": []
+      },
+      "pizza-republica": {
+        "name": "Pizza Republica",
+        "slug": "pizza-republica",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Greenwood Village",
+        "address": null,
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://pizzarepublica.com/menu/",
+        "special_notes": []
+      },
+      "cochino-taco": {
+        "name": "Cochino Taco",
+        "slug": "cochino-taco",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Englewood",
+        "address": "3495 S. Downing St.",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://cochinotaco.com/englewood-cochino-taco-food-menu",
+        "special_notes": []
+      },
+      "angelos-taverna": {
+        "name": "Angelo's Taverna",
+        "slug": "angelos-taverna",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Littleton",
+        "address": "6885 South Santa Fe Drive, Suite A",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      },
+      "my-neighbor-felix": {
+        "name": "My Neighbor Felix",
+        "slug": "my-neighbor-felix",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Centennial",
+        "address": "7209 S Clinton Street",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.myneighborfelix.com/location-centennial#menu=happy-hour",
+        "special_notes": []
+      },
+      "blackhaus-tavern---littleton": {
+        "name": "Black+Haus Tavern \\- Littleton",
+        "slug": "blackhaus-tavern---littleton",
+        "area": "Greenwood Village, Englewood, Littleton, Centennial",
+        "sub_location": "Littleton",
+        "address": "2439 W. Main St.",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.blackhaustavern.com/menu-littleton#menu=happy-hour-sync",
+        "special_notes": []
+      }
+    },
+    "Lakewood/Wheat Ridge/Golden": {
+      "tstreet": {
+        "name": "TStreet",
+        "slug": "tstreet",
+        "area": "Lakewood/Wheat Ridge/Golden",
+        "sub_location": "Belmar",
+        "address": "445 S Teller St, Lakewood",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://tstreetroadhouse.com/happy-hour/",
+        "special_notes": []
+      }
+    },
+    "Boulder": {
+      "jax-fish-house": {
+        "name": "Jax Fish House",
+        "slug": "jax-fish-house",
+        "area": "Boulder",
+        "sub_location": null,
+        "address": "928 Pearl St,",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder/#happy-hour",
+        "special_notes": []
+      },
+      "my-neighbor-felix": {
+        "name": "My Neighbor Felix",
+        "slug": "my-neighbor-felix",
+        "area": "Boulder",
+        "sub_location": "Taco Tue",
+        "address": "901 Pearl Street",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.myneighborfelix.com/location-boulder#menu=happy-hour",
+        "special_notes": []
+      },
+      "boulder-social": {
+        "name": "Boulder Social",
+        "slug": "boulder-social",
+        "area": "Boulder",
+        "sub_location": null,
+        "address": "1600 38th Street",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://www.besocialcolorado.com/happy-hour-bs",
+        "special_notes": []
+      },
+      "bartaco": {
+        "name": "BarTaco",
+        "slug": "bartaco",
+        "area": "Boulder",
+        "sub_location": null,
+        "address": "1048 pearl street, suite 101",
+        "cuisine": null,
+        "happy_hour_times": [],
+        "website": "https://bartaco.com/boulderhightidehour/",
+        "special_notes": [
+          "Plant-Based Options"
+        ]
+      }
+    }
+  }
+}
