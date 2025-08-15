@@ -3,7 +3,8 @@
 A simple web scraper that aggregates local restaurant happy hour deals and specials.
 
 ## Target User
-Budget-conscious but social, tech-savvy deal hunters who make spontaneous "right now" decisions about where to grab drinks and food.
+
+**The Discerning Urban Explorer** - sophisticated food and beverage enthusiasts who view happy hour as smart luxury, not budget dining. They seek expertly crafted cocktails and elevated cuisine at accessible prices, using strategic timing to discover Denver's culinary gems worth returning to at full price.
 
 ## Proof of Concept Features
 - Scrape Denver area restaurant websites for happy hour deals
