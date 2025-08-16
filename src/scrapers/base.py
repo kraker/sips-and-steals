@@ -167,7 +167,7 @@ class BaseScraper(ABC):
         return len(page_text) > 300
     
     def _fetch_single_url(self, url: str, timeout: Optional[int] = None) -> BeautifulSoup:
-        """Fetch a single URL with error handling"""
+        """Fetch a single URL with error handling and optional form interaction"""
         timeout = timeout or self.restaurant.scraping_config.timeout_seconds
         
         if not self.circuit_breaker.can_execute():
@@ -191,10 +191,70 @@ class BaseScraper(ABC):
         # Check for bot detection patterns
         self._check_bot_detection(response)
         
+        soup = BeautifulSoup(response.content, 'html.parser')
+        
+        # Try location-specific form interaction if needed
+        enhanced_soup = self._try_location_form_interaction(soup, url, timeout)
+        if enhanced_soup:
+            soup = enhanced_soup
+        
         self.circuit_breaker.on_success()
         self.failed_attempts = 0  # Reset on success
         
-        return BeautifulSoup(response.content, 'html.parser')
+        return soup
+    
+    def _try_location_form_interaction(self, soup: BeautifulSoup, url: str, timeout: int) -> Optional[BeautifulSoup]:
+        """Try to interact with location selection forms for chain restaurants"""
+        if not hasattr(self.restaurant, 'scraping_hints'):
+            return None
+            
+        hints = getattr(self.restaurant, 'scraping_hints', {})
+        location_keywords = hints.get('location_check', [])
+        
+        if not location_keywords:
+            return None
+        
+        # Look for location selection forms (like STK)
+        selects = soup.find_all('select')
+        for select in selects:
+            select_name = select.get('name', '').lower()
+            if 'location' in select_name:
+                # Find matching location option
+                options = select.find_all('option')
+                for option in options:
+                    option_text = option.get_text().strip().lower()
+                    option_value = option.get('value', '')
+                    
+                    # Check if this option matches our location keywords
+                    for keyword in location_keywords:
+                        if keyword in option_text and option_value:
+                            logger.info(f"Found location option '{option_text}' (value={option_value}) for {self.restaurant.name}")
+                            
+                            # Try form submission
+                            try:
+                                form_data = {select.get('name', 'location'): option_value}
+                                logger.info(f"Submitting location form: {form_data}")
+                                
+                                response = self.session.post(url, data=form_data, timeout=timeout)
+                                response.raise_for_status()
+                                
+                                new_soup = BeautifulSoup(response.content, 'html.parser')
+                                
+                                # Validate the new content is significantly better
+                                original_length = len(soup.get_text())
+                                new_length = len(new_soup.get_text())
+                                
+                                if new_length > original_length * 2:  # At least 2x more content
+                                    logger.info(f"Form submission successful: {original_length} → {new_length} chars")
+                                    return new_soup
+                                else:
+                                    logger.info(f"Form submission didn't improve content significantly")
+                                    
+                            except Exception as e:
+                                logger.warning(f"Form submission failed for {self.restaurant.name}: {e}")
+                                continue
+        
+        return None
 
     def fetch_page(self, url: Optional[str] = None, timeout: Optional[int] = None) -> BeautifulSoup:
         """Fetch and parse a webpage with multiple URL support and validation"""
@@ -342,6 +402,9 @@ class BaseScraper(ABC):
         # Look for time patterns
         deals.extend(self._parse_time_patterns(soup))
         
+        # Apply custom parsing configurations if available
+        deals.extend(self._parse_with_custom_config(soup))
+        
         return deals
     
     def _parse_json_ld(self, soup: BeautifulSoup) -> List[Deal]:
@@ -366,6 +429,8 @@ class BaseScraper(ABC):
         
         # Enhanced patterns to capture scheduling details
         enhanced_patterns = [
+            # Pattern: "$3 $6 $9 Happy Hour" - multiple prices with happy hour (STK style)
+            r'(\$\d+(?:\s+\$\d+)*)\s+happy\s+hour',
             # Pattern: "3-6pm every day" or "available 3-6pm every day"
             r'(?:available\s+)?(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day',
             # Pattern: "9pm-close thurs-sat" or "9pm - close thu-sat"
@@ -420,6 +485,20 @@ class BaseScraper(ABC):
         days_of_week = []
         is_all_day = False
         title = "Happy Hour"
+        
+        # Handle "$3 $6 $9 Happy Hour" style patterns (STK format)
+        price_pattern_match = re.search(r'(\$\d+(?:\s+\$\d+)*)\s+happy\s+hour', deal_text_lower)
+        if price_pattern_match:
+            prices = price_pattern_match.group(1)
+            return Deal(
+                title="Happy Hour",
+                description=f"Happy hour with items at {prices} pricing",
+                deal_type=DealType.HAPPY_HOUR,
+                price=prices,
+                is_all_day=False,  # Don't assume all-day without timing info
+                confidence_score=0.6,  # Lower confidence since we don't have timing details
+                source_url=getattr(self.restaurant, 'website', None)
+            )
         
         # Pattern: "3-6pm every day" or "available 3-6pm every day"
         time_range_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day', deal_text_lower)
@@ -656,6 +735,112 @@ class BaseScraper(ABC):
             
             elapsed = (datetime.now() - self.start_time).total_seconds()
             logger.info(f"Scraping completed for {self.restaurant.name} in {elapsed:.2f}s")
+    
+    def _parse_with_custom_config(self, soup: BeautifulSoup) -> List[Deal]:
+        """Parse content using custom configuration settings"""
+        deals = []
+        config = self.restaurant.scraping_config
+        
+        # Return early if no custom config
+        if not any([config.custom_selectors, config.time_pattern_regex, 
+                   config.day_pattern_regex, config.content_containers]):
+            return deals
+        
+        # Focus on specific content containers if specified
+        target_soup = soup
+        if config.content_containers:
+            target_soup = BeautifulSoup("", "html.parser")
+            for container_selector in config.content_containers:
+                containers = soup.select(container_selector)
+                for container in containers:
+                    target_soup.append(container)
+        
+        # Extract content using custom selectors
+        content_text = ""
+        if config.custom_selectors:
+            for selector_name, selector in config.custom_selectors.items():
+                elements = target_soup.select(selector)
+                for element in elements:
+                    content_text += f" {element.get_text()} "
+        else:
+            content_text = target_soup.get_text()
+        
+        # Apply exclude patterns
+        for exclude_pattern in config.exclude_patterns:
+            content_text = re.sub(exclude_pattern, "", content_text, flags=re.IGNORECASE)
+        
+        # Extract using custom regex patterns
+        deals.extend(self._extract_with_custom_patterns(content_text, config))
+        
+        return deals
+    
+    def _extract_with_custom_patterns(self, text: str, config) -> List[Deal]:
+        """Extract deals using custom regex patterns"""
+        deals = []
+        
+        # Extract times and days using custom patterns
+        times = []
+        days = []
+        
+        if config.time_pattern_regex:
+            time_matches = re.finditer(config.time_pattern_regex, text, re.IGNORECASE)
+            for match in time_matches:
+                times.extend([g for g in match.groups() if g])
+        
+        if config.day_pattern_regex:
+            day_matches = re.finditer(config.day_pattern_regex, text, re.IGNORECASE)
+            for match in day_matches:
+                days.extend([g for g in match.groups() if g])
+        
+        # Create deal if we found time and/or day information
+        if times or days:
+            description_parts = []
+            if times:
+                description_parts.append(f"Times: {', '.join(times)}")
+            if days:
+                description_parts.append(f"Days: {', '.join(days)}")
+            
+            # Extract start and end times (format them properly)
+            start_time = None
+            end_time = None
+            if len(times) >= 4:  # We expect 4 groups: hour1, am/pm1, hour2, am/pm2
+                start_time = f"{times[0]} {times[1].upper()}"
+                end_time = f"{times[2]} {times[3].upper()}"
+            elif len(times) >= 2:
+                start_time = times[0]
+                end_time = times[1]
+            
+            # Convert day strings to DayOfWeek enums
+            day_enums = []
+            if days:
+                for day in days:
+                    day_lower = day.lower().strip()
+                    # Map day names to enums
+                    day_mapping = {
+                        'monday': DayOfWeek.MONDAY,
+                        'tuesday': DayOfWeek.TUESDAY, 
+                        'wednesday': DayOfWeek.WEDNESDAY,
+                        'thursday': DayOfWeek.THURSDAY,
+                        'friday': DayOfWeek.FRIDAY,
+                        'saturday': DayOfWeek.SATURDAY,
+                        'sunday': DayOfWeek.SUNDAY
+                    }
+                    if day_lower in day_mapping:
+                        day_enums.append(day_mapping[day_lower])
+            
+            deal = Deal(
+                title="Happy Hour",
+                description=" | ".join(description_parts),
+                deal_type=DealType.HAPPY_HOUR,
+                days_of_week=day_enums,
+                start_time=start_time,
+                end_time=end_time,
+                confidence_score=0.8,  # Higher confidence for custom patterns
+                source_url=None
+            )
+            deals.append(deal)
+        
+        return deals
 
 
 # Utility functions for common parsing tasks

@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "adrift",
+  "archived_at": "2025-08-16T15:41:01.108841",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "9:30 pm – last call\n\nallergy note:\nplease note that we use various fruits, nuts, and other flavors. ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:40:58.650055",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

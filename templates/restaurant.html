@@ -2,216 +2,11 @@
 
 {% block title %}{{ restaurant.name }} - Sips and Steals{% endblock %}
 
-{% block extra_head %}
-<style>
-    .restaurant-header {
-        text-align: center;
-        padding: 2rem 0;
-        border-bottom: 1px solid var(--pico-muted-border-color);
-        margin-bottom: 2rem;
-    }
-    
-    .restaurant-header h1 {
-        margin-bottom: 0.5rem;
-        color: var(--pico-color);
-    }
-    
-    .restaurant-header .meta {
-        color: var(--pico-muted-color);
-        font-size: 1.1rem;
-    }
-    
-    .data-status {
-        display: inline-block;
-        padding: 0.25rem 0.5rem;
-        border-radius: var(--pico-border-radius);
-        font-size: 0.8rem;
-        margin-left: 0.5rem;
-    }
-    
-    .data-status.live {
-        background: #10b981;
-        color: white;
-    }
-    
-    .data-status.static {
-        background: #6b7280;
-        color: white;
-    }
-    
-    .live-deals-section {
-        background: linear-gradient(135deg, var(--pico-primary), #0ea5e9);
-        color: white;
-        padding: 1.5rem;
-        border-radius: var(--pico-border-radius);
-        margin-bottom: 2rem;
-    }
-    
-    .live-deals-section h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: white;
-    }
-    
-    .deal-card {
-        background: rgba(255, 255, 255, 0.1);
-        padding: 1rem;
-        border-radius: var(--pico-border-radius);
-        margin-bottom: 1rem;
-        border-left: 4px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .deal-card:last-child {
-        margin-bottom: 0;
-    }
-    
-    .deal-header {
-        display: flex;
-        justify-content: between;
-        align-items: flex-start;
-        margin-bottom: 0.5rem;
-    }
-    
-    .deal-title {
-        font-weight: 600;
-        font-size: 1.1rem;
-        margin: 0;
-        flex: 1;
-    }
-    
-    .confidence-badge {
-        font-size: 0.8rem;
-        margin-left: 0.5rem;
-    }
-    
-    .deal-meta {
-        display: grid;
-        gap: 0.25rem;
-        font-size: 0.9rem;
-        opacity: 0.9;
-    }
-    
-    .deal-description {
-        margin-top: 0.5rem;
-        font-size: 0.9rem;
-        opacity: 0.9;
-    }
-    
-    .static-deals-section {
-        background: var(--pico-code-background-color);
-        padding: 1.5rem;
-        border-radius: var(--pico-border-radius);
-        margin-bottom: 2rem;
-    }
-    
-    .restaurant-details {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-        margin-bottom: 2rem;
-    }
-    
-    .detail-section {
-        background: var(--pico-code-background-color);
-        padding: 1.5rem;
-        border-radius: var(--pico-border-radius);
-    }
-    
-    .detail-section h3 {
-        margin-top: 0;
-        margin-bottom: 1rem;
-        color: var(--pico-primary);
-    }
-    
-    .info-grid {
-        display: grid;
-        gap: 0.75rem;
-    }
-    
-    .info-item {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 0.5rem;
-        align-items: start;
-    }
-    
-    .info-label {
-        font-weight: 600;
-        color: var(--pico-muted-color);
-        min-width: 100px;
-    }
-    
-    .info-value {
-        color: var(--pico-color);
-    }
-    
-    .scraping-status {
-        font-size: 0.8rem;
-        padding: 0.25rem 0.5rem;
-        border-radius: var(--pico-border-radius);
-        display: inline-block;
-    }
-    
-    .scraping-status.enabled {
-        background: #10b981;
-        color: white;
-    }
-    
-    .scraping-status.disabled {
-        background: #ef4444;
-        color: white;
-    }
-    
-    .scraping-status.issues {
-        background: #f59e0b;
-        color: white;
-    }
-    
-    .actions {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 1rem;
-        margin-bottom: 2rem;
-    }
-    
-    .back-link {
-        text-align: center;
-        margin-bottom: 2rem;
-    }
-    
-    .last-updated {
-        font-size: 0.8rem;
-        color: var(--pico-muted-color);
-        text-align: center;
-        margin-top: 1rem;
-    }
-    
-    @media (max-width: 768px) {
-        .restaurant-details {
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        
-        .actions {
-            grid-template-columns: 1fr;
-        }
-        
-        .detail-section {
-            padding: 1rem;
-        }
-        
-        .deal-header {
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        .confidence-badge {
-            margin-left: 0;
-            margin-top: 0.25rem;
-        }
-    }
-</style>
-{% endblock %}
+{% block css_path %}../assets/css/main.css{% endblock %}
+
+{% block body_attrs %} data-page="restaurant"{% endblock %}
+
+{% block extra_head %}{% endblock %}
 
 {% block content %}
     <!-- Back Navigation -->
@@ -231,8 +26,8 @@
     <!-- Live Deals Section -->
     {% if restaurant.live_deals %}
     <section class="live-deals-section">
-        <h3>🔥 Current Deals & Specials</h3>
-        <p style="margin-bottom: 1rem; opacity: 0.9; font-size: 0.9rem;">
+        <h3>Current Deals & Specials</h3>
+        <p class="live-deals-description">
             Fresh data from {{ restaurant.name }}'s website
             {% if restaurant.last_updated %}• Updated {{ restaurant.last_updated | time_since }}{% endif %}
         </p>
@@ -271,8 +66,8 @@
         {% endfor %}
         
         {% if restaurant.scraping_info and restaurant.scraping_info.source_url %}
-        <p style="font-size: 0.8rem; opacity: 0.8; margin-top: 1rem;">
-            <a href="{{ restaurant.scraping_info.source_url }}" target="_blank" style="color: rgba(255,255,255,0.8);">
+        <p class="source-link">
+            <a href="{{ restaurant.scraping_info.source_url }}" target="_blank">
                 View on restaurant website →
             </a>
         </p>
@@ -282,12 +77,12 @@
     {% elif restaurant.happy_hour_times %}
     <!-- Static Happy Hour Schedule -->
     <section class="static-deals-section">
-        <h3>🍺 Happy Hour Schedule</h3>
-        <p style="margin-bottom: 1rem; color: var(--pico-muted-color); font-size: 0.9rem;">
+        <h3>Happy Hour Schedule</h3>
+        <p class="static-deals-description">
             Static information - live data not yet available
         </p>
         {% for time in restaurant.happy_hour_times %}
-        <div style="padding: 0.5rem 0; border-bottom: 1px solid var(--pico-muted-border-color); font-family: var(--pico-font-family-monospace);">
+        <div class="static-time-entry">
             {{ time }}
         </div>
         {% endfor %}
@@ -296,27 +91,35 @@
     
     <!-- Special Tags -->
     {% if restaurant.special_notes %}
-    <section style="margin-bottom: 1.5rem;">
-        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-            {% for note in restaurant.special_notes %}
-            <span style="background: var(--pico-secondary); color: var(--pico-secondary-inverse); padding: 0.25rem 0.75rem; border-radius: var(--pico-border-radius); font-size: 0.9rem;{% if 'plant-based' in note | lower %} background: #22c55e; color: white;{% endif %}">
-                {% if 'plant-based' in note | lower %}🌱 Plant-Based Options{% else %}{{ note }}{% endif %}
-            </span>
+      {% set non_plant_notes = [] %}
+      {% for note in restaurant.special_notes %}
+        {% if 'plant-based' not in note | lower %}
+          {% set _ = non_plant_notes.append(note) %}
+        {% endif %}
+      {% endfor %}
+      {% if non_plant_notes %}
+    <section class="special-tags">
+        <div class="tags">
+            {% for note in non_plant_notes %}
+            <mark class="tag">{{ note }}</mark>
             {% endfor %}
         </div>
     </section>
+      {% endif %}
     {% endif %}
     
     <!-- Restaurant Details -->
     <div class="restaurant-details">
         <!-- Location & Contact -->
         <section class="detail-section">
-            <h3>📍 Location & Contact</h3>
+            <h3>Location & Contact</h3>
             <div class="info-grid">
                 {% if restaurant.address %}
                 <div class="info-item">
                     <span class="info-label">Address:</span>
-                    <span class="info-value">{{ restaurant.address }}</span>
+                    <span class="info-value">
+                        <a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank">📍 {{ restaurant.address }}</a>
+                    </span>
                 </div>
                 {% endif %}
                 
@@ -350,58 +153,23 @@
             </div>
         </section>
         
-        <!-- Data & Scraping Info -->
+        <!-- Restaurant Info -->
         <section class="detail-section">
-            <h3>🔧 Data Information</h3>
+            <h3>Restaurant Info</h3>
             <div class="info-grid">
-                {% if restaurant.cuisine %}
                 <div class="info-item">
                     <span class="info-label">Cuisine:</span>
-                    <span class="info-value">{{ restaurant.cuisine }}</span>
-                </div>
-                {% endif %}
-                
-                <div class="info-item">
-                    <span class="info-label">Deals Available:</span>
                     <span class="info-value">
-                        {% if restaurant.live_deals %}
-                            {{ restaurant.live_deals | length }} current deals
-                        {% else %}
-                            {{ restaurant.happy_hour_times | length }} happy hour entries
-                        {% endif %}
-                    </span>
-                </div>
-                
-                {% if restaurant.scraping_info %}
-                <div class="info-item">
-                    <span class="info-label">Scraping:</span>
-                    <span class="info-value">
-                        {% if restaurant.scraping_info.enabled %}
-                            {% if restaurant.scraping_info.consecutive_failures > 2 %}
-                                <span class="scraping-status issues">Issues</span>
-                            {% else %}
-                                <span class="scraping-status enabled">Enabled</span>
+                        {% if restaurant.cuisine %}{{ restaurant.cuisine | cuisine_emoji }}{% endif %}
+                        {% if restaurant.special_notes %}
+                          {% for note in restaurant.special_notes %}
+                            {% if 'plant-based' in note | lower %}
+                        <span class="cuisine plant-based" style="margin-left: 0.5rem;">🌱 Plant-Based</span>
                             {% endif %}
-                        {% else %}
-                            <span class="scraping-status disabled">Disabled</span>
+                          {% endfor %}
                         {% endif %}
                     </span>
                 </div>
-                
-                {% if restaurant.scraping_info.last_success %}
-                <div class="info-item">
-                    <span class="info-label">Last Updated:</span>
-                    <span class="info-value">{{ restaurant.scraping_info.last_success | time_since }}</span>
-                </div>
-                {% endif %}
-                {% endif %}
-                
-                {% if 'Plant-Based Options' in restaurant.special_notes %}
-                <div class="info-item">
-                    <span class="info-label">Dietary:</span>
-                    <span class="info-value">🌱 Plant-Based Friendly</span>
-                </div>
-                {% endif %}
             </div>
         </section>
     </div>
@@ -410,10 +178,6 @@
     <section class="actions">
         {% if restaurant.website %}
         <a href="{{ restaurant.website }}" target="_blank" role="button">Visit Restaurant Website</a>
-        {% endif %}
-        
-        {% if restaurant.address %}
-        <a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank" role="button" class="secondary">View on Maps</a>
         {% endif %}
         
         <a href="../index.html" role="button" class="outline">Browse More Deals</a>

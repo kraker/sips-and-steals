@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "bang-up-to-the-elephant",
+  "archived_at": "2025-08-16T15:31:01.454715",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour & specials in denver | bang up to the elephant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:30:59.187534",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\nmenus\ngifts\ncontact\narts | events\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopen 4pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:30:59.187540",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\t\t\t\t\t\tadventurous plant-based dining\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n100% ou",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:30:59.187546",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

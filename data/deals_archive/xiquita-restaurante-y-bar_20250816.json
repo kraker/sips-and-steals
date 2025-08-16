@@ -1,0 +1,34 @@
+{
+  "restaurant_slug": "xiquita-restaurante-y-bar",
+  "archived_at": "2025-08-16T15:36:59.539118",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hourwelcome to xiquita. pronounced \"chiquita\". our menu features items listed in some of the n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:36:57.396598",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "4pm-6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:36:57.397745",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

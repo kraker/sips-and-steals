@@ -11,7 +11,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 from jinja2 import Environment, FileSystemLoader
-from urllib.parse import quote
+from urllib.parse import quote, urlparse
 
 # Add src directory to path for imports
 sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
@@ -45,6 +45,8 @@ def main():
     env.filters['time_since'] = time_since_update
     env.filters['time_ago'] = time_since_update  # Alias for consistency
     env.filters['format_days'] = format_day_range
+    env.filters['domain_name'] = extract_domain_name
+    env.filters['cuisine_emoji'] = cuisine_with_emoji
     
     # Create output directories
     docs_dir = Path('docs')
@@ -390,6 +392,73 @@ def format_day_range(days):
         start = end + 1
     
     return ", ".join(ranges)
+
+
+def extract_domain_name(url):
+    """Extract domain name from URL for display"""
+    if not url:
+        return ""
+    
+    try:
+        # Parse the URL
+        parsed = urlparse(url)
+        domain = parsed.netloc
+        
+        # Remove www. prefix if present
+        if domain.startswith('www.'):
+            domain = domain[4:]
+        
+        return domain
+    except:
+        return url  # Fallback to original if parsing fails
+
+
+def cuisine_with_emoji(cuisine):
+    """Add appropriate emoji to cuisine type"""
+    if not cuisine:
+        return ""
+    
+    # Mapping of cuisine types to emojis
+    cuisine_emojis = {
+        'american': '🇺🇸',
+        'asian': '🥢',
+        'italian': '🍝',
+        'mexican': '🌮',
+        'indian': '🍛',
+        'chinese': '🥡',
+        'japanese': '🍣',
+        'thai': '🌶️',
+        'mediterranean': '🫒',
+        'french': '🥖',
+        'seafood': '🦞',
+        'steakhouse': '🥩',
+        'bbq': '🍖',
+        'barbecue': '🍖',
+        'pizza': '🍕',
+        'sushi': '🍣',
+        'burgers': '🍔',
+        'sandwich': '🥪',
+        'cafe': '☕',
+        'bar': '🍸',
+        'pub': '🍺',
+        'wine': '🍷',
+        'cocktails': '🍹',
+        'breakfast': '🥞',
+        'brunch': '🥐',
+        'bakery': '🧁',
+        'dessert': '🍰',
+        'ice cream': '🍦',
+        'vegetarian': '🥗',
+        'vegan': '🌱'
+    }
+    
+    # Normalize cuisine name for lookup
+    cuisine_lower = cuisine.lower().strip()
+    
+    # Find matching emoji
+    emoji = cuisine_emojis.get(cuisine_lower, '🍽️')  # Default to plate emoji
+    
+    return f"{emoji} {cuisine}"
 
 
 if __name__ == "__main__":

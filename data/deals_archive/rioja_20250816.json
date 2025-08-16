@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "rioja",
+  "archived_at": "2025-08-16T15:09:00.312330",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour/cocktails | rioja\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1431 larimer street | denver colorad",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:08:58.066308",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

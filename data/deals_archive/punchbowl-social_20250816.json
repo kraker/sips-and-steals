@@ -1,0 +1,76 @@
+{
+  "restaurant_slug": "punchbowl-social",
+  "archived_at": "2025-08-16T15:39:00.038609",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour! shake off the sunday scaries with monday funday! keep the good vibes rolling with 50% of",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:38:57.597207",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "10:00 pm - close on friday and saturdaykitchen open until closing time sunday-thursday. kitchen clos",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:38:57.597312",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "9:00 pm - turn up the volume, test your knowledge and sing along at our weekly music bingo!free rsvp",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:38:57.597323",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "9pm - 12am on select Fridays - Put your headphones on and let go of your inhibitions!",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:38:57.598684",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Join us at Punch Bowl Social in Denver on select Saturdays for live music, from 9:30pm - 12am, with your favorite covers from the 90s and 00s!",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:38:57.598685",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

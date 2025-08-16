@@ -1,0 +1,80 @@
+{
+  "restaurant_slug": "osteria-marco",
+  "archived_at": "2025-08-16T15:08:00.323371",
+  "deals": [
+    {
+      "title": "Sunday Special",
+      "description": "every sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:07:57.947910",
+      "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Sunday Special",
+      "description": "every sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:07:57.947924",
+      "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Sunday | 10:30am-9pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:07:57.950899",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Monday - Thursday | 11:30am-9pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:07:57.950905",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Friday - Saturday | 11:30am-10pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:07:57.950906",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

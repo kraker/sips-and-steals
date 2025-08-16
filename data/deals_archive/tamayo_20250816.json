@@ -1,0 +1,65 @@
+{
+  "restaurant_slug": "tamayo",
+  "archived_at": "2025-08-16T17:06:07.837778",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour in denver | tamayo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T17:06:05.796005",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "3 pm - 5 pm  unwind and celebrate the end of the day with our lively happy hour",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T17:06:05.796093",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Monday - Friday | 3 PM - 5 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T17:06:05.797404",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Times: 3, PM, 5, PM | Days: Monday, Friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "friday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T17:06:05.807448",
+      "source_url": null,
+      "confidence_score": 0.8
+    }
+  ]
+}

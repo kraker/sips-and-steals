@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "ajax-downtown",
+  "archived_at": "2025-08-16T15:17:59.410278",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour)\n\t\t\t\t\t\taprès – meaning after and a nod to the après-ski at ajax tavern, our sister restau",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:17:57.051580",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

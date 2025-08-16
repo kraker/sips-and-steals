@@ -1,0 +1,76 @@
+{
+  "restaurant_slug": "shells-and-sauce",
+  "archived_at": "2025-08-16T15:43:59.503841",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\nwine menu\n\n\ncatering menu\n\n\n\n\n\nthank you for joining us!please limit your dining experi",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:43:57.330815",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour is dine in onlyno happy hour during restaurant week march 7-16th, 2025happy hour food 330",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:43:57.330852",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour feature\n\nask your server for details on todays deliciousness\n\n $10.95\n\n\n\n\nmini grilled ha",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:43:57.331014",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "0-830PM SUNDAY, TUESDAY-THURSDAY &  9PM FRIDAY & SATURDAY",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:43:57.333505",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Happy Hour Food 330-5pm,  Drinks 330-6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:43:57.333507",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

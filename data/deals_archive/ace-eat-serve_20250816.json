@@ -1,0 +1,62 @@
+{
+  "restaurant_slug": "ace-eat-serve",
+  "archived_at": "2025-08-16T15:35:59.799440",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour                            \n\n                    ace coffee bar\n                    \n    ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:35:57.427955",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour menudim sum & then sumcrispy wonton chips$3.00sweet & sour sauce, hot mustardcrisp chili ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:35:57.427991",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "4 pm - 6 pm weekdays | 3 pm - 6 pm weekendsview happy hour",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:35:57.428143",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "4 PM - 6 PM Weekdays | 3 PM - 6 PM Weekends",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:35:57.430119",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "sunday-vinyl",
+  "archived_at": "2025-08-16T15:15:59.313377",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\nwines by the glass\n\n\ndinner menu\n\n\nwines by the bottle\n\n\nbeverages\n\n\n\n\n\nintroducing sun",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:15:57.035949",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Tuesday - Saturday: 4:30pm - 10pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:15:57.038633",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Sunday: 3:30pm - 9pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:15:57.038635",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

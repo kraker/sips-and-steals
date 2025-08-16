@@ -1,0 +1,54 @@
+{
+  "restaurant_slug": "blue-sushi-sake-grill",
+  "archived_at": "2025-08-16T15:05:59.302793",
+  "deals": [
+    {
+      "title": "Vegan Maki Special",
+      "description": "25% off vegan makievery tuesday, all day",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:05:57.015512",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Sake Special",
+      "description": "half-off all sake bottlesevery tuesday, all day",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:05:57.015523",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Tuesday Special",
+      "description": "every tuesday, all day",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:05:57.015709",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    }
+  ]
+}

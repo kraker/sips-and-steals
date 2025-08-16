@@ -1,0 +1,76 @@
+{
+  "restaurant_slug": "tavernetta",
+  "archived_at": "2025-08-16T15:13:59.234569",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour | everyday 3:00pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:13:57.028196",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour nightly (only in the bar and lounge) 3:00 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:13:57.028220",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "3:00pm - 6:00pm\n\n\ndolci | after dinner\n\n\ncocktails\n\n\nwine\n\n\nbeer\n\n\nspirits\n\n\n\n\n\ndinner nightly | 5:0",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:13:57.028313",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Happy Hour | Everyday 3:00pm - 6:00pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:13:57.031986",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Dinner Nightly | 5:00 pm - 10:00 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:13:57.031990",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

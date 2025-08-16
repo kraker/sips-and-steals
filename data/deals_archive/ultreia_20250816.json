@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "ultreia",
+  "archived_at": "2025-08-16T15:14:59.758959",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour | ultreia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nin denver union station at 1701 wynkoop, suite 1",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:14:57.723439",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

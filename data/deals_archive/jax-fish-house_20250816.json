@@ -1,0 +1,92 @@
+{
+  "restaurant_slug": "jax-fish-house",
+  "archived_at": "2025-08-16T14:43:50.089869",
+  "deals": [
+    {
+      "title": "Sunday Special",
+      "description": "every sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.050185",
+      "source_url": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder/#happy-hour",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "3:30 PM - 9:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.054864",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "3:30 PM - 10:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.054868",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "3:30 PM - 5:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.054870",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Tues-Fri 3:30 - 5:00PM, Sat & Sun 2:00 - 5:00PM, All Night Mon 3:30 - CLOSE",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.054871",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Tuesday - Sunday 3:30 pm - 5:00 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:48.054872",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

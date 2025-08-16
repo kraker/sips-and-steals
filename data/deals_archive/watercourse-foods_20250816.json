@@ -1,0 +1,64 @@
+{
+  "restaurant_slug": "watercourse-foods",
+  "archived_at": "2025-08-16T15:34:59.553403",
+  "deals": [
+    {
+      "title": "Monday Special",
+      "description": "every monday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:34:57.217136",
+      "source_url": "https://www.watercoursefoods.com/happyhour",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "11am - 12pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:34:57.218705",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "3pm - 6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:34:57.218706",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Queen City. Flavor +0.75 | Available only for breakfast happy hour 11am - 12pm.",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:34:57.218707",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

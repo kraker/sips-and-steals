@@ -15,6 +15,7 @@ from dataclasses import asdict
 
 # Import our models
 from models import Restaurant, Deal, ScrapingConfig, DealValidator
+from config_manager import ConfigManager
 
 logger = logging.getLogger(__name__)
 
@@ -38,6 +39,9 @@ class DataManager:
         # Create backup directory
         self.backup_dir = self.data_dir / "backups"
         self.backup_dir.mkdir(exist_ok=True)
+        
+        # Initialize config manager for custom scraping configurations
+        self.config_manager = ConfigManager()
         
         self.restaurants: Dict[str, Restaurant] = {}
         self._load_data()
@@ -68,12 +72,17 @@ class DataManager:
         
         # Create scraping config based on website availability
         website = data.get('website')
+        slug = data.get('slug')
         scraping_config = ScrapingConfig(
             enabled=bool(website),
             scraping_frequency_hours=24,  # Default to daily
             max_retries=3,
             fallback_to_static=True
         )
+        
+        # Apply custom configuration if available
+        if slug:
+            scraping_config = self.config_manager.apply_config_to_scraping_config(slug, scraping_config)
         
         restaurant = Restaurant(
             name=data.get('name', ''),

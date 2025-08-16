@@ -112,6 +112,14 @@ class ScrapingConfig:
     last_scraped: Optional[datetime] = None
     last_success: Optional[datetime] = None
     consecutive_failures: int = 0
+    
+    # Custom parsing configurations
+    custom_selectors: Dict[str, str] = field(default_factory=dict)  # CSS selectors for specific content
+    time_pattern_regex: Optional[str] = None  # Regex for extracting time ranges
+    day_pattern_regex: Optional[str] = None   # Regex for extracting days of week
+    price_pattern_regex: Optional[str] = None # Regex for extracting prices
+    exclude_patterns: List[str] = field(default_factory=list)  # Text patterns to exclude
+    content_containers: List[str] = field(default_factory=list)  # Specific containers to focus on
 
 
 @dataclass
@@ -164,7 +172,13 @@ class Restaurant:
                 'fallback_to_static': self.scraping_config.fallback_to_static,
                 'last_scraped': self.scraping_config.last_scraped.isoformat() if self.scraping_config.last_scraped else None,
                 'last_success': self.scraping_config.last_success.isoformat() if self.scraping_config.last_success else None,
-                'consecutive_failures': self.scraping_config.consecutive_failures
+                'consecutive_failures': self.scraping_config.consecutive_failures,
+                'custom_selectors': self.scraping_config.custom_selectors,
+                'time_pattern_regex': self.scraping_config.time_pattern_regex,
+                'day_pattern_regex': self.scraping_config.day_pattern_regex,
+                'price_pattern_regex': self.scraping_config.price_pattern_regex,
+                'exclude_patterns': self.scraping_config.exclude_patterns,
+                'content_containers': self.scraping_config.content_containers
             },
             'live_deals': [deal.to_dict() for deal in self.live_deals],
             'deals_last_updated': self.deals_last_updated.isoformat() if self.deals_last_updated else None
@@ -185,7 +199,13 @@ class Restaurant:
             fallback_to_static=scraping_config_data.get('fallback_to_static', True),
             last_scraped=datetime.fromisoformat(scraping_config_data['last_scraped']) if scraping_config_data.get('last_scraped') else None,
             last_success=datetime.fromisoformat(scraping_config_data['last_success']) if scraping_config_data.get('last_success') else None,
-            consecutive_failures=scraping_config_data.get('consecutive_failures', 0)
+            consecutive_failures=scraping_config_data.get('consecutive_failures', 0),
+            custom_selectors=scraping_config_data.get('custom_selectors', {}),
+            time_pattern_regex=scraping_config_data.get('time_pattern_regex'),
+            day_pattern_regex=scraping_config_data.get('day_pattern_regex'),
+            price_pattern_regex=scraping_config_data.get('price_pattern_regex'),
+            exclude_patterns=scraping_config_data.get('exclude_patterns', []),
+            content_containers=scraping_config_data.get('content_containers', [])
         )
         
         return cls(
@@ -240,7 +260,7 @@ class Restaurant:
                 # Parse and reformat the static data for better display
                 formatted_description = self._format_static_happy_hour(time_str)
                 fallback_deals.append(Deal(
-                    title="Happy Hour (from Giovanni's data)",
+                    title="Happy Hour",
                     description=formatted_description,
                     deal_type=DealType.HAPPY_HOUR,
                     confidence_score=0.3,  # Lower confidence for static data

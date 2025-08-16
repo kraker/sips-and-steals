@@ -1,0 +1,39 @@
+# Tamayo Restaurant Scraping Configuration
+# Website: https://tamayodenver.com/happy-hour
+
+name: "Tamayo"
+slug: "tamayo"
+
+scraping_config:
+  enabled: true
+  fallback_to_static: true
+  
+  # Focus on specific content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".hours-section" 
+    - ".main-content"
+    - "main"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .happy-hour-time"
+    deal_description: ".description, .details, h2, h3, p"
+  
+  # Regex patterns for extracting structured data
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
+  
+  # Patterns to exclude from parsing
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'menu'
+    - 'contact'
+
+# Expected results based on website content:
+# Monday - Friday: 3 PM - 5 PM

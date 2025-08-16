@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "la-forêt",
+  "archived_at": "2025-08-16T15:41:59.578478",
+  "deals": [
+    {
+      "title": "Time-based Special",
+      "description": "4PM - 5PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:41:57.392049",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

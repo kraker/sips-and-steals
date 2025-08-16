@@ -1,0 +1,76 @@
+{
+  "restaurant_slug": "mercantile",
+  "archived_at": "2025-08-16T15:18:59.491205",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\nbar\n\n\ncocktail\n\n\nwine by the glass\n\n\ndinner\n\n\ndessert\n\n\n\n\n\na la carte lunchorder ahead\n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:18:57.077431",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\t\t\t\t\t\tdaily 2pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:18:57.077443",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "2pm-5pm\n\n\n\n\n\n\nsnacks\n\n\n\n\nbar board\n\n$12\n\n\nselection of cured meats, cheese, mercantile pickles, jam,",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:18:57.077530",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Daily 2pm-5pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:18:57.079224",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Daily 2pm - 5pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:18:57.079227",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

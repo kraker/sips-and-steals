@@ -118,3 +118,76 @@ class Deal:
 - `templates/index.html` - Restaurant grid with live data badges and filtering
 - `templates/restaurant.html` - Individual restaurant profiles with live deal display
 - Custom Jinja2 filters for day range formatting ("Mon - Fri", "Daily", etc.)
+
+## Roadmap & Future Enhancements
+
+### JavaScript Interactivity Support
+**Priority**: Medium | **Effort**: High | **Impact**: High
+
+Many modern restaurant websites (like STK) use JavaScript for dynamic content loading, making them incompatible with our current BeautifulSoup-based static HTML parsing approach.
+
+**Problem**: 
+- STK's location dropdown uses JS event handlers for dynamic content loading
+- Current form submission only handles server-side processing, not client-side JS
+- Estimated 10-15% of restaurants may require JS execution for full data access
+
+**Technical Options for DOM Interaction**:
+
+*Browser Automation Libraries:*
+- **Playwright** (Recommended): Modern, fast, supports Chromium/Firefox/Safari, better performance than Selenium
+- **Selenium WebDriver**: Mature ecosystem, wider community, slower but more established
+- **Pyppeteer**: Lightweight Chrome automation via DevTools Protocol, limited to Chromium
+
+*Implementation Approaches for STK's Dropdown:*
+- **Direct Event Simulation**: `await page.select_option('select[name="location"]', value='699')`
+- **JavaScript Execution**: Execute actual JS that runs on change events
+- **Network Interception**: Capture AJAX calls triggered by dropdown interactions
+
+*Hybrid Detection Strategy:*
+1. Try static HTML parsing first (fast, works for 87% of sites)
+2. Detect JS requirement indicators (empty content, AJAX loaders, client-side handlers)
+3. Fall back to browser automation only when needed
+
+*Performance Optimizations:*
+- Browser instance pooling and reuse
+- Headless mode for speed
+- Resource blocking (images/CSS) for faster loading
+- Intelligent timeout management
+
+**Implementation Phases**:
+1. **Research**: Evaluate Playwright vs Selenium performance and reliability
+2. **Architecture**: Design hybrid scraping system with JS capability detection
+3. **Integration**: Add browser automation to BaseScraper with fallback logic
+4. **Optimization**: Implement caching and pool management for browser instances
+
+**Success Metrics**:
+- Increase scraping success rate from 87.5% to 95%+
+- Successfully parse STK and other JS-dependent restaurant sites
+- Maintain scraping performance under 30 seconds per restaurant
+
+### PDF Document Parsing Support
+**Priority**: Low | **Effort**: Medium | **Impact**: Medium
+
+Some restaurants (like Jovanina's Broken Italian) publish their happy hour menus as PDF documents rather than web pages, which our current HTML-based scraper cannot process.
+
+**Example Case**: 
+- Jovanina's PDF menu: `https://jovanina.com/wp-content/uploads/2025/05/Happy-Hour-Menu-Card8.pdf`
+- Contains detailed happy hour pricing and timing information
+- Current scraper skips PDF URLs and finds no deals
+
+**Technical Approach**:
+- **PDF Text Extraction**: Integrate PyPDF2 or pdfplumber for text extraction
+- **Content Type Detection**: Identify PDF URLs and route to specialized parser
+- **Structured Data Extraction**: Parse menu items, prices, and timing from PDF text
+- **Image Processing**: OCR support for image-based PDFs (optional)
+
+**Implementation**:
+1. Add PDF content type detection in BaseScraper._fetch_single_url()
+2. Create PDFMenuParser class with text extraction and pattern matching
+3. Enhance multiple URL architecture to handle mixed content types
+4. Add fallback for image-based PDFs using OCR libraries
+
+**Success Metrics**:
+- Successfully extract deals from Jovanina's PDF menu
+- Support for 5-10 restaurants using PDF menus
+- Maintain parsing accuracy above 85% for PDF documents

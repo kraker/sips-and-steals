@@ -1,0 +1,62 @@
+{
+  "restaurant_slug": "white-pie",
+  "archived_at": "2025-08-16T15:27:59.736964",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour menuseasonal specialtiesstartershouse puff$7.00garlic rosemary butterburrata$17.00cherry ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:27:57.329795",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "10am - 2pmbrunch piesb.e.c.$16.00mozarella, bacon, double egg*, sriracha aioli*, microgreensburrata ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:27:57.329889",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Sat & Sun 10am - 2pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:27:57.336424",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Mon - Fri 3pm - 6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:27:57.336426",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

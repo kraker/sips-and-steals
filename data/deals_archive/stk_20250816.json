@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "stk",
+  "archived_at": "2025-08-16T14:43:24.149905",
+  "deals": [
+    {
+      "title": "Happy Hour Starting at $3",
+      "description": "Happy hour menu items starting at $3 $6 $9",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": "$3 $6 $9",
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:21.684255",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "confidence_score": 0.7
+    },
+    {
+      "title": "Happy Hour Starting at $3",
+      "description": "Happy hour menu items starting at $3 $6 $9",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": "$3 $6 $9",
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:21.684269",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "confidence_score": 0.7
+    },
+    {
+      "title": "Happy Hour Starting at $3",
+      "description": "Happy hour menu items starting at $3 $6 $9",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": "$3 $6 $9",
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T14:43:21.684273",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "confidence_score": 0.7
+    }
+  ]
+}

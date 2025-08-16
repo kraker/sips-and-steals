@@ -1,0 +1,34 @@
+{
+  "restaurant_slug": "urban-farmer",
+  "archived_at": "2025-08-16T15:10:59.253272",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\nbeverages\n\n\n\n\n\n\n\n\n\nstarters\n\n\n\n\nbeef tartare*\n\nspring onion, basil rice cracker\n\n $23\n\n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:10:57.001371",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Saturday & Sunday 9 AM - 2 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T15:10:57.004870",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}
