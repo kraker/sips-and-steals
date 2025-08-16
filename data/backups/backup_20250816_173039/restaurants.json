@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-16T14:43:52.893159",
+    "updated_at": "2025-08-16T17:06:10.717523",
     "districts": [
       "Aurora",
       "Boulder",
@@ -117,7 +117,7 @@
         ],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T14:23:55.606192"
+        "last_updated": "2025-08-16T15:04:59.086406"
       },
       "blue-sushi-sake-grill": {
         "name": "Blue Sushi Sake Grill",
@@ -136,7 +136,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T13:44:18.475354"
+        "last_updated": "2025-08-16T15:05:59.302716"
       },
       "a5-steakhouse": {
         "name": "A5 Steakhouse",
@@ -170,7 +170,7 @@
         ],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T13:33:21.628833"
+        "last_updated": "2025-08-16T15:08:00.323326"
       },
       "rioja": {
         "name": "Rioja",
@@ -189,7 +189,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T13:33:11.400336"
+        "last_updated": "2025-08-16T15:09:00.312286"
       },
       "stk": {
         "name": "STK",
@@ -219,8 +219,8 @@
           ],
           "content_min_length": 500
         },
-        "live_data_available": true,
-        "last_updated": "2025-08-16T14:43:24.149882"
+        "live_data_available": false,
+        "last_updated": null
       },
       "urban-farmer": {
         "name": "Urban Farmer",
@@ -237,7 +237,7 @@
         ],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T14:10:55.600679"
+        "last_updated": "2025-08-16T15:10:59.253206"
       },
       "tamayo": {
         "name": "Tamayo",
@@ -247,7 +247,7 @@
         "sub_location": "LoDo",
         "address": "1400 Larimer Street",
         "cuisine": "Mexican",
-        "website": "https://www.eattamayo.com/brunch",
+        "website": "https://tamayodenver.com/happy-hour",
         "phone": null,
         "happy_hour_times": [
           "Mon, Tue, Wed, Thu, Fri 2  - 5  | Sat, Sun 2  - 4",
@@ -255,7 +255,7 @@
         ],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T13:26:23.912253"
+        "last_updated": "2025-08-16T17:06:07.837752"
       },
       "corridor-44": {
         "name": "Corridor 44",
@@ -272,7 +272,7 @@
         ],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T14:10:44.806336"
+        "last_updated": "2025-08-16T15:12:59.411878"
       },
       "tavernetta": {
         "name": "Tavernetta",
@@ -288,8 +288,8 @@
           "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3  - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:13:59.234545"
       },
       "ultreia": {
         "name": "Ultreia",
@@ -305,8 +305,8 @@
           "Mon, Tue, Wed, Thu, Fri 3  - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:14:59.758918"
       },
       "sunday-vinyl": {
         "name": "Sunday Vinyl",
@@ -322,8 +322,8 @@
           "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6:00"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:15:59.313347"
       },
       "foraged": {
         "name": "Foraged",
@@ -356,8 +356,8 @@
           "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:17:59.410246"
       },
       "mercantile": {
         "name": "Mercantile",
@@ -373,8 +373,8 @@
           "Mon, Tue, Wed, Thu, Fri, Sat 2p - 5p"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:18:59.491174"
       },
       "fogo-de-chão": {
         "name": "Fogo de Chão",
@@ -405,8 +405,8 @@
           "Mon, Tue, Wed, Thu, Fri 3 - 6\\. Excluding holidays"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:20:59.337113"
       },
       "wonderyard-garden-table": {
         "name": "Wonderyard Garden \\+ Table",
@@ -441,8 +441,8 @@
           "Mon, Tue, Wed, Thu, Fri 3 - 5:30"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:22:59.244823"
       },
       "bezel-bar": {
         "name": "Bezel Bar",
@@ -477,8 +477,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:24:59.592475"
       },
       "guard-and-grace": {
         "name": "Guard and Grace",
@@ -494,8 +494,8 @@
           "Mon, Tue, Wed, Thu, Fri 3  - 6 . Bar, Lounge, Patio only."
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:25:59.557528"
       },
       "corinne-denver": {
         "name": "Corinne Denver",
@@ -528,8 +528,8 @@
           "Mon, Tue, Wed, Thu, Fri 3 - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:27:59.736940"
       },
       "fire-lounge": {
         "name": "Fire Lounge",
@@ -547,8 +547,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:28:59.895326"
       },
       "city-o-city": {
         "name": "City O’ City",
@@ -567,7 +567,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T13:06:56.727794"
+        "last_updated": "2025-08-16T15:29:59.178140"
       },
       "bang-up-to-the-elephant": {
         "name": "Bang Up to the Elephant",
@@ -585,8 +585,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:31:01.454688"
       },
       "100-de-agave": {
         "name": "100% de Agave",
@@ -638,8 +638,8 @@
           "Mon All Day & Tue, Wed, Thu, Fri 4  - 6  & Sat, Sun 2  - 4"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:34:00.575452"
       },
       "watercourse-foods": {
         "name": "Watercourse Foods",
@@ -657,8 +657,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:34:59.553367"
       },
       "ace-eat-serve": {
         "name": "Ace Eat Serve",
@@ -674,8 +674,8 @@
           "Mon, Tue, Wed, Thu, Fri Open - 6p | Sat, Sun 3p  - 6p"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:35:59.799411"
       },
       "xiquita-restaurante-y-bar": {
         "name": "Xiquita Restaurante y Bar",
@@ -691,8 +691,8 @@
           "Tue, Wed, Thu, Fri 3  - 5"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:36:59.539097"
       },
       "go-fish-sushi": {
         "name": "Go Fish Sushi",
@@ -727,8 +727,8 @@
           "Mon, Tue, Wed, Thu, Fri 4 - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:39:00.038588"
       },
       "rocky-yama-sushi": {
         "name": "Rocky Yama Sushi",
@@ -746,8 +746,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:39:59.556988"
       },
       "adrift": {
         "name": "Adrift",
@@ -763,8 +763,8 @@
           "Tue All Day & Wed, Thu 5 - 7 | Fri 4  - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:41:01.108820"
       },
       "la-forêt": {
         "name": "La Forêt",
@@ -780,8 +780,8 @@
           "Tue, Wed, Thu, Fri, Sat 4 - 5"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:41:59.578459"
       },
       "ronin-congress-park": {
         "name": "Ronin Congress Park",
@@ -816,8 +816,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:43:59.503820"
       },
       "bar-max": {
         "name": "Bar Max",
@@ -835,8 +835,8 @@
         "special_notes": [
           "Plant-Based Options"
         ],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:44:59.546397"
       },
       "sap-sua": {
         "name": "Sap Sua",
@@ -852,8 +852,8 @@
           "Wed, Thu, Fri, Sat, Sun, Mon 4:30 - 6"
         ],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T15:45:59.548858"
       }
     },
     "Greenwood Village, Englewood, Littleton, Centennial": {

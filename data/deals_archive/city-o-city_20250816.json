@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "city-o-city",
-  "archived_at": "2025-08-16T15:29:59.178160",
+  "archived_at": "2025-08-16T17:39:01.925443",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:29:57.155172",
+      "scraped_at": "2025-08-16T17:38:59.583745",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:29:57.155199",
+      "scraped_at": "2025-08-16T17:38:59.583776",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:29:57.155219",
+      "scraped_at": "2025-08-16T17:38:59.583856",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:29:57.156663",
+      "scraped_at": "2025-08-16T17:38:59.585466",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:29:57.156664",
+      "scraped_at": "2025-08-16T17:38:59.585468",
       "source_url": null,
       "confidence_score": 0.4
     }

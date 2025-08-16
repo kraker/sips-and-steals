@@ -429,10 +429,16 @@ class BaseScraper(ABC):
         
         # Enhanced patterns to capture scheduling details
         enhanced_patterns = [
-            # Pattern: "$3 $6 $9 Happy Hour" - multiple prices with happy hour (STK style)
-            r'(\$\d+(?:\s+\$\d+)*)\s+happy\s+hour',
+            # Pattern: "EVERY DAY 3-6PM & 9-10pm" - City O City style
+            r'every\s+day\s+(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s*&\s*(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm',
+            # Pattern: "3-6PM & 9-10pm" - multiple time ranges
+            r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s*&\s*(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm',
             # Pattern: "3-6pm every day" or "available 3-6pm every day"
             r'(?:available\s+)?(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day',
+            # Pattern: "EVERY DAY 3-6PM"
+            r'every\s+day\s+(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm',
+            # Pattern: "$3 $6 $9 Happy Hour" - multiple prices with happy hour (STK style)
+            r'(\$\d+(?:\s+\$\d+)*)\s+happy\s+hour',
             # Pattern: "9pm-close thurs-sat" or "9pm - close thu-sat"
             r'(\d{1,2}(?::\d{2})?)\s*pm\s*-?\s*close\s+(?:thurs?|thu)\s*-\s*(?:sats?|sat)',
             # Pattern: "25% off something every tuesday, all day" or "half-off something every tuesday, all day"

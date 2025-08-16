@@ -10,7 +10,9 @@
       "Bash(grep:*)",
       "Bash(mv:*)",
       "Bash(find:*)",
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "WebFetch(domain:jovanina.com)",
+      "WebFetch(domain:www.cityocitydenver.com)"
     ],
     "deny": [],
     "ask": []

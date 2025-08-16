@@ -98,7 +98,17 @@ body {
 .restaurant-card h3 {
   margin-top: 0;
   margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.restaurant-card h3 a {
   color: var(--pico-color);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.restaurant-card h3 a:hover {
+  color: var(--urban-accent);
 }
 
 .restaurant-card address {
@@ -107,31 +117,34 @@ body {
 }
 
 .restaurant-card address a {
-  color: var(--urban-accent);
+  color: var(--pico-muted-color);
   text-decoration: none;
   transition: color 0.2s ease;
 }
 
 .restaurant-card address a:hover {
-  color: white;
+  color: var(--urban-accent);
   text-decoration: underline;
 }
 
 .restaurant-card .cuisine {
   display: inline-block;
-  background: var(--urban-accent);
-  color: white;
-  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 400;
   margin-bottom: 0.75rem;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.01em;
   width: fit-content;
 }
 
 .restaurant-card .cuisine.plant-based {
-  background: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  color: rgba(34, 197, 94, 0.8);
+  border: 1px solid rgba(34, 197, 94, 0.2);
   margin-left: 0.5rem;
 }
 
@@ -142,17 +155,32 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* Happy Hour Information */
+/* Happy Hour Information - PRIMARY FOCUS */
 .restaurant-card .happy-hour {
-  background: var(--pico-code-background-color);
-  padding: 0.5rem;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 107, 53, 0.05));
+  border: 2px solid var(--urban-accent);
+  padding: 0.75rem;
   border-radius: var(--pico-border-radius);
-  margin-bottom: 0.75rem;
-  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+  position: relative;
+}
+
+
+.restaurant-card .happy-hour strong {
+  color: var(--urban-accent);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .restaurant-card .happy-hour div {
-  margin-top: 0.25rem;
+  margin-top: 0.35rem;
+  color: var(--pico-color);
+  font-weight: 500;
+  line-height: 1.4;
 }
 
 /* Tags */
@@ -186,15 +214,17 @@ body {
 }
 
 .website-link {
-  color: var(--urban-accent);
+  color: var(--pico-muted-color);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
   transition: all 0.2s ease;
+  opacity: 0.7;
 }
 
 .website-link:hover {
-  color: white;
+  color: var(--urban-accent);
   text-decoration: underline;
+  opacity: 1;
 }
 
 .last-updated {
@@ -436,18 +466,21 @@ footer {
 
 .info-value .cuisine {
   display: inline-block;
-  background: var(--urban-accent);
-  color: white;
-  padding: 0.25rem 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
   border-radius: 4px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.03em;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.01em;
   width: fit-content;
 }
 
 .info-value .cuisine.plant-based {
-  background: #22c55e;
+  background: rgba(34, 197, 94, 0.1);
+  color: rgba(34, 197, 94, 0.8);
+  border: 1px solid rgba(34, 197, 94, 0.2);
 }
 
 /* Scraping Status */
