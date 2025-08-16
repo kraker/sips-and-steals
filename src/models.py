@@ -137,8 +137,8 @@ class Restaurant:
     website: Optional[str] = None
     phone: Optional[str] = None
     
-    # Static happy hour info (fallback)
-    static_happy_hour_times: List[str] = field(default_factory=list)
+    # Static deals info (fallback) - unified format
+    static_deals: List[Dict[str, Any]] = field(default_factory=list)
     special_notes: List[str] = field(default_factory=list)
     
     # Live scraping config and status
@@ -159,7 +159,7 @@ class Restaurant:
             'cuisine': self.cuisine,
             'website': self.website,
             'phone': self.phone,
-            'static_happy_hour_times': self.static_happy_hour_times,
+            'static_deals': self.static_deals,
             'special_notes': self.special_notes,
             'scraping_config': {
                 'enabled': self.scraping_config.enabled,
@@ -217,7 +217,7 @@ class Restaurant:
             cuisine=data.get('cuisine'),
             website=data.get('website'),
             phone=data.get('phone'),
-            static_happy_hour_times=data.get('static_happy_hour_times', []),
+            static_deals=data.get('static_deals', []),
             special_notes=data.get('special_notes', []),
             scraping_config=scraping_config,
             live_deals=[Deal.from_dict(deal_data) for deal_data in data.get('live_deals', [])],
@@ -253,20 +253,30 @@ class Restaurant:
         if self.live_deals:
             return self.live_deals
         
-        # Priority 3: Fall back to static Giovanni's data only if no live data exists
-        if self.static_happy_hour_times:
-            fallback_deals = []
-            for time_str in self.static_happy_hour_times:
-                # Parse and reformat the static data for better display
-                formatted_description = self._format_static_happy_hour(time_str)
-                fallback_deals.append(Deal(
-                    title="Happy Hour",
-                    description=formatted_description,
-                    deal_type=DealType.HAPPY_HOUR,
-                    confidence_score=0.3,  # Lower confidence for static data
-                    source_url=None  # No source URL for static data
-                ))
-            return fallback_deals
+        # Priority 3: Fall back to static deals (new format)
+        if self.static_deals:
+            static_deals = []
+            for deal_data in self.static_deals:
+                try:
+                    # Convert dict back to Deal object
+                    deal = Deal(
+                        title=deal_data.get('title', 'Happy Hour'),
+                        description=deal_data.get('description', ''),
+                        deal_type=DealType(deal_data.get('deal_type', 'happy_hour')),
+                        days_of_week=[DayOfWeek(day) for day in deal_data.get('days_of_week', [])],
+                        start_time=deal_data.get('start_time'),
+                        end_time=deal_data.get('end_time'),
+                        price=deal_data.get('price'),
+                        is_all_day=deal_data.get('is_all_day', False),
+                        special_notes=deal_data.get('special_notes', []),
+                        confidence_score=deal_data.get('confidence_score', 0.3),
+                        source_url=deal_data.get('source_url')
+                    )
+                    static_deals.append(deal)
+                except (ValueError, KeyError) as e:
+                    # Handle malformed static deal data
+                    continue
+            return static_deals
         
         return []
     

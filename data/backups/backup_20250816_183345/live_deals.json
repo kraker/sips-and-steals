@@ -78,7 +78,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015512",
+        "scraped_at": "2025-08-16T18:30:00.881154",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
@@ -94,7 +94,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015523",
+        "scraped_at": "2025-08-16T18:30:00.881167",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
@@ -110,12 +110,124 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015709",
+        "scraped_at": "2025-08-16T18:30:00.881474",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour vibes at novus placein celebration of our grand opening, enjoy all day happy hour now thr",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.885739",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hoursmonday-saturday: 11am",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.885744",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "11am-10pm‍friday: 11am-10:30pmsaturday: 12pm-10:30pmsunday: 12pm-9pmhappy hour",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.885777",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.886102",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.886106",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.886108",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.886109",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-6:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T18:30:00.886109",
+        "source_url": null,
+        "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:05:59.302716"
+    "last_updated": "2025-08-16T18:30:03.142125"
   },
   "a5-steakhouse": {
     "deals": [],
@@ -958,7 +1070,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155172",
+        "scraped_at": "2025-08-16T17:38:59.583745",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -972,7 +1084,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155199",
+        "scraped_at": "2025-08-16T17:38:59.583776",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -986,7 +1098,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155219",
+        "scraped_at": "2025-08-16T17:38:59.583856",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1000,7 +1112,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.156663",
+        "scraped_at": "2025-08-16T17:38:59.585466",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1014,12 +1126,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.156664",
+        "scraped_at": "2025-08-16T17:38:59.585468",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:29:59.178140"
+    "last_updated": "2025-08-16T17:39:01.925411"
   },
   "bang-up-to-the-elephant": {
     "deals": [
@@ -1070,11 +1182,11 @@
   },
   "100-de-agave": {
     "deals": [],
-    "last_updated": "2025-08-16T15:31:59.323093"
+    "last_updated": "2025-08-16T17:37:14.579340"
   },
   "9th-door": {
     "deals": [],
-    "last_updated": "2025-08-16T15:32:59.473268"
+    "last_updated": "2025-08-16T17:37:25.091922"
   },
   "vesper-lounge": {
     "deals": [

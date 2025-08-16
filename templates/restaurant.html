@@ -32,35 +32,50 @@
             {% if restaurant.last_updated %}• Updated {{ restaurant.last_updated | time_since }}{% endif %}
         </p>
         
-        {% for deal in restaurant.live_deals %}
-        <div class="deal-card">
-            <div class="deal-header">
-                <h4 class="deal-title">{{ deal.title }}</h4>
-                <span class="confidence-badge">{{ deal.confidence_score | deal_confidence }}</span>
+        {% set grouped_deals = restaurant.live_deals | group_deals %}
+        {% for group in grouped_deals %}
+        <div class="deal-group-card{% if group.is_schedule_group %} schedule-group{% endif %}">
+            <div class="deal-group-header">
+                <h4 class="deal-group-title">{{ group.title }}</h4>
+                <span class="confidence-badge">{{ group.confidence_score | deal_confidence }}</span>
             </div>
             
-            <div class="deal-meta">
-                {% if deal.deal_type != 'happy_hour' %}
-                    <div>Type: {{ deal.deal_type.replace('_', ' ').title() }}</div>
-                {% endif %}
-                
-                {% if deal.days_of_week %}
-                    <div>Days: {{ deal.days_of_week | format_days }}</div>
-                {% endif %}
-                
-                {% if deal.start_time and deal.end_time %}
-                    <div>Time: {{ deal.start_time }} - {{ deal.end_time }}</div>
-                {% elif deal.is_all_day %}
-                    <div>Time: All Day</div>
-                {% endif %}
-                
-                {% if deal.price %}
-                    <div>Price: {{ deal.price }}</div>
+            {% if not group.is_schedule_group %}
+            <div class="deal-group-meta">
+                {% if group.days_of_week %}
+                    <div class="schedule-info">
+                        <span class="schedule-days">{{ group.days_of_week | format_days }}</span>
+                        {% if group.start_time and group.end_time %}
+                            <span class="schedule-time">{{ group.start_time }} - {{ group.end_time }}</span>
+                        {% elif group.is_all_day %}
+                            <span class="schedule-time">All Day</span>
+                        {% endif %}
+                    </div>
                 {% endif %}
             </div>
+            {% endif %}
             
-            {% if deal.description %}
-            <div class="deal-description">{{ deal.description }}</div>
+            {% if group.deals %}
+            <div class="deal-group-offerings{% if group.is_schedule_group %} schedule-list{% endif %}">
+                {% for offering in group.deals %}
+                <div class="deal-offering{% if group.is_schedule_group %} schedule-entry{% endif %}">
+                    {% if group.is_schedule_group %}
+                        {{ offering.description }}
+                    {% else %}
+                        {% if offering.description %}
+                            • {{ offering.description }}
+                            {% if offering.price %} - {{ offering.price }}{% endif %}
+                        {% endif %}
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+            
+            {% if group.deal_count > 1 and not group.is_schedule_group %}
+            <div class="deal-group-count">
+                <small>{{ group.deal_count }} offers available</small>
+            </div>
             {% endif %}
         </div>
         {% endfor %}

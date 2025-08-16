@@ -19,6 +19,289 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from data_manager import DataManager
 
 
+def group_deals_by_schedule(deals):
+    """Group deals by their schedule (day + time combination) for better display"""
+    if not deals:
+        return []
+    
+    # Create a consolidated schedule and separate specific offerings
+    schedule_entries = []
+    all_offerings = []
+    schedule_confidence = 0.0
+    schedule_sources = set()
+    
+    for deal in deals:
+        title = deal.get('title', '').lower()
+        description = deal.get('description', '').lower()
+        cleaned_description = clean_description(description).lower()
+        
+        # Check if this deal has specific offerings (discounts, prices, etc.)
+        has_specific_offerings = any(offer in (title + ' ' + cleaned_description) for offer in [
+            '$', '%', 'off', 'price', 'maki', 'sake', 'drink', 'food', 'appetizer', 'cocktail', 'beer', 'wine'
+        ])
+        
+        # Every deal with days/times contributes to the schedule
+        if deal.get('days_of_week') or deal.get('start_time') or deal.get('is_all_day'):
+            days = deal.get('days_of_week', [])
+            start_time = deal.get('start_time')
+            end_time = deal.get('end_time')
+            is_all_day = deal.get('is_all_day', False)
+            
+            # Format schedule entry
+            if days:
+                if len(days) == 1:
+                    day_str = days[0].title()
+                elif len(days) == 7:
+                    day_str = "Daily"
+                elif set(days) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
+                    day_str = "Weekdays"
+                elif set(days) == {'saturday', 'sunday'}:
+                    day_str = "Weekends"
+                else:
+                    day_str = ", ".join([day.title() for day in days])
+                
+                if is_all_day:
+                    time_str = "All Day"
+                elif start_time and end_time:
+                    time_str = f"{start_time} - {end_time}"
+                else:
+                    time_str = "Happy Hour"
+                
+                schedule_entry = f"{day_str}: {time_str}"
+                if schedule_entry not in schedule_entries:
+                    schedule_entries.append(schedule_entry)
+            
+            # Track highest confidence and sources for schedule
+            confidence = deal.get('confidence_score', 0.0)
+            if confidence > schedule_confidence:
+                schedule_confidence = confidence
+            if deal.get('source_url'):
+                schedule_sources.add(deal.get('source_url'))
+        
+        # If this deal has specific offerings, keep it for the offerings section
+        if has_specific_offerings:
+            all_offerings.append(deal)
+    
+    # Create the grouped deals list
+    grouped_deals = []
+    
+    # Always create a Happy Hours schedule if we have any schedule entries
+    if schedule_entries:
+        # Sort schedule entries by day order
+        day_order_map = {
+            'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4,
+            'friday': 5, 'saturday': 6, 'sunday': 7, 'daily': 0, 'weekdays': 0, 'weekends': 8
+        }
+        
+        schedule_entries.sort(key=lambda entry: day_order_map.get(entry.split(':')[0].lower(), 9))
+        
+        grouped_deals.append({
+            'title': 'Happy Hours',
+            'days_of_week': [],
+            'start_time': None,
+            'end_time': None,
+            'is_all_day': False,
+            'deals': [{'description': entry, 'title': '', 'price': None, 'confidence_score': schedule_confidence} for entry in schedule_entries],
+            'confidence_score': schedule_confidence,
+            'source_urls': list(schedule_sources),
+            'deal_count': len(schedule_entries),
+            'is_schedule_group': True
+        })
+    
+    # Group offering deals by schedule key  
+    if all_offerings:
+        schedule_groups = {}
+        
+        for deal in all_offerings:
+            # Create schedule key based on days and time
+            days_key = tuple(sorted(deal.get('days_of_week', [])))
+            time_key = (
+                deal.get('start_time'),
+                deal.get('end_time'), 
+                deal.get('is_all_day', False)
+            )
+            schedule_key = (days_key, time_key)
+            
+            if schedule_key not in schedule_groups:
+                schedule_groups[schedule_key] = {
+                    'deals': [],
+                    'days_of_week': deal.get('days_of_week', []),
+                    'start_time': deal.get('start_time'),
+                    'end_time': deal.get('end_time'),
+                    'is_all_day': deal.get('is_all_day', False),
+                    'highest_confidence': 0.0,
+                    'source_urls': set()
+                }
+            
+            # Add deal to group
+            schedule_groups[schedule_key]['deals'].append(deal)
+            
+            # Track highest confidence score for the group
+            confidence = deal.get('confidence_score', 0.0)
+            if confidence > schedule_groups[schedule_key]['highest_confidence']:
+                schedule_groups[schedule_key]['highest_confidence'] = confidence
+            
+            # Collect unique source URLs
+            if deal.get('source_url'):
+                schedule_groups[schedule_key]['source_urls'].add(deal.get('source_url'))
+        
+        # Convert offering groups to list
+        for (days_key, time_key), group_data in schedule_groups.items():
+            # Generate descriptive group title for offerings (not just schedule)
+            if group_data['days_of_week']:
+                if len(group_data['days_of_week']) == 1:
+                    day_name = group_data['days_of_week'][0].title()
+                    group_title = f"{day_name} Specials"
+                else:
+                    group_title = "Special Offers"
+            else:
+                group_title = "Special Offers"
+            
+            # Consolidate deal descriptions
+            consolidated_deals = consolidate_deal_descriptions(group_data['deals'])
+            
+            if consolidated_deals:  # Only add if there are meaningful offerings
+                grouped_deals.append({
+                    'title': group_title,
+                    'days_of_week': group_data['days_of_week'],
+                    'start_time': group_data['start_time'],
+                    'end_time': group_data['end_time'],
+                    'is_all_day': group_data['is_all_day'],
+                    'deals': consolidated_deals,
+                    'confidence_score': group_data['highest_confidence'],
+                    'source_urls': list(group_data['source_urls']),
+                    'deal_count': len(group_data['deals']),
+                    'is_schedule_group': False
+                })
+    
+    return grouped_deals
+
+
+def generate_group_title(days, start_time, end_time, is_all_day):
+    """Generate descriptive title for a deal group"""
+    if not days:
+        if is_all_day:
+            return "All Day Special"
+        elif start_time and end_time:
+            return f"{start_time} - {end_time}"
+        else:
+            return "Special Offer"
+    
+    # Format days
+    if len(days) == 7:
+        day_str = "Daily"
+    elif len(days) == 1:
+        day_str = days[0].title()
+    elif set(days) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
+        day_str = "Weekday"
+    elif set(days) == {'saturday', 'sunday'}:
+        day_str = "Weekend"
+    else:
+        # Multiple specific days
+        day_str = ", ".join([day.title() for day in days[:3]])
+        if len(days) > 3:
+            day_str += f" + {len(days) - 3} more"
+    
+    # Format time
+    if is_all_day:
+        time_str = "All Day"
+    elif start_time and end_time:
+        time_str = f"{start_time} - {end_time}"
+    else:
+        time_str = ""
+    
+    # Combine
+    if time_str:
+        return f"{day_str} {time_str}"
+    else:
+        return f"{day_str} Special"
+
+
+def consolidate_deal_descriptions(deals):
+    """Consolidate and clean up deal descriptions to avoid redundancy"""
+    consolidated = []
+    
+    for deal in deals:
+        description = deal.get('description', '').strip()
+        title = deal.get('title', '').strip()
+        
+        # Skip generic titles that don't add information
+        if title.lower() in ['happy hour', 'tuesday special', 'daily special', 'time-based special', 'multi-day happy hour']:
+            title = ""
+        
+        # Clean up description
+        if description:
+            # Remove redundant day/time info that's already in the group header
+            description = clean_description(description)
+        
+        # For deals with only schedule info and no actual offer details, skip them
+        # since the schedule is already shown in the group header
+        if not description or description.lower() in ['happy hour', 'special']:
+            continue
+        
+        # Use title if description is empty or not useful
+        if not description and title:
+            description = title
+        elif title and title.lower() not in description.lower() and title:
+            # Combine title and description if both are useful
+            if description:
+                description = f"{title}: {description}"
+            else:
+                description = title
+        
+        # Only add if we have meaningful content and it's not a duplicate
+        if description and description not in [c.get('description', '') for c in consolidated]:
+            consolidated.append({
+                'title': title,
+                'description': description,
+                'price': deal.get('price'),
+                'confidence_score': deal.get('confidence_score', 0.0)
+            })
+    
+    # If no meaningful descriptions found, add a generic one
+    if not consolidated and deals:
+        consolidated.append({
+            'title': '',
+            'description': 'Happy hour specials available',
+            'price': None,
+            'confidence_score': max([deal.get('confidence_score', 0.0) for deal in deals])
+        })
+    
+    return consolidated
+
+
+def clean_description(description):
+    """Clean up description by removing redundant schedule information"""
+    import re
+    
+    # Remove patterns like "every tuesday, all day"
+    description = re.sub(r'every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday),?\s*all\s+day', '', description, flags=re.IGNORECASE)
+    
+    # Remove standalone day names at end of description
+    description = re.sub(r'\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)$', '', description, flags=re.IGNORECASE)
+    
+    # Remove time patterns that are redundant (like "11am-10pm‍friday")
+    description = re.sub(r'\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*-\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)[\s\u200d]*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)', '', description, flags=re.IGNORECASE)
+    
+    # Remove standalone time ranges without context
+    description = re.sub(r'^\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*-\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*$', '', description, flags=re.IGNORECASE)
+    
+    # Remove any remaining invisible characters or weird spacing
+    description = re.sub(r'[\u200d\u200c\u00a0]+', ' ', description)  # Remove zero-width joiners and non-breaking spaces
+    description = re.sub(r'\s+', ' ', description)  # Normalize whitespace
+    
+    return description.strip()
+
+
+def day_order(day_name):
+    """Return numeric order for day of week (Monday = 0)"""
+    day_mapping = {
+        'monday': 0, 'tuesday': 1, 'wednesday': 2, 'thursday': 3,
+        'friday': 4, 'saturday': 5, 'sunday': 6
+    }
+    return day_mapping.get(day_name.lower(), 7)
+
+
 def main():
     """Generate the complete multi-page restaurant site with enhanced data"""
     
@@ -47,6 +330,7 @@ def main():
     env.filters['format_days'] = format_day_range
     env.filters['domain_name'] = extract_domain_name
     env.filters['cuisine_emoji'] = cuisine_with_emoji
+    env.filters['group_deals'] = group_deals_by_schedule
     
     # Create output directories
     docs_dir = Path('docs')

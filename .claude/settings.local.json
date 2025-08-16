@@ -12,7 +12,9 @@
       "Bash(find:*)",
       "Bash(mkdir:*)",
       "WebFetch(domain:jovanina.com)",
-      "WebFetch(domain:www.cityocitydenver.com)"
+      "WebFetch(domain:www.cityocitydenver.com)",
+      "Bash(ls:*)",
+      "Bash(jq:*)"
     ],
     "deny": [],
     "ask": []

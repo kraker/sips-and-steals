@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "blue-sushi-sake-grill",
-  "archived_at": "2025-08-16T15:05:59.302793",
+  "archived_at": "2025-08-16T18:33:42.807857",
   "deals": [
     {
       "title": "Vegan Maki Special",
@@ -14,7 +14,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:05:57.015512",
+      "scraped_at": "2025-08-16T18:33:40.437070",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
@@ -30,7 +30,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:05:57.015523",
+      "scraped_at": "2025-08-16T18:33:40.437087",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
@@ -46,9 +46,127 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:05:57.015709",
+      "scraped_at": "2025-08-16T18:33:40.437459",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
+    },
+    {
+      "title": "Multi-Day Happy Hour",
+      "description": "11am-10pm‍friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": "11:00 AM",
+      "end_time": "10:00 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442053",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Multi-Day Happy Hour",
+      "description": "11am-10:30pmsaturday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "saturday"
+      ],
+      "start_time": "11:00 AM",
+      "end_time": "10:30 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442073",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Multi-Day Happy Hour",
+      "description": "12pm-10:30pmsunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": "12:00 PM",
+      "end_time": "10:30 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442085",
+      "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "11am-10pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442910",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "11am-10:30pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442912",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "12pm-10:30pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442913",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "12pm-9pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442914",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "11am-6:30pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T18:33:40.442915",
+      "source_url": null,
+      "confidence_score": 0.4
     }
   ]
 }

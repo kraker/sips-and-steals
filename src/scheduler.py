@@ -312,9 +312,20 @@ class GenericScraper(BaseScraper):
     """Generic scraper using common patterns"""
     
     def scrape_deals(self) -> List:
-        """Scrape using common patterns only"""
-        soup = self.fetch_page()
-        return self.parse_common_patterns(soup)
+        """Scrape using common patterns from all available URLs"""
+        deals = []
+        
+        # Use all pages if restaurant has multiple URLs configured
+        if hasattr(self.restaurant, 'websites') and len(getattr(self.restaurant, 'websites', [])) > 1:
+            logger.info(f"Trying all {len(getattr(self.restaurant, 'websites'))} URLs for {self.restaurant.name}")
+            soups = self.fetch_all_pages()
+            for soup in soups:
+                deals.extend(self.parse_common_patterns(soup))
+        else:
+            soup = self.fetch_page()
+            deals = self.parse_common_patterns(soup)
+        
+        return deals
 
 
 # Utility function for one-off scraping

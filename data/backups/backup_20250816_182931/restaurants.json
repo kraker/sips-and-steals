@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-16T16:54:08.962539",
+    "updated_at": "2025-08-16T18:28:27.059188",
     "districts": [
       "Aurora",
       "Boulder",
@@ -95,9 +95,7 @@
         "cuisine": "Italian",
         "website": "https://jovanina.com/#menus",
         "phone": null,
-        "happy_hour_times": [
-          "Wed All Day | Tue, Thu, Fri, Sat 5p - 6p | Fri, Sat 9p - 10p. Bar only."
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -112,9 +110,7 @@
         "cuisine": null,
         "website": "https://www.thirstyliongastropub.com/menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 6 | Thu, Fri, Sat 9 - close"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:04:59.086406"
@@ -129,14 +125,17 @@
         "cuisine": "Sushi",
         "website": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "phone": null,
-        "happy_hour_times": [
-          "Sun All Day & Mon, Tue, Wed, Thu, Fri, Sat 2  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
+        "websites": [
+          "https://www.bluesushisakegrill.com/menus/daily-specials",
+          "https://www.bluesushisakegrill.com/menus/happy-hour",
+          "https://www.bluesushisakegrill.com/locations/lodo"
+        ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:05:59.302716"
+        "last_updated": "2025-08-16T18:28:24.591355"
       },
       "a5-steakhouse": {
         "name": "A5 Steakhouse",
@@ -148,9 +147,7 @@
         "cuisine": null,
         "website": "https://www.a5denver.com/menu#menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3:30  - 5:30"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -165,9 +162,7 @@
         "cuisine": "Italian",
         "website": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3  - 5"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:08:00.323326"
@@ -182,9 +177,7 @@
         "cuisine": "Mediterranean",
         "website": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2:30  - 5 . Bar/Lounge Only."
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -201,9 +194,7 @@
         "cuisine": "Steakhouse",
         "website": "https://stksteakhouse.com/happenings/happy-hour/",
         "phone": null,
-        "happy_hour_times": [
-          "Sun, Mon, Tue, Wed, Thu, Fri 5:30  – 5:30  | Sat, Sun 3  - 5:30 | Sun, Mon, Tue, Wed, Thu 9  - Close"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "websites": [
           "https://stksteakhouse.com/happenings/happy-hour/",
@@ -232,9 +223,7 @@
         "cuisine": "Steakhouse",
         "website": "https://www.urbanfarmersteakhouse.com/denver-menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:10:59.253206"
@@ -249,13 +238,10 @@
         "cuisine": "Mexican",
         "website": "https://tamayodenver.com/happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 2  - 5  | Sat, Sun 2  - 4",
-          "Sat, Sun Bottomless brunch 10:30 am - 3"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T16:54:06.173154"
+        "last_updated": "2025-08-16T17:06:07.837752"
       },
       "corridor-44": {
         "name": "Corridor 44",
@@ -267,9 +253,7 @@
         "cuisine": "French",
         "website": "https://www.corridor44.com/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:12:59.411878"
@@ -284,9 +268,7 @@
         "cuisine": "Italian",
         "website": "https://www.tavernettadenver.com/menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:13:59.234545"
@@ -301,9 +283,7 @@
         "cuisine": "Tapas",
         "website": "https://ultreiadenver.com/menus/happy-hour/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:14:59.758918"
@@ -318,9 +298,7 @@
         "cuisine": null,
         "website": "https://www.sundayvinyl.com/menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6:00"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:15:59.313347"
@@ -335,9 +313,7 @@
         "cuisine": "Sushi",
         "website": "https://www.foragedrestaurant.com/drink",
         "phone": null,
-        "happy_hour_times": [
-          "Sun, Mon, Tue, Wed, Thu 4 - 6 | Fri, Sat 9:30 - 10:30"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -352,9 +328,7 @@
         "cuisine": null,
         "website": "https://www.ajaxrestaurant.com/menu/happy-hour/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:17:59.410246"
@@ -369,9 +343,7 @@
         "cuisine": "American",
         "website": "https://www.mercantiledenver.com/menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat 2p - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:18:59.491174"
@@ -386,7 +358,7 @@
         "cuisine": "Brazilian",
         "website": "https://fogodechao.com/menu-detail/?location=94&type=menu-barbook&id=4592",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -401,9 +373,7 @@
         "cuisine": "Asian",
         "website": "https://www.mechanoodlebar.com/menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3 - 6\\. Excluding holidays"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:20:59.337113"
@@ -418,9 +388,7 @@
         "cuisine": null,
         "website": "https://www.wonderyard.com/menu#menu=specials",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3p - 6p. Bar only, No Rockies home games."
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -437,9 +405,7 @@
         "cuisine": "Cocktail bar",
         "website": "https://www.drinkdonedeal.com/menus/#specials",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3 - 5:30"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:22:59.244823"
@@ -454,9 +420,7 @@
         "cuisine": "Cocktail Bar",
         "website": "https://www.bezeldenver.com/our-menus",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri 4p - 6p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -471,9 +435,7 @@
         "cuisine": "Italian",
         "website": "https://panzano-denver.com/menu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat 4  - 6 . Bar/Lounge Only."
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -490,9 +452,7 @@
         "cuisine": "Steakhouse",
         "website": "https://www.guardandgrace.com/denver-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3  - 6 . Bar, Lounge, Patio only."
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:25:59.557528"
@@ -507,9 +467,7 @@
         "cuisine": null,
         "website": "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver",
         "phone": null,
-        "happy_hour_times": [
-          "Sun. Mon, Tue, Wed, Thu, Fri, Sat 2p - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -524,9 +482,7 @@
         "cuisine": "Pizza",
         "website": "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:27:59.736940"
@@ -541,9 +497,7 @@
         "cuisine": "American",
         "website": "https://www.thearthotel.com/dine-drink/fire",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -560,14 +514,12 @@
         "cuisine": "Vegetarian",
         "website": "https://www.cityocitydenver.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3  - 6 , 9  - Close"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:29:59.178140"
+        "last_updated": "2025-08-16T17:39:01.925411"
       },
       "bang-up-to-the-elephant": {
         "name": "Bang Up to the Elephant",
@@ -579,9 +531,7 @@
         "cuisine": "Beach / Tropical",
         "website": "https://banguptotheelephant.restaurant/menus/specials/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -598,9 +548,7 @@
         "cuisine": "Mexican",
         "website": "https://100deagave.com/happy-hour/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -615,9 +563,7 @@
         "cuisine": "Tapas",
         "website": "http://9thdoorcapitolhill.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Tue All Day (no drink specials) | Wed, Thu, Fri 4  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -634,9 +580,7 @@
         "cuisine": "Mediterranean",
         "website": "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA",
         "phone": null,
-        "happy_hour_times": [
-          "Mon All Day & Tue, Wed, Thu, Fri 4  - 6  & Sat, Sun 2  - 4"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:34:00.575452"
@@ -651,9 +595,7 @@
         "cuisine": "Vegetarian",
         "website": "https://www.watercoursefoods.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 11 am - 12 , 3  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -670,9 +612,7 @@
         "cuisine": "Asian",
         "website": "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri Open - 6p | Sat, Sun 3p  - 6p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:35:59.799411"
@@ -687,9 +627,7 @@
         "cuisine": "Mexican",
         "website": "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri 3  - 5"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:36:59.539097"
@@ -704,9 +642,7 @@
         "cuisine": "Sushi",
         "website": "https://gofishsushi.com/denver-happy-hour-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat 2  - 6 | Fri, Sat 10  - 12:30 am"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -723,9 +659,7 @@
         "cuisine": "American",
         "website": "https://punchbowlsocial.com/location/denver/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:39:00.038588"
@@ -740,9 +674,7 @@
         "cuisine": "Sushi",
         "website": "https://www.rockyyamasushi.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat, Sun 3  - 6 . No HH on first Fri or Holiday."
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -759,9 +691,7 @@
         "cuisine": "Tiki",
         "website": "https://www.adriftbar.com/menus/happy-hour-menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Tue All Day & Wed, Thu 5 - 7 | Fri 4  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:41:01.108820"
@@ -776,9 +706,7 @@
         "cuisine": "French",
         "website": "https://www.laforetdenver.com/menus",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat 4 - 5"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:41:59.578459"
@@ -793,9 +721,7 @@
         "cuisine": "Japanese",
         "website": "https://ronincongresspark.com/menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Tue All Day | Wed, Thu, Fri, Sat, Sun 5  - 6:30 . Bar & Patio only except Tue"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -810,9 +736,7 @@
         "cuisine": "Italian",
         "website": "https://www.shellsandsauce.net/menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat - 3:30  - 5  (days of week not verified on website)"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -829,9 +753,7 @@
         "cuisine": null,
         "website": "https://barmax.co/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4 - 7"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -848,9 +770,7 @@
         "cuisine": "Vietnamese",
         "website": "https://www.sapsua.com/menus/",
         "phone": null,
-        "happy_hour_times": [
-          "Wed, Thu, Fri, Sat, Sun, Mon 4:30 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T15:45:59.548858"
@@ -867,9 +787,7 @@
         "cuisine": null,
         "website": "https://hapasushi.com/pages/landmark-at-greenwood-village",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 2:30  - 5:30  & Fri, Sat 10  - 12 am"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -886,7 +804,7 @@
         "cuisine": null,
         "website": "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -903,7 +821,7 @@
         "cuisine": null,
         "website": "https://cochinotaco.com/englewood-cochino-taco-food-menu",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -918,7 +836,7 @@
         "cuisine": null,
         "website": "https://www.jingrestaurant.com/denver/menu",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -933,7 +851,7 @@
         "cuisine": null,
         "website": "https://pizzarepublica.com/menu/",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -948,7 +866,7 @@
         "cuisine": null,
         "website": "https://www.blackhaustavern.com/menu-littleton#menu=happy-hour-sync",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -965,7 +883,7 @@
         "cuisine": null,
         "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder/#happy-hour",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
         "last_updated": "2025-08-16T14:43:50.089841"
@@ -980,7 +898,7 @@
         "cuisine": null,
         "website": "https://www.myneighborfelix.com/location-boulder#menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -995,7 +913,7 @@
         "cuisine": null,
         "website": "https://bartaco.com/boulderhightidehour/",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1012,7 +930,7 @@
         "cuisine": null,
         "website": "https://www.besocialcolorado.com/happy-hour-bs",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1029,9 +947,7 @@
         "cuisine": "Global",
         "website": "https://www.oliveandfinch.com/location/olive-finch-cherry-creek/#happy-hour-cherry-creek",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 5"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1048,11 +964,7 @@
         "cuisine": "Seafood",
         "website": "https://www.blueislandoysterbar.com/specials",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat 2  - 6  & Sun Open - 6",
-          "Fri, Sat 9 - 11 - 99¢ oysters",
-          "Mon 11am - 9 - $1.25 oysters"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1067,9 +979,7 @@
         "cuisine": "Seafood",
         "website": "https://saltwatersocial.com/menu/?menu-choice=happy-hour%20",
         "phone": null,
-        "happy_hour_times": [
-          "Sun, Mon, Tue, Wed, Thu, Fri 2:30p  - 6:30p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1084,9 +994,7 @@
         "cuisine": "Italian",
         "website": "https://www.northitalia.com/locations/denver-co-cherry-creek-shopping-center/menus/happy-hour-menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3 - 6\\. At the Bar."
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1101,9 +1009,7 @@
         "cuisine": "Mexican",
         "website": "https://solcocina.com/solde-menus/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Wed, Thu, Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1118,10 +1024,7 @@
         "cuisine": "Mexican",
         "website": "https://www.torodenver.com/menus/#brunch",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat 3 - 5",
-          "Sat, Sun - Bottomless brunch 10:30 am - 2  - $50"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1136,9 +1039,7 @@
         "cuisine": "Chinese",
         "website": "https://littleollies.com/menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Wed All Day | Thu, Fri, Sat, Sun, Mon, Tue 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1153,9 +1054,7 @@
         "cuisine": "American",
         "website": "https://www.halcyonhotelcherrycreek.com/local-jones/menus",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu 2p - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1170,9 +1069,7 @@
         "cuisine": "Mexican",
         "website": "https://www.northcountydenver.com/specials/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon All Day | Night & Tue, Wed, Thu, Fri, Sat, Sun 3 - 6, 8 - Close"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1187,9 +1084,7 @@
         "cuisine": "American",
         "website": "https://www.officersclublowry.com/menu/hh-menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon 4 - Close & Tue, Wed, Thu 4 - 6 & Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1204,9 +1099,7 @@
         "cuisine": "Italian",
         "website": "https://www.zanesbistro.com/happy-hours",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun Open - 6pm"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1223,9 +1116,7 @@
         "cuisine": "French",
         "website": "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus/#happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat 2:30p  - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1240,10 +1131,7 @@
         "cuisine": "Global",
         "website": "https://www.amblidenver.com/ambliglobalatbelleviewstation",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3p - 6p | Sat 5p - 6p",
-          "Tue - Tapas Tuesday"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1260,9 +1148,7 @@
         "cuisine": "Mexican",
         "website": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
         "phone": null,
-        "happy_hour_times": [
-          "Mon All Day & Tue, Wed, Thu, Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1277,7 +1163,7 @@
         "cuisine": "Asian",
         "website": "https://www.gingerpig.com/denver-menus?menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1292,9 +1178,7 @@
         "cuisine": "Plant-Based",
         "website": "https://www.ediblebeats.com/vital-root",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thur, Fri 3  - 5"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1311,7 +1195,7 @@
         "cuisine": "Mediterranean",
         "website": "https://ediblebeats.com/restaurants/el-five/",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1328,9 +1212,7 @@
         "cuisine": "Japanese",
         "website": "https://www.kumoyadenver.com/happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Sun, Mon, Tue, Wed, Thu 5p - 7p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1345,9 +1227,7 @@
         "cuisine": "Mexican",
         "website": "https://www.almalohidenver.com/faqs",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 2p - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1362,9 +1242,7 @@
         "cuisine": "Global",
         "website": "https://thebinderydenver.com/",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri, Sat 3 - 5"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1381,9 +1259,7 @@
         "cuisine": "Sushi",
         "website": "https://bamboosushi.com/location/lohi/happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4  - 6  & Sat, Sun 12  - 4"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1398,7 +1274,7 @@
         "cuisine": "Italian",
         "website": "https://www.bardoughdenver.com/menu#menu=apertivo-hour-ordering",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1413,9 +1289,7 @@
         "cuisine": null,
         "website": "https://www.ediblebeats.com/root-down",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4:30  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1432,9 +1306,7 @@
         "cuisine": "Italian",
         "website": "https://gaetanositalian.com/cocktails/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon 4:30 - 6 & Tue, Wed, Thu, Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1449,9 +1321,7 @@
         "cuisine": "Global",
         "website": "https://www.ediblebeats.com/linger",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 4  - 6 . Rooftop only."
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1468,9 +1338,7 @@
         "cuisine": "Japanese",
         "website": "https://www.kawanidenver.com/#menu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri 4p - 5p"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1485,9 +1353,7 @@
         "cuisine": "Mediterranean",
         "website": "https://www.ashkaradenver.com/menu#menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 5"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1504,9 +1370,7 @@
         "cuisine": "Mexican",
         "website": "https://www.senorbeardenver.com/menu#menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 3 - 6 at the Bar & 3 - 5 at Tables"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1521,9 +1385,7 @@
         "cuisine": null,
         "website": "https://www.amelm.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Sun All Day | Mon, Tue, Wed, Thu, Fri Open - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1538,9 +1400,7 @@
         "cuisine": "Mexican",
         "website": "https://www.tacostequilawhiskey.com/dine-in-menu/#happy_hour",
         "phone": null,
-        "happy_hour_times": [
-          "Mon All Day | Tue, Wed, Thu, Fri, Sat, Sun 4  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1555,9 +1415,7 @@
         "cuisine": "Asian",
         "website": "https://glonoodlehouse.com/menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1572,9 +1430,7 @@
         "cuisine": "Mexican",
         "website": "https://neciomexicankitchen.com/denver-denver-necio-mexican-kitchen-food-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri 3 - 5"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1591,9 +1447,7 @@
         "cuisine": "Colorado",
         "website": "https://www.cambriadenverrino.com/dining/menus",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1608,9 +1462,7 @@
         "cuisine": "Italian",
         "website": "https://www.diomiopasta.com/menus",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1627,9 +1479,7 @@
         "cuisine": "Sushi",
         "website": "https://sushi-rama.com/sushi-happy-hour-denver/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3  - 4"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1644,9 +1494,7 @@
         "cuisine": "Sushi",
         "website": "https://www.temakiden.com/menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu 4:30  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1663,9 +1511,7 @@
         "cuisine": "Japanese",
         "website": "https://uchi.uchirestaurants.com/location/denver/menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1680,9 +1526,7 @@
         "cuisine": "American / Latin",
         "website": "https://workandclassdenver.com/menus.html",
         "phone": null,
-        "happy_hour_times": [
-          "Wed, Thu, Fri, Sat, Sun 5  - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1697,9 +1541,7 @@
         "cuisine": "American",
         "website": "https://weltonroom.com/denver-welton-room-welton-room-dining",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Wed, Thu 5 - 7"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1714,9 +1556,7 @@
         "cuisine": null,
         "website": "https://pointeasydenver.com/menus/",
         "phone": null,
-        "happy_hour_times": [
-          "Wed, Thu, Fri, Sat 5 - 6 & Sun All Day"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1733,10 +1573,7 @@
         "cuisine": "French",
         "website": "https://bistrovendome.com/events/",
         "phone": null,
-        "happy_hour_times": [
-          "Sun, Mon, Tue, Wed, Thu, Fri, Sat 4 - 6",
-          "Mon Movie Nights 6  - movie screening with a four course prix fixe Menu - $65"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1751,9 +1588,7 @@
         "cuisine": "Latin / Spanish",
         "website": "https://lucinaeatery.co/denver-park-hill-lucina-eatery-and-bar-food-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue, Wed, Thu, Fri 3  - 5"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1770,9 +1605,7 @@
         "cuisine": "Beach",
         "website": "https://maxgillandgrill.com/denver-max-gill-and-grill-happy-hours-specials",
         "phone": null,
-        "happy_hour_times": [
-          "Fri, Sat, Sun, Mon, Tue, Wed 3 - 6 & Thu All Day & Tiki Bar Tue"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1787,7 +1620,7 @@
         "cuisine": null,
         "website": "https://www.reiversbarandgrill.com/menu#menu=happy-hour",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1802,9 +1635,7 @@
         "cuisine": null,
         "website": "https://www.blackbirdpublichouse.com/happy-hour-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon All Day & Tue, Wed, Thu, Fri, Sat, Sun 3 - 6, 9 - close"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1819,9 +1650,7 @@
         "cuisine": "Pizza",
         "website": "https://www.joyhilldenver.com/happy-hour-menu",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri, Sat, Sun 4 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1838,9 +1667,7 @@
         "cuisine": "Mexican",
         "website": "https://www.quebuenosuerte.com/thefood",
         "phone": null,
-        "happy_hour_times": [
-          "Mon, Tue, Wed, Thu, Fri 3 - 6"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1855,9 +1682,7 @@
         "cuisine": "American",
         "website": "https://jacksonpearldenver.com/menus/",
         "phone": null,
-        "happy_hour_times": [
-          "Tues, Wed, Thu, Fri, Sat, Sun 4 – 5:30"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1872,9 +1697,7 @@
         "cuisine": "Japanese",
         "website": "https://ototoden.com/our-menu/",
         "phone": null,
-        "happy_hour_times": [
-          "Wed, Thu, Fri, Sat, Sun 4:30 - 6:00"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1891,9 +1714,7 @@
         "cuisine": null,
         "website": "https://www.briarcommon.com/happyhour",
         "phone": null,
-        "happy_hour_times": [
-          "Tue All Day | Mon, Wed, Thu, Fri 3p - 6p.  \\*Not available during stadium events"
-        ],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1910,9 +1731,7 @@
         "cuisine": null,
         "website": "http://www.annettescratchtotable.com/patiomenu",
         "phone": null,
-        "happy_hour_times": [
-          "Tue All Day | Night. Wed, Thu, Fri, Sat, Sun 4:30  - 5:30"
-        ],
+        "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
@@ -1929,7 +1748,7 @@
         "cuisine": null,
         "website": "https://www.boychikkitchen.com/general-9-1",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null
@@ -1946,7 +1765,7 @@
         "cuisine": null,
         "website": "https://tstreetroadhouse.com/happy-hour/",
         "phone": null,
-        "happy_hour_times": [],
+        "static_deals": [],
         "special_notes": [],
         "live_data_available": false,
         "last_updated": null

@@ -304,6 +304,46 @@ class BaseScraper(ABC):
                 raise TemporaryScrapingError(f"All URLs failed. Last error: {str(last_exception)}")
         else:
             raise PermanentScrapingError("No valid content found at any URL")
+
+    def fetch_all_pages(self, timeout: Optional[int] = None) -> List[BeautifulSoup]:
+        """Fetch and parse all configured webpages, returning list of valid soups"""
+        timeout = timeout or self.restaurant.scraping_config.timeout_seconds
+        
+        # Determine URLs to try
+        if hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            urls_to_try = getattr(self.restaurant, 'websites')
+            logger.info(f"Trying all {len(urls_to_try)} URLs for {self.restaurant.name}")
+        else:
+            # Fallback to single website
+            urls_to_try = [self.restaurant.website] if self.restaurant.website else []
+        
+        if not urls_to_try:
+            raise PermanentScrapingError("No URLs provided for scraping")
+        
+        valid_soups = []
+        
+        # Try each URL and collect all valid content
+        for i, try_url in enumerate(urls_to_try):
+            try:
+                logger.info(f"Attempting URL {i+1}/{len(urls_to_try)}: {try_url}")
+                soup = self._fetch_single_url(try_url, timeout)
+                
+                # Validate page content
+                if self._validate_page_content(soup, try_url):
+                    logger.info(f"Successfully fetched and validated: {try_url}")
+                    valid_soups.append(soup)
+                else:
+                    logger.info(f"Content validation failed for: {try_url}")
+                    continue
+                    
+            except Exception as e:
+                logger.warning(f"Failed to fetch {try_url}: {e}")
+                continue
+        
+        if not valid_soups:
+            raise PermanentScrapingError("No valid content found at any URL")
+            
+        return valid_soups
     
     def _can_fetch_url(self, url: str) -> bool:
         """Check if robots.txt allows fetching this URL"""
@@ -429,6 +469,10 @@ class BaseScraper(ABC):
         
         # Enhanced patterns to capture scheduling details
         enhanced_patterns = [
+            # Pattern: "11am-10pm‍friday: 11am-10:30pmsaturday: 12pm-10:30pmsunday: 12pm-9pmhappy hour" - multi-day schedule
+            r'(\d{1,2}(?::\d{2})?(?:am|pm))\s*-\s*(\d{1,2}(?::\d{2})?(?:am|pm)).*?(?:friday|saturday|sunday|monday|tuesday|wednesday|thursday)',
+            # Pattern: "happy hoursmonday-saturday: 11am-6:30pm sunday: all day"
+            r'happy\s+hours?\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*-\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*:\s*(\d{1,2}(?::\d{2})?(?:am|pm))\s*-?\s*(\d{1,2}(?::\d{2})?(?:am|pm))?',
             # Pattern: "EVERY DAY 3-6PM & 9-10pm" - City O City style
             r'every\s+day\s+(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s*&\s*(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm',
             # Pattern: "3-6PM & 9-10pm" - multiple time ranges
@@ -505,6 +549,37 @@ class BaseScraper(ABC):
                 confidence_score=0.6,  # Lower confidence since we don't have timing details
                 source_url=getattr(self.restaurant, 'website', None)
             )
+        
+        # Pattern: "happy hoursmonday-saturday: 11am-6:30pm"
+        day_range_match = re.search(r'happy\s+hours?\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*-\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*:\s*(\d{1,2}(?::\d{2})?(?:am|pm))\s*-?\s*(\d{1,2}(?::\d{2})?(?:am|pm))?', deal_text_lower)
+        if day_range_match:
+            start_day = self._parse_day_name(day_range_match.group(1))
+            end_day = self._parse_day_name(day_range_match.group(2))
+            start_time = self._normalize_time(day_range_match.group(3))
+            end_time = self._normalize_time(day_range_match.group(4)) if day_range_match.group(4) else None
+            
+            if start_day and end_day:
+                # Get days in range
+                day_order = list(DayOfWeek)
+                start_idx = day_order.index(start_day)
+                end_idx = day_order.index(end_day)
+                if start_idx <= end_idx:
+                    days_of_week = day_order[start_idx:end_idx + 1]
+                    title = "Weekly Happy Hour"
+        
+        # Pattern: "11am-10pm‍friday: 11am-10:30pmsaturday: 12pm-10:30pmsunday: 12pm-9pmhappy hour" - multi-day schedule
+        elif re.search(r'(\d{1,2}(?::\d{2})?(?:am|pm))\s*-\s*(\d{1,2}(?::\d{2})?(?:am|pm)).*?(?:friday|saturday|sunday|monday|tuesday|wednesday|thursday)', deal_text_lower):
+            # For complex multi-day schedules, extract the primary time range
+            time_match = re.search(r'(\d{1,2}(?::\d{2})?(?:am|pm))\s*-\s*(\d{1,2}(?::\d{2})?(?:am|pm))', deal_text_lower)
+            if time_match:
+                start_time = self._normalize_time(time_match.group(1))
+                end_time = self._normalize_time(time_match.group(2))
+                # Extract mentioned days
+                day_names = re.findall(r'(monday|tuesday|wednesday|thursday|friday|saturday|sunday)', deal_text_lower)
+                days_of_week = [self._parse_day_name(day) for day in day_names if self._parse_day_name(day)]
+                days_of_week = list(set(days_of_week))  # Remove duplicates
+                if days_of_week:
+                    title = "Multi-Day Happy Hour"
         
         # Pattern: "3-6pm every day" or "available 3-6pm every day"
         time_range_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day', deal_text_lower)
@@ -701,10 +776,19 @@ class BaseScraper(ABC):
                 return ScrapingStatus.SUCCESS, valid_deals, None
             
             else:
-                # Try fallback parsing
+                # Try fallback parsing with all URLs for restaurants with multiple websites
                 logger.info(f"No deals found with custom scraper, trying common patterns for {self.restaurant.name}")
-                soup = self.fetch_page()
-                fallback_deals = self.parse_common_patterns(soup)
+                
+                # Use all pages if restaurant has multiple URLs configured
+                if hasattr(self.restaurant, 'websites') and len(getattr(self.restaurant, 'websites', [])) > 1:
+                    logger.info(f"Trying fallback parsing on all {len(getattr(self.restaurant, 'websites'))} URLs")
+                    soups = self.fetch_all_pages()
+                    fallback_deals = []
+                    for soup in soups:
+                        fallback_deals.extend(self.parse_common_patterns(soup))
+                else:
+                    soup = self.fetch_page()
+                    fallback_deals = self.parse_common_patterns(soup)
                 
                 if fallback_deals:
                     self.restaurant.live_deals = fallback_deals

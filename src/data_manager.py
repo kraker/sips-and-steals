@@ -93,7 +93,7 @@ class DataManager:
             cuisine=data.get('cuisine'),
             website=website,
             phone=phone,
-            static_happy_hour_times=data.get('happy_hour_times', []),
+            static_deals=data.get('static_deals', []),
             special_notes=data.get('special_notes', []),
             scraping_config=scraping_config
         )
@@ -193,7 +193,7 @@ class DataManager:
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
                 'phone': restaurant.phone,
-                'happy_hour_times': restaurant.static_happy_hour_times or [],
+                'static_deals': restaurant.static_deals or [],
                 'special_notes': restaurant.special_notes or []
             }
             

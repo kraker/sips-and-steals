@@ -1,7 +1,7 @@
 {
   "jovaninas-broken-italian": {
     "deals": [],
-    "last_updated": "2025-08-16T15:03:59.440612"
+    "last_updated": "2025-08-16T17:30:36.809241"
   },
   "thirsty-lion": {
     "deals": [
@@ -78,7 +78,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015512",
+        "scraped_at": "2025-08-16T18:29:26.684872",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
@@ -94,7 +94,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015523",
+        "scraped_at": "2025-08-16T18:29:26.684888",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
@@ -110,12 +110,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:05:57.015709",
+        "scraped_at": "2025-08-16T18:29:26.685213",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T15:05:59.302716"
+    "last_updated": "2025-08-16T18:29:28.744632"
   },
   "a5-steakhouse": {
     "deals": [],
@@ -268,7 +268,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:04:52.842928",
+        "scraped_at": "2025-08-16T17:06:05.796005",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -282,7 +282,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:04:52.843025",
+        "scraped_at": "2025-08-16T17:06:05.796093",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -296,12 +296,29 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:04:52.844358",
+        "scraped_at": "2025-08-16T17:06:05.797404",
         "source_url": null,
         "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "Times: 3, PM, 5, PM | Days: Monday, Friday",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "friday"
+        ],
+        "start_time": "3 PM",
+        "end_time": "5 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T17:06:05.807448",
+        "source_url": null,
+        "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T17:04:55.339903"
+    "last_updated": "2025-08-16T17:06:07.837752"
   },
   "corridor-44": {
     "deals": [
@@ -941,7 +958,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155172",
+        "scraped_at": "2025-08-16T17:38:59.583745",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -955,7 +972,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155199",
+        "scraped_at": "2025-08-16T17:38:59.583776",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -969,7 +986,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.155219",
+        "scraped_at": "2025-08-16T17:38:59.583856",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -983,7 +1000,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.156663",
+        "scraped_at": "2025-08-16T17:38:59.585466",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -997,12 +1014,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:29:57.156664",
+        "scraped_at": "2025-08-16T17:38:59.585468",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:29:59.178140"
+    "last_updated": "2025-08-16T17:39:01.925411"
   },
   "bang-up-to-the-elephant": {
     "deals": [
@@ -1053,11 +1070,11 @@
   },
   "100-de-agave": {
     "deals": [],
-    "last_updated": "2025-08-16T15:31:59.323093"
+    "last_updated": "2025-08-16T17:37:14.579340"
   },
   "9th-door": {
     "deals": [],
-    "last_updated": "2025-08-16T15:32:59.473268"
+    "last_updated": "2025-08-16T17:37:25.091922"
   },
   "vesper-lounge": {
     "deals": [

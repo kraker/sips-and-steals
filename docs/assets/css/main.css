@@ -402,6 +402,146 @@ footer {
   opacity: 0.9;
 }
 
+/* Grouped Deals Styling */
+.deal-group-card {
+  background: var(--pico-code-background-color);
+  padding: 1.25rem;
+  border-radius: var(--pico-border-radius);
+  margin-bottom: 1.25rem;
+  border-left: 4px solid var(--urban-accent);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+}
+
+.deal-group-card:last-child {
+  margin-bottom: 0;
+}
+
+.deal-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.deal-group-title {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin: 0;
+  flex: 1;
+  color: var(--urban-accent);
+}
+
+.deal-group-meta {
+  margin-bottom: 0.75rem;
+}
+
+.schedule-info {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.schedule-days {
+  background: rgba(255, 107, 53, 0.15);
+  color: var(--urban-accent);
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+.schedule-time {
+  color: var(--pico-muted-color);
+  font-weight: 500;
+}
+
+.deal-group-offerings {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 0.5rem;
+}
+
+.deal-offering {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--urban-text);
+}
+
+.deal-offering:last-child {
+  margin-bottom: 0;
+}
+
+.deal-group-count {
+  text-align: right;
+  margin-top: 0.5rem;
+}
+
+.deal-group-count small {
+  color: var(--pico-muted-color);
+  font-style: italic;
+}
+
+/* Schedule Group Styling for Happy Hours */
+.deal-group-card.schedule-group {
+  background: var(--pico-code-background-color);
+  border-left: 4px solid var(--urban-accent);
+  border: 1px solid rgba(255, 107, 53, 0.3);
+}
+
+.deal-group-card.schedule-group .deal-group-title {
+  color: var(--urban-accent);
+  font-size: 1.3rem;
+}
+
+.schedule-list {
+  background: rgba(0, 0, 0, 0.15);
+  padding: 1.25rem;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.schedule-entry {
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--urban-text);
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255, 107, 53, 0.15);
+}
+
+.schedule-entry:last-child {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+/* Mobile responsiveness for grouped deals */
+@media (max-width: 768px) {
+  .schedule-info {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+  
+  .deal-group-offerings {
+    padding: 0.75rem;
+  }
+  
+  .deal-offering {
+    font-size: 0.9rem;
+  }
+  
+  .schedule-list {
+    padding: 1rem;
+  }
+  
+  .schedule-entry {
+    font-size: 0.95rem;
+  }
+}
+
 /* Static Deals Section */
 .static-deals-section {
   background: var(--pico-code-background-color);
