@@ -6,6 +6,9 @@
     <!-- Last Updated Info -->
     <div class="updated-info">
         Updated: {{ metadata.updated_at | dateformat }} | {{ metadata.total_restaurants }} restaurants across {{ metadata.districts | length }} districts
+        {% if data_freshness %}
+        | {{ data_freshness.live_data_percentage }}% with live data
+        {% endif %}
     </div>
     
     <!-- Filters -->
@@ -100,6 +103,13 @@
                         {% if 'plant-based' in note | lower %}🌱 Plant-Based{% else %}{{ note }}{% endif %}
                     </span>
                     {% endfor %}
+                </div>
+                {% endif %}
+                
+                <!-- Subtle last updated info -->
+                {% if restaurant.last_updated %}
+                <div style="font-size: 0.75rem; color: var(--pico-muted-color); margin-top: 0.5rem;">
+                    Updated {{ restaurant.last_updated | time_ago }}
                 </div>
                 {% endif %}
                 

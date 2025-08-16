@@ -1,0 +1,296 @@
+
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Statistics - Sips and Steals</title>
+    
+    <!-- Pico CSS for semantic HTML -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    
+    <!-- Custom styles for dark theme refinements -->
+    <style>
+        :root {
+            --pico-font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu", "Cantarell", sans-serif;
+        }
+        
+        body {
+            background: var(--pico-background-color);
+            margin: 0;
+        }
+        
+        .hero {
+            text-align: center;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--pico-muted-border-color);
+        }
+        
+        .hero h1 {
+            margin-bottom: 0.5rem;
+            font-size: 2.5rem;
+        }
+        
+        .hero .subtitle {
+            color: var(--pico-muted-color);
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .hero .tagline {
+            color: var(--pico-muted-color);
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1rem;
+            padding: 1rem 0;
+        }
+        
+        .restaurant-card {
+            border: 1px solid var(--pico-muted-border-color);
+            border-radius: var(--pico-border-radius);
+            padding: 1rem;
+            background: var(--pico-card-background-color);
+            transition: border-color 0.15s;
+        }
+        
+        .restaurant-card:hover {
+            border-color: var(--pico-primary);
+        }
+        
+        .restaurant-card h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            color: var(--pico-color);
+        }
+        
+        .restaurant-card .location {
+            color: var(--pico-muted-color);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .restaurant-card .cuisine {
+            display: inline-block;
+            background: var(--pico-primary);
+            color: var(--pico-primary-inverse);
+            padding: 0.25rem 0.5rem;
+            border-radius: var(--pico-border-radius);
+            font-size: 0.8rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .restaurant-card .happy-hour {
+            background: var(--pico-code-background-color);
+            padding: 0.5rem;
+            border-radius: var(--pico-border-radius);
+            margin-bottom: 0.75rem;
+            font-size: 0.9rem;
+        }
+        
+        .restaurant-card .tags {
+            display: flex;
+            gap: 0.25rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.75rem;
+        }
+        
+        .restaurant-card .tag {
+            background: var(--pico-secondary);
+            color: var(--pico-secondary-inverse);
+            padding: 0.125rem 0.375rem;
+            border-radius: var(--pico-border-radius);
+            font-size: 0.75rem;
+        }
+        
+        .restaurant-card .tag.plant-based {
+            background: #22c55e;
+            color: white;
+        }
+        
+        .district-section {
+            margin-bottom: 2rem;
+        }
+        
+        .district-title {
+            border-bottom: 2px solid var(--pico-primary);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            color: var(--pico-color);
+        }
+        
+        .filters {
+            background: var(--pico-code-background-color);
+            padding: 1rem;
+            border-radius: var(--pico-border-radius);
+            margin-bottom: 1rem;
+        }
+        
+        .filters h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+        }
+        
+        .filter-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            align-items: end;
+        }
+        
+        .updated-info {
+            text-align: center;
+            color: var(--pico-muted-color);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            border-top: 1px solid var(--pico-muted-border-color);
+            margin-top: 2rem;
+            color: var(--pico-muted-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <main class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1>🍺 Sips and Steals</h1>
+            <div class="subtitle">Denver's Happy Hour Deal Finder</div>
+            <div class="tagline">Where Culinary Adventure Meets Smart Value</div>
+        </header>
+        
+    <div class="container">
+        <h1>📊 System Statistics</h1>
+        
+        <div class="stats-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-bottom: 2rem;">
+            
+            <div class="stat-card" style="background: var(--pico-card-background-color); padding: 1rem; border-radius: var(--pico-border-radius); border: 1px solid var(--pico-muted-border-color);">
+                <h3>🏪 Restaurant Coverage</h3>
+                <p><strong>106</strong> restaurants tracked</p>
+                <p><strong>106</strong> with websites</p>
+                <p><strong>9</strong> with live data</p>
+                <p><strong>8.5%</strong> live data coverage</p>
+            </div>
+            
+            <div class="stat-card" style="background: var(--pico-card-background-color); padding: 1rem; border-radius: var(--pico-border-radius); border: 1px solid var(--pico-muted-border-color);">
+                <h3>🎯 Data Quality</h3>
+                <p><strong>0%</strong> success rate</p>
+                <p><strong>11</strong> with fresh data (&lt;48h)</p>
+                <p><strong>11</strong> districts covered</p>
+                <p><strong>43</strong> neighborhoods</p>
+            </div>
+            
+            <div class="stat-card" style="background: var(--pico-card-background-color); padding: 1rem; border-radius: var(--pico-border-radius); border: 1px solid var(--pico-muted-border-color);">
+                <h3>📅 Last Updated</h3>
+                <p>August 16, 2025 at 02:11 PM</p>
+                <p><small>Data source: enhanced_data_pipeline</small></p>
+                <p><small>Target user: Value-Conscious Culinary Adventurer</small></p>
+            </div>
+            
+        </div>
+        
+        <h2>🏢 Districts Overview</h2>
+        <div class="districts-overview">
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Central</h3>
+                <p><strong>43</strong> restaurants in <strong>14</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Baker, Ballpark / Five Points, Ballpark / RiNo, Ballpark / Union Station, CBD, Capitol Hill, City Park West, Civic Center, Congress Park, Lincoln Park, LoDo, North Capitol Hill, Speer, Union Station</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Greenwood Village, Englewood, Littleton, Centennial</h3>
+                <p><strong>6</strong> restaurants in <strong>4</strong> neighborhoods</p>
+                <p><small>Neighborhoods: **Black+Haus Tavern \- Littleton**, Englewood, Greenwood Village, Littleton</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Boulder</h3>
+                <p><strong>4</strong> restaurants in <strong>1</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Taco Tue</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>East & Southeast Denver</h3>
+                <p><strong>13</strong> restaurants in <strong>4</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Cherry Creek, Hampden South, Lowry Field, Southmoor Park</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Northwest Denver</h3>
+                <p><strong>19</strong> restaurants in <strong>5</strong> neighborhoods</p>
+                <p><small>Neighborhoods: **Kumoya \- Denver**, Berkeley, Highland, Sunnyside, West Highland</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>North Denver</h3>
+                <p><strong>8</strong> restaurants in <strong>6</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Curtis / Ballpark / Five Points, Curtis Park / Five Points, Five Points, RiNo / Ballpark / Five Points, RiNo / Five Points, Whittier</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Northeast Denver</h3>
+                <p><strong>2</strong> restaurants in <strong>2</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Park Hill, South Park Hill</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>South</h3>
+                <p><strong>7</strong> restaurants in <strong>4</strong> neighborhoods</p>
+                <p><small>Neighborhoods: **Jack’s on Pearl \- Upstairs**, Platt Park, Washington Park, Washington Park West</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>West & Southwest Denver</h3>
+                <p><strong>1</strong> restaurants in <strong>1</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Jefferson Park</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Aurora</h3>
+                <p><strong>2</strong> restaurants in <strong>1</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Stanley Marketplace</small></p>
+            </div>
+            <div class="district-card" style="margin-bottom: 1rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+                <h3>Lakewood/Wheat Ridge/Golden</h3>
+                <p><strong>1</strong> restaurants in <strong>1</strong> neighborhoods</p>
+                <p><small>Neighborhoods: Belmar</small></p>
+            </div>
+        </div>
+        
+        <div style="margin-top: 2rem; padding: 1rem; background: var(--pico-code-background-color); border-radius: var(--pico-border-radius);">
+            <h3>🔧 System Information</h3>
+            <p>Enhanced scraping system with intelligent data collection, quality validation, and automatic retry logic.</p>
+            <p>Data freshness varies by restaurant - most active locations are updated daily.</p>
+        </div>
+        
+        <div style="margin-top: 1rem; text-align: center;">
+            <a href="index.html" role="button">← Back to Restaurant List</a>
+        </div>
+    </div>
+        
+        <!-- Footer -->
+        <footer>
+            <p>
+                Curated for quality dining experiences at accessible prices<br>
+                <small>Data sourced from Giovanni's Happy Hours Guide</small>
+            </p>
+        </footer>
+    </main>
+    
+</body>
+</html>

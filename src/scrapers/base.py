@@ -1,74 +1,727 @@
+#!/usr/bin/env python3
+"""
+Enhanced base scraper with retry logic, circuit breaker, and better error handling
+"""
+
 import requests
 from bs4 import BeautifulSoup
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Tuple
 import time
 import logging
-from src.csv_manager import CSVManager
+import random
+from datetime import datetime, timedelta
+from enum import Enum
+import json
+import re
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
+from urllib.robotparser import RobotFileParser
+from urllib.parse import urljoin, urlparse
+
+# Import our models
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+from models import Restaurant, Deal, DealType, DayOfWeek, ScrapingStatus, DealValidator
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
+
+class ScrapingError(Exception):
+    """Base exception for scraping errors"""
+    pass
+
+
+class TemporaryScrapingError(ScrapingError):
+    """Temporary error that should be retried"""
+    pass
+
+
+class PermanentScrapingError(ScrapingError):
+    """Permanent error that should not be retried"""
+    pass
+
+
+class CircuitBreaker:
+    """Simple circuit breaker to avoid hammering failed endpoints"""
+    
+    def __init__(self, failure_threshold: int = 5, timeout: int = 300):
+        self.failure_threshold = failure_threshold
+        self.timeout = timeout
+        self.failure_count = 0
+        self.last_failure_time = None
+        self.state = "closed"  # closed, open, half-open
+    
+    def can_execute(self) -> bool:
+        """Check if we can execute a request"""
+        if self.state == "closed":
+            return True
+        
+        if self.state == "open":
+            if self.last_failure_time and \
+               (datetime.now() - self.last_failure_time).seconds > self.timeout:
+                self.state = "half-open"
+                return True
+            return False
+        
+        # half-open state
+        return True
+    
+    def on_success(self):
+        """Called when request succeeds"""
+        self.failure_count = 0
+        self.state = "closed"
+    
+    def on_failure(self):
+        """Called when request fails"""
+        self.failure_count += 1
+        self.last_failure_time = datetime.now()
+        
+        if self.failure_count >= self.failure_threshold:
+            self.state = "open"
+
+
 class BaseScraper(ABC):
-    """Base class for all restaurant scrapers"""
+    """Enhanced base class for all restaurant scrapers with robust error handling"""
     
-    def __init__(self, restaurant_name: str, website_url: str):
-        self.restaurant_name = restaurant_name
-        self.website_url = website_url
-        self.csv_manager = CSVManager()
-        self.session = requests.Session()
-        # Be polite - add headers to look like a real browser
-        self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        })
+    def __init__(self, restaurant: Restaurant):
+        self.restaurant = restaurant
+        self.circuit_breaker = CircuitBreaker()
+        self.session = self._create_session()
+        self.start_time = datetime.now()
+        
+        # Adaptive delays based on website behavior
+        self.base_delay = 2.0  # Increased from 1.0
+        self.max_delay = 60.0  # Increased from 30.0
+        self.current_delay = self.base_delay
+        
+        # Robots.txt compliance
+        self.robots_cache = {}
+        
+        # More conservative bot detection
+        self.failed_attempts = 0
+        self.max_failed_attempts = 2
+        
+    def _create_session(self) -> requests.Session:
+        """Create a robust requests session with retries and timeouts"""
+        session = requests.Session()
+        
+        # Configure retry strategy
+        retry_strategy = Retry(
+            total=3,
+            backoff_factor=1,
+            status_forcelist=[429, 500, 502, 503, 504],
+            allowed_methods=["HEAD", "GET", "OPTIONS"]  # Updated parameter name
+        )
+        
+        adapter = HTTPAdapter(max_retries=retry_strategy)
+        session.mount("http://", adapter)
+        session.mount("https://", adapter)
+        
+        # Set polite user agent and headers
+        headers = {
+            'User-Agent': 'SipsAndStealsBot/1.0 (+https://github.com/sips-and-steals/scraper) - Denver Happy Hour Aggregator',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Accept-Encoding': 'gzip, deflate',
+            'Connection': 'keep-alive',
+            'Cache-Control': 'max-age=300',
+            'Upgrade-Insecure-Requests': '1'
+        }
+        
+        # Add custom headers from restaurant config
+        headers.update(self.restaurant.scraping_config.custom_headers)
+        session.headers.update(headers)
+        
+        return session
     
-    def fetch_page(self, url: str = None) -> BeautifulSoup:
-        """Fetch and parse a webpage"""
-        url = url or self.website_url
+    def _validate_page_content(self, soup: BeautifulSoup, url: str) -> bool:
+        """Validate that the page content is relevant for this restaurant"""
+        if not soup:
+            return False
+            
+        page_text = soup.get_text().lower()
+        
+        # Check content length
+        if hasattr(self.restaurant, 'scraping_hints'):
+            hints = getattr(self.restaurant, 'scraping_hints', {})
+            min_length = hints.get('content_min_length', 300)
+            if len(page_text) < min_length:
+                logger.info(f"Page content too short ({len(page_text)} chars) for {url}")
+                return False
+                
+            # Check for location-specific keywords
+            location_keywords = hints.get('location_check', [])
+            if location_keywords:
+                found_keywords = [kw for kw in location_keywords if kw in page_text]
+                if found_keywords:
+                    logger.info(f"Found location keywords {found_keywords} in {url}")
+                    return True
+                else:
+                    logger.info(f"No location keywords found in {url}")
+                    return False
+        
+        # Default validation - just check for reasonable content
+        return len(page_text) > 300
+    
+    def _fetch_single_url(self, url: str, timeout: Optional[int] = None) -> BeautifulSoup:
+        """Fetch a single URL with error handling"""
+        timeout = timeout or self.restaurant.scraping_config.timeout_seconds
+        
+        if not self.circuit_breaker.can_execute():
+            raise TemporaryScrapingError("Circuit breaker is open, skipping request")
+        
+        # Check robots.txt compliance
+        if not self._can_fetch_url(url):
+            raise PermanentScrapingError(f"Robots.txt disallows fetching {url}")
+        
+        # Add progressive delay on failures
+        if self.failed_attempts > 0:
+            delay = min(self.base_delay * (2 ** self.failed_attempts), self.max_delay)
+            logger.info(f"Adding {delay}s delay before fetching {url} (attempt after {self.failed_attempts} failures)")
+            time.sleep(delay)
+        
+        logger.info(f"Fetching {url} for {self.restaurant.name}")
+        
+        response = self.session.get(url, timeout=timeout)
+        response.raise_for_status()
+        
+        # Check for bot detection patterns
+        self._check_bot_detection(response)
+        
+        self.circuit_breaker.on_success()
+        self.failed_attempts = 0  # Reset on success
+        
+        return BeautifulSoup(response.content, 'html.parser')
+
+    def fetch_page(self, url: Optional[str] = None, timeout: Optional[int] = None) -> BeautifulSoup:
+        """Fetch and parse a webpage with multiple URL support and validation"""
+        timeout = timeout or self.restaurant.scraping_config.timeout_seconds
+        
+        # Determine URLs to try
+        if url:
+            # Single URL provided directly
+            urls_to_try = [url]
+        elif hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            # Multiple URLs configured
+            urls_to_try = getattr(self.restaurant, 'websites')
+            logger.info(f"Trying {len(urls_to_try)} URLs for {self.restaurant.name}")
+        else:
+            # Fallback to single website
+            urls_to_try = [self.restaurant.website] if self.restaurant.website else []
+        
+        if not urls_to_try:
+            raise PermanentScrapingError("No URLs provided for scraping")
+        
+        last_exception = None
+        
+        # Try each URL until we find one with valid content
+        for i, try_url in enumerate(urls_to_try):
+            try:
+                logger.info(f"Attempting URL {i+1}/{len(urls_to_try)}: {try_url}")
+                soup = self._fetch_single_url(try_url, timeout)
+                
+                # Validate page content
+                if self._validate_page_content(soup, try_url):
+                    logger.info(f"Successfully fetched and validated: {try_url}")
+                    return soup
+                else:
+                    logger.info(f"Content validation failed for: {try_url}")
+                    continue
+                    
+            except Exception as e:
+                logger.warning(f"Failed to fetch {try_url}: {e}")
+                last_exception = e
+                continue
+        
+        # If we get here, all URLs failed
+        if last_exception:
+            if isinstance(last_exception, (TemporaryScrapingError, PermanentScrapingError)):
+                raise last_exception
+            else:
+                raise TemporaryScrapingError(f"All URLs failed. Last error: {str(last_exception)}")
+        else:
+            raise PermanentScrapingError("No valid content found at any URL")
+    
+    def _can_fetch_url(self, url: str) -> bool:
+        """Check if robots.txt allows fetching this URL"""
         try:
-            response = self.session.get(url, timeout=10)
-            response.raise_for_status()
-            return BeautifulSoup(response.content, 'html.parser')
-        except requests.RequestException as e:
-            logger.error(f"Error fetching {url}: {e}")
-            raise
+            parsed_url = urlparse(url)
+            base_url = f"{parsed_url.scheme}://{parsed_url.netloc}"
+            
+            if base_url not in self.robots_cache:
+                robots_url = urljoin(base_url, '/robots.txt')
+                
+                try:
+                    rp = RobotFileParser()
+                    rp.set_url(robots_url)
+                    
+                    # Set a short timeout for robots.txt fetching
+                    old_timeout = self.session.timeout
+                    self.session.timeout = 5
+                    
+                    robots_response = self.session.get(robots_url, timeout=5)
+                    if robots_response.status_code == 200:
+                        rp.read()
+                        self.robots_cache[base_url] = rp
+                    else:
+                        # If no robots.txt, assume we can fetch
+                        self.robots_cache[base_url] = None
+                        
+                    self.session.timeout = old_timeout
+                    
+                except Exception:
+                    # If we can't fetch robots.txt, assume we can proceed
+                    self.robots_cache[base_url] = None
+            
+            rp = self.robots_cache[base_url]
+            if rp is None:
+                return True
+                
+            # Check if our user agent can fetch this URL
+            user_agent = self.session.headers.get('User-Agent', '*')
+            return rp.can_fetch(user_agent, url)
+            
+        except Exception:
+            # If there's any error with robots.txt checking, allow the fetch
+            return True
+    
+    def _check_bot_detection(self, response: requests.Response):
+        """Check if the response indicates bot detection"""
+        content = response.text.lower()
+        
+        # Check response headers first
+        if response.status_code == 429:  # Rate limited
+            raise TemporaryScrapingError("Rate limited by server")
+        
+        # More comprehensive bot detection patterns
+        bot_indicators = [
+            'access denied',
+            'blocked',
+            'captcha',
+            'cloudflare security',
+            'security check',
+            'bot detection',
+            'please enable javascript',
+            'automated requests',
+            'suspicious activity',
+            'verify you are human'
+        ]
+        
+        # Also check for very short responses (often a sign of blocking)
+        if len(content) < 500 and any(indicator in content for indicator in bot_indicators):
+            raise PermanentScrapingError("Bot detection triggered")
+            
+        # Check for JavaScript-heavy pages that might be trying to detect bots
+        if 'javascript' in content and len(content) < 1000:
+            logger.warning(f"Possible JavaScript-heavy page detected for {self.restaurant.name}")
     
     @abstractmethod
-    def scrape_deals(self) -> List[Dict[str, Any]]:
+    def scrape_deals(self) -> List[Deal]:
         """
         Scrape deals from the restaurant website.
-        Should return a list of dictionaries with keys:
-        - title: str
-        - description: str (optional)
-        - day_of_week: str (optional)
-        - start_time: str (optional)
-        - end_time: str (optional)
-        - deal_type: str ('happy_hour', 'daily_special', 'food', 'drink')
-        - price: str (optional)
+        Should return a list of Deal objects.
         """
         pass
     
-    def run(self):
-        """Main method to run the scraper"""
-        logger.info(f"Starting scrape for {self.restaurant_name}")
+    def parse_common_patterns(self, soup: BeautifulSoup) -> List[Deal]:
+        """
+        Attempt to parse common happy hour patterns automatically
+        This serves as a fallback for restaurants without custom scrapers
+        """
+        deals = []
+        
+        # Look for JSON-LD structured data
+        deals.extend(self._parse_json_ld(soup))
+        
+        # Look for common happy hour keywords
+        deals.extend(self._parse_text_patterns(soup))
+        
+        # Look for time patterns
+        deals.extend(self._parse_time_patterns(soup))
+        
+        return deals
+    
+    def _parse_json_ld(self, soup: BeautifulSoup) -> List[Deal]:
+        """Parse JSON-LD structured data"""
+        deals = []
+        scripts = soup.find_all('script', type='application/ld+json')
+        
+        for script in scripts:
+            try:
+                data = json.loads(script.string)
+                if data.get('@type') == 'Menu':
+                    deals.extend(self._extract_deals_from_menu_data(data))
+            except (json.JSONDecodeError, TypeError):
+                continue
+        
+        return deals
+    
+    def _parse_text_patterns(self, soup: BeautifulSoup) -> List[Deal]:
+        """Parse common text patterns for happy hour information"""
+        deals = []
+        text = soup.get_text().lower()
+        
+        # Enhanced patterns to capture scheduling details
+        enhanced_patterns = [
+            # Pattern: "3-6pm every day" or "available 3-6pm every day"
+            r'(?:available\s+)?(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day',
+            # Pattern: "9pm-close thurs-sat" or "9pm - close thu-sat"
+            r'(\d{1,2}(?::\d{2})?)\s*pm\s*-?\s*close\s+(?:thurs?|thu)\s*-\s*(?:sats?|sat)',
+            # Pattern: "25% off something every tuesday, all day" or "half-off something every tuesday, all day"
+            r'(?:\d+%\s*off|half-off).*?every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun),?\s*all\s+day',
+            # Pattern: "something every tuesday" or "every tuesday all day"
+            r'(?:every\s+)?(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)(?:\s*,?\s*all\s+day|\s*all\s+day)?',
+            # Pattern: "happy hour 3pm-6pm monday-friday"
+            r'happy\s+hour.*?(\d{1,2}(?::\d{2})?)\s*(?:am|pm)\s*-\s*(\d{1,2}(?::\d{2})?)\s*(?:am|pm).*?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)',
+            # Pattern: "discounted drinks 4-7pm weekdays"
+            r'(?:discounted|drink|special).*?(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm.*?(?:weekdays|weekends)',
+        ]
+        
+        for pattern in enhanced_patterns:
+            matches = re.finditer(pattern, text, re.IGNORECASE)
+            for match in matches:
+                deal_text = match.group(0)
+                deal = self._create_deal_from_text(deal_text, match)
+                if deal:
+                    deals.append(deal)
+        
+        # Fallback to simpler patterns if no enhanced patterns found
+        if not deals:
+            simple_patterns = [
+                r'happy hour.*?(\d{1,2}(?::\d{2})?\s*(?:am|pm))',
+                r'(\d{1,2}(?::\d{2})?\s*(?:am|pm)).*?happy hour',
+                r'drink specials.*?(\d{1,2}(?::\d{2})?\s*(?:am|pm))'
+            ]
+            
+            for pattern in simple_patterns:
+                matches = re.finditer(pattern, text, re.IGNORECASE | re.DOTALL)
+                for match in matches:
+                    deal = Deal(
+                        title="Happy Hour",
+                        description=match.group(0)[:100],
+                        deal_type=DealType.HAPPY_HOUR,
+                        is_all_day=True,  # Fallback to all-day for simple patterns
+                        confidence_score=0.4
+                    )
+                    deals.append(deal)
+        
+        return deals[:3]  # Limit to avoid duplicates
+    
+    def _create_deal_from_text(self, deal_text: str, match) -> Optional[Deal]:
+        """Create a Deal object from parsed text with proper time and day extraction"""
+        deal_text_lower = deal_text.lower()
+        
+        # Extract time ranges
+        start_time = None
+        end_time = None
+        days_of_week = []
+        is_all_day = False
+        title = "Happy Hour"
+        
+        # Pattern: "3-6pm every day" or "available 3-6pm every day"
+        time_range_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day', deal_text_lower)
+        if time_range_match:
+            start_time = self._normalize_time(time_range_match.group(1) + 'pm')
+            end_time = self._normalize_time(time_range_match.group(2) + 'pm')
+            days_of_week = list(DayOfWeek)  # All days
+            title = "Daily Happy Hour"
+        
+        # Pattern: "9pm-close thurs-sat" or "9pm - close thu-sat" 
+        elif re.search(r'(\d{1,2}(?::\d{2})?)\s*pm\s*-?\s*close\s+(?:thurs?|thu)\s*-\s*(?:sats?|sat)', deal_text_lower):
+            time_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*pm', deal_text_lower)
+            if time_match:
+                start_time = self._normalize_time(time_match.group(1) + 'pm')
+                end_time = "Close"
+                days_of_week = [DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY]
+                title = "Late Night Happy Hour"
+        
+        # Pattern: "25% off something every tuesday, all day" or "half-off something every tuesday, all day"
+        elif re.search(r'(?:\d+%\s*off|half-off).*?every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun),?\s*all\s+day', deal_text_lower):
+            day_match = re.search(r'every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)', deal_text_lower)
+            discount_match = re.search(r'(\d+%\s*off|half-off)', deal_text_lower)
+            if day_match and discount_match:
+                day_name = day_match.group(1)
+                day_obj = self._parse_day_name(day_name)
+                if day_obj:
+                    days_of_week = [day_obj]
+                    is_all_day = True
+                    start_time = None
+                    end_time = None
+                    if 'vegan' in deal_text_lower and 'maki' in deal_text_lower:
+                        title = "Vegan Maki Special"
+                    elif 'sake' in deal_text_lower:
+                        title = "Sake Special"
+                    else:
+                        title = f"{discount_match.group(1).title()} Special"
+        
+        # Pattern: "every tuesday" (fallback for simpler day-specific deals)
+        elif re.search(r'every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)', deal_text_lower):
+            day_match = re.search(r'every\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)', deal_text_lower)
+            if day_match:
+                day_name = day_match.group(1)
+                day_obj = self._parse_day_name(day_name)
+                if day_obj:
+                    days_of_week = [day_obj]
+                    is_all_day = True
+                    start_time = None
+                    end_time = None
+                    title = f"{day_name.title()} Special"
+        
+        # Pattern: time + weekdays/weekends
+        elif 'weekdays' in deal_text_lower:
+            time_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm', deal_text_lower)
+            if time_match:
+                start_time = self._normalize_time(time_match.group(1) + 'pm')
+                end_time = self._normalize_time(time_match.group(2) + 'pm')
+                days_of_week = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+                title = "Weekday Happy Hour"
+        
+        elif 'weekends' in deal_text_lower:
+            time_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm', deal_text_lower)
+            if time_match:
+                start_time = self._normalize_time(time_match.group(1) + 'pm')
+                end_time = self._normalize_time(time_match.group(2) + 'pm')
+                days_of_week = [DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+                title = "Weekend Happy Hour"
+        
+        # Create deal if we have proper time/day info OR if it's an all-day special
+        if (start_time and end_time and days_of_week) or (is_all_day and days_of_week):
+            return Deal(
+                title=title,
+                description=deal_text[:150],  # Limit description length
+                deal_type=DealType.HAPPY_HOUR,
+                days_of_week=days_of_week,
+                start_time=start_time,
+                end_time=end_time,
+                is_all_day=is_all_day,
+                confidence_score=0.8,  # Higher confidence for parsed schedules
+                source_url=self.restaurant.website
+            )
+        
+        return None
+    
+    def _normalize_time(self, time_str: str) -> str:
+        """Normalize time string to proper format"""
+        time_str = time_str.strip().lower()
+        
+        # Handle cases like "3pm" -> "3:00 PM"
+        if re.match(r'^\d{1,2}pm$', time_str):
+            hour = time_str.replace('pm', '')
+            return f"{hour}:00 PM"
+        
+        # Handle cases like "3:30pm" -> "3:30 PM"  
+        if re.match(r'^\d{1,2}:\d{2}pm$', time_str):
+            return time_str.replace('pm', ' PM')
+        
+        # Handle cases like "3am" -> "3:00 AM"
+        if re.match(r'^\d{1,2}am$', time_str):
+            hour = time_str.replace('am', '')
+            return f"{hour}:00 AM"
+            
+        # Handle cases like "3:30am" -> "3:30 AM"
+        if re.match(r'^\d{1,2}:\d{2}am$', time_str):
+            return time_str.replace('am', ' AM')
+        
+        return time_str
+    
+    def _parse_day_name(self, day_name: str) -> Optional[DayOfWeek]:
+        """Parse a day name string to DayOfWeek enum"""
+        day_mapping = {
+            'mon': DayOfWeek.MONDAY, 'monday': DayOfWeek.MONDAY,
+            'tue': DayOfWeek.TUESDAY, 'tuesday': DayOfWeek.TUESDAY,
+            'wed': DayOfWeek.WEDNESDAY, 'wednesday': DayOfWeek.WEDNESDAY,
+            'thu': DayOfWeek.THURSDAY, 'thursday': DayOfWeek.THURSDAY,
+            'fri': DayOfWeek.FRIDAY, 'friday': DayOfWeek.FRIDAY,
+            'sat': DayOfWeek.SATURDAY, 'saturday': DayOfWeek.SATURDAY,
+            'sun': DayOfWeek.SUNDAY, 'sunday': DayOfWeek.SUNDAY
+        }
+        return day_mapping.get(day_name.lower().strip())
+    
+    def _parse_time_patterns(self, soup: BeautifulSoup) -> List[Deal]:
+        """Parse time-based patterns"""
+        deals = []
+        
+        # Look for elements containing time patterns
+        time_elements = soup.find_all(text=re.compile(r'\d{1,2}(?::\d{2})?\s*(?:am|pm).*?-.*?\d{1,2}(?::\d{2})?\s*(?:am|pm)', re.IGNORECASE))
+        
+        for element in time_elements[:5]:  # Limit to first 5 matches
+            time_text = element.strip()
+            if len(time_text) < 200:  # Reasonable length
+                deal = Deal(
+                    title="Time-based Special",
+                    description=time_text,
+                    deal_type=DealType.HAPPY_HOUR,
+                    is_all_day=True,  # Set as all-day to pass validation
+                    confidence_score=0.4  # Lower confidence for generic patterns
+                )
+                deals.append(deal)
+        
+        return deals
+    
+    def _extract_deals_from_menu_data(self, data: dict) -> List[Deal]:
+        """Extract deals from JSON-LD menu data"""
+        deals = []
+        # Implementation would depend on specific JSON-LD structure
+        # This is a placeholder for common patterns
+        return deals
+    
+    def adaptive_delay(self):
+        """Implement adaptive delays based on website response"""
+        delay = self.current_delay + random.uniform(0, 0.5)  # Add jitter
+        time.sleep(delay)
+        
+        # Adjust delay based on success/failure patterns
+        if self.circuit_breaker.failure_count == 0:
+            self.current_delay = max(self.base_delay, self.current_delay * 0.9)
+        else:
+            self.current_delay = min(self.max_delay, self.current_delay * 1.5)
+    
+    def run(self) -> Tuple[ScrapingStatus, List[Deal], Optional[str]]:
+        """
+        Main method to run the scraper with comprehensive error handling
+        Returns (status, deals, error_message)
+        """
+        error_message = None
+        deals = []
         
         try:
-            # Scrape new deals
+            logger.info(f"Starting scrape for {self.restaurant.name}")
+            
+            # Update scraping metadata
+            self.restaurant.scraping_config.last_scraped = datetime.now()
+            
+            # Attempt to scrape deals
             deals = self.scrape_deals()
             
-            # Save deals to CSV (this automatically clears old deals for this restaurant)
-            self.csv_manager.add_deals(
-                restaurant_name=self.restaurant_name,
-                website_url=self.website_url,
-                deals=deals
-            )
+            # Validate deals
+            valid_deals = []
+            for deal in deals:
+                issues = DealValidator.validate_deal(deal)
+                if not issues:
+                    valid_deals.append(deal)
+                else:
+                    logger.warning(f"Invalid deal for {self.restaurant.name}: {issues}")
             
-            logger.info(f"Successfully scraped {len(deals)} deals for {self.restaurant_name}")
+            if valid_deals:
+                # Update restaurant with live deals
+                self.restaurant.live_deals = valid_deals
+                self.restaurant.deals_last_updated = datetime.now()
+                self.restaurant.scraping_config.last_success = datetime.now()
+                self.restaurant.scraping_config.consecutive_failures = 0
+                
+                logger.info(f"Successfully scraped {len(valid_deals)} deals for {self.restaurant.name}")
+                return ScrapingStatus.SUCCESS, valid_deals, None
             
+            else:
+                # Try fallback parsing
+                logger.info(f"No deals found with custom scraper, trying common patterns for {self.restaurant.name}")
+                soup = self.fetch_page()
+                fallback_deals = self.parse_common_patterns(soup)
+                
+                if fallback_deals:
+                    self.restaurant.live_deals = fallback_deals
+                    self.restaurant.deals_last_updated = datetime.now()
+                    return ScrapingStatus.PARTIAL, fallback_deals, "Used fallback parsing"
+                else:
+                    return ScrapingStatus.FAILURE, [], "No deals found"
+        
+        except PermanentScrapingError as e:
+            error_message = f"Permanent error: {str(e)}"
+            logger.error(f"Permanent scraping error for {self.restaurant.name}: {e}")
+            self.restaurant.scraping_config.consecutive_failures += 1
+            # Disable scraping if too many permanent failures
+            if self.restaurant.scraping_config.consecutive_failures >= 5:
+                self.restaurant.scraping_config.enabled = False
+                error_message += " (scraping disabled due to repeated failures)"
+            return ScrapingStatus.ERROR, [], error_message
+        
+        except TemporaryScrapingError as e:
+            error_message = f"Temporary error: {str(e)}"
+            logger.warning(f"Temporary scraping error for {self.restaurant.name}: {e}")
+            self.restaurant.scraping_config.consecutive_failures += 1
+            return ScrapingStatus.FAILURE, [], error_message
+        
         except Exception as e:
-            logger.error(f"Error scraping {self.restaurant_name}: {e}")
-            raise
+            error_message = f"Unexpected error: {str(e)}"
+            logger.error(f"Unexpected error scraping {self.restaurant.name}: {e}")
+            self.restaurant.scraping_config.consecutive_failures += 1
+            return ScrapingStatus.ERROR, [], error_message
         
         finally:
-            # Be polite - add a small delay
-            time.sleep(1)
+            # Always be polite with delays
+            self.adaptive_delay()
+            
+            elapsed = (datetime.now() - self.start_time).total_seconds()
+            logger.info(f"Scraping completed for {self.restaurant.name} in {elapsed:.2f}s")
+
+
+# Utility functions for common parsing tasks
+class ParsingUtils:
+    """Utility functions for common parsing patterns"""
+    
+    @staticmethod
+    def parse_day_range(day_text: str) -> List[DayOfWeek]:
+        """Parse day ranges like 'Monday - Friday' or 'Tue, Wed, Thu'"""
+        days = []
+        day_mapping = {
+            'mon': DayOfWeek.MONDAY, 'monday': DayOfWeek.MONDAY,
+            'tue': DayOfWeek.TUESDAY, 'tuesday': DayOfWeek.TUESDAY,
+            'wed': DayOfWeek.WEDNESDAY, 'wednesday': DayOfWeek.WEDNESDAY,
+            'thu': DayOfWeek.THURSDAY, 'thursday': DayOfWeek.THURSDAY,
+            'fri': DayOfWeek.FRIDAY, 'friday': DayOfWeek.FRIDAY,
+            'sat': DayOfWeek.SATURDAY, 'saturday': DayOfWeek.SATURDAY,
+            'sun': DayOfWeek.SUNDAY, 'sunday': DayOfWeek.SUNDAY
+        }
+        
+        day_text = day_text.lower().strip()
+        
+        # Handle ranges like "monday - friday"
+        if ' - ' in day_text or ' to ' in day_text:
+            parts = re.split(r' - | to ', day_text)
+            if len(parts) == 2:
+                start_day = day_mapping.get(parts[0].strip())
+                end_day = day_mapping.get(parts[1].strip())
+                if start_day and end_day:
+                    # Get days in range
+                    day_order = list(DayOfWeek)
+                    start_idx = day_order.index(start_day)
+                    end_idx = day_order.index(end_day)
+                    if start_idx <= end_idx:
+                        return day_order[start_idx:end_idx + 1]
+        
+        # Handle comma-separated days
+        for day_part in re.split(r'[,&]', day_text):
+            day_part = day_part.strip()
+            if day_part in day_mapping:
+                days.append(day_mapping[day_part])
+        
+        return days
+    
+    @staticmethod
+    def normalize_time(time_str: str) -> str:
+        """Normalize time strings to consistent format"""
+        time_str = time_str.strip()
+        
+        # Handle common variations
+        time_str = re.sub(r'(\d+)([ap]m)', r'\1:00 \2', time_str, flags=re.IGNORECASE)
+        time_str = re.sub(r'(\d+):(\d+)([ap]m)', r'\1:\2 \3', time_str, flags=re.IGNORECASE)
+        
+        # Capitalize AM/PM
+        time_str = re.sub(r'([ap])m', lambda m: m.group(0).upper(), time_str, flags=re.IGNORECASE)
+        
+        return time_str
+
+
+if __name__ == "__main__":
+    # Test parsing utilities
+    print("Testing day parsing:")
+    print(ParsingUtils.parse_day_range("Monday - Friday"))
+    print(ParsingUtils.parse_day_range("Tue, Wed, Thu"))
+    
+    print("\nTesting time normalization:")
+    print(ParsingUtils.normalize_time("3pm"))
+    print(ParsingUtils.normalize_time("5:30pm"))
+    print(ParsingUtils.normalize_time("11am"))

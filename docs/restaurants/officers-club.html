@@ -190,6 +190,89 @@
         font-size: 1.1rem;
     }
     
+    .data-status {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        border-radius: var(--pico-border-radius);
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+    
+    .data-status.live {
+        background: #10b981;
+        color: white;
+    }
+    
+    .data-status.static {
+        background: #6b7280;
+        color: white;
+    }
+    
+    .live-deals-section {
+        background: linear-gradient(135deg, var(--pico-primary), #0ea5e9);
+        color: white;
+        padding: 1.5rem;
+        border-radius: var(--pico-border-radius);
+        margin-bottom: 2rem;
+    }
+    
+    .live-deals-section h3 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+        color: white;
+    }
+    
+    .deal-card {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1rem;
+        border-radius: var(--pico-border-radius);
+        margin-bottom: 1rem;
+        border-left: 4px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .deal-card:last-child {
+        margin-bottom: 0;
+    }
+    
+    .deal-header {
+        display: flex;
+        justify-content: between;
+        align-items: flex-start;
+        margin-bottom: 0.5rem;
+    }
+    
+    .deal-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin: 0;
+        flex: 1;
+    }
+    
+    .confidence-badge {
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+    }
+    
+    .deal-meta {
+        display: grid;
+        gap: 0.25rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    .deal-description {
+        margin-top: 0.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
+    
+    .static-deals-section {
+        background: var(--pico-code-background-color);
+        padding: 1.5rem;
+        border-radius: var(--pico-border-radius);
+        margin-bottom: 2rem;
+    }
+    
     .restaurant-details {
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -224,56 +307,32 @@
     .info-label {
         font-weight: 600;
         color: var(--pico-muted-color);
-        min-width: 80px;
+        min-width: 100px;
     }
     
     .info-value {
         color: var(--pico-color);
     }
     
-    .happy-hour-schedule {
-        background: var(--pico-primary);
-        color: var(--pico-primary-inverse);
-        padding: 1rem;
+    .scraping-status {
+        font-size: 0.8rem;
+        padding: 0.25rem 0.5rem;
         border-radius: var(--pico-border-radius);
-        margin-bottom: 1rem;
+        display: inline-block;
     }
     
-    .happy-hour-schedule h4 {
-        margin-top: 0;
-        margin-bottom: 0.75rem;
+    .scraping-status.enabled {
+        background: #10b981;
+        color: white;
     }
     
-    .schedule-item {
-        padding: 0.5rem 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        font-family: var(--pico-font-family-monospace);
+    .scraping-status.disabled {
+        background: #ef4444;
+        color: white;
     }
     
-    .schedule-item:last-child {
-        border-bottom: none;
-    }
-    
-    .tags-section {
-        margin-bottom: 1.5rem;
-    }
-    
-    .tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-    }
-    
-    .tag {
-        background: var(--pico-secondary);
-        color: var(--pico-secondary-inverse);
-        padding: 0.25rem 0.75rem;
-        border-radius: var(--pico-border-radius);
-        font-size: 0.9rem;
-    }
-    
-    .tag.plant-based {
-        background: #22c55e;
+    .scraping-status.issues {
+        background: #f59e0b;
         color: white;
     }
     
@@ -289,6 +348,13 @@
         margin-bottom: 2rem;
     }
     
+    .last-updated {
+        font-size: 0.8rem;
+        color: var(--pico-muted-color);
+        text-align: center;
+        margin-top: 1rem;
+    }
+    
     @media (max-width: 768px) {
         .restaurant-details {
             grid-template-columns: 1fr;
@@ -302,6 +368,16 @@
         .detail-section {
             padding: 1rem;
         }
+        
+        .deal-header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .confidence-badge {
+            margin-left: 0;
+            margin-top: 0.25rem;
+        }
     }
 </style>
 </head>
@@ -311,7 +387,7 @@
         <header class="hero">
             <h1>🍺 Sips and Steals</h1>
             <div class="subtitle">Denver's Happy Hour Deal Finder</div>
-            <div class="tagline">For The Discerning Urban Explorer</div>
+            <div class="tagline">Where Culinary Adventure Meets Smart Value</div>
         </header>
         
     <!-- Back Navigation -->
@@ -326,11 +402,30 @@
             East & Southeast Denver • Lowry Field • American        </div>
     </header>
     
-    <!-- Happy Hour Schedule (Prominent) -->
-    <section class="happy-hour-schedule">
-        <h4>🍺 Happy Hour Schedule</h4>
-        <div class="schedule-item">Mon 4 - Close & Tue, Wed, Thu 4 - 6 & Fri 3 - 6</div>
+    <!-- Live Deals Section -->
+    <section class="live-deals-section">
+        <h3>🔥 Current Deals & Specials</h3>
+        <p style="margin-bottom: 1rem; opacity: 0.9; font-size: 0.9rem;">
+            Fresh data from Officer’s Club's website
+        </p>
+        
+        <div class="deal-card">
+            <div class="deal-header">
+                <h4 class="deal-title">Happy Hour (from Giovanni's data)</h4>
+                <span class="confidence-badge">🔴</span>
+            </div>
+            
+            <div class="deal-meta">
+                
+                
+                
+            </div>
+            
+            <div class="deal-description">Mon 4 - Close & Tue - Thu 4 - 6 & Fri 3 - 6</div>
+        </div>
+        
     </section>
+    
     
     <!-- Special Tags -->
     
@@ -346,7 +441,7 @@
                 </div>
                 
                 <div class="info-item">
-                    <span class="info-label">Area:</span>
+                    <span class="info-label">Neighborhood:</span>
                     <span class="info-value">Lowry Field</span>
                 </div>
                 
@@ -361,12 +456,13 @@
                         <a href="https://www.officersclublowry.com/menu/hh-menu/" target="_blank">Visit Website</a>
                     </span>
                 </div>
+                
             </div>
         </section>
         
-        <!-- Dining Info -->
+        <!-- Data & Scraping Info -->
         <section class="detail-section">
-            <h3>🍽️ Dining Info</h3>
+            <h3>🔧 Data Information</h3>
             <div class="info-grid">
                 <div class="info-item">
                     <span class="info-label">Cuisine:</span>
@@ -374,17 +470,20 @@
                 </div>
                 
                 <div class="info-item">
-                    <span class="info-label">Happy Hours:</span>
-                    <span class="info-value">1 time</span>
-                </div>
-                
-                
-                <div class="info-item">
-                    <span class="info-label">Profile:</span>
+                    <span class="info-label">Deals Available:</span>
                     <span class="info-value">
-                        <a href="../index.html#east-southeast-denver">View similar in East & Southeast Denver</a>
+                            1 current deals
                     </span>
                 </div>
+                
+                <div class="info-item">
+                    <span class="info-label">Scraping:</span>
+                    <span class="info-value">
+                                <span class="scraping-status enabled">Enabled</span>
+                    </span>
+                </div>
+                
+                
             </div>
         </section>
     </div>
@@ -396,6 +495,8 @@
         <a href="https://maps.google.com/?q=Lowry%20Hangar%202%20Dining%20District%2C%2084%20Rampart%20Way" target="_blank" role="button" class="secondary">View on Maps</a>
         
         <a href="../index.html" role="button" class="outline">Browse More Deals</a>
+        
+        <a href="../stats.html" role="button" class="outline">View System Stats</a>
     </section>
     
     <!-- Similar Restaurants -->
@@ -403,6 +504,7 @@
         <h3>More Great Options in East & Southeast Denver</h3>
         <p><a href="../index.html#east-southeast-denver">Explore other restaurants in East & Southeast Denver →</a></p>
     </section>
+    
         
         <!-- Footer -->
         <footer>

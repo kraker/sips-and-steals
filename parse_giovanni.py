@@ -34,7 +34,7 @@ def main():
             'districts': list(restaurants_by_area.keys()),
             'districts_with_neighborhoods': districts_with_neighborhoods,
             'total_restaurants': sum(len(restaurants) for restaurants in restaurants_by_area.values()),
-            'target_user': 'The Discerning Urban Explorer',
+            'target_user': 'Value-Conscious Culinary Adventurer',
             'focus': 'Quality dining experiences at accessible prices'
         },
         'areas': restaurants_by_area  # Keep as 'areas' for backwards compatibility
@@ -126,7 +126,8 @@ def parse_restaurant_block(block, area_name):
         if line.startswith('**') and line.endswith('**'):
             potential_name = line.strip('*').strip()
             if is_restaurant_name(potential_name):
-                restaurant_name = potential_name
+                # Clean escaped characters like \- and \| from restaurant names
+                restaurant_name = potential_name.replace('\\-', '-').replace('\\|', '|').replace('\\#', '#')
                 restaurant['name'] = restaurant_name
                 restaurant['slug'] = create_slug(restaurant_name)
                 break

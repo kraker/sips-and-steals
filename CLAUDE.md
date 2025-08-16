@@ -2,12 +2,13 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Recent Work (August 15, 2025)
-- Implemented multi-page static site generator with Jinja2 templates
-- Created 117 individual restaurant profile pages from Giovanni's markdown data
-- Fixed backslash escaping issues in restaurant names and addresses
-- Removed deprecated generate_website.py in favor of generate_site.py
-- Successfully deployed changes to GitHub
+## Recent Work (August 16, 2025)
+- **Repository Cleanup**: Consolidated to single data source architecture
+- **Enhanced Scraping**: Built live deal scraping system with confidence scoring
+- **Live Data Integration**: Successfully scraped and integrated 6 high-quality deals from 3 restaurants
+- **Data Consolidation**: Unified all restaurant data into `restaurants.json` as single source of truth
+- **Website Enhancement**: Generated enhanced site with live deal display and proper day formatting
+- **Backslash Fix**: Resolved escape character issues in restaurant names and data
 
 ## Target User
 
@@ -28,87 +29,92 @@ This user doesn't want "cheap eats" - they want to discover Denver's culinary ge
 # Install dependencies (all pip dependencies managed via requirements.txt)
 pip install -r requirements.txt
 
-# Run the main scraper
-python run_scraper.py
-
-# View scraped data in pretty format
-python view_deals.py
-
-# Parse Giovanni's markdown into structured JSON data
+# Parse Giovanni's markdown into structured JSON data (updates restaurants.json)
 python parse_giovanni.py
 
-# Generate multi-page static website with Jinja2 templates
+# Run scraping system for live deals
+python scraper_cli.py scrape --district "Central" --workers 2
+
+# Generate multi-page static website with live data
 python generate_site.py
-
-# Legacy single-page generator (deprecated)
-python generate_website.py
-
-# Run individual test files
-python test_jax_website.py
-python test_jax_location_page.py
 ```
 
 ### Testing
-No formal test framework is configured. Testing is done via individual test files like `test_jax_website.py` and `enhanced_jax_test.py` that can be run directly with `python filename.py`.
+No formal test framework is configured. Testing is done via direct script execution and manual verification of website output.
 
 ## Architecture
 
 ### Core Components
 
-**Data Storage**: JSON-based approach organized by Denver areas
-- Restaurant data parsed from `data/giovanni_happy_hours.md` using `parse_giovanni.py`
-- Structured data stored in `data/restaurants.json` (single source of truth)
-- Location-based organization optimized for "The Discerning Urban Explorer"
-- 117 restaurants across 12 Denver areas with comprehensive metadata
+**Single Source Data Architecture**: Consolidated JSON-based approach
+- **`data/restaurants.json`** - Single source of truth containing all restaurant data and live data metadata
+- **`data/live_deals.json`** - Current live scraped deals with timestamps and confidence scores
+- **`data/deals_archive/`** - Historical deal archives for data persistence and analysis
+- Static data parsed from `data/giovanni_happy_hours.md` using `parse_giovanni.py`
+- 106 restaurants across 11 Denver districts with comprehensive metadata
 
-**Scraper Framework**: Object-oriented scraper system
-- `BaseScraper` abstract class (`src/scrapers/base.py`) provides common functionality
-- Individual restaurant scrapers inherit from `BaseScraper`
-- Each scraper implements `scrape_deals()` method returning standardized deal dictionaries
-- Built-in rate limiting and polite crawling headers
+**Enhanced Scraper Framework**: Production-ready scraping system
+- `BaseScraper` class (`src/scrapers/base.py`) with robots.txt compliance
+- Built-in circuit breakers, retry logic, and adaptive delays to avoid bot detection
+- Individual restaurant scrapers inherit and implement custom scraping logic
+- Quality validation and confidence scoring for all scraped deals
+- Concurrent execution with configurable worker pools
 
-**Deal Data Structure**: Standardized dictionary format for all deals:
+**Enhanced Deal Data Structure**: Comprehensive deal objects with validation:
 ```python
-{
-    'title': str,           # Required
-    'description': str,     # Optional
-    'day_of_week': str,     # Optional, comma-separated
-    'start_time': str,      # Optional
-    'end_time': str,        # Optional  
-    'deal_type': str,       # 'happy_hour', 'daily_special', 'food', 'drink'
-    'price': str           # Optional
-}
+@dataclass
+class Deal:
+    title: str
+    description: Optional[str] = None
+    deal_type: DealType = DealType.HAPPY_HOUR
+    days_of_week: List[DayOfWeek] = field(default_factory=list)
+    start_time: Optional[str] = None
+    end_time: Optional[str] = None
+    price: Optional[str] = None
+    is_all_day: bool = False
+    special_notes: List[str] = field(default_factory=list)
+    scraped_at: datetime = field(default_factory=datetime.now)
+    source_url: Optional[str] = None
+    confidence_score: float = 1.0  # 0.0-1.0 confidence rating
 ```
 
 ### Key Workflows
 
 **Adding New Restaurant Scrapers**:
-1. Create new file in `src/scrapers/`
+1. Create new file in `src/scrapers/` (e.g., `restaurant_name.py`)
 2. Inherit from `BaseScraper`
-3. Implement `scrape_deals()` method
-4. Add to scraper list in `run_scraper.py`
+3. Implement custom `scrape_deals()` method returning List[Deal]
+4. Restaurant automatically included based on website URL in `data/restaurants.json`
 
 **Data Processing Flow**:
-1. `parse_giovanni.py` parses markdown source into `data/restaurants.json`
-2. `generate_site.py` creates multi-page static website from JSON data using Jinja2 templates
-3. Legacy scrapers: `run_scraper.py` orchestrates individual restaurant scrapers (CSV-based)
-4. `view_deals.py` provides formatted output for legacy CSV data
+1. **Static Data**: `parse_giovanni.py` parses markdown source into `data/restaurants.json`
+2. **Live Scraping**: `scraper_cli.py` collects live deals and stores in `data/live_deals.json`
+3. **Data Merge**: `DataManager` prioritizes live deals over static data (3-tier fallback system)
+4. **Website Generation**: `generate_site.py` creates multi-page static website with live deal display
+5. **Archival**: Deals automatically archived to `data/deals_archive/` with timestamps
+
+**Data Prioritization** (3-tier fallback system):
+1. **Fresh live deals** (< 7 days old) - highest priority
+2. **Any live deals** (even if older) - medium priority  
+3. **Static Giovanni's data** - fallback with 0.3 confidence score
 
 ### Current Restaurant Scrapers
-- **Jax Fish House**: JSON-LD structured data parsing
-- **Hapa Sushi**: HTML parsing for menu items
-- **Tamayo**: Standard scraping implementation
+- **Jax Fish House**: JSON-LD structured data parsing (2 deals with 0.8-0.9 confidence)
+- **Tamayo**: Custom HTML parsing (3 deals with 0.8-0.9 confidence)
+- **City O' City**: Plant-based happy hour scraping (1 deal with 0.8 confidence)
 
 ### Web Output
-**Multi-page Architecture**: 
+**Enhanced Multi-page Architecture**: 
 - `generate_site.py` creates a static site using Jinja2 templates and Pico CSS
 - Dark theme optimized for "The Discerning Urban Explorer" persona  
-- Responsive grid layout with restaurant cards displaying left-to-right
-- Individual restaurant profile pages (`docs/restaurants/{slug}.html`)
-- Semantic HTML with filtering by day, area, and cuisine
-- 117 restaurant pages + main index with location-based organization
+- Responsive grid layout with restaurant cards and live data indicators
+- Individual restaurant profile pages (`docs/restaurants/{slug}.html`) with live deal sections
+- Semantic HTML with filtering by day, district, and cuisine
+- 106 restaurant pages + main index + statistics page with scraping metrics
+- Live vs. static data clearly distinguished with confidence indicators
 
 **Template System**:
 - `templates/base.html` - Base template with Pico CSS and dark theme
-- `templates/index.html` - Restaurant grid with filtering functionality  
-- `templates/restaurant.html` - Individual restaurant profile pages
+- `templates/index.html` - Restaurant grid with live data badges and filtering
+- `templates/restaurant.html` - Individual restaurant profiles with live deal display
+- Custom Jinja2 filters for day range formatting ("Mon - Fri", "Daily", etc.)
