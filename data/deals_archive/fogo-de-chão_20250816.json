@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "fogo-de-chão",
-  "archived_at": "2025-08-16T21:54:14.322988",
+  "archived_at": "2025-08-16T22:02:57.928763",
   "deals": [
     {
       "title": "All Day Happy Hour",
@@ -20,7 +20,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.177483",
+      "scraped_at": "2025-08-16T22:02:55.577098",
       "source_url": "https://fogodechao.com/location/denver/",
       "confidence_score": 0.8
     },
@@ -34,7 +34,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.179940",
+      "scraped_at": "2025-08-16T22:02:55.579395",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -48,7 +48,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.179944",
+      "scraped_at": "2025-08-16T22:02:55.579398",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -62,7 +62,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.179945",
+      "scraped_at": "2025-08-16T22:02:55.579399",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -76,7 +76,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.179946",
+      "scraped_at": "2025-08-16T22:02:55.579400",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -90,7 +90,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T21:54:12.179947",
+      "scraped_at": "2025-08-16T22:02:55.579401",
       "source_url": null,
       "confidence_score": 0.4
     }

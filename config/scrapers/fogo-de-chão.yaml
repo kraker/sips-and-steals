@@ -9,16 +9,17 @@ scraping_config:
   # Custom selectors to target specific happy hour content
   custom_selectors:
     happy_hour_content: "[class*='happy'], [class*='bar'], .content-section, .specials"
+    pricing_content: "*:contains('$5 Beers'), *:contains('$8'), *:contains('$10')"
   
   # Enhanced regex patterns for Fogo de Chão specific happy hour patterns
   time_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:9:30\\s*PM|9:30PM)|(?:Fri|Friday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sat|Saturday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sun|Sunday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:9:00\\s*PM|9PM)|(?:MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)[:\\s]*(?:11:30\\s*AM|11:30AM)[\\s-]*(?:3:00\\s*PM|3PM)"
   day_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday|Fri|Friday|Sat|Saturday|Sun|Sunday|MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)"
+  price_pattern_regex: "\\$\\d+\\s+(?:Beers?|South American Wines?|Brazilian[\\s-]*Inspired Cocktails?)"
   
-  # Exclude generic mentions that aren't real deals
+  # Don't exclude the promotional content - we want to capture it
   exclude_patterns:
-    - "all day happy hour"
-    - "all-day happy hour"
-    - "daily specials"
+    - "operating hours"
+    - "kitchen hours"
   
   # Target content containers for happy hour info
   content_containers:

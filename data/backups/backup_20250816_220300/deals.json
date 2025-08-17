@@ -274,7 +274,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour/cocktails | rioja\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1431 larimer street |\u00a0denver colorad",
+        "description": "happy hour/cocktails | rioja\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1431 larimer street | denver colorad",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -430,7 +430,7 @@
       },
       {
         "title": "Happy Hour",
-        "description": "happy hour nightly (only in the bar and lounge)\u00a03:00 pm",
+        "description": "happy hour nightly (only in the bar and lounge) 3:00 pm",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -563,7 +563,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour)\n\t\t\t\t\t\tapr\u00e8s \u2013 meaning after and a nod to the apr\u00e8s-ski at ajax tavern, our sister restau",
+        "description": "happy hour)\n\t\t\t\t\t\taprès – meaning after and a nod to the après-ski at ajax tavern, our sister restau",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -653,11 +653,11 @@
     ],
     "last_updated": "2025-08-16T21:50:10.156349"
   },
-  "fogo-de-ch\u00e3o": {
+  "fogo-de-chão": {
     "deals": [
       {
         "title": "All Day Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails",
+        "description": "All-day happy hour specials and discounts",
         "deal_type": "happy_hour",
         "days_of_week": [
           "monday",
@@ -670,108 +670,91 @@
         ],
         "start_time": null,
         "end_time": null,
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
+        "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.577098",
+        "scraped_at": "2025-08-16T21:54:12.177483",
         "source_url": "https://fogodechao.com/location/denver/",
         "confidence_score": 0.8
       },
       {
-        "title": "Monday-Thursday Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails (Mon - Thu 3:00 PM  - 9:30PM)",
+        "title": "Time-based Special",
+        "description": "Mon - Thu 3:00 PM  - 9:30PM",
         "deal_type": "happy_hour",
-        "days_of_week": [
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday"
-        ],
-        "start_time": "3:00 PM",
-        "end_time": "9:30 PM",
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
-        "is_all_day": false,
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.579395",
+        "scraped_at": "2025-08-16T21:54:12.179940",
         "source_url": null,
-        "confidence_score": 0.8
+        "confidence_score": 0.4
       },
       {
-        "title": "Friday Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails (Fri 3:00 PM - 10:00 PM)",
+        "title": "Time-based Special",
+        "description": "Fri 3:00 PM - 10:00 PM",
         "deal_type": "happy_hour",
-        "days_of_week": [
-          "friday"
-        ],
-        "start_time": "3:00 PM",
-        "end_time": "10:00 PM",
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
-        "is_all_day": false,
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.579398",
+        "scraped_at": "2025-08-16T21:54:12.179944",
         "source_url": null,
-        "confidence_score": 0.8
+        "confidence_score": 0.4
       },
       {
-        "title": "Saturday Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails (Sat 2:00 PM - 10:00 PM)",
+        "title": "Time-based Special",
+        "description": "Sat 2:00 PM - 10:00 PM",
         "deal_type": "happy_hour",
-        "days_of_week": [
-          "saturday"
-        ],
-        "start_time": "2:00 PM",
-        "end_time": "10:00 PM",
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
-        "is_all_day": false,
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.579399",
+        "scraped_at": "2025-08-16T21:54:12.179945",
         "source_url": null,
-        "confidence_score": 0.8
+        "confidence_score": 0.4
       },
       {
-        "title": "Sunday Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails (Sun 2:00 PM - 9:00 PM)",
+        "title": "Time-based Special",
+        "description": "Sun 2:00 PM - 9:00 PM",
         "deal_type": "happy_hour",
-        "days_of_week": [
-          "sunday"
-        ],
-        "start_time": "2:00 PM",
-        "end_time": "9:00 PM",
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
-        "is_all_day": false,
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.579400",
+        "scraped_at": "2025-08-16T21:54:12.179946",
         "source_url": null,
-        "confidence_score": 0.8
+        "confidence_score": 0.4
       },
       {
-        "title": "Weekday Lunch Happy Hour",
-        "description": "All Day Happy Hour at Bar Fogo featuring $5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails - Lunch hours (MON-FRI 11:30 AM - 3:00 PM)",
+        "title": "Time-based Special",
+        "description": "MON-FRI 11:30 AM - 3:00 PM",
         "deal_type": "happy_hour",
-        "days_of_week": [
-          "monday",
-          "tuesday",
-          "wednesday",
-          "thursday",
-          "friday"
-        ],
-        "start_time": "11:30 AM",
-        "end_time": "3:00 PM",
-        "price": "$5 Beers, $8 Wines, $10 Cocktails",
-        "is_all_day": false,
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T22:02:55.579401",
+        "scraped_at": "2025-08-16T21:54:12.179947",
         "source_url": null,
-        "confidence_score": 0.8
+        "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T22:03:30.551562"
+    "last_updated": "2025-08-16T21:54:14.322965"
   },
   "mecha-noodle-bar": {
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour menu \u2014 mecha noodle bar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n",
+        "description": "happy hour menu — mecha noodle bar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -817,7 +800,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour:\nmonday - saturday\u00a0 4pm",
+        "description": "happy hour:\nmonday - saturday  4pm",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -831,7 +814,7 @@
       },
       {
         "title": "Happy Hour",
-        "description": "7am - 10am\nsaturday - sunday\u00a0 8am - 12pm\n\nlunch\nmonday\u00a0- friday\u00a0 11:30am - 1:30pm\n\ndinner:\nmonday - ",
+        "description": "7am - 10am\nsaturday - sunday  8am - 12pm\n\nlunch\nmonday - friday  11:30am - 1:30pm\n\ndinner:\nmonday - ",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -845,7 +828,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "MONDAY - FRIDAY\u00a0 7AM - 10AM",
+        "description": "MONDAY - FRIDAY  7AM - 10AM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -859,7 +842,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "SATURDAY - SUNDAY\u00a0 8AM - 12PM",
+        "description": "SATURDAY - SUNDAY  8AM - 12PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -873,7 +856,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "MONDAY\u00a0- FRIDAY\u00a0 11:30AM - 1:30PM",
+        "description": "MONDAY - FRIDAY  11:30AM - 1:30PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -887,7 +870,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "MONDAY - SATURDAY\u00a0 5PM - 9PM",
+        "description": "MONDAY - SATURDAY  5PM - 9PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -901,7 +884,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "MONDAY - SATURDAY\u00a0 4PM - 6PM",
+        "description": "MONDAY - SATURDAY  4PM - 6PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1135,7 +1118,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour \u2014 city, o' city\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "description": "happy hour — city, o' city\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1279,7 +1262,7 @@
       },
       {
         "title": "Happy Hour",
-        "description": "happy hour\ntues \u2013 fri open \u2013 6pm",
+        "description": "happy hour\ntues – fri open – 6pm",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1592,7 +1575,7 @@
       },
       {
         "title": "Happy Hour",
-        "description": "happy hour dine in only\nmonday\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0close\ntuesday - sun",
+        "description": "happy hour dine in only\nmonday                                                   close\ntuesday - sun",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1606,7 +1589,7 @@
       },
       {
         "title": "Happy Hour",
-        "description": "12:00 pm - 08:45 pm\nfriday - saturday\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a012:00 pm - 09:15 pm\n\u00a0 \u00a0 \u00a0 \u00a0 \u00a0sunday\u00a0 \u00a0 \u00a0",
+        "description": "12:00 pm - 08:45 pm\nfriday - saturday                       12:00 pm - 09:15 pm\n         sunday     ",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1620,7 +1603,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "Tuesday - Thursday\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 12:00 PM - 08:45 PM",
+        "description": "Tuesday - Thursday                  12:00 PM - 08:45 PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1634,7 +1617,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "Friday - Saturday\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a012:00 PM - 09:15 PM",
+        "description": "Friday - Saturday                       12:00 PM - 09:15 PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1662,7 +1645,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "Tuesday - Sunday\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a003:00 PM - 06:00 PM",
+        "description": "Tuesday - Sunday                     03:00 PM - 06:00 PM",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1681,7 +1664,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "9:30 pm \u2013 last call\n\nallergy note:\nplease note that we use various fruits, nuts, and other flavors. ",
+        "description": "9:30 pm – last call\n\nallergy note:\nplease note that we use various fruits, nuts, and other flavors. ",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1696,7 +1679,7 @@
     ],
     "last_updated": "2025-08-16T21:52:22.498042"
   },
-  "la-for\u00eat": {
+  "la-forêt": {
     "deals": [
       {
         "title": "Time-based Special",
@@ -1765,7 +1748,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "0-830PM SUNDAY, TUESDAY-THURSDAY & \u00a09PM FRIDAY & SATURDAY",
+        "description": "0-830PM SUNDAY, TUESDAY-THURSDAY &  9PM FRIDAY & SATURDAY",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1779,7 +1762,7 @@
       },
       {
         "title": "Time-based Special",
-        "description": "Happy Hour Food 330-5pm, \u00a0Drinks 330-6pm",
+        "description": "Happy Hour Food 330-5pm,  Drinks 330-6pm",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
@@ -1798,7 +1781,7 @@
     "deals": [
       {
         "title": "Happy Hour",
-        "description": "happy hour wednesday, thursday, friday from 4:00 \u2013 7:00pm",
+        "description": "happy hour wednesday, thursday, friday from 4:00 – 7:00pm",
         "deal_type": "happy_hour",
         "days_of_week": [],
         "start_time": null,
