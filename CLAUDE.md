@@ -110,6 +110,13 @@ EOF
 - **Documentation**: `Update README with current architecture`
 - **Bug fixes**: `Fix missing source URLs in scraped deals`
 
+## Code Style Guidelines
+
+All code in this project follows established style standards:
+- **Python**: [PEP 8](https://peps.python.org/pep-0008/) compliance 
+- **HTML/CSS**: Semantic HTML5 with Pico CSS conventions
+- **Full guidelines**: See [STYLE_GUIDE.md](STYLE_GUIDE.md) for complete formatting standards
+
 ## Commands
 
 ### Core Commands

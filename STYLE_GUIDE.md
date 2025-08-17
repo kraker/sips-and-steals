@@ -1,5 +1,103 @@
 # Sips and Steals Style Guide
 
+## Python Code Standards (PEP 8)
+
+### Code Formatting
+
+**Indentation**:
+- Use 4 spaces per indentation level (never tabs)
+- Align continuation lines vertically or use hanging indents
+
+**Line Length**:
+- Limit lines to 79 characters maximum
+- Docstrings and comments limited to 72 characters
+- Use implicit line continuation inside parentheses, brackets, braces
+
+**Whitespace**:
+```python
+# Good
+spam(ham[1], {eggs: 2})
+x = 1
+y = x + 1
+
+# Bad
+spam( ham[ 1 ], { eggs : 2 } )
+x=1
+y = x+1
+```
+
+### Naming Conventions
+
+**Modules and Packages**: `lowercase_with_underscores`
+```python
+# src/scrapers/base.py
+# src/data_manager.py
+```
+
+**Classes**: `CapWordsCase` (PascalCase)
+```python
+class RestaurantScraper:
+class DealValidator:
+class ScrapingError(Exception):  # Exceptions end with 'Error'
+```
+
+**Functions and Variables**: `lowercase_with_underscores`
+```python
+def scrape_deals():
+def parse_operating_hours():
+restaurant_count = 106
+```
+
+**Constants**: `ALL_UPPERCASE_WITH_UNDERSCORES`
+```python
+DEFAULT_TIMEOUT = 30
+MAX_RETRIES = 3
+BASE_URL = "https://example.com"
+```
+
+### Best Practices
+
+**Documentation**:
+- Add docstrings for all public modules, classes, and functions
+- Use descriptive variable and function names
+- Comment complex logic, not obvious code
+
+**Exception Handling**:
+```python
+# Good
+try:
+    response = fetch_url(url)
+except requests.RequestException as e:
+    logger.error(f"Failed to fetch {url}: {e}")
+
+# Bad
+try:
+    response = fetch_url(url)
+except:
+    pass
+```
+
+**Import Organization**:
+```python
+# 1. Standard library imports
+import json
+import logging
+from datetime import datetime
+
+# 2. Third-party imports
+import requests
+from bs4 import BeautifulSoup
+
+# 3. Local application imports
+from models import Restaurant, Deal
+from .exceptions import ScrapingError
+```
+
+**Logging**:
+- Use module-level loggers: `logger = logging.getLogger(__name__)`
+- Descriptive log messages with context
+- Appropriate log levels (DEBUG, INFO, WARNING, ERROR)
+
 ## HTML/CSS Formatting Standards
 
 ### Indentation
