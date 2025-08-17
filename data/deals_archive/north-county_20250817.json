@@ -1,0 +1,56 @@
+{
+  "restaurant_slug": "north-county",
+  "archived_at": "2025-08-17T17:42:34.766958",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Daily",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:31.960253",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-6 PM | Days: thursday, friday, monday, tuesday, wednesday, saturday, sunday | Pricing: $10, $15, $20",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "friday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:31.961881",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}

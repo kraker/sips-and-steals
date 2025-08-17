@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "tavernetta",
-  "archived_at": "2025-08-17T15:57:07.171847",
+  "archived_at": "2025-08-17T17:42:36.082940",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:04.839429",
+      "scraped_at": "2025-08-17T17:42:33.619183",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

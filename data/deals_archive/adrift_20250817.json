@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "adrift",
-  "archived_at": "2025-08-17T15:59:49.529833",
+  "archived_at": "2025-08-17T17:44:30.345319",
   "deals": [
     {
       "title": "Happy Hour",
@@ -22,7 +22,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:47.134274",
+      "scraped_at": "2025-08-17T17:44:27.753593",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     },
@@ -46,7 +46,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:47.134297",
+      "scraped_at": "2025-08-17T17:44:27.753619",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     }

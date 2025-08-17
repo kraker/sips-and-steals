@@ -1,0 +1,116 @@
+{
+  "restaurant_slug": "necio-mexican-kitchen",
+  "archived_at": "2025-08-17T17:51:48.067621",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 11 AM-08 PM | Days: tuesday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": "11 AM",
+      "end_time": "08 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:51:45.610885",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 03 PM-05 PM | Days: tuesday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": "03 PM",
+      "end_time": "05 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:51:45.610892",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 03 PM-05 PM | Days: thursday, friday, saturday, sunday, tuesday, wednesday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "tuesday",
+        "wednesday"
+      ],
+      "start_time": "03 PM",
+      "end_time": "05 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:51:45.611342",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 10 AM-02 PM | Days: thursday, friday, saturday, sunday, tuesday, wednesday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "tuesday",
+        "wednesday"
+      ],
+      "start_time": "10 AM",
+      "end_time": "02 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:51:45.611366",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 11 AM-08 PM | Days: thursday, friday, saturday, sunday, tuesday, wednesday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "tuesday",
+        "wednesday"
+      ],
+      "start_time": "11 AM",
+      "end_time": "08 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:51:45.611385",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}

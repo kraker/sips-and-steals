@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "9th-door",
-  "archived_at": "2025-08-17T15:58:52.931297",
+  "archived_at": "2025-08-17T17:43:50.084476",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:50.754822",
+      "scraped_at": "2025-08-17T17:43:47.931716",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -40,7 +40,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:50.755815",
+      "scraped_at": "2025-08-17T17:43:47.932764",
       "source_url": null,
       "confidence_score": 0.6
     }

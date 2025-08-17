@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "sap-sua",
-  "archived_at": "2025-08-17T16:00:07.915846",
+  "archived_at": "2025-08-17T17:44:47.809135",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.802179",
+      "scraped_at": "2025-08-17T17:44:45.727276",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -48,7 +48,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.852214",
+      "scraped_at": "2025-08-17T17:44:45.779529",
       "source_url": null,
       "confidence_score": 0.8
     }

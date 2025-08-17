@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "panzano",
-  "archived_at": "2025-08-17T15:58:12.806488",
+  "archived_at": "2025-08-17T17:43:23.989170",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:10.627394",
+      "scraped_at": "2025-08-17T17:43:21.559589",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -48,7 +48,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:10.627412",
+      "scraped_at": "2025-08-17T17:43:21.559614",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -73,7 +73,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:10.627424",
+      "scraped_at": "2025-08-17T17:43:21.559626",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -98,7 +98,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:10.627435",
+      "scraped_at": "2025-08-17T17:43:21.559638",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -123,7 +123,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:10.627446",
+      "scraped_at": "2025-08-17T17:43:21.559649",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

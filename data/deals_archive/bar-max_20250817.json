@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "bar-max",
-  "archived_at": "2025-08-17T16:00:19.115756",
+  "archived_at": "2025-08-17T17:45:00.438870",
   "deals": [
     {
       "title": "Happy Hour",
@@ -19,7 +19,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:17.016181",
+      "scraped_at": "2025-08-17T17:44:57.990886",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -43,7 +43,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:17.016473",
+      "scraped_at": "2025-08-17T17:44:57.991210",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

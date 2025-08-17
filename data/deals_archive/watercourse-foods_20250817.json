@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "watercourse-foods",
-  "archived_at": "2025-08-17T15:59:05.438010",
+  "archived_at": "2025-08-17T17:44:03.534477",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:03.078748",
+      "scraped_at": "2025-08-17T17:44:01.271986",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -40,7 +40,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:03.079535",
+      "scraped_at": "2025-08-17T17:44:01.272832",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -59,7 +59,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:03.079544",
+      "scraped_at": "2025-08-17T17:44:01.272843",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

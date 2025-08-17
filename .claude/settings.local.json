@@ -70,7 +70,9 @@
       "Bash(done)",
       "Bash(for:*)",
       "WebFetch(domain:www.jaxfishhouse.com)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(playwright install:*)",
+      "Bash(PYTHONPATH=. python:*)"
     ],
     "deny": [],
     "ask": [],

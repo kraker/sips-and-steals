@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "kumoya-denver",
-  "archived_at": "2025-08-17T15:40:44.271448",
+  "archived_at": "2025-08-17T17:41:34.633727",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:42.004073",
+      "scraped_at": "2025-08-17T17:41:32.291325",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -48,7 +48,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:42.004189",
+      "scraped_at": "2025-08-17T17:41:32.291427",
       "source_url": null,
       "confidence_score": 0.8
     }

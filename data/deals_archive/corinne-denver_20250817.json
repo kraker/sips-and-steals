@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "corinne-denver",
-  "archived_at": "2025-08-17T15:58:29.834382",
+  "archived_at": "2025-08-17T17:43:38.183444",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:27.492623",
+      "scraped_at": "2025-08-17T17:43:35.889245",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -48,7 +48,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:27.492643",
+      "scraped_at": "2025-08-17T17:43:35.889265",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -73,7 +73,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:27.492656",
+      "scraped_at": "2025-08-17T17:43:35.889278",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

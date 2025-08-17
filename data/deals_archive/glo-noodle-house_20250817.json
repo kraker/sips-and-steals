@@ -1,0 +1,81 @@
+{
+  "restaurant_slug": "glo-noodle-house",
+  "archived_at": "2025-08-17T17:43:02.105279",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: EVERY DAY",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:59.834310",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-9 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "9 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:59.834479",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-10 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:59.834515",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

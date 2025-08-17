@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "bezel-bar",
-  "archived_at": "2025-08-17T15:57:56.525401",
+  "archived_at": "2025-08-17T17:43:12.079196",
   "deals": [
     {
       "title": "Happy Hour",
@@ -20,7 +20,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:54.025398",
+      "scraped_at": "2025-08-17T17:43:10.025307",
       "source_url": null,
       "confidence_score": 0.8
     }

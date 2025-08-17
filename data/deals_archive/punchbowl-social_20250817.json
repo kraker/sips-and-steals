@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "punchbowl-social",
-  "archived_at": "2025-08-17T15:59:32.005860",
+  "archived_at": "2025-08-17T17:44:17.755884",
   "deals": [
     {
       "title": "Happy Hour",
@@ -18,7 +18,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:29.890456",
+      "scraped_at": "2025-08-17T17:44:15.284695",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -41,7 +41,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:29.910137",
+      "scraped_at": "2025-08-17T17:44:15.304061",
       "source_url": null,
       "confidence_score": 0.6
     }

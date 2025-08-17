@@ -16,6 +16,7 @@ from config_manager import ConfigManager
 
 from .core.base import BaseScraper, ConfigBasedScraper
 from .universal_scraper import UniversalScraper
+from .hybrid_scraper import HybridScraper
 from .exceptions import ConfigurationError
 
 logger = logging.getLogger(__name__)
@@ -24,9 +25,11 @@ logger = logging.getLogger(__name__)
 class ScraperFactory:
     """Factory for creating appropriate scrapers based on restaurant configuration"""
     
-    def __init__(self, config_manager: Optional[ConfigManager] = None):
+    def __init__(self, config_manager: Optional[ConfigManager] = None, enable_javascript: bool = True):
         self.config_manager = config_manager or ConfigManager()
+        self.enable_javascript = enable_javascript
         self._scraper_cache = {}
+        logger.info(f"ScraperFactory initialized with JavaScript support: {enable_javascript}")
     
     def create_scraper(self, restaurant: Restaurant) -> BaseScraper:
         """Create appropriate scraper for the restaurant"""
@@ -45,9 +48,13 @@ class ScraperFactory:
             logger.info(f"Using config-based scraper for {restaurant.name}")
             return ConfigBasedScraper(restaurant, config)
         
-        # Fallback to universal scraper for restaurants without configs
-        logger.info(f"Using universal pattern scraper for {restaurant.name}")
-        return UniversalScraper(restaurant)
+        # Choose between hybrid and universal scraper based on JavaScript support
+        if self.enable_javascript:
+            logger.info(f"Using hybrid scraper (JS-enabled) for {restaurant.name}")
+            return HybridScraper(restaurant)
+        else:
+            logger.info(f"Using universal pattern scraper for {restaurant.name}")
+            return UniversalScraper(restaurant)
     
     def _try_load_custom_scraper(self, restaurant_slug: str, restaurant: Restaurant) -> Optional[BaseScraper]:
         """Try to load a custom scraper implementation"""

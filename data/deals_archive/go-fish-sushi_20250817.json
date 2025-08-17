@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "go-fish-sushi",
-  "archived_at": "2025-08-17T15:59:21.688778",
+  "archived_at": "2025-08-17T17:44:14.273463",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:19.563872",
+      "scraped_at": "2025-08-17T17:44:12.128141",
       "source_url": null,
       "confidence_score": 0.6
     }

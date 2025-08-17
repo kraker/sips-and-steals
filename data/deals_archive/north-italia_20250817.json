@@ -1,0 +1,26 @@
+{
+  "restaurant_slug": "north-italia",
+  "archived_at": "2025-08-17T17:41:55.299094",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-6 PM | Days: monday, friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "friday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:53.143221",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "shells-and-sauce",
-  "archived_at": "2025-08-17T16:00:08.578365",
+  "archived_at": "2025-08-17T17:44:45.499025",
   "deals": [
     {
       "title": "Happy Hour",
@@ -17,7 +17,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:06.316343",
+      "scraped_at": "2025-08-17T17:44:43.306611",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     },
@@ -36,7 +36,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:06.316352",
+      "scraped_at": "2025-08-17T17:44:43.306622",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     },
@@ -55,7 +55,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:06.317579",
+      "scraped_at": "2025-08-17T17:44:43.308092",
       "source_url": null,
       "confidence_score": 0.6
     }

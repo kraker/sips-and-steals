@@ -1,0 +1,75 @@
+{
+  "restaurant_slug": "dio-mio",
+  "archived_at": "2025-08-17T17:41:54.472631",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Monday, Thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "thursday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:52.441756",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Sunday, Tuesday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "tuesday",
+        "wednesday",
+        "saturday",
+        "monday",
+        "thursday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:52.442500",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Sunday, Tuesday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "tuesday",
+        "wednesday",
+        "saturday",
+        "monday",
+        "thursday",
+        "friday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:52.444431",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

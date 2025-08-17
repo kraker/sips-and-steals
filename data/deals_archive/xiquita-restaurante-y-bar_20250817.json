@@ -1,28 +1,27 @@
 {
   "restaurant_slug": "xiquita-restaurante-y-bar",
-  "archived_at": "2025-08-17T15:59:16.606926",
+  "archived_at": "2025-08-17T17:44:11.258722",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 04 PM-06 PM | Days: tuesday, wednesday, thursday, friday",
+      "description": "Time: 4 PM-6 PM | Days: tuesday, friday, wednesday | Pricing: $6.00, $6.00, $5.00",
       "deal_type": "happy_hour",
       "days_of_week": [
         "tuesday",
-        "wednesday",
-        "thursday",
-        "friday"
+        "friday",
+        "wednesday"
       ],
-      "start_time": "04 PM",
-      "end_time": "06 PM",
+      "start_time": "4 PM",
+      "end_time": "6 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:14.458677",
+      "scraped_at": "2025-08-17T17:44:08.974491",
       "source_url": null,
-      "confidence_score": 0.8999999999999999
+      "confidence_score": 0.9999999999999999
     }
   ]
 }

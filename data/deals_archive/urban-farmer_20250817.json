@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "urban-farmer",
-  "archived_at": "2025-08-17T15:56:48.441300",
+  "archived_at": "2025-08-17T17:41:36.211275",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,30 +23,54 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:46.031227",
+      "scraped_at": "2025-08-17T17:41:33.807238",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
     {
       "title": "Happy Hour",
-      "description": "Time: 4 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday",
+      "description": "Time: 9 AM-2 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $2",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
         "tuesday",
         "wednesday",
         "thursday",
-        "friday"
+        "friday",
+        "saturday",
+        "sunday"
       ],
-      "start_time": "4 PM",
-      "end_time": "6 PM",
+      "start_time": "9 AM",
+      "end_time": "2 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:46.031797",
+      "scraped_at": "2025-08-17T17:41:33.813767",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 9 AM-2 PM | Days: saturday, sunday, monday, friday | Pricing: $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "saturday",
+        "sunday",
+        "monday",
+        "friday"
+      ],
+      "start_time": "9 AM",
+      "end_time": "2 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:33.831449",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

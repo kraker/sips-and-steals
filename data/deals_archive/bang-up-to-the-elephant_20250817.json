@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "bang-up-to-the-elephant",
-  "archived_at": "2025-08-17T15:59:00.244957",
+  "archived_at": "2025-08-17T17:43:58.148706",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:58.153080",
+      "scraped_at": "2025-08-17T17:43:55.563654",
       "source_url": null,
       "confidence_score": 0.6
     }

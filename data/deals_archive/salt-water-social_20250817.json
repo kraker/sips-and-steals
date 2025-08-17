@@ -1,0 +1,75 @@
+{
+  "restaurant_slug": "salt-water-social",
+  "archived_at": "2025-08-17T17:41:46.267206",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 2 PM-6 PM | Days: sunday, friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "friday"
+      ],
+      "start_time": "2 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:42.917663",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 2 PM-6 PM | Days: sunday, friday, monday, tuesday, wednesday, thursday | Pricing: $3, $6, $9",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "friday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday"
+      ],
+      "start_time": "2 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:42.918866",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 2 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $3, $6, $9",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "2 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:42.929231",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}

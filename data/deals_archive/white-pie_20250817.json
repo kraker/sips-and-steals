@@ -1,26 +1,54 @@
 {
   "restaurant_slug": "white-pie",
-  "archived_at": "2025-08-17T15:58:22.670507",
+  "archived_at": "2025-08-17T17:43:31.403753",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 03 PM-06 PM | Days: monday, tuesday, wednesday, friday | Pricing: $5, $6, $7",
+      "description": "Time: 10 AM-2 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $7.00, $17.00, $14.00",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
         "tuesday",
         "wednesday",
-        "friday"
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
       ],
-      "start_time": "03 PM",
-      "end_time": "06 PM",
+      "start_time": "10 AM",
+      "end_time": "2 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:20.456480",
+      "scraped_at": "2025-08-17T17:43:29.262179",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $7.00, $17.00, $14.00",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:29.262206",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     }

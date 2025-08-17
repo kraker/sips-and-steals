@@ -1,0 +1,126 @@
+{
+  "restaurant_slug": "kawa-ni",
+  "archived_at": "2025-08-17T17:42:44.362318",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-9 PM | Days: tuesday, monday, thursday, friday, saturday, sunday | Pricing: $25",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "monday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "9 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:41.853558",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-10 PM | Days: tuesday, monday, thursday, friday, saturday, sunday | Pricing: $25",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "monday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:41.853584",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-8 PM | Days: tuesday, monday, thursday, friday, saturday, sunday | Pricing: $25",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "monday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "8 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:41.853608",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 11 AM-2 PM | Days: tuesday, monday, thursday, friday, saturday, sunday | Pricing: $25",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "monday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "11 AM",
+      "end_time": "2 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:41.853620",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-5 PM | Days: tuesday, monday, thursday, friday, saturday, sunday | Pricing: $25",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "monday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:41.853631",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}

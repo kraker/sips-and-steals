@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "tamayo",
-  "archived_at": "2025-08-17T15:56:43.786827",
+  "archived_at": "2025-08-17T17:41:38.754073",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:41.679341",
+      "scraped_at": "2025-08-17T17:41:36.437046",
       "source_url": null,
       "confidence_score": 0.8
     }

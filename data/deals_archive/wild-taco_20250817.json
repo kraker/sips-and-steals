@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "wild-taco",
-  "archived_at": "2025-08-17T15:40:20.752913",
+  "archived_at": "2025-08-17T17:41:10.853220",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:18.279733",
+      "scraped_at": "2025-08-17T17:41:08.511431",
       "source_url": null,
       "confidence_score": 0.8
     }

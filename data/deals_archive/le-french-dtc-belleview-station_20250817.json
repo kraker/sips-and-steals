@@ -1,0 +1,47 @@
+{
+  "restaurant_slug": "le-french-dtc-belleview-station",
+  "archived_at": "2025-08-17T17:43:06.178776",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: mon, fri",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "friday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:03.995301",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Mon, Fri",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "friday",
+        "wednesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:04.001539",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

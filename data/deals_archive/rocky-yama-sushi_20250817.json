@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "rocky-yama-sushi",
-  "archived_at": "2025-08-17T15:59:47.154715",
+  "archived_at": "2025-08-17T17:44:24.164225",
   "deals": [
     {
       "title": "Happy Hour",
@@ -17,7 +17,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:44.599736",
+      "scraped_at": "2025-08-17T17:44:18.485917",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -42,7 +42,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:44.739434",
+      "scraped_at": "2025-08-17T17:44:18.629229",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -67,7 +67,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:44.740072",
+      "scraped_at": "2025-08-17T17:44:18.629852",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -92,7 +92,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:44.740086",
+      "scraped_at": "2025-08-17T17:44:18.629866",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -117,7 +117,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:59:44.740098",
+      "scraped_at": "2025-08-17T17:44:18.629877",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

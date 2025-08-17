@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "guard-and-grace",
-  "archived_at": "2025-08-17T15:58:11.221164",
+  "archived_at": "2025-08-17T17:43:26.488699",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:58:08.740556",
+      "scraped_at": "2025-08-17T17:43:21.464459",
       "source_url": null,
       "confidence_score": 0.9999999999999999
     }

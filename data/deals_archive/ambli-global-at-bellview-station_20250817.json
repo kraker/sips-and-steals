@@ -1,0 +1,94 @@
+{
+  "restaurant_slug": "ambli-global-at-bellview-station",
+  "archived_at": "2025-08-17T17:43:08.339962",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 11 AM-2 PM | Days: friday, monday, saturday, thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "saturday",
+        "thursday"
+      ],
+      "start_time": "11 AM",
+      "end_time": "2 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:06.119467",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-6 PM | Days: friday, monday, saturday, thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "saturday",
+        "thursday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:06.119483",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-6 PM | Days: friday, monday, saturday, thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "saturday",
+        "thursday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:06.119492",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-9 PM | Days: friday, monday, saturday, thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "saturday",
+        "thursday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "9 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:43:06.119501",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "sunday-vinyl",
-  "archived_at": "2025-08-17T15:57:39.058697",
+  "archived_at": "2025-08-17T17:42:56.034982",
   "deals": [
     {
       "title": "Happy Hour",
@@ -17,7 +17,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:36.997923",
+      "scraped_at": "2025-08-17T17:42:53.629175",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -41,7 +41,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:36.998924",
+      "scraped_at": "2025-08-17T17:42:53.630145",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -65,7 +65,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:36.998935",
+      "scraped_at": "2025-08-17T17:42:53.630157",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -86,7 +86,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:36.999548",
+      "scraped_at": "2025-08-17T17:42:53.630758",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -107,7 +107,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:36.999554",
+      "scraped_at": "2025-08-17T17:42:53.630763",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

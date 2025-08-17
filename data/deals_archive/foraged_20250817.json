@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "foraged",
-  "archived_at": "2025-08-17T15:57:29.864027",
+  "archived_at": "2025-08-17T17:42:46.877488",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430774",
+      "scraped_at": "2025-08-17T17:42:44.708363",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -44,7 +44,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430879",
+      "scraped_at": "2025-08-17T17:42:44.708459",
       "source_url": null,
       "confidence_score": 0.8
     }

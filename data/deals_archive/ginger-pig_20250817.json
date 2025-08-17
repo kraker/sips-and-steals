@@ -1,0 +1,73 @@
+{
+  "restaurant_slug": "ginger-pig",
+  "archived_at": "2025-08-17T17:41:25.136803",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $2, $3, $2",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:19.737285",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: mon, Sun",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:19.738737",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: TUESDAY, THURSDAY",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "thursday",
+        "monday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:19.740866",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

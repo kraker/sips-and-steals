@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "blue-sushi-sake-grill",
-  "archived_at": "2025-08-17T15:56:08.161372",
+  "archived_at": "2025-08-17T17:40:44.103093",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976582",
+      "scraped_at": "2025-08-17T17:40:41.942730",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -44,7 +44,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976669",
+      "scraped_at": "2025-08-17T17:40:41.942803",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -67,7 +67,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976709",
+      "scraped_at": "2025-08-17T17:40:41.942836",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -90,7 +90,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976740",
+      "scraped_at": "2025-08-17T17:40:41.942859",
       "source_url": null,
       "confidence_score": 0.8
     }

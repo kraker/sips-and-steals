@@ -1,0 +1,31 @@
+{
+  "restaurant_slug": "uchi",
+  "archived_at": "2025-08-17T17:42:29.495499",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: daily",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:27.364022",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

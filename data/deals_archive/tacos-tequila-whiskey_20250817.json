@@ -1,0 +1,25 @@
+{
+  "restaurant_slug": "tacos-tequila-whiskey",
+  "archived_at": "2025-08-17T17:43:00.857003",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: fri, fri",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:42:58.051983",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

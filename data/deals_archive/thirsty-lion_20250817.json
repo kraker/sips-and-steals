@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "thirsty-lion",
-  "archived_at": "2025-08-17T15:56:04.450771",
+  "archived_at": "2025-08-17T17:40:42.110946",
   "deals": [
     {
       "title": "Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:02.430565",
+      "scraped_at": "2025-08-17T17:40:39.810315",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -46,7 +46,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:02.430744",
+      "scraped_at": "2025-08-17T17:40:39.810458",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -67,7 +67,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:02.436721",
+      "scraped_at": "2025-08-17T17:40:39.816139",
       "source_url": null,
       "confidence_score": 0.6
     }

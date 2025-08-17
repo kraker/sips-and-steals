@@ -1,0 +1,76 @@
+{
+  "restaurant_slug": "olive-finch",
+  "archived_at": "2025-08-17T17:41:36.228190",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:33.985847",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 7 AM-9 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $10",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "7 AM",
+      "end_time": "9 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:34.003927",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: wednesday, monday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday",
+        "monday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:34.024730",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

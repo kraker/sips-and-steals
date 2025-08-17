@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "briar-common-brewery-eatery",
-  "archived_at": "2025-08-17T15:57:19.937946",
+  "archived_at": "2025-08-17T17:51:57.774300",
   "deals": [
     {
       "title": "Happy Hour",
@@ -17,7 +17,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:17.635639",
+      "scraped_at": "2025-08-17T17:51:55.181807",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -37,7 +37,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:17.637173",
+      "scraped_at": "2025-08-17T17:51:55.183459",
       "source_url": null,
       "confidence_score": 0.6
     },
@@ -62,7 +62,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:17.640401",
+      "scraped_at": "2025-08-17T17:51:55.186779",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -87,7 +87,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:17.640416",
+      "scraped_at": "2025-08-17T17:51:55.186794",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     },
@@ -112,7 +112,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:17.640427",
+      "scraped_at": "2025-08-17T17:51:55.186805",
       "source_url": null,
       "confidence_score": 0.8999999999999999
     }

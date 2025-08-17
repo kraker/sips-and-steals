@@ -1,0 +1,72 @@
+{
+  "restaurant_slug": "blue-island-oyster-bar",
+  "archived_at": "2025-08-17T17:41:30.472082",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 2 PM-6 PM | Days: monday, saturday, sunday, friday | Pricing: $20, $5",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "saturday",
+        "sunday",
+        "friday"
+      ],
+      "start_time": "2 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:27.950665",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: all day, Sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:27.950769",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 2 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "2 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:41:27.950846",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

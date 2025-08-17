@@ -1,0 +1,141 @@
+{
+  "restaurant_slug": "work-class",
+  "archived_at": "2025-08-17T17:49:16.183417",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-6 PM | Days: wednesday, sunday, monday, tuesday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday",
+        "sunday",
+        "monday",
+        "tuesday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.489276",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-6 PM | Days: sunday, wednesday, thursday, monday, friday | Pricing: $15, $11, $18",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "wednesday",
+        "thursday",
+        "monday",
+        "friday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.491440",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 9 PM-10 PM | Days: sunday, wednesday, thursday, monday, friday | Pricing: $15, $11, $18",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "wednesday",
+        "thursday",
+        "monday",
+        "friday"
+      ],
+      "start_time": "9 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.491465",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 9 PM-10 PM | Days: thursday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday"
+      ],
+      "start_time": "9 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.493933",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-6 PM | Days: sunday, wednesday, thursday, monday, friday, tuesday | Pricing: $15, $11, $18",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "wednesday",
+        "thursday",
+        "monday",
+        "friday",
+        "tuesday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.496477",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 9 PM-10 PM | Days: sunday, wednesday, thursday, monday, friday, tuesday | Pricing: $15, $11, $18",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "wednesday",
+        "thursday",
+        "monday",
+        "friday",
+        "tuesday"
+      ],
+      "start_time": "9 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T17:49:11.496502",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}
