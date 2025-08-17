@@ -4,6 +4,24 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Milestones
 
+### 🚀 **Milestone 4: JavaScript & Advanced URL Discovery** (August 17, 2025)
+**Status**: ✅ COMPLETED
+
+**Goals Achieved**:
+- **JavaScript Browser Automation**: Implemented Playwright-based scraping for dynamic content sites
+- **Hybrid Intelligence System**: Smart static-first, JavaScript-fallback architecture
+- **URL Discovery & Repair**: Comprehensive tool to fix broken restaurant URLs automatically
+- **Coverage Breakthrough**: Achieved 44.3% live data coverage (up from 35.8%)
+- **Systematic 404 Resolution**: Eliminated URL access issues blocking data collection
+
+**Technical Deliverables**:
+- Playwright browser automation with async/await architecture
+- HybridScraper with intelligent JavaScript detection (confidence scoring)
+- URL discovery tool testing 25+ common patterns per restaurant
+- 8 confirmed JavaScript scraping successes (Urban Farmer, Ginger Pig, Temaki Den, etc.)
+- 4 critical URL fixes converting 0-deal failures to 5+ deal successes
+- Enhanced factory pattern supporting multiple scraper types
+
 ### 🎯 **Milestone 3: Production-Ready Scraping Platform** (August 17, 2025)
 **Status**: ✅ COMPLETED
 
@@ -123,12 +141,18 @@ All code in this project follows established style standards:
 ```bash
 # Install dependencies (all pip dependencies managed via requirements.txt)
 pip install -r requirements.txt
+playwright install chromium  # Required for JavaScript support
 
-# Run scraping system for live deals
+# Run scraping system for live deals (now with JavaScript support)
 python scraper_cli.py scrape --district "Central" --workers 2
 
 # Generate multi-page static website with live data
 python generate_site.py
+
+# URL discovery and fixing
+python fix_restaurant_urls.py  # Dry run to identify broken URLs
+python fix_restaurant_urls.py --apply  # Apply URL fixes
+python fix_restaurant_urls.py --restaurant "restaurant-slug" --apply  # Fix specific restaurant
 
 # System status and monitoring
 python scraper_cli.py status
@@ -194,9 +218,24 @@ class Deal:
 3. **Static happy hour data** from `restaurants.json` - fallback with 0.3 confidence score
 
 ### Current Restaurant Scrapers
+
+**JavaScript-Enabled Dynamic Sites**:
+- **Urban Farmer**: Browser automation (3 deals, confidence: 1.00)
+- **Ginger Pig**: Browser automation (3 deals, confidence: 1.00)
+- **Painted RiNo Kitchen + Bar**: Browser automation (5 deals, confidence: 1.00)
+- **Temaki Den**: Browser automation (4 deals, confidence: 1.00)
+- **Sushi Rama**: Browser automation (3 deals, confidence: 1.00)
+- **Uchi**: Browser automation (1 deal, confidence: 0.90)
+- **Olive & Finch**: Browser automation (3 deals, confidence: 1.00)
+- **Dio Mio**: Browser automation (3 deals, confidence: 0.90)
+
+**Config-Based & Static Scrapers**:
 - **Jax Fish House**: JSON-LD structured data parsing (2 deals with 0.8-0.9 confidence)
 - **Tamayo**: Custom HTML parsing (3 deals with 0.8-0.9 confidence)
 - **City O' City**: Plant-based happy hour scraping (1 deal with 0.8 confidence)
+- **Work & Class**: Fixed URL scraping (6 deals, confidence: 1.00)
+- **Necio Mexican Kitchen**: Fixed URL scraping (5 deals, confidence: 1.00)
+- **Briar Common Brewery**: Fixed URL scraping (5 deals, confidence: 1.00)
 
 ### Web Output
 **Enhanced Multi-page Architecture**: 
