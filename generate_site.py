@@ -217,12 +217,26 @@ def group_deals_by_schedule(deals):
                 else:
                     time_str = "Happy Hour"
                 
+                # Include location context from deal title if meaningful
+                deal_title = deal.get('title', '')
+                location_context = ''
+                if 'at the bar' in deal_title.lower():
+                    location_context = ' (Bar)'
+                elif 'at tables' in deal_title.lower():
+                    location_context = ' (Tables)'
+                elif 'at bar' in deal_title.lower():
+                    location_context = ' (Bar)'
+                elif 'bar' in deal_title.lower() and 'happy hour' in deal_title.lower() and len(deals) > 1:
+                    location_context = ' (Bar)'
+                elif 'table' in deal_title.lower() and 'happy hour' in deal_title.lower() and len(deals) > 1:
+                    location_context = ' (Tables)'
+                
                 # Include pricing information in schedule if available
                 price_info = format_deal_prices(deal)
                 if price_info:
-                    schedule_entry = f"{day_str}: {time_str} - {price_info}"
+                    schedule_entry = f"{day_str}: {time_str}{location_context} - {price_info}"
                 else:
-                    schedule_entry = f"{day_str}: {time_str}"
+                    schedule_entry = f"{day_str}: {time_str}{location_context}"
                     
                 if schedule_entry not in schedule_entries:
                     schedule_entries.append(schedule_entry)

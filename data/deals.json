@@ -1942,24 +1942,24 @@
         "prices": [],
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-17T00:09:23.768076",
+        "scraped_at": "2025-08-17T00:42:26.036538",
         "source_url": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-17T00:09:26.011901"
+    "last_updated": "2025-08-17T00:42:28.041160"
   },
   "ginger-pig": {
     "deals": [],
-    "last_updated": "2025-08-17T00:09:32.176115"
+    "last_updated": "2025-08-17T00:42:33.837660"
   },
   "vital-root": {
     "deals": [],
-    "last_updated": "2025-08-17T00:09:38.543588"
+    "last_updated": "2025-08-17T00:42:40.050221"
   },
   "el-five": {
     "deals": [],
-    "last_updated": "2025-08-17T00:09:43.804259"
+    "last_updated": "2025-08-17T00:42:45.902144"
   },
   "kumoya-denver": {
     "deals": [
@@ -1981,20 +1981,20 @@
         "prices": [],
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-17T00:09:47.610304",
+        "scraped_at": "2025-08-17T00:42:49.774161",
         "source_url": "https://www.kumoyadenver.com/happy-hour",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-17T00:09:50.026333"
+    "last_updated": "2025-08-17T00:42:52.183291"
   },
   "alma-fonda-fina": {
     "deals": [],
-    "last_updated": "2025-08-17T00:09:55.829567"
+    "last_updated": "2025-08-17T00:42:57.736558"
   },
   "the-bindery": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:02.953926"
+    "last_updated": "2025-08-17T00:43:05.041765"
   },
   "bamboo-sushi": {
     "deals": [
@@ -2014,40 +2014,85 @@
         "prices": [],
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-17T00:10:05.505363",
+        "scraped_at": "2025-08-17T00:43:07.744461",
         "source_url": "https://bamboosushi.com/location/lohi/",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-17T00:10:07.932751"
+    "last_updated": "2025-08-17T00:43:09.820774"
   },
   "bar-dough": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:13.824824"
+    "last_updated": "2025-08-17T00:43:16.183568"
   },
   "root-down": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:19.807214"
+    "last_updated": "2025-08-17T00:43:22.428352"
   },
   "gaetanos-eccellente-cucina-cocktails": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:25.787797"
+    "last_updated": "2025-08-17T00:43:28.199262"
   },
   "linger": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:31.642337"
+    "last_updated": "2025-08-17T00:43:34.439402"
   },
   "kawa-ni": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:37.638603"
+    "last_updated": "2025-08-17T00:43:40.053287"
   },
   "ashkara": {
     "deals": [],
-    "last_updated": "2025-08-17T00:10:44.332843"
+    "last_updated": "2025-08-17T00:43:46.255549"
   },
   "senor-bear": {
-    "deals": [],
-    "last_updated": "2025-08-17T00:10:50.135113"
+    "deals": [
+      {
+        "title": "Happy Hour at the Bar",
+        "description": "Available 3:00 pm - 6:00 pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "thursday",
+          "tuesday",
+          "sunday",
+          "saturday",
+          "wednesday",
+          "friday"
+        ],
+        "start_time": "3:00 pm",
+        "end_time": "6:00 pm",
+        "prices": [],
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T01:07:30.193540",
+        "source_url": "https://www.senorbeardenver.com/",
+        "confidence_score": 0.95
+      },
+      {
+        "title": "Happy Hour at Tables",
+        "description": "Available 3:00 pm - 5:00 pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "thursday",
+          "tuesday",
+          "sunday",
+          "saturday",
+          "wednesday",
+          "friday"
+        ],
+        "start_time": "3:00 pm",
+        "end_time": "5:00 pm",
+        "prices": [],
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T01:07:30.193597",
+        "source_url": "https://www.senorbeardenver.com/",
+        "confidence_score": 0.95
+      }
+    ],
+    "last_updated": "2025-08-17T01:07:32.244054"
   },
   "american-elm": {
     "deals": [
@@ -2067,23 +2112,23 @@
         "prices": [],
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-17T00:10:53.334214",
+        "scraped_at": "2025-08-17T00:43:55.673902",
         "source_url": "https://www.amelm.com/happyhour",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-17T00:10:55.529218"
+    "last_updated": "2025-08-17T00:43:57.787495"
   },
   "tacos-tequila-whiskey": {
     "deals": [],
-    "last_updated": "2025-08-17T00:11:02.024485"
+    "last_updated": "2025-08-17T00:44:03.879955"
   },
   "glo-noodle-house": {
     "deals": [],
-    "last_updated": "2025-08-17T00:11:07.496534"
+    "last_updated": "2025-08-17T00:44:09.719735"
   },
   "necio-mexican-kitchen": {
     "deals": [],
-    "last_updated": "2025-08-17T00:11:14.194007"
+    "last_updated": "2025-08-17T00:44:16.515080"
   }
 }

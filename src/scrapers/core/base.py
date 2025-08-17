@@ -66,10 +66,19 @@ class BaseScraper(ABC):
         """Fetch and return page content as string"""
         if url:
             urls_to_try = [url]
+            logger.info(f"Using provided URL: {url}")
+        elif hasattr(self.restaurant, 'scraping_urls') and getattr(self.restaurant, 'scraping_urls'):
+            # Multiple URLs configured
+            urls_to_try = getattr(self.restaurant, 'scraping_urls')
+            logger.info(f"Using scraping_urls: {urls_to_try} for {self.restaurant.name}")
         elif hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            # Legacy support for 'websites' field
             urls_to_try = getattr(self.restaurant, 'websites')
+            logger.info(f"Using legacy websites: {urls_to_try} for {self.restaurant.name}")
         else:
+            # Fallback to single website
             urls_to_try = [self.restaurant.website] if self.restaurant.website else []
+            logger.info(f"Using fallback website: {urls_to_try} for {self.restaurant.name}")
         
         if not urls_to_try:
             raise PermanentScrapingError("No URLs provided for scraping")
@@ -185,12 +194,37 @@ class ConfigBasedScraper(BaseScraper):
         from ..processors.text_processor import TextProcessor
         from bs4 import BeautifulSoup
         
-        # Fetch page content
-        content = self.fetch_page()
-        soup = BeautifulSoup(content, 'html.parser')
+        all_deals = []
         
-        # Use text processor to extract deals based on config
-        text_processor = TextProcessor(self.config, restaurant=self.restaurant)
-        deals = text_processor.extract_deals(soup)
+        # Check if restaurant has multiple URLs to try
+        if hasattr(self.restaurant, 'scraping_urls') and len(getattr(self.restaurant, 'scraping_urls', [])) > 1:
+            # Try all URLs and combine deals
+            urls_to_try = getattr(self.restaurant, 'scraping_urls')
+            logger.info(f"Trying all {len(urls_to_try)} URLs for {self.restaurant.name}")
+            
+            for url in urls_to_try:
+                try:
+                    content = self.fetch_page(url)
+                    soup = BeautifulSoup(content, 'html.parser')
+                    
+                    # Use text processor to extract deals from this page
+                    text_processor = TextProcessor(self.config, restaurant=self.restaurant)
+                    page_deals = text_processor.extract_deals(soup)
+                    
+                    if page_deals:
+                        logger.info(f"Found {len(page_deals)} deals from {url}")
+                        all_deals.extend(page_deals)
+                        
+                except Exception as e:
+                    logger.warning(f"Failed to process {url}: {e}")
+                    continue
+        else:
+            # Single URL - use original logic
+            content = self.fetch_page()
+            soup = BeautifulSoup(content, 'html.parser')
+            
+            # Use text processor to extract deals based on config
+            text_processor = TextProcessor(self.config, restaurant=self.restaurant)
+            all_deals = text_processor.extract_deals(soup)
         
-        return deals
+        return all_deals

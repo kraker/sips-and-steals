@@ -104,13 +104,100 @@ class TextProcessor:
             matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
             times.extend(matches)
         
-        # Extract deal information  
-        deals_info = []
+        # Extract deal information and create individual deals for timing patterns
         deal_patterns = scraping_patterns.get('deal_patterns', [])
         for pattern_config in deal_patterns:
             pattern = pattern_config.get('pattern', '')
-            matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
-            deals_info.extend(matches)
+            groups = pattern_config.get('groups', [])
+            
+            # Check if this is a timing pattern (has start_time/end_time groups or creates_multiple_deals)
+            if ('start_time' in groups and 'end_time' in groups) or pattern_config.get('creates_multiple_deals', False):
+                # This is a timing pattern - create deals directly
+                matches = re.finditer(pattern, content, re.IGNORECASE)
+                for match in matches:
+                    logger.info(f"Found timing match: {match.group(0)}")
+                    
+                    # Check if this pattern creates multiple deals
+                    if pattern_config.get('creates_multiple_deals', False):
+                        # Handle special multi-deal patterns (like bar/tables combination)
+                        if 'bar_start_time' in groups and 'tables_start_time' in groups:
+                            # Extract bar timing
+                            bar_start = self._normalize_time(match.group(groups.index('bar_start_time') + 1))
+                            bar_end = self._normalize_time(match.group(groups.index('bar_end_time') + 1))
+                            # Extract tables timing
+                            tables_start = self._normalize_time(match.group(groups.index('tables_start_time') + 1))
+                            tables_end = self._normalize_time(match.group(groups.index('tables_end_time') + 1))
+                            
+                            # Get days from pattern config
+                            days_of_week = []
+                            if 'days_of_week' in pattern_config:
+                                days_of_week = self._parse_days(pattern_config['days_of_week'])
+                            
+                            # Create Bar deal
+                            if bar_start and bar_end:
+                                bar_deal = Deal(
+                                    title="Happy Hour at the Bar",
+                                    description=f"Available {bar_start} - {bar_end}",
+                                    deal_type=DealType.HAPPY_HOUR,
+                                    days_of_week=days_of_week,
+                                    start_time=bar_start,
+                                    end_time=bar_end,
+                                    confidence_score=pattern_config.get('confidence', 0.9),
+                                    scraped_at=datetime.now(),
+                                    source_url=self.restaurant.website if self.restaurant else None
+                                )
+                                deals.append(bar_deal)
+                                logger.info(f"Created deal: {bar_deal.title} ({bar_start} - {bar_end})")
+                            
+                            # Create Tables deal
+                            if tables_start and tables_end:
+                                tables_deal = Deal(
+                                    title="Happy Hour at Tables",
+                                    description=f"Available {tables_start} - {tables_end}",
+                                    deal_type=DealType.HAPPY_HOUR,
+                                    days_of_week=days_of_week,
+                                    start_time=tables_start,
+                                    end_time=tables_end,
+                                    confidence_score=pattern_config.get('confidence', 0.9),
+                                    scraped_at=datetime.now(),
+                                    source_url=self.restaurant.website if self.restaurant else None
+                                )
+                                deals.append(tables_deal)
+                                logger.info(f"Created deal: {tables_deal.title} ({tables_start} - {tables_end})")
+                    else:
+                        # Standard single deal pattern
+                        # Extract timing information
+                        start_time = None
+                        end_time = None
+                        for i, group_name in enumerate(groups):
+                            if group_name == 'start_time' and i < len(match.groups()):
+                                start_time = self._normalize_time(match.group(i + 1))
+                            elif group_name == 'end_time' and i < len(match.groups()):
+                                end_time = self._normalize_time(match.group(i + 1))
+                        
+                        if start_time and end_time:
+                            # Get days from pattern config or default to all days
+                            days_of_week = []
+                            if 'days_of_week' in pattern_config:
+                                days_of_week = self._parse_days(pattern_config['days_of_week'])
+                            
+                            deal = Deal(
+                                title=pattern_config.get('title', 'Happy Hour'),
+                                description=f"Available {start_time} - {end_time}",
+                                deal_type=DealType.HAPPY_HOUR,
+                                days_of_week=days_of_week,
+                                start_time=start_time,
+                                end_time=end_time,
+                                confidence_score=pattern_config.get('confidence', 0.8),
+                                scraped_at=datetime.now(),
+                                source_url=self.restaurant.website if self.restaurant else None
+                            )
+                            deals.append(deal)
+                            logger.info(f"Created deal: {deal.title} ({start_time} - {end_time})")
+            else:
+                # Regular deal pattern - collect for component-based creation
+                matches = self._extract_pattern_matches_with_groups(content, pattern, groups)
+                # Handle non-timing patterns (items, prices, etc.) if needed
         
         # Extract day information
         days = []
@@ -120,13 +207,13 @@ class TextProcessor:
             matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
             days.extend(matches)
         
-        # Create deals from extracted components
-        if times or days or deals_info:
+        # Create deals from extracted timing components (legacy support)
+        if times and not deals:  # Only if no deals created from timing patterns
             deal = self._create_deal_from_components(
                 times=times,
                 days=days,
-                prices=deals_info,  # Include all deal info as "prices" for now
-                source_content=content  # Pass full content for "Every Day" detection
+                prices=[],
+                source_content=content
             )
             if deal:
                 deals.append(deal)
