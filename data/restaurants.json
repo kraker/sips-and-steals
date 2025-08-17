@@ -92,7 +92,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1520 Blake St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1520+Blake+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.8
@@ -289,7 +289,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1616 16th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1616+16th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -386,7 +386,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1600 15th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1600+15th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -558,7 +558,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1431 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1431+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -659,7 +659,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1550 Market St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1550+Market+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -760,7 +760,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1659 Wazee St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1659+Wazee+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -857,7 +857,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1400 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1400+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -976,7 +976,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1433 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1433+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1150,7 +1150,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1970 17th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1970+17th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1247,7 +1247,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1803 16th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1803+16th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1350,7 +1350,7 @@
         "unit": "#100",
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1825 Blake St #100, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1825+Blake+St+%23100%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1551,7 +1551,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1701 Wynkoop St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1701+Wynkoop+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1649,7 +1649,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1513 Wynkoop St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1513+Wynkoop+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
@@ -1881,7 +1881,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80205",
         "formatted_address": "2200 Larimer St, Denver, CO 80205",
         "google_maps_url": "https://maps.google.com/?q=2200+Larimer+St%2C+Denver%2C+CO+80205",
         "confidence_score": 0.8
@@ -2366,7 +2366,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1455 California St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1455+California+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.8
@@ -4482,8 +4482,8 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "3495 S. Downing St.",
-        "google_maps_url": "https://maps.google.com/?q=3495+S.+Downing+St.",
+        "formatted_address": "3495 S. Downing St., Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=3495%20S.%20Downing%20St.%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
@@ -4707,8 +4707,8 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "2439 W. Main St.",
-        "google_maps_url": "https://maps.google.com/?q=2439+W.+Main+St.",
+        "formatted_address": "2439 W. Main St., Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=2439%20W.%20Main%20St.%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
@@ -6806,7 +6806,7 @@
         "unit": "#500",
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "2930 Umatilla St Unit \\#500, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=2930+Umatilla+St+Unit+%5C%23500%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
@@ -7683,7 +7683,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "1900 W 32nd Ave, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=1900+W+32nd+Ave%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
@@ -9456,8 +9456,8 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "1085 S. Gaylord Street",
-        "google_maps_url": "https://maps.google.com/?q=1085+S.+Gaylord+Street",
+        "formatted_address": "1085 S. Gaylord Street, Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=1085%20S.%20Gaylord%20Street%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
@@ -10009,7 +10009,7 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "2298 Clay St, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=2298+Clay+St%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
