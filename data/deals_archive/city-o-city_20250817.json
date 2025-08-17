@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "city-o-city",
-  "archived_at": "2025-08-17T15:40:39.038160",
+  "archived_at": "2025-08-17T15:58:32.128262",
   "deals": [
     {
       "title": "Happy Hour",
@@ -23,7 +23,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:36.842010",
+      "scraped_at": "2025-08-17T15:58:29.753532",
       "source_url": null,
       "confidence_score": 0.8
     },
@@ -48,7 +48,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:36.842111",
+      "scraped_at": "2025-08-17T15:58:29.753662",
       "source_url": null,
       "confidence_score": 0.8
     }

@@ -1,42 +1,39 @@
 {
-  "restaurant_slug": "foraged",
-  "archived_at": "2025-08-17T15:57:29.864027",
+  "restaurant_slug": "lucina-eatery-bar",
+  "archived_at": "2025-08-17T15:53:24.480335",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 4 PM - 6 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+      "description": "Found happy hour pattern: Tuesday, Friday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "sunday",
-        "monday",
         "tuesday",
-        "wednesday",
-        "thursday"
+        "friday"
       ],
-      "start_time": "4 PM",
-      "end_time": "6 PM",
+      "start_time": null,
+      "end_time": null,
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430774",
+      "scraped_at": "2025-08-17T15:53:22.260391",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.6
     },
     {
       "title": "Happy Hour",
-      "description": "Time: 9 PM - 10 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+      "description": "Time: 04 PM-10 PM | Days: tuesday, wednesday, thursday, friday, saturday | Pricing: $2, $2, $2",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "sunday",
-        "monday",
         "tuesday",
         "wednesday",
-        "thursday"
+        "thursday",
+        "friday",
+        "saturday"
       ],
-      "start_time": "9 PM",
+      "start_time": "04 PM",
       "end_time": "10 PM",
       "start_time_24h": null,
       "end_time_24h": null,
@@ -44,9 +41,9 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430879",
+      "scraped_at": "2025-08-17T15:53:22.263056",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.9999999999999999
     }
   ]
 }

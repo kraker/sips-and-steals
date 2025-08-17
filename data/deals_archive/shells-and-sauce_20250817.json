@@ -1,0 +1,63 @@
+{
+  "restaurant_slug": "shells-and-sauce",
+  "archived_at": "2025-08-17T16:00:08.578365",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Time: 30 PM-5 PM | Days: monday | Pricing: $5, $4, $5.50",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": "30 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:06.316343",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 30 PM-6 PM | Days: monday | Pricing: $5, $4, $5.50",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": "30 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:06.316352",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: MON",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:06.317579",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

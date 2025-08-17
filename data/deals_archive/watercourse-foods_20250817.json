@@ -1,0 +1,67 @@
+{
+  "restaurant_slug": "watercourse-foods",
+  "archived_at": "2025-08-17T15:59:05.438010",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: thu, wed",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "wednesday",
+        "sunday",
+        "friday",
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:03.078748",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 11 AM-12 PM | Days: monday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": "11 AM",
+      "end_time": "12 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:03.079535",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-6 PM | Days: monday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:03.079544",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

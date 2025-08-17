@@ -1,29 +1,28 @@
 {
-  "restaurant_slug": "tamayo",
-  "archived_at": "2025-08-17T15:56:43.786827",
+  "restaurant_slug": "jovaninas-broken-italian",
+  "archived_at": "2025-08-17T15:48:16.129276",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 3 PM - 5 PM | Days: Monday - Friday",
+      "description": "Found happy hour pattern: Tuesday, Thursday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
         "tuesday",
-        "wednesday",
         "thursday",
-        "friday"
+        "friday",
+        "saturday"
       ],
-      "start_time": "3 PM",
-      "end_time": "5 PM",
+      "start_time": null,
+      "end_time": null,
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:41.679341",
+      "scraped_at": "2025-08-17T15:48:13.774666",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.6
     }
   ]
 }

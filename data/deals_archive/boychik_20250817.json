@@ -1,0 +1,28 @@
+{
+  "restaurant_slug": "boychik",
+  "archived_at": "2025-08-17T15:57:55.392989",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: mon, Fri",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "friday",
+        "sunday",
+        "tuesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:53.338480",
+      "source_url": null,
+      "confidence_score": 0.6
+    }
+  ]
+}

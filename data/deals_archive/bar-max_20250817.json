@@ -1,52 +1,51 @@
 {
-  "restaurant_slug": "foraged",
-  "archived_at": "2025-08-17T15:57:29.864027",
+  "restaurant_slug": "bar-max",
+  "archived_at": "2025-08-17T16:00:19.115756",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 4 PM - 6 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+      "description": "Time: 4 PM-7 PM | Days: wednesday, thursday, friday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "sunday",
-        "monday",
-        "tuesday",
         "wednesday",
-        "thursday"
+        "thursday",
+        "friday"
       ],
       "start_time": "4 PM",
-      "end_time": "6 PM",
+      "end_time": "7 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430774",
+      "scraped_at": "2025-08-17T16:00:17.016181",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.8999999999999999
     },
     {
       "title": "Happy Hour",
-      "description": "Time: 9 PM - 10 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+      "description": "Time: 4 PM-7 PM | Days: wednesday, thursday, friday, saturday, sunday, tuesday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "sunday",
-        "monday",
-        "tuesday",
         "wednesday",
-        "thursday"
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "tuesday"
       ],
-      "start_time": "9 PM",
-      "end_time": "10 PM",
+      "start_time": "4 PM",
+      "end_time": "7 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:57:27.430879",
+      "scraped_at": "2025-08-17T16:00:17.016473",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.8999999999999999
     }
   ]
 }

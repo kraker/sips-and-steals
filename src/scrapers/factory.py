@@ -15,6 +15,7 @@ from models import Restaurant
 from config_manager import ConfigManager
 
 from .core.base import BaseScraper, ConfigBasedScraper
+from .universal_scraper import UniversalScraper
 from .exceptions import ConfigurationError
 
 logger = logging.getLogger(__name__)
@@ -44,9 +45,9 @@ class ScraperFactory:
             logger.info(f"Using config-based scraper for {restaurant.name}")
             return ConfigBasedScraper(restaurant, config)
         
-        # Fallback to basic config scraper
-        logger.info(f"Using default config scraper for {restaurant.name}")
-        return ConfigBasedScraper(restaurant, {})
+        # Fallback to universal scraper for restaurants without configs
+        logger.info(f"Using universal pattern scraper for {restaurant.name}")
+        return UniversalScraper(restaurant)
     
     def _try_load_custom_scraper(self, restaurant_slug: str, restaurant: Restaurant) -> Optional[BaseScraper]:
         """Try to load a custom scraper implementation"""

@@ -1,0 +1,67 @@
+{
+  "restaurant_slug": "vesper-lounge",
+  "archived_at": "2025-08-17T16:01:00.414165",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: thu",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:57.953443",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-6 PM | Days: wednesday, monday, tuesday | Pricing: $15, $20, $30",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday",
+        "monday",
+        "tuesday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:57.954624",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-9 PM | Days: wednesday, monday, tuesday | Pricing: $15, $20, $30",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday",
+        "monday",
+        "tuesday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "9 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T16:00:57.954672",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+{
+  "restaurant_slug": "sunday-vinyl",
+  "archived_at": "2025-08-17T15:57:39.058697",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Sunday, Sun",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:36.997923",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-5 PM | Days: sunday, tuesday, saturday, thursday, monday, friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "tuesday",
+        "saturday",
+        "thursday",
+        "monday",
+        "friday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:36.998924",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: sunday, tuesday, saturday, thursday, monday, friday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "tuesday",
+        "saturday",
+        "thursday",
+        "monday",
+        "friday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:36.998935",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-5 PM | Days: tuesday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:36.999548",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: tuesday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:57:36.999554",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "restaurant_slug": "rocky-yama-sushi",
+  "archived_at": "2025-08-17T15:59:47.154715",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: Friday, Fri",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:44.599736",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: daily, daily",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:44.739434",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 12 PM-09 PM | Days: tuesday, wednesday, thursday, friday, monday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "12 PM",
+      "end_time": "09 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:44.740072",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 12 PM-08 PM | Days: tuesday, wednesday, thursday, friday, monday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "12 PM",
+      "end_time": "08 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:44.740086",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 03 PM-06 PM | Days: tuesday, wednesday, thursday, friday, monday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "03 PM",
+      "end_time": "06 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:59:44.740098",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}

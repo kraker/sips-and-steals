@@ -1,88 +1,42 @@
 {
-  "restaurant_slug": "blue-sushi-sake-grill",
-  "archived_at": "2025-08-17T15:56:08.161372",
+  "restaurant_slug": "jacks-on-pearl-upstairs",
+  "archived_at": "2025-08-17T15:58:08.678851",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+      "description": "Time: 3 PM-5 PM | Days: friday, monday, sunday, thursday, saturday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
-        "thursday",
         "friday",
-        "saturday",
-        "sunday"
+        "monday",
+        "sunday",
+        "thursday",
+        "saturday"
       ],
-      "start_time": "11 AM",
-      "end_time": "10 PM",
+      "start_time": "3 PM",
+      "end_time": "5 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976582",
+      "scraped_at": "2025-08-17T15:58:06.589523",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.8999999999999999
     },
     {
       "title": "Happy Hour",
-      "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+      "description": "Time: 5 PM-9 PM | Days: friday, monday, sunday, thursday, saturday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
-        "thursday",
         "friday",
-        "saturday",
-        "sunday"
-      ],
-      "start_time": "11 AM",
-      "end_time": "10 PM",
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976669",
-      "source_url": null,
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 12 PM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
-      "deal_type": "happy_hour",
-      "days_of_week": [
         "monday",
+        "sunday",
         "thursday",
-        "friday",
-        "saturday",
-        "sunday"
+        "saturday"
       ],
-      "start_time": "12 PM",
-      "end_time": "10 PM",
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976709",
-      "source_url": null,
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 12 PM - 9 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "monday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
-      ],
-      "start_time": "12 PM",
+      "start_time": "5 PM",
       "end_time": "9 PM",
       "start_time_24h": null,
       "end_time_24h": null,
@@ -90,9 +44,55 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976740",
+      "scraped_at": "2025-08-17T15:58:06.589536",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-10 PM | Days: friday, monday, sunday, thursday, saturday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "sunday",
+        "thursday",
+        "saturday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:58:06.589546",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 5 PM-8 PM | Days: friday, monday, sunday, thursday, saturday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday",
+        "monday",
+        "sunday",
+        "thursday",
+        "saturday"
+      ],
+      "start_time": "5 PM",
+      "end_time": "8 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:58:06.589553",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
     }
   ]
 }

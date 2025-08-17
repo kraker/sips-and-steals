@@ -1,88 +1,21 @@
 {
-  "restaurant_slug": "blue-sushi-sake-grill",
-  "archived_at": "2025-08-17T15:56:08.161372",
+  "restaurant_slug": "bistro-vendome",
+  "archived_at": "2025-08-17T15:53:34.750561",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+      "description": "Time: 4 PM-9 PM | Days: thursday, monday, tuesday, wednesday, friday, saturday, sunday",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
         "thursday",
+        "monday",
+        "tuesday",
+        "wednesday",
         "friday",
         "saturday",
         "sunday"
       ],
-      "start_time": "11 AM",
-      "end_time": "10 PM",
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976582",
-      "source_url": null,
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "monday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
-      ],
-      "start_time": "11 AM",
-      "end_time": "10 PM",
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976669",
-      "source_url": null,
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 12 PM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "monday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
-      ],
-      "start_time": "12 PM",
-      "end_time": "10 PM",
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976709",
-      "source_url": null,
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 12 PM - 9 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "monday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
-      ],
-      "start_time": "12 PM",
+      "start_time": "4 PM",
       "end_time": "9 PM",
       "start_time_24h": null,
       "end_time_24h": null,
@@ -90,9 +23,84 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:56:05.976740",
+      "scraped_at": "2025-08-17T15:53:32.704712",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 4 PM-10 PM | Days: thursday, monday, tuesday, wednesday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "4 PM",
+      "end_time": "10 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:53:32.704736",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 10 PM-2 PM | Days: thursday, monday, tuesday, wednesday, friday, saturday, sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "thursday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "10 PM",
+      "end_time": "2 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:53:32.704752",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: every day, mon",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:53:32.705254",
+      "source_url": null,
+      "confidence_score": 0.6
     }
   ]
 }

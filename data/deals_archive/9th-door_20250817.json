@@ -1,19 +1,17 @@
 {
-  "restaurant_slug": "sap-sua",
-  "archived_at": "2025-08-17T16:00:07.915846",
+  "restaurant_slug": "9th-door",
+  "archived_at": "2025-08-17T15:58:52.931297",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Days: daily",
+      "description": "Found happy hour pattern: thu, wed",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
-        "tuesday",
-        "wednesday",
         "thursday",
+        "wednesday",
+        "sunday",
         "friday",
-        "saturday",
-        "sunday"
+        "monday"
       ],
       "start_time": null,
       "end_time": null,
@@ -23,22 +21,16 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.802179",
+      "scraped_at": "2025-08-17T15:58:50.754822",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.6
     },
     {
       "title": "Happy Hour",
-      "description": "Days: daily",
+      "description": "Found happy hour pattern: Mon, mon",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
-        "tuesday",
-        "wednesday",
-        "thursday",
-        "friday",
-        "saturday",
-        "sunday"
+        "monday"
       ],
       "start_time": null,
       "end_time": null,
@@ -48,9 +40,9 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.852214",
+      "scraped_at": "2025-08-17T15:58:50.755815",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.6
     }
   ]
 }

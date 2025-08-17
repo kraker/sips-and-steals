@@ -1,56 +1,54 @@
 {
-  "restaurant_slug": "sap-sua",
-  "archived_at": "2025-08-17T16:00:07.915846",
+  "restaurant_slug": "adrift",
+  "archived_at": "2025-08-17T15:59:49.529833",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Days: daily",
+      "description": "Time: 5 PM-7 PM | Days: tuesday, wednesday, thursday, friday, saturday, monday | Pricing: $14, $9, $15",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
         "tuesday",
         "wednesday",
         "thursday",
         "friday",
         "saturday",
-        "sunday"
+        "monday"
       ],
-      "start_time": null,
-      "end_time": null,
+      "start_time": "5 PM",
+      "end_time": "7 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.802179",
+      "scraped_at": "2025-08-17T15:59:47.134274",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.9999999999999999
     },
     {
       "title": "Happy Hour",
-      "description": "Days: daily",
+      "description": "Time: 4 PM-6 PM | Days: tuesday, wednesday, thursday, friday, saturday, monday | Pricing: $14, $9, $15",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "monday",
         "tuesday",
         "wednesday",
         "thursday",
         "friday",
         "saturday",
-        "sunday"
+        "monday"
       ],
-      "start_time": null,
-      "end_time": null,
+      "start_time": "4 PM",
+      "end_time": "6 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T16:00:05.852214",
+      "scraped_at": "2025-08-17T15:59:47.134297",
       "source_url": null,
-      "confidence_score": 0.8
+      "confidence_score": 0.9999999999999999
     }
   ]
 }

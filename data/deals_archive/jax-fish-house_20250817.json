@@ -1,0 +1,77 @@
+{
+  "restaurant_slug": "jax-fish-house",
+  "archived_at": "2025-08-17T15:55:30.312558",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Found happy hour pattern: daily, daily",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:55:27.901464",
+      "source_url": null,
+      "confidence_score": 0.6
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $1",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:55:27.903746",
+      "source_url": null,
+      "confidence_score": 0.9999999999999999
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 3 PM-5 PM | Days: tuesday, sunday, monday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "sunday",
+        "monday"
+      ],
+      "start_time": "3 PM",
+      "end_time": "5 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:55:27.904947",
+      "source_url": null,
+      "confidence_score": 0.8999999999999999
+    }
+  ]
+}
