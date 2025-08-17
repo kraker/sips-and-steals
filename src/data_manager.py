@@ -193,6 +193,20 @@ class DataManager:
         self._save_restaurants()
         logger.info("Data saved successfully")
     
+    def save_single_restaurant(self, restaurant_slug: str, create_backup: bool = False):
+        """Save a single restaurant's data immediately after successful extraction"""
+        if restaurant_slug not in self.restaurants:
+            logger.warning(f"Restaurant {restaurant_slug} not found, cannot save")
+            return
+        
+        # For single restaurant saves, we update the full file but skip backup by default
+        # This prevents data loss while being efficient for batch operations
+        if create_backup:
+            self._create_backup()
+        
+        self._save_restaurants()
+        logger.info(f"Successfully saved data for {restaurant_slug}")
+    
     def _create_backup(self):
         """Create timestamped backup of current data"""
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")

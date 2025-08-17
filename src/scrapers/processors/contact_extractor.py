@@ -14,7 +14,7 @@ from urllib.parse import urljoin, urlparse
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-from models import ContactInfo, DiningInfo, ServiceInfo, BusinessStatus, PriceRange
+from src.models import ContactInfo, DiningInfo, ServiceInfo, BusinessStatus, PriceRange
 
 logger = logging.getLogger(__name__)
 

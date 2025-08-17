@@ -65,6 +65,29 @@ def cmd_status(args):
             print(f"  • {restaurant.name}")
         if len(need_scraping) > 5:
             print(f"  ... and {len(need_scraping) - 5} more")
+    
+    # Show failure reasons breakdown
+    failure_reasons = {}
+    robots_blocked = []
+    for restaurant in dm.restaurants.values():
+        if hasattr(restaurant, 'scraping_config') and restaurant.scraping_config.last_failure_reason:
+            reason = restaurant.scraping_config.last_failure_reason
+            failure_reasons[reason] = failure_reasons.get(reason, 0) + 1
+            if reason == "robots_txt":
+                robots_blocked.append(restaurant.name)
+    
+    if failure_reasons:
+        print(f"\n🚫 Scraping failure reasons:")
+        for reason, count in sorted(failure_reasons.items(), key=lambda x: x[1], reverse=True):
+            icon = {"robots_txt": "🤖", "timeout": "⏱️", "not_found": "🔍", "no_content": "📄", "connection_error": "🔌"}.get(reason, "❓")
+            print(f"  {icon} {reason}: {count} restaurants")
+        
+        if robots_blocked:
+            print(f"\n🤖 Robots.txt blocked sites ({len(robots_blocked)}):")
+            for name in robots_blocked[:5]:
+                print(f"  • {name}")
+            if len(robots_blocked) > 5:
+                print(f"  ... and {len(robots_blocked) - 5} more")
 
 
 def cmd_scrape(args):
@@ -214,6 +237,9 @@ def cmd_restaurant(args):
     print(f"  Last Scraped: {config.last_scraped or 'Never'}")
     print(f"  Last Success: {config.last_success or 'Never'}")
     print(f"  Consecutive Failures: {config.consecutive_failures}")
+    if config.last_failure_reason:
+        failure_icon = {"robots_txt": "🤖", "timeout": "⏱️", "not_found": "🔍", "no_content": "📄", "connection_error": "🔌"}.get(config.last_failure_reason, "❓")
+        print(f"  Last Failure Reason: {failure_icon} {config.last_failure_reason}")
     
     # Show deals
     current_deals = restaurant.get_current_deals()
@@ -239,6 +265,265 @@ def cmd_restaurant(args):
         for issue in issues:
             level_icon = {"error": "🔴", "warning": "🟡", "info": "🔵", "critical": "💀"}.get(issue.level.value, "⚪")
             print(f"  {level_icon} {issue.message}")
+
+
+async def cmd_contact_async(args):
+    """Async version of contact extraction for batch operations"""
+    import asyncio
+    from src.scrapers.async_contact_extractor import AsyncContactExtractor
+    
+    data_manager = DataManager()
+    
+    # Determine which restaurants to update
+    restaurants_to_update = []
+    
+    if args.missing_only:
+        # Restaurants missing contact data
+        for slug, restaurant in data_manager.restaurants.items():
+            # Check for missing phone, email, or operating hours
+            has_phone = restaurant.phone or (hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone)
+            has_email = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.general_email
+            has_hours = hasattr(restaurant, 'operating_hours') and restaurant.operating_hours and any(restaurant.operating_hours.values())
+            
+            if not has_phone or not has_email or not has_hours:
+                restaurants_to_update.append(slug)
+    elif args.all:
+        # All restaurants
+        restaurants_to_update = list(data_manager.restaurants.keys())
+    
+    if not restaurants_to_update:
+        print("✅ All restaurants already have complete contact information!")
+        return
+    
+    print(f"🚀 Processing {len(restaurants_to_update)} restaurants concurrently...")
+    
+    # Use async extractor for batch processing
+    extractor = AsyncContactExtractor(data_manager)
+    
+    # Process restaurants with controlled concurrency
+    batch_size = getattr(args, 'workers', 5)  # Default to 5 concurrent workers
+    results = await extractor.extract_batch(restaurants_to_update, batch_size=batch_size)
+    
+    # Analyze results
+    successful = sum(1 for r in results if r.get('status') == 'success')
+    no_changes = sum(1 for r in results if r.get('status') == 'no_changes')
+    permanent_errors = sum(1 for r in results if r.get('status') == 'permanent_error')
+    temporary_errors = sum(1 for r in results if r.get('status') == 'temporary_error')
+    other_errors = sum(1 for r in results if r.get('status') not in ['success', 'no_changes', 'permanent_error', 'temporary_error'])
+    
+    print(f"\n🎉 Batch processing completed!")
+    print(f"✅ Successfully updated: {successful}")
+    print(f"⚪ No changes needed: {no_changes}")
+    print(f"❌ Permanent errors: {permanent_errors}")
+    print(f"⚠️  Temporary errors: {temporary_errors}")
+    if other_errors > 0:
+        print(f"❓ Other errors: {other_errors}")
+    
+    # Show error breakdown if there are failures
+    if permanent_errors > 0 or temporary_errors > 0:
+        print(f"\n📋 Error breakdown:")
+        error_types = {}
+        for result in results:
+            if result.get('status') in ['permanent_error', 'temporary_error']:
+                error_type = result.get('error_type', 'unknown')
+                error_types[error_type] = error_types.get(error_type, 0) + 1
+        
+        for error_type, count in sorted(error_types.items(), key=lambda x: x[1], reverse=True):
+            icon = {"robots_txt": "🤖", "timeout": "⏱️", "not_found": "🔍", "no_content": "📄", "connection_error": "🔌"}.get(error_type, "❓")
+            print(f"  {icon} {error_type}: {count} restaurants")
+
+
+def cmd_contact(args):
+    """Update contact information for restaurants"""
+    from src.scrapers.core.base import ConfigBasedScraper
+    from src.models import Restaurant, ContactInfo, DiningInfo, ServiceInfo, BusinessStatus
+    
+    data_manager = DataManager()
+    
+    # Determine which restaurants to update
+    restaurants_to_update = []
+    
+    if args.restaurant:
+        # Single restaurant
+        if args.restaurant in data_manager.restaurants:
+            restaurants_to_update.append(args.restaurant)
+        else:
+            print(f"❌ Restaurant '{args.restaurant}' not found")
+            return
+    elif args.missing_only:
+        # Restaurants missing contact data
+        for slug, restaurant in data_manager.restaurants.items():
+            # Check for missing phone, email, or operating hours
+            has_phone = restaurant.phone or (hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone)
+            has_email = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.general_email
+            has_hours = hasattr(restaurant, 'operating_hours') and restaurant.operating_hours
+            
+            if not has_phone or not has_email or not has_hours:
+                restaurants_to_update.append(slug)
+    elif args.all:
+        # All restaurants
+        restaurants_to_update = list(data_manager.restaurants.keys())
+    
+    print(f"🎯 Updating contact information for {len(restaurants_to_update)} restaurants...")
+    
+    updated_count = 0
+    
+    for slug in restaurants_to_update:
+        restaurant = data_manager.restaurants[slug]
+        
+        try:
+            print(f"📞 Processing {restaurant.name}...")
+            
+            # Update scraping timestamp
+            if hasattr(restaurant, 'scraping_config'):
+                restaurant.scraping_config.last_scraped = datetime.now()
+            
+            # Use ConfigBasedScraper to extract restaurant info
+            scraper = ConfigBasedScraper(restaurant)
+            restaurant_info = scraper.scrape_restaurant_info()
+            
+            # Check if we got any meaningful data
+            has_meaningful_data = any([
+                restaurant_info.get('contact_info', {}).get('primary_phone'),
+                restaurant_info.get('contact_info', {}).get('general_email'),
+                restaurant_info.get('operating_hours'),
+                restaurant_info.get('service_info', {}).get('accepts_reservations'),
+                restaurant_info.get('service_info', {}).get('offers_delivery')
+            ])
+            
+            # Update restaurant object with extracted info
+            updated = False
+            
+            if restaurant_info.get('contact_info'):
+                contact_info_dict = restaurant_info['contact_info']
+                
+                # Update phone if missing or improve existing
+                if contact_info_dict.get('primary_phone') and not restaurant.phone:
+                    restaurant.phone = contact_info_dict['primary_phone']
+                    updated = True
+                
+                # Update contact info object
+                if hasattr(restaurant, 'contact_info') and restaurant.contact_info:
+                    # Update existing contact info
+                    for key, value in contact_info_dict.items():
+                        if value and hasattr(restaurant.contact_info, key):
+                            setattr(restaurant.contact_info, key, value)
+                            updated = True
+                else:
+                    # Create new contact info object from dict values
+                    restaurant.contact_info = ContactInfo(
+                        primary_phone=contact_info_dict.get('primary_phone'),
+                        reservation_phone=contact_info_dict.get('reservation_phone'),
+                        general_email=contact_info_dict.get('general_email'),
+                        reservations_email=contact_info_dict.get('reservations_email'),
+                        events_email=contact_info_dict.get('events_email'),
+                        instagram=contact_info_dict.get('instagram'),
+                        facebook=contact_info_dict.get('facebook'),
+                        twitter=contact_info_dict.get('twitter'),
+                        tiktok=contact_info_dict.get('tiktok')
+                    )
+                    updated = True
+            
+            if restaurant_info.get('operating_hours'):
+                restaurant.operating_hours = restaurant_info['operating_hours']
+                updated = True
+            
+            if restaurant_info.get('service_info'):
+                service_info_dict = restaurant_info['service_info']
+                if hasattr(restaurant, 'service_info'):
+                    # Create new service info object from dict values
+                    restaurant.service_info = ServiceInfo(
+                        accepts_reservations=service_info_dict.get('accepts_reservations', False),
+                        offers_delivery=service_info_dict.get('offers_delivery', False),
+                        offers_takeout=service_info_dict.get('offers_takeout', False),
+                        offers_curbside=service_info_dict.get('offers_curbside', False),
+                        opentable_url=service_info_dict.get('opentable_url'),
+                        resy_url=service_info_dict.get('resy_url'),
+                        direct_reservation_url=service_info_dict.get('direct_reservation_url'),
+                        doordash_url=service_info_dict.get('doordash_url'),
+                        ubereats_url=service_info_dict.get('ubereats_url'),
+                        grubhub_url=service_info_dict.get('grubhub_url')
+                    )
+                    updated = True
+            
+            if restaurant_info.get('dining_info'):
+                dining_info_dict = restaurant_info['dining_info']
+                if hasattr(restaurant, 'dining_info'):
+                    # Create new dining info object from dict values
+                    restaurant.dining_info = DiningInfo(
+                        price_range=dining_info_dict.get('price_range'),
+                        dress_code=dining_info_dict.get('dress_code'),
+                        atmosphere=dining_info_dict.get('atmosphere', []),
+                        dining_style=dining_info_dict.get('dining_style'),
+                        total_seats=dining_info_dict.get('total_seats'),
+                        bar_seats=dining_info_dict.get('bar_seats'),
+                        outdoor_seats=dining_info_dict.get('outdoor_seats')
+                    )
+                    updated = True
+            
+            if restaurant_info.get('business_status'):
+                if hasattr(restaurant, 'business_status'):
+                    restaurant.business_status = BusinessStatus(restaurant_info['business_status'])
+                    updated = True
+            
+            if updated:
+                restaurant.last_updated = datetime.now()
+                # Update scraping success tracking
+                if hasattr(restaurant, 'scraping_config'):
+                    restaurant.scraping_config.last_success = datetime.now()
+                    restaurant.scraping_config.consecutive_failures = 0
+                    restaurant.scraping_config.last_failure_reason = None
+                updated_count += 1
+                print(f"  ✅ Updated {restaurant.name}")
+            elif has_meaningful_data:
+                # We got some data but it wasn't new/different
+                if hasattr(restaurant, 'scraping_config'):
+                    restaurant.scraping_config.last_success = datetime.now()
+                    restaurant.scraping_config.consecutive_failures = 0
+                    restaurant.scraping_config.last_failure_reason = None
+                print(f"  ⚪ No new data for {restaurant.name}")
+            else:
+                # We didn't get meaningful data - this is a soft failure
+                if hasattr(restaurant, 'scraping_config'):
+                    restaurant.scraping_config.consecutive_failures += 1
+                    restaurant.scraping_config.last_failure_reason = "no_content"
+                print(f"  ⚠️  No meaningful data extracted for {restaurant.name}")
+                
+        except Exception as e:
+            error_str = str(e).lower()
+            failure_reason = "unknown"
+            
+            # Categorize the failure reason
+            if "robots.txt" in error_str:
+                failure_reason = "robots_txt"
+            elif "timeout" in error_str:
+                failure_reason = "timeout" 
+            elif "404" in error_str:
+                failure_reason = "not_found"
+            elif "no valid content" in error_str:
+                failure_reason = "no_content"
+            elif "connection" in error_str:
+                failure_reason = "connection_error"
+            
+            # Update scraping failure tracking
+            if hasattr(restaurant, 'scraping_config'):
+                restaurant.scraping_config.consecutive_failures += 1
+                restaurant.scraping_config.last_failure_reason = failure_reason
+            
+            print(f"  ❌ Failed to update {restaurant.name}: {e}")
+            logger.exception(f"Error updating contact info for {restaurant.name}")
+        
+        # Be respectful with delays
+        import time
+        time.sleep(1)
+    
+    # Always save data to persist scraping metadata (failure reasons, timestamps, etc.)
+    data_manager.save_data()
+    
+    if updated_count > 0:
+        print(f"\n🎉 Successfully updated contact information for {updated_count} restaurants!")
+    else:
+        print(f"\n⚪ No restaurants were updated, but scraping metadata has been saved.")
 
 
 def cmd_init(args):
@@ -295,6 +580,14 @@ def main():
     restaurant_parser = subparsers.add_parser('restaurant', help='Show restaurant details')
     restaurant_parser.add_argument('slug', help='Restaurant slug')
     
+    # Contact command
+    contact_parser = subparsers.add_parser('contact', help='Scrape contact information for restaurants')
+    contact_group = contact_parser.add_mutually_exclusive_group(required=True)
+    contact_group.add_argument('--restaurant', help='Update contact info for specific restaurant by slug')
+    contact_group.add_argument('--missing-only', action='store_true', help='Update all restaurants missing contact data')
+    contact_group.add_argument('--all', action='store_true', help='Update contact info for all restaurants')
+    contact_parser.add_argument('--workers', type=int, default=2, help='Number of concurrent workers')
+    
     # Init command
     init_parser = subparsers.add_parser('init', help='Initialize system')
     
@@ -317,6 +610,15 @@ def main():
         cmd_export(args)
     elif args.command == 'restaurant':
         cmd_restaurant(args)
+    elif args.command == 'contact':
+        # Use async for batch operations, sync for single restaurant
+        if args.missing_only or args.all:
+            # Async batch processing
+            import asyncio
+            asyncio.run(cmd_contact_async(args))
+        else:
+            # Single restaurant - use sync version
+            cmd_contact(args)
     elif args.command == 'init':
         cmd_init(args)
     else:

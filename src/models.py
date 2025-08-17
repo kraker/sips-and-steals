@@ -43,6 +43,22 @@ class ScrapingStatus(Enum):
     ERROR = "error"
 
 
+class BusinessStatus(Enum):
+    """Restaurant business operational status"""
+    OPERATIONAL = "operational"
+    TEMPORARILY_CLOSED = "temporarily_closed"
+    PERMANENTLY_CLOSED = "permanently_closed"
+    UNKNOWN = "unknown"
+
+
+class PriceRange(Enum):
+    """Restaurant price range indicator"""
+    BUDGET = "$"           # Under $15 per person
+    MODERATE = "$$"        # $15-30 per person  
+    UPSCALE = "$$$"        # $30-60 per person
+    FINE_DINING = "$$$$"   # $60+ per person
+
+
 @dataclass
 class Deal:
     """
@@ -294,6 +310,7 @@ class ScrapingConfig:
     last_scraped: Optional[datetime] = None
     last_success: Optional[datetime] = None
     consecutive_failures: int = 0
+    last_failure_reason: Optional[str] = None  # "robots_txt", "timeout", "404", "no_content", etc.
     
     # Custom parsing configurations
     custom_selectors: Dict[str, str] = field(default_factory=dict)  # CSS selectors for specific content
@@ -431,6 +448,98 @@ class Address:
         return bool(self.street_number and self.street_name)
 
 
+@dataclass 
+class ContactInfo:
+    """Enhanced contact information for restaurants"""
+    # Phone numbers
+    primary_phone: Optional[str] = None
+    reservation_phone: Optional[str] = None
+    
+    # Email addresses
+    general_email: Optional[str] = None
+    reservations_email: Optional[str] = None
+    events_email: Optional[str] = None
+    
+    # Social media handles (without @ prefix for flexibility)
+    instagram: Optional[str] = None
+    facebook: Optional[str] = None
+    twitter: Optional[str] = None
+    tiktok: Optional[str] = None
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for JSON serialization"""
+        return {
+            'primary_phone': self.primary_phone,
+            'reservation_phone': self.reservation_phone,
+            'general_email': self.general_email,
+            'reservations_email': self.reservations_email,
+            'events_email': self.events_email,
+            'instagram': self.instagram,
+            'facebook': self.facebook,
+            'twitter': self.twitter,
+            'tiktok': self.tiktok
+        }
+
+
+@dataclass
+class DiningInfo:
+    """Restaurant dining experience information"""
+    price_range: Optional[PriceRange] = None
+    dress_code: Optional[str] = None  # casual, business_casual, upscale, formal
+    atmosphere: List[str] = field(default_factory=list)  # romantic, family_friendly, etc.
+    dining_style: Optional[str] = None  # full_service, fast_casual, bar, food_truck
+    
+    # Capacity information
+    total_seats: Optional[int] = None
+    bar_seats: Optional[int] = None
+    outdoor_seats: Optional[int] = None
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for JSON serialization"""
+        return {
+            'price_range': self.price_range.value if hasattr(self.price_range, 'value') else self.price_range,
+            'dress_code': self.dress_code,
+            'atmosphere': self.atmosphere,
+            'dining_style': self.dining_style,
+            'total_seats': self.total_seats,
+            'bar_seats': self.bar_seats,
+            'outdoor_seats': self.outdoor_seats
+        }
+
+
+@dataclass
+class ServiceInfo:
+    """Restaurant service and booking options"""
+    # Reservations
+    accepts_reservations: bool = False
+    opentable_url: Optional[str] = None
+    resy_url: Optional[str] = None
+    direct_reservation_url: Optional[str] = None
+    
+    # Ordering and delivery
+    offers_delivery: bool = False
+    offers_takeout: bool = True
+    offers_curbside: bool = False
+    doordash_url: Optional[str] = None
+    ubereats_url: Optional[str] = None
+    grubhub_url: Optional[str] = None
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for JSON serialization"""
+        return {
+            'accepts_reservations': self.accepts_reservations,
+            'opentable_url': self.opentable_url,
+            'resy_url': self.resy_url,
+            'direct_reservation_url': self.direct_reservation_url,
+            'offers_delivery': self.offers_delivery,
+            'offers_takeout': self.offers_takeout,
+            'offers_curbside': self.offers_curbside,
+            'doordash_url': self.doordash_url,
+            'ubereats_url': self.ubereats_url,
+            'grubhub_url': self.grubhub_url
+        }
+
+
 @dataclass
 class Restaurant:
     """
@@ -444,7 +553,13 @@ class Restaurant:
     address: Optional[Address] = None  # Structured address object
     cuisine: Optional[str] = None
     website: Optional[str] = None
-    phone: Optional[str] = None
+    phone: Optional[str] = None  # Legacy field - use contact_info.primary_phone for new data
+    
+    # Enhanced business information
+    business_status: BusinessStatus = BusinessStatus.UNKNOWN
+    contact_info: ContactInfo = field(default_factory=ContactInfo)
+    dining_info: DiningInfo = field(default_factory=DiningInfo)
+    service_info: ServiceInfo = field(default_factory=ServiceInfo)
     
     # Timezone and operating hours
     timezone: str = "America/Denver"
@@ -472,6 +587,10 @@ class Restaurant:
             'cuisine': self.cuisine,
             'website': self.website,
             'phone': self.phone,
+            'business_status': self.business_status.value,
+            'contact_info': self.contact_info.to_dict(),
+            'dining_info': self.dining_info.to_dict(),
+            'service_info': self.service_info.to_dict(),
             'timezone': self.timezone,
             'operating_hours': self.operating_hours,
             'static_deals': self.static_deals,
@@ -488,6 +607,7 @@ class Restaurant:
                 'last_scraped': self.scraping_config.last_scraped.isoformat() if self.scraping_config.last_scraped else None,
                 'last_success': self.scraping_config.last_success.isoformat() if self.scraping_config.last_success else None,
                 'consecutive_failures': self.scraping_config.consecutive_failures,
+                'last_failure_reason': self.scraping_config.last_failure_reason,
                 'custom_selectors': self.scraping_config.custom_selectors,
                 'time_pattern_regex': self.scraping_config.time_pattern_regex,
                 'day_pattern_regex': self.scraping_config.day_pattern_regex,
@@ -515,6 +635,7 @@ class Restaurant:
             last_scraped=datetime.fromisoformat(scraping_config_data['last_scraped']) if scraping_config_data.get('last_scraped') else None,
             last_success=datetime.fromisoformat(scraping_config_data['last_success']) if scraping_config_data.get('last_success') else None,
             consecutive_failures=scraping_config_data.get('consecutive_failures', 0),
+            last_failure_reason=scraping_config_data.get('last_failure_reason'),
             custom_selectors=scraping_config_data.get('custom_selectors', {}),
             time_pattern_regex=scraping_config_data.get('time_pattern_regex'),
             day_pattern_regex=scraping_config_data.get('day_pattern_regex'),
@@ -534,6 +655,47 @@ class Restaurant:
                 # Legacy string format - convert to structured
                 address = Address.from_string(address_data, confidence_score=0.5)
         
+        # Handle new contact info structure
+        contact_info_data = data.get('contact_info', {})
+        contact_info = ContactInfo(
+            primary_phone=contact_info_data.get('primary_phone'),
+            reservation_phone=contact_info_data.get('reservation_phone'),
+            general_email=contact_info_data.get('general_email'),
+            reservations_email=contact_info_data.get('reservations_email'),
+            events_email=contact_info_data.get('events_email'),
+            instagram=contact_info_data.get('instagram'),
+            facebook=contact_info_data.get('facebook'),
+            twitter=contact_info_data.get('twitter'),
+            tiktok=contact_info_data.get('tiktok')
+        )
+        
+        # Handle dining info structure
+        dining_info_data = data.get('dining_info', {})
+        dining_info = DiningInfo(
+            price_range=PriceRange(dining_info_data['price_range']) if dining_info_data.get('price_range') else None,
+            dress_code=dining_info_data.get('dress_code'),
+            atmosphere=dining_info_data.get('atmosphere', []),
+            dining_style=dining_info_data.get('dining_style'),
+            total_seats=dining_info_data.get('total_seats'),
+            bar_seats=dining_info_data.get('bar_seats'),
+            outdoor_seats=dining_info_data.get('outdoor_seats')
+        )
+        
+        # Handle service info structure  
+        service_info_data = data.get('service_info', {})
+        service_info = ServiceInfo(
+            accepts_reservations=service_info_data.get('accepts_reservations', False),
+            opentable_url=service_info_data.get('opentable_url'),
+            resy_url=service_info_data.get('resy_url'),
+            direct_reservation_url=service_info_data.get('direct_reservation_url'),
+            offers_delivery=service_info_data.get('offers_delivery', False),
+            offers_takeout=service_info_data.get('offers_takeout', True),
+            offers_curbside=service_info_data.get('offers_curbside', False),
+            doordash_url=service_info_data.get('doordash_url'),
+            ubereats_url=service_info_data.get('ubereats_url'),
+            grubhub_url=service_info_data.get('grubhub_url')
+        )
+        
         return cls(
             name=data['name'],
             slug=data['slug'],
@@ -543,6 +705,10 @@ class Restaurant:
             cuisine=data.get('cuisine'),
             website=data.get('website'),
             phone=data.get('phone'),
+            business_status=BusinessStatus(data.get('business_status', 'unknown')),
+            contact_info=contact_info,
+            dining_info=dining_info,
+            service_info=service_info,
             timezone=data.get('timezone', 'America/Denver'),
             operating_hours=data.get('operating_hours', {}),
             static_deals=data.get('static_deals', []),
