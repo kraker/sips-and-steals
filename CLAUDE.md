@@ -49,7 +49,7 @@ No formal test framework is configured. Testing is done via direct script execut
 
 **Single Source Data Architecture**: Live scraping-based approach
 - **`data/restaurants.json`** - Single source of truth containing all restaurant data, static happy hour data, and scraping metadata
-- **`data/live_deals.json`** - Current live scraped deals with timestamps and confidence scores
+- **`data/deals.json`** - Current live scraped deals with timestamps and confidence scores
 - **`data/deals_archive/`** - Historical deal archives for data persistence and analysis
 - **`legacy_archive/`** - Archived original Giovanni markdown and parser (legacy)
 - 106 restaurants across 11 Denver districts with comprehensive metadata
@@ -88,7 +88,7 @@ class Deal:
 4. Restaurant automatically included based on website URL in `data/restaurants.json`
 
 **Data Processing Flow**:
-1. **Live Scraping**: `scraper_cli.py` collects live deals from restaurant websites and stores in `data/live_deals.json`
+1. **Live Scraping**: `scraper_cli.py` collects live deals from restaurant websites and stores in `data/deals.json`
 2. **Data Merge**: `DataManager` prioritizes live deals over static data (3-tier fallback system)
 3. **Website Generation**: `generate_site.py` creates multi-page static website with live deal display
 4. **Archival**: Deals automatically archived to `data/deals_archive/` with timestamps

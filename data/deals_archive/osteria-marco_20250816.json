@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "osteria-marco",
-  "archived_at": "2025-08-16T15:08:00.323371",
+  "archived_at": "2025-08-16T20:29:33.505432",
   "deals": [
     {
       "title": "Sunday Special",
-      "description": "every sunday",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "sunday"
@@ -14,13 +14,13 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:07:57.947910",
-      "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+      "scraped_at": "2025-08-16T20:29:31.233043",
+      "source_url": "https://www.osteriamarco.com/",
       "confidence_score": 0.8
     },
     {
       "title": "Sunday Special",
-      "description": "every sunday",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "sunday"
@@ -30,8 +30,8 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:07:57.947924",
-      "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+      "scraped_at": "2025-08-16T20:29:31.233082",
+      "source_url": "https://www.osteriamarco.com/",
       "confidence_score": 0.8
     },
     {
@@ -44,7 +44,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:07:57.950899",
+      "scraped_at": "2025-08-16T20:29:31.235921",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -58,7 +58,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:07:57.950905",
+      "scraped_at": "2025-08-16T20:29:31.235924",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -72,7 +72,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:07:57.950906",
+      "scraped_at": "2025-08-16T20:29:31.235925",
       "source_url": null,
       "confidence_score": 0.4
     }

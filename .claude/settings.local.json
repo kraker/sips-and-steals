@@ -14,7 +14,18 @@
       "WebFetch(domain:jovanina.com)",
       "WebFetch(domain:www.cityocitydenver.com)",
       "Bash(ls:*)",
-      "Bash(jq:*)"
+      "Bash(jq:*)",
+      "WebFetch(domain:www.osteriamarco.com)",
+      "WebSearch",
+      "WebFetch(domain:tamayodenver.com)",
+      "WebFetch(domain:www.a5denver.com)",
+      "WebFetch(domain:fogodechao.com)",
+      "WebFetch(domain:unsplash.com)",
+      "WebFetch(domain:picocss.com)",
+      "WebFetch(domain:simplecss.org)",
+      "WebFetch(domain:dev.to)",
+      "WebFetch(domain:newcss.net)",
+      "WebFetch(domain:water.css)"
     ],
     "deny": [],
     "ask": []

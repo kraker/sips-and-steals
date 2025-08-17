@@ -19,6 +19,148 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 from data_manager import DataManager
 
 
+def get_current_relevant_deals(deals, current_time=None):
+    """Get the most relevant deals happening right now"""
+    if not deals:
+        return []
+    
+    if current_time is None:
+        current_time = datetime.now()
+    
+    current_day = current_time.strftime('%A').lower()  # monday, tuesday, etc.
+    current_hour = current_time.hour
+    current_minute = current_time.minute
+    current_time_minutes = current_hour * 60 + current_minute
+    
+    relevant_deals = []
+    
+    for deal in deals:
+        deal_score = 0
+        relevance_reasons = []
+        
+        # Skip very low confidence deals for main page display
+        if deal.get('confidence_score', 0) < 0.5:
+            continue
+            
+        days_of_week = deal.get('days_of_week', [])
+        start_time = deal.get('start_time')
+        end_time = deal.get('end_time')
+        is_all_day = deal.get('is_all_day', False)
+        
+        # Check if deal is active today
+        is_today = current_day in [day.lower() for day in days_of_week] if days_of_week else True
+        
+        # Only score deals that are actually relevant today
+        if not is_today:
+            continue  # Skip deals that aren't active today
+        
+        # Deal is active today, start scoring
+        deal_score += 100
+        relevance_reasons.append('active_today')
+        
+        # Check time relevance
+        if is_all_day:
+            deal_score += 50
+            relevance_reasons.append('all_day')
+        elif start_time and end_time:
+            # Parse time strings (e.g., "3:00 PM" -> 15:00)
+            try:
+                start_minutes = parse_time_to_minutes(start_time)
+                end_minutes = parse_time_to_minutes(end_time)
+                
+                # Handle overnight deals (end time < start time)
+                if end_minutes < start_minutes:
+                    end_minutes += 24 * 60  # Add 24 hours
+                
+                # Check if current time is within deal hours
+                if start_minutes <= current_time_minutes <= end_minutes:
+                    deal_score += 150
+                    relevance_reasons.append('happening_now')
+                elif current_time_minutes < start_minutes:
+                    # Deal starts later today
+                    time_until_start = start_minutes - current_time_minutes
+                    if time_until_start <= 120:  # Within 2 hours
+                        deal_score += 75
+                        relevance_reasons.append('starting_soon')
+                    elif time_until_start <= 360:  # Within 6 hours
+                        deal_score += 25
+                        relevance_reasons.append('later_today')
+                        
+            except (ValueError, AttributeError):
+                # If we can't parse time, give moderate score
+                deal_score += 30
+                relevance_reasons.append('unknown_time')
+        
+        # Boost score for deals with specific offerings (prices, discounts)
+        title = deal.get('title', '').lower()
+        description = deal.get('description', '').lower()
+        if any(keyword in (title + ' ' + description) for keyword in [
+            '$', '%', 'off', 'price', 'special', 'discount', 'maki', 'sake', 'cocktail', 'beer', 'wine'
+        ]):
+            deal_score += 25
+            relevance_reasons.append('specific_offer')
+        
+        # Boost score based on confidence
+        confidence_score = deal.get('confidence_score', 0)
+        deal_score += confidence_score * 20
+        
+        if deal_score > 0:
+            deal_copy = deal.copy()
+            deal_copy['relevance_score'] = deal_score
+            deal_copy['relevance_reasons'] = relevance_reasons
+            relevant_deals.append(deal_copy)
+    
+    # Sort by relevance score (highest first) and return top deals
+    relevant_deals.sort(key=lambda x: x['relevance_score'], reverse=True)
+    return relevant_deals[:3]  # Return top 3 most relevant deals
+
+
+def parse_time_to_minutes(time_str):
+    """Convert time string like '3:00 PM' to minutes since midnight"""
+    if not time_str:
+        return 0
+        
+    # Handle various time formats
+    time_str = time_str.strip().upper()
+    
+    # Remove common suffixes
+    time_str = time_str.replace(' PM', 'PM').replace(' AM', 'AM')
+    
+    try:
+        if 'PM' in time_str:
+            time_part = time_str.replace('PM', '').strip()
+            if ':' in time_part:
+                hour, minute = map(int, time_part.split(':'))
+            else:
+                hour, minute = int(time_part), 0
+            
+            if hour != 12:
+                hour += 12
+            elif hour == 12:
+                hour = 12  # 12 PM stays as 12
+                
+        elif 'AM' in time_str:
+            time_part = time_str.replace('AM', '').strip()
+            if ':' in time_part:
+                hour, minute = map(int, time_part.split(':'))
+            else:
+                hour, minute = int(time_part), 0
+                
+            if hour == 12:
+                hour = 0  # 12 AM becomes 0 (midnight)
+        else:
+            # 24-hour format or just hour
+            if ':' in time_str:
+                hour, minute = map(int, time_str.split(':'))
+            else:
+                hour, minute = int(time_str), 0
+                
+        return hour * 60 + minute
+        
+    except (ValueError, IndexError):
+        return 0
+
+
 def group_deals_by_schedule(deals):
     """Group deals by their schedule (day + time combination) for better display"""
     if not deals:
@@ -331,6 +473,8 @@ def main():
     env.filters['domain_name'] = extract_domain_name
     env.filters['cuisine_emoji'] = cuisine_with_emoji
     env.filters['group_deals'] = group_deals_by_schedule
+    env.filters['deal_status_badge'] = deal_status_badge
+    env.filters['format_deal_time'] = format_deal_time
     
     # Create output directories
     docs_dir = Path('docs')
@@ -338,8 +482,8 @@ def main():
     docs_dir.mkdir(exist_ok=True)
     restaurants_dir.mkdir(exist_ok=True)
     
-    # Generate index page with enhanced features
-    generate_enhanced_index_page(env, enhanced_data, docs_dir)
+    # Generate index page with enhanced features and current deals
+    generate_enhanced_index_page(env, enhanced_data, docs_dir, dm)
     
     # Generate individual restaurant pages with live data
     generate_enhanced_restaurant_pages(env, enhanced_data, restaurants_dir, dm)
@@ -354,20 +498,54 @@ def main():
     print(f"📄 Restaurant pages: {len([r for area in enhanced_data['areas'].values() for r in area.values()])} pages")
 
 
-def generate_enhanced_index_page(env, data, output_dir):
-    """Generate the main index page with enhanced features"""
+def generate_enhanced_index_page(env, data, output_dir, dm):
+    """Generate the main index page with enhanced features and current deals"""
     template = env.get_template('index.html')
     
     # Extract unique neighborhoods and cuisines for filters
     neighborhoods = set()
     cuisines = set()
     
-    for area_restaurants in data['areas'].values():
-        for restaurant in area_restaurants.values():
+    # Enhance each restaurant with current relevant deals
+    current_time = datetime.now()
+    
+    for area_name, area_restaurants in data['areas'].items():
+        for slug, restaurant in area_restaurants.items():
             if restaurant.get('sub_location'):
                 neighborhoods.add(restaurant['sub_location'])
             if restaurant.get('cuisine'):
                 cuisines.add(restaurant['cuisine'])
+            
+            # Get live deals for this restaurant and find most relevant ones
+            restaurant_obj = dm.get_restaurant(slug)
+            current_deals = []
+            
+            if restaurant_obj:
+                live_deals = restaurant_obj.get_current_deals()
+                if live_deals:
+                    # Convert Deal objects to dicts for processing
+                    deals_data = []
+                    for deal in live_deals:
+                        deals_data.append({
+                            'title': deal.title,
+                            'description': deal.description,
+                            'deal_type': deal.deal_type.value,
+                            'days_of_week': [day.value for day in deal.days_of_week],
+                            'start_time': deal.start_time,
+                            'end_time': deal.end_time,
+                            'price': deal.price,
+                            'is_all_day': deal.is_all_day,
+                            'confidence_score': deal.confidence_score,
+                            'scraped_at': deal.scraped_at.isoformat(),
+                            'source_url': deal.source_url
+                        })
+                    
+                    # Get most relevant deals for right now
+                    current_deals = get_current_relevant_deals(deals_data, current_time)
+            
+            # Add current deals to restaurant data
+            restaurant['current_deals'] = current_deals
+            restaurant['has_current_deals'] = len(current_deals) > 0
     
     # Sort alphabetically
     neighborhoods = sorted(list(neighborhoods))
@@ -376,6 +554,7 @@ def generate_enhanced_index_page(env, data, output_dir):
     # Add data freshness indicators
     fresh_data_count = 0
     total_with_live_data = 0
+    restaurants_with_current_deals = 0
     
     for area_restaurants in data['areas'].values():
         for restaurant in area_restaurants.values():
@@ -388,16 +567,21 @@ def generate_enhanced_index_page(env, data, output_dir):
                             fresh_data_count += 1
                     except:
                         pass
+            
+            if restaurant.get('has_current_deals'):
+                restaurants_with_current_deals += 1
     
     html = template.render(
         metadata=data['metadata'],
         areas=data['areas'],
         neighborhoods=neighborhoods,
         cuisines=cuisines,
+        current_time=current_time,
         data_freshness={
             'total_with_live_data': total_with_live_data,
             'fresh_data_count': fresh_data_count,
-            'live_data_percentage': round(total_with_live_data / data['metadata']['total_restaurants'] * 100, 1) if data['metadata']['total_restaurants'] > 0 else 0
+            'live_data_percentage': round(total_with_live_data / data['metadata']['total_restaurants'] * 100, 1) if data['metadata']['total_restaurants'] > 0 else 0,
+            'restaurants_with_current_deals': restaurants_with_current_deals
         }
     )
     
@@ -743,6 +927,113 @@ def cuisine_with_emoji(cuisine):
     emoji = cuisine_emojis.get(cuisine_lower, '🍽️')  # Default to plate emoji
     
     return f"{emoji} {cuisine}"
+
+
+def deal_status_badge(deal):
+    """Return appropriate status badge for a deal based on relevance"""
+    if not deal or not deal.get('relevance_reasons'):
+        return ""
+    
+    reasons = deal.get('relevance_reasons', [])
+    
+    if 'happening_now' in reasons:
+        return "🔥 Live Now"
+    elif 'starting_soon' in reasons:
+        return "⏰ Starting Soon"
+    elif 'all_day' in reasons and 'active_today' in reasons:
+        return "📅 All Day Today"
+    elif 'active_today' in reasons:
+        return "✅ Today"
+    elif 'later_today' in reasons:
+        return "🔜 Later Today"
+    else:
+        return ""
+
+
+def format_deal_time(deal):
+    """Format deal timing information for display"""
+    if not deal:
+        return ""
+    
+    start_time = deal.get('start_time')
+    end_time = deal.get('end_time')
+    is_all_day = deal.get('is_all_day', False)
+    days_of_week = deal.get('days_of_week', [])
+    
+    time_parts = []
+    
+    # Format days
+    if days_of_week:
+        if len(days_of_week) == 7:
+            time_parts.append("Daily")
+        elif len(days_of_week) == 1:
+            time_parts.append(days_of_week[0].title())
+        elif set([d.lower() for d in days_of_week]) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
+            time_parts.append("Weekdays")
+        elif set([d.lower() for d in days_of_week]) == {'saturday', 'sunday'}:
+            time_parts.append("Weekends")
+        else:
+            time_parts.append(", ".join([day.title() for day in days_of_week[:2]]))
+            if len(days_of_week) > 2:
+                time_parts[-1] += f" + {len(days_of_week) - 2} more"
+    
+    # Format time
+    if is_all_day:
+        time_parts.append("All Day")
+    elif start_time and end_time:
+        time_parts.append(f"{start_time} - {end_time}")
+    elif start_time:
+        time_parts.append(f"From {start_time}")
+    
+    return " • ".join(time_parts)
+
+
+def improve_deal_title(deal):
+    """Generate better, more descriptive titles for deals"""
+    original_title = deal.get('title', '')
+    start_time = deal.get('start_time')
+    end_time = deal.get('end_time')
+    is_all_day = deal.get('is_all_day', False)
+    days_of_week = deal.get('days_of_week', [])
+    description = deal.get('description', '')
+    
+    # If title is generic, create a better one
+    if original_title.lower() in ['multi-day happy hour', 'time-based special', 'happy hour']:
+        
+        # Check if we can infer the type from description
+        desc_lower = description.lower()
+        
+        # Look for specific deal types in description
+        if any(word in desc_lower for word in ['maki', 'sushi', 'roll']):
+            return "Sushi Specials"
+        elif any(word in desc_lower for word in ['sake', 'wine', 'beer', 'cocktail', 'drink']):
+            return "Drink Specials" 
+        elif any(word in desc_lower for word in ['food', 'appetizer', 'app']):
+            return "Food Specials"
+        elif '25% off' in desc_lower or 'half off' in desc_lower or 'half-off' in desc_lower:
+            return "Discount Specials"
+        
+        # Create title based on timing
+        if is_all_day:
+            if len(days_of_week) == 1:
+                return f"{days_of_week[0].title()} All-Day Special"
+            else:
+                return "All-Day Happy Hour"
+        elif start_time and end_time:
+            if len(days_of_week) == 1:
+                return f"{days_of_week[0].title()} Happy Hour"
+            elif len(days_of_week) == 7:
+                return "Daily Happy Hour"
+            elif set([d.lower() for d in days_of_week]) == {'saturday', 'sunday'}:
+                return "Weekend Happy Hour"
+            elif set([d.lower() for d in days_of_week]) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
+                return "Weekday Happy Hour"
+            else:
+                return "Happy Hour"
+        else:
+            return "Special Offers"
+    
+    return original_title
 
 
 if __name__ == "__main__":

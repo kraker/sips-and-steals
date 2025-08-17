@@ -86,6 +86,12 @@ def cmd_scrape(args):
         scheduled = scheduler.schedule_district(args.district, TaskPriority.HIGH)
         print(f"📋 Scheduled {scheduled} restaurants")
     
+    elif args.neighborhood:
+        # Scrape all restaurants in neighborhood
+        print(f"🏘️  Scraping all restaurants in {args.neighborhood}...")
+        scheduled = scheduler.schedule_neighborhood(args.neighborhood, TaskPriority.HIGH)
+        print(f"📋 Scheduled {scheduled} restaurants")
+    
     elif args.all:
         # Scrape all restaurants needing updates
         print("🔄 Scraping all restaurants needing updates...")
@@ -93,7 +99,7 @@ def cmd_scrape(args):
         print(f"📋 Scheduled {scheduled} restaurants")
     
     else:
-        print("❌ Please specify --restaurant, --district, or --all")
+        print("❌ Please specify --restaurant, --district, --neighborhood, or --all")
         return
     
     # Run the scheduled tasks
@@ -272,6 +278,7 @@ def main():
     scrape_group = scrape_parser.add_mutually_exclusive_group(required=True)
     scrape_group.add_argument('--restaurant', help='Scrape specific restaurant by slug')
     scrape_group.add_argument('--district', help='Scrape all restaurants in district')
+    scrape_group.add_argument('--neighborhood', help='Scrape all restaurants in neighborhood')
     scrape_group.add_argument('--all', action='store_true', help='Scrape all restaurants needing updates')
     scrape_parser.add_argument('--workers', type=int, default=3, help='Number of concurrent workers')
     

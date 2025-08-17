@@ -1,0 +1,58 @@
+# City O' City Restaurant Scraping Configuration
+# Website: https://www.cityocitydenver.com/happyhour
+# Plant-based restaurant with structured happy hour menu
+
+name: "City O' City"
+slug: "city-o-city"
+
+scraping_config:
+  enabled: true
+  fallback_to_static: true
+  
+  # Focus on main content areas with happy hour information
+  content_containers:
+    - ".main-content"
+    - ".content-wrapper"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule"
+    deal_description: "h1, h2, h3, h4, p, li, .description, .menu-item"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(every\s+day|daily|monday|tuesday|wednesday|thursday|friday|saturday|sunday)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'alert your server'
+    - 'allergies'
+    - 'please note'
+    - '\n\n\n\n'  # Multiple newlines
+    - '^\s*0\s*$'  # Just "0"
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
+
+# Expected results based on website content:
+# Daily: 3-6 PM & 9-10 PM
+# Drink specials: Well spirits $3, City Mule $7, etc.
+# Food specials: Fried ravioli $8, Pretzel $8, Taquitos $6, etc.

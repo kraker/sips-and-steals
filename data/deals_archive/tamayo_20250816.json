@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "tamayo",
-  "archived_at": "2025-08-16T17:06:07.837778",
+  "archived_at": "2025-08-16T20:13:08.038373",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T17:06:05.796005",
+      "scraped_at": "2025-08-16T20:13:06.012192",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T17:06:05.796093",
+      "scraped_at": "2025-08-16T20:13:06.012288",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T17:06:05.797404",
+      "scraped_at": "2025-08-16T20:13:06.013741",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -50,6 +50,9 @@
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
         "friday"
       ],
       "start_time": "3 PM",
@@ -57,7 +60,7 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T17:06:05.807448",
+      "scraped_at": "2025-08-16T20:13:06.024755",
       "source_url": null,
       "confidence_score": 0.8
     }

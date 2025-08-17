@@ -493,6 +493,10 @@ class BaseScraper(ABC):
             r'happy\s+hour.*?(\d{1,2}(?::\d{2})?)\s*(?:am|pm)\s*-\s*(\d{1,2}(?::\d{2})?)\s*(?:am|pm).*?(?:monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun)',
             # Pattern: "discounted drinks 4-7pm weekdays"
             r'(?:discounted|drink|special).*?(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm.*?(?:weekdays|weekends)',
+            # Pattern: "SUN - SAT - All Day" (Fogo de Chão style)
+            r'(sun|sunday)\s*-\s*(sat|saturday)\s*-?\s*all\s+day',
+            # Pattern: "happy hour" followed by "SUN - SAT" and "All Day"  
+            r'happy\s+hour.*?(sun|sunday)\s*-\s*(sat|saturday).*?all\s+day',
         ]
         
         for pattern in enhanced_patterns:
@@ -569,7 +573,8 @@ class BaseScraper(ABC):
         
         # Pattern: "11am-10pm‍friday: 11am-10:30pmsaturday: 12pm-10:30pmsunday: 12pm-9pmhappy hour" - multi-day schedule
         elif re.search(r'(\d{1,2}(?::\d{2})?(?:am|pm))\s*-\s*(\d{1,2}(?::\d{2})?(?:am|pm)).*?(?:friday|saturday|sunday|monday|tuesday|wednesday|thursday)', deal_text_lower):
-            # For complex multi-day schedules, extract the primary time range
+            # This is a multi-day pattern, but we'll just extract the first one for now
+            # The enhanced scraper will create separate deals for each day in _parse_text_patterns
             time_match = re.search(r'(\d{1,2}(?::\d{2})?(?:am|pm))\s*-\s*(\d{1,2}(?::\d{2})?(?:am|pm))', deal_text_lower)
             if time_match:
                 start_time = self._normalize_time(time_match.group(1))
@@ -579,7 +584,14 @@ class BaseScraper(ABC):
                 days_of_week = [self._parse_day_name(day) for day in day_names if self._parse_day_name(day)]
                 days_of_week = list(set(days_of_week))  # Remove duplicates
                 if days_of_week:
-                    title = "Multi-Day Happy Hour"
+                    if len(days_of_week) == 1:
+                        title = f"{days_of_week[0].value.title()} Happy Hour"
+                    elif len(days_of_week) <= 3:
+                        # Create readable title for small sets
+                        day_titles = [day.value.title() for day in days_of_week]
+                        title = f"{', '.join(day_titles)} Happy Hour"
+                    else:
+                        title = "Weekly Happy Hour"
         
         # Pattern: "3-6pm every day" or "available 3-6pm every day"
         time_range_match = re.search(r'(\d{1,2}(?::\d{2})?)\s*-\s*(\d{1,2}(?::\d{2})?)\s*pm\s+every\s+day', deal_text_lower)
@@ -647,11 +659,22 @@ class BaseScraper(ABC):
                 days_of_week = [DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
                 title = "Weekend Happy Hour"
         
+        # Pattern: "SUN - SAT - All Day" (Fogo de Chão style)
+        elif re.search(r'(sun|sunday)\s*-\s*(sat|saturday)\s*-?\s*all\s+day', deal_text_lower):
+            days_of_week = list(DayOfWeek)  # All days of the week
+            is_all_day = True
+            start_time = None
+            end_time = None
+            title = "All Day Happy Hour"
+        
         # Create deal if we have proper time/day info OR if it's an all-day special
         if (start_time and end_time and days_of_week) or (is_all_day and days_of_week):
+            # Generate a clean, informative description
+            clean_description = self._generate_clean_description(deal_text, title, start_time, end_time, days_of_week, is_all_day)
+            
             return Deal(
                 title=title,
-                description=deal_text[:150],  # Limit description length
+                description=clean_description,
                 deal_type=DealType.HAPPY_HOUR,
                 days_of_week=days_of_week,
                 start_time=start_time,
@@ -720,6 +743,101 @@ class BaseScraper(ABC):
                 deals.append(deal)
         
         return deals
+    
+    def _generate_clean_description(self, original_text: str, title: str, start_time: str, end_time: str, days_of_week: list, is_all_day: bool) -> str:
+        """Generate a clean, informative description from raw scraped text"""
+        if not original_text:
+            return "Happy hour specials available"
+        
+        # Clean the original text first
+        cleaned = original_text.strip()
+        
+        # Apply custom exclude patterns if available from config
+        if hasattr(self.restaurant.scraping_config, 'exclude_patterns') and self.restaurant.scraping_config.exclude_patterns:
+            for pattern in self.restaurant.scraping_config.exclude_patterns:
+                cleaned = re.sub(pattern, '', cleaned, flags=re.IGNORECASE)
+        
+        # Remove invisible characters and weird spacing
+        cleaned = re.sub(r'[\u200d\u200c\u00a0\u2060]+', ' ', cleaned)  # Remove zero-width joiners, etc.
+        
+        # Remove excessive newlines and whitespace (especially problematic for City O' City)
+        cleaned = re.sub(r'\n{3,}', '\n\n', cleaned)  # Limit to max 2 consecutive newlines
+        cleaned = re.sub(r'\s+', ' ', cleaned)  # Normalize whitespace
+        
+        # Remove truncated content patterns
+        cleaned = re.sub(r'\s+\w{1,5}$', '', cleaned)  # Remove trailing partial words like "spiri"
+        
+        # Remove redundant time/day patterns that are already in structured data
+        if start_time and end_time:
+            # Remove patterns like "11am-10pm" when we have structured time
+            time_pattern = r'\d{1,2}(?::\d{2})?\s*(?:am|pm)\s*-\s*\d{1,2}(?::\d{2})?\s*(?:am|pm)'
+            cleaned = re.sub(time_pattern, '', cleaned, flags=re.IGNORECASE)
+        
+        # Remove redundant day names when we have structured days
+        if days_of_week:
+            for day in days_of_week:
+                day_name = day.value if hasattr(day, 'value') else str(day)
+                cleaned = re.sub(rf'\b{day_name}\b', '', cleaned, flags=re.IGNORECASE)
+        
+        # Remove common filler words more carefully 
+        cleaned = re.sub(r'\bevery\s+(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\b', '', cleaned, flags=re.IGNORECASE)
+        cleaned = re.sub(r'\b(all|available|hour|hours)\b', '', cleaned, flags=re.IGNORECASE)
+        
+        # Clean up extra whitespace and punctuation
+        cleaned = re.sub(r'[,\s]+', ' ', cleaned).strip()
+        cleaned = re.sub(r'^[,\s-]+|[,\s-]+$', '', cleaned)  # Remove leading/trailing punctuation
+        
+        # Check if what's left is just redundant timing/scheduling info
+        timing_only_patterns = [
+            r'^\d{1,2}(?::\d{2})?(?:am|pm)?\s*-\s*\d{1,2}(?::\d{2})?(?:am|pm)?\s*(?:close)?\s*(?:thurs?|fri|sat|sun|mon|tue|wed|thu|friday|saturday|sunday|monday|tuesday|wednesday|thursday)?\s*(?:every|day)?$',
+            r'^(?:thurs?|fri|sat|sun|mon|tue|wed|thu|friday|saturday|sunday|monday|tuesday|wednesday|thursday)\s*-?\s*(?:thurs?|fri|sat|sun|mon|tue|wed|thu|friday|saturday|sunday|monday|tuesday|wednesday|thursday)?$',
+            r'^\d{1,2}(?::\d{2})?(?:am|pm)?\s*-\s*(?:close)\s*(?:thurs?|fri|sat|sun|mon|tue|wed|thu|friday|saturday|sunday|monday|tuesday|wednesday|thursday)?\s*-?\s*(?:thurs?|fri|sat|sun|mon|tue|wed|thu|friday|saturday|sunday|monday|tuesday|wednesday|thursday)?$',
+            r'^\d{1,2}(?::\d{2})?(?:am|pm)?\s*-\s*\d{1,2}(?::\d{2})?(?:am|pm)\s+every\s+day$',  # Catches "3-6pm every day"
+            r'^(?:close)$',
+            r'^(?:every)$'
+        ]
+        
+        is_timing_only = any(re.match(pattern, cleaned, flags=re.IGNORECASE) for pattern in timing_only_patterns)
+        
+        # If we've cleaned away everything meaningful or only have timing info, generate a context-appropriate description
+        if not cleaned or len(cleaned) < 5 or is_timing_only:
+            # Try to infer what kind of deals these are based on context
+            if 'vegan' in original_text.lower() and 'maki' in original_text.lower():
+                return "Discounted vegan maki rolls and plant-based options"
+            elif 'sake' in original_text.lower():
+                return "Discounted sake and Japanese beverages"
+            elif 'sushi' in title.lower() or 'maki' in original_text.lower():
+                return "Happy hour sushi and specialty rolls"
+            elif any(keyword in original_text.lower() for keyword in ['food', 'appetizer', 'app']):
+                return "Discounted appetizers and food specials"
+            elif any(keyword in original_text.lower() for keyword in ['drink', 'cocktail', 'beer', 'wine']):
+                return "Discounted drinks and beverage specials"
+            else:
+                # Generate description based on title and timing context
+                title_lower = title.lower()
+                
+                if 'daily' in title_lower and 'happy hour' in title_lower:
+                    return "Daily happy hour with discounted food and drinks"
+                elif 'late night' in title_lower:
+                    return "Late night happy hour specials"
+                elif 'weekend' in title_lower:
+                    return "Weekend happy hour deals"
+                elif any(day in title_lower for day in ['friday', 'saturday', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday']):
+                    # Day-specific deals
+                    return "Special discounts and happy hour deals"
+                elif is_all_day:
+                    return "All-day happy hour specials and discounts"
+                else:
+                    return "Happy hour food and drink specials"
+        
+        # Capitalize first letter and ensure proper sentence structure
+        cleaned = cleaned[0].upper() + cleaned[1:] if cleaned else ""
+        
+        # Add period if it doesn't end with punctuation
+        if cleaned and not cleaned.endswith(('.', '!', '?')):
+            cleaned += ""
+        
+        return cleaned[:150]  # Limit length
     
     def _extract_deals_from_menu_data(self, data: dict) -> List[Deal]:
         """Extract deals from JSON-LD menu data"""
@@ -902,21 +1020,39 @@ class BaseScraper(ABC):
             
             # Convert day strings to DayOfWeek enums
             day_enums = []
+            is_all_day = False
+            
             if days:
-                for day in days:
-                    day_lower = day.lower().strip()
-                    # Map day names to enums
-                    day_mapping = {
-                        'monday': DayOfWeek.MONDAY,
-                        'tuesday': DayOfWeek.TUESDAY, 
-                        'wednesday': DayOfWeek.WEDNESDAY,
-                        'thursday': DayOfWeek.THURSDAY,
-                        'friday': DayOfWeek.FRIDAY,
-                        'saturday': DayOfWeek.SATURDAY,
-                        'sunday': DayOfWeek.SUNDAY
-                    }
-                    if day_lower in day_mapping:
-                        day_enums.append(day_mapping[day_lower])
+                # Special case: Check for "SUN - SAT" pattern (all week)
+                days_text = ' '.join(days).lower()
+                if ('sun' in days_text and 'sat' in days_text) or 'daily' in days_text:
+                    day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                                DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+                # Special case: if we have exactly "Monday" and "Friday", it likely means Monday through Friday
+                elif (len(days) == 2 and 
+                    'monday' in [d.lower().strip() for d in days] and 
+                    'friday' in [d.lower().strip() for d in days]):
+                    day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+                else:
+                    # Normal individual day parsing
+                    for day in days:
+                        day_lower = day.lower().strip()
+                        # Map day names to enums
+                        day_mapping = {
+                            'monday': DayOfWeek.MONDAY,
+                            'tuesday': DayOfWeek.TUESDAY, 
+                            'wednesday': DayOfWeek.WEDNESDAY,
+                            'thursday': DayOfWeek.THURSDAY,
+                            'friday': DayOfWeek.FRIDAY,
+                            'saturday': DayOfWeek.SATURDAY,
+                            'sunday': DayOfWeek.SUNDAY
+                        }
+                        if day_lower in day_mapping:
+                            day_enums.append(day_mapping[day_lower])
+            
+            # Check for "All Day" patterns in the text
+            if 'all day' in text.lower():
+                is_all_day = True
             
             deal = Deal(
                 title="Happy Hour",
@@ -925,6 +1061,7 @@ class BaseScraper(ABC):
                 days_of_week=day_enums,
                 start_time=start_time,
                 end_time=end_time,
+                is_all_day=is_all_day,
                 confidence_score=0.8,  # Higher confidence for custom patterns
                 source_url=None
             )
@@ -967,9 +1104,20 @@ class ParsingUtils:
                     if start_idx <= end_idx:
                         return day_order[start_idx:end_idx + 1]
         
-        # Handle comma-separated days
-        for day_part in re.split(r'[,&]', day_text):
-            day_part = day_part.strip()
+        # Handle comma-separated days - but check for weekday range patterns first
+        day_parts = [part.strip() for part in re.split(r'[,&]', day_text)]
+        
+        # Special case: if we see "monday, friday" it might mean "monday through friday"
+        if len(day_parts) == 2:
+            first_day = day_mapping.get(day_parts[0])
+            second_day = day_mapping.get(day_parts[1])
+            
+            # If it's Monday and Friday, it's likely Monday through Friday (weekdays)
+            if first_day == DayOfWeek.MONDAY and second_day == DayOfWeek.FRIDAY:
+                return [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+        
+        # Otherwise, treat as individual days
+        for day_part in day_parts:
             if day_part in day_mapping:
                 days.append(day_mapping[day_part])
         

@@ -90,7 +90,28 @@
           {% endif %}
         </div>
         
-        {% if restaurant.happy_hour_times %}
+        {% if restaurant.current_deals %}
+        <div class="current-deals">
+          <strong>🔥 Right Now:</strong>
+          {% for deal in restaurant.current_deals %}
+          <div class="current-deal">
+            <div class="deal-header">
+              <span class="deal-status">{{ deal | deal_status_badge }}</span>
+              {% if deal.confidence_score >= 0.8 %}
+              <span class="confidence-badge">{{ deal.confidence_score | deal_confidence }}</span>
+              {% endif %}
+            </div>
+            {% if deal.title and deal.title | lower not in ['happy hour', 'time-based special'] %}
+            <div class="deal-title">{{ deal.title }}</div>
+            {% endif %}
+            {% if deal.description and deal.description | length > 0 and deal.description | length < 100 %}
+            <div class="deal-description">{{ deal.description }}</div>
+            {% endif %}
+            <div class="deal-timing">{{ deal | format_deal_time }}</div>
+          </div>
+          {% endfor %}
+        </div>
+        {% elif restaurant.happy_hour_times %}
         <div class="happy-hour">
           <strong>Happy Hour:</strong>
           {% for time in restaurant.happy_hour_times %}

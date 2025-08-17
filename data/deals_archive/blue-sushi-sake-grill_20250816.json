@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "blue-sushi-sake-grill",
-  "archived_at": "2025-08-16T18:33:42.807857",
+  "archived_at": "2025-08-16T20:43:24.657420",
   "deals": [
     {
       "title": "Vegan Maki Special",
-      "description": "25% off vegan makievery tuesday, all day",
+      "description": "25% off vegan makievery",
       "deal_type": "happy_hour",
       "days_of_week": [
         "tuesday"
@@ -14,13 +14,13 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.437070",
+      "scraped_at": "2025-08-16T20:43:22.590998",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
     {
       "title": "Sake Special",
-      "description": "half-off all sake bottlesevery tuesday, all day",
+      "description": "Half-off sake bottlesevery",
       "deal_type": "happy_hour",
       "days_of_week": [
         "tuesday"
@@ -30,13 +30,13 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.437087",
+      "scraped_at": "2025-08-16T20:43:22.591028",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
     {
       "title": "Tuesday Special",
-      "description": "every tuesday, all day",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "tuesday"
@@ -46,13 +46,13 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.437459",
+      "scraped_at": "2025-08-16T20:43:22.591243",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
     {
-      "title": "Multi-Day Happy Hour",
-      "description": "11am-10pm‍friday",
+      "title": "Friday Happy Hour",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "friday"
@@ -62,13 +62,13 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442053",
+      "scraped_at": "2025-08-16T20:43:22.595258",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
     {
-      "title": "Multi-Day Happy Hour",
-      "description": "11am-10:30pmsaturday",
+      "title": "Saturday Happy Hour",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "saturday"
@@ -78,13 +78,13 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442073",
+      "scraped_at": "2025-08-16T20:43:22.595289",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
     {
-      "title": "Multi-Day Happy Hour",
-      "description": "12pm-10:30pmsunday",
+      "title": "Sunday Happy Hour",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "sunday"
@@ -94,7 +94,7 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442085",
+      "scraped_at": "2025-08-16T20:43:22.595311",
       "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
       "confidence_score": 0.8
     },
@@ -108,7 +108,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442910",
+      "scraped_at": "2025-08-16T20:43:22.596257",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -122,7 +122,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442912",
+      "scraped_at": "2025-08-16T20:43:22.596259",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -136,7 +136,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442913",
+      "scraped_at": "2025-08-16T20:43:22.596260",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -150,7 +150,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442914",
+      "scraped_at": "2025-08-16T20:43:22.596261",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -164,7 +164,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T18:33:40.442915",
+      "scraped_at": "2025-08-16T20:43:22.596262",
       "source_url": null,
       "confidence_score": 0.4
     }

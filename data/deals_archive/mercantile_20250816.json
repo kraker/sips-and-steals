@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "mercantile",
-  "archived_at": "2025-08-16T15:18:59.491205",
+  "archived_at": "2025-08-16T20:43:36.886183",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:18:57.077431",
+      "scraped_at": "2025-08-16T20:43:34.425285",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:18:57.077443",
+      "scraped_at": "2025-08-16T20:43:34.425298",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:18:57.077530",
+      "scraped_at": "2025-08-16T20:43:34.425392",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:18:57.079224",
+      "scraped_at": "2025-08-16T20:43:34.427249",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:18:57.079227",
+      "scraped_at": "2025-08-16T20:43:34.427252",
       "source_url": null,
       "confidence_score": 0.4
     }

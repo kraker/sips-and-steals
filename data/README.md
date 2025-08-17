@@ -5,7 +5,7 @@ This directory contains all restaurant data and system backups for Sips and Stea
 ## Core Data Files
 
 - **`restaurants.json`** - Single source of truth containing all restaurant metadata, static deals, and scraping configuration
-- **`live_deals.json`** - Current live scraped deals with timestamps and confidence scores
+- **`deals.json`** - Current live scraped deals with timestamps and confidence scores
 
 ## Backup Structure
 
@@ -25,7 +25,7 @@ Historical deal data organized by restaurant and date:
 ## Data Flow
 
 1. **Static Data**: Restaurant metadata and fallback deals stored in `restaurants.json`
-2. **Live Scraping**: Fresh deals scraped from websites → `live_deals.json`
+2. **Live Scraping**: Fresh deals scraped from websites → `deals.json`
 3. **Archival**: Daily deal snapshots → `deals_archive/`
 4. **Backups**: Automatic snapshots during operations → `backups/`
 

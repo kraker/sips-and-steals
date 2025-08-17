@@ -135,11 +135,25 @@ class ScrapingScheduler:
         
         for i, restaurant in enumerate(restaurants):
             if restaurant.website and restaurant.scraping_config.enabled:
-                delay_minutes = i
+                delay_minutes = i * 0.1  # Stagger scraping with 6-second delays to be polite
                 if self.schedule_restaurant(restaurant.slug, priority, delay_minutes):
                     scheduled_count += 1
         
         logger.info(f"Scheduled {scheduled_count} restaurants in {district}")
+        return scheduled_count
+    
+    def schedule_neighborhood(self, neighborhood: str, priority: TaskPriority = TaskPriority.NORMAL) -> int:
+        """Schedule all restaurants in a neighborhood"""
+        restaurants = self.data_manager.get_restaurants_by_neighborhood(neighborhood)
+        scheduled_count = 0
+        
+        for i, restaurant in enumerate(restaurants):
+            if restaurant.website and restaurant.scraping_config.enabled:
+                delay_minutes = i * 0.1  # Stagger scraping with 6-second delays to be polite
+                if self.schedule_restaurant(restaurant.slug, priority, delay_minutes):
+                    scheduled_count += 1
+        
+        logger.info(f"Scheduled {scheduled_count} restaurants in {neighborhood}")
         return scheduled_count
     
     def run_scheduled_tasks(self) -> Dict[str, Any]:

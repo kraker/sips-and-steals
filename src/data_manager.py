@@ -32,7 +32,7 @@ class DataManager:
         
         # Data file paths - Single source architecture
         self.restaurants_file = self.data_dir / "restaurants.json"  # Single source of truth for all restaurant data
-        self.live_deals_file = self.data_dir / "live_deals.json"  # Latest scraped deals
+        self.deals_file = self.data_dir / "deals.json"  # Latest scraped deals
         self.deals_archive_dir = self.data_dir / "deals_archive"  # Historical data
         self.deals_archive_dir.mkdir(exist_ok=True)
         
@@ -110,11 +110,11 @@ class DataManager:
     
     def _load_live_deals(self):
         """Load live deals and associate with restaurants"""
-        if not self.live_deals_file.exists():
+        if not self.deals_file.exists():
             return
         
         try:
-            with open(self.live_deals_file, 'r', encoding='utf-8') as f:
+            with open(self.deals_file, 'r', encoding='utf-8') as f:
                 deals_data = json.load(f)
             
             for slug, restaurant_deals in deals_data.items():
@@ -150,8 +150,8 @@ class DataManager:
             shutil.copy2(self.restaurants_file, backup_subdir / "restaurants.json")
         
         # Backup live deals
-        if self.live_deals_file.exists():
-            shutil.copy2(self.live_deals_file, backup_subdir / "live_deals.json")
+        if self.deals_file.exists():
+            shutil.copy2(self.deals_file, backup_subdir / "deals.json")
         
         # Keep only last 10 backups
         backups = sorted(self.backup_dir.glob("backup_*"))
@@ -242,7 +242,7 @@ class DataManager:
                     'last_updated': restaurant.deals_last_updated.isoformat() if restaurant.deals_last_updated else None
                 }
         
-        with open(self.live_deals_file, 'w', encoding='utf-8') as f:
+        with open(self.deals_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False, default=str)
     
     def get_restaurant(self, slug: str) -> Optional[Restaurant]:
@@ -256,6 +256,10 @@ class DataManager:
     def get_restaurants_by_district(self, district: str) -> List[Restaurant]:
         """Get restaurants in a specific district"""
         return [r for r in self.restaurants.values() if r.district == district]
+    
+    def get_restaurants_by_neighborhood(self, neighborhood: str) -> List[Restaurant]:
+        """Get restaurants in a specific neighborhood"""
+        return [r for r in self.restaurants.values() if r.neighborhood and r.neighborhood.lower() == neighborhood.lower()]
     
     def get_restaurants_with_website(self) -> List[Restaurant]:
         """Get restaurants that have websites for scraping"""
@@ -379,7 +383,7 @@ class DataManager:
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
                 'phone': restaurant.phone,
-                'happy_hour_times': self._format_deals_for_index(current_deals[:3]),  # Limit for display
+                'happy_hour_times': self._format_deals_for_index([d for d in current_deals if d.confidence_score >= 0.7][:3]),  # Only high-confidence deals
                 'special_notes': restaurant.special_notes,
                 'live_data_available': bool(restaurant.live_deals),
                 'last_updated': restaurant.deals_last_updated.isoformat() if restaurant.deals_last_updated else None

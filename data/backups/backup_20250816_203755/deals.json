@@ -7,7 +7,7 @@
     "deals": [
       {
         "title": "Daily Happy Hour",
-        "description": "available 3-6pm every day",
+        "description": "Daily happy hour with discounted food and drinks",
         "deal_type": "happy_hour",
         "days_of_week": [
           "monday",
@@ -23,13 +23,13 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:04:57.027740",
+        "scraped_at": "2025-08-16T19:29:55.231152",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       },
       {
         "title": "Late Night Happy Hour",
-        "description": "9pm-close thurs-sat",
+        "description": "Late night happy hour specials",
         "deal_type": "happy_hour",
         "days_of_week": [
           "thursday",
@@ -41,13 +41,13 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:04:57.028360",
+        "scraped_at": "2025-08-16T19:29:55.232224",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       },
       {
         "title": "Friday Special",
-        "description": "every friday",
+        "description": "Special discounts and happy hour deals",
         "deal_type": "happy_hour",
         "days_of_week": [
           "friday"
@@ -57,18 +57,18 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:04:57.030160",
+        "scraped_at": "2025-08-16T19:29:55.234364",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T15:04:59.086406"
+    "last_updated": "2025-08-16T19:29:57.597873"
   },
   "blue-sushi-sake-grill": {
     "deals": [
       {
         "title": "Vegan Maki Special",
-        "description": "25% off vegan makievery tuesday, all day",
+        "description": "25% off vegan makievery day",
         "deal_type": "happy_hour",
         "days_of_week": [
           "tuesday"
@@ -78,13 +78,13 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T18:28:22.268176",
+        "scraped_at": "2025-08-16T19:30:00.597003",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
       {
         "title": "Sake Special",
-        "description": "half-off all sake bottlesevery tuesday, all day",
+        "description": "Half-off sake bottlesevery day",
         "deal_type": "happy_hour",
         "days_of_week": [
           "tuesday"
@@ -94,13 +94,13 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T18:28:22.268191",
+        "scraped_at": "2025-08-16T19:30:00.597040",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
       },
       {
         "title": "Tuesday Special",
-        "description": "every tuesday, all day",
+        "description": "Every day",
         "deal_type": "happy_hour",
         "days_of_week": [
           "tuesday"
@@ -110,22 +110,140 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T18:28:22.268544",
+        "scraped_at": "2025-08-16T19:30:00.597362",
         "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
         "confidence_score": 0.8
+      },
+      {
+        "title": "Friday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "friday"
+        ],
+        "start_time": "11:00 AM",
+        "end_time": "10:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.601697",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Saturday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "saturday"
+        ],
+        "start_time": "11:00 AM",
+        "end_time": "10:30 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.601750",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Sunday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": "12:00 PM",
+        "end_time": "10:30 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.601789",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.602760",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.602763",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.602764",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.602765",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-6:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:30:00.602766",
+        "source_url": null,
+        "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T18:28:24.591355"
+    "last_updated": "2025-08-16T19:30:03.083437"
   },
   "a5-steakhouse": {
     "deals": [],
-    "last_updated": "2025-08-16T15:06:59.574751"
+    "last_updated": "2025-08-16T20:37:44.411983"
   },
   "osteria-marco": {
     "deals": [
       {
         "title": "Sunday Special",
-        "description": "every sunday",
+        "description": "Special discounts and happy hour deals",
         "deal_type": "happy_hour",
         "days_of_week": [
           "sunday"
@@ -135,13 +253,13 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:07:57.947910",
-        "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+        "scraped_at": "2025-08-16T19:40:37.692209",
+        "source_url": "https://www.osteriamarco.com/",
         "confidence_score": 0.8
       },
       {
         "title": "Sunday Special",
-        "description": "every sunday",
+        "description": "Special discounts and happy hour deals",
         "deal_type": "happy_hour",
         "days_of_week": [
           "sunday"
@@ -151,8 +269,8 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:07:57.947924",
-        "source_url": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+        "scraped_at": "2025-08-16T19:40:37.692245",
+        "source_url": "https://www.osteriamarco.com/",
         "confidence_score": 0.8
       },
       {
@@ -165,7 +283,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:07:57.950899",
+        "scraped_at": "2025-08-16T19:40:37.695563",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -179,7 +297,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:07:57.950905",
+        "scraped_at": "2025-08-16T19:40:37.695567",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -193,12 +311,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:07:57.950906",
+        "scraped_at": "2025-08-16T19:40:37.695568",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:08:00.323326"
+    "last_updated": "2025-08-16T19:40:40.177637"
   },
   "rioja": {
     "deals": [
@@ -268,7 +386,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:06:05.796005",
+        "scraped_at": "2025-08-16T20:13:06.012192",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -282,7 +400,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:06:05.796093",
+        "scraped_at": "2025-08-16T20:13:06.012288",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -296,7 +414,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:06:05.797404",
+        "scraped_at": "2025-08-16T20:13:06.013741",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -306,6 +424,9 @@
         "deal_type": "happy_hour",
         "days_of_week": [
           "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
           "friday"
         ],
         "start_time": "3 PM",
@@ -313,12 +434,12 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:06:05.807448",
+        "scraped_at": "2025-08-16T20:13:06.024755",
         "source_url": null,
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T17:06:07.837752"
+    "last_updated": "2025-08-16T20:13:08.038337"
   },
   "corridor-44": {
     "deals": [
@@ -515,7 +636,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:18:57.077431",
+        "scraped_at": "2025-08-16T19:30:10.724477",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -529,7 +650,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:18:57.077443",
+        "scraped_at": "2025-08-16T19:30:10.724486",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -543,7 +664,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:18:57.077530",
+        "scraped_at": "2025-08-16T19:30:10.724651",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -557,7 +678,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:18:57.079224",
+        "scraped_at": "2025-08-16T19:30:10.726688",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -571,16 +692,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:18:57.079227",
+        "scraped_at": "2025-08-16T19:30:10.726691",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:18:59.491174"
+    "last_updated": "2025-08-16T19:30:12.833973"
   },
   "fogo-de-chão": {
     "deals": [],
-    "last_updated": "2025-08-16T15:20:01.213468"
+    "last_updated": "2025-08-16T19:30:19.611738"
   },
   "mecha-noodle-bar": {
     "deals": [
@@ -958,7 +1079,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:38:59.583745",
+        "scraped_at": "2025-08-16T19:50:54.942250",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -972,7 +1093,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:38:59.583776",
+        "scraped_at": "2025-08-16T19:50:54.942282",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -986,7 +1107,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:38:59.583856",
+        "scraped_at": "2025-08-16T19:50:54.942364",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1000,7 +1121,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:38:59.585466",
+        "scraped_at": "2025-08-16T19:50:54.943937",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1014,12 +1135,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T17:38:59.585468",
+        "scraped_at": "2025-08-16T19:50:54.943940",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T17:39:01.925411"
+    "last_updated": "2025-08-16T19:50:57.200144"
   },
   "bang-up-to-the-elephant": {
     "deals": [

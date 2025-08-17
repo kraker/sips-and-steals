@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "thirsty-lion",
-  "archived_at": "2025-08-16T15:04:59.086431",
+  "archived_at": "2025-08-16T20:43:18.937179",
   "deals": [
     {
       "title": "Daily Happy Hour",
-      "description": "available 3-6pm every day",
+      "description": "Daily happy hour with discounted food and drinks",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
@@ -20,13 +20,13 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:04:57.027740",
+      "scraped_at": "2025-08-16T20:43:16.492249",
       "source_url": "https://www.thirstyliongastropub.com/menu",
       "confidence_score": 0.8
     },
     {
       "title": "Late Night Happy Hour",
-      "description": "9pm-close thurs-sat",
+      "description": "Late night happy hour specials",
       "deal_type": "happy_hour",
       "days_of_week": [
         "thursday",
@@ -38,13 +38,13 @@
       "price": null,
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:04:57.028360",
+      "scraped_at": "2025-08-16T20:43:16.493673",
       "source_url": "https://www.thirstyliongastropub.com/menu",
       "confidence_score": 0.8
     },
     {
       "title": "Friday Special",
-      "description": "every friday",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "friday"
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:04:57.030160",
+      "scraped_at": "2025-08-16T20:43:16.495896",
       "source_url": "https://www.thirstyliongastropub.com/menu",
       "confidence_score": 0.8
     }
