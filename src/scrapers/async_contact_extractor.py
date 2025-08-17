@@ -224,13 +224,42 @@ class AsyncContactExtractor:
             
             # Update contact info object
             if hasattr(restaurant, 'contact_info') and restaurant.contact_info:
-                # Update existing contact info
+                # Update existing contact info with improved logic for social handles
                 for key, value in contact_info_dict.items():
-                    if value and hasattr(restaurant.contact_info, key):
+                    if hasattr(restaurant.contact_info, key):
                         current_value = getattr(restaurant.contact_info, key)
-                        if current_value != value:
-                            setattr(restaurant.contact_info, key, value)
-                            updated = True
+                        
+                        # For social media handles, replace bad ones with good ones
+                        if key in ['instagram', 'facebook', 'twitter', 'tiktok']:
+                            should_update = False
+                            
+                            if value and not current_value:
+                                # No existing value, add new one
+                                should_update = True
+                            elif value and current_value:
+                                # Both exist, check if new one is better quality
+                                from src.scrapers.processors.contact_extractor import ContactExtractor
+                                temp_extractor = ContactExtractor()
+                                
+                                current_valid = temp_extractor._is_valid_social_handle(current_value, key)
+                                new_valid = temp_extractor._is_valid_social_handle(value, key)
+                                
+                                if new_valid and not current_valid:
+                                    # Replace bad handle with good one
+                                    should_update = True
+                                    logger.info(f"Replacing bad {key} handle '{current_value}' with '{value}' for {restaurant.name}")
+                                elif new_valid and current_valid and current_value != value:
+                                    # Both valid but different, keep the new one (it might be more current)
+                                    should_update = True
+                            
+                            if should_update:
+                                setattr(restaurant.contact_info, key, value)
+                                updated = True
+                        else:
+                            # For non-social fields, use existing logic
+                            if value and current_value != value:
+                                setattr(restaurant.contact_info, key, value)
+                                updated = True
             else:
                 # Create new contact info object
                 restaurant.contact_info = ContactInfo(
@@ -245,6 +274,18 @@ class AsyncContactExtractor:
                     tiktok=contact_info_dict.get('tiktok')
                 )
                 updated = True
+        
+        # Clean up any remaining invalid social handles 
+        if hasattr(restaurant, 'contact_info') and restaurant.contact_info:
+            from src.scrapers.processors.contact_extractor import ContactExtractor
+            temp_extractor = ContactExtractor()
+            
+            for social_field in ['instagram', 'facebook', 'twitter', 'tiktok']:
+                current_value = getattr(restaurant.contact_info, social_field)
+                if current_value and not temp_extractor._is_valid_social_handle(current_value, social_field):
+                    logger.info(f"Removing invalid {social_field} handle '{current_value}' for {restaurant.name}")
+                    setattr(restaurant.contact_info, social_field, None)
+                    updated = True
         
         # Update operating hours
         if extracted_data.get('operating_hours'):

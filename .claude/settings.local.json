@@ -59,9 +59,20 @@
       "WebFetch(domain:www.annettescratchtotable.com)",
       "WebFetch(domain:angeloslittleton.com)",
       "WebFetch(domain:saltwatersocial.com)",
-      "WebFetch(domain:www.cambriadenverrino.com)"
+      "WebFetch(domain:www.cambriadenverrino.com)",
+      "WebFetch(domain:peps.python.org)",
+      "Bash(pkill:*)",
+      "Bash(kill:*)",
+      "Bash(timeout:*)",
+      "Bash(for restaurant in blue-sushi-sake-grill thirsty-lion a5-steakhouse bamboo-sushi foraged tavernetta sunday-vinyl)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(done)",
+      "Bash(for:*)",
+      "WebFetch(domain:www.jaxfishhouse.com)"
     ],
     "deny": [],
-    "ask": []
+    "ask": [],
+    "defaultMode": "acceptEdits"
   }
 }

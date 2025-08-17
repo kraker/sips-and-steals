@@ -98,8 +98,10 @@ class HttpClient:
                 max_connections=10,
                 max_keepalive_connections=5
             ),
-            # Built-in retry support
-            transport=httpx.HTTPTransport(retries=3)
+            # Built-in retry support and redirect handling
+            transport=httpx.HTTPTransport(retries=3),
+            follow_redirects=True,  # Automatically follow redirects
+            max_redirects=10  # Reasonable limit to prevent infinite loops
         )
         
         return client
@@ -127,11 +129,18 @@ class HttpClient:
             response = self.client.get(url, timeout=timeout)
             response.raise_for_status()
             
+            # Log and handle redirects
+            redirect_info = self._handle_redirects(url, response)
+            
             # Check for bot detection patterns
             self._check_bot_detection(response)
             
             self.circuit_breaker.on_success()
             self.failed_attempts = 0
+            
+            # Add redirect info to response for upstream handling
+            if redirect_info:
+                response.redirect_info = redirect_info
             
             return response
             
@@ -199,6 +208,37 @@ class HttpClient:
         # Check for JavaScript-heavy pages that might be trying to detect bots
         if 'javascript' in content and len(content) < 1000:
             logger.warning(f"Possible JavaScript-heavy page detected")
+    
+    def _handle_redirects(self, original_url: str, response: httpx.Response) -> Optional[Dict[str, Any]]:
+        """Handle redirect tracking and logging"""
+        if not response.history:
+            return None  # No redirects occurred
+        
+        redirect_chain = []
+        for redirect_response in response.history:
+            redirect_chain.append({
+                'from_url': redirect_response.url,
+                'to_url': redirect_response.headers.get('location'),
+                'status_code': redirect_response.status_code,
+                'is_permanent': redirect_response.status_code == 301
+            })
+        
+        final_url = str(response.url)
+        redirect_info = {
+            'original_url': original_url,
+            'final_url': final_url,
+            'redirect_chain': redirect_chain,
+            'redirect_count': len(redirect_chain),
+            'has_permanent_redirect': any(r['is_permanent'] for r in redirect_chain)
+        }
+        
+        # Log redirect information
+        if redirect_info['has_permanent_redirect']:
+            logger.info(f"Permanent redirect detected: {original_url} → {final_url}")
+        else:
+            logger.info(f"Temporary redirect: {original_url} → {final_url}")
+        
+        return redirect_info
     
     def adaptive_delay(self):
         """Implement adaptive delays based on website response"""
@@ -274,8 +314,10 @@ class AsyncHttpClient:
                 max_connections=10,
                 max_keepalive_connections=5
             ),
-            # Built-in retry support
-            transport=httpx.AsyncHTTPTransport(retries=3)
+            # Built-in retry support and redirect handling
+            transport=httpx.AsyncHTTPTransport(retries=3),
+            follow_redirects=True,  # Automatically follow redirects
+            max_redirects=10  # Reasonable limit to prevent infinite loops
         )
     
     async def fetch_url(self, url: str, timeout: Optional[int] = None) -> httpx.Response:
@@ -301,11 +343,18 @@ class AsyncHttpClient:
             response = await self.client.get(url, timeout=timeout)
             response.raise_for_status()
             
+            # Log and handle redirects
+            redirect_info = self._handle_redirects(url, response)
+            
             # Check for bot detection patterns
             self._check_bot_detection(response)
             
             self.circuit_breaker.on_success()
             self.failed_attempts = 0
+            
+            # Add redirect info to response for upstream handling
+            if redirect_info:
+                response.redirect_info = redirect_info
             
             return response
             
@@ -373,6 +422,37 @@ class AsyncHttpClient:
         # Check for JavaScript-heavy pages that might be trying to detect bots
         if 'javascript' in content and len(content) < 1000:
             logger.warning(f"Possible JavaScript-heavy page detected")
+    
+    def _handle_redirects(self, original_url: str, response: httpx.Response) -> Optional[Dict[str, Any]]:
+        """Handle redirect tracking and logging (same as sync version)"""
+        if not response.history:
+            return None  # No redirects occurred
+        
+        redirect_chain = []
+        for redirect_response in response.history:
+            redirect_chain.append({
+                'from_url': str(redirect_response.url),
+                'to_url': redirect_response.headers.get('location'),
+                'status_code': redirect_response.status_code,
+                'is_permanent': redirect_response.status_code == 301
+            })
+        
+        final_url = str(response.url)
+        redirect_info = {
+            'original_url': original_url,
+            'final_url': final_url,
+            'redirect_chain': redirect_chain,
+            'redirect_count': len(redirect_chain),
+            'has_permanent_redirect': any(r['is_permanent'] for r in redirect_chain)
+        }
+        
+        # Log redirect information
+        if redirect_info['has_permanent_redirect']:
+            logger.info(f"Permanent redirect detected: {original_url} → {final_url}")
+        else:
+            logger.info(f"Temporary redirect: {original_url} → {final_url}")
+        
+        return redirect_info
     
     async def adaptive_delay(self):
         """Async adaptive delays"""

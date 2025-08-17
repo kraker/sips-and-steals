@@ -314,7 +314,10 @@ class ContactExtractor:
                         handle = match.group(1)
                         # Clean up handle
                         handle = handle.rstrip('/')
-                        social_handles[platform] = handle
+                        
+                        # Validate handle quality
+                        if self._is_valid_social_handle(handle, platform):
+                            social_handles[platform] = handle
                         break
         
         # Extract from text patterns (for @mentions)
@@ -322,11 +325,70 @@ class ContactExtractor:
         if instagram_mentions and 'instagram' not in social_handles:
             # Use first mention that looks like a restaurant handle
             for mention in instagram_mentions:
-                if len(mention) > 3 and not mention.isdigit():
+                if self._is_valid_social_handle(mention, 'instagram'):
                     social_handles['instagram'] = mention
                     break
         
         return social_handles
+    
+    def _is_valid_social_handle(self, handle: str, platform: str) -> bool:
+        """Validate social media handle quality"""
+        if not handle:
+            return False
+        
+        # Remove common prefixes/suffixes
+        handle = handle.strip('@').strip('/')
+        
+        # Length validation
+        if len(handle) < 3:  # Too short
+            return False
+        if len(handle) > 30:  # Too long for most platforms
+            return False
+        
+        # Check for invalid patterns
+        invalid_patterns = [
+            r'\.com$',           # Ends with .com
+            r'\.net$',           # Ends with .net
+            r'\.org$',           # Ends with .org
+            r'www\.',            # Contains www.
+            r'^[a-z]$',          # Single letter
+            r'^[a-z]{1,2}$',     # Very short (1-2 letters)
+            r'^\d+$',            # Only numbers
+            r'home$',            # Generic words
+            r'contact$',
+            r'about$',
+            r'menu$',
+            r'location$',
+            r'hours$',
+            r'info$',
+            r'main$',
+            r'index$',
+            r'default$',
+            r'null$',
+            r'undefined$',
+            r'n$',               # Specific problematic cases we've seen
+            r'nup$',
+        ]
+        
+        for pattern in invalid_patterns:
+            if re.search(pattern, handle, re.IGNORECASE):
+                return False
+        
+        # Platform-specific validation
+        if platform == 'instagram':
+            # Instagram handles can't start with numbers or have consecutive periods
+            if handle[0].isdigit():
+                return False
+            if '..' in handle:
+                return False
+        
+        elif platform == 'facebook':
+            # Facebook pages often have longer names, but avoid obvious generic ones
+            generic_facebook = ['page', 'pages', 'profile', 'user', 'account']
+            if handle.lower() in generic_facebook:
+                return False
+        
+        return True
     
     def _parse_hours_text(self, text: str) -> Dict[str, Dict[str, str]]:
         """Parse operating hours from text"""
