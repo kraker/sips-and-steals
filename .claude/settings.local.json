@@ -25,7 +25,8 @@
       "WebFetch(domain:simplecss.org)",
       "WebFetch(domain:dev.to)",
       "WebFetch(domain:newcss.net)",
-      "WebFetch(domain:water.css)"
+      "WebFetch(domain:water.css)",
+      "WebFetch(domain:www.bluesushisakegrill.com)"
     ],
     "deny": [],
     "ask": []

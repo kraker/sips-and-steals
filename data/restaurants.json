@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-16T21:00:29.013256",
+    "updated_at": "2025-08-16T21:54:16.971052",
     "districts": [
       "Aurora",
       "Boulder",
@@ -113,29 +113,27 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T20:43:18.937147"
+        "last_updated": "2025-08-16T21:48:45.879022"
       },
       "blue-sushi-sake-grill": {
         "name": "Blue Sushi Sake Grill",
         "slug": "blue-sushi-sake-grill",
         "district": "Central",
         "area": "Central",
-        "sub_location": "Union Station",
+        "sub_location": "LoDo",
         "address": "1616 16th St",
         "cuisine": "Sushi",
-        "website": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "website": "https://www.bluesushisakegrill.com/locations/lodo",
         "phone": null,
         "static_deals": [],
         "special_notes": [
           "Plant-Based Options"
         ],
         "websites": [
-          "https://www.bluesushisakegrill.com/menus/daily-specials",
-          "https://www.bluesushisakegrill.com/menus/happy-hour",
           "https://www.bluesushisakegrill.com/locations/lodo"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T20:43:24.657397"
+        "last_updated": "2025-08-16T21:53:30.963659"
       },
       "a5-steakhouse": {
         "name": "A5 Steakhouse",
@@ -165,7 +163,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T19:40:40.177637"
+        "last_updated": "2025-08-16T21:49:03.819653"
       },
       "rioja": {
         "name": "Rioja",
@@ -182,7 +180,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:09:00.312286"
+        "last_updated": "2025-08-16T21:49:11.256227"
       },
       "stk": {
         "name": "STK",
@@ -226,7 +224,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:10:59.253206"
+        "last_updated": "2025-08-16T21:49:21.864323"
       },
       "tamayo": {
         "name": "Tamayo",
@@ -241,7 +239,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T20:13:08.038337"
+        "last_updated": "2025-08-16T21:49:28.013545"
       },
       "corridor-44": {
         "name": "Corridor 44",
@@ -256,7 +254,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:12:59.411878"
+        "last_updated": "2025-08-16T21:49:34.182171"
       },
       "tavernetta": {
         "name": "Tavernetta",
@@ -271,7 +269,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:13:59.234545"
+        "last_updated": "2025-08-16T21:49:40.008895"
       },
       "ultreia": {
         "name": "Ultreia",
@@ -286,7 +284,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:14:59.758918"
+        "last_updated": "2025-08-16T21:49:48.085416"
       },
       "sunday-vinyl": {
         "name": "Sunday Vinyl",
@@ -301,7 +299,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:15:59.313347"
+        "last_updated": "2025-08-16T21:49:51.759965"
       },
       "foraged": {
         "name": "Foraged",
@@ -331,7 +329,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:17:59.410246"
+        "last_updated": "2025-08-16T21:50:04.120056"
       },
       "mercantile": {
         "name": "Mercantile",
@@ -346,7 +344,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T20:43:36.886155"
+        "last_updated": "2025-08-16T21:50:10.156349"
       },
       "fogo-de-chão": {
         "name": "Fogo de Chão",
@@ -361,7 +359,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T21:00:27.085402"
+        "last_updated": "2025-08-16T21:54:14.322965"
       },
       "mecha-noodle-bar": {
         "name": "Mecha Noodle Bar",
@@ -376,7 +374,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:20:59.337113"
+        "last_updated": "2025-08-16T21:50:21.946652"
       },
       "wonderyard-garden-table": {
         "name": "Wonderyard Garden \\+ Table",
@@ -408,7 +406,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:22:59.244823"
+        "last_updated": "2025-08-16T21:50:33.759676"
       },
       "bezel-bar": {
         "name": "Bezel Bar",
@@ -440,7 +438,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:24:59.592475"
+        "last_updated": "2025-08-16T21:50:46.040072"
       },
       "guard-and-grace": {
         "name": "Guard and Grace",
@@ -455,7 +453,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:25:59.557528"
+        "last_updated": "2025-08-16T21:50:51.854567"
       },
       "corinne-denver": {
         "name": "Corinne Denver",
@@ -485,7 +483,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:27:59.736940"
+        "last_updated": "2025-08-16T21:51:04.126712"
       },
       "fire-lounge": {
         "name": "Fire Lounge",
@@ -502,7 +500,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:28:59.895326"
+        "last_updated": "2025-08-16T21:51:09.878864"
       },
       "city-o-city": {
         "name": "City O’ City",
@@ -519,7 +517,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T19:50:57.200144"
+        "last_updated": "2025-08-16T21:51:15.829239"
       },
       "bang-up-to-the-elephant": {
         "name": "Bang Up to the Elephant",
@@ -536,7 +534,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:31:01.454688"
+        "last_updated": "2025-08-16T21:51:22.772612"
       },
       "100-de-agave": {
         "name": "100% de Agave",
@@ -583,7 +581,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:34:00.575452"
+        "last_updated": "2025-08-16T21:51:40.912276"
       },
       "watercourse-foods": {
         "name": "Watercourse Foods",
@@ -600,7 +598,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:34:59.553367"
+        "last_updated": "2025-08-16T21:51:46.106845"
       },
       "ace-eat-serve": {
         "name": "Ace Eat Serve",
@@ -615,7 +613,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:35:59.799411"
+        "last_updated": "2025-08-16T21:51:52.017926"
       },
       "xiquita-restaurante-y-bar": {
         "name": "Xiquita Restaurante y Bar",
@@ -630,7 +628,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:36:59.539097"
+        "last_updated": "2025-08-16T21:51:57.997414"
       },
       "go-fish-sushi": {
         "name": "Go Fish Sushi",
@@ -662,7 +660,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:39:00.038588"
+        "last_updated": "2025-08-16T21:52:10.418289"
       },
       "rocky-yama-sushi": {
         "name": "Rocky Yama Sushi",
@@ -679,7 +677,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:39:59.556988"
+        "last_updated": "2025-08-16T21:52:15.801262"
       },
       "adrift": {
         "name": "Adrift",
@@ -694,7 +692,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:41:01.108820"
+        "last_updated": "2025-08-16T21:52:22.498042"
       },
       "la-forêt": {
         "name": "La Forêt",
@@ -709,7 +707,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:41:59.578459"
+        "last_updated": "2025-08-16T21:52:28.041776"
       },
       "ronin-congress-park": {
         "name": "Ronin Congress Park",
@@ -741,7 +739,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:43:59.503820"
+        "last_updated": "2025-08-16T21:52:40.113505"
       },
       "bar-max": {
         "name": "Bar Max",
@@ -758,7 +756,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:44:59.546397"
+        "last_updated": "2025-08-16T21:52:45.650991"
       },
       "sap-sua": {
         "name": "Sap Sua",
@@ -773,7 +771,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:45:59.548858"
+        "last_updated": "2025-08-16T21:52:51.928401"
       }
     },
     "Greenwood Village, Englewood, Littleton, Centennial": {
