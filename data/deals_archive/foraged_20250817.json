@@ -1,0 +1,43 @@
+{
+  "restaurant_slug": "foraged",
+  "archived_at": "2025-08-17T09:06:37.819889",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Available 4:00 PM - 6:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday",
+        "monday",
+        "thursday",
+        "sunday",
+        "tuesday"
+      ],
+      "start_time": "4:00 PM",
+      "end_time": "6:00 PM",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T09:06:35.330529",
+      "source_url": "https://www.foragedrestaurant.com/drink",
+      "confidence_score": 0.9
+    },
+    {
+      "title": "Late Night Happy Hour",
+      "description": "Available 9:30 PM - 10:30 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "saturday",
+        "friday"
+      ],
+      "start_time": "9:30 PM",
+      "end_time": "10:30 PM",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T09:06:35.330751",
+      "source_url": "https://www.foragedrestaurant.com/drink",
+      "confidence_score": 0.9
+    }
+  ]
+}

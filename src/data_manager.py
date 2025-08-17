@@ -32,7 +32,6 @@ class DataManager:
         
         # Data file paths - Single source architecture
         self.restaurants_file = self.data_dir / "restaurants.json"  # Single source of truth for all restaurant data
-        self.deals_file = self.data_dir / "deals.json"  # Latest scraped deals
         self.deals_archive_dir = self.data_dir / "deals_archive"  # Historical data
         self.deals_archive_dir.mkdir(exist_ok=True)
         
@@ -49,7 +48,6 @@ class DataManager:
     def _load_data(self):
         """Load all data from files"""
         self._load_restaurants()
-        self._load_live_deals()
         logger.info(f"Loaded {len(self.restaurants)} restaurants")
     
     def _load_restaurants(self):
@@ -79,11 +77,11 @@ class DataManager:
         if address_data:
             if isinstance(address_data, dict):
                 # New structured format
-                from models import Address
+                from src.models import Address
                 address = Address.from_dict(address_data)
             elif isinstance(address_data, str):
                 # Legacy string format - convert to structured
-                from models import Address
+                from src.models import Address
                 address = Address.from_string(address_data, confidence_score=0.5)
         
         phone = data.get('phone')
@@ -117,11 +115,16 @@ class DataManager:
             scraping_config=scraping_config
         )
         
-        # Load static deals if present
-        static_deals = data.get('static_deals', [])
-        for deal_data in static_deals:
-            deal = Deal.from_dict(deal_data)
-            restaurant.add_static_deal(deal)
+        # Load static deals if present (stored as raw dicts)
+        restaurant.static_deals = data.get('static_deals', [])
+        
+        # Load live deals if present (convert from dicts to Deal objects)
+        live_deals_data = data.get('live_deals', [])
+        restaurant.live_deals = [Deal.from_dict(deal_data) for deal_data in live_deals_data]
+        
+        # Load deals last updated timestamp
+        if data.get('deals_last_updated'):
+            restaurant.deals_last_updated = datetime.fromisoformat(data['deals_last_updated'])
         
         # Add multiple URLs support
         if 'scraping_urls' in data:
@@ -181,35 +184,13 @@ class DataManager:
         
         return restaurant
     
-    def _load_live_deals(self):
-        """Load live deals and associate with restaurants"""
-        if not self.deals_file.exists():
-            return
-        
-        try:
-            with open(self.deals_file, 'r', encoding='utf-8') as f:
-                deals_data = json.load(f)
-            
-            for slug, restaurant_deals in deals_data.items():
-                if slug in self.restaurants:
-                    deals = [Deal.from_dict(deal_data) for deal_data in restaurant_deals.get('deals', [])]
-                    self.restaurants[slug].live_deals = deals
-                    
-                    if restaurant_deals.get('last_updated'):
-                        self.restaurants[slug].deals_last_updated = datetime.fromisoformat(
-                            restaurant_deals['last_updated']
-                        )
-                        
-        except (json.JSONDecodeError, KeyError) as e:
-            logger.error(f"Error loading live deals: {e}")
     
     def save_data(self, create_backup: bool = True):
-        """Save all data to files with optional backup"""
+        """Save all data to single restaurants.json file with optional backup"""
         if create_backup:
             self._create_backup()
         
         self._save_restaurants()
-        self._save_live_deals()
         logger.info("Data saved successfully")
     
     def _create_backup(self):
@@ -222,9 +203,6 @@ class DataManager:
         if self.restaurants_file.exists():
             shutil.copy2(self.restaurants_file, backup_subdir / "restaurants.json")
         
-        # Backup live deals
-        if self.deals_file.exists():
-            shutil.copy2(self.deals_file, backup_subdir / "deals.json")
         
         # Keep only last 10 backups
         backups = sorted(self.backup_dir.glob("backup_*"))
@@ -258,19 +236,14 @@ class DataManager:
             if restaurant.neighborhood:
                 neighborhoods[restaurant.district].add(restaurant.neighborhood)
             
-            # Convert restaurant to flat format (no redundant area field)
-            restaurant_dict = {
-                'name': restaurant.name,
-                'slug': restaurant.slug,
-                'district': restaurant.district,
-                'neighborhood': restaurant.neighborhood,  # Renamed from sub_location
-                'address': restaurant.address.to_dict() if restaurant.address else None,
-                'cuisine': restaurant.cuisine,
-                'website': restaurant.website,
-                'phone': restaurant.phone,
-                'static_deals': [deal.to_dict() for deal in restaurant.static_deals] if restaurant.static_deals else [],
-                'special_notes': restaurant.special_notes or []
-            }
+            # Convert restaurant using the complete to_dict() method to include all enhanced fields
+            restaurant_dict = restaurant.to_dict()
+            
+            # Remove fields that shouldn't be persisted to restaurants.json
+            if 'live_deals' in restaurant_dict:
+                del restaurant_dict['live_deals']  # Live deals are saved separately
+            if 'deals_last_updated' in restaurant_dict:
+                del restaurant_dict['deals_last_updated']  # This goes in metadata below
             
             # Add multiple URLs support if present
             if hasattr(restaurant, 'scraping_urls') and restaurant.scraping_urls:
@@ -286,7 +259,8 @@ class DataManager:
                 restaurant_dict['last_updated'] = restaurant.deals_last_updated.isoformat()
             else:
                 restaurant_dict['live_data_available'] = False
-                restaurant_dict['last_updated'] = None
+                if 'last_updated' not in restaurant_dict:
+                    restaurant_dict['last_updated'] = None
             
             data['restaurants'][slug] = restaurant_dict
         
@@ -299,18 +273,6 @@ class DataManager:
         with open(self.restaurants_file, 'w', encoding='utf-8') as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
     
-    def _save_live_deals(self):
-        """Save live deals data separately for faster loading"""
-        data = {}
-        for slug, restaurant in self.restaurants.items():
-            if restaurant.live_deals or restaurant.deals_last_updated:
-                data[slug] = {
-                    'deals': [deal.to_dict() for deal in restaurant.live_deals],
-                    'last_updated': restaurant.deals_last_updated.isoformat() if restaurant.deals_last_updated else None
-                }
-        
-        with open(self.deals_file, 'w', encoding='utf-8') as f:
-            json.dump(data, f, indent=2, ensure_ascii=False, default=str)
     
     def get_restaurant(self, slug: str) -> Optional[Restaurant]:
         """Get restaurant by slug"""

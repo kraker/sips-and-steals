@@ -38,8 +38,8 @@ def get_current_relevant_deals(deals, current_time=None):
         deal_score = 0
         relevance_reasons = []
         
-        # Skip very low confidence deals for main page display
-        if deal.get('confidence_score', 0) < 0.5:
+        # Skip very low confidence deals for main page display, but allow static deals (0.3) as fallback
+        if deal.get('confidence_score', 0) < 0.25:
             continue
             
         days_of_week = deal.get('days_of_week', [])
@@ -50,9 +50,9 @@ def get_current_relevant_deals(deals, current_time=None):
         # Check if deal is active today
         is_today = current_day in [day.lower() for day in days_of_week] if days_of_week else True
         
-        # Only score deals that are actually relevant today
-        if not is_today:
-            continue  # Skip deals that aren't active today
+        # For static deals (low confidence), show them even when not active today as fallback content
+        if not is_today and deal.get('confidence_score', 0) >= 0.5:
+            continue  # Skip high-confidence deals that aren't active today, but keep static deals
         
         # Deal is active today, start scoring
         deal_score += 100
@@ -541,11 +541,11 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
             current_deals = []
             
             if restaurant_obj:
-                live_deals = restaurant_obj.get_current_deals()
-                if live_deals:
+                current_deals_objects = restaurant_obj.get_current_deals()
+                if current_deals_objects:
                     # Convert Deal objects to dicts for processing
                     deals_data = []
-                    for deal in live_deals:
+                    for deal in current_deals_objects:
                         deals_data.append({
                             'title': deal.title,
                             'description': deal.description,

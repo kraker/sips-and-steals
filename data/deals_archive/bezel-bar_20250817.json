@@ -1,0 +1,25 @@
+{
+  "restaurant_slug": "bezel-bar",
+  "archived_at": "2025-08-17T09:07:09.009874",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "Available 4:00 PM - 6:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday",
+        "thursday",
+        "friday",
+        "wednesday"
+      ],
+      "start_time": "4:00 PM",
+      "end_time": "6:00 PM",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T09:07:06.579035",
+      "source_url": "https://www.bezeldenver.com/our-menus",
+      "confidence_score": 0.9
+    }
+  ]
+}

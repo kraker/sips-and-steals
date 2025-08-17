@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "wild-taco",
+  "archived_at": "2025-08-17T00:42:28.041217",
+  "deals": [
+    {
+      "title": "Happy Hour Special",
+      "description": "Available 3pm - 6pm | Pricing: 1, OffAll kid's meals are served with rice & black beans, fresh fruit, and a mini churro.One TacoFlour tortilla and asadero cheeseCrispy Chicken",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": "3:00 PM",
+      "end_time": "6:00 PM",
+      "prices": [],
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T00:42:26.036538",
+      "source_url": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
+      "confidence_score": 0.8
+    }
+  ]
+}

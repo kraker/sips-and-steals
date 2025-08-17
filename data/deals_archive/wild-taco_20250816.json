@@ -1,0 +1,35 @@
+{
+  "restaurant_slug": "wild-taco",
+  "archived_at": "2025-08-16T23:57:37.463183",
+  "deals": [
+    {
+      "title": "Happy Hour Special",
+      "description": "Available 3pm - 6pm | Pricing: 2, | Strawberry, Mango, or Watermelon  +$1Beer & Shot$8.00/Pint$12.00/MugChoice of Modelo or Dos Equis and any well shotWells$6.00Cuervo Traditional Plata | Family Jones Vodka | Don Q Rum | Family Jones Gin | Four Roses BourbonWine$6.00Pine Ridge Vineyards Chenin Blanc | Secret de Grand Bateau BordeauxAll Draft Beers $1 OffAll kid's meals are served with rice & black beans, fresh fruit, and a mini churro.One TacoFlour tortilla and asadero cheeseCrispy Chicken$8.00Served with side of ranchGrilled Steak$8.00Served with side of cremaCorn & Zucchini$8.00Served with side of cremaKid's PlatesMini Cheese Quesadilla$8.00Served with side of cremaCrispy Chicken Bites$8.00Served on bed of lettuce, and side of ranchGrilled Mahi Bites$8.00Served on a bed of lettuce, and side of cremaGrilled Steak Bites$8.00Served on a bed of lettuce, and side of cremaTaco Tuesday2 x Hardshell Tacos & Classic Marg$11.00hardshell tacos with lettuce and pico de gallo, served with chips and house salsa. choice of: chicken tinga, carnitas, bulgogi, rajas ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": "3:00 PM",
+      "end_time": "6:00 PM",
+      "prices": [
+        "$1Beer",
+        "$8.00/Pint",
+        "$12.00/MugChoice of Modelo or Dos Equis",
+        "$6.00Cuervo Traditional Plata | Family Jones Vodka | Don Q Rum | Family Jones Gin | Four Roses BourbonWine",
+        "$6.00Pine Ridge Vineyards Chenin Blanc | Secret de Gr",
+        "$1 OffAll kid's meals are served with rice",
+        "$8.00Served with side of ranchGrilled Steak",
+        "$8.00Served with side of cremaCorn",
+        "$8.00Served with side of cremaKid's PlatesMini Cheese Quesadilla",
+        "$8.00Served with side of cremaCrispy Chicken Bites",
+        "$8.00Served on bed of lettuce",
+        "$8.00Served on a bed of lettuce",
+        "$8.00Served on a bed of lettuce",
+        "$11.00hardshell tacos with lettuce"
+      ],
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T23:57:35.026316",
+      "source_url": null,
+      "confidence_score": 0.8
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "restaurant_slug": "american-elm",
+  "archived_at": "2025-08-17T00:43:57.787520",
+  "deals": [
+    {
+      "title": "Weekday Happy Hour",
+      "description": "Available 6pm - Open | Days: Monday - Friday | Pricing: 9, 9",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "start_time": "6:00 PM",
+      "end_time": "Open",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T00:43:55.673902",
+      "source_url": "https://www.amelm.com/happyhour",
+      "confidence_score": 0.8
+    }
+  ]
+}

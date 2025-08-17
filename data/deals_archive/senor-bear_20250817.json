@@ -1,0 +1,50 @@
+{
+  "restaurant_slug": "senor-bear",
+  "archived_at": "2025-08-17T01:07:32.244086",
+  "deals": [
+    {
+      "title": "Happy Hour at the Bar",
+      "description": "Available 3:00 pm - 6:00 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "thursday",
+        "tuesday",
+        "sunday",
+        "saturday",
+        "wednesday",
+        "friday"
+      ],
+      "start_time": "3:00 pm",
+      "end_time": "6:00 pm",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T01:07:30.193540",
+      "source_url": "https://www.senorbeardenver.com/",
+      "confidence_score": 0.95
+    },
+    {
+      "title": "Happy Hour at Tables",
+      "description": "Available 3:00 pm - 5:00 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "thursday",
+        "tuesday",
+        "sunday",
+        "saturday",
+        "wednesday",
+        "friday"
+      ],
+      "start_time": "3:00 pm",
+      "end_time": "5:00 pm",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T01:07:30.193597",
+      "source_url": "https://www.senorbeardenver.com/",
+      "confidence_score": 0.95
+    }
+  ]
+}

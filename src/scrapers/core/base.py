@@ -232,12 +232,16 @@ class ConfigBasedScraper(BaseScraper):
     def scrape_restaurant_info(self) -> Dict[str, Any]:
         """Scrape operating hours, contact info, address, and other restaurant details"""
         from ..processors.text_processor import TextProcessor
+        from ..processors.contact_extractor import ContactExtractor
         from bs4 import BeautifulSoup
         
         restaurant_info = {
             'operating_hours': {},
             'contact_info': {},
+            'dining_info': {},
+            'service_info': {},
             'address_info': {},
+            'business_status': 'operational',
             'last_updated': datetime.now().isoformat()
         }
         
@@ -245,23 +249,39 @@ class ConfigBasedScraper(BaseScraper):
             # Use primary URL for restaurant info
             content = self.fetch_page()
             soup = BeautifulSoup(content, 'html.parser')
+            text_content = soup.get_text()
             
-            # Use text processor to extract additional info
-            text_processor = TextProcessor(self.config, restaurant=self.restaurant)
+            # Initialize enhanced contact extractor
+            contact_extractor = ContactExtractor(base_url=self.restaurant.website)
             
-            # Extract operating hours
-            operating_hours = text_processor.extract_operating_hours(soup)
+            # Extract comprehensive contact information
+            contact_info = contact_extractor.extract_contact_info(soup, text_content)
+            if contact_info:
+                restaurant_info['contact_info'] = contact_info.to_dict()
+                logger.info(f"Extracted enhanced contact info for {self.restaurant.name}: phone={contact_info.primary_phone}, email={contact_info.general_email}")
+            
+            # Extract service information (reservations, delivery, etc.)
+            service_info = contact_extractor.extract_service_info(soup, text_content)
+            if service_info:
+                restaurant_info['service_info'] = service_info.to_dict()
+                logger.info(f"Extracted service info for {self.restaurant.name}: reservations={service_info.accepts_reservations}, delivery={service_info.offers_delivery}")
+            
+            # Extract dining experience information
+            dining_info = contact_extractor.extract_dining_info(soup, text_content)
+            if dining_info:
+                restaurant_info['dining_info'] = dining_info.to_dict()
+                logger.info(f"Extracted dining info for {self.restaurant.name}: price_range={dining_info.price_range}, atmosphere={dining_info.atmosphere}")
+            
+            # Extract operating hours using enhanced extractor
+            operating_hours = contact_extractor.extract_operating_hours(soup, text_content)
             if operating_hours:
                 restaurant_info['operating_hours'] = operating_hours
-                logger.info(f"Extracted operating hours for {self.restaurant.name}: {operating_hours}")
+                logger.info(f"Extracted operating hours for {self.restaurant.name}: {len(operating_hours)} days")
             
-            # Extract contact information  
-            contact_info = text_processor.extract_contact_info(soup)
-            if contact_info:
-                restaurant_info['contact_info'] = contact_info
-                logger.info(f"Extracted contact info for {self.restaurant.name}: {contact_info}")
+            # Fallback to original text processor for additional patterns
+            text_processor = TextProcessor(self.config, restaurant=self.restaurant)
             
-            # Extract address information
+            # Extract address information using existing address parser
             address_info = text_processor.extract_address_info(soup)
             if address_info:
                 restaurant_info['address_info'] = address_info
@@ -269,5 +289,7 @@ class ConfigBasedScraper(BaseScraper):
                 
         except Exception as e:
             logger.error(f"Failed to scrape restaurant info for {self.restaurant.name}: {e}")
+            # Re-raise exception so calling code can handle failure tracking
+            raise e
         
         return restaurant_info

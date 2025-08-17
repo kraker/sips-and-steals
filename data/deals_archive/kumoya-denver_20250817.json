@@ -1,0 +1,28 @@
+{
+  "restaurant_slug": "kumoya-denver",
+  "archived_at": "2025-08-17T00:42:52.183312",
+  "deals": [
+    {
+      "title": "Daily Happy Hour",
+      "description": "Available 5:00pm - 6:00pm | Pricing: 30, Specialty Rolls30% Off of All Skewer Prices50% Off Tomadachi (Beer & Shot Combinations)$8 Margarita$10 Highball$12 Old Fashioned",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday"
+      ],
+      "start_time": "5:00 PM",
+      "end_time": "6:00 PM",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T00:42:49.774161",
+      "source_url": "https://www.kumoyadenver.com/happy-hour",
+      "confidence_score": 0.8
+    }
+  ]
+}
