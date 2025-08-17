@@ -61,19 +61,29 @@ class UniversalHappyHourExtractor:
         # Alternative with "to": "3pm to 6pm"
         r'(\d{1,2})\s*(?::\d{2})?\s*(?:(am|pm|AM|PM))?\s*(?:to)\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)',
         # Colon format: "3:00 - 6:00"
-        r'(\d{1,2}):(\d{2})\s*[–\-~]\s*(\d{1,2}):(\d{2})'
+        r'(\d{1,2}):(\d{2})\s*[–\-~]\s*(\d{1,2}):(\d{2})',
+        # Time to close: "9PM-Close", "9 PM-Close"
+        r'(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)\s*[–\-~]\s*(close|Close|CLOSE)',
+        # Compact format: "9PM-Close" without spaces
+        r'(\d{1,2})(PM|AM|pm|am)[–\-~](close|Close|CLOSE)'
     ]
     
     # Universal day patterns
     DAY_PATTERNS = [
-        # Day ranges
+        # Day ranges (full names)
         r'(Monday\s*[\-–]\s*Friday|Tuesday\s*[\-–]\s*Friday|Saturday\s*[\-–]\s*Sunday)',
         r'(Sunday\s*[\-–]\s*Thursday|Friday\s*[\-–]\s*Saturday)',
+        r'(Thursday\s*[\-–]\s*Saturday|Thursday\s*[\-–]\s*Sunday)',
+        # Day ranges (abbreviated)
+        r'(Mon\s*[\-–]\s*Fri|Tue\s*[\-–]\s*Fri|Sat\s*[\-–]\s*Sun)',
+        r'(Sun\s*[\-–]\s*Thu|Fri\s*[\-–]\s*Sat|Thurs\s*[\-–]\s*Sat)',
+        r'(Thu\s*[\-–]\s*Sat|Thu\s*[\-–]\s*Sun)',
         # Daily patterns
         r'(Every\s+Day|Daily|All\s+Day|everyday|daily)',
-        # Individual days
+        # Individual days (full names)
         r'(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)',
-        r'(Mon|Tue|Wed|Thu|Fri|Sat|Sun)'
+        # Individual days (abbreviated)
+        r'(Mon|Tue|Wed|Thu|Fri|Sat|Sun|Thurs)'
     ]
     
     # Universal exclude patterns (content to ignore)
@@ -402,14 +412,27 @@ class UniversalHappyHourExtractor:
         
         # If we have day patterns but no time ranges, create a generic deal
         elif day_patterns:
-            deal = Deal(
-                title="Happy Hour",
-                description=f"Found happy hour pattern: {', '.join(day_patterns[:2])}",
-                deal_type=DealType.HAPPY_HOUR,
-                days_of_week=self._parse_days(day_patterns),
-                confidence_score=0.6
-            )
-            deals.append(deal)
+            parsed_days = self._parse_days(day_patterns)
+            if parsed_days:
+                # Create a more descriptive description based on the days
+                if len(parsed_days) == 7:
+                    day_description = "Daily"
+                elif len(parsed_days) >= 5 and DayOfWeek.MONDAY in parsed_days and DayOfWeek.FRIDAY in parsed_days:
+                    day_description = "Monday-Friday"
+                elif len(parsed_days) == 2 and DayOfWeek.SATURDAY in parsed_days and DayOfWeek.SUNDAY in parsed_days:
+                    day_description = "Weekends"
+                else:
+                    day_names = [day.value.title() for day in parsed_days]
+                    day_description = ", ".join(day_names)
+                
+                deal = Deal(
+                    title="Happy Hour",
+                    description=f"Happy hour available {day_description}",
+                    deal_type=DealType.HAPPY_HOUR,
+                    days_of_week=parsed_days,
+                    confidence_score=0.5  # Lower confidence without time info
+                )
+                deals.append(deal)
         
         return deals
     
@@ -435,6 +458,11 @@ class UniversalHappyHourExtractor:
             elif len(time_range) == 4 and ':' in str(time_range):  # Colon format
                 start_time = f"{time_range[0]}:{time_range[1]}"
                 end_time = f"{time_range[2]}:{time_range[3]}"
+            
+            elif len(time_range) == 3 and 'close' in str(time_range).lower():  # "9PM-Close" format
+                hour, ampm, close_word = time_range
+                start_time = f"{hour} {ampm.upper()}"
+                end_time = "Close"
             
             else:
                 logger.debug(f"Unhandled time range format: {time_range}")
@@ -475,12 +503,16 @@ class UniversalHappyHourExtractor:
             pattern_lower = pattern.lower().replace(' ', '').replace('-', '')
             
             # Handle ranges
-            if 'mondayfriday' in pattern_lower:
+            if 'mondayfriday' in pattern_lower or 'monfri' in pattern_lower:
                 days.extend([DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
                            DayOfWeek.THURSDAY, DayOfWeek.FRIDAY])
-            elif 'tuesdayfriday' in pattern_lower:
+            elif 'tuesdayfriday' in pattern_lower or 'tuefri' in pattern_lower:
                 days.extend([DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY])
-            elif 'saturdaysunday' in pattern_lower:
+            elif 'thursdaysaturday' in pattern_lower or 'thurssat' in pattern_lower or 'thusat' in pattern_lower:
+                days.extend([DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY])
+            elif 'fridaysaturday' in pattern_lower or 'frisat' in pattern_lower:
+                days.extend([DayOfWeek.FRIDAY, DayOfWeek.SATURDAY])
+            elif 'saturdaysunday' in pattern_lower or 'satsun' in pattern_lower:
                 days.extend([DayOfWeek.SATURDAY, DayOfWeek.SUNDAY])
             elif 'everyday' in pattern_lower or 'daily' in pattern_lower:
                 days.extend([DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
@@ -493,7 +525,7 @@ class UniversalHappyHourExtractor:
                 days.append(DayOfWeek.TUESDAY)
             elif 'wednesday' in pattern_lower or 'wed' in pattern_lower:
                 days.append(DayOfWeek.WEDNESDAY)
-            elif 'thursday' in pattern_lower or 'thu' in pattern_lower:
+            elif 'thursday' in pattern_lower or 'thu' in pattern_lower or 'thurs' in pattern_lower:
                 days.append(DayOfWeek.THURSDAY)
             elif 'friday' in pattern_lower or 'fri' in pattern_lower:
                 days.append(DayOfWeek.FRIDAY)
@@ -561,21 +593,86 @@ class UniversalHappyHourExtractor:
         return min(avg_deal_confidence + method_boost, 1.0)
     
     def _deduplicate_deals(self, deals: List[Deal]) -> List[Deal]:
-        """Remove duplicate deals"""
-        seen = set()
-        unique_deals = []
+        """Remove duplicate and overlapping deals"""
+        if not deals:
+            return deals
         
-        for deal in deals:
-            # Create a signature for the deal using string representations
+        # Sort deals by confidence score (highest first) and completeness
+        sorted_deals = sorted(deals, key=lambda d: (
+            d.confidence_score,
+            bool(d.start_time and d.end_time),  # Prefer deals with time info
+            len(d.days_of_week),  # Prefer deals with more specific day info
+            len(d.description or "")  # Prefer deals with more description
+        ), reverse=True)
+        
+        unique_deals = []
+        seen_signatures = set()
+        
+        for deal in sorted_deals:
+            # Create a signature for exact duplicates
             days_str = tuple(sorted([day.value for day in deal.days_of_week])) if deal.days_of_week else ()
-            signature = (
+            exact_signature = (
                 deal.start_time, 
                 deal.end_time, 
                 days_str
             )
             
-            if signature not in seen:
-                seen.add(signature)
+            # Skip exact duplicates
+            if exact_signature in seen_signatures:
+                continue
+            
+            # Check for overlapping deals
+            is_redundant = False
+            for existing_deal in unique_deals:
+                deal_days = set(deal.days_of_week) if deal.days_of_week else set()
+                existing_days = set(existing_deal.days_of_week) if existing_deal.days_of_week else set()
+                
+                # Check for subset relationships (one deal is contained within another)
+                if deal_days and existing_days:
+                    if deal_days.issubset(existing_days):
+                        # Current deal is subset of existing deal - skip it
+                        if (existing_deal.start_time and existing_deal.end_time) or existing_deal.confidence_score >= deal.confidence_score:
+                            is_redundant = True
+                            break
+                    elif existing_days.issubset(deal_days):
+                        # Existing deal is subset of current deal - remove existing and add current
+                        if (deal.start_time and deal.end_time) or deal.confidence_score > existing_deal.confidence_score:
+                            unique_deals.remove(existing_deal)
+                            break
+                
+                # Check for deals with same times
+                if (deal.start_time == existing_deal.start_time and 
+                    deal.end_time == existing_deal.end_time):
+                    
+                    # If one deal covers all days and another is more specific, keep the better one
+                    if (len(existing_deal.days_of_week) == 7 and 
+                        len(deal.days_of_week) < 7 and 
+                        deal.days_of_week):
+                        # Remove the "daily" deal in favor of more specific one
+                        unique_deals.remove(existing_deal)
+                        break
+                    elif (len(deal.days_of_week) == 7 and 
+                          len(existing_deal.days_of_week) < 7 and 
+                          existing_deal.days_of_week):
+                        # Skip this "daily" deal, keep the more specific one
+                        is_redundant = True
+                        break
+                        
+                    # If days overlap significantly (>= 50%), keep the better one
+                    if deal_days and existing_days:
+                        overlap = len(deal_days & existing_days)
+                        overlap_ratio = overlap / min(len(deal_days), len(existing_days))
+                        if overlap_ratio >= 0.5:
+                            # Keep the one with better confidence or more complete info
+                            if existing_deal.confidence_score >= deal.confidence_score:
+                                is_redundant = True
+                                break
+                            else:
+                                unique_deals.remove(existing_deal)
+                                break
+            
+            if not is_redundant:
+                seen_signatures.add(exact_signature)
                 unique_deals.append(deal)
         
         return unique_deals
@@ -732,71 +829,177 @@ class UniversalHappyHourExtractor:
             matches = re.findall(pattern, section_text, re.IGNORECASE)
             day_matches.extend(matches)
         
-        # If we found both time and day patterns, create deals
-        if time_matches or day_matches:
-            # Create a basic deal from the patterns found
-            deal_title = "Happy Hour"
-            
-            # Try to extract more specific title from surrounding text
-            lines = section_text.split('\n')
-            for line in lines:
-                line_clean = line.strip()
-                if line_clean and any(keyword in line_clean.lower() for keyword in self.HAPPY_HOUR_KEYWORDS):
-                    # Use this line as title if it's short enough
-                    if len(line_clean) < 100:
-                        deal_title = line_clean
-                        break
-            
-            # Process time matches
-            start_time = None
-            end_time = None
-            if time_matches:
-                # Use the first valid time match
-                for match in time_matches:
-                    try:
-                        start_time, end_time = self._parse_time_match(match)
-                        if start_time and end_time:
-                            break
-                    except:
+        # Create separate deals for each time pattern found
+        if time_matches:
+            for time_match in time_matches:
+                try:
+                    start_time, end_time = self._parse_time_match(time_match)
+                    if not start_time or not end_time:
                         continue
-            
-            # Process day matches
+                    
+                    # Find the most relevant day pattern for this time
+                    relevant_days = self._find_relevant_days_for_time(time_match, day_matches, section_text)
+                    
+                    # Create description
+                    description_parts = [f"Time: {start_time} - {end_time}"]
+                    if relevant_days:
+                        day_str = ", ".join([day.title() for day in relevant_days])
+                        description_parts.append(f"Days: {day_str}")
+                    
+                    description = " | ".join(description_parts)
+                    
+                    # Create the deal
+                    deal = Deal(
+                        title="Happy Hour",
+                        description=description,
+                        deal_type=DealType.HAPPY_HOUR,
+                        days_of_week=[DayOfWeek(day) for day in relevant_days if day in [d.value for d in DayOfWeek]],
+                        start_time=start_time,
+                        end_time=end_time,
+                        is_all_day=False
+                    )
+                    deals.append(deal)
+                except Exception as e:
+                    continue
+        
+        # If no time patterns but we have day patterns, create a generic deal
+        elif day_matches:
             days_of_week = []
-            if day_matches:
-                for match in day_matches:
-                    try:
-                        match_days = self._parse_day_match(match[0] if isinstance(match, tuple) else match)
-                        days_of_week.extend(match_days)
-                    except:
-                        continue
+            for match in day_matches:
+                try:
+                    match_days = self._parse_day_match(match[0] if isinstance(match, tuple) else match)
+                    days_of_week.extend(match_days)
+                except:
+                    continue
             
             # Remove duplicates from days
             days_of_week = list(set(days_of_week))
             
-            # Create description
-            description_parts = []
-            if start_time and end_time:
-                description_parts.append(f"Time: {start_time} - {end_time}")
             if days_of_week:
                 day_str = ", ".join([day.title() for day in days_of_week])
-                description_parts.append(f"Days: {day_str}")
-            
-            description = " | ".join(description_parts) if description_parts else "Found happy hour pattern"
-            
-            # Create the deal
-            if time_matches or day_matches:
+                description = f"Days: {day_str}"
+                
                 deal = Deal(
-                    title=deal_title,
+                    title="Happy Hour",
                     description=description,
                     deal_type=DealType.HAPPY_HOUR,
                     days_of_week=[DayOfWeek(day) for day in days_of_week if day in [d.value for d in DayOfWeek]],
-                    start_time=start_time,
-                    end_time=end_time,
+                    start_time=None,
+                    end_time=None,
                     is_all_day=False
                 )
                 deals.append(deal)
         
         return deals
+    
+    def _parse_time_match(self, time_match):
+        """Parse a time match into start_time and end_time strings"""
+        if len(time_match) == 4:  # Standard format (hour1, ampm1, hour2, ampm2)
+            hour1, ampm1, hour2, ampm2 = time_match
+            if ampm1 == '':
+                ampm1 = ampm2  # Use same AM/PM for both
+            start_time = f"{hour1} {ampm1 or 'PM'}".strip()
+            end_time = f"{hour2} {ampm2}".strip()
+            return start_time, end_time
+        elif len(time_match) == 3 and 'close' in str(time_match).lower():  # "9PM-Close" format
+            hour, ampm, close_word = time_match
+            start_time = f"{hour} {ampm}".strip()
+            end_time = "Close"
+            return start_time, end_time
+        return None, None
+    
+    def _parse_day_match(self, day_match):
+        """Parse a day match into a list of day strings"""
+        day_match_str = day_match.lower() if isinstance(day_match, str) else str(day_match).lower()
+        
+        # Handle ranges
+        if 'daily' in day_match_str:
+            return ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+        elif 'thurs-sat' in day_match_str or 'thu-sat' in day_match_str:
+            return ['thursday', 'friday', 'saturday']
+        elif 'mon-fri' in day_match_str:
+            return ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
+        
+        # Individual days
+        day_mapping = {
+            'monday': 'monday', 'mon': 'monday',
+            'tuesday': 'tuesday', 'tue': 'tuesday', 
+            'wednesday': 'wednesday', 'wed': 'wednesday',
+            'thursday': 'thursday', 'thu': 'thursday', 'thurs': 'thursday',
+            'friday': 'friday', 'fri': 'friday',
+            'saturday': 'saturday', 'sat': 'saturday',
+            'sunday': 'sunday', 'sun': 'sunday'
+        }
+        
+        for day_variant, day_name in day_mapping.items():
+            if day_variant in day_match_str:
+                return [day_name]
+        
+        return []
+    
+    def _find_relevant_days_for_time(self, time_match, day_matches, section_text):
+        """Find the most relevant day pattern for a specific time pattern"""
+        # Convert time_match to string for proximity analysis
+        if len(time_match) >= 2:
+            time_str = f"{time_match[0]}{time_match[1] if time_match[1] else ''}"
+        else:
+            time_str = str(time_match[0])
+        
+        # Find the position of the time in the text
+        time_pos = section_text.lower().find(time_str.lower())
+        
+        best_days = []
+        best_distance = float('inf')
+        best_priority = 0  # Higher priority for range patterns
+        
+        # Look for day patterns near this time, prioritizing ranges
+        for day_match in day_matches:
+            day_str = day_match[0] if isinstance(day_match, tuple) else day_match
+            day_pos = section_text.lower().find(day_str.lower())
+            
+            if day_pos >= 0 and time_pos >= 0:
+                distance = abs(day_pos - time_pos)
+                
+                # Assign priority: ranges > daily > individual days
+                priority = 0
+                if '-' in day_str:  # Range patterns like "Thurs-Sat"
+                    priority = 3
+                elif 'daily' in day_str.lower():
+                    priority = 2
+                else:  # Individual days
+                    priority = 1
+                
+                # Smart matching: prefer much closer matches even if lower priority
+                is_better = False
+                
+                if not best_days:  # First match
+                    is_better = True
+                elif priority > best_priority:  # Higher priority
+                    # Only choose higher priority if distance isn't much worse
+                    if distance <= best_distance + 5:  # Allow 5 chars worse distance
+                        is_better = True
+                elif priority == best_priority:  # Same priority, choose closer
+                    if distance < best_distance:
+                        is_better = True
+                else:  # Lower priority
+                    # Only choose if significantly closer (>50% closer)
+                    if distance < best_distance * 0.5:
+                        is_better = True
+                
+                if is_better:
+                    best_distance = distance
+                    best_priority = priority
+                    best_days = self._parse_day_match(day_str)
+        
+        # If no nearby day pattern found, use 'daily' if present, otherwise empty
+        if not best_days:
+            for day_match in day_matches:
+                day_str = day_match[0] if isinstance(day_match, tuple) else day_match
+                if 'daily' in day_str.lower():
+                    best_days = self._parse_day_match(day_str)
+                    break
+        
+        return best_days
     
     def _calculate_text_confidence(self, text: str, deals: List[Deal]) -> float:
         """
