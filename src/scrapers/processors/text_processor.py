@@ -22,9 +22,10 @@ logger = logging.getLogger(__name__)
 class TextProcessor:
     """Extract deals from HTML content using configuration-based patterns"""
     
-    def __init__(self, config: Dict[str, Any]):
+    def __init__(self, config: Dict[str, Any], restaurant=None):
         self.config = config
         self.scraping_config = config.get('scraping_config', {})
+        self.restaurant = restaurant
     
     def extract_deals(self, soup: BeautifulSoup) -> List[Deal]:
         """Extract deals from BeautifulSoup object using configured patterns"""
@@ -82,28 +83,50 @@ class TextProcessor:
     
     def _has_custom_patterns(self) -> bool:
         """Check if configuration has custom regex patterns"""
+        scraping_patterns = self.config.get('scraping_patterns', {})
         return any([
-            self.scraping_config.get('time_pattern_regex'),
-            self.scraping_config.get('day_pattern_regex'),
-            self.scraping_config.get('price_pattern_regex')
+            scraping_patterns.get('time_patterns'),
+            scraping_patterns.get('deal_patterns'),
+            scraping_patterns.get('day_patterns')
         ])
     
     def _extract_with_custom_patterns(self, content: str) -> List[Deal]:
         """Extract deals using custom regex patterns from configuration"""
         deals = []
+        scraping_patterns = self.config.get('scraping_patterns', {})
         
-        # Extract components using custom patterns
-        times = self._extract_pattern_matches(content, 'time_pattern_regex')
-        days = self._extract_pattern_matches(content, 'day_pattern_regex')
-        prices = self._extract_pattern_matches(content, 'price_pattern_regex')
+        
+        # Extract time information
+        times = []
+        time_patterns = scraping_patterns.get('time_patterns', [])
+        for pattern_config in time_patterns:
+            pattern = pattern_config.get('pattern', '')
+            matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
+            times.extend(matches)
+        
+        # Extract deal information  
+        deals_info = []
+        deal_patterns = scraping_patterns.get('deal_patterns', [])
+        for pattern_config in deal_patterns:
+            pattern = pattern_config.get('pattern', '')
+            matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
+            deals_info.extend(matches)
+        
+        # Extract day information
+        days = []
+        day_patterns = scraping_patterns.get('day_patterns', [])
+        for pattern_config in day_patterns:
+            pattern = pattern_config.get('pattern', '')
+            matches = self._extract_pattern_matches_with_groups(content, pattern, pattern_config.get('groups', []))
+            days.extend(matches)
         
         # Create deals from extracted components
-        if times or days:
+        if times or days or deals_info:
             deal = self._create_deal_from_components(
                 times=times,
                 days=days,
-                prices=prices,
-                source_content=content[:200]  # First 200 chars for context
+                prices=deals_info,  # Include all deal info as "prices" for now
+                source_content=content  # Pass full content for "Every Day" detection
             )
             if deal:
                 deals.append(deal)
@@ -126,6 +149,27 @@ class TextProcessor:
         
         return matches
     
+    def _extract_pattern_matches_with_groups(self, content: str, pattern: str, groups: List[str]) -> List[str]:
+        """Extract matches using a pattern and return specific groups"""
+        if not pattern:
+            return []
+        
+        matches = []
+        try:
+            for match in re.finditer(pattern, content, re.IGNORECASE):
+                # Extract specified groups or all groups if none specified
+                if groups:
+                    for i, group_name in enumerate(groups):
+                        if i < len(match.groups()) and match.group(i + 1):
+                            matches.append(match.group(i + 1))
+                else:
+                    # Add all non-None groups from the match
+                    matches.extend([group for group in match.groups() if group])
+        except re.error as e:
+            logger.warning(f"Invalid regex pattern '{pattern}': {e}")
+        
+        return matches
+    
     def _create_deal_from_components(self, times: List[str], days: List[str], 
                                    prices: List[str], source_content: str) -> Optional[Deal]:
         """Create a Deal object from extracted components"""
@@ -144,21 +188,36 @@ class TextProcessor:
         if days:
             day_enums = self._parse_days(days)
         
+        # Handle "Every Day" case - if we have times but no specific days, assume all days
+        if (start_time and end_time) and not day_enums:
+            # Check if content mentions "every day" or "daily"
+            content_lower = source_content.lower()
+            if 'every day' in content_lower or 'daily' in content_lower:
+                day_enums = list(DayOfWeek)  # All days of the week
+        
         # Check for all-day patterns
         if 'all day' in source_content.lower():
             is_all_day = True
         
-        # Create price string
+        # Create price string with proper spacing
         price_str = None
         if prices:
-            price_str = ', '.join(prices[:3])  # Limit to first 3 prices
+            # Clean up prices to ensure proper spacing
+            cleaned_prices = []
+            for price in prices[:3]:
+                # Add space after $ if missing
+                clean_price = re.sub(r'\$(\d)', r'$ \1', price)
+                # Add space before uppercase letters after numbers
+                clean_price = re.sub(r'(\d)([A-Z])', r'\1 \2', clean_price)
+                cleaned_prices.append(clean_price)
+            price_str = ', '.join(cleaned_prices)
         
         # Generate title and description
         title = self._generate_title(day_enums, start_time, end_time, is_all_day)
-        description = self._generate_description(source_content, times, days, prices)
+        description = self._generate_description(source_content[:200], times, days, prices)  # Limit description source
         
         # Only create deal if we have meaningful timing or day information
-        if (start_time and end_time and day_enums) or (is_all_day and day_enums) or day_enums:
+        if (start_time and end_time and day_enums) or (is_all_day and day_enums) or day_enums or (start_time and end_time):
             deal = Deal(
                 title=title,
                 description=description,
@@ -169,7 +228,7 @@ class TextProcessor:
                 is_all_day=is_all_day,
                 confidence_score=0.8,  # High confidence for custom pattern matches
                 scraped_at=datetime.now(),
-                source_url=None
+                source_url=self.restaurant.website if self.restaurant else None
             )
             if price_str:
                 deal.set_price_from_string(price_str)
@@ -199,7 +258,8 @@ class TextProcessor:
                     start_time=self._normalize_time(match.group(1)),
                     end_time=self._normalize_time(match.group(2)),
                     confidence_score=0.6,  # Lower confidence for generic patterns
-                    scraped_at=datetime.now()
+                    scraped_at=datetime.now(),
+                    source_url=self.restaurant.website if self.restaurant else None
                 )
                 deals.append(deal)
                 break  # Only take first match to avoid duplicates
@@ -220,11 +280,23 @@ class TextProcessor:
         
         days = []
         for day_str in day_strings:
-            day_lower = day_str.lower().strip()
+            day_lower = day_str.lower().strip().rstrip(':')  # Remove trailing colon
+            
+            # Handle range patterns like "Monday - Friday:"
+            if ' - ' in day_lower:
+                if 'monday - friday' in day_lower:
+                    return [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                           DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+                elif 'saturday - sunday' in day_lower:
+                    return [DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+                elif 'sunday - saturday' in day_lower:
+                    return list(DayOfWeek)  # All days
+            
+            # Handle individual days
             if day_lower in day_mapping:
                 days.append(day_mapping[day_lower])
         
-        # Handle special cases like "MON - FRI" meaning Monday through Friday
+        # Handle special cases like "MON - FRI" meaning Monday through Friday (legacy)
         if len(day_strings) == 2:
             first_day = day_strings[0].lower().strip()
             second_day = day_strings[1].lower().strip()

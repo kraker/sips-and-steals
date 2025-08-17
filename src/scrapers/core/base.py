@@ -190,7 +190,7 @@ class ConfigBasedScraper(BaseScraper):
         soup = BeautifulSoup(content, 'html.parser')
         
         # Use text processor to extract deals based on config
-        text_processor = TextProcessor(self.config)
+        text_processor = TextProcessor(self.config, restaurant=self.restaurant)
         deals = text_processor.extract_deals(soup)
         
         return deals

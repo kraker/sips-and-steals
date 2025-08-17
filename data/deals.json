@@ -1929,5 +1929,161 @@
       }
     ],
     "last_updated": "2025-08-16T14:43:50.089841"
+  },
+  "wild-taco": {
+    "deals": [
+      {
+        "title": "Happy Hour Special",
+        "description": "Available 3pm - 6pm | Pricing: 1, OffAll kid's meals are served with rice & black beans, fresh fruit, and a mini churro.One TacoFlour tortilla and asadero cheeseCrispy Chicken",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": "3:00 PM",
+        "end_time": "6:00 PM",
+        "prices": [],
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T00:09:23.768076",
+        "source_url": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-17T00:09:26.011901"
+  },
+  "ginger-pig": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:09:32.176115"
+  },
+  "vital-root": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:09:38.543588"
+  },
+  "el-five": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:09:43.804259"
+  },
+  "kumoya-denver": {
+    "deals": [
+      {
+        "title": "Daily Happy Hour",
+        "description": "Available 5:00pm - 6:00pm | Pricing: 30, Specialty Rolls30% Off of All Skewer Prices50% Off Tomadachi (Beer & Shot Combinations)$8 Margarita$10 Highball$12 Old Fashioned",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ],
+        "start_time": "5:00 PM",
+        "end_time": "6:00 PM",
+        "prices": [],
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T00:09:47.610304",
+        "source_url": "https://www.kumoyadenver.com/happy-hour",
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-17T00:09:50.026333"
+  },
+  "alma-fonda-fina": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:09:55.829567"
+  },
+  "the-bindery": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:02.953926"
+  },
+  "bamboo-sushi": {
+    "deals": [
+      {
+        "title": "Weekday Happy Hour",
+        "description": "Available 4:00pm - 6:00pm | Days: Monday - Friday, Saturday - Sunday",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "start_time": "4:00 PM",
+        "end_time": "6:00 PM",
+        "prices": [],
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T00:10:05.505363",
+        "source_url": "https://bamboosushi.com/location/lohi/",
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-17T00:10:07.932751"
+  },
+  "bar-dough": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:13.824824"
+  },
+  "root-down": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:19.807214"
+  },
+  "gaetanos-eccellente-cucina-cocktails": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:25.787797"
+  },
+  "linger": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:31.642337"
+  },
+  "kawa-ni": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:37.638603"
+  },
+  "ashkara": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:44.332843"
+  },
+  "senor-bear": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:10:50.135113"
+  },
+  "american-elm": {
+    "deals": [
+      {
+        "title": "Weekday Happy Hour",
+        "description": "Available 6pm - Open | Days: Monday - Friday | Pricing: 9, 9",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "start_time": "6:00 PM",
+        "end_time": "Open",
+        "prices": [],
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-17T00:10:53.334214",
+        "source_url": "https://www.amelm.com/happyhour",
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-17T00:10:55.529218"
+  },
+  "tacos-tequila-whiskey": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:11:02.024485"
+  },
+  "glo-noodle-house": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:11:07.496534"
+  },
+  "necio-mexican-kitchen": {
+    "deals": [],
+    "last_updated": "2025-08-17T00:11:14.194007"
   }
 }

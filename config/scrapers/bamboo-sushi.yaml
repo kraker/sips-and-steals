@@ -1,0 +1,32 @@
+restaurant_name: "Bamboo Sushi"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://bamboosushi.com/location/lohi/"
+
+scraping_patterns:
+  time_patterns:
+    - pattern: "Monday - Friday: (\\d{1,2}:\\d{2}[ap]m) - (\\d{1,2}:\\d{2}[ap]m)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+    - pattern: "Saturday - Sunday: (\\d{1,2}:\\d{2}[ap]m) - (\\d{1,2}:\\d{2}[ap]m)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+  
+  day_patterns:
+    - pattern: "(Monday - Friday):"
+      groups: [days]
+      confidence: 0.9
+    - pattern: "(Saturday - Sunday):"
+      groups: [days]
+      confidence: 0.9
+
+post_processing:
+  deal_consolidation:
+    - title: "Happy Hour Times"
+      description: "Weekdays: 4:00pm - 6:00pm, Weekends: 12:00pm - 4:00pm"
+      combine_similar: true
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

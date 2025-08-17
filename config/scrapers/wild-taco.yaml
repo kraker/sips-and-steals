@@ -1,0 +1,34 @@
+restaurant_name: "Wild Taco"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley"
+
+scraping_patterns:
+  time_patterns:
+    - pattern: "All Day Monday \\| Tuesday - Friday (\\d{1,2}[ap]m) - (\\d{1,2}[ap]m)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+  
+  day_patterns:
+    - pattern: "All Day Monday"
+      groups: [days]
+      confidence: 0.9
+    - pattern: "Tuesday - Friday"
+      groups: [days]
+      confidence: 0.9
+  
+  deal_patterns:
+    - pattern: "\\$(\\d+)(?:\\.\\d{2})? ([A-Z][^\\$\\n]{2,})"
+      groups: [price, item_name]
+      confidence: 0.8
+
+post_processing:
+  deal_consolidation:
+    - title: "Happy Hour Specials"
+      description: "Monday all day, Tuesday-Friday 3pm-6pm"
+      combine_similar: true
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

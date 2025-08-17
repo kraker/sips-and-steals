@@ -1,0 +1,52 @@
+restaurant_name: "American Elm"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://www.amelm.com/happyhour"
+
+scraping_patterns:
+  time_patterns:
+    - pattern: "Monday - Friday: Open - (\\d{1,2}[ap]m)"
+      groups: [end_time]
+      confidence: 0.9
+    - pattern: "Monday - Friday: (Open)"
+      groups: [start_time]  
+      confidence: 0.7
+  
+  day_patterns:
+    - pattern: "(Monday - Friday)"
+      groups: [days]
+      confidence: 0.9
+  
+  deal_patterns:
+    - pattern: "(\\d+)\\s+Old Fashioned"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "(\\d+)\\s+House Spritz"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "(\\d+)\\s+Paloma"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "(\\d+)\\s+Daiquiri"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "Draft\\s+Brooklyn Lager.*?(\\d+)"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "(\\d+)\\s+Beer & Shot"
+      groups: [price]
+      confidence: 0.8
+    - pattern: "(\\d+)\\s+By the Glass"
+      groups: [price]
+      confidence: 0.8
+
+post_processing:
+  deal_consolidation:
+    - title: "Happy Hour"
+      description: "Monday-Friday until 6pm"
+      combine_similar: true
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1
