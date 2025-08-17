@@ -1,52 +1,55 @@
-restaurant_name: "Senor Bear"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://www.senorbeardenver.com/menus/#happy-hour"
-  - "https://www.senorbeardenver.com/location/senor-bear/"
+# Senor Bear Scraping Configuration
+# Website: https://www.senorbeardenver.com/menus/#happy-hour
+# Happy Hour: Menu available with cocktails, bocaditos, but no specific timing published
 
-scraping_patterns:
-  deal_patterns:
-    # Pattern for "Happy Hour: 3:00 pm to 6:00 pm at the Bar/3:00 pm to 5:00 pm at Tables"
-    # This will capture both deals from the combined string
-    - pattern: "(?i)happy\\s+hour[:\\s]+(\\d{1,2}:\\d{2}\\s*(?:am|pm))\\s*(?:to|-)\\s*(\\d{1,2}:\\d{2}\\s*(?:am|pm))\\s*at\\s*(?:the\\s+)?bar/?(\\d{1,2}:\\d{2}\\s*(?:am|pm))\\s*(?:to|-)\\s*(\\d{1,2}:\\d{2}\\s*(?:am|pm))\\s*at\\s*tables"
-      groups: [bar_start_time, bar_end_time, tables_start_time, tables_end_time]
-      confidence: 0.95
-      deal_type: "happy_hour"
-      title: "Happy Hour (Bar & Tables)"
-      days_of_week: ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
-      creates_multiple_deals: true
-    
-    # Individual cocktails with prices
-    - pattern: "(Mojito|Margarita|Paloma|Cold Brew Tini|Frozen Cocktail|Pisco Sour)\\s*\\(\\$(\\d+)\\)"
-      groups: [item_name, price]
-      confidence: 0.9
-    
-    # Food items with prices
-    - pattern: "(Mini Queso|Guacamole|Chicharrones|Gordo Crunch|Seafood Tostada|Croquetas|Salchipapas|Crispy Wings)\\s*\\(\\$(\\d+)\\)"
-      groups: [item_name, price]
-      confidence: 0.9
-    
-    # Beer and wine prices
-    - pattern: "(Lager|Daily Red or White Wine)\\s*\\(\\$(\\d+)"
-      groups: [item_name, price]
-      confidence: 0.8
-    
-    # Tequila shots
-    - pattern: "(Blanco|Spicy Tamarindo)\\s*\\(\\$(\\d+)\\)"
-      groups: [item_name, price]
-      confidence: 0.8
+name: "Senor Bear"
+slug: "senor-bear"
 
-post_processing:
-  deal_consolidation:
-    - title: "Happy Hour Menu"
-      description: "Cocktails $8-$11, Bocaditos $4-$16, Beer $5, Wine $9"
-      combine_similar: true
+scraping_config:
+  enabled: false  # Disabled since no timing info available on website
+  fallback_to_static: true
   
-  price_formatting:
-    currency_symbol: "$"
-    format: "individual_prices"
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".specials-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Basic patterns (would need timing info to be useful)
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(?:(am|pm|AM|PM))?\s*[–-]\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(Daily|Every\s+Day|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'reservations'
+    - 'contact'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results: No timing available on website, relies on static data

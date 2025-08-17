@@ -1,41 +1,58 @@
-restaurant_name: "Kumoya - Denver"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://www.kumoyadenver.com/happy-hour"
+# Kumoya Denver Scraping Configuration  
+# Website: https://www.kumoyadenver.com/happy-hour
+# Happii Hour: Every day 5:00pm-6:00pm with specialty roll/skewer discounts
 
-scraping_patterns:
-  time_patterns:
-    - pattern: "Every Day (\\d{1,2}:\\d{2}[ap]m) to (\\d{1,2}:\\d{2}[ap]m)"
-      groups: [start_time, end_time]
-      confidence: 0.9
-  
-  day_patterns:
-    - pattern: "Every Day"
-      groups: [days]
-      confidence: 0.9
-  
-  deal_patterns:
-    - pattern: "(\\d+)% Off All ([^\\n]+)"
-      groups: [discount, item_type]
-      confidence: 0.9
-    - pattern: "(\\d+)% Off ([^\\n]+)"
-      groups: [discount, item_description]
-      confidence: 0.9
-    - pattern: "\\$(\\d+) ([^\\n]+)"
-      groups: [price, item_name]
-      confidence: 0.8
+name: "Kumoya - Denver"
+slug: "kumoya-denver"
 
-post_processing:
-  deal_consolidation:
-    - title: "Happy Hour Specials"
-      description: "Daily 5:00pm - 6:00pm"
-      combine_similar: true
+scraping_config:
+  enabled: true
+  fallback_to_static: true
   
-  price_formatting:
-    currency_symbol: "$"
-    format: "price_range"
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".happii-hour-content"
+    - ".specials-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happii-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(?:(am|pm|AM|PM))?\s*(?:to|[–-])\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(Every\s+Day|Daily|every\s+day|daily)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'group dining'
+    - 'reservations'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results based on website content:
+# Every Day: 5:00pm - 6:00pm
+# 30% Off specialty rolls, 30% off skewers, 50% off tomadachi, drink specials

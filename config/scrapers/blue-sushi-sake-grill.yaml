@@ -11,27 +11,21 @@ scraping_config:
     happy_hour_content: ".content-section, .hours-section, [class*='happy'], [class*='hours']"
   
   # Enhanced regex patterns for Blue Sushi happy hour detection
-  time_pattern_regex: "(?:Monday-Saturday|Mon-Sat)[:\\s]*(?:11am|11:00\\s*am)[\\s-]*(?:6:30pm|6:30\\s*pm)|Sunday[:\\s]*all\\s*day"
-  day_pattern_regex: "(?:Monday-Saturday|Mon-Sat|Sunday)"
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(am|pm|AM|PM)?\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: "(Monday-Saturday|Mon-Sat|Sunday|monday|tuesday|wednesday|thursday|friday|saturday|sunday|all day)"
   
-  # Exclude operating hours that aren't happy hour - must match the exact format being scraped
-  exclude_patterns:
-    - "Friday.*11:00 AM.*10:00 PM"
-    - "Friday.*11:00 AM.*10:30 PM"
-    - "Saturday.*11:00 AM.*10:30 PM"
-    - "Saturday.*12:00 PM.*10:30 PM"
-    - "Sunday.*12:00 PM.*10:30 PM"
-    - "Sunday.*12:00 PM.*9:00 PM"
-    - "Monday.*11:00 AM.*10:00 PM"
-    - "Tuesday.*11:00 AM.*10:00 PM"
-    - "Wednesday.*11:00 AM.*10:00 PM"
-    - "Thursday.*11:00 AM.*10:00 PM"
-    - "operating hours"
-    - "kitchen hours"
-    - "restaurant hours"
+  # Temporarily disable exclusions to see all available content
+  exclude_patterns: []
+    # - "Monday-Thursday: 11am-10pm"
+    # - "Friday: 11am-10:30pm"  
+    # - "Saturday: 12pm-10:30pm"  
+    # - "Sunday: 12pm-9pm"
   
-  # Target content containers for happy hour info
+  # Target content containers for happy hour info - try multiple approaches
   content_containers:
-    - ".location-details"
+    - ".happy-hour-section"
+    - ".specials-section" 
     - ".hours-section"
     - "[class*='happy']"
+    - ".location-details"
+    - "main"

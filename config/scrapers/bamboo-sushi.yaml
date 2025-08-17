@@ -1,32 +1,58 @@
-restaurant_name: "Bamboo Sushi"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://bamboosushi.com/location/lohi/"
+# Bamboo Sushi LoHi Scraping Configuration
+# Website: https://bamboosushi.com/location/lohi
+# Happy Hour: Monday-Friday 4-6pm, Saturday-Sunday 12-4pm
 
-scraping_patterns:
-  time_patterns:
-    - pattern: "Monday - Friday: (\\d{1,2}:\\d{2}[ap]m) - (\\d{1,2}:\\d{2}[ap]m)"
-      groups: [start_time, end_time]
-      confidence: 0.9
-    - pattern: "Saturday - Sunday: (\\d{1,2}:\\d{2}[ap]m) - (\\d{1,2}:\\d{2}[ap]m)"
-      groups: [start_time, end_time]
-      confidence: 0.9
+name: "Bamboo Sushi"
+slug: "bamboo-sushi"
+
+scraping_config:
+  enabled: true
+  fallback_to_static: true
   
-  day_patterns:
-    - pattern: "(Monday - Friday):"
-      groups: [days]
-      confidence: 0.9
-    - pattern: "(Saturday - Sunday):"
-      groups: [days]
-      confidence: 0.9
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".location-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data - focus only on happy hour times (4-6pm and 12-4pm)
+  time_pattern_regex: '(4|12)\s*(?::\d{2})?\s*(?:(pm|PM))?\s*[–-]\s*(6|4)\s*(?::\d{2})?\s*(pm|PM)'
+  day_pattern_regex: '(Monday\s*-\s*Friday|Saturday\s*-\s*Sunday)(?=.*[Hh]appy)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'Make a reservation'
+    - 'Order Pickup'
+    - 'delivery'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-post_processing:
-  deal_consolidation:
-    - title: "Happy Hour Times"
-      description: "Weekdays: 4:00pm - 6:00pm, Weekends: 12:00pm - 4:00pm"
-      combine_similar: true
-
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results based on website content:
+# Monday-Friday: 4:00pm - 6:00pm
+# Saturday-Sunday: 12:00pm - 4:00pm

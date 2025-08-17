@@ -191,8 +191,8 @@ class ConfigBasedScraper(BaseScraper):
     
     def scrape_deals(self) -> List[Deal]:
         """Scrape using configuration-based patterns"""
-        from ..processors.text_processor import TextProcessor
         from bs4 import BeautifulSoup
+        import re
         
         all_deals = []
         
@@ -207,9 +207,8 @@ class ConfigBasedScraper(BaseScraper):
                     content = self.fetch_page(url)
                     soup = BeautifulSoup(content, 'html.parser')
                     
-                    # Use text processor to extract deals from this page
-                    text_processor = TextProcessor(self.config, restaurant=self.restaurant)
-                    page_deals = text_processor.extract_deals(soup)
+                    # Use direct config-based pattern matching
+                    page_deals = self._extract_deals_from_soup(soup)
                     
                     if page_deals:
                         logger.info(f"Found {len(page_deals)} deals from {url}")
@@ -223,11 +222,178 @@ class ConfigBasedScraper(BaseScraper):
             content = self.fetch_page()
             soup = BeautifulSoup(content, 'html.parser')
             
-            # Use text processor to extract deals based on config
-            text_processor = TextProcessor(self.config, restaurant=self.restaurant)
-            all_deals = text_processor.extract_deals(soup)
+            # Use direct config-based pattern matching
+            all_deals = self._extract_deals_from_soup(soup)
         
         return all_deals
+    
+    def _extract_deals_from_soup(self, soup) -> List[Deal]:
+        """Extract deals from BeautifulSoup using YAML config patterns"""
+        from bs4 import BeautifulSoup
+        from models import DayOfWeek, Deal, DealType
+        import re
+        deals = []
+        
+        # Get scraping config from YAML
+        scraping_config = self.config.get('scraping_config', {})
+        
+        # Focus on specific content containers if specified
+        target_soup = soup
+        content_containers = scraping_config.get('content_containers', [])
+        if content_containers:
+            for container_selector in content_containers:
+                container = soup.select_one(container_selector)
+                if container:
+                    target_soup = container
+                    logger.debug(f"Using content container: {container_selector}")
+                    break
+        
+        # Get text content for pattern matching
+        text = target_soup.get_text(separator=' ', strip=True)
+        logger.debug(f"Processing text: {text[:200]}...")
+        
+        # Apply exclude patterns if specified
+        exclude_patterns = scraping_config.get('exclude_patterns', [])
+        for exclude_pattern in exclude_patterns:
+            if exclude_pattern.lower() in text.lower():
+                logger.debug(f"Excluding text matching: {exclude_pattern}")
+                # Use regex to handle patterns with wildcards
+                text = re.sub(exclude_pattern, '', text, flags=re.IGNORECASE)
+            else:
+                logger.debug(f"Exclude pattern '{exclude_pattern}' not found in text")
+        
+        logger.debug(f"Text after exclusions: {text[:200]}...")
+        
+        # Extract times and days using custom patterns
+        times = []
+        days = []
+        
+        # Extract time ranges (multiple ranges possible)
+        time_ranges = []
+        time_pattern = scraping_config.get('time_pattern_regex')
+        if time_pattern:
+            time_matches = list(re.finditer(time_pattern, text, re.IGNORECASE))
+            for match in time_matches:
+                time_ranges.append(match.groups())
+            logger.debug(f"Time ranges found: {time_ranges}")
+        
+        day_pattern = scraping_config.get('day_pattern_regex')
+        if day_pattern:
+            day_matches = re.finditer(day_pattern, text, re.IGNORECASE)
+            for match in day_matches:
+                days.extend([g for g in match.groups() if g])
+            logger.debug(f"Day matches found: {days}")
+        
+        # Create deals for each time range found
+        if time_ranges or days:
+            # If we have time ranges, create a deal for each one
+            if time_ranges:
+                for time_range in time_ranges:
+                    hour1, ampm1, hour2, ampm2 = time_range
+                    
+                    # Handle shared AM/PM (e.g., "3-6PM" = "3PM-6PM") and missing AM/PM (assume PM for happy hour)
+                    if ampm1 is None and ampm2 is None:
+                        # No AM/PM specified, assume PM for happy hour times
+                        start_time = f"{hour1} PM"
+                        end_time = f"{hour2} PM"
+                    elif ampm1 is None and ampm2 is not None:
+                        start_time = f"{hour1} {ampm2.upper()}"
+                        end_time = f"{hour2} {ampm2.upper()}"
+                    elif ampm1 is not None and ampm2 is not None:
+                        start_time = f"{hour1} {ampm1.upper()}"
+                        end_time = f"{hour2} {ampm2.upper()}"
+                    else:
+                        start_time = f"{hour1} {ampm2.upper() if ampm2 else 'PM'}"
+                        end_time = f"{hour2} {ampm2.upper() if ampm2 else 'PM'}"
+                    
+                    deal = self._create_deal_from_data(start_time, end_time, days)
+                    if deal:
+                        deals.append(deal)
+            
+            # If we have days but no time ranges, create a deal with day info only  
+            elif days and not time_ranges:
+                deal = self._create_deal_from_data(None, None, days)
+                if deal:
+                    deals.append(deal)
+        
+        return deals
+    
+    def _create_deal_from_data(self, start_time, end_time, days):
+        """Create a Deal object from extracted time and day data"""
+        from models import DayOfWeek, Deal, DealType
+        
+        # Build description
+        description_parts = []
+        if start_time and end_time:
+            description_parts.append(f"Time: {start_time} - {end_time}")
+        if days:
+            description_parts.append(f"Days: {', '.join(days)}")
+        
+        # Convert day strings to DayOfWeek enums
+        day_enums = []
+        is_all_day = False
+        
+        if days:
+            # Special case: Check for "all day" patterns
+            days_text = ' '.join(days).lower()
+            if 'every day' in days_text or 'daily' in days_text:
+                day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                           DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+            elif 'all day' in days_text:
+                is_all_day = True
+                # If it's "all day" for specific days, still parse those days
+                if 'sunday' in days_text and not ('monday' in days_text or 'saturday' in days_text):
+                    day_enums = [DayOfWeek.SUNDAY]
+                else:
+                    day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                               DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+            elif 'sunday - thursday' in days_text or 'sunday-thursday' in days_text:
+                day_enums = [DayOfWeek.SUNDAY, DayOfWeek.MONDAY, DayOfWeek.TUESDAY, 
+                           DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY]
+            elif 'monday - friday' in days_text or 'monday-friday' in days_text:
+                day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                           DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+            elif 'tuesday - friday' in days_text or 'tuesday-friday' in days_text:
+                day_enums = [DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, DayOfWeek.THURSDAY, DayOfWeek.FRIDAY]
+            elif 'saturday - sunday' in days_text or 'saturday-sunday' in days_text:
+                day_enums = [DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
+            elif 'friday - saturday' in days_text or 'friday-saturday' in days_text:
+                day_enums = [DayOfWeek.FRIDAY, DayOfWeek.SATURDAY]
+            elif 'monday-saturday' in days_text.replace('-', '').replace(' ', ''):
+                day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
+                           DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY]
+            else:
+                # Parse individual days
+                day_mapping = {
+                    'monday': DayOfWeek.MONDAY, 'mon': DayOfWeek.MONDAY,
+                    'tuesday': DayOfWeek.TUESDAY, 'tue': DayOfWeek.TUESDAY,
+                    'wednesday': DayOfWeek.WEDNESDAY, 'wed': DayOfWeek.WEDNESDAY,
+                    'thursday': DayOfWeek.THURSDAY, 'thu': DayOfWeek.THURSDAY,
+                    'friday': DayOfWeek.FRIDAY, 'fri': DayOfWeek.FRIDAY,
+                    'saturday': DayOfWeek.SATURDAY, 'sat': DayOfWeek.SATURDAY,
+                    'sunday': DayOfWeek.SUNDAY, 'sun': DayOfWeek.SUNDAY
+                }
+                
+                for day in days:
+                    day_lower = day.lower().strip()
+                    if day_lower in day_mapping:
+                        day_enums.append(day_mapping[day_lower])
+        
+        # Create the deal
+        deal = Deal(
+            title="Happy Hour",
+            description=" | ".join(description_parts) if description_parts else "Happy Hour",
+            deal_type=DealType.HAPPY_HOUR,
+            days_of_week=day_enums,
+            start_time=start_time,
+            end_time=end_time,
+            is_all_day=is_all_day,
+            confidence_score=0.8,  # Higher confidence for custom patterns
+            source_url=None
+        )
+        
+        logger.info(f"Created deal: {deal.title} | {start_time}-{end_time} | Days: {[d.value for d in day_enums]} | All day: {is_all_day}")
+        return deal
     
     def scrape_restaurant_info(self) -> Dict[str, Any]:
         """Scrape operating hours, contact info, address, and other restaurant details"""

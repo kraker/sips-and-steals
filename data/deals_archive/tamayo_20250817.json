@@ -1,29 +1,27 @@
 {
-  "restaurant_slug": "wild-taco",
-  "archived_at": "2025-08-17T15:40:20.752913",
+  "restaurant_slug": "tamayo",
+  "archived_at": "2025-08-17T15:38:50.851016",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 3 PM - 6 PM | Days: All Day Monday, Tuesday - Friday",
+      "description": "Time: 3 PM - 5 PM | Days: Monday - Friday",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
         "tuesday",
         "wednesday",
         "thursday",
-        "friday",
-        "saturday",
-        "sunday"
+        "friday"
       ],
       "start_time": "3 PM",
-      "end_time": "6 PM",
+      "end_time": "5 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
-      "is_all_day": true,
+      "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:18.279733",
+      "scraped_at": "2025-08-17T15:38:48.840501",
       "source_url": null,
       "confidence_score": 0.8
     }

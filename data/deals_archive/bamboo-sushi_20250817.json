@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "bamboo-sushi",
-  "archived_at": "2025-08-17T00:43:09.820797",
+  "archived_at": "2025-08-17T15:41:02.435617",
   "deals": [
     {
-      "title": "Weekday Happy Hour",
-      "description": "Available 4:00pm - 6:00pm | Days: Monday - Friday, Saturday - Sunday",
+      "title": "Happy Hour",
+      "description": "Time: 4 PM - 6 PM | Days: Monday - Friday, Saturday - Sunday",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
@@ -13,13 +13,39 @@
         "thursday",
         "friday"
       ],
-      "start_time": "4:00 PM",
-      "end_time": "6:00 PM",
+      "start_time": "4 PM",
+      "end_time": "6 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T00:43:07.744461",
-      "source_url": "https://bamboosushi.com/location/lohi/",
+      "scraped_at": "2025-08-17T15:41:00.033699",
+      "source_url": null,
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Happy Hour",
+      "description": "Time: 12 PM - 4 PM | Days: Monday - Friday, Saturday - Sunday",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday"
+      ],
+      "start_time": "12 PM",
+      "end_time": "4 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [],
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T15:41:00.033811",
+      "source_url": null,
       "confidence_score": 0.8
     }
   ]

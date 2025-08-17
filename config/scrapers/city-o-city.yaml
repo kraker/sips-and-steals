@@ -24,9 +24,9 @@ scraping_config:
     deal_description: "h1, h2, h3, h4, p, li, .description, .menu-item"
     pricing: ".price, .cost, span"
   
-  # Regex patterns for extracting structured data
-  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
-  day_pattern_regex: '(every\s+day|daily|monday|tuesday|wednesday|thursday|friday|saturday|sunday)'
+  # Regex patterns for extracting structured data - handle "3-6PM" format
+  time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(?:(am|pm|AM|PM))?\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(every\s+day|daily|monday|tuesday|wednesday|thursday|friday|saturday|sunday|mon|tue|wed|thu|fri|sat|sun|weekdays|weekend)'
   price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
   
   # Patterns to exclude from parsing to avoid noise

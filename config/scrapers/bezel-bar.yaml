@@ -1,54 +1,60 @@
-restaurant_name: "Bezel Bar"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://www.bezeldenver.com/our-menus"
+# Bezel Bar Scraping Configuration
+# Website: https://www.bezeldenver.com/our-menus
+# Happy Hour: Tuesday-Friday 4-6pm with $7 drafts, wines, and food specials
 
-scraping_patterns:
-  deal_patterns:
-    # Happy hour timing
-    - pattern: "(?i)every\\s+tuesday\\s*-\\s*friday[,\\s]+(\\d{1,2})\\s*-\\s*(\\d{1,2})\\s*pm"
-      groups: [start_time, end_time]
-      confidence: 0.9
-      deal_type: "happy_hour"
-      title: "Happy Hour"
-      days_of_week: ["tuesday", "wednesday", "thursday", "friday"]
-      
-    # Pricing patterns
-    - pattern: "draft\\s+beer[:\\s]*\\$(\\d+)"
-      groups: [price]
-      confidence: 0.9
-      deal_type: "happy_hour"
-      title: "Draft Beer Special"
-      
-    - pattern: "selected\\s+wines.*\\$(\\d+)\\s*-\\s*\\$(\\d+)"
-      groups: [min_price, max_price]
-      confidence: 0.9
-      deal_type: "happy_hour"
-      title: "Wine Specials"
-      
-    # Food specials with pricing
-    - pattern: "([A-Z][a-z\\s]+):\\s*\\$(\\d+)\\s*\\(reduced\\s+from\\s*\\$(\\d+)\\)"
-      groups: [item_name, sale_price, regular_price]
-      confidence: 0.9
-      deal_type: "happy_hour"
-      
-    # Specific food items
-    - pattern: "(?i)(bezel\\s+board|bone\\s+marrow|french\\s+onion\\s+dip|blistered\\s+shishito|wagyu\\s+sliders)[:\\s]*\\$(\\d+)"
-      groups: [item_name, price]
-      confidence: 0.8
-      deal_type: "happy_hour"
+name: "Bezel Bar"
+slug: "bezel-bar"
 
-post_processing:
-  deal_consolidation:
-    - title: "Bezel Happy Hour"
-      description: "Tuesday-Friday 4-6pm with $7 drafts, selected wines, and discounted bites"
-      combine_similar: true
+scraping_config:
+  enabled: true
+  fallback_to_static: true
   
-  price_formatting:
-    currency_symbol: "$"
-    format: "individual_prices"
+  # Focus specifically on happy hour content areas only
+  content_containers:
+    - ".happy-hour-content"
+    - ".happy-hour"
+    - "[class*='happy']"
+    - ".specials"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description, .menu-item"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data - focus on happy hour timing only (4-6pm range)
+  time_pattern_regex: '(4)\s*(?::\d{2})?\s*(?:(am|pm|AM|PM))?\s*[–-]\s*(6)\s*(?::\d{2})?\s*(pm|am|PM|AM)'
+  day_pattern_regex: '(Tuesday\s*-\s*Friday|Tuesday\s+through\s+Friday)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise - exclude operating hours
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'reservation'
+    - 'private dining'
+    - 'engagement'
+    - 'contact us'
+    - 'Sunday.*4 PM.*11 PM'
+    - 'Tuesday.*4 PM.*11 PM'
+    - 'Wednesday.*4 PM.*11 PM'
+    - 'Thursday.*4 PM.*11 PM'
+    - 'Friday.*4 PM.*12 AM'
+    - 'Saturday.*5 PM.*12 AM'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results based on website content:
+# Tuesday-Friday: 4-6pm
+# $7 draft beer, $10 wines, various food specials

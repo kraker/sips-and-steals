@@ -1,29 +1,57 @@
-restaurant_name: "Vital Root"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://www.ediblebeats.com/vital-root"
+# Vital Root Scraping Configuration
+# Website: https://www.ediblebeats.com/vital-root
+# Happy Hour: Monday-Friday 3PM-5PM, Kids 12 & under eat free
 
-scraping_patterns:
-  time_patterns:
-    - pattern: "Monday – Friday"
-      days: ["monday", "tuesday", "wednesday", "thursday", "friday"]
-      confidence: 0.8
-    - pattern: "(\\d{1,2}PM) – (\\d{1,2}PM)"
-      groups: [start_time, end_time]
-      confidence: 0.8
+name: "Vital Root"
+slug: "vital-root"
+
+scraping_config:
+  enabled: false  # Disabled: ediblebeats.com robots.txt disallows scraping
+  fallback_to_static: true
   
-  deal_patterns:
-    - pattern: "kids 12 & under eat free"
-      description: "Kids 12 & under eat free (dine-in only)"
-      confidence: 0.9
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".specials-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data - focus on 3PM-5PM
+  time_pattern_regex: '(3)\s*(?:(pm|PM))?\s*[–-]\s*(5)\s*(?:(pm|PM))'
+  day_pattern_regex: '(Monday\s*[–-]\s*Friday|Monday\s*-\s*Friday)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'reservations'
+    - 'contact'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-post_processing:
-  deal_consolidation:
-    - title: "Happy Hour"
-      description: "Monday - Friday 3PM - 5PM, Kids 12 & under eat free"
-      combine_similar: true
-
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results based on website content:
+# Monday - Friday: 3PM - 5PM
+# Kids 12 & under eat free during happy hour

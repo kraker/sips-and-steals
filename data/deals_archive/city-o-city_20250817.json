@@ -1,10 +1,10 @@
 {
-  "restaurant_slug": "kumoya-denver",
-  "archived_at": "2025-08-17T15:40:44.271448",
+  "restaurant_slug": "city-o-city",
+  "archived_at": "2025-08-17T15:40:39.038160",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Time: 5 PM - 6 PM | Days: daily, daily, Every Day",
+      "description": "Time: 3 PM - 6 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
@@ -15,7 +15,7 @@
         "saturday",
         "sunday"
       ],
-      "start_time": "5 PM",
+      "start_time": "3 PM",
       "end_time": "6 PM",
       "start_time_24h": null,
       "end_time_24h": null,
@@ -23,13 +23,13 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:42.004073",
+      "scraped_at": "2025-08-17T15:40:36.842010",
       "source_url": null,
       "confidence_score": 0.8
     },
     {
       "title": "Happy Hour",
-      "description": "Time: 10 PM - 12 AM | Days: daily, daily, Every Day",
+      "description": "Time: 9 PM - 10 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
@@ -40,15 +40,15 @@
         "saturday",
         "sunday"
       ],
-      "start_time": "10 PM",
-      "end_time": "12 AM",
+      "start_time": "9 PM",
+      "end_time": "10 PM",
       "start_time_24h": null,
       "end_time_24h": null,
       "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T15:40:42.004189",
+      "scraped_at": "2025-08-17T15:40:36.842111",
       "source_url": null,
       "confidence_score": 0.8
     }

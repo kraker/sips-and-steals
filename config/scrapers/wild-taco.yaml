@@ -1,34 +1,57 @@
-restaurant_name: "Wild Taco"
-scraper_type: "config_based"
-enabled: true
-urls:
-  - "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley"
+# Wild Taco Scraping Configuration
+# Website: https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley
+# Happy Hour: All Day Monday | Tuesday-Friday 3pm-6pm
 
-scraping_patterns:
-  time_patterns:
-    - pattern: "All Day Monday \\| Tuesday - Friday (\\d{1,2}[ap]m) - (\\d{1,2}[ap]m)"
-      groups: [start_time, end_time]
-      confidence: 0.9
+name: "Wild Taco"
+slug: "wild-taco"
+
+scraping_config:
+  enabled: true
+  fallback_to_static: true
   
-  day_patterns:
-    - pattern: "All Day Monday"
-      groups: [days]
-      confidence: 0.9
-    - pattern: "Tuesday - Friday"
-      groups: [days]
-      confidence: 0.9
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".specials-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
   
-  deal_patterns:
-    - pattern: "\\$(\\d+)(?:\\.\\d{2})? ([A-Z][^\\$\\n]{2,})"
-      groups: [price, item_name]
-      confidence: 0.8
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data - focus on 3pm-6pm and all day Monday
+  time_pattern_regex: '(3)\s*(?:(pm|PM))?\s*[–-]\s*(6)\s*(?:(pm|PM))'
+  day_pattern_regex: '(All\s+Day\s+Monday|Tuesday\s*-\s*Friday|Tuesday\s*[–-]\s*Friday)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'reservations'
+    - 'contact'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
 
-post_processing:
-  deal_consolidation:
-    - title: "Happy Hour Specials"
-      description: "Monday all day, Tuesday-Friday 3pm-6pm"
-      combine_similar: true
-
-confidence_threshold: 0.7
-retry_attempts: 3
-delay_between_requests: 1
+# Expected results based on website content:
+# All Day Monday, Tuesday-Friday 3pm-6pm
+# Bulgogi Nachos $10, Chicharrones $4, Margaritas $7

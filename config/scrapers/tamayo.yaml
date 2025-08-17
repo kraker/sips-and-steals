@@ -23,7 +23,7 @@ scraping_config:
   
   # Regex patterns for extracting structured data
   time_pattern_regex: '(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)\s*-\s*(\d{1,2})\s*(?::\d{2})?\s*(pm|am|PM|AM)'
-  day_pattern_regex: '(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
+  day_pattern_regex: '(Monday\s*-\s*Friday|Tuesday\s*-\s*Saturday|Sunday\s*-\s*Thursday|Friday\s*-\s*Saturday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)'
   
   # Patterns to exclude from parsing
   exclude_patterns:

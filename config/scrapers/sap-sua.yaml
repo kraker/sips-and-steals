@@ -1,29 +1,57 @@
-restaurant_slug: sap-sua
-scraping_urls:
-  - https://www.sapsua.com/hours-and-location/
-  - https://www.sapsua.com/contact/
-scraping_patterns:
-  hours_patterns:
-    # Sap Sua format: "sunday - 4:30pm - 9pm"
-    - pattern: "sunday\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
-      day: sunday
-      groups: [open_time, close_time]
-    - pattern: "monday\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
-      day: monday
-      groups: [open_time, close_time]
-    - pattern: "tuesday\\s*-\\s*closed"
-      day: tuesday
-      closed: true
-    - pattern: "wednesday\\s*-\\s*thursday\\s+(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
-      days: [wednesday, thursday]
-      groups: [open_time, close_time]
-    - pattern: "friday\\s*-\\s*saturday\\s+(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
-      days: [friday, saturday]
-      groups: [open_time, close_time]
-  contact_patterns:
-    - pattern: "(\\d{3})[-.\\s](\\d{3})[-.\\s](\\d{4})"
-      type: phone
-      groups: [area, exchange, number]
-  address_patterns:
-    - pattern: "(\\d+\\s+[A-Za-z][A-Za-z\\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Drive|Dr|Road|Rd|Lane|Ln)\\b[^.]*)"
-      confidence: 0.8
+# Sap Sua Scraping Configuration
+# Website: https://www.sapsua.com
+# Happy Hour: Daily 4:30pm-6:00pm with drink and snack specials
+
+name: "Sap Sua"
+slug: "sap-sua"
+
+scraping_config:
+  enabled: true
+  fallback_to_static: true
+  
+  # Focus on main content areas
+  content_containers:
+    - ".happy-hour-content"
+    - ".specials-content"
+    - ".main-content"
+    - "main"
+    - ".page-content" 
+    - "article"
+    - ".content"
+  
+  # Custom CSS selectors for specific content
+  custom_selectors:
+    happy_hour_times: ".hours, .time, .schedule, .happy-hour"
+    deal_description: "h1, h2, h3, h4, p, li, .description"
+    pricing: ".price, .cost, span"
+  
+  # Regex patterns for extracting structured data - focus on happy hour 4:30-6:00  
+  time_pattern_regex: '(4)\s*:\s*30\s*(?:(pm|PM))?\s*[–-]\s*(6)\s*:\s*00\s*(pm|PM)'
+  day_pattern_regex: '(Daily|Every\s+Day|daily|every\s+day)'
+  price_pattern_regex: '\$(\d+(?:\.\d{2})?)'
+  
+  # Patterns to exclude from parsing to avoid noise
+  exclude_patterns:
+    - 'copyright'
+    - 'privacy policy'
+    - 'terms of service'
+    - 'footer'
+    - 'navigation'
+    - 'header'
+    - 'social media'
+    - 'follow us'
+    - 'newsletter'
+    - 'careers'
+    - 'gift cards'
+    - 'reservations'
+    - 'contact'
+    
+  # Content enhancement settings
+  clean_whitespace: true
+  remove_empty_lines: true
+  min_description_length: 10
+  max_description_length: 200
+
+# Expected results based on website content:
+# Daily: 4:30pm - 6:00pm
+# Bia Saigon $5, Pale Ale $8, Highball $9, snack specials
