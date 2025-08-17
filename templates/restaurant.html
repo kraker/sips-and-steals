@@ -18,7 +18,7 @@
     <header class="restaurant-header">
         <h1>{{ restaurant.name }}</h1>
         <div class="meta">
-            {{ restaurant.area }}{% if restaurant.sub_location %} • {{ restaurant.sub_location }}{% endif %}
+            {{ restaurant.district }}{% if restaurant.neighborhood %} • {{ restaurant.neighborhood }}{% endif %}
             {% if restaurant.cuisine %} • {{ restaurant.cuisine }}{% endif %}
         </div>
     </header>
@@ -64,7 +64,7 @@
                     {% else %}
                         {% if offering.description %}
                             • {{ offering.description }}
-                            {% if offering.price %} - {{ offering.price }}{% endif %}
+                            {% if offering.prices %} - {{ offering.prices | join(', ') }}{% endif %}
                         {% endif %}
                     {% endif %}
                 </div>
@@ -138,16 +138,15 @@
                 </div>
                 {% endif %}
                 
-                {% if restaurant.sub_location %}
+                
                 <div class="info-item">
                     <span class="info-label">Neighborhood:</span>
-                    <span class="info-value">{{ restaurant.sub_location }}</span>
+                    <span class="info-value">{{ restaurant.neighborhood }}</span>
                 </div>
-                {% endif %}
                 
                 <div class="info-item">
                     <span class="info-label">District:</span>
-                    <span class="info-value">{{ restaurant.area }}</span>
+                    <span class="info-value">{{ restaurant.district }}</span>
                 </div>
                 
                 {% if restaurant.website %}
@@ -202,8 +201,8 @@
     
     <!-- Similar Restaurants -->
     <section>
-        <h3>More Great Options in {{ restaurant.area }}</h3>
-        <p><a href="../index.html#{{ restaurant.area | slugify }}">Explore other restaurants in {{ restaurant.area }} →</a></p>
+        <h3>More Great Options in {{ restaurant.district }}</h3>
+        <p><a href="../index.html#{{ restaurant.district | slugify }}">Explore other restaurants in {{ restaurant.district }} →</a></p>
     </section>
     
     {% if restaurant.last_updated %}

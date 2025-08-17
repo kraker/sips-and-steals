@@ -53,7 +53,7 @@ class Deal:
     days_of_week: List[DayOfWeek] = field(default_factory=list)
     start_time: Optional[str] = None  # Format: "3:00 PM" or "All Day"
     end_time: Optional[str] = None    # Format: "6:00 PM" or "Close"
-    price: Optional[str] = None       # Format: "$5" or "$2-4"
+    prices: List[str] = field(default_factory=list)  # Format: ["$5 Beers", "$8 Wines", "$10 Cocktails"]
     is_all_day: bool = False
     special_notes: List[str] = field(default_factory=list)
     
@@ -71,7 +71,7 @@ class Deal:
             'days_of_week': [day.value for day in self.days_of_week],
             'start_time': self.start_time,
             'end_time': self.end_time,
-            'price': self.price,
+            'prices': self.prices,
             'is_all_day': self.is_all_day,
             'special_notes': self.special_notes,
             'scraped_at': self.scraped_at.isoformat(),
@@ -81,7 +81,32 @@ class Deal:
     
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Deal':
-        """Create Deal from dictionary"""
+        """Create Deal from dictionary, handling both legacy and new formats"""
+        # Handle legacy price field by converting to new prices format
+        prices = data.get('prices', [])
+        legacy_price = data.get('price')
+        
+        # If no prices list but legacy price exists, convert it
+        if not prices and legacy_price:
+            # Use the existing parsing logic to convert legacy price to prices list
+            deal = cls(
+                title=data['title'],
+                description=data.get('description'),
+                deal_type=DealType(data.get('deal_type', 'happy_hour')),
+                days_of_week=[DayOfWeek(day) for day in data.get('days_of_week', [])],
+                start_time=data.get('start_time'),
+                end_time=data.get('end_time'),
+                prices=[],  # Will be set below
+                is_all_day=data.get('is_all_day', False),
+                special_notes=data.get('special_notes', []),
+                scraped_at=datetime.fromisoformat(data.get('scraped_at', datetime.now().isoformat())),
+                source_url=data.get('source_url'),
+                confidence_score=data.get('confidence_score', 1.0)
+            )
+            # Convert legacy price to new format
+            deal.set_price_from_string(legacy_price)
+            return deal
+        
         return cls(
             title=data['title'],
             description=data.get('description'),
@@ -89,13 +114,46 @@ class Deal:
             days_of_week=[DayOfWeek(day) for day in data.get('days_of_week', [])],
             start_time=data.get('start_time'),
             end_time=data.get('end_time'),
-            price=data.get('price'),
+            prices=prices,
             is_all_day=data.get('is_all_day', False),
             special_notes=data.get('special_notes', []),
             scraped_at=datetime.fromisoformat(data.get('scraped_at', datetime.now().isoformat())),
             source_url=data.get('source_url'),
             confidence_score=data.get('confidence_score', 1.0)
         )
+    
+    def parse_price_string(self, price_string: str) -> List[str]:
+        """Parse a price string into structured price list
+        
+        Examples:
+        "$5 Beers, $8 Wines, $10 Cocktails" -> ["$5 Beers", "$8 Wines", "$10 Cocktails"]
+        "$5 Beers, $8 South American Wines and $10 Brazilian-Inspired Cocktails" -> ["$5 Beers", "$8 South American Wines", "$10 Brazilian-Inspired Cocktails"]
+        """
+        if not price_string:
+            return []
+        
+        import re
+        
+        # Pattern to match price items: $amount + description
+        # Handles various separators: comma, "and", "&"
+        price_pattern = r'\$\d+(?:\.\d{2})?\s*[^,$&]+?(?=\s*(?:,|and|&|\$|$))'
+        
+        matches = re.findall(price_pattern, price_string, re.IGNORECASE)
+        
+        # Clean up each match
+        cleaned_prices = []
+        for match in matches:
+            # Remove trailing punctuation and extra whitespace
+            cleaned = re.sub(r'[,&]+$', '', match.strip())
+            cleaned = re.sub(r'\s+', ' ', cleaned)  # Normalize whitespace
+            if cleaned:
+                cleaned_prices.append(cleaned)
+        
+        return cleaned_prices
+    
+    def set_price_from_string(self, price_string: str):
+        """Set structured prices field from price string"""
+        self.prices = self.parse_price_string(price_string)
 
 
 @dataclass
@@ -266,7 +324,7 @@ class Restaurant:
                         days_of_week=[DayOfWeek(day) for day in deal_data.get('days_of_week', [])],
                         start_time=deal_data.get('start_time'),
                         end_time=deal_data.get('end_time'),
-                        price=deal_data.get('price'),
+                        prices=deal_data.get('prices', []),
                         is_all_day=deal_data.get('is_all_day', False),
                         special_notes=deal_data.get('special_notes', []),
                         confidence_score=deal_data.get('confidence_score', 0.3),
@@ -364,8 +422,9 @@ class DealValidator:
             issues.append(f"Invalid end time format: {deal.end_time}")
         
         # Price validation
-        if deal.price and not cls._is_valid_price(deal.price):
-            issues.append(f"Invalid price format: {deal.price}")
+        for price in deal.prices:
+            if price and not cls._is_valid_price(price):
+                issues.append(f"Invalid price format: {price}")
         
         # Day validation
         if not deal.days_of_week and not deal.is_all_day:
@@ -401,7 +460,7 @@ if __name__ == "__main__":
         days_of_week=[DayOfWeek.MONDAY, DayOfWeek.TUESDAY],
         start_time="3:00 PM",
         end_time="6:00 PM",
-        price="$5"
+        prices=["$5 Cocktails"]
     )
     
     print("Deal validation:", DealValidator.validate_deal(deal))

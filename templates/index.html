@@ -55,7 +55,7 @@
   </section>
   
   <!-- Restaurant Listings by District -->
-  {% for district_name, restaurants in areas.items() %}
+  {% for district_name, restaurants in restaurants | group_by_district %}
   <section class="district-section" data-district="{{ district_name | slugify }}">
     <h2 class="district-title">{{ district_name }}</h2>
     
@@ -64,7 +64,7 @@
       <article class="restaurant-card clickable" 
                data-cuisine="{{ restaurant.cuisine | slugify if restaurant.cuisine else '' }}"
                data-district="{{ district_name | slugify }}"
-               data-neighborhood="{{ restaurant.sub_location | slugify if restaurant.sub_location else '' }}"
+               data-neighborhood="{{ restaurant.neighborhood | slugify if restaurant.neighborhood else '' }}"
                onclick="window.location.href='restaurants/{{ restaurant.slug }}.html'"
                data-times="{{ restaurant.happy_hour_times | join(' ') | lower }}">
         
@@ -73,7 +73,7 @@
         </h3>
         
         <address class="location">
-          {% if restaurant.sub_location %}{{ restaurant.sub_location }}{% endif %}
+          {% if restaurant.neighborhood %}{{ restaurant.neighborhood }}{% endif %}
           {% if restaurant.address %}<br><a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank" onclick="event.stopPropagation();">📍 {{ restaurant.address }}</a>{% endif %}
         </address>
         
@@ -106,6 +106,9 @@
             {% endif %}
             {% if deal.description and deal.description | length > 0 and deal.description | length < 100 %}
             <div class="deal-description">{{ deal.description }}</div>
+            {% endif %}
+            {% if deal.price %}
+            <div class="deal-price">{{ deal.price }}</div>
             {% endif %}
             <div class="deal-timing">{{ deal | format_deal_time }}</div>
           </div>

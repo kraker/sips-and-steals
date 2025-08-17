@@ -178,9 +178,17 @@ def group_deals_by_schedule(deals):
         cleaned_description = clean_description(description).lower()
         
         # Check if this deal has specific offerings (discounts, prices, etc.)
-        has_specific_offerings = any(offer in (title + ' ' + cleaned_description) for offer in [
-            '$', '%', 'off', 'price', 'maki', 'sake', 'drink', 'food', 'appetizer', 'cocktail', 'beer', 'wine'
-        ])
+        # But treat pricing in the 'prices' field differently - if it's the main deal with schedule, don't separate it
+        has_price_field = bool(deal.get('prices'))
+        has_schedule = bool(deal.get('days_of_week') or deal.get('start_time') or deal.get('is_all_day'))
+        
+        # If it's the main deal with both schedule and pricing, don't separate into offerings
+        if has_price_field and has_schedule and len(deals) == 1:
+            has_specific_offerings = False
+        else:
+            has_specific_offerings = any(offer in (title + ' ' + cleaned_description) for offer in [
+                '$', '%', 'off', 'price', 'maki', 'sake', 'drink', 'food', 'appetizer', 'cocktail', 'beer', 'wine'
+            ])
         
         # Every deal with days/times contributes to the schedule
         if deal.get('days_of_week') or deal.get('start_time') or deal.get('is_all_day'):
@@ -209,7 +217,13 @@ def group_deals_by_schedule(deals):
                 else:
                     time_str = "Happy Hour"
                 
-                schedule_entry = f"{day_str}: {time_str}"
+                # Include pricing information in schedule if available
+                price_info = format_deal_prices(deal)
+                if price_info:
+                    schedule_entry = f"{day_str}: {time_str} - {price_info}"
+                else:
+                    schedule_entry = f"{day_str}: {time_str}"
+                    
                 if schedule_entry not in schedule_entries:
                     schedule_entries.append(schedule_entry)
             
@@ -396,7 +410,7 @@ def consolidate_deal_descriptions(deals):
             consolidated.append({
                 'title': title,
                 'description': description,
-                'price': deal.get('price'),
+                'price': format_deal_prices(deal),
                 'confidence_score': deal.get('confidence_score', 0.0)
             })
     
@@ -475,6 +489,8 @@ def main():
     env.filters['group_deals'] = group_deals_by_schedule
     env.filters['deal_status_badge'] = deal_status_badge
     env.filters['format_deal_time'] = format_deal_time
+    env.filters['group_by_district'] = group_restaurants_by_district
+    env.filters['group_by_metro_area'] = group_restaurants_by_metro_area
     
     # Create output directories
     docs_dir = Path('docs')
@@ -495,7 +511,7 @@ def main():
     print(f"📁 Output: {docs_dir}")
     print(f"🏠 Index: {docs_dir}/index.html")
     print(f"📊 Stats: {docs_dir}/stats.html")
-    print(f"📄 Restaurant pages: {len([r for area in enhanced_data['areas'].values() for r in area.values()])} pages")
+    print(f"📄 Restaurant pages: {len(enhanced_data['restaurants'])} pages")
 
 
 def generate_enhanced_index_page(env, data, output_dir, dm):
@@ -509,10 +525,9 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
     # Enhance each restaurant with current relevant deals
     current_time = datetime.now()
     
-    for area_name, area_restaurants in data['areas'].items():
-        for slug, restaurant in area_restaurants.items():
-            if restaurant.get('sub_location'):
-                neighborhoods.add(restaurant['sub_location'])
+    for slug, restaurant in data['restaurants'].items():
+        if restaurant.get('neighborhood'):
+            neighborhoods.add(restaurant['neighborhood'])
             if restaurant.get('cuisine'):
                 cuisines.add(restaurant['cuisine'])
             
@@ -533,7 +548,7 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
                             'days_of_week': [day.value for day in deal.days_of_week],
                             'start_time': deal.start_time,
                             'end_time': deal.end_time,
-                            'price': deal.price,
+                            'price': format_deal_prices(deal),
                             'is_all_day': deal.is_all_day,
                             'confidence_score': deal.confidence_score,
                             'scraped_at': deal.scraped_at.isoformat(),
@@ -556,16 +571,15 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
     total_with_live_data = 0
     restaurants_with_current_deals = 0
     
-    for area_restaurants in data['areas'].values():
-        for restaurant in area_restaurants.values():
-            if restaurant.get('live_data_available'):
-                total_with_live_data += 1
-                if restaurant.get('last_updated'):
-                    try:
-                        updated = datetime.fromisoformat(restaurant['last_updated'])
-                        if (datetime.now() - updated).days < 2:
-                            fresh_data_count += 1
-                    except:
+    for restaurant in data['restaurants'].values():
+        if restaurant.get('live_data_available'):
+            total_with_live_data += 1
+            if restaurant.get('last_updated'):
+                try:
+                    updated = datetime.fromisoformat(restaurant['last_updated'])
+                    if (datetime.now() - updated).days < 2:
+                        fresh_data_count += 1
+                except:
                         pass
             
             if restaurant.get('has_current_deals'):
@@ -573,7 +587,7 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
     
     html = template.render(
         metadata=data['metadata'],
-        areas=data['areas'],
+        restaurants=data['restaurants'],
         neighborhoods=neighborhoods,
         cuisines=cuisines,
         current_time=current_time,
@@ -599,57 +613,55 @@ def generate_enhanced_restaurant_pages(env, data, output_dir, dm):
     total_restaurants = 0
     restaurants_with_live_data = 0
     
-    for area_name, restaurants in data['areas'].items():
-        for slug, restaurant_data in restaurants.items():
-            # Get enhanced restaurant object for live deals
-            restaurant_obj = dm.get_restaurant(slug)
-            
-            # Enhance restaurant data with live deals if available
-            enhanced_restaurant_data = restaurant_data.copy()
-            enhanced_restaurant_data['area'] = area_name
-            
-            if restaurant_obj:
-                current_deals = restaurant_obj.get_current_deals()
-                enhanced_restaurant_data['live_deals'] = [
-                    {
-                        'title': deal.title,
-                        'description': deal.description,
-                        'deal_type': deal.deal_type.value,
-                        'days_of_week': [day.value for day in deal.days_of_week],
-                        'start_time': deal.start_time,
-                        'end_time': deal.end_time,
-                        'price': deal.price,
-                        'is_all_day': deal.is_all_day,
-                        'confidence_score': deal.confidence_score,
-                        'scraped_at': deal.scraped_at.isoformat(),
-                        'source_url': deal.source_url
-                    }
-                    for deal in current_deals
-                ]
-                
-                enhanced_restaurant_data['scraping_info'] = {
-                    'last_scraped': restaurant_obj.scraping_config.last_scraped.isoformat() if restaurant_obj.scraping_config.last_scraped else None,
-                    'last_success': restaurant_obj.scraping_config.last_success.isoformat() if restaurant_obj.scraping_config.last_success else None,
-                    'consecutive_failures': restaurant_obj.scraping_config.consecutive_failures,
-                    'enabled': restaurant_obj.scraping_config.enabled
+    for slug, restaurant_data in data['restaurants'].items():
+        # Get enhanced restaurant object for live deals
+        restaurant_obj = dm.get_restaurant(slug)
+        
+        # Enhance restaurant data with live deals if available
+        enhanced_restaurant_data = restaurant_data.copy()
+        
+        if restaurant_obj:
+            current_deals = restaurant_obj.get_current_deals()
+            enhanced_restaurant_data['live_deals'] = [
+                {
+                    'title': deal.title,
+                    'description': deal.description,
+                    'deal_type': deal.deal_type.value,
+                    'days_of_week': [day.value for day in deal.days_of_week],
+                    'start_time': deal.start_time,
+                    'end_time': deal.end_time,
+                    'prices': deal.prices if hasattr(deal, 'prices') else [],
+                    'is_all_day': deal.is_all_day,
+                    'confidence_score': deal.confidence_score,
+                    'scraped_at': deal.scraped_at.isoformat(),
+                    'source_url': deal.source_url
                 }
-                
-                if current_deals:
-                    restaurants_with_live_data += 1
-            else:
-                enhanced_restaurant_data['live_deals'] = []
-                enhanced_restaurant_data['scraping_info'] = None
+                for deal in current_deals
+            ]
             
-            html = template.render(
-                restaurant=enhanced_restaurant_data,
-                metadata=data['metadata']
-            )
+            enhanced_restaurant_data['scraping_info'] = {
+                'last_scraped': restaurant_obj.scraping_config.last_scraped.isoformat() if restaurant_obj.scraping_config.last_scraped else None,
+                'last_success': restaurant_obj.scraping_config.last_success.isoformat() if restaurant_obj.scraping_config.last_success else None,
+                'consecutive_failures': restaurant_obj.scraping_config.consecutive_failures,
+                'enabled': restaurant_obj.scraping_config.enabled
+            }
             
-            output_file = output_dir / f"{slug}.html"
-            with open(output_file, 'w', encoding='utf-8') as f:
-                f.write(html)
-            
-            total_restaurants += 1
+            if current_deals:
+                restaurants_with_live_data += 1
+        else:
+            enhanced_restaurant_data['live_deals'] = []
+            enhanced_restaurant_data['scraping_info'] = None
+        
+        html = template.render(
+            restaurant=enhanced_restaurant_data,
+            metadata=data['metadata']
+        )
+        
+        output_file = output_dir / f"{slug}.html"
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(html)
+        
+        total_restaurants += 1
     
     print(f"📄 Generated {total_restaurants} enhanced restaurant pages")
     print(f"📈 {restaurants_with_live_data} pages include live deal data")
@@ -724,8 +736,18 @@ def generate_stats_page(env, data, output_dir):
     
     # Calculate area restaurant counts
     area_restaurant_counts = {}
-    for area_name, restaurants in data['areas'].items():
-        area_restaurant_counts[area_name] = len(restaurants)
+    # Group restaurants by district for counting
+    districts = {}
+    for restaurant in data['restaurants'].values():
+        district = restaurant['district']
+        if district not in districts:
+            districts[district] = []
+        districts[district].append(restaurant)
+    
+    # Calculate district restaurant counts  
+    area_restaurant_counts = {}
+    for district_name, restaurants in districts.items():
+        area_restaurant_counts[district_name] = len(restaurants)
     
     # Count total neighborhoods
     total_neighborhoods = sum(len(neighborhoods) for neighborhoods in data['metadata']['districts_with_neighborhoods'].values())
@@ -962,10 +984,14 @@ def format_deal_time(deal):
     
     time_parts = []
     
-    # Format days
+    # Smart formatting: combine days and time to avoid redundancy
     if days_of_week:
         if len(days_of_week) == 7:
-            time_parts.append("Daily")
+            # For daily all-day deals, just say "Daily" (don't add "All Day" later)
+            if is_all_day:
+                time_parts.append("Daily")
+            else:
+                time_parts.append("Daily")
         elif len(days_of_week) == 1:
             time_parts.append(days_of_week[0].title())
         elif set([d.lower() for d in days_of_week]) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
@@ -977,15 +1003,70 @@ def format_deal_time(deal):
             if len(days_of_week) > 2:
                 time_parts[-1] += f" + {len(days_of_week) - 2} more"
     
-    # Format time
-    if is_all_day:
+    # Format time (but avoid redundancy with daily all-day)
+    if is_all_day and len(days_of_week) != 7:
+        # Only add "All Day" if it's not already covered by "Daily"
         time_parts.append("All Day")
     elif start_time and end_time:
         time_parts.append(f"{start_time} - {end_time}")
     elif start_time:
         time_parts.append(f"From {start_time}")
     
-    return " • ".join(time_parts)
+    result = " • ".join(time_parts)
+    
+    # Add pricing information if available - this is key for budget-conscious culinary adventurers!
+    price_info = format_deal_prices(deal)
+    if price_info:
+        result += f" • {price_info}"
+    
+    return result
+
+
+def group_restaurants_by_district(restaurants_dict):
+    """Group restaurants by district for template rendering"""
+    districts = {}
+    for slug, restaurant in restaurants_dict.items():
+        district = restaurant['district']
+        if district not in districts:
+            districts[district] = {}
+        districts[district][slug] = restaurant
+    return districts.items()
+
+def group_restaurants_by_metro_area(restaurants_dict):
+    """Group restaurants by metro area for template rendering"""
+    metro_areas = {}
+    for slug, restaurant in restaurants_dict.items():
+        metro_area = restaurant.get('metro_area', 'Denver Metro')
+        if metro_area not in metro_areas:
+            metro_areas[metro_area] = {}
+        metro_areas[metro_area][slug] = restaurant
+    
+    # Sort metro areas (Denver Metro first, then Boulder)
+    sorted_areas = []
+    if 'Denver Metro' in metro_areas:
+        sorted_areas.append(('Denver Metro', metro_areas['Denver Metro']))
+    if 'Boulder' in metro_areas:
+        sorted_areas.append(('Boulder', metro_areas['Boulder']))
+    
+    return sorted_areas
+
+
+def format_deal_prices(deal) -> str:
+    """Format deal pricing information using structured prices list"""
+    if not deal:
+        return ""
+    
+    # For object instances with prices attribute
+    if hasattr(deal, 'prices') and deal.prices:
+        return ", ".join(deal.prices)
+    
+    # For dict-like objects (JSON data)
+    if isinstance(deal, dict):
+        prices = deal.get('prices', [])
+        if prices:
+            return ", ".join(prices)
+    
+    return ""
 
 
 def improve_deal_title(deal):

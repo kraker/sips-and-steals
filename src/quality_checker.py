@@ -271,23 +271,24 @@ class QualityChecker:
                 ))
         
         # Check price reasonableness
-        if deal.price:
-            price_value = self._extract_price_value(deal.price)
-            if price_value:
-                if price_value < 1:
-                    issues.append(QualityIssue(
-                        level=QualityIssueLevel.WARNING,
-                        message="Price seems unusually low",
-                        field="price",
-                        confidence=0.7
-                    ))
-                elif price_value > 50:
-                    issues.append(QualityIssue(
-                        level=QualityIssueLevel.WARNING,
-                        message="Price seems unusually high for happy hour",
-                        field="price",
-                        confidence=0.8
-                    ))
+        if deal.prices:
+            for price_item in deal.prices:
+                price_value = self._extract_price_value(price_item)
+                if price_value:
+                    if price_value < 1:
+                        issues.append(QualityIssue(
+                            level=QualityIssueLevel.WARNING,
+                            message="Price seems unusually low",
+                            field="prices",
+                            confidence=0.7
+                        ))
+                    elif price_value > 50:
+                        issues.append(QualityIssue(
+                            level=QualityIssueLevel.WARNING,
+                            message="Price seems unusually high for happy hour",
+                            field="prices",
+                            confidence=0.8
+                        ))
         
         return issues
     

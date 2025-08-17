@@ -349,36 +349,38 @@ class DataManager:
     
     def export_for_website(self) -> Dict[str, Any]:
         """Export data in format needed for website generation"""
-        # Start with the original format but enhanced with live data
+        # Collect new district names after geographic mapping
+        new_districts = set()
+        
         export_data = {
             'metadata': {
                 'source': 'enhanced_data_pipeline',
                 'updated_at': datetime.now().isoformat(),
-                'districts': list(set(r.district for r in self.restaurants.values())),
+                'districts': [],  # Will be populated below
                 'total_restaurants': len(self.restaurants),
                 'target_user': 'Value-Conscious Culinary Adventurer',
                 'focus': 'Quality dining experiences at accessible prices',
                 'scraping_stats': self.get_scraping_stats()
             },
-            'areas': {}
+            'restaurants': {}
         }
         
-        # Group restaurants by district for website compatibility
+        # Export restaurants in a flat structure organized by slug
         for restaurant in self.restaurants.values():
-            district = restaurant.district
-            if district not in export_data['areas']:
-                export_data['areas'][district] = {}
-            
             # Get current deals (live or fallback to static)
             current_deals = restaurant.get_current_deals()
             
-            # Convert back to website format
+            # Get geographic grouping
+            metro_area, district_name = self._get_geographic_grouping(restaurant.district)
+            new_districts.add(district_name)  # Collect new district names
+            
+            # Convert to simplified website format
             restaurant_data = {
                 'name': restaurant.name,
                 'slug': restaurant.slug,
-                'district': restaurant.district,
-                'area': restaurant.district,  # Backwards compatibility
-                'sub_location': restaurant.neighborhood,
+                'district': district_name,  # Use new district name
+                'metro_area': metro_area,   # Add metro area grouping
+                'neighborhood': restaurant.neighborhood,
                 'address': restaurant.address,
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
@@ -389,18 +391,31 @@ class DataManager:
                 'last_updated': restaurant.deals_last_updated.isoformat() if restaurant.deals_last_updated else None
             }
             
-            export_data['areas'][district][restaurant.slug] = restaurant_data
+            export_data['restaurants'][restaurant.slug] = restaurant_data
         
-        # Add district/neighborhood mapping
+        # Add geographic area mapping with new district structure
+        metro_areas = {}
         districts_with_neighborhoods = {}
-        for restaurant in self.restaurants.values():
-            district = restaurant.district
-            if district not in districts_with_neighborhoods:
-                districts_with_neighborhoods[district] = set()
-            if restaurant.neighborhood:
-                districts_with_neighborhoods[district].add(restaurant.neighborhood)
         
-        # Convert sets to sorted lists
+        for restaurant in self.restaurants.values():
+            metro_area, district_name = self._get_geographic_grouping(restaurant.district)
+            
+            # Track metro areas
+            if metro_area not in metro_areas:
+                metro_areas[metro_area] = set()
+            metro_areas[metro_area].add(district_name)
+            
+            # Track districts and neighborhoods
+            if district_name not in districts_with_neighborhoods:
+                districts_with_neighborhoods[district_name] = set()
+            if restaurant.neighborhood:
+                districts_with_neighborhoods[district_name].add(restaurant.neighborhood)
+        
+        # Convert sets to sorted lists and update metadata
+        export_data['metadata']['districts'] = sorted(list(new_districts))
+        export_data['metadata']['metro_areas'] = {
+            area: sorted(list(districts)) for area, districts in metro_areas.items()
+        }
         export_data['metadata']['districts_with_neighborhoods'] = {
             district: sorted(list(neighborhoods))
             for district, neighborhoods in districts_with_neighborhoods.items()
@@ -431,8 +446,8 @@ class DataManager:
                 parts.append(f"{deal.start_time} - {deal.end_time}")
             
             # Add price if available
-            if deal.price:
-                parts.append(f"({deal.price})")
+            if deal.prices:
+                parts.append(f"({', '.join(deal.prices)})")
             
             if parts:
                 formatted_deals.append(" ".join(parts))
@@ -504,6 +519,30 @@ class DataManager:
             start = end + 1
         
         return ", ".join(ranges)
+    
+    def _get_geographic_grouping(self, district: str) -> tuple[str, str]:
+        """
+        Map old district names to new geographic groupings.
+        Returns (metro_area, district_name)
+        """
+        district_mapping = {
+            # Denver Metropolitan Area
+            "Central": ("Denver Metro", "Central Denver"),
+            "East & Southeast Denver": ("Denver Metro", "East & Southeast Denver"),
+            "Northwest Denver": ("Denver Metro", "Northwest Denver"),
+            "North Denver": ("Denver Metro", "North Denver"),
+            "Northeast Denver": ("Denver Metro", "Northeast Denver"),
+            "South": ("Denver Metro", "South Denver"),
+            "West & Southwest Denver": ("Denver Metro", "West & Southwest Denver"),
+            "Aurora": ("Denver Metro", "Aurora"),
+            "Greenwood Village, Englewood, Littleton, Centennial": ("Denver Metro", "South Suburbs"),
+            "Lakewood/Wheat Ridge/Golden": ("Denver Metro", "West Suburbs"),
+            
+            # Boulder Area
+            "Boulder": ("Boulder", "Boulder")
+        }
+        
+        return district_mapping.get(district, ("Denver Metro", district))
     
     def cleanup_old_data(self, days_to_keep: int = 30):
         """Clean up old archived data"""

@@ -17,7 +17,8 @@ import queue
 
 from data_manager import DataManager
 from models import Restaurant, ScrapingStatus
-from scrapers.base import BaseScraper
+from scrapers.factory import ScraperFactory
+from scrapers.core.base import BaseScraper
 
 logger = logging.getLogger(__name__)
 
@@ -83,7 +84,7 @@ class ScrapingScheduler:
         }
         
         # Simplified: use only generic scraper
-        logger.info("Using generic scraper for all restaurants")
+        logger.info("Using factory-based scraper selection with modular architecture")
     
     def schedule_restaurant(self, restaurant_slug: str, priority: TaskPriority = TaskPriority.NORMAL, 
                           delay_minutes: int = 0) -> bool:
@@ -274,9 +275,11 @@ class ScrapingScheduler:
             }
     
     def _get_scraper_for_restaurant(self, restaurant: Restaurant) -> Optional[BaseScraper]:
-        """Get generic scraper for restaurant"""
-        # Always use generic scraper for scalability
-        return GenericScraper(restaurant)
+        """Get appropriate scraper for restaurant using factory pattern"""
+        if not hasattr(self, '_scraper_factory'):
+            self._scraper_factory = ScraperFactory()
+        
+        return self._scraper_factory.create_scraper(restaurant)
     
     def _handle_task_completion(self, task: ScrapingTask, result: Dict[str, Any]):
         """Handle successful task completion"""
@@ -318,7 +321,7 @@ class ScrapingScheduler:
             'queue_size': self.task_queue.qsize(),
             'running_tasks': len(self.running_tasks),
             'stats': self.stats,
-            'scraper_type': 'generic_only'
+            'scraper_type': 'factory_based'
         }
 
 

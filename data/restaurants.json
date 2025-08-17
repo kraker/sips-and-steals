@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-16T22:03:00.442276",
+    "updated_at": "2025-08-16T22:52:56.827875",
     "districts": [
       "Aurora",
       "Boulder",
@@ -359,7 +359,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T22:02:57.928739"
+        "last_updated": "2025-08-16T22:52:54.394288"
       },
       "mecha-noodle-bar": {
         "name": "Mecha Noodle Bar",

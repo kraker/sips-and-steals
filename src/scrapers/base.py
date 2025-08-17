@@ -544,15 +544,16 @@ class BaseScraper(ABC):
         price_pattern_match = re.search(r'(\$\d+(?:\s+\$\d+)*)\s+happy\s+hour', deal_text_lower)
         if price_pattern_match:
             prices = price_pattern_match.group(1)
-            return Deal(
+            deal = Deal(
                 title="Happy Hour",
                 description=f"Happy hour with items at {prices} pricing",
                 deal_type=DealType.HAPPY_HOUR,
-                price=prices,
                 is_all_day=False,  # Don't assume all-day without timing info
                 confidence_score=0.6,  # Lower confidence since we don't have timing details
                 source_url=getattr(self.restaurant, 'website', None)
             )
+            deal.set_price_from_string(prices)
+            return deal
         
         # Pattern: "happy hoursmonday-saturday: 11am-6:30pm"
         day_range_match = re.search(r'happy\s+hours?\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*-\s*(monday|tuesday|wednesday|thursday|friday|saturday|sunday)\s*:\s*(\d{1,2}(?::\d{2})?(?:am|pm))\s*-?\s*(\d{1,2}(?::\d{2})?(?:am|pm))?', deal_text_lower)

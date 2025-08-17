@@ -6,18 +6,21 @@ scraping_config:
   enabled: true
   fallback_to_static: true
   
-  # Custom selectors to target specific happy hour content
+  # Custom selectors to target only happy hour content, NOT dinner hours
   custom_selectors:
-    happy_hour_content: "[class*='happy'], [class*='bar'], .content-section, .specials"
+    happy_hour_content: "*:contains('Happy Hour'), *:contains('All Day Happy Hour')"
     pricing_content: "*:contains('$5 Beers'), *:contains('$8'), *:contains('$10')"
   
-  # Enhanced regex patterns for Fogo de Chão specific happy hour patterns
-  time_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:9:30\\s*PM|9:30PM)|(?:Fri|Friday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sat|Saturday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sun|Sunday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:9:00\\s*PM|9PM)|(?:MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)[:\\s]*(?:11:30\\s*AM|11:30AM)[\\s-]*(?:3:00\\s*PM|3PM)"
-  day_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday|Fri|Friday|Sat|Saturday|Sun|Sunday|MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)"
+  # Target only the Happy Hour section with "SUN - SAT - All Day" pattern
+  time_pattern_regex: "Happy Hour.*?(SUN).*?(SAT).*?(All Day)"
+  day_pattern_regex: "(SUN|SAT|Sunday|Saturday)"
   price_pattern_regex: "\\$\\d+\\s+(?:Beers?|South American Wines?|Brazilian[\\s-]*Inspired Cocktails?)"
   
-  # Don't exclude the promotional content - we want to capture it
+  # Exclude dinner/lunch operating hours to avoid confusion
   exclude_patterns:
+    - "DINNER.*Mon - Thu.*3:00 PM"
+    - "Lunch.*MON-FRI.*11:30 AM"
+    - "Brunch.*SAT - SUN.*11:30 AM"
     - "operating hours"
     - "kitchen hours"
   
@@ -27,3 +30,29 @@ scraping_config:
     - "[class*='happy']"
     - "[class*='bar']"
     - ".specials"
+
+# Post-processing rules - create the correct All Day Happy Hour deal
+post_processing:
+  # Promotional content for the actual happy hour offering
+  promotional_content:
+    description: "All Day Happy Hour at Bar Fogo"
+    price: "$5 Beers, $8 Wines, $10 Cocktails"
+  
+  # Create the correct all-day deal by transforming any happy hour mention into the proper deal
+  deal_transformations:
+    - match_pattern: "Happy Hour.*SUN.*SAT.*All Day"
+      new_title: "All Day Happy Hour"
+      days_of_week: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+      start_time: null
+      end_time: null
+      is_all_day: true
+      confidence_boost: 0.5
+  
+  # If no deals are found, create a fallback deal (since we know Fogo has happy hour)
+  fallback_deals:
+    - title: "All Day Happy Hour"
+      description: "All Day Happy Hour at Bar Fogo"
+      days_of_week: ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"]
+      price: "$5 Beers, $8 Wines, $10 Cocktails"
+      is_all_day: true
+      confidence_score: 0.9

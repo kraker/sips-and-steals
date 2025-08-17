@@ -83,6 +83,15 @@ class ConfigManager:
         logger.info(f"Applied custom configuration to {restaurant_slug}")
         return scraping_config
     
+    def get_full_config(self, restaurant_slug: str) -> Optional[Dict[str, Any]]:
+        """Get the full configuration including post-processing rules"""
+        return self.load_config(restaurant_slug)
+    
+    def has_post_processing(self, restaurant_slug: str) -> bool:
+        """Check if restaurant has post-processing configuration"""
+        config = self.load_config(restaurant_slug)
+        return config and 'post_processing' in config
+    
     def list_configured_restaurants(self) -> list:
         """List all restaurants with custom configurations"""
         if not self.config_dir.exists():

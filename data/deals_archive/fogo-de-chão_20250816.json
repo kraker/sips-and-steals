@@ -1,98 +1,32 @@
 {
   "restaurant_slug": "fogo-de-chão",
-  "archived_at": "2025-08-16T22:02:57.928763",
+  "archived_at": "2025-08-16T22:52:54.394322",
   "deals": [
     {
       "title": "All Day Happy Hour",
-      "description": "All-day happy hour specials and discounts",
+      "description": "Happy hour at Bar Fogo",
       "deal_type": "happy_hour",
       "days_of_week": [
+        "sunday",
         "monday",
         "tuesday",
         "wednesday",
         "thursday",
         "friday",
-        "saturday",
-        "sunday"
+        "saturday"
       ],
       "start_time": null,
       "end_time": null,
-      "price": null,
+      "prices": [
+        "$5 Beers",
+        "$8 Wines",
+        "$10 Cocktails"
+      ],
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.577098",
-      "source_url": "https://fogodechao.com/location/denver/",
-      "confidence_score": 0.8
-    },
-    {
-      "title": "Time-based Special",
-      "description": "Mon - Thu 3:00 PM  - 9:30PM",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.579395",
+      "scraped_at": "2025-08-16T22:52:52.065699",
       "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Time-based Special",
-      "description": "Fri 3:00 PM - 10:00 PM",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.579398",
-      "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Time-based Special",
-      "description": "Sat 2:00 PM - 10:00 PM",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.579399",
-      "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Time-based Special",
-      "description": "Sun 2:00 PM - 9:00 PM",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.579400",
-      "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Time-based Special",
-      "description": "MON-FRI 11:30 AM - 3:00 PM",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T22:02:55.579401",
-      "source_url": null,
-      "confidence_score": 0.4
+      "confidence_score": 0.9
     }
   ]
 }

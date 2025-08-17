@@ -226,8 +226,8 @@ def cmd_restaurant(args):
                 print(f"     {deal.description[:80]}{'...' if len(deal.description) > 80 else ''}")
             if deal.start_time and deal.end_time:
                 print(f"     Time: {deal.start_time} - {deal.end_time}")
-            if deal.price:
-                print(f"     Price: {deal.price}")
+            if deal.prices:
+                print(f"     Price: {', '.join(deal.prices)}")
     else:
         print("\n❌ No current deals available")
     
