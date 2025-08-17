@@ -219,8 +219,9 @@ class UniversalHappyHourExtractor:
         # Step 3: Calculate confidence score
         confidence = self._calculate_confidence(deals, extraction_methods, soup)
         
-        # Step 4: Deduplicate and clean deals
-        clean_deals = self._deduplicate_deals(deals)
+        # Step 4: DATA-HUNGRY: Keep all deals, minimal cleanup only
+        # Remove only exact duplicates, keep everything else for later analysis
+        clean_deals = self._minimal_cleanup(deals)
         
         result = ExtractionResult(
             deals=clean_deals,
@@ -278,24 +279,23 @@ class UniversalHappyHourExtractor:
         return unique_sections
     
     def _extract_deals_from_section(self, section: BeautifulSoup) -> List[Deal]:
-        """Extract deals from a specific section"""
+        """Extract deals from a specific section with full context"""
         deals = []
         
         # Get text content and clean it
         text = section.get_text(separator=' ', strip=True)
-        text = self._clean_text(text)
-        
-        # Extract time ranges
-        time_ranges = self._extract_time_ranges(text)
-        
-        # Extract day patterns  
-        day_patterns = self._extract_day_patterns(text)
-        
-        # Extract pricing information
-        prices = self._extract_prices(text)
+        cleaned_text = self._clean_text(text)
         
         # Use enhanced parsing logic for better deal creation
-        deals.extend(self._extract_deals_from_text_section(text))
+        section_deals = self._extract_deals_from_text_section(cleaned_text)
+        
+        # Enhance each deal with HTML context
+        for deal in section_deals:
+            # Add HTML context
+            deal.extraction_method = "universal_html_section"
+            deal.html_context = str(section)[:1000]  # First 1000 chars of HTML
+            
+        deals.extend(section_deals)
         
         return deals
     
@@ -828,24 +828,12 @@ class UniversalHappyHourExtractor:
             matches = re.findall(pattern, section_text, re.IGNORECASE)
             day_matches.extend(matches)
         
-        # Deduplicate time matches to avoid creating duplicate deals
-        unique_time_matches = []
-        seen_time_strings = set()
+        # DATA-HUNGRY APPROACH: Don't deduplicate, collect everything!
+        # We'll analyze and deduplicate later with more sophisticated methods
         
-        for time_match in time_matches:
-            # Create a unique signature for this time match (case-insensitive)
-            if len(time_match) >= 2:
-                time_sig = f"{time_match[0]}-{time_match[-1]}".lower()  # First and last elements, lowercase
-            else:
-                time_sig = str(time_match[0]).lower()
-            
-            if time_sig not in seen_time_strings:
-                seen_time_strings.add(time_sig)
-                unique_time_matches.append(time_match)
-        
-        # Create separate deals for each unique time pattern found
-        if unique_time_matches:
-            for time_match in unique_time_matches:
+        # Create separate deals for each time pattern found (including duplicates)
+        if time_matches:
+            for time_match in time_matches:
                 try:
                     start_time, end_time = self._parse_time_match(time_match)
                     if not start_time or not end_time:
@@ -862,7 +850,7 @@ class UniversalHappyHourExtractor:
                     
                     description = " | ".join(description_parts)
                     
-                    # Create the deal
+                    # Create the deal with full extraction context
                     deal = Deal(
                         title="Happy Hour",
                         description=description,
@@ -870,7 +858,14 @@ class UniversalHappyHourExtractor:
                         days_of_week=[DayOfWeek(day) for day in relevant_days if day in [d.value for d in DayOfWeek]],
                         start_time=start_time,
                         end_time=end_time,
-                        is_all_day=False
+                        is_all_day=False,
+                        # Rich extraction context for later analysis
+                        extraction_method="universal_text_section",
+                        source_text=section_text[:500],  # First 500 chars of source
+                        extraction_patterns=[f"time_pattern_{i}" for i, p in enumerate(self.TIME_PATTERNS) 
+                                           if re.search(p, section_text, re.IGNORECASE)],
+                        raw_time_matches=[str(time_match)],
+                        raw_day_matches=[str(dm) for dm in day_matches]
                     )
                     deals.append(deal)
                 except Exception as e:
@@ -900,7 +895,14 @@ class UniversalHappyHourExtractor:
                     days_of_week=[DayOfWeek(day) for day in days_of_week if day in [d.value for d in DayOfWeek]],
                     start_time=None,
                     end_time=None,
-                    is_all_day=False
+                    is_all_day=False,
+                    # Rich extraction context for later analysis
+                    extraction_method="universal_text_section_days_only",
+                    source_text=section_text[:500],  # First 500 chars of source
+                    extraction_patterns=[f"day_pattern_{i}" for i, p in enumerate(self.DAY_PATTERNS) 
+                                       if re.search(p, section_text, re.IGNORECASE)],
+                    raw_time_matches=[],
+                    raw_day_matches=[str(dm) for dm in day_matches]
                 )
                 deals.append(deal)
         
@@ -1001,6 +1003,35 @@ class UniversalHappyHourExtractor:
                     break
         
         return best_days
+    
+    def _minimal_cleanup(self, deals: List[Deal]) -> List[Deal]:
+        """
+        DATA-HUNGRY: Minimal cleanup - only remove exact duplicates, keep everything else.
+        We'll do sophisticated deduplication and analysis later.
+        """
+        if not deals:
+            return deals
+        
+        # Only remove deals that are 100% identical in content
+        seen_signatures = set()
+        cleaned_deals = []
+        
+        for deal in deals:
+            # Create a signature based on the actual content, not metadata
+            signature = (
+                deal.title,
+                deal.description,
+                deal.start_time,
+                deal.end_time,
+                tuple(sorted([day.value for day in deal.days_of_week])),
+                tuple(sorted(deal.prices))
+            )
+            
+            if signature not in seen_signatures:
+                seen_signatures.add(signature)
+                cleaned_deals.append(deal)
+        
+        return cleaned_deals
     
     def _calculate_text_confidence(self, text: str, deals: List[Deal]) -> float:
         """

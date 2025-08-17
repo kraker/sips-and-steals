@@ -85,6 +85,14 @@ class Deal:
     source_url: Optional[str] = None
     confidence_score: float = 1.0  # 0.0-1.0, how confident we are in this data
     
+    # Extraction context for later analysis
+    extraction_method: Optional[str] = None  # "universal_html", "pdf_text", "browser_js", etc.
+    source_text: Optional[str] = None        # Raw text where this deal was found
+    html_context: Optional[str] = None       # HTML section where deal was found
+    extraction_patterns: List[str] = field(default_factory=list)  # Which patterns matched
+    raw_time_matches: List[str] = field(default_factory=list)     # Original regex matches
+    raw_day_matches: List[str] = field(default_factory=list)      # Original day patterns found
+    
     def to_dict(self) -> Dict[str, Any]:
         """Convert to dictionary for JSON serialization"""
         return {
@@ -102,7 +110,14 @@ class Deal:
             'special_notes': self.special_notes,
             'scraped_at': self.scraped_at.isoformat(),
             'source_url': self.source_url,
-            'confidence_score': self.confidence_score
+            'confidence_score': self.confidence_score,
+            # Extraction context
+            'extraction_method': self.extraction_method,
+            'source_text': self.source_text,
+            'html_context': self.html_context,
+            'extraction_patterns': self.extraction_patterns,
+            'raw_time_matches': self.raw_time_matches,
+            'raw_day_matches': self.raw_day_matches
         }
     
     @classmethod
@@ -130,7 +145,14 @@ class Deal:
                 special_notes=data.get('special_notes', []),
                 scraped_at=datetime.fromisoformat(data.get('scraped_at', datetime.now().isoformat())),
                 source_url=data.get('source_url'),
-                confidence_score=data.get('confidence_score', 1.0)
+                confidence_score=data.get('confidence_score', 1.0),
+                # Extraction context (backward compatible)
+                extraction_method=data.get('extraction_method'),
+                source_text=data.get('source_text'),
+                html_context=data.get('html_context'),
+                extraction_patterns=data.get('extraction_patterns', []),
+                raw_time_matches=data.get('raw_time_matches', []),
+                raw_day_matches=data.get('raw_day_matches', [])
             )
             # Convert legacy price to new format
             deal.set_price_from_string(legacy_price)
@@ -153,7 +175,14 @@ class Deal:
             special_notes=data.get('special_notes', []),
             scraped_at=datetime.fromisoformat(data.get('scraped_at', datetime.now().isoformat())),
             source_url=data.get('source_url'),
-            confidence_score=data.get('confidence_score', 1.0)
+            confidence_score=data.get('confidence_score', 1.0),
+            # Extraction context (backward compatible)
+            extraction_method=data.get('extraction_method'),
+            source_text=data.get('source_text'),
+            html_context=data.get('html_context'),
+            extraction_patterns=data.get('extraction_patterns', []),
+            raw_time_matches=data.get('raw_time_matches', []),
+            raw_day_matches=data.get('raw_day_matches', [])
         )
         
         # Auto-normalize times if 24-hour format is missing
@@ -944,9 +973,10 @@ class DealValidator:
             if price and not cls._is_valid_price(price):
                 issues.append(f"Invalid price format: {price}")
         
-        # Day validation
-        if not deal.days_of_week and not deal.is_all_day:
-            issues.append("No days specified and not marked as all day")
+        # Day validation (relaxed for data-hungry approach)
+        # Only flag if we have no days AND no time info (completely empty deal)
+        if not deal.days_of_week and not deal.is_all_day and not deal.start_time and not deal.end_time:
+            issues.append("Completely empty deal - no days, times, or all-day flag")
         
         # Confidence score validation
         if not 0.0 <= deal.confidence_score <= 1.0:

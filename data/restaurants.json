@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T18:19:14.551959",
+    "updated_at": "2025-08-17T18:27:06.291211",
     "districts": [
       "Aurora",
       "Boulder",
@@ -268,12 +268,138 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": "2025-08-17T18:19:08.676466",
-        "last_success": "2025-08-17T18:19:14.548585",
+        "last_scraped": "2025-08-17T18:27:00.632211",
+        "last_success": "2025-08-17T18:27:06.286976",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
       "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Days: Sunday, Monday, Wednesday, Friday, Thursday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "wednesday",
+            "friday",
+            "thursday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991086",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\",\"scripts_defer\",\"override_block_styles\",\"member_areas_feature\",\"nested_categories\",\"campaigns_merch_state\",\"supports_versioned_template_assets\",\"s_and_campaigns_redesign\",\"product_pages_sdk_opt_in_enabled\",\"campaigns_discount_section_in_blasts\",\"campaigns_new_image_layout_picker\",\"order_status_page_checkout_landing_enabled\",\"campaigns_thumbnail_layout\",\"marketing_landing_page\",\"i18n_beta_website_l",
+          "html_context": "<script data-name=\"static-context\">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\",\"scripts_defer\",\"override_block_styles\",\"member_areas_feature\",\"nested_categories\",\"campaigns_merch_state\",\"supports_versioned_template_assets\",\"contacts_and_campaigns_redesign\",\"product_pages_sdk_opt_in_enabled\",\"campaigns_discount_section_in_blasts\",\"campaigns_new_image_layout_picker\",\"order_status_page_checkout_landing_enabled\",\"campaigns_thumbnail_layout\",\"marketing_landing_page\",\"i18n_beta_website_locales\",\"enable_form_submission_trigger\",\"section_sdk_product_pages_opt_in_modal\",\"campaigns_import_discounts\",\"campaigns_discount_section_in_automations\",\"marketing_automations\",\"section_sdk_product_pages_phase_two\"],\"facebookAppId\":\"314192535267336\",\"facebookApiVersion\":\"v6.0\",\"rollups\":{\"squarespace-announcement-bar\":{\"js\":\"//assets.squarespace.com/universal/scripts-compressed/announcement-bar-0d16305e6f7adcfc-min.en-US.js\"},\"squarespace-audio-player\"",
+          "extraction_patterns": [
+            "day_pattern_8"
+          ],
+          "raw_time_matches": [],
+          "raw_day_matches": [
+            "thu",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "thu",
+            "thu",
+            "thu",
+            "Sun",
+            "Sun",
+            "Sun",
+            "Sun",
+            "fri",
+            "thu",
+            "Mon",
+            "Mon",
+            "Mon",
+            "Mon",
+            "mon",
+            "fri",
+            "wed",
+            "mon",
+            "Mon"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 pm - 6 pm",
+          "deal_type": "happy_hour",
+          "days_of_week": [],
+          "start_time": "3 pm",
+          "end_time": "6 pm",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991326",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close!",
+          "html_context": "<p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm &amp; Thurs -Sat from 9 pm-Close! </p>",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'pm')"
+          ],
+          "raw_day_matches": [
+            "Thurs -Sat",
+            "every day",
+            "fri",
+            "Thu",
+            "Sat"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 pm - Close",
+          "deal_type": "happy_hour",
+          "days_of_week": [],
+          "start_time": "9 pm",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991353",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close!",
+          "html_context": "<p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm &amp; Thurs -Sat from 9 pm-Close! </p>",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3"
+          ],
+          "raw_time_matches": [
+            "('9', 'pm', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs -Sat",
+            "every day",
+            "fri",
+            "Thu",
+            "Sat"
+          ]
+        },
         {
           "title": "Happy Hour",
           "description": "Time: 3 PM - 6 PM | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
@@ -295,18 +421,283 @@
           "prices": [],
           "is_all_day": false,
           "special_notes": [],
-          "scraped_at": "2025-08-17T18:19:12.367886",
+          "scraped_at": "2025-08-17T18:27:03.994084",
           "source_url": null,
-          "confidence_score": 1.0
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'PM')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 pm - 6 pm | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 pm",
+          "end_time": "6 pm",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994247",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'pm')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - Close | Days: Thursday, Friday, Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994422",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('9', 'PM', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 pm - Close | Days: Thursday, Friday, Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "start_time": "9 pm",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994582",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('9', 'pm', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Days: Friday, Monday, Wednesday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "friday",
+            "monday",
+            "wednesday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:04.019514",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Tequila, sweet & sour, agave, muddled lime and triple sec. $ 9.95 $ 7.95 LION LEMONADE Smirnoff Citrus Vodka, raspberry liqueur, lemon, Sprite, sweet & sour and simple syrup. $ 7.95 $ 9.95 SPICY MANGO MARGARITA Jalapenos, Sauza Hacienda tequila, sweet & sour, fresh lime juic",
+          "html_context": "<div class=\"content\">\n<div class=\"sqs-layout sqs-grid-12 columns-12\" data-type=\"page-section\" id=\"page-section-6137d45b46955a447b79a649\"><div class=\"row sqs-row\"><div class=\"col sqs-col-12 span-12\"><div class=\"sqs-block html-block sqs-block-html\" data-block-type=\"2\" data-border-radii='{\"topLeft\":{\"unit\":\"px\",\"value\":0.0},\"topRight\":{\"unit\":\"px\",\"value\":0.0},\"bottomLeft\":{\"unit\":\"px\",\"value\":0.0},\"bottomRight\":{\"unit\":\"px\",\"value\":0.0}}' data-sqsp-block=\"text\" id=\"block-1c2fb1937bcf3208cd9e\"><div class=\"sqs-block-content\">\n<div class=\"sqs-html-content\" data-sqsp-text-block-content=\"\">\n<h3 style=\"text-align:center;white-space:pre-wrap;\">HAPPY HOUR MENU</h3><p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">*Prices vary at the Denver, CO location</p>\n</div>\n</div></div><div class=\"sqs-block menu-block sqs-block-menu\" data-block-type=\"18\" id=\"block-7d3109d955e7f892b93f\"><div class=\"sqs-block-content\">\n<div class=\"menu-wrapper menu-style-classic\">\n<div class=\"menus\">\n<div aria-labe",
+          "extraction_patterns": [
+            "day_pattern_8"
+          ],
+          "raw_time_matches": [],
+          "raw_day_matches": [
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
         }
       ],
-      "deals_last_updated": "2025-08-17T18:19:14.548583",
+      "deals_last_updated": "2025-08-17T18:27:06.286975",
       "scraping_urls": [
         "https://www.thirstylionrestaurant.com/colorado",
         "https://www.thirstylionrestaurant.com/happyhour"
       ],
       "live_data_available": true,
-      "last_updated": "2025-08-17T18:19:14.548583"
+      "last_updated": "2025-08-17T18:27:06.286975"
     },
     "blue-sushi-sake-grill": {
       "name": "Blue Sushi Sake Grill",
@@ -421,7 +812,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:05.976582",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -444,7 +841,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:05.976669",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -467,7 +870,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:05.976709",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -490,7 +899,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:05.976740",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:56:08.161315",
@@ -687,7 +1102,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:08.906112",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:10.961559",
@@ -816,7 +1237,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:38.176298",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:56:40.332540",
@@ -1044,7 +1471,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:46.031227",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1067,7 +1500,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:46.031797",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:56:48.441269",
@@ -1212,7 +1651,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:56:41.679341",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:56:43.786802",
@@ -1416,7 +1861,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:04.839429",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:07.171823",
@@ -1541,7 +1992,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:24.908057",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:27.226968",
@@ -1666,7 +2123,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:36.997923",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1690,7 +2153,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:36.998924",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1714,7 +2183,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:36.998935",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1735,7 +2210,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:36.999548",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1756,7 +2237,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:36.999554",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:39.058676",
@@ -1883,7 +2370,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:27.430774",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -1906,7 +2399,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:27.430879",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:29.864005",
@@ -2027,7 +2526,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:42.954942",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:45.102654",
@@ -2154,7 +2659,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:40.952494",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:43.211651",
@@ -2614,7 +3125,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:57.245067",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:59.747892",
@@ -2742,7 +3259,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:57:54.025398",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:57:56.525369",
@@ -2859,7 +3382,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:10.627394",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -2884,7 +3413,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:10.627412",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -2909,7 +3444,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:10.627424",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -2934,7 +3475,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:10.627435",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -2959,7 +3506,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:10.627446",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:12.806464",
@@ -3084,7 +3637,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:08.740556",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:11.221141",
@@ -3211,7 +3770,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:27.492623",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -3236,7 +3801,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:27.492643",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -3261,7 +3832,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:27.492656",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:29.834358",
@@ -3409,7 +3986,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:20.456480",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:22.670486",
@@ -3629,7 +4212,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:29.753532",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -3654,7 +4243,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:29.753662",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:32.128240",
@@ -3783,7 +4378,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:58.153080",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:00.244938",
@@ -3953,7 +4554,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:50.754822",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -3972,7 +4579,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:58:50.755815",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:58:52.931274",
@@ -4089,7 +4702,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:57.953443",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4110,7 +4729,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:57.954624",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4131,7 +4756,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:57.954672",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T16:01:00.414147",
@@ -4246,7 +4877,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:03.078748",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4265,7 +4902,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:03.079535",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4284,7 +4927,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:03.079544",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:05.437987",
@@ -4498,7 +5147,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:14.458677",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:16.606899",
@@ -4628,7 +5283,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:19.563872",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:21.688759",
@@ -4748,7 +5409,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:29.890456",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4771,7 +5438,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:29.910137",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:32.005840",
@@ -4893,7 +5566,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:44.599736",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4918,7 +5597,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:44.739434",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4943,7 +5628,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:44.740072",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4968,7 +5659,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:44.740086",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -4993,7 +5690,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:44.740098",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:47.154695",
@@ -5115,7 +5818,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:47.134274",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -5139,7 +5848,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:59:47.134297",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:59:49.529800",
@@ -5456,7 +6171,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:06.316343",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -5475,7 +6196,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:06.316352",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -5494,7 +6221,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:06.317579",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T16:00:08.578340",
@@ -5621,7 +6354,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:17.016181",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -5645,7 +6384,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:17.016473",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T16:00:19.115734",
@@ -5771,7 +6516,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:05.802179",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -5796,7 +6547,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T16:00:05.852214",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T16:00:07.915812",
@@ -6470,7 +7227,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:55:27.901464",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -6495,7 +7258,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:55:27.903746",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -6516,7 +7285,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:55:27.904947",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:55:30.312537",
@@ -8289,7 +9064,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:15:07.957448",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:15:10.006509",
@@ -8656,7 +9437,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:05:53.224650",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -8681,7 +9468,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:05:53.224717",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:05:55.565466",
@@ -9042,7 +9835,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:12:54.012838",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -9065,7 +9864,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:12:54.012934",
           "source_url": null,
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:12:56.350830",
@@ -9895,7 +10700,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T14:23:57.237611",
           "source_url": "https://www.amelm.com/happyhour",
-          "confidence_score": 0.8
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T14:23:59.468944",
@@ -10214,7 +11025,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:45.610885",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10233,7 +11050,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:45.610892",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10257,7 +11080,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:45.611342",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10281,7 +11110,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:45.611366",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10305,7 +11140,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:45.611385",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:51:48.067600",
@@ -10422,7 +11263,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:54.420353",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10447,7 +11294,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:54.420446",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10472,7 +11325,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:54.422476",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10497,7 +11356,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:54.422528",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10522,7 +11387,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:54.422551",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:41:56.619518",
@@ -10643,7 +11514,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:52.441756",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10667,7 +11544,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:52.442500",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10692,7 +11575,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:41:52.444431",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:41:54.472566",
@@ -10812,7 +11701,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:22.382104",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10837,7 +11732,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:22.382261",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -10862,7 +11763,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:22.382543",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:42:26.440446",
@@ -10988,7 +11895,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:04.431857",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11013,7 +11926,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:04.431877",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11038,7 +11957,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:04.431894",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11063,7 +11988,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:04.431910",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:42:06.637855",
@@ -11190,7 +12121,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:27.364022",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:42:29.495440",
@@ -11312,7 +12249,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.489276",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11335,7 +12278,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.491440",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11358,7 +12307,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.491465",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11377,7 +12332,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.493933",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11401,7 +12362,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.496477",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11425,7 +12392,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:49:11.496502",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:49:16.183382",
@@ -11646,7 +12619,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.421434",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11670,7 +12649,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.421446",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11694,7 +12679,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.421453",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11719,7 +12710,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.421711",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11744,7 +12741,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.429251",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11769,7 +12772,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:42:49.429278",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:42:52.238729",
@@ -11913,7 +12922,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:32.704712",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11938,7 +12953,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:32.704736",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11963,7 +12984,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:32.704752",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -11988,7 +13015,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:32.705254",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:53:34.750529",
@@ -12107,7 +13140,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:22.260391",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -12130,7 +13169,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T15:53:22.263056",
           "source_url": null,
-          "confidence_score": 0.9999999999999999
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T15:53:24.480313",
@@ -12916,7 +13961,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:55.181807",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -12936,7 +13987,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:55.183459",
           "source_url": null,
-          "confidence_score": 0.6
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -12961,7 +14018,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:55.186779",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -12986,7 +14049,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:55.186794",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         },
         {
           "title": "Happy Hour",
@@ -13011,7 +14080,13 @@
           "special_notes": [],
           "scraped_at": "2025-08-17T17:51:55.186805",
           "source_url": null,
-          "confidence_score": 0.8999999999999999
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
         }
       ],
       "deals_last_updated": "2025-08-17T17:51:57.774260",
