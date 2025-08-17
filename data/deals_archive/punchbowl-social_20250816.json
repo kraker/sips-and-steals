@@ -1,48 +1,22 @@
 {
   "restaurant_slug": "punchbowl-social",
-  "archived_at": "2025-08-16T15:39:00.038609",
+  "archived_at": "2025-08-16T21:52:10.418313",
   "deals": [
     {
-      "title": "Happy Hour",
-      "description": "happy hour! shake off the sunday scaries with monday funday! keep the good vibes rolling with 50% of",
+      "title": "Friday Happy Hour",
+      "description": "On select",
       "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": "9:00 PM",
+      "end_time": "12:00 AM",
       "price": null,
-      "is_all_day": true,
+      "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:38:57.597207",
-      "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Happy Hour",
-      "description": "10:00 pm - close on friday and saturdaykitchen open until closing time sunday-thursday. kitchen clos",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T15:38:57.597312",
-      "source_url": null,
-      "confidence_score": 0.4
-    },
-    {
-      "title": "Happy Hour",
-      "description": "9:00 pm - turn up the volume, test your knowledge and sing along at our weekly music bingo!free rsvp",
-      "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
-      "price": null,
-      "is_all_day": true,
-      "special_notes": [],
-      "scraped_at": "2025-08-16T15:38:57.597323",
-      "source_url": null,
-      "confidence_score": 0.4
+      "scraped_at": "2025-08-16T21:52:08.302692",
+      "source_url": "https://punchbowlsocial.com/location/denver/",
+      "confidence_score": 0.8
     },
     {
       "title": "Time-based Special",
@@ -54,7 +28,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:38:57.598684",
+      "scraped_at": "2025-08-16T21:52:08.307652",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +42,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:38:57.598685",
+      "scraped_at": "2025-08-16T21:52:08.307658",
       "source_url": null,
       "confidence_score": 0.4
     }

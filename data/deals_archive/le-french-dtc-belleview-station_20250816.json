@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "le-french-dtc-belleview-station",
+  "archived_at": "2025-08-16T21:49:54.122938",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\n\n\n\n\n\ncage-free eggs & more\n\n\n\n\nthree eggs scrambled french style*\n\nscrambled soft with ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:52.044633",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

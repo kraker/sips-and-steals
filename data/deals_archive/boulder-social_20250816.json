@@ -1,0 +1,34 @@
+{
+  "restaurant_slug": "boulder-social",
+  "archived_at": "2025-08-16T21:49:19.961865",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour – boulder social | boulder, co  — besocialcolorado\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:17.523328",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Monday - Friday 2pm-5pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:17.524141",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

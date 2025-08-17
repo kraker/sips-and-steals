@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "ace-eat-serve",
-  "archived_at": "2025-08-16T15:35:59.799440",
+  "archived_at": "2025-08-16T21:51:52.017951",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:35:57.427955",
+      "scraped_at": "2025-08-16T21:51:49.884560",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:35:57.427991",
+      "scraped_at": "2025-08-16T21:51:49.884602",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:35:57.428143",
+      "scraped_at": "2025-08-16T21:51:49.884718",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:35:57.430119",
+      "scraped_at": "2025-08-16T21:51:49.886671",
       "source_url": null,
       "confidence_score": 0.4
     }

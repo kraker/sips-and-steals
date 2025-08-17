@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "rioja",
-  "archived_at": "2025-08-16T15:09:00.312330",
+  "archived_at": "2025-08-16T21:49:11.256252",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:08:58.066308",
+      "scraped_at": "2025-08-16T21:49:08.871637",
       "source_url": null,
       "confidence_score": 0.4
     }

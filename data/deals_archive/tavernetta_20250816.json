@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "tavernetta",
-  "archived_at": "2025-08-16T15:13:59.234569",
+  "archived_at": "2025-08-16T21:49:40.008923",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:13:57.028196",
+      "scraped_at": "2025-08-16T21:49:37.700465",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:13:57.028220",
+      "scraped_at": "2025-08-16T21:49:37.700488",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:13:57.028313",
+      "scraped_at": "2025-08-16T21:49:37.700584",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:13:57.031986",
+      "scraped_at": "2025-08-16T21:49:37.704215",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:13:57.031990",
+      "scraped_at": "2025-08-16T21:49:37.704218",
       "source_url": null,
       "confidence_score": 0.4
     }

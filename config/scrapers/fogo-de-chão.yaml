@@ -1,61 +1,28 @@
 # Custom scraping configuration for Fogo de Chão
 restaurant_name: "Fogo de Chão"
 
-# Custom patterns for better happy hour parsing
-custom_patterns:
-  # Look for "SUN - SAT" or "All Day" patterns
-  day_patterns:
-    - "SUN\\s*-\\s*SAT"
-    - "all day"
-    - "daily"
+# Main scraping configuration that the system expects
+scraping_config:
+  enabled: true
+  fallback_to_static: true
   
-  # Look for happy hour indicators
-  happy_hour_indicators:
-    - "happy hour"
-    - "bar fogo"
-    - "\\$5 beers"
-    - "\\$8.*wines"
-
-# Enhanced extraction settings
-extraction_settings:
-  # Focus on happy hour content
-  focus_sections:
-    - "happy hour"
-    - "bar"
-    - "specials"
+  # Custom selectors to target specific happy hour content
+  custom_selectors:
+    happy_hour_content: "[class*='happy'], [class*='bar'], .content-section, .specials"
   
-  # Ignore navigation and general content
-  ignore_sections:
-    - "footer"
-    - "navigation"
-    - "header"
-
-# Specific improvements for Fogo de Chão parsing
-parsing_improvements:
-  # When "SUN - SAT" is found, treat as all week
-  all_week_indicators:
-    - "SUN\\s*-\\s*SAT"
-    - "daily"
+  # Enhanced regex patterns for Fogo de Chão specific happy hour patterns
+  time_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:9:30\\s*PM|9:30PM)|(?:Fri|Friday)[:\\s]*(?:3:00\\s*PM|3\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sat|Saturday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:10:00\\s*PM|10PM)|(?:Sun|Sunday)[:\\s]*(?:2:00\\s*PM|2\\s*PM)[\\s-]*(?:9:00\\s*PM|9PM)|(?:MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)[:\\s]*(?:11:30\\s*AM|11:30AM)[\\s-]*(?:3:00\\s*PM|3PM)"
+  day_pattern_regex: "(?:Mon\\s*-\\s*Thu|Monday\\s*-\\s*Thursday|Fri|Friday|Sat|Saturday|Sun|Sunday|MON\\s*-\\s*FRI|Monday\\s*-\\s*Friday)"
   
-  # When "All Day" is found, mark as all-day deal
-  all_day_indicators:
-    - "all day"
-    - "all-day"
+  # Exclude generic mentions that aren't real deals
+  exclude_patterns:
+    - "all day happy hour"
+    - "all-day happy hour"
+    - "daily specials"
   
-  # Happy hour pricing patterns
-  pricing_patterns:
-    - "\\$\\d+\\s+(beers?|wines?|cocktails?)"
-    - "\\$\\d+\\s+[^\\n]*"
-
-# Confidence boosting rules
-confidence_rules:
-  # Boost confidence when finding specific Fogo patterns
-  boost_on_match:
-    - pattern: "bar fogo"
-      boost: 0.3
-    - pattern: "\\$5 beers"
-      boost: 0.2  
-    - pattern: "\\$8.*wines"
-      boost: 0.2
-    - pattern: "SUN\\s*-\\s*SAT"
-      boost: 0.4
+  # Target content containers for happy hour info
+  content_containers:
+    - ".content-section"
+    - "[class*='happy']"
+    - "[class*='bar']"
+    - ".specials"

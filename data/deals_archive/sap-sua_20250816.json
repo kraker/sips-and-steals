@@ -1,7 +1,55 @@
 {
   "restaurant_slug": "sap-sua",
-  "archived_at": "2025-08-16T15:45:59.548902",
+  "archived_at": "2025-08-16T21:52:51.928427",
   "deals": [
+    {
+      "title": "Monday Happy Hour",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": "4:30 PM",
+      "end_time": "9:00 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:52:49.698040",
+      "source_url": "https://www.sapsua.com/menus/",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Tuesday Happy Hour",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": "4:30 PM",
+      "end_time": "9:00 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:52:49.698067",
+      "source_url": "https://www.sapsua.com/menus/",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Friday Happy Hour",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": "4:30 PM",
+      "end_time": "9:00 PM",
+      "price": null,
+      "is_all_day": false,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:52:49.698088",
+      "source_url": "https://www.sapsua.com/menus/",
+      "confidence_score": 0.8
+    },
     {
       "title": "Time-based Special",
       "description": "sunday - 4:30pm - 9pm",
@@ -12,7 +60,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:45:57.360181",
+      "scraped_at": "2025-08-16T21:52:49.702843",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +74,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:45:57.360185",
+      "scraped_at": "2025-08-16T21:52:49.702848",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +88,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:45:57.360186",
+      "scraped_at": "2025-08-16T21:52:49.702849",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +102,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:45:57.360187",
+      "scraped_at": "2025-08-16T21:52:49.702851",
       "source_url": null,
       "confidence_score": 0.4
     }

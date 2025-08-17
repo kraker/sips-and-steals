@@ -1,0 +1,22 @@
+{
+  "restaurant_slug": "angelos-taverna",
+  "archived_at": "2025-08-16T21:49:23.766352",
+  "deals": [
+    {
+      "title": "Monday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:21.475522",
+      "source_url": "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials",
+      "confidence_score": 0.8
+    }
+  ]
+}

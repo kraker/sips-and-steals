@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "boychik",
+  "archived_at": "2025-08-16T21:49:28.355525",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "11:00 am – 9:00 pmopen daily phone - ‭(303) 997-8402‬reservationsmenushappy hour",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:25.865549",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

@@ -1,20 +1,22 @@
 {
   "restaurant_slug": "sunday-vinyl",
-  "archived_at": "2025-08-16T15:15:59.313377",
+  "archived_at": "2025-08-16T21:49:51.759990",
   "deals": [
     {
-      "title": "Happy Hour",
-      "description": "happy hour\n\n\nwines by the glass\n\n\ndinner menu\n\n\nwines by the bottle\n\n\nbeverages\n\n\n\n\n\nintroducing sun",
+      "title": "Sunday Happy Hour",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
-      "days_of_week": [],
-      "start_time": null,
-      "end_time": null,
+      "days_of_week": [
+        "sunday"
+      ],
+      "start_time": "4:30 PM",
+      "end_time": "10:00 PM",
       "price": null,
-      "is_all_day": true,
+      "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:15:57.035949",
-      "source_url": null,
-      "confidence_score": 0.4
+      "scraped_at": "2025-08-16T21:49:49.682171",
+      "source_url": "https://www.sundayvinyl.com/menus/#happy-hour",
+      "confidence_score": 0.8
     },
     {
       "title": "Time-based Special",
@@ -26,7 +28,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:15:57.038633",
+      "scraped_at": "2025-08-16T21:49:49.687413",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +42,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:15:57.038635",
+      "scraped_at": "2025-08-16T21:49:49.687415",
       "source_url": null,
       "confidence_score": 0.4
     }

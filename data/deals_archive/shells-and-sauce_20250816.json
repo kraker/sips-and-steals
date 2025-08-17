@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "shells-and-sauce",
-  "archived_at": "2025-08-16T15:43:59.503841",
+  "archived_at": "2025-08-16T21:52:40.113538",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:43:57.330815",
+      "scraped_at": "2025-08-16T21:52:37.718782",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:43:57.330852",
+      "scraped_at": "2025-08-16T21:52:37.718816",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:43:57.331014",
+      "scraped_at": "2025-08-16T21:52:37.718967",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:43:57.333505",
+      "scraped_at": "2025-08-16T21:52:37.721331",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:43:57.333507",
+      "scraped_at": "2025-08-16T21:52:37.721333",
       "source_url": null,
       "confidence_score": 0.4
     }

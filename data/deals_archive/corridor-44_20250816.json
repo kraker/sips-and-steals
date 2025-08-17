@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "corridor-44",
-  "archived_at": "2025-08-16T15:12:59.411907",
+  "archived_at": "2025-08-16T21:49:34.182248",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:12:57.118769",
+      "scraped_at": "2025-08-16T21:49:31.780904",
       "source_url": null,
       "confidence_score": 0.4
     }

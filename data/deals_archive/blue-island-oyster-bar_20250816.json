@@ -1,0 +1,68 @@
+{
+  "restaurant_slug": "blue-island-oyster-bar",
+  "archived_at": "2025-08-16T21:48:54.133401",
+  "deals": [
+    {
+      "title": "Monday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:52.043668",
+      "source_url": "https://www.blueislandoysterbar.com/specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Tuesday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "tuesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:52.043756",
+      "source_url": "https://www.blueislandoysterbar.com/specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Friday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "friday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:52.043914",
+      "source_url": "https://www.blueislandoysterbar.com/specials",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Daily 2-6pm & Sunday Open-6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:52.045421",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

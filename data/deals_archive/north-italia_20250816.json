@@ -1,0 +1,34 @@
+{
+  "restaurant_slug": "north-italia",
+  "archived_at": "2025-08-16T21:49:07.654086",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour menu | handmade italian food in denver | north italia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:05.407034",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Mon - Fri 3PM - 6PM. Served in the Bar.",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:05.407660",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

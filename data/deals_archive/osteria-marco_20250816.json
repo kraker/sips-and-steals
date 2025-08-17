@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "osteria-marco",
-  "archived_at": "2025-08-16T20:29:33.505432",
+  "archived_at": "2025-08-16T21:49:03.819674",
   "deals": [
     {
       "title": "Sunday Special",
@@ -14,7 +14,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T20:29:31.233043",
+      "scraped_at": "2025-08-16T21:49:01.655288",
       "source_url": "https://www.osteriamarco.com/",
       "confidence_score": 0.8
     },
@@ -30,7 +30,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T20:29:31.233082",
+      "scraped_at": "2025-08-16T21:49:01.655315",
       "source_url": "https://www.osteriamarco.com/",
       "confidence_score": 0.8
     },
@@ -44,7 +44,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T20:29:31.235921",
+      "scraped_at": "2025-08-16T21:49:01.658761",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -58,7 +58,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T20:29:31.235924",
+      "scraped_at": "2025-08-16T21:49:01.658763",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -72,7 +72,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T20:29:31.235925",
+      "scraped_at": "2025-08-16T21:49:01.658764",
       "source_url": null,
       "confidence_score": 0.4
     }

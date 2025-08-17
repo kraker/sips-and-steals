@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "xiquita-restaurante-y-bar",
-  "archived_at": "2025-08-16T15:36:59.539118",
+  "archived_at": "2025-08-16T21:51:57.997433",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:36:57.396598",
+      "scraped_at": "2025-08-16T21:51:55.837451",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:36:57.397745",
+      "scraped_at": "2025-08-16T21:51:55.838290",
       "source_url": null,
       "confidence_score": 0.4
     }

@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "point-easy-denver",
+  "archived_at": "2025-08-16T21:49:53.525852",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\n\n\n\n\n\n\n\n\ndessert\n\n\n\n\n\n\n\n\n\n\nmother's day brunch\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ncocktails \n\n\n\nlet’s do the ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:51.111640",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour \n\n\n\n5-6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:51.111663",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour: 5-6pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:51.111671",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

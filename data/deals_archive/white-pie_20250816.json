@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "white-pie",
-  "archived_at": "2025-08-16T15:27:59.736964",
+  "archived_at": "2025-08-16T21:51:04.126749",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:27:57.329795",
+      "scraped_at": "2025-08-16T21:51:01.889755",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:27:57.329889",
+      "scraped_at": "2025-08-16T21:51:01.889849",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:27:57.336424",
+      "scraped_at": "2025-08-16T21:51:01.896666",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:27:57.336426",
+      "scraped_at": "2025-08-16T21:51:01.896667",
       "source_url": null,
       "confidence_score": 0.4
     }

@@ -1,0 +1,20 @@
+{
+  "restaurant_slug": "uchi",
+  "archived_at": "2025-08-16T21:49:39.522865",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour        \n\n          drinks        \n\n          takeout a la carte        \n\n            take",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:37.428543",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

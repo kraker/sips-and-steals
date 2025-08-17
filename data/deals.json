@@ -1,7 +1,7 @@
 {
   "jovaninas-broken-italian": {
     "deals": [],
-    "last_updated": "2025-08-16T17:30:36.809241"
+    "last_updated": "2025-08-16T21:48:39.782826"
   },
   "thirsty-lion": {
     "deals": [
@@ -23,7 +23,7 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:16.492249",
+        "scraped_at": "2025-08-16T21:48:43.781332",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       },
@@ -41,7 +41,7 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:16.493673",
+        "scraped_at": "2025-08-16T21:48:43.782563",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       },
@@ -57,63 +57,15 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:16.495896",
+        "scraped_at": "2025-08-16T21:48:43.784461",
         "source_url": "https://www.thirstyliongastropub.com/menu",
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T20:43:18.937147"
+    "last_updated": "2025-08-16T21:48:45.879022"
   },
   "blue-sushi-sake-grill": {
     "deals": [
-      {
-        "title": "Vegan Maki Special",
-        "description": "25% off vegan makievery",
-        "deal_type": "happy_hour",
-        "days_of_week": [
-          "tuesday"
-        ],
-        "start_time": null,
-        "end_time": null,
-        "price": null,
-        "is_all_day": true,
-        "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.590998",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
-        "confidence_score": 0.8
-      },
-      {
-        "title": "Sake Special",
-        "description": "Half-off sake bottlesevery",
-        "deal_type": "happy_hour",
-        "days_of_week": [
-          "tuesday"
-        ],
-        "start_time": null,
-        "end_time": null,
-        "price": null,
-        "is_all_day": true,
-        "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.591028",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
-        "confidence_score": 0.8
-      },
-      {
-        "title": "Tuesday Special",
-        "description": "Special discounts and happy hour deals",
-        "deal_type": "happy_hour",
-        "days_of_week": [
-          "tuesday"
-        ],
-        "start_time": null,
-        "end_time": null,
-        "price": null,
-        "is_all_day": true,
-        "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.591243",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
-        "confidence_score": 0.8
-      },
       {
         "title": "Friday Happy Hour",
         "description": "Special discounts and happy hour deals",
@@ -126,8 +78,8 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.595258",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "scraped_at": "2025-08-16T21:53:28.518302",
+        "source_url": "https://www.bluesushisakegrill.com/locations/lodo",
         "confidence_score": 0.8
       },
       {
@@ -142,8 +94,8 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.595289",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "scraped_at": "2025-08-16T21:53:28.518386",
+        "source_url": "https://www.bluesushisakegrill.com/locations/lodo",
         "confidence_score": 0.8
       },
       {
@@ -158,8 +110,8 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.595311",
-        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "scraped_at": "2025-08-16T21:53:28.518441",
+        "source_url": "https://www.bluesushisakegrill.com/locations/lodo",
         "confidence_score": 0.8
       },
       {
@@ -172,7 +124,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.596257",
+        "scraped_at": "2025-08-16T21:53:28.521524",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -186,7 +138,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.596259",
+        "scraped_at": "2025-08-16T21:53:28.521528",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -200,7 +152,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.596260",
+        "scraped_at": "2025-08-16T21:53:28.521529",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -214,7 +166,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.596261",
+        "scraped_at": "2025-08-16T21:53:28.521530",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -228,16 +180,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:22.596262",
+        "scraped_at": "2025-08-16T21:53:28.521531",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T20:43:24.657397"
+    "last_updated": "2025-08-16T21:53:30.963659"
   },
   "a5-steakhouse": {
     "deals": [],
-    "last_updated": "2025-08-16T20:43:30.795561"
+    "last_updated": "2025-08-16T21:48:57.737856"
   },
   "osteria-marco": {
     "deals": [
@@ -253,7 +205,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:40:37.692209",
+        "scraped_at": "2025-08-16T21:49:01.655288",
         "source_url": "https://www.osteriamarco.com/",
         "confidence_score": 0.8
       },
@@ -269,7 +221,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:40:37.692245",
+        "scraped_at": "2025-08-16T21:49:01.655315",
         "source_url": "https://www.osteriamarco.com/",
         "confidence_score": 0.8
       },
@@ -283,7 +235,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:40:37.695563",
+        "scraped_at": "2025-08-16T21:49:01.658761",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -297,7 +249,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:40:37.695567",
+        "scraped_at": "2025-08-16T21:49:01.658763",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -311,12 +263,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:40:37.695568",
+        "scraped_at": "2025-08-16T21:49:01.658764",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T19:40:40.177637"
+    "last_updated": "2025-08-16T21:49:03.819653"
   },
   "rioja": {
     "deals": [
@@ -330,16 +282,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:08:58.066308",
+        "scraped_at": "2025-08-16T21:49:08.871637",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:09:00.312286"
+    "last_updated": "2025-08-16T21:49:11.256227"
   },
   "stk": {
     "deals": [],
-    "last_updated": "2025-08-16T15:10:00.984628"
+    "last_updated": "2025-08-16T21:49:20.373311"
   },
   "urban-farmer": {
     "deals": [
@@ -353,7 +305,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:10:57.001371",
+        "scraped_at": "2025-08-16T21:49:19.701527",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -367,12 +319,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:10:57.004870",
+        "scraped_at": "2025-08-16T21:49:19.705243",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:10:59.253206"
+    "last_updated": "2025-08-16T21:49:21.864323"
   },
   "tamayo": {
     "deals": [
@@ -386,7 +338,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:13:06.012192",
+        "scraped_at": "2025-08-16T21:49:25.779461",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -400,7 +352,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:13:06.012288",
+        "scraped_at": "2025-08-16T21:49:25.779493",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -414,7 +366,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:13:06.013741",
+        "scraped_at": "2025-08-16T21:49:25.780606",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -434,12 +386,12 @@
         "price": null,
         "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:13:06.024755",
+        "scraped_at": "2025-08-16T21:49:25.790919",
         "source_url": null,
         "confidence_score": 0.8
       }
     ],
-    "last_updated": "2025-08-16T20:13:08.038337"
+    "last_updated": "2025-08-16T21:49:28.013545"
   },
   "corridor-44": {
     "deals": [
@@ -453,12 +405,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:12:57.118769",
+        "scraped_at": "2025-08-16T21:49:31.780904",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:12:59.411878"
+    "last_updated": "2025-08-16T21:49:34.182171"
   },
   "tavernetta": {
     "deals": [
@@ -472,7 +424,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:13:57.028196",
+        "scraped_at": "2025-08-16T21:49:37.700465",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -486,7 +438,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:13:57.028220",
+        "scraped_at": "2025-08-16T21:49:37.700488",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -500,7 +452,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:13:57.028313",
+        "scraped_at": "2025-08-16T21:49:37.700584",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -514,7 +466,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:13:57.031986",
+        "scraped_at": "2025-08-16T21:49:37.704215",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -528,12 +480,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:13:57.031990",
+        "scraped_at": "2025-08-16T21:49:37.704218",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:13:59.234545"
+    "last_updated": "2025-08-16T21:49:40.008895"
   },
   "ultreia": {
     "deals": [
@@ -547,28 +499,30 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:14:57.723439",
+        "scraped_at": "2025-08-16T21:49:45.742739",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:14:59.758918"
+    "last_updated": "2025-08-16T21:49:48.085416"
   },
   "sunday-vinyl": {
     "deals": [
       {
-        "title": "Happy Hour",
-        "description": "happy hour\n\n\nwines by the glass\n\n\ndinner menu\n\n\nwines by the bottle\n\n\nbeverages\n\n\n\n\n\nintroducing sun",
+        "title": "Sunday Happy Hour",
+        "description": "Special discounts and happy hour deals",
         "deal_type": "happy_hour",
-        "days_of_week": [],
-        "start_time": null,
-        "end_time": null,
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": "4:30 PM",
+        "end_time": "10:00 PM",
         "price": null,
-        "is_all_day": true,
+        "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:15:57.035949",
-        "source_url": null,
-        "confidence_score": 0.4
+        "scraped_at": "2025-08-16T21:49:49.682171",
+        "source_url": "https://www.sundayvinyl.com/menus/#happy-hour",
+        "confidence_score": 0.8
       },
       {
         "title": "Time-based Special",
@@ -580,7 +534,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:15:57.038633",
+        "scraped_at": "2025-08-16T21:49:49.687413",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -594,16 +548,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:15:57.038635",
+        "scraped_at": "2025-08-16T21:49:49.687415",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:15:59.313347"
+    "last_updated": "2025-08-16T21:49:51.759965"
   },
   "foraged": {
     "deals": [],
-    "last_updated": "2025-08-16T15:16:59.503475"
+    "last_updated": "2025-08-16T21:49:58.181330"
   },
   "ajax-downtown": {
     "deals": [
@@ -617,12 +571,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:17:57.051580",
+        "scraped_at": "2025-08-16T21:50:01.644754",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:17:59.410246"
+    "last_updated": "2025-08-16T21:50:04.120056"
   },
   "mercantile": {
     "deals": [
@@ -636,7 +590,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:34.425285",
+        "scraped_at": "2025-08-16T21:50:07.926209",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -650,7 +604,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:34.425298",
+        "scraped_at": "2025-08-16T21:50:07.926222",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -664,7 +618,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:34.425392",
+        "scraped_at": "2025-08-16T21:50:07.926314",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -678,7 +632,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:34.427249",
+        "scraped_at": "2025-08-16T21:50:07.928237",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -692,12 +646,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T20:43:34.427252",
+        "scraped_at": "2025-08-16T21:50:07.928240",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T20:43:36.886155"
+    "last_updated": "2025-08-16T21:50:10.156349"
   },
   "fogo-de-chão": {
     "deals": [
@@ -719,7 +673,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.638539",
+        "scraped_at": "2025-08-16T21:54:12.177483",
         "source_url": "https://fogodechao.com/location/denver/",
         "confidence_score": 0.8
       },
@@ -733,7 +687,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.641312",
+        "scraped_at": "2025-08-16T21:54:12.179940",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -747,7 +701,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.641321",
+        "scraped_at": "2025-08-16T21:54:12.179944",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -761,7 +715,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.641324",
+        "scraped_at": "2025-08-16T21:54:12.179945",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -775,7 +729,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.641326",
+        "scraped_at": "2025-08-16T21:54:12.179946",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -789,12 +743,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T21:00:24.641327",
+        "scraped_at": "2025-08-16T21:54:12.179947",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T21:00:27.085402"
+    "last_updated": "2025-08-16T21:54:14.322965"
   },
   "mecha-noodle-bar": {
     "deals": [
@@ -808,16 +762,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:20:57.106119",
+        "scraped_at": "2025-08-16T21:50:19.698346",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:20:59.337113"
+    "last_updated": "2025-08-16T21:50:21.946652"
   },
   "wonderyard-garden-table": {
     "deals": [],
-    "last_updated": "2025-08-16T15:21:59.300672"
+    "last_updated": "2025-08-16T21:50:28.012637"
   },
   "done-deal": {
     "deals": [
@@ -831,16 +785,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:22:57.090828",
+        "scraped_at": "2025-08-16T21:50:31.680774",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:22:59.244823"
+    "last_updated": "2025-08-16T21:50:33.759676"
   },
   "bezel-bar": {
     "deals": [],
-    "last_updated": "2025-08-16T15:24:00.303489"
+    "last_updated": "2025-08-16T21:50:40.546878"
   },
   "panzano": {
     "deals": [
@@ -854,7 +808,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.298963",
+        "scraped_at": "2025-08-16T21:50:43.863050",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -868,7 +822,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.298988",
+        "scraped_at": "2025-08-16T21:50:43.863069",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -882,7 +836,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.301242",
+        "scraped_at": "2025-08-16T21:50:43.864806",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -896,7 +850,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.301245",
+        "scraped_at": "2025-08-16T21:50:43.864807",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -910,7 +864,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.301246",
+        "scraped_at": "2025-08-16T21:50:43.864808",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -924,7 +878,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.301247",
+        "scraped_at": "2025-08-16T21:50:43.864809",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -938,12 +892,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:24:57.301248",
+        "scraped_at": "2025-08-16T21:50:43.864810",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:24:59.592475"
+    "last_updated": "2025-08-16T21:50:46.040072"
   },
   "guard-and-grace": {
     "deals": [
@@ -957,7 +911,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:25:57.159083",
+        "scraped_at": "2025-08-16T21:50:49.695159",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -971,16 +925,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:25:57.162990",
+        "scraped_at": "2025-08-16T21:50:49.699407",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:25:59.557528"
+    "last_updated": "2025-08-16T21:50:51.854567"
   },
   "corinne-denver": {
     "deals": [],
-    "last_updated": "2025-08-16T15:26:59.739782"
+    "last_updated": "2025-08-16T21:50:58.276709"
   },
   "white-pie": {
     "deals": [
@@ -994,7 +948,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:27:57.329795",
+        "scraped_at": "2025-08-16T21:51:01.889755",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1008,7 +962,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:27:57.329889",
+        "scraped_at": "2025-08-16T21:51:01.889849",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1022,7 +976,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:27:57.336424",
+        "scraped_at": "2025-08-16T21:51:01.896666",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1036,12 +990,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:27:57.336426",
+        "scraped_at": "2025-08-16T21:51:01.896667",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:27:59.736940"
+    "last_updated": "2025-08-16T21:51:04.126712"
   },
   "fire-lounge": {
     "deals": [
@@ -1055,7 +1009,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.798049",
+        "scraped_at": "2025-08-16T21:51:07.816002",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1069,7 +1023,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.798065",
+        "scraped_at": "2025-08-16T21:51:07.816015",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1083,7 +1037,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.798096",
+        "scraped_at": "2025-08-16T21:51:07.816042",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1097,7 +1051,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.799165",
+        "scraped_at": "2025-08-16T21:51:07.816950",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1111,7 +1065,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.799167",
+        "scraped_at": "2025-08-16T21:51:07.816952",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1125,7 +1079,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.799168",
+        "scraped_at": "2025-08-16T21:51:07.816952",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1139,7 +1093,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.799168",
+        "scraped_at": "2025-08-16T21:51:07.816953",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1153,12 +1107,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:28:57.799169",
+        "scraped_at": "2025-08-16T21:51:07.816954",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:28:59.895326"
+    "last_updated": "2025-08-16T21:51:09.878864"
   },
   "city-o-city": {
     "deals": [
@@ -1172,7 +1126,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:50:54.942250",
+        "scraped_at": "2025-08-16T21:51:13.657190",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1186,7 +1140,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:50:54.942282",
+        "scraped_at": "2025-08-16T21:51:13.657220",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1200,7 +1154,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:50:54.942364",
+        "scraped_at": "2025-08-16T21:51:13.657242",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1214,7 +1168,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:50:54.943937",
+        "scraped_at": "2025-08-16T21:51:13.658766",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1228,12 +1182,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T19:50:54.943940",
+        "scraped_at": "2025-08-16T21:51:13.658768",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T19:50:57.200144"
+    "last_updated": "2025-08-16T21:51:15.829239"
   },
   "bang-up-to-the-elephant": {
     "deals": [
@@ -1247,7 +1201,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:30:59.187534",
+        "scraped_at": "2025-08-16T21:51:20.311847",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1261,7 +1215,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:30:59.187540",
+        "scraped_at": "2025-08-16T21:51:20.311853",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1275,20 +1229,20 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:30:59.187546",
+        "scraped_at": "2025-08-16T21:51:20.311859",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:31:01.454688"
+    "last_updated": "2025-08-16T21:51:22.772612"
   },
   "100-de-agave": {
     "deals": [],
-    "last_updated": "2025-08-16T17:37:14.579340"
+    "last_updated": "2025-08-16T21:51:27.839861"
   },
   "9th-door": {
     "deals": [],
-    "last_updated": "2025-08-16T17:37:25.091922"
+    "last_updated": "2025-08-16T21:51:34.028594"
   },
   "vesper-lounge": {
     "deals": [
@@ -1302,7 +1256,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.288067",
+        "scraped_at": "2025-08-16T21:51:38.564990",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1316,7 +1270,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.288088",
+        "scraped_at": "2025-08-16T21:51:38.565011",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1330,7 +1284,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.288109",
+        "scraped_at": "2025-08-16T21:51:38.565030",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1344,7 +1298,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.289671",
+        "scraped_at": "2025-08-16T21:51:38.566455",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1358,7 +1312,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.289673",
+        "scraped_at": "2025-08-16T21:51:38.566457",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1372,7 +1326,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.289674",
+        "scraped_at": "2025-08-16T21:51:38.566458",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1386,18 +1340,18 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:33:58.289675",
+        "scraped_at": "2025-08-16T21:51:38.566459",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:34:00.575452"
+    "last_updated": "2025-08-16T21:51:40.912276"
   },
   "watercourse-foods": {
     "deals": [
       {
         "title": "Monday Special",
-        "description": "every monday",
+        "description": "Special discounts and happy hour deals",
         "deal_type": "happy_hour",
         "days_of_week": [
           "monday"
@@ -1407,7 +1361,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:34:57.217136",
+        "scraped_at": "2025-08-16T21:51:43.674195",
         "source_url": "https://www.watercoursefoods.com/happyhour",
         "confidence_score": 0.8
       },
@@ -1421,7 +1375,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:34:57.218705",
+        "scraped_at": "2025-08-16T21:51:43.675958",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1435,7 +1389,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:34:57.218706",
+        "scraped_at": "2025-08-16T21:51:43.675960",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1449,12 +1403,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:34:57.218707",
+        "scraped_at": "2025-08-16T21:51:43.675961",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:34:59.553367"
+    "last_updated": "2025-08-16T21:51:46.106845"
   },
   "ace-eat-serve": {
     "deals": [
@@ -1468,7 +1422,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:35:57.427955",
+        "scraped_at": "2025-08-16T21:51:49.884560",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1482,7 +1436,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:35:57.427991",
+        "scraped_at": "2025-08-16T21:51:49.884602",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1496,7 +1450,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:35:57.428143",
+        "scraped_at": "2025-08-16T21:51:49.884718",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1510,12 +1464,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:35:57.430119",
+        "scraped_at": "2025-08-16T21:51:49.886671",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:35:59.799411"
+    "last_updated": "2025-08-16T21:51:52.017926"
   },
   "xiquita-restaurante-y-bar": {
     "deals": [
@@ -1529,7 +1483,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:36:57.396598",
+        "scraped_at": "2025-08-16T21:51:55.837451",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1543,60 +1497,34 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:36:57.397745",
+        "scraped_at": "2025-08-16T21:51:55.838290",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:36:59.539097"
+    "last_updated": "2025-08-16T21:51:57.997414"
   },
   "go-fish-sushi": {
     "deals": [],
-    "last_updated": "2025-08-16T15:37:59.577786"
+    "last_updated": "2025-08-16T21:52:04.199057"
   },
   "punchbowl-social": {
     "deals": [
       {
-        "title": "Happy Hour",
-        "description": "happy hour! shake off the sunday scaries with monday funday! keep the good vibes rolling with 50% of",
+        "title": "Friday Happy Hour",
+        "description": "On select",
         "deal_type": "happy_hour",
-        "days_of_week": [],
-        "start_time": null,
-        "end_time": null,
+        "days_of_week": [
+          "friday"
+        ],
+        "start_time": "9:00 PM",
+        "end_time": "12:00 AM",
         "price": null,
-        "is_all_day": true,
+        "is_all_day": false,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:38:57.597207",
-        "source_url": null,
-        "confidence_score": 0.4
-      },
-      {
-        "title": "Happy Hour",
-        "description": "10:00 pm - close on friday and saturdaykitchen open until closing time sunday-thursday. kitchen clos",
-        "deal_type": "happy_hour",
-        "days_of_week": [],
-        "start_time": null,
-        "end_time": null,
-        "price": null,
-        "is_all_day": true,
-        "special_notes": [],
-        "scraped_at": "2025-08-16T15:38:57.597312",
-        "source_url": null,
-        "confidence_score": 0.4
-      },
-      {
-        "title": "Happy Hour",
-        "description": "9:00 pm - turn up the volume, test your knowledge and sing along at our weekly music bingo!free rsvp",
-        "deal_type": "happy_hour",
-        "days_of_week": [],
-        "start_time": null,
-        "end_time": null,
-        "price": null,
-        "is_all_day": true,
-        "special_notes": [],
-        "scraped_at": "2025-08-16T15:38:57.597323",
-        "source_url": null,
-        "confidence_score": 0.4
+        "scraped_at": "2025-08-16T21:52:08.302692",
+        "source_url": "https://punchbowlsocial.com/location/denver/",
+        "confidence_score": 0.8
       },
       {
         "title": "Time-based Special",
@@ -1608,7 +1536,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:38:57.598684",
+        "scraped_at": "2025-08-16T21:52:08.307652",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1622,12 +1550,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:38:57.598685",
+        "scraped_at": "2025-08-16T21:52:08.307658",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:39:00.038588"
+    "last_updated": "2025-08-16T21:52:10.418289"
   },
   "rocky-yama-sushi": {
     "deals": [
@@ -1641,7 +1569,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.359955",
+        "scraped_at": "2025-08-16T21:52:13.771040",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1655,7 +1583,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.359961",
+        "scraped_at": "2025-08-16T21:52:13.771049",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1669,7 +1597,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.359975",
+        "scraped_at": "2025-08-16T21:52:13.771067",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1683,7 +1611,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.368876",
+        "scraped_at": "2025-08-16T21:52:13.780171",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1697,7 +1625,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.368881",
+        "scraped_at": "2025-08-16T21:52:13.780174",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1711,7 +1639,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.368883",
+        "scraped_at": "2025-08-16T21:52:13.780175",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1725,12 +1653,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:39:57.368883",
+        "scraped_at": "2025-08-16T21:52:13.780176",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:39:59.556988"
+    "last_updated": "2025-08-16T21:52:15.801262"
   },
   "adrift": {
     "deals": [
@@ -1744,12 +1672,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:40:58.650055",
+        "scraped_at": "2025-08-16T21:52:20.220939",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:41:01.108820"
+    "last_updated": "2025-08-16T21:52:22.498042"
   },
   "la-forêt": {
     "deals": [
@@ -1763,16 +1691,16 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:41:57.392049",
+        "scraped_at": "2025-08-16T21:52:25.766217",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:41:59.578459"
+    "last_updated": "2025-08-16T21:52:28.041776"
   },
   "ronin-congress-park": {
     "deals": [],
-    "last_updated": "2025-08-16T15:42:59.415347"
+    "last_updated": "2025-08-16T21:52:34.195178"
   },
   "shells-and-sauce": {
     "deals": [
@@ -1786,7 +1714,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:43:57.330815",
+        "scraped_at": "2025-08-16T21:52:37.718782",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1800,7 +1728,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:43:57.330852",
+        "scraped_at": "2025-08-16T21:52:37.718816",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1814,7 +1742,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:43:57.331014",
+        "scraped_at": "2025-08-16T21:52:37.718967",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1828,7 +1756,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:43:57.333505",
+        "scraped_at": "2025-08-16T21:52:37.721331",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1842,12 +1770,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:43:57.333507",
+        "scraped_at": "2025-08-16T21:52:37.721333",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:43:59.503820"
+    "last_updated": "2025-08-16T21:52:40.113505"
   },
   "bar-max": {
     "deals": [
@@ -1861,15 +1789,63 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:44:57.287888",
+        "scraped_at": "2025-08-16T21:52:43.647133",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:44:59.546397"
+    "last_updated": "2025-08-16T21:52:45.650991"
   },
   "sap-sua": {
     "deals": [
+      {
+        "title": "Monday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday"
+        ],
+        "start_time": "4:30 PM",
+        "end_time": "9:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:52:49.698040",
+        "source_url": "https://www.sapsua.com/menus/",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Tuesday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "tuesday"
+        ],
+        "start_time": "4:30 PM",
+        "end_time": "9:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:52:49.698067",
+        "source_url": "https://www.sapsua.com/menus/",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Friday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "friday"
+        ],
+        "start_time": "4:30 PM",
+        "end_time": "9:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:52:49.698088",
+        "source_url": "https://www.sapsua.com/menus/",
+        "confidence_score": 0.8
+      },
       {
         "title": "Time-based Special",
         "description": "sunday - 4:30pm - 9pm",
@@ -1880,7 +1856,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:45:57.360181",
+        "scraped_at": "2025-08-16T21:52:49.702843",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1894,7 +1870,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:45:57.360185",
+        "scraped_at": "2025-08-16T21:52:49.702848",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1908,7 +1884,7 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:45:57.360186",
+        "scraped_at": "2025-08-16T21:52:49.702849",
         "source_url": null,
         "confidence_score": 0.4
       },
@@ -1922,12 +1898,12 @@
         "price": null,
         "is_all_day": true,
         "special_notes": [],
-        "scraped_at": "2025-08-16T15:45:57.360187",
+        "scraped_at": "2025-08-16T21:52:49.702851",
         "source_url": null,
         "confidence_score": 0.4
       }
     ],
-    "last_updated": "2025-08-16T15:45:59.548858"
+    "last_updated": "2025-08-16T21:52:51.928401"
   },
   "jax-fish-house": {
     "deals": [

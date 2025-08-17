@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "ultreia",
-  "archived_at": "2025-08-16T15:14:59.758959",
+  "archived_at": "2025-08-16T21:49:48.085438",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:14:57.723439",
+      "scraped_at": "2025-08-16T21:49:45.742739",
       "source_url": null,
       "confidence_score": 0.4
     }

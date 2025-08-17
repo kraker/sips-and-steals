@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "sol-mexican-cocina",
+  "archived_at": "2025-08-16T21:49:12.528337",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\ntaco & tequila tuesday\n\n\n\n\n\n\n\n antojitos\n\n\n\n\n\nnaked guacamole\n\n\n avocado, cilantro, lim",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:10.288484",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour is monday – friday from 3 pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:10.288615",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "11am to 4pm\r\non garlic-toasted torta roll, served with tequila-picked jalapeño, choice of red rice, ",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:10.289013",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

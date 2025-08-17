@@ -1,0 +1,94 @@
+{
+  "restaurant_slug": "local-jones",
+  "archived_at": "2025-08-16T21:49:30.338760",
+  "deals": [
+    {
+      "title": "Wednesday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.128541",
+      "source_url": "https://www.halcyonhotelcherrycreek.com/local-jones/menus",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Wednesday Special",
+      "description": "Special discounts and happy hour deals",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "wednesday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.128642",
+      "source_url": "https://www.halcyonhotelcherrycreek.com/local-jones/menus",
+      "confidence_score": 0.8
+    },
+    {
+      "title": "Time-based Special",
+      "description": "LJ Happy Hour | Mondays-Fridays, 2:30pm-5pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.130671",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Summer’s best kept secret? Local Jones cocktails. Vibrant and refreshing, each is like a kiss of the season itself. ☀️🍊✨️⁠\n⁠\n LJ Happy Hour | Mondays-Fridays, 2:30pm-5pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.130675",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "7:30 -10:30AM, 11AM -10PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.130676",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "7:30 -10:30AM, 11AM -11PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:28.130677",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "jax-fish-house",
-  "archived_at": "2025-08-16T14:43:50.089869",
+  "archived_at": "2025-08-16T21:49:01.850446",
   "deals": [
     {
       "title": "Sunday Special",
-      "description": "every sunday",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "sunday"
@@ -14,7 +14,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.050185",
+      "scraped_at": "2025-08-16T21:48:59.556341",
       "source_url": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder/#happy-hour",
       "confidence_score": 0.8
     },
@@ -28,7 +28,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.054864",
+      "scraped_at": "2025-08-16T21:48:59.561666",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -42,7 +42,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.054868",
+      "scraped_at": "2025-08-16T21:48:59.561670",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -56,7 +56,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.054870",
+      "scraped_at": "2025-08-16T21:48:59.561671",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -70,7 +70,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.054871",
+      "scraped_at": "2025-08-16T21:48:59.561672",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -84,7 +84,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T14:43:48.054872",
+      "scraped_at": "2025-08-16T21:48:59.561673",
       "source_url": null,
       "confidence_score": 0.4
     }

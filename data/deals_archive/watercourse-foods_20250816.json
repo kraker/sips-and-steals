@@ -1,10 +1,10 @@
 {
   "restaurant_slug": "watercourse-foods",
-  "archived_at": "2025-08-16T15:34:59.553403",
+  "archived_at": "2025-08-16T21:51:46.106866",
   "deals": [
     {
       "title": "Monday Special",
-      "description": "every monday",
+      "description": "Special discounts and happy hour deals",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday"
@@ -14,7 +14,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:34:57.217136",
+      "scraped_at": "2025-08-16T21:51:43.674195",
       "source_url": "https://www.watercoursefoods.com/happyhour",
       "confidence_score": 0.8
     },
@@ -28,7 +28,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:34:57.218705",
+      "scraped_at": "2025-08-16T21:51:43.675958",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -42,7 +42,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:34:57.218706",
+      "scraped_at": "2025-08-16T21:51:43.675960",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -56,7 +56,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:34:57.218707",
+      "scraped_at": "2025-08-16T21:51:43.675961",
       "source_url": null,
       "confidence_score": 0.4
     }

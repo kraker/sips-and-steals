@@ -1,0 +1,37 @@
+# Custom scraping configuration for Blue Sushi Sake Grill LoDo
+restaurant_name: "Blue Sushi Sake Grill"
+
+# Main scraping configuration that the system expects
+scraping_config:
+  enabled: true
+  fallback_to_static: true
+  
+  # Custom selectors to target happy hour content specifically
+  custom_selectors:
+    happy_hour_content: ".content-section, .hours-section, [class*='happy'], [class*='hours']"
+  
+  # Enhanced regex patterns for Blue Sushi happy hour detection
+  time_pattern_regex: "(?:Monday-Saturday|Mon-Sat)[:\\s]*(?:11am|11:00\\s*am)[\\s-]*(?:6:30pm|6:30\\s*pm)|Sunday[:\\s]*all\\s*day"
+  day_pattern_regex: "(?:Monday-Saturday|Mon-Sat|Sunday)"
+  
+  # Exclude operating hours that aren't happy hour - must match the exact format being scraped
+  exclude_patterns:
+    - "Friday.*11:00 AM.*10:00 PM"
+    - "Friday.*11:00 AM.*10:30 PM"
+    - "Saturday.*11:00 AM.*10:30 PM"
+    - "Saturday.*12:00 PM.*10:30 PM"
+    - "Sunday.*12:00 PM.*10:30 PM"
+    - "Sunday.*12:00 PM.*9:00 PM"
+    - "Monday.*11:00 AM.*10:00 PM"
+    - "Tuesday.*11:00 AM.*10:00 PM"
+    - "Wednesday.*11:00 AM.*10:00 PM"
+    - "Thursday.*11:00 AM.*10:00 PM"
+    - "operating hours"
+    - "kitchen hours"
+    - "restaurant hours"
+  
+  # Target content containers for happy hour info
+  content_containers:
+    - ".location-details"
+    - ".hours-section"
+    - "[class*='happy']"

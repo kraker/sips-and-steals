@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "la-forêt",
-  "archived_at": "2025-08-16T15:41:59.578478",
+  "archived_at": "2025-08-16T21:52:28.041802",
   "deals": [
     {
       "title": "Time-based Special",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:41:57.392049",
+      "scraped_at": "2025-08-16T21:52:25.766217",
       "source_url": null,
       "confidence_score": 0.4
     }

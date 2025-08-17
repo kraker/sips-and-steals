@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "done-deal",
-  "archived_at": "2025-08-16T15:22:59.244861",
+  "archived_at": "2025-08-16T21:50:33.759696",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:22:57.090828",
+      "scraped_at": "2025-08-16T21:50:31.680774",
       "source_url": null,
       "confidence_score": 0.4
     }

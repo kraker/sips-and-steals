@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "mecha-noodle-bar",
-  "archived_at": "2025-08-16T15:20:59.337140",
+  "archived_at": "2025-08-16T21:50:21.946679",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:20:57.106119",
+      "scraped_at": "2025-08-16T21:50:19.698346",
       "source_url": null,
       "confidence_score": 0.4
     }

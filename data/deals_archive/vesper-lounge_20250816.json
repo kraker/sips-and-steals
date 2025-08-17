@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "vesper-lounge",
-  "archived_at": "2025-08-16T15:34:00.575480",
+  "archived_at": "2025-08-16T21:51:40.912302",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.288067",
+      "scraped_at": "2025-08-16T21:51:38.564990",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.288088",
+      "scraped_at": "2025-08-16T21:51:38.565011",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.288109",
+      "scraped_at": "2025-08-16T21:51:38.565030",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.289671",
+      "scraped_at": "2025-08-16T21:51:38.566455",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.289673",
+      "scraped_at": "2025-08-16T21:51:38.566457",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -82,7 +82,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.289674",
+      "scraped_at": "2025-08-16T21:51:38.566458",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -96,7 +96,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:33:58.289675",
+      "scraped_at": "2025-08-16T21:51:38.566459",
       "source_url": null,
       "confidence_score": 0.4
     }

@@ -1,0 +1,34 @@
+{
+  "restaurant_slug": "sushi-rama",
+  "archived_at": "2025-08-16T21:49:32.892203",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour denver - sushi-rama\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nskip to conten",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:54.043785",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "3pm – 4pm\n25% off all belt plates\n25% off our full bar menu\ndaily drink specials\nmalt mondays 25% of",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:48:54.043820",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

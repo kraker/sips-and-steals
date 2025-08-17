@@ -1,0 +1,48 @@
+{
+  "restaurant_slug": "north-county",
+  "archived_at": "2025-08-16T21:49:36.734277",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hourmonday: all day tuesday – sunday: 3pm",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:34.705376",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "happy hour drink specialsoriginal margarita — $8strawberry margarita — $8adult sodas — $1 offall oth",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:34.705412",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Happy Hour",
+      "description": "3pm to 6pmhappy hour",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:34.705427",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}

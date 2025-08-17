@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "fire-lounge",
-  "archived_at": "2025-08-16T15:28:59.895367",
+  "archived_at": "2025-08-16T21:51:09.878886",
   "deals": [
     {
       "title": "Happy Hour",
@@ -12,7 +12,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.798049",
+      "scraped_at": "2025-08-16T21:51:07.816002",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -26,7 +26,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.798065",
+      "scraped_at": "2025-08-16T21:51:07.816015",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -40,7 +40,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.798096",
+      "scraped_at": "2025-08-16T21:51:07.816042",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -54,7 +54,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.799165",
+      "scraped_at": "2025-08-16T21:51:07.816950",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -68,7 +68,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.799167",
+      "scraped_at": "2025-08-16T21:51:07.816952",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -82,7 +82,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.799168",
+      "scraped_at": "2025-08-16T21:51:07.816952",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -96,7 +96,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.799168",
+      "scraped_at": "2025-08-16T21:51:07.816953",
       "source_url": null,
       "confidence_score": 0.4
     },
@@ -110,7 +110,7 @@
       "price": null,
       "is_all_day": true,
       "special_notes": [],
-      "scraped_at": "2025-08-16T15:28:57.799169",
+      "scraped_at": "2025-08-16T21:51:07.816954",
       "source_url": null,
       "confidence_score": 0.4
     }

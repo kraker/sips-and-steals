@@ -1,0 +1,90 @@
+{
+  "restaurant_slug": "little-ollies",
+  "archived_at": "2025-08-16T21:49:24.498599",
+  "deals": [
+    {
+      "title": "Happy Hour",
+      "description": "happy hour\n\n\n\n\n\n\n\n\n\ndinner\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nsmall plates\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nedamame\n\n\r\n\t\t\t\t\t\t\t\t\tsea",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.118288",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Mon - Thurs: 11:00 AM - 9:30 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.123549",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Fri: 11:00 AM - 10:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.123553",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Sat: 12:00 PM - 10:00 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.123555",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Sun: 12:00 PM - 9:30 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.123556",
+      "source_url": null,
+      "confidence_score": 0.4
+    },
+    {
+      "title": "Time-based Special",
+      "description": "Mon - Thurs: 11:00 AM - 9:30 PM",
+      "deal_type": "happy_hour",
+      "days_of_week": [],
+      "start_time": null,
+      "end_time": null,
+      "price": null,
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-16T21:49:22.123557",
+      "source_url": null,
+      "confidence_score": 0.4
+    }
+  ]
+}
