@@ -65,6 +65,51 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This user doesn't want "cheap eats" - they want to discover Denver's culinary gems during their most approachable hours, building a personal map of quality establishments worth returning to at full price.
 
+## Git Commit Style Guide
+
+### Atomic Commit Principles
+Following [Aleksandr Hovhannisyan's atomic git commits](https://www.aleksandrhovhannisyan.com/blog/atomic-git-commits/):
+
+**Core Rule**: Each commit should represent "a single, complete unit of work" that can be independently reviewed and reverted.
+
+### Commit Message Format
+
+**Simple Changes** (data fixes, small bug fixes):
+```bash
+git commit -m "Fix malformed neighborhood names in restaurant data"
+git commit -m "Update American Elm scraper time pattern"
+git commit -m "Add robots.txt status to restaurant objects"
+```
+
+**Feature Commits** (new capabilities, significant changes):
+```bash
+git commit -m "Add config-based scraper system for rapid restaurant onboarding"
+git commit -m "Implement deal confidence scoring and validation"
+```
+
+**Milestone/Release Commits** (major completions):
+```bash
+# Use detailed heredoc format for comprehensive changelog
+git commit -m "$(cat <<'EOF'
+Complete documentation overhaul and milestone tracking
+...detailed changelog...
+EOF
+)"
+```
+
+### Guidelines
+- **Present tense verbs**: "Fix", "Add", "Update", "Remove", "Implement"
+- **Component focus**: Mention what area/system is changed
+- **Atomic scope**: One logical change per commit
+- **No fear of many commits**: Better to have 5 focused commits than 1 mixed commit
+
+### Examples by Type
+- **Data fixes**: `Fix duplicate neighborhoods in district metadata`
+- **Scraper updates**: `Add Bamboo Sushi day pattern validation`
+- **Feature additions**: `Implement time-based deal relevance scoring`
+- **Documentation**: `Update README with current architecture`
+- **Bug fixes**: `Fix missing source URLs in scraped deals`
+
 ## Commands
 
 ### Core Commands
