@@ -1,0 +1,51 @@
+restaurant_name: "STK"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://stksteakhouse.com/location/denver/"
+
+scraping_patterns:
+  deal_patterns:
+    # Social Hour timing patterns for Denver location - exact format from website
+    - pattern: "(?i)monday\\s*[–-]\\s*friday:\\s*(\\d{1,2}:\\d{2}\\s*pm)\\s*[–-]\\s*(\\d{1,2}:\\d{2}\\s*pm)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+      deal_type: "happy_hour"
+      title: "Weekday Social Hour"
+      days_of_week: ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      
+    - pattern: "(?i)saturday\\s*&\\s*sunday:\\s*(\\d{1,2}:\\d{2}\\s*pm)\\s*[–-]\\s*(\\d{1,2}:\\d{2}\\s*pm)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+      deal_type: "happy_hour"
+      title: "Weekend Social Hour"
+      days_of_week: ["saturday", "sunday"]
+      
+    - pattern: "(?i)sunday\\s*[–-]\\s*thursday:\\s*(\\d{1,2}\\s*pm)\\s*[–-]\\s*close"
+      groups: [start_time]
+      confidence: 0.9
+      deal_type: "happy_hour"
+      title: "Late Night Social Hour"
+      days_of_week: ["sunday", "monday", "tuesday", "wednesday", "thursday"]
+      end_time: "Close"
+      
+    # Pricing patterns from happy hour page
+    - pattern: "\\$(\\d+).*(?:starting|price|eats)"
+      groups: [price]
+      confidence: 0.8
+      deal_type: "happy_hour"
+      title: "Happy Hour Bites"
+
+post_processing:
+  deal_consolidation:
+    - title: "STK Social Hours"
+      description: "Multiple daily social hour periods with signature cocktails and bites"
+      combine_similar: true
+  
+  price_formatting:
+    currency_symbol: "$"
+    format: "price_ranges"
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

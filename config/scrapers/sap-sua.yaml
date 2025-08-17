@@ -1,0 +1,29 @@
+restaurant_slug: sap-sua
+scraping_urls:
+  - https://www.sapsua.com/hours-and-location/
+  - https://www.sapsua.com/contact/
+scraping_patterns:
+  hours_patterns:
+    # Sap Sua format: "sunday - 4:30pm - 9pm"
+    - pattern: "sunday\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
+      day: sunday
+      groups: [open_time, close_time]
+    - pattern: "monday\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
+      day: monday
+      groups: [open_time, close_time]
+    - pattern: "tuesday\\s*-\\s*closed"
+      day: tuesday
+      closed: true
+    - pattern: "wednesday\\s*-\\s*thursday\\s+(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
+      days: [wednesday, thursday]
+      groups: [open_time, close_time]
+    - pattern: "friday\\s*-\\s*saturday\\s+(\\d{1,2}:\\d{2}\\s*[ap]m)\\s*-\\s*(\\d{1,2}:\\d{2}\\s*[ap]m)"
+      days: [friday, saturday]
+      groups: [open_time, close_time]
+  contact_patterns:
+    - pattern: "(\\d{3})[-.\\s](\\d{3})[-.\\s](\\d{4})"
+      type: phone
+      groups: [area, exchange, number]
+  address_patterns:
+    - pattern: "(\\d+\\s+[A-Za-z][A-Za-z\\s]+(?:Street|St|Avenue|Ave|Boulevard|Blvd|Drive|Dr|Road|Rd|Lane|Ln)\\b[^.]*)"
+      confidence: 0.8

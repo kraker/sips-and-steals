@@ -1,0 +1,29 @@
+restaurant_name: "Vital Root"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://www.ediblebeats.com/vital-root"
+
+scraping_patterns:
+  time_patterns:
+    - pattern: "Monday – Friday"
+      days: ["monday", "tuesday", "wednesday", "thursday", "friday"]
+      confidence: 0.8
+    - pattern: "(\\d{1,2}PM) – (\\d{1,2}PM)"
+      groups: [start_time, end_time]
+      confidence: 0.8
+  
+  deal_patterns:
+    - pattern: "kids 12 & under eat free"
+      description: "Kids 12 & under eat free (dine-in only)"
+      confidence: 0.9
+
+post_processing:
+  deal_consolidation:
+    - title: "Happy Hour"
+      description: "Monday - Friday 3PM - 5PM, Kids 12 & under eat free"
+      combine_similar: true
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

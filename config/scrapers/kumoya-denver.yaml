@@ -1,0 +1,41 @@
+restaurant_name: "Kumoya - Denver"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://www.kumoyadenver.com/happy-hour"
+
+scraping_patterns:
+  time_patterns:
+    - pattern: "Every Day (\\d{1,2}:\\d{2}[ap]m) to (\\d{1,2}:\\d{2}[ap]m)"
+      groups: [start_time, end_time]
+      confidence: 0.9
+  
+  day_patterns:
+    - pattern: "Every Day"
+      groups: [days]
+      confidence: 0.9
+  
+  deal_patterns:
+    - pattern: "(\\d+)% Off All ([^\\n]+)"
+      groups: [discount, item_type]
+      confidence: 0.9
+    - pattern: "(\\d+)% Off ([^\\n]+)"
+      groups: [discount, item_description]
+      confidence: 0.9
+    - pattern: "\\$(\\d+) ([^\\n]+)"
+      groups: [price, item_name]
+      confidence: 0.8
+
+post_processing:
+  deal_consolidation:
+    - title: "Happy Hour Specials"
+      description: "Daily 5:00pm - 6:00pm"
+      combine_similar: true
+  
+  price_formatting:
+    currency_symbol: "$"
+    format: "price_range"
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

@@ -1,0 +1,66 @@
+restaurant_name: "Foraged"
+scraper_type: "config_based"
+enabled: true
+urls:
+  - "https://www.foragedrestaurant.com/drink"
+
+scraping_patterns:
+  deal_patterns:
+    # Happy hour timing patterns - based on actual website format
+    - pattern: "(?i)happy\\s*hour\\s*sunday\\s*-\\s*thursday\\s*(\\d{1,2})[–-](\\d{1,2})"
+      groups: [start_time, end_time]
+      confidence: 0.9
+      deal_type: "happy_hour"
+      title: "Happy Hour"
+      days_of_week: ["sunday", "monday", "tuesday", "wednesday", "thursday"]
+      
+    - pattern: "(?i)late\\s*night\\s*happy\\s*hour\\s*friday\\s*-\\s*saturday\\s*(\\d{1,2}:\\d{2})[–-](\\d{1,2}:\\d{2})"
+      groups: [start_time, end_time]
+      confidence: 0.9
+      deal_type: "happy_hour"
+      title: "Late Night Happy Hour"
+      days_of_week: ["friday", "saturday"]
+
+  # Operating hours patterns
+  hours_patterns:
+    - pattern: "(?i)monday\\s+closed"
+      day: "monday"
+      closed: true
+    - pattern: "(?i)tuesday\\s*[–-]\\s*thursday\\s+(\\d{1,2})[–—-](\\d{1,2})"
+      days: ["tuesday", "wednesday", "thursday"]
+      groups: [open_hour, close_hour]
+      format: "PM"
+    - pattern: "(?i)friday\\s*[–-]\\s*saturday\\s+(\\d{1,2})[–—-](\\d{1,2}:\\d{2})"
+      days: ["friday", "saturday"] 
+      groups: [open_hour, close_time]
+      format: "PM"
+    - pattern: "(?i)sunday\\s+(\\d{1,2})[–—-](\\d{1,2})"
+      day: "sunday"
+      groups: [open_hour, close_hour]
+      format: "PM"
+
+  # Contact information patterns  
+  contact_patterns:
+    - pattern: "(?i)phone:\\s*(\\d{3}[-.]\\d{3}[-.]\\d{4})"
+      type: "phone"
+      groups: [phone_number]
+    - pattern: "(\\d{3}[-.]\\d{3}[-.]\\d{4})"
+      type: "phone"
+      groups: [phone_number]
+    - pattern: "(?i)email:\\s*([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,})"
+      type: "email"  
+      groups: [email]
+
+post_processing:
+  deal_consolidation:
+    - title: "Foraged Happy Hours"
+      description: "Daily and late night happy hour with craft cocktails and natural wines"
+      combine_similar: true
+  
+  price_formatting:
+    currency_symbol: "$"
+    format: "individual_prices"
+
+confidence_threshold: 0.7
+retry_attempts: 3
+delay_between_requests: 1

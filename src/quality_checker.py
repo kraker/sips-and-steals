@@ -297,11 +297,22 @@ class QualityChecker:
         url_pattern = r'^https?://[^\s/$.?#].[^\s]*$'
         return bool(re.match(url_pattern, url, re.IGNORECASE))
     
-    def _is_reasonable_address(self, address: str) -> bool:
+    def _is_reasonable_address(self, address) -> bool:
         """Check if address format seems reasonable"""
+        # Handle both string and Address dataclass
+        if hasattr(address, 'formatted_address'):
+            address_str = address.formatted_address
+        elif hasattr(address, '__str__'):
+            address_str = str(address)
+        else:
+            address_str = address
+            
+        if not address_str:
+            return False
+            
         # Should have numbers and street indicators
-        has_number = bool(re.search(r'\d+', address))
-        has_street_indicator = bool(re.search(r'\b(st|street|ave|avenue|blvd|rd|road|drive|way|lane)\b', address, re.IGNORECASE))
+        has_number = bool(re.search(r'\d+', address_str))
+        has_street_indicator = bool(re.search(r'\b(st|street|ave|avenue|blvd|rd|road|drive|way|lane)\b', address_str, re.IGNORECASE))
         return has_number and has_street_indicator
     
     def _parse_time(self, time_str: str) -> Optional[time]:
