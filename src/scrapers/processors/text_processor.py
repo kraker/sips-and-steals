@@ -45,6 +45,240 @@ class TextProcessor:
         
         return deals
     
+    def extract_operating_hours(self, soup: BeautifulSoup) -> Dict[str, Dict[str, str]]:
+        """Extract operating hours from BeautifulSoup object using configured patterns"""
+        hours = {}
+        
+        # Get target content
+        target_content = self._get_target_content(soup)
+        filtered_content = self._apply_exclude_patterns(target_content)
+        
+        # Extract hours using configured patterns
+        hours_patterns = self.config.get('scraping_patterns', {}).get('hours_patterns', [])
+        
+        for pattern_config in hours_patterns:
+            pattern = pattern_config.get('pattern')
+            if not pattern:
+                continue
+                
+            matches = re.findall(pattern, filtered_content, re.IGNORECASE | re.MULTILINE)
+            
+            if matches:
+                if pattern_config.get('closed'):
+                    # Handle closed days
+                    day = pattern_config.get('day')
+                    if day:
+                        hours[day] = {'closed': True}
+                        
+                elif pattern_config.get('days'):
+                    # Handle multiple days with same hours
+                    days = pattern_config.get('days', [])
+                    groups = pattern_config.get('groups', [])
+                    format_type = pattern_config.get('format', '')
+                    
+                    if matches and len(matches[0]) >= len(groups):
+                        match = matches[0]
+                        open_time, close_time = self._parse_hours_match(match, groups, format_type)
+                        
+                        for day in days:
+                            hours[day] = {'open': open_time, 'close': close_time}
+                            
+                elif pattern_config.get('day'):
+                    # Handle single day
+                    day = pattern_config.get('day')
+                    groups = pattern_config.get('groups', [])
+                    format_type = pattern_config.get('format', '')
+                    
+                    if matches and len(matches[0]) >= len(groups):
+                        match = matches[0]
+                        open_time, close_time = self._parse_hours_match(match, groups, format_type)
+                        hours[day] = {'open': open_time, 'close': close_time}
+        
+        return hours
+    
+    def extract_contact_info(self, soup: BeautifulSoup) -> Dict[str, str]:
+        """Extract contact information from BeautifulSoup object"""
+        contact_info = {}
+        
+        # Get target content
+        target_content = self._get_target_content(soup)
+        filtered_content = self._apply_exclude_patterns(target_content)
+        
+        # Extract contact info using configured patterns
+        contact_patterns = self.config.get('scraping_patterns', {}).get('contact_patterns', [])
+        
+        for pattern_config in contact_patterns:
+            pattern = pattern_config.get('pattern')
+            contact_type = pattern_config.get('type')
+            groups = pattern_config.get('groups', [])
+            
+            if not pattern or not contact_type:
+                continue
+                
+            matches = re.findall(pattern, filtered_content, re.IGNORECASE | re.MULTILINE)
+            
+            if matches:
+                if groups and len(matches[0]) >= len(groups):
+                    match = matches[0]
+                    if isinstance(match, tuple):
+                        # Handle different group combinations for phone numbers
+                        if contact_type == 'phone' and len(groups) == 3 and all(g in ['area', 'exchange', 'number'] for g in groups):
+                            # Combine area, exchange, number into full phone number
+                            contact_info[contact_type] = f"{match[0]}-{match[1]}-{match[2]}"
+                        elif contact_type == 'phone' and 'phone_number' in groups:
+                            # Use the phone_number group
+                            phone_idx = groups.index('phone_number')
+                            contact_info[contact_type] = match[phone_idx]
+                        else:
+                            contact_info[contact_type] = match[0]  # First group for other types
+                    else:
+                        contact_info[contact_type] = match
+                elif matches:
+                    contact_info[contact_type] = matches[0]
+        
+        return contact_info
+    
+    def extract_address_info(self, soup: BeautifulSoup) -> Optional[Dict[str, Any]]:
+        """
+        Extract address information from BeautifulSoup object using advanced parsing
+        Returns structured address data or None if no address found
+        """
+        # Get target content
+        target_content = self._get_target_content(soup)
+        filtered_content = self._apply_exclude_patterns(target_content)
+        
+        # Try configured address patterns first
+        address_patterns = self.config.get('scraping_patterns', {}).get('address_patterns', [])
+        
+        if address_patterns:
+            for pattern_config in address_patterns:
+                pattern = pattern_config.get('pattern')
+                confidence = pattern_config.get('confidence', 0.8)
+                
+                if not pattern:
+                    continue
+                
+                matches = re.findall(pattern, filtered_content, re.IGNORECASE | re.MULTILINE)
+                if matches:
+                    # Use first match
+                    match = matches[0]
+                    if isinstance(match, tuple):
+                        address_string = ' '.join(str(part) for part in match if part)
+                    else:
+                        address_string = str(match)
+                    
+                    # Parse using AddressParser
+                    return self._parse_address_with_parser(address_string, confidence)
+        
+        # Fallback: extract potential addresses using AddressParser's text extraction
+        try:
+            from utils.address_parser import AddressParser
+            parser = AddressParser()
+            
+            # Extract potential addresses from content
+            candidates = parser.extract_addresses_from_text(filtered_content)
+            
+            if candidates:
+                # Parse the best candidate
+                best_result = parser.parse_multiple(candidates)
+                
+                if best_result.confidence_score > 0.5:
+                    return {
+                        'street_number': best_result.street_number,
+                        'street_name': best_result.street_name,
+                        'unit': best_result.unit,
+                        'city': best_result.city,
+                        'state': best_result.state,
+                        'zip_code': best_result.zip_code,
+                        'confidence_score': best_result.confidence_score,
+                        'parsing_method': best_result.parsing_method
+                    }
+        except ImportError:
+            logger.warning("AddressParser not available for address extraction")
+        
+        return None
+    
+    def _parse_address_with_parser(self, address_string: str, confidence_boost: float = 0.0) -> Optional[Dict[str, Any]]:
+        """Parse address string using AddressParser and apply confidence boost"""
+        try:
+            from utils.address_parser import AddressParser
+            parser = AddressParser()
+            
+            result = parser.parse(address_string)
+            
+            # Apply confidence boost from pattern config
+            result.confidence_score = min(1.0, result.confidence_score + confidence_boost)
+            
+            if result.confidence_score > 0.3:  # Minimum threshold
+                return {
+                    'street_number': result.street_number,
+                    'street_name': result.street_name,
+                    'unit': result.unit,
+                    'city': result.city,
+                    'state': result.state,
+                    'zip_code': result.zip_code,
+                    'confidence_score': result.confidence_score,
+                    'parsing_method': result.parsing_method
+                }
+        except ImportError:
+            logger.warning("AddressParser not available for address parsing")
+        
+        return None
+    
+    def _parse_hours_match(self, match, groups, format_type):
+        """Parse operating hours match and return normalized times"""
+        if isinstance(match, tuple):
+            values = list(match)
+        else:
+            values = [match]
+            
+        open_time = None
+        close_time = None
+        
+        if len(values) >= 2 and len(groups) >= 2:
+            open_val = values[0]
+            close_val = values[1]
+            
+            # Handle different group types
+            if 'open_hour' in groups[0]:
+                # Convert single hour to full time
+                open_time = self._format_time(open_val, format_type)
+            elif 'open_time' in groups[0]:
+                open_time = self._format_time(open_val, format_type)
+            else:
+                open_time = self._format_time(open_val, format_type)
+                
+            if 'close_hour' in groups[1]:
+                close_time = self._format_time(close_val, format_type)
+            elif 'close_time' in groups[1]:
+                close_time = self._format_time(close_val, format_type)
+            else:
+                close_time = self._format_time(close_val, format_type)
+        
+        return open_time, close_time
+    
+    def _format_time(self, time_val, format_type):
+        """Format time value to 24-hour format"""
+        if not time_val:
+            return None
+            
+        # Clean the time value
+        time_str = str(time_val).strip()
+        
+        # If it already has AM/PM or format is specified
+        if format_type == 'PM':
+            # Add PM if not present and convert to 24-hour
+            if ':' not in time_str:
+                time_str = f"{time_str}:00"
+            if 'PM' not in time_str.upper() and 'AM' not in time_str.upper():
+                time_str += ' PM'
+        
+        # Use the Deal model's time parsing
+        from models import Deal
+        deal = Deal(title="temp")
+        normalized = deal._parse_time_to_24h(time_str)
+        return normalized
+    
     def _get_target_content(self, soup: BeautifulSoup) -> str:
         """Extract target content using custom selectors or containers"""
         content_parts = []

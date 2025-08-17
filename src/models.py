@@ -10,6 +10,7 @@ from dataclasses import dataclass, field
 from enum import Enum
 import re
 import json
+import pendulum
 
 
 class DealType(Enum):
@@ -51,8 +52,14 @@ class Deal:
     description: Optional[str] = None
     deal_type: DealType = DealType.HAPPY_HOUR
     days_of_week: List[DayOfWeek] = field(default_factory=list)
-    start_time: Optional[str] = None  # Format: "3:00 PM" or "All Day"
-    end_time: Optional[str] = None    # Format: "6:00 PM" or "Close"
+    
+    # Time fields - dual storage for display and calculations
+    start_time: Optional[str] = None      # Display format: "3:00 PM" or "All Day"
+    end_time: Optional[str] = None        # Display format: "6:00 PM" or "Close"
+    start_time_24h: Optional[str] = None  # 24-hour format: "15:00" (for calculations)
+    end_time_24h: Optional[str] = None    # 24-hour format: "18:00" (for calculations)
+    timezone: str = "America/Denver"      # IANA timezone identifier
+    
     prices: List[str] = field(default_factory=list)  # Format: ["$5 Beers", "$8 Wines", "$10 Cocktails"]
     is_all_day: bool = False
     special_notes: List[str] = field(default_factory=list)
@@ -71,6 +78,9 @@ class Deal:
             'days_of_week': [day.value for day in self.days_of_week],
             'start_time': self.start_time,
             'end_time': self.end_time,
+            'start_time_24h': self.start_time_24h,
+            'end_time_24h': self.end_time_24h,
+            'timezone': self.timezone,
             'prices': self.prices,
             'is_all_day': self.is_all_day,
             'special_notes': self.special_notes,
@@ -96,6 +106,9 @@ class Deal:
                 days_of_week=[DayOfWeek(day) for day in data.get('days_of_week', [])],
                 start_time=data.get('start_time'),
                 end_time=data.get('end_time'),
+                start_time_24h=data.get('start_time_24h'),
+                end_time_24h=data.get('end_time_24h'),
+                timezone=data.get('timezone', 'America/Denver'),
                 prices=[],  # Will be set below
                 is_all_day=data.get('is_all_day', False),
                 special_notes=data.get('special_notes', []),
@@ -105,15 +118,20 @@ class Deal:
             )
             # Convert legacy price to new format
             deal.set_price_from_string(legacy_price)
+            # Auto-normalize times if 24-hour format is missing
+            deal._normalize_times()
             return deal
         
-        return cls(
+        deal = cls(
             title=data['title'],
             description=data.get('description'),
             deal_type=DealType(data.get('deal_type', 'happy_hour')),
             days_of_week=[DayOfWeek(day) for day in data.get('days_of_week', [])],
             start_time=data.get('start_time'),
             end_time=data.get('end_time'),
+            start_time_24h=data.get('start_time_24h'),
+            end_time_24h=data.get('end_time_24h'),
+            timezone=data.get('timezone', 'America/Denver'),
             prices=prices,
             is_all_day=data.get('is_all_day', False),
             special_notes=data.get('special_notes', []),
@@ -121,6 +139,10 @@ class Deal:
             source_url=data.get('source_url'),
             confidence_score=data.get('confidence_score', 1.0)
         )
+        
+        # Auto-normalize times if 24-hour format is missing
+        deal._normalize_times()
+        return deal
     
     def parse_price_string(self, price_string: str) -> List[str]:
         """Parse a price string into structured price list
@@ -154,6 +176,108 @@ class Deal:
     def set_price_from_string(self, price_string: str):
         """Set structured prices field from price string"""
         self.prices = self.parse_price_string(price_string)
+    
+    def set_time_from_string(self, start_time_str: Optional[str], end_time_str: Optional[str]):
+        """Parse and set both display and 24-hour time formats"""
+        self.start_time = start_time_str
+        self.end_time = end_time_str
+        
+        # Convert to 24-hour format for calculations
+        if start_time_str and start_time_str.lower() not in ['all day', 'close', 'open']:
+            self.start_time_24h = self._parse_time_to_24h(start_time_str)
+        
+        if end_time_str and end_time_str.lower() not in ['all day', 'close', 'open']:
+            self.end_time_24h = self._parse_time_to_24h(end_time_str)
+    
+    def _parse_time_to_24h(self, time_str: str) -> Optional[str]:
+        """Convert various time formats to 24-hour format (HH:MM)"""
+        if not time_str:
+            return None
+            
+        import re
+        
+        # Clean the input
+        time_str = time_str.strip()
+        
+        # Skip pendulum for ambiguous short inputs that could be dates
+        use_pendulum = True
+        if re.match(r'^\d{1,2}$', time_str):
+            # Don't use pendulum for single numbers (could be interpreted as dates)
+            use_pendulum = False
+        
+        if use_pendulum:
+            try:
+                # Try parsing with pendulum for complex time formats
+                parsed_time = pendulum.parse(time_str, strict=False)
+                # Verify it's actually a time, not a date interpretation
+                if parsed_time.hour != 0 or parsed_time.minute != 0 or 'PM' in time_str.upper() or 'AM' in time_str.upper():
+                    return parsed_time.format('HH:mm')
+            except:
+                pass
+        
+        # Use regex-based parsing for better control
+        # Handle patterns like "3:00 PM", "15:00", "3 PM", etc.
+        patterns = [
+            r'(\d{1,2}):(\d{2})\s*(AM|PM)',  # 3:00 PM
+            r'(\d{1,2})\s*(AM|PM)',          # 3 PM
+            r'(\d{1,2}):(\d{2})',            # 15:00 or 3:00
+            r'(\d{1,2})\.(\d{2})',           # 15.30
+        ]
+        
+        for pattern in patterns:
+            match = re.search(pattern, time_str.upper())
+            if match:
+                if len(match.groups()) == 3:  # Has AM/PM
+                    hour, minute, ampm = match.groups()
+                    hour = int(hour)
+                    minute = int(minute)
+                    
+                    if ampm == 'PM' and hour != 12:
+                        hour += 12
+                    elif ampm == 'AM' and hour == 12:
+                        hour = 0
+                        
+                    return f"{hour:02d}:{minute:02d}"
+                
+                elif len(match.groups()) == 2:  # Just hour:minute
+                    hour, minute = match.groups()
+                    return f"{int(hour):02d}:{int(minute):02d}"
+                
+                elif len(match.groups()) == 2 and 'AM' in time_str.upper() or 'PM' in time_str.upper():
+                    # Handle cases like "3 PM"
+                    hour = int(match.groups()[0])
+                    ampm = match.groups()[1]
+                    
+                    if ampm == 'PM' and hour != 12:
+                        hour += 12
+                    elif ampm == 'AM' and hour == 12:
+                        hour = 0
+                        
+                    return f"{hour:02d}:00"
+        
+        # Handle single numbers (restaurant context)
+        if re.match(r'^\d{1,2}$', time_str):
+            hour = int(time_str)
+            # For restaurant hours, assume PM for common dinner hours, AM for late night/early morning
+            if 3 <= hour <= 11:
+                # Convert to PM (add 12 for 24-hour format)
+                return f"{hour + 12:02d}:00"
+            elif hour == 12:
+                return "12:00"  # 12 = 12 PM (noon) 
+            elif hour == 1 or hour == 2:
+                return f"{hour:02d}:00"  # 1-2 AM (late night)
+            else:
+                return None  # Ambiguous times like 0
+        
+        return None
+    
+    def _normalize_times(self):
+        """Auto-populate 24-hour time fields if they're missing"""
+        if self.start_time and not self.start_time_24h:
+            self.start_time_24h = self._parse_time_to_24h(self.start_time)
+        
+        if self.end_time and not self.end_time_24h:
+            self.end_time_24h = self._parse_time_to_24h(self.end_time)
 
 
 @dataclass
@@ -181,6 +305,133 @@ class ScrapingConfig:
 
 
 @dataclass
+class Address:
+    """
+    Structured address data with validation and geocoding support
+    """
+    # Core address components
+    street_number: Optional[str] = None    # "1550"
+    street_name: Optional[str] = None      # "Market St"
+    unit: Optional[str] = None             # "Suite 100", "#2A", "Apt 5B"
+    city: str = "Denver"                   # Default to Denver
+    state: str = "CO"                      # Default to Colorado
+    zip_code: Optional[str] = None         # "80202"
+    
+    # Additional metadata
+    formatted_address: Optional[str] = None  # Full formatted string: "1550 Market St, Denver, CO 80202"
+    google_maps_url: Optional[str] = None    # Auto-generated maps link
+    confidence_score: float = 1.0            # 0.0-1.0 confidence in address accuracy
+    
+    def __post_init__(self):
+        """Auto-generate formatted address and maps URL after initialization"""
+        if not self.formatted_address and self.street_number and self.street_name:
+            self._generate_formatted_address()
+        if not self.google_maps_url and self.formatted_address:
+            self._generate_maps_url()
+    
+    def _generate_formatted_address(self):
+        """Generate a formatted address string from components"""
+        parts = []
+        
+        # Street address
+        if self.street_number and self.street_name:
+            street_addr = f"{self.street_number} {self.street_name}"
+            if self.unit:
+                street_addr += f" {self.unit}"
+            parts.append(street_addr)
+        
+        # City, State ZIP
+        location_parts = []
+        if self.city:
+            location_parts.append(self.city)
+        if self.state:
+            location_parts.append(self.state)
+        if self.zip_code:
+            location_parts.append(self.zip_code)
+        
+        if location_parts:
+            if len(location_parts) >= 2:
+                # "Denver, CO 80202"
+                parts.append(f"{location_parts[0]}, {' '.join(location_parts[1:])}")
+            else:
+                parts.append(' '.join(location_parts))
+        
+        self.formatted_address = ', '.join(parts) if parts else None
+    
+    def _generate_maps_url(self):
+        """Generate Google Maps URL from formatted address"""
+        if self.formatted_address:
+            import urllib.parse
+            encoded_addr = urllib.parse.quote_plus(self.formatted_address)
+            self.google_maps_url = f"https://maps.google.com/?q={encoded_addr}"
+    
+    def to_dict(self) -> Dict[str, Any]:
+        """Convert to dictionary for JSON serialization"""
+        return {
+            'street_number': self.street_number,
+            'street_name': self.street_name,
+            'unit': self.unit,
+            'city': self.city,
+            'state': self.state,
+            'zip_code': self.zip_code,
+            'formatted_address': self.formatted_address,
+            'google_maps_url': self.google_maps_url,
+            'confidence_score': self.confidence_score
+        }
+    
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> 'Address':
+        """Create Address from dictionary"""
+        return cls(
+            street_number=data.get('street_number'),
+            street_name=data.get('street_name'),
+            unit=data.get('unit'),
+            city=data.get('city', 'Denver'),
+            state=data.get('state', 'CO'),
+            zip_code=data.get('zip_code'),
+            formatted_address=data.get('formatted_address'),
+            google_maps_url=data.get('google_maps_url'),
+            confidence_score=data.get('confidence_score', 1.0)
+        )
+    
+    @classmethod
+    def from_string(cls, address_string: str, confidence_score: float = 0.7) -> 'Address':
+        """
+        Parse address string into structured components
+        Used for backward compatibility with existing address strings
+        """
+        if not address_string:
+            return cls(confidence_score=0.0)
+        
+        # Store the original as formatted_address for now
+        # More sophisticated parsing will be added in address utilities
+        address = cls(
+            formatted_address=address_string.strip(),
+            confidence_score=confidence_score
+        )
+        
+        # Try basic parsing for street number and name
+        import re
+        
+        # Pattern: "1550 Market St" or "123 Main Street #100"
+        street_match = re.match(r'^(\d+)\s+([^,#]+?)(?:\s*(#\w+|Suite\s+\w+|Apt\s+\w+))?\s*(?:,|$)', address_string.strip())
+        if street_match:
+            address.street_number = street_match.group(1)
+            address.street_name = street_match.group(2).strip()
+            if street_match.group(3):
+                address.unit = street_match.group(3).strip()
+        
+        # Generate maps URL
+        address._generate_maps_url()
+        
+        return address
+    
+    def is_complete(self) -> bool:
+        """Check if address has minimum required components"""
+        return bool(self.street_number and self.street_name)
+
+
+@dataclass
 class Restaurant:
     """
     Enhanced restaurant model combining static data with scraping config
@@ -190,10 +441,14 @@ class Restaurant:
     slug: str
     district: str
     neighborhood: Optional[str] = None
-    address: Optional[str] = None
+    address: Optional[Address] = None  # Structured address object
     cuisine: Optional[str] = None
     website: Optional[str] = None
     phone: Optional[str] = None
+    
+    # Timezone and operating hours
+    timezone: str = "America/Denver"
+    operating_hours: Dict[str, Dict[str, str]] = field(default_factory=dict)  # {"monday": {"open": "11:00", "close": "22:00"}}
     
     # Static deals info (fallback) - unified format
     static_deals: List[Dict[str, Any]] = field(default_factory=list)
@@ -213,10 +468,12 @@ class Restaurant:
             'slug': self.slug,
             'district': self.district,
             'neighborhood': self.neighborhood,
-            'address': self.address,
+            'address': self.address.to_dict() if self.address else None,
             'cuisine': self.cuisine,
             'website': self.website,
             'phone': self.phone,
+            'timezone': self.timezone,
+            'operating_hours': self.operating_hours,
             'static_deals': self.static_deals,
             'special_notes': self.special_notes,
             'scraping_config': {
@@ -266,15 +523,28 @@ class Restaurant:
             content_containers=scraping_config_data.get('content_containers', [])
         )
         
+        # Handle address data with backward compatibility
+        address_data = data.get('address')
+        address = None
+        if address_data:
+            if isinstance(address_data, dict):
+                # New structured format
+                address = Address.from_dict(address_data)
+            elif isinstance(address_data, str):
+                # Legacy string format - convert to structured
+                address = Address.from_string(address_data, confidence_score=0.5)
+        
         return cls(
             name=data['name'],
             slug=data['slug'],
             district=data['district'],
             neighborhood=data.get('neighborhood'),
-            address=data.get('address'),
+            address=address,
             cuisine=data.get('cuisine'),
             website=data.get('website'),
             phone=data.get('phone'),
+            timezone=data.get('timezone', 'America/Denver'),
+            operating_hours=data.get('operating_hours', {}),
             static_deals=data.get('static_deals', []),
             special_notes=data.get('special_notes', []),
             scraping_config=scraping_config,
@@ -385,6 +655,85 @@ class Restaurant:
         formatted = re.sub(r'\s*\|\s*', ' | ', formatted)  # Standardize pipes
         
         return formatted.strip()
+    
+    def is_open_now(self, user_timezone: str = "America/Denver") -> bool:
+        """Check if restaurant is currently open based on operating hours"""
+        if not self.operating_hours:
+            return True  # Assume open if no hours specified
+        
+        # Get current time in restaurant's timezone
+        restaurant_tz = pendulum.now(self.timezone)
+        current_day = restaurant_tz.format('dddd').lower()  # 'monday', 'tuesday', etc.
+        current_time = restaurant_tz.format('HH:mm')
+        
+        # Check if we have hours for today
+        today_hours = self.operating_hours.get(current_day)
+        if not today_hours:
+            return False  # Closed if no hours specified for today
+        
+        # Handle special cases
+        if today_hours.get('closed'):
+            return False
+            
+        open_time = today_hours.get('open')
+        close_time = today_hours.get('close')
+        
+        if not open_time or not close_time:
+            return True  # Assume open if hours are incomplete
+        
+        # Compare times
+        return open_time <= current_time <= close_time
+    
+    def time_until_opens(self, user_timezone: str = "America/Denver") -> Optional[str]:
+        """Get human-readable time until restaurant opens"""
+        if self.is_open_now(user_timezone):
+            return None  # Already open
+        
+        if not self.operating_hours:
+            return None  # No hours data
+        
+        restaurant_tz = pendulum.now(self.timezone)
+        current_day = restaurant_tz.format('dddd').lower()
+        
+        # Look for next opening time
+        days_to_check = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
+        current_day_index = days_to_check.index(current_day)
+        
+        for i in range(7):  # Check next 7 days
+            check_day_index = (current_day_index + i) % 7
+            check_day = days_to_check[check_day_index]
+            day_hours = self.operating_hours.get(check_day)
+            
+            if day_hours and not day_hours.get('closed') and day_hours.get('open'):
+                open_time = day_hours['open']
+                
+                # Calculate target datetime
+                if i == 0:  # Today
+                    target_time = restaurant_tz.replace(
+                        hour=int(open_time.split(':')[0]),
+                        minute=int(open_time.split(':')[1]),
+                        second=0, microsecond=0
+                    )
+                    if target_time > restaurant_tz:
+                        diff = target_time - restaurant_tz
+                        hours = int(diff.total_seconds() // 3600)
+                        minutes = int((diff.total_seconds() % 3600) // 60)
+                        return f"Opens in {hours}h {minutes}m"
+                else:  # Future day
+                    target_date = restaurant_tz.add(days=i)
+                    target_time = target_date.replace(
+                        hour=int(open_time.split(':')[0]),
+                        minute=int(open_time.split(':')[1]),
+                        second=0, microsecond=0
+                    )
+                    diff = target_time - restaurant_tz
+                    days = diff.days
+                    if days == 1:
+                        return f"Opens tomorrow at {open_time}"
+                    else:
+                        return f"Opens {check_day.title()} at {open_time}"
+        
+        return None  # No opening found in next 7 days
 
 
 class DealValidator:

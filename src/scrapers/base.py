@@ -264,13 +264,19 @@ class BaseScraper(ABC):
         if url:
             # Single URL provided directly
             urls_to_try = [url]
-        elif hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            logger.info(f"Using provided URL: {url}")
+        elif hasattr(self.restaurant, 'scraping_urls') and getattr(self.restaurant, 'scraping_urls'):
             # Multiple URLs configured
+            urls_to_try = getattr(self.restaurant, 'scraping_urls')
+            logger.info(f"Using scraping_urls: {urls_to_try} for {self.restaurant.name}")
+        elif hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            # Legacy support for 'websites' field
             urls_to_try = getattr(self.restaurant, 'websites')
-            logger.info(f"Trying {len(urls_to_try)} URLs for {self.restaurant.name}")
+            logger.info(f"Using legacy websites: {urls_to_try} for {self.restaurant.name}")
         else:
             # Fallback to single website
             urls_to_try = [self.restaurant.website] if self.restaurant.website else []
+            logger.info(f"Using fallback website: {urls_to_try} for {self.restaurant.name}")
         
         if not urls_to_try:
             raise PermanentScrapingError("No URLs provided for scraping")
@@ -310,9 +316,13 @@ class BaseScraper(ABC):
         timeout = timeout or self.restaurant.scraping_config.timeout_seconds
         
         # Determine URLs to try
-        if hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
-            urls_to_try = getattr(self.restaurant, 'websites')
+        if hasattr(self.restaurant, 'scraping_urls') and getattr(self.restaurant, 'scraping_urls'):
+            urls_to_try = getattr(self.restaurant, 'scraping_urls')
             logger.info(f"Trying all {len(urls_to_try)} URLs for {self.restaurant.name}")
+        elif hasattr(self.restaurant, 'websites') and getattr(self.restaurant, 'websites'):
+            # Legacy support
+            urls_to_try = getattr(self.restaurant, 'websites')
+            logger.info(f"Trying all {len(urls_to_try)} URLs for {self.restaurant.name} (legacy)")
         else:
             # Fallback to single website
             urls_to_try = [self.restaurant.website] if self.restaurant.website else []
@@ -899,8 +909,9 @@ class BaseScraper(ABC):
                 logger.info(f"No deals found with custom scraper, trying common patterns for {self.restaurant.name}")
                 
                 # Use all pages if restaurant has multiple URLs configured
-                if hasattr(self.restaurant, 'websites') and len(getattr(self.restaurant, 'websites', [])) > 1:
-                    logger.info(f"Trying fallback parsing on all {len(getattr(self.restaurant, 'websites'))} URLs")
+                scraping_urls = getattr(self.restaurant, 'scraping_urls', None) or getattr(self.restaurant, 'websites', [])
+                if len(scraping_urls) > 1:
+                    logger.info(f"Trying fallback parsing on all {len(scraping_urls)} URLs")
                     soups = self.fetch_all_pages()
                     fallback_deals = []
                     for soup in soups:

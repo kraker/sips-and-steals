@@ -14,8 +14,8 @@ import shutil
 from dataclasses import asdict
 
 # Import our models
-from models import Restaurant, Deal, ScrapingConfig, DealValidator
-from config_manager import ConfigManager
+from src.models import Restaurant, Deal, ScrapingConfig, DealValidator
+from src.config_manager import ConfigManager
 
 logger = logging.getLogger(__name__)
 
@@ -58,11 +58,82 @@ class DataManager:
             with open(self.restaurants_file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
             
-            # Convert format to Restaurant objects
-            for area_name, restaurants in data.get('areas', {}).items():
-                for slug, restaurant_data in restaurants.items():
-                    restaurant = self._convert_giovanni_to_restaurant(restaurant_data, area_name)
+            # Handle both old nested format and new flat format
+            if 'restaurants' in data:
+                # New flat format
+                for slug, restaurant_data in data['restaurants'].items():
+                    restaurant = self._convert_restaurant_data(restaurant_data)
                     self.restaurants[slug] = restaurant
+            elif 'areas' in data:
+                # Legacy nested format - convert to flat
+                for area_name, restaurants in data.get('areas', {}).items():
+                    for slug, restaurant_data in restaurants.items():
+                        restaurant = self._convert_giovanni_to_restaurant(restaurant_data, area_name)
+                        self.restaurants[slug] = restaurant
+    
+    def _convert_restaurant_data(self, data: Dict[str, Any]) -> Restaurant:
+        """Convert flat restaurant format to Restaurant object"""
+        # Handle address data with backward compatibility
+        address_data = data.get('address')
+        address = None
+        if address_data:
+            if isinstance(address_data, dict):
+                # New structured format
+                from models import Address
+                address = Address.from_dict(address_data)
+            elif isinstance(address_data, str):
+                # Legacy string format - convert to structured
+                from models import Address
+                address = Address.from_string(address_data, confidence_score=0.5)
+        
+        phone = data.get('phone')
+        
+        # Create scraping config based on website availability
+        website = data.get('website')
+        slug = data.get('slug')
+        scraping_config = ScrapingConfig(
+            enabled=bool(website),
+            scraping_frequency_hours=24,  # Default to daily
+            max_retries=3,
+            fallback_to_static=True
+        )
+        
+        # Apply custom configuration if available
+        if slug:
+            scraping_config = self.config_manager.apply_config_to_scraping_config(slug, scraping_config)
+        
+        restaurant = Restaurant(
+            name=data.get('name', ''),
+            slug=data.get('slug', ''),
+            district=data.get('district'),  # Use district field directly
+            neighborhood=data.get('neighborhood'),  # Renamed from sub_location
+            address=address,
+            cuisine=data.get('cuisine'),
+            website=website,
+            phone=phone,
+            timezone=data.get('timezone', 'America/Denver'),
+            operating_hours=data.get('operating_hours', {}),
+            special_notes=data.get('special_notes', []),
+            scraping_config=scraping_config
+        )
+        
+        # Load static deals if present
+        static_deals = data.get('static_deals', [])
+        for deal_data in static_deals:
+            deal = Deal.from_dict(deal_data)
+            restaurant.add_static_deal(deal)
+        
+        # Add multiple URLs support
+        if 'scraping_urls' in data:
+            restaurant.scraping_urls = data['scraping_urls']
+        elif 'websites' in data:  # Legacy support
+            restaurant.scraping_urls = data['websites']
+        
+        # Add scraping hints support
+        if 'scraping_hints' in data:
+            restaurant.scraping_hints = data['scraping_hints']
+        
+        return restaurant
     
     def _convert_giovanni_to_restaurant(self, data: Dict[str, Any], area: str) -> Restaurant:
         """Convert Giovanni's restaurant format to Restaurant object"""
@@ -99,8 +170,10 @@ class DataManager:
         )
         
         # Add multiple URLs support
-        if 'websites' in data:
-            restaurant.websites = data['websites']
+        if 'scraping_urls' in data:
+            restaurant.scraping_urls = data['scraping_urls']
+        elif 'websites' in data:  # Legacy support
+            restaurant.scraping_urls = data['websites']
         
         # Add scraping hints support
         if 'scraping_hints' in data:
@@ -161,45 +234,47 @@ class DataManager:
     
     def _save_restaurants(self):
         """Save restaurant data back to single source (restaurants.json)"""
-        # Reconstruct the areas format for restaurants.json
+        # Use new flat format
         data = {
             'metadata': {
-                'source': 'giovanni_happy_hours.md',
+                'source': 'enhanced_data_pipeline',
                 'updated_at': datetime.now().isoformat(),
                 'districts': [],
                 'districts_with_neighborhoods': {}
             },
-            'areas': {}
+            'restaurants': {}
         }
         
-        # Group restaurants by area and build structure
-        areas = {}
+        # Build flat structure
         districts = set()
         neighborhoods = {}
         
         for slug, restaurant in self.restaurants.items():
-            area = restaurant.district
-            if area not in areas:
-                areas[area] = {}
+            districts.add(restaurant.district)
             
-            # Convert restaurant back to Giovanni format but preserve live data info
+            # Track neighborhoods by district
+            if restaurant.district not in neighborhoods:
+                neighborhoods[restaurant.district] = set()
+            if restaurant.neighborhood:
+                neighborhoods[restaurant.district].add(restaurant.neighborhood)
+            
+            # Convert restaurant to flat format (no redundant area field)
             restaurant_dict = {
                 'name': restaurant.name,
                 'slug': restaurant.slug,
                 'district': restaurant.district,
-                'area': restaurant.district,  # Keep same as district for consistency
-                'sub_location': restaurant.neighborhood,
-                'address': restaurant.address,
+                'neighborhood': restaurant.neighborhood,  # Renamed from sub_location
+                'address': restaurant.address.to_dict() if restaurant.address else None,
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
                 'phone': restaurant.phone,
-                'static_deals': restaurant.static_deals or [],
+                'static_deals': [deal.to_dict() for deal in restaurant.static_deals] if restaurant.static_deals else [],
                 'special_notes': restaurant.special_notes or []
             }
             
             # Add multiple URLs support if present
-            if hasattr(restaurant, 'websites') and restaurant.websites:
-                restaurant_dict['websites'] = restaurant.websites
+            if hasattr(restaurant, 'scraping_urls') and restaurant.scraping_urls:
+                restaurant_dict['scraping_urls'] = restaurant.scraping_urls
             
             # Add scraping hints if present
             if hasattr(restaurant, 'scraping_hints') and restaurant.scraping_hints:
@@ -213,17 +288,9 @@ class DataManager:
                 restaurant_dict['live_data_available'] = False
                 restaurant_dict['last_updated'] = None
             
-            areas[area][slug] = restaurant_dict
-            districts.add(area)
-            
-            # Track neighborhoods
-            if area not in neighborhoods:
-                neighborhoods[area] = set()
-            if restaurant.neighborhood:
-                neighborhoods[area].add(restaurant.neighborhood)
+            data['restaurants'][slug] = restaurant_dict
         
         # Set metadata
-        data['areas'] = areas
         data['metadata']['districts'] = sorted(list(districts))
         data['metadata']['districts_with_neighborhoods'] = {
             district: sorted(list(neighs)) for district, neighs in neighborhoods.items()
@@ -381,10 +448,14 @@ class DataManager:
                 'district': district_name,  # Use new district name
                 'metro_area': metro_area,   # Add metro area grouping
                 'neighborhood': restaurant.neighborhood,
-                'address': restaurant.address,
+                'address': restaurant.address.to_dict() if restaurant.address else None,
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
                 'phone': restaurant.phone,
+                'operating_hours': restaurant.operating_hours,
+                'timezone': restaurant.timezone,
+                'is_open_now': restaurant.is_open_now() if restaurant.operating_hours else None,
+                'time_until_opens': restaurant.time_until_opens() if restaurant.operating_hours else None,
                 'happy_hour_times': self._format_deals_for_index([d for d in current_deals if d.confidence_score >= 0.7][:3]),  # Only high-confidence deals
                 'special_notes': restaurant.special_notes,
                 'live_data_available': bool(restaurant.live_deals),

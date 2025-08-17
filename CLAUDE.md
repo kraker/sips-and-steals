@@ -209,6 +209,114 @@ class Deal:
 
 ## Roadmap & Future Enhancements
 
+### Timezone-Aware Time Handling & Operating Hours
+**Priority**: High | **Effort**: Medium | **Impact**: High
+
+Implement comprehensive time and timezone handling to provide accurate "open now" status, timezone-appropriate display for international users, and real-time happy hour tracking.
+
+**Current Limitations**:
+- Times stored as display strings ("4:00 PM") without timezone context
+- No restaurant operating hours data
+- No "open now" or time-until-happy-hour functionality
+- Display format not configurable for international users
+
+**Technical Implementation**:
+*Schema Normalization:*
+- **24-Hour Time Format**: Store all times internally as "HH:MM" (e.g., "16:00", "18:00")
+- **Timezone Fields**: Add timezone to restaurants and deals (default: "America/Denver")
+- **Operating Hours**: Extend restaurant schema with daily open/close times
+- **Dual Time Storage**: Maintain display times for UI, normalized times for calculations
+
+*Library Integration:*
+- **Pendulum**: Robust timezone handling and time calculations
+- **Time Parsing**: Convert scraped times from various formats to 24-hour
+- **Timezone Conversion**: Display times appropriate to user's timezone
+- **Business Logic**: "Is restaurant open?", "Time until happy hour starts"
+
+*Enhanced Deal Structure:*
+```python
+@dataclass
+class Deal:
+    # Display (user-friendly)
+    start_time: Optional[str] = None      # "4:00 PM" 
+    end_time: Optional[str] = None        # "6:00 PM"
+    # Normalized (for calculations)
+    start_time_24h: Optional[str] = None  # "16:00"
+    end_time_24h: Optional[str] = None    # "18:00"
+    timezone: str = "America/Denver"
+```
+
+*Restaurant Operating Hours:*
+```json
+{
+  "operating_hours": {
+    "monday": {"open": "11:00", "close": "22:00"},
+    "tuesday": {"open": "11:00", "close": "22:00"},
+    "sunday": {"open": "10:00", "close": "21:00"}
+  },
+  "timezone": "America/Denver"
+}
+```
+
+**Implementation Phases**:
+1. **Schema Migration**: Update restaurant and deal data structures with 24-hour times
+2. **Scraper Enhancement**: Extend existing scrapers to capture operating hours
+3. **Time Utilities**: Implement timezone-aware calculation functions
+4. **UI Integration**: Add "Open Now" indicators and countdown timers
+5. **User Preferences**: Support for 12/24-hour display format selection
+
+**Success Metrics**:
+- Accurate "open now" status for 95%+ of restaurants
+- Timezone-appropriate time display for international users
+- Real-time happy hour countdown functionality
+- Foundation ready for full-stack Flask web application
+
+### Special Event & Holiday Deals Framework
+**Priority**: Medium | **Effort**: Medium | **Impact**: Medium
+
+Extend the deal system to handle special events, holidays, and date-specific promotions beyond regular happy hour schedules.
+
+**Enhanced Deal Types**:
+- **Special Events**: Convention deals, sports game specials, concert promotions
+- **Holiday Deals**: New Year's Eve, Valentine's Day, St. Patrick's Day specials
+- **Seasonal Offerings**: Summer patio deals, winter holiday menus
+- **Date-Specific**: Limited-time promotions with start/end dates
+
+**Technical Implementation**:
+```python
+@dataclass
+class Deal:
+    deal_type: DealType  # HAPPY_HOUR, SPECIAL_EVENT, HOLIDAY, SEASONAL
+    event_name: Optional[str] = None        # "Broncos Game Day"
+    start_date: Optional[str] = None        # "2025-12-31"
+    end_date: Optional[str] = None          # "2025-12-31"
+    # ... existing fields
+```
+
+**Future Integrations**:
+- Holiday APIs for automatic holiday deal detection
+- Sports schedule APIs for game day promotions
+- Convention center calendars for event-based deals
+- Reservation system integration for special event bookings
+
+### Full-Stack Flask Web Application
+**Priority**: High | **Effort**: High | **Impact**: High
+
+Transition from static site generator to dynamic Flask web application with real-time features, user accounts, and interactive functionality.
+
+**Core Features**:
+- **Real-Time Updates**: Live deal status, countdown timers, open/closed indicators
+- **User Accounts**: Preferences, favorites, notification settings
+- **Interactive Filtering**: Dynamic search, map integration, real-time filtering
+- **Personalization**: Timezone-aware display, cuisine preferences, distance-based recommendations
+
+**Technical Stack**:
+- **Backend**: Flask with SQLAlchemy ORM
+- **Database**: PostgreSQL for production, SQLite for development
+- **Frontend**: Modern JavaScript with responsive design
+- **Real-Time**: WebSocket connections for live updates
+- **Deployment**: Docker containers with CI/CD pipeline
+
 ### Intelligent Happy Hour Content Discovery
 **Priority**: Medium | **Effort**: Medium | **Impact**: High
 

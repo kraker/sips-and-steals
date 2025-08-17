@@ -228,3 +228,46 @@ class ConfigBasedScraper(BaseScraper):
             all_deals = text_processor.extract_deals(soup)
         
         return all_deals
+    
+    def scrape_restaurant_info(self) -> Dict[str, Any]:
+        """Scrape operating hours, contact info, address, and other restaurant details"""
+        from ..processors.text_processor import TextProcessor
+        from bs4 import BeautifulSoup
+        
+        restaurant_info = {
+            'operating_hours': {},
+            'contact_info': {},
+            'address_info': {},
+            'last_updated': datetime.now().isoformat()
+        }
+        
+        try:
+            # Use primary URL for restaurant info
+            content = self.fetch_page()
+            soup = BeautifulSoup(content, 'html.parser')
+            
+            # Use text processor to extract additional info
+            text_processor = TextProcessor(self.config, restaurant=self.restaurant)
+            
+            # Extract operating hours
+            operating_hours = text_processor.extract_operating_hours(soup)
+            if operating_hours:
+                restaurant_info['operating_hours'] = operating_hours
+                logger.info(f"Extracted operating hours for {self.restaurant.name}: {operating_hours}")
+            
+            # Extract contact information  
+            contact_info = text_processor.extract_contact_info(soup)
+            if contact_info:
+                restaurant_info['contact_info'] = contact_info
+                logger.info(f"Extracted contact info for {self.restaurant.name}: {contact_info}")
+            
+            # Extract address information
+            address_info = text_processor.extract_address_info(soup)
+            if address_info:
+                restaurant_info['address_info'] = address_info
+                logger.info(f"Extracted address info for {self.restaurant.name}: {address_info.get('formatted_address', 'Structured address')}")
+                
+        except Exception as e:
+            logger.error(f"Failed to scrape restaurant info for {self.restaurant.name}: {e}")
+        
+        return restaurant_info

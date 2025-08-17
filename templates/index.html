@@ -68,14 +68,24 @@
                onclick="window.location.href='restaurants/{{ restaurant.slug }}.html'"
                data-times="{{ restaurant.happy_hour_times | join(' ') | lower }}">
         
-        <h3>
-          <a href="restaurants/{{ restaurant.slug }}.html">{{ restaurant.name }}</a>
-        </h3>
-        
-        <address class="location">
-          {% if restaurant.neighborhood %}{{ restaurant.neighborhood }}{% endif %}
-          {% if restaurant.address %}<br><a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank" onclick="event.stopPropagation();">📍 {{ restaurant.address }}</a>{% endif %}
-        </address>
+        <div class="restaurant-header">
+          <h3>
+            <a href="restaurants/{{ restaurant.slug }}.html">{{ restaurant.name }}</a>
+            {% if restaurant.operating_hours %}
+              {% if restaurant.is_open_now %}
+            <span class="open-status open">🟢 Open</span>
+              {% else %}
+            <span class="open-status closed">🔴 Closed</span>
+              {% endif %}
+            {% endif %}
+          </h3>
+          
+          <address class="location">
+            {% if restaurant.neighborhood %}{{ restaurant.neighborhood }}{% endif %}
+            {% if restaurant.address %}<br><a href="https://maps.google.com/?q={{ restaurant.address | urlencode }}" target="_blank" onclick="event.stopPropagation();">📍 {{ restaurant.address }}</a>{% endif %}
+            {% if restaurant.phone %}<br><a href="tel:{{ restaurant.phone }}" onclick="event.stopPropagation();">📞 {{ restaurant.phone }}</a>{% endif %}
+          </address>
+        </div>
         
         <div class="cuisine-tags">
           {% if restaurant.cuisine %}

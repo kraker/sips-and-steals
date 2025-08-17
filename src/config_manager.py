@@ -8,7 +8,7 @@ import yaml
 import logging
 from pathlib import Path
 from typing import Dict, Any, Optional
-from models import ScrapingConfig
+from src.models import ScrapingConfig
 
 logger = logging.getLogger(__name__)
 

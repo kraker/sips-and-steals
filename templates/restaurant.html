@@ -15,7 +15,16 @@
 {% block content %}
     <!-- Restaurant Header -->
     <header class="restaurant-header">
-        <h1>{{ restaurant.name }}</h1>
+        <h1>
+          {{ restaurant.name }}
+          {% if restaurant.operating_hours %}
+            {% if restaurant.is_open_now %}
+          <span class="open-status open">🟢 Open Now</span>
+            {% else %}
+          <span class="open-status closed">🔴 Closed</span>
+            {% endif %}
+          {% endif %}
+        </h1>
         <div class="meta">
             {{ restaurant.district }}{% if restaurant.neighborhood %} • {{ restaurant.neighborhood }}{% endif %}
             {% if restaurant.cuisine %} • {{ restaurant.cuisine | cuisine_emoji }}{% endif %}
@@ -154,6 +163,15 @@
                 </div>
                 
                 {% if restaurant.website %}
+                {% if restaurant.phone %}
+                <div class="info-item">
+                    <span class="info-label">Phone:</span>
+                    <span class="info-value">
+                        <a href="tel:{{ restaurant.phone }}">📞 {{ restaurant.phone }}</a>
+                    </span>
+                </div>
+                {% endif %}
+                
                 <div class="info-item">
                     <span class="info-label">Website:</span>
                     <span class="info-value">
@@ -162,14 +180,29 @@
                 </div>
                 {% endif %}
                 
-                {% if restaurant.phone %}
-                <div class="info-item">
-                    <span class="info-label">Phone:</span>
-                    <span class="info-value">{{ restaurant.phone }}</span>
-                </div>
-                {% endif %}
             </div>
         </section>
+        
+        <!-- Operating Hours -->
+        {% if restaurant.operating_hours %}
+        <section class="detail-section">
+            <h3>Operating Hours</h3>
+            <div class="hours-grid">
+                {% for day, hours in restaurant.operating_hours.items() %}
+                <div class="hours-item">
+                    <span class="day-label">{{ day.title() }}:</span>
+                    <span class="hours-value">
+                        {% if hours.closed %}
+                            Closed
+                        {% else %}
+                            {{ hours.open }} - {{ hours.close }}
+                        {% endif %}
+                    </span>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        {% endif %}
     </div>
     
     <!-- Action Buttons -->

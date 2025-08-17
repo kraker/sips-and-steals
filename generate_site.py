@@ -199,16 +199,7 @@ def group_deals_by_schedule(deals):
             
             # Format schedule entry
             if days:
-                if len(days) == 1:
-                    day_str = days[0].title()
-                elif len(days) == 7:
-                    day_str = "Daily"
-                elif set(days) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
-                    day_str = "Weekdays"
-                elif set(days) == {'saturday', 'sunday'}:
-                    day_str = "Weekends"
-                else:
-                    day_str = ", ".join([day.title() for day in days])
+                day_str = format_day_range(days)
                 
                 if is_all_day:
                     time_str = "All Day"
@@ -599,9 +590,51 @@ def generate_enhanced_index_page(env, data, output_dir, dm):
             if restaurant.get('has_current_deals'):
                 restaurants_with_current_deals += 1
     
+    # Convert structured addresses to strings for template compatibility
+    restaurants_for_template = {}
+    for slug, restaurant_data in data['restaurants'].items():
+        restaurant_copy = restaurant_data.copy()
+        
+        # Convert structured address to string for template compatibility
+        if restaurant_copy.get('address') and isinstance(restaurant_copy['address'], dict):
+            # Extract formatted address or create from components
+            formatted_address = restaurant_copy['address'].get('formatted_address')
+            if not formatted_address:
+                # Generate from components
+                street_num = restaurant_copy['address'].get('street_number', '')
+                street_name = restaurant_copy['address'].get('street_name', '')
+                unit = restaurant_copy['address'].get('unit', '')
+                city = restaurant_copy['address'].get('city', 'Denver')
+                state = restaurant_copy['address'].get('state', 'CO')
+                zip_code = restaurant_copy['address'].get('zip_code', '')
+                
+                parts = []
+                if street_num and street_name:
+                    street_addr = f"{street_num} {street_name}"
+                    if unit:
+                        street_addr += f" {unit}"
+                    parts.append(street_addr)
+                
+                if city and state:
+                    location = f"{city}, {state}"
+                    if zip_code:
+                        location += f" {zip_code}"
+                    parts.append(location)
+                
+                formatted_address = ', '.join(parts) if parts else None
+            
+            restaurant_copy['address'] = str(formatted_address or '')
+        elif restaurant_copy.get('address') is None:
+            restaurant_copy['address'] = ''
+        else:
+            # Ensure any remaining addresses are strings
+            restaurant_copy['address'] = str(restaurant_copy.get('address', ''))
+        
+        restaurants_for_template[slug] = restaurant_copy
+    
     html = template.render(
         metadata=data['metadata'],
-        restaurants=data['restaurants'],
+        restaurants=restaurants_for_template,
         neighborhoods=neighborhoods,
         cuisines=cuisines,
         current_time=current_time,
@@ -633,6 +666,44 @@ def generate_enhanced_restaurant_pages(env, data, output_dir, dm):
         
         # Enhance restaurant data with live deals if available
         enhanced_restaurant_data = restaurant_data.copy()
+        
+        # Convert structured address to string for template compatibility
+        if enhanced_restaurant_data.get('address') and isinstance(enhanced_restaurant_data['address'], dict):
+            # Extract formatted address or create from components
+            formatted_address = enhanced_restaurant_data['address'].get('formatted_address')
+            if not formatted_address:
+                # Generate from components
+                street_num = enhanced_restaurant_data['address'].get('street_number', '')
+                street_name = enhanced_restaurant_data['address'].get('street_name', '')
+                unit = enhanced_restaurant_data['address'].get('unit', '')
+                city = enhanced_restaurant_data['address'].get('city', 'Denver')
+                state = enhanced_restaurant_data['address'].get('state', 'CO')
+                zip_code = enhanced_restaurant_data['address'].get('zip_code', '')
+                
+                parts = []
+                if street_num and street_name:
+                    street_addr = f"{street_num} {street_name}"
+                    if unit:
+                        street_addr += f" {unit}"
+                    parts.append(street_addr)
+                
+                if city and state:
+                    location = f"{city}, {state}"
+                    if zip_code:
+                        location += f" {zip_code}"
+                    parts.append(location)
+                
+                formatted_address = ', '.join(parts) if parts else None
+            
+            enhanced_restaurant_data['address'] = str(formatted_address or '')
+            
+            # Also store the structured address data for potential future use
+            enhanced_restaurant_data['address_structured'] = restaurant_data['address']
+        elif enhanced_restaurant_data.get('address') is None:
+            enhanced_restaurant_data['address'] = ''
+        else:
+            # Ensure any remaining addresses are strings
+            enhanced_restaurant_data['address'] = str(enhanced_restaurant_data.get('address', ''))
         
         if restaurant_obj:
             current_deals = restaurant_obj.get_current_deals()
@@ -835,65 +906,87 @@ def time_since_update(date_string):
 
 
 def format_day_range(days):
-    """Format a list of days into compact ranges like 'Mon - Sun' or 'Mon, Wed, Fri'"""
+    """Format a list of days into compact ranges using numeric day detection"""
     if not days:
         return ""
     
-    # Define day order for sorting and range detection
-    day_order = {
+    # Define day mappings
+    day_to_num = {
         'monday': 1, 'tuesday': 2, 'wednesday': 3, 'thursday': 4,
         'friday': 5, 'saturday': 6, 'sunday': 7
     }
     
-    day_abbrev = {
-        'monday': 'Mon', 'tuesday': 'Tue', 'wednesday': 'Wed', 'thursday': 'Thu',
-        'friday': 'Fri', 'saturday': 'Sat', 'sunday': 'Sun'
+    num_to_abbrev = {
+        1: 'Mon', 2: 'Tue', 3: 'Wed', 4: 'Thu',
+        5: 'Fri', 6: 'Sat', 7: 'Sun'
     }
     
-    # Normalize to lowercase and sort by day order
-    normalized_days = [day.lower().strip() for day in days if day.lower().strip() in day_order]
-    sorted_days = sorted(normalized_days, key=lambda x: day_order[x])
+    # Convert days to numbers, normalize, and remove duplicates
+    day_numbers = []
+    for day in days:
+        day_lower = day.lower().strip()
+        if day_lower in day_to_num:
+            day_numbers.append(day_to_num[day_lower])
     
-    if not sorted_days:
-        return ", ".join(days)  # Fallback to original if we can't parse
+    if not day_numbers:
+        return ", ".join(days)  # Fallback if we can't parse
+    
+    # Remove duplicates and sort
+    unique_numbers = sorted(set(day_numbers))
     
     # Special case: all 7 days
-    if len(sorted_days) == 7:
+    if len(unique_numbers) == 7:
         return "Daily"
     
-    # Special case: Monday through Friday
-    weekdays = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday']
-    if sorted_days == weekdays:
-        return "Mon - Fri"
-    
-    # Special case: Saturday and Sunday
-    weekend = ['saturday', 'sunday']
-    if sorted_days == weekend:
-        return "Sat - Sun"
-    
-    # Look for consecutive ranges
+    # Handle week wraparound by checking for Sunday-Monday sequences
+    # For cases like [1,2,3,7] (Mon,Tue,Wed,Sun) or [6,7,1,2] (Sat,Sun,Mon,Tue)
     ranges = []
-    start = 0
+    wraparound_handled = False
+    if 7 in unique_numbers and 1 in unique_numbers:
+        # Check if we have a sequence that wraps around (like Sun-Thu)
+        # Find Sunday and see if it connects to a sequence starting with Monday
+        sunday_idx = unique_numbers.index(7)
+        monday_idx = unique_numbers.index(1)
+        
+        # If Sunday is at the end and Monday is at the beginning, and they're part of consecutive sequences
+        if sunday_idx == len(unique_numbers) - 1 and monday_idx == 0:
+            # Check if we have a sequence like [1,2,3,4,7] (Mon-Thu,Sun)
+            # This should be displayed as "Sun - Thu"
+            consecutive_from_monday = 0
+            while (consecutive_from_monday + 1 < len(unique_numbers) and 
+                   unique_numbers[consecutive_from_monday + 1] == unique_numbers[consecutive_from_monday] + 1 and
+                   unique_numbers[consecutive_from_monday] < 7):
+                consecutive_from_monday += 1
+            
+            # If we have Monday through some weekday, then Sunday, it's a wraparound
+            if consecutive_from_monday > 0 and unique_numbers[consecutive_from_monday + 1] == 7:
+                ranges.append(f"Sun - {num_to_abbrev[unique_numbers[consecutive_from_monday]]}")
+                wraparound_handled = True
     
-    while start < len(sorted_days):
-        end = start
+    if not wraparound_handled:
+        # Standard consecutive range detection
+        i = 0
         
-        # Find the end of consecutive days
-        while (end + 1 < len(sorted_days) and 
-               day_order[sorted_days[end + 1]] == day_order[sorted_days[end]] + 1):
-            end += 1
-        
-        # If we have a range of 3 or more consecutive days, format as range
-        if end - start >= 2:
-            ranges.append(f"{day_abbrev[sorted_days[start]]} - {day_abbrev[sorted_days[end]]}")
-        elif end - start == 1:
-            # Two consecutive days, still show as range for brevity
-            ranges.append(f"{day_abbrev[sorted_days[start]]} - {day_abbrev[sorted_days[end]]}")
-        else:
-            # Single day
-            ranges.append(day_abbrev[sorted_days[start]])
-        
-        start = end + 1
+        while i < len(unique_numbers):
+            start = i
+            
+            # Find consecutive sequence
+            while (i + 1 < len(unique_numbers) and 
+                   unique_numbers[i + 1] == unique_numbers[i] + 1):
+                i += 1
+            
+            # Format the range
+            if i == start:
+                # Single day
+                ranges.append(num_to_abbrev[unique_numbers[start]])
+            elif i == start + 1:
+                # Two consecutive days, show as range for brevity
+                ranges.append(f"{num_to_abbrev[unique_numbers[start]]} - {num_to_abbrev[unique_numbers[i]]}")
+            else:
+                # Three or more consecutive days, definitely a range
+                ranges.append(f"{num_to_abbrev[unique_numbers[start]]} - {num_to_abbrev[unique_numbers[i]]}")
+            
+            i += 1
     
     return ", ".join(ranges)
 
@@ -1000,22 +1093,12 @@ def format_deal_time(deal):
     
     # Smart formatting: combine days and time to avoid redundancy
     if days_of_week:
-        if len(days_of_week) == 7:
+        formatted_days = format_day_range(days_of_week)
+        if formatted_days == "Daily" and is_all_day:
             # For daily all-day deals, just say "Daily" (don't add "All Day" later)
-            if is_all_day:
-                time_parts.append("Daily")
-            else:
-                time_parts.append("Daily")
-        elif len(days_of_week) == 1:
-            time_parts.append(days_of_week[0].title())
-        elif set([d.lower() for d in days_of_week]) == {'monday', 'tuesday', 'wednesday', 'thursday', 'friday'}:
-            time_parts.append("Weekdays")
-        elif set([d.lower() for d in days_of_week]) == {'saturday', 'sunday'}:
-            time_parts.append("Weekends")
+            time_parts.append("Daily")
         else:
-            time_parts.append(", ".join([day.title() for day in days_of_week[:2]]))
-            if len(days_of_week) > 2:
-                time_parts[-1] += f" + {len(days_of_week) - 2} more"
+            time_parts.append(formatted_days)
     
     # Format time (but avoid redundancy with daily all-day)
     if is_all_day and len(days_of_week) != 7:

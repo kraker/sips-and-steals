@@ -30,8 +30,8 @@ class ScraperFactory:
     def create_scraper(self, restaurant: Restaurant) -> BaseScraper:
         """Create appropriate scraper for the restaurant"""
         
-        # Generate restaurant slug for config lookup
-        restaurant_slug = self._generate_slug(restaurant.name)
+        # Use the restaurant's actual slug if available, otherwise generate one
+        restaurant_slug = getattr(restaurant, 'slug', None) or self._generate_slug(restaurant.name)
         
         # Check if we have a custom scraper implementation
         custom_scraper = self._try_load_custom_scraper(restaurant_slug, restaurant)
@@ -102,7 +102,7 @@ class ScraperFactory:
         slug = restaurant_name.lower()
         slug = re.sub(r'[^\w\s-]', '', slug)  # Remove special characters except hyphens
         slug = re.sub(r'\s+', '-', slug)      # Replace spaces with hyphens
-        slug = re.sub(r'-+', '-', slug)       # Collapse multiple hyphens
+        slug = re.sub(r'-+', '-', slug)       # Collapse multiple hyphens to single hyphen
         slug = slug.strip('-')                # Remove leading/trailing hyphens
         
         return slug

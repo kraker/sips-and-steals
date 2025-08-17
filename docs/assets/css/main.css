@@ -852,6 +852,60 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--urban-accent);
 }
 
+/* Open/Closed status indicators */
+.open-status {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 12px;
+  margin-left: 8px;
+  font-weight: normal;
+}
+
+.open-status.open {
+  background: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+  border: 1px solid rgba(46, 125, 50, 0.2);
+}
+
+.open-status.closed {
+  background: rgba(211, 47, 47, 0.1);
+  color: #d32f2f;
+  border: 1px solid rgba(211, 47, 47, 0.2);
+}
+
+/* Operating hours display */
+.hours-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.hours-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0;
+}
+
+.day-label {
+  font-weight: 500;
+  min-width: 70px;
+}
+
+.hours-value {
+  color: var(--pico-muted-color);
+}
+
+/* Phone number styling */
+a[href^="tel:"] {
+  text-decoration: none;
+  color: var(--pico-primary);
+}
+
+a[href^="tel:"]:hover {
+  text-decoration: underline;
+}
+
 /* Enhanced link styling */
 a:hover {
   color: var(--urban-accent);
