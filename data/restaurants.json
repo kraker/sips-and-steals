@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T00:11:35.508283",
+    "updated_at": "2025-08-17T00:28:22.972074",
     "districts": [
       "Aurora",
       "Boulder",
@@ -33,7 +33,6 @@
         "Union Station"
       ],
       "Greenwood Village, Englewood, Littleton, Centennial": [
-        "**Black+Haus Tavern \\- Littleton**",
         "Englewood",
         "Greenwood Village",
         "Littleton"
@@ -66,7 +65,6 @@
         "South Park Hill"
       ],
       "South": [
-        "**Jack\u2019s on Pearl \\- Upstairs**",
         "Platt Park",
         "Washington Park",
         "Washington Park West"
@@ -837,7 +835,7 @@
       "name": "Black+Haus Tavern - Littleton",
       "slug": "blackhaus-tavern-littleton",
       "district": "Greenwood Village, Englewood, Littleton, Centennial",
-      "neighborhood": "**Black+Haus Tavern \\- Littleton**",
+      "neighborhood": "Littleton",
       "address": "2439 W. Main St.",
       "cuisine": null,
       "website": "https://www.blackhaustavern.com/menu-littleton#menu=happy-hour-sync",
@@ -1641,7 +1639,7 @@
       "name": "Jack's on Pearl - Upstairs",
       "slug": "jacks-on-pearl-upstairs",
       "district": "South",
-      "neighborhood": "**Jack\u2019s on Pearl \\- Upstairs**",
+      "neighborhood": "Platt Park",
       "address": "1475 S Pearl St",
       "cuisine": "American",
       "website": "https://jacksonpearldenver.com/menus/",
