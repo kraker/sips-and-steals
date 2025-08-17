@@ -298,7 +298,13 @@ class Deal:
 
 @dataclass
 class ScrapingConfig:
-    """Configuration for scraping a specific restaurant"""
+    """Configuration for scraping a specific restaurant
+    
+    Note: Pattern-based configurations (custom_selectors, regex patterns, etc.) are stored
+    in YAML files under config/scrapers/ and loaded at runtime by ConfigManager.
+    This maintains clear separation between basic configuration (stored in JSON) and
+    complex pattern matching rules (stored in YAML).
+    """
     enabled: bool = True
     scraping_frequency_hours: int = 24  # How often to scrape (in hours)
     max_retries: int = 3
@@ -312,7 +318,7 @@ class ScrapingConfig:
     consecutive_failures: int = 0
     last_failure_reason: Optional[str] = None  # "robots_txt", "timeout", "404", "no_content", etc.
     
-    # Custom parsing configurations
+    # Pattern-based configurations - loaded from YAML at runtime, not persisted to JSON
     custom_selectors: Dict[str, str] = field(default_factory=dict)  # CSS selectors for specific content
     time_pattern_regex: Optional[str] = None  # Regex for extracting time ranges
     day_pattern_regex: Optional[str] = None   # Regex for extracting days of week
@@ -605,13 +611,9 @@ class Restaurant:
                 'last_scraped': self.scraping_config.last_scraped.isoformat() if self.scraping_config.last_scraped else None,
                 'last_success': self.scraping_config.last_success.isoformat() if self.scraping_config.last_success else None,
                 'consecutive_failures': self.scraping_config.consecutive_failures,
-                'last_failure_reason': self.scraping_config.last_failure_reason,
-                'custom_selectors': self.scraping_config.custom_selectors,
-                'time_pattern_regex': self.scraping_config.time_pattern_regex,
-                'day_pattern_regex': self.scraping_config.day_pattern_regex,
-                'price_pattern_regex': self.scraping_config.price_pattern_regex,
-                'exclude_patterns': self.scraping_config.exclude_patterns,
-                'content_containers': self.scraping_config.content_containers
+                'last_failure_reason': self.scraping_config.last_failure_reason
+                # Pattern-based configurations are loaded from YAML files at runtime
+                # and are not persisted to JSON to maintain clear separation of concerns
             },
             'live_deals': [deal.to_dict() for deal in self.live_deals],
             'deals_last_updated': self.deals_last_updated.isoformat() if self.deals_last_updated else None
