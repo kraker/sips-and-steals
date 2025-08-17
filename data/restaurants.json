@@ -200,11 +200,11 @@
         "confidence_score": 0.8999999999999999
       },
       "cuisine": null,
-      "website": "https://www.thirstylionrestaurant.com",
+      "website": "https://www.thirstylionrestaurant.com/colorado",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": "480-608-3316",
-        "reservation_phone": "480-419-5070",
+        "primary_phone": "303-623-0316",
+        "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
@@ -285,8 +285,7 @@
         "content_containers": []
       },
       "scraping_urls": [
-        "https://www.thirstylionrestaurant.com/locations",
-        "https://www.thirstylionrestaurant.com/contact-us",
+        "https://www.thirstylionrestaurant.com/colorado",
         "https://www.thirstylionrestaurant.com/happyhour"
       ],
       "live_data_available": false,
@@ -1677,8 +1676,7 @@
       },
       "scraping_urls": [
         "https://www.ajaxrestaurant.com/menu/happy-hour/",
-        "https://www.ajaxrestaurant.com/location/ajax/",
-        "https://www.ajaxrestaurant.com/contact-us/"
+        "https://www.ajaxrestaurant.com/location/ajax/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -5219,10 +5217,10 @@
         "confidence_score": 1.0
       },
       "cuisine": null,
-      "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder",
+      "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-lodo/",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": "303-444-1811",
+        "primary_phone": "303-292-5767",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -5329,7 +5327,7 @@
         "content_containers": []
       },
       "scraping_urls": [
-        "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder"
+        "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-lodo/"
       ],
       "live_data_available": false,
       "last_updated": null
