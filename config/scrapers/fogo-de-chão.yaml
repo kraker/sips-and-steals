@@ -1,0 +1,61 @@
+# Custom scraping configuration for Fogo de Chão
+restaurant_name: "Fogo de Chão"
+
+# Custom patterns for better happy hour parsing
+custom_patterns:
+  # Look for "SUN - SAT" or "All Day" patterns
+  day_patterns:
+    - "SUN\\s*-\\s*SAT"
+    - "all day"
+    - "daily"
+  
+  # Look for happy hour indicators
+  happy_hour_indicators:
+    - "happy hour"
+    - "bar fogo"
+    - "\\$5 beers"
+    - "\\$8.*wines"
+
+# Enhanced extraction settings
+extraction_settings:
+  # Focus on happy hour content
+  focus_sections:
+    - "happy hour"
+    - "bar"
+    - "specials"
+  
+  # Ignore navigation and general content
+  ignore_sections:
+    - "footer"
+    - "navigation"
+    - "header"
+
+# Specific improvements for Fogo de Chão parsing
+parsing_improvements:
+  # When "SUN - SAT" is found, treat as all week
+  all_week_indicators:
+    - "SUN\\s*-\\s*SAT"
+    - "daily"
+  
+  # When "All Day" is found, mark as all-day deal
+  all_day_indicators:
+    - "all day"
+    - "all-day"
+  
+  # Happy hour pricing patterns
+  pricing_patterns:
+    - "\\$\\d+\\s+(beers?|wines?|cocktails?)"
+    - "\\$\\d+\\s+[^\\n]*"
+
+# Confidence boosting rules
+confidence_rules:
+  # Boost confidence when finding specific Fogo patterns
+  boost_on_match:
+    - pattern: "bar fogo"
+      boost: 0.3
+    - pattern: "\\$5 beers"
+      boost: 0.2  
+    - pattern: "\\$8.*wines"
+      boost: 0.2
+    - pattern: "SUN\\s*-\\s*SAT"
+      boost: 0.4

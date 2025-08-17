@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "giovanni_happy_hours.md",
-    "updated_at": "2025-08-16T18:33:45.095157",
+    "updated_at": "2025-08-16T21:00:29.013256",
     "districts": [
       "Aurora",
       "Boulder",
@@ -113,7 +113,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:04:59.086406"
+        "last_updated": "2025-08-16T20:43:18.937147"
       },
       "blue-sushi-sake-grill": {
         "name": "Blue Sushi Sake Grill",
@@ -135,7 +135,7 @@
           "https://www.bluesushisakegrill.com/locations/lodo"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T18:33:42.807832"
+        "last_updated": "2025-08-16T20:43:24.657397"
       },
       "a5-steakhouse": {
         "name": "A5 Steakhouse",
@@ -145,7 +145,7 @@
         "sub_location": "Union Station",
         "address": "1600 15th St",
         "cuisine": null,
-        "website": "https://www.a5denver.com/menu#menu=happy-hour",
+        "website": "https://www.a5denver.com",
         "phone": null,
         "static_deals": [],
         "special_notes": [],
@@ -160,12 +160,12 @@
         "sub_location": "LoDo",
         "address": "1453 Larimer St",
         "cuisine": "Italian",
-        "website": "https://www.bonannoconcepts.com/restaurant/osteria-marco/",
+        "website": "https://www.osteriamarco.com/",
         "phone": null,
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:08:00.323326"
+        "last_updated": "2025-08-16T19:40:40.177637"
       },
       "rioja": {
         "name": "Rioja",
@@ -241,7 +241,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T17:06:07.837752"
+        "last_updated": "2025-08-16T20:13:08.038337"
       },
       "corridor-44": {
         "name": "Corridor 44",
@@ -346,7 +346,7 @@
         "static_deals": [],
         "special_notes": [],
         "live_data_available": true,
-        "last_updated": "2025-08-16T15:18:59.491174"
+        "last_updated": "2025-08-16T20:43:36.886155"
       },
       "fogo-de-chão": {
         "name": "Fogo de Chão",
@@ -356,12 +356,12 @@
         "sub_location": "Union Station",
         "address": "1513 Wynkoop St, Denver, CO 80202",
         "cuisine": "Brazilian",
-        "website": "https://fogodechao.com/menu-detail/?location=94&type=menu-barbook&id=4592",
+        "website": "https://fogodechao.com/location/denver/",
         "phone": null,
         "static_deals": [],
         "special_notes": [],
-        "live_data_available": false,
-        "last_updated": null
+        "live_data_available": true,
+        "last_updated": "2025-08-16T21:00:27.085402"
       },
       "mecha-noodle-bar": {
         "name": "Mecha Noodle Bar",
@@ -519,7 +519,7 @@
           "Plant-Based Options"
         ],
         "live_data_available": true,
-        "last_updated": "2025-08-16T17:39:01.925411"
+        "last_updated": "2025-08-16T19:50:57.200144"
       },
       "bang-up-to-the-elephant": {
         "name": "Bang Up to the Elephant",

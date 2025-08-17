@@ -1,0 +1,2023 @@
+{
+  "jovaninas-broken-italian": {
+    "deals": [],
+    "last_updated": "2025-08-16T17:30:36.809241"
+  },
+  "thirsty-lion": {
+    "deals": [
+      {
+        "title": "Daily Happy Hour",
+        "description": "Daily happy hour with discounted food and drinks",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ],
+        "start_time": "3:00 PM",
+        "end_time": "6:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:16.492249",
+        "source_url": "https://www.thirstyliongastropub.com/menu",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Late Night Happy Hour",
+        "description": "Late night happy hour specials",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "thursday",
+          "friday",
+          "saturday"
+        ],
+        "start_time": "9:00 PM",
+        "end_time": "Close",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:16.493673",
+        "source_url": "https://www.thirstyliongastropub.com/menu",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Friday Special",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "friday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:16.495896",
+        "source_url": "https://www.thirstyliongastropub.com/menu",
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-16T20:43:18.937147"
+  },
+  "blue-sushi-sake-grill": {
+    "deals": [
+      {
+        "title": "Vegan Maki Special",
+        "description": "25% off vegan makievery",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "tuesday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.590998",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Sake Special",
+        "description": "Half-off sake bottlesevery",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "tuesday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.591028",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Tuesday Special",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "tuesday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.591243",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Friday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "friday"
+        ],
+        "start_time": "11:00 AM",
+        "end_time": "10:00 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.595258",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Saturday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "saturday"
+        ],
+        "start_time": "11:00 AM",
+        "end_time": "10:30 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.595289",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Sunday Happy Hour",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": "12:00 PM",
+        "end_time": "10:30 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.595311",
+        "source_url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.596257",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.596259",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-10:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.596260",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12pm-9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.596261",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am-6:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:22.596262",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T20:43:24.657397"
+  },
+  "a5-steakhouse": {
+    "deals": [],
+    "last_updated": "2025-08-16T20:43:30.795561"
+  },
+  "osteria-marco": {
+    "deals": [
+      {
+        "title": "Sunday Special",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:40:37.692209",
+        "source_url": "https://www.osteriamarco.com/",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Sunday Special",
+        "description": "Special discounts and happy hour deals",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:40:37.692245",
+        "source_url": "https://www.osteriamarco.com/",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sunday | 10:30am-9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:40:37.695563",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Monday - Thursday | 11:30am-9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:40:37.695567",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Friday - Saturday | 11:30am-10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:40:37.695568",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T19:40:40.177637"
+  },
+  "rioja": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour/cocktails | rioja\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n1431 larimer street | denver colorad",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:08:58.066308",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:09:00.312286"
+  },
+  "stk": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:10:00.984628"
+  },
+  "urban-farmer": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\nbeverages\n\n\n\n\n\n\n\n\n\nstarters\n\n\n\n\nbeef tartare*\n\nspring onion, basil rice cracker\n\n $23\n\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:10:57.001371",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Saturday & Sunday 9 AM - 2 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:10:57.004870",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:10:59.253206"
+  },
+  "tamayo": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour in denver | tamayo\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:13:06.012192",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "3 pm - 5 pm  unwind and celebrate the end of the day with our lively happy hour",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:13:06.012288",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Monday - Friday | 3 PM - 5 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:13:06.013741",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "Times: 3, PM, 5, PM | Days: Monday, Friday",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday"
+        ],
+        "start_time": "3 PM",
+        "end_time": "5 PM",
+        "price": null,
+        "is_all_day": false,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:13:06.024755",
+        "source_url": null,
+        "confidence_score": 0.8
+      }
+    ],
+    "last_updated": "2025-08-16T20:13:08.038337"
+  },
+  "corridor-44": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour snacks\n\n4-6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:12:57.118769",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:12:59.411878"
+  },
+  "tavernetta": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour | everyday 3:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:13:57.028196",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour nightly (only in the bar and lounge) 3:00 pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:13:57.028220",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "3:00pm - 6:00pm\n\n\ndolci | after dinner\n\n\ncocktails\n\n\nwine\n\n\nbeer\n\n\nspirits\n\n\n\n\n\ndinner nightly | 5:0",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:13:57.028313",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Happy Hour | Everyday 3:00pm - 6:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:13:57.031986",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Dinner Nightly | 5:00 pm - 10:00 pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:13:57.031990",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:13:59.234545"
+  },
+  "ultreia": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour | ultreia\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nin denver union station at 1701 wynkoop, suite 1",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:14:57.723439",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:14:59.758918"
+  },
+  "sunday-vinyl": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\nwines by the glass\n\n\ndinner menu\n\n\nwines by the bottle\n\n\nbeverages\n\n\n\n\n\nintroducing sun",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:15:57.035949",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tuesday - Saturday: 4:30pm - 10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:15:57.038633",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sunday: 3:30pm - 9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:15:57.038635",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:15:59.313347"
+  },
+  "foraged": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:16:59.503475"
+  },
+  "ajax-downtown": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour)\n\t\t\t\t\t\taprès – meaning after and a nod to the après-ski at ajax tavern, our sister restau",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:17:57.051580",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:17:59.410246"
+  },
+  "mercantile": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\nbar\n\n\ncocktail\n\n\nwine by the glass\n\n\ndinner\n\n\ndessert\n\n\n\n\n\na la carte lunchorder ahead\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:34.425285",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\t\t\t\t\t\tdaily 2pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:34.425298",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "2pm-5pm\n\n\n\n\n\n\nsnacks\n\n\n\n\nbar board\n\n$12\n\n\nselection of cured meats, cheese, mercantile pickles, jam,",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:34.425392",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Daily 2pm-5pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:34.427249",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Daily 2pm - 5pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T20:43:34.427252",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T20:43:36.886155"
+  },
+  "fogo-de-chão": {
+    "deals": [
+      {
+        "title": "All Day Happy Hour",
+        "description": "All-day happy hour specials and discounts",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday",
+          "tuesday",
+          "wednesday",
+          "thursday",
+          "friday",
+          "saturday",
+          "sunday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.638539",
+        "source_url": "https://fogodechao.com/location/denver/",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Mon - Thu 3:00 PM  - 9:30PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.641312",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Fri 3:00 PM - 10:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.641321",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sat 2:00 PM - 10:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.641324",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sun 2:00 PM - 9:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.641326",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "MON-FRI 11:30 AM - 3:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T21:00:24.641327",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T21:00:27.085402"
+  },
+  "mecha-noodle-bar": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour menu — mecha noodle bar\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:20:57.106119",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:20:59.337113"
+  },
+  "wonderyard-garden-table": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:21:59.300672"
+  },
+  "done-deal": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\t\t\t\t\t\tmonday-friday 3-5:30pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:22:57.090828",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:22:59.244823"
+  },
+  "bezel-bar": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:24:00.303489"
+  },
+  "panzano": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour:\nmonday - saturday  4pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.298963",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "7am - 10am\nsaturday - sunday  8am - 12pm\n\nlunch\nmonday - friday  11:30am - 1:30pm\n\ndinner:\nmonday - ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.298988",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "MONDAY - FRIDAY  7AM - 10AM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.301242",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "SATURDAY - SUNDAY  8AM - 12PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.301245",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "MONDAY - FRIDAY  11:30AM - 1:30PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.301246",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "MONDAY - SATURDAY  5PM - 9PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.301247",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "MONDAY - SATURDAY  4PM - 6PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:24:57.301248",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:24:59.592475"
+  },
+  "guard-and-grace": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\n\n\n\nseafood bar\n\n\n\n\n$26 | 52\n                  \n                \noysters*\ndaily offering",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:25:57.159083",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Weekdays | 3:00pm-6:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:25:57.162990",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:25:59.557528"
+  },
+  "corinne-denver": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:26:59.739782"
+  },
+  "white-pie": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour menuseasonal specialtiesstartershouse puff$7.00garlic rosemary butterburrata$17.00cherry ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:27:57.329795",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "10am - 2pmbrunch piesb.e.c.$16.00mozarella, bacon, double egg*, sriracha aioli*, microgreensburrata ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:27:57.329889",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sat & Sun 10am - 2pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:27:57.336424",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Mon - Fri 3pm - 6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:27:57.336426",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:27:59.736940"
+  },
+  "fire-lounge": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour mon-fri 2:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.798049",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour 2pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.798065",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "6:30am-10:30am brunch sat-sun 7:00am-2:00pm lunch mon-fri 10:30am-2:00pm bites mon-sun 2:00pm-5:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.798096",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "6:30AM-10:30AM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.799165",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "7:00AM-2:00PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.799167",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "10:30AM-2:00PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.799168",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "2:00PM-5:00PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.799168",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "5:00PM-10:00PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:28:57.799169",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:28:59.895326"
+  },
+  "city-o-city": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour — city, o' city\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n0\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:50:54.942250",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour food\n\n\n\nfried ravioli**\n\n\n\ncn | 8crispy wontons stuffed with roasted mushrooms, artichoke",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:50:54.942282",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "6pm & 9-10pm\n\n\n\n\n**please alert your server if you have any allergies\n\n\n\ndrinks\n\n\n\nsingle well spiri",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:50:54.942364",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "EVERY DAY 3-6PM & 9-10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:50:54.943937",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "9am - 10pm Every Day",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T19:50:54.943940",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T19:50:57.200144"
+  },
+  "bang-up-to-the-elephant": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour & specials in denver | bang up to the elephant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:30:59.187534",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\nmenus\ngifts\ncontact\narts | events\n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nopen 4pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:30:59.187540",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n\n\n\n\t\t\t\t\t\tadventurous plant-based dining\t\t\t\t\t\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n \n100% ou",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:30:59.187546",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:31:01.454688"
+  },
+  "100-de-agave": {
+    "deals": [],
+    "last_updated": "2025-08-16T17:37:14.579340"
+  },
+  "9th-door": {
+    "deals": [],
+    "last_updated": "2025-08-16T17:37:25.091922"
+  },
+  "vesper-lounge": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\n\n\n\n\n\n\nfood\n\n\n\n\n\n\n\nfood\ndrink\nhappy hour\n\n\n\nfood\ndrink\nhappy hour\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.288067",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\ntues – fri open – 6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.288088",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour on mondays\n\n\n\nsnacks for drinkers\n\n\n\nmoroccan bar nuts\n2\n\n\nwings\ngochujang, spicy or bbq ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.288109",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Mon - Fri | 4pm - 2am",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.289671",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sat - Sun | 2pm - 2am",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.289673",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tue - Fri | 4pm - 6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.289674",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Sat - Sun | 2pm - 4pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:33:58.289675",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:34:00.575452"
+  },
+  "watercourse-foods": {
+    "deals": [
+      {
+        "title": "Monday Special",
+        "description": "every monday",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "monday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:34:57.217136",
+        "source_url": "https://www.watercoursefoods.com/happyhour",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "11am - 12pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:34:57.218705",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "3pm - 6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:34:57.218706",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Queen City. Flavor +0.75 | Available only for breakfast happy hour 11am - 12pm.",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:34:57.218707",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:34:59.553367"
+  },
+  "ace-eat-serve": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour                            \n\n                    ace coffee bar\n                    \n    ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:35:57.427955",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour menudim sum & then sumcrispy wonton chips$3.00sweet & sour sauce, hot mustardcrisp chili ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:35:57.427991",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "4 pm - 6 pm weekdays | 3 pm - 6 pm weekendsview happy hour",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:35:57.428143",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "4 PM - 6 PM Weekdays | 3 PM - 6 PM Weekends",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:35:57.430119",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:35:59.799411"
+  },
+  "xiquita-restaurante-y-bar": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hourwelcome to xiquita. pronounced \"chiquita\". our menu features items listed in some of the n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:36:57.396598",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "4pm-6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:36:57.397745",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:36:59.539097"
+  },
+  "go-fish-sushi": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:37:59.577786"
+  },
+  "punchbowl-social": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour! shake off the sunday scaries with monday funday! keep the good vibes rolling with 50% of",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:38:57.597207",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "10:00 pm - close on friday and saturdaykitchen open until closing time sunday-thursday. kitchen clos",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:38:57.597312",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "9:00 pm - turn up the volume, test your knowledge and sing along at our weekly music bingo!free rsvp",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:38:57.597323",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "9pm - 12am on select Fridays - Put your headphones on and let go of your inhibitions!",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:38:57.598684",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Join us at Punch Bowl Social in Denver on select Saturdays for live music, from 9:30pm - 12am, with your favorite covers from the 90s and 00s!",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:38:57.598685",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:39:00.038588"
+  },
+  "rocky-yama-sushi": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour | sushi restaurant | japanese restaurant\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\ntop of page\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.359955",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour dine in only\nmonday                                                   close\ntuesday - sun",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.359961",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "12:00 pm - 08:45 pm\nfriday - saturday                       12:00 pm - 09:15 pm\n         sunday     ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.359975",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tuesday - Thursday                  12:00 PM - 08:45 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.368876",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Friday - Saturday                       12:00 PM - 09:15 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.368881",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "12:00 PM - 08:45 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.368883",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tuesday - Sunday                     03:00 PM - 06:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:39:57.368883",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:39:59.556988"
+  },
+  "adrift": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "9:30 pm – last call\n\nallergy note:\nplease note that we use various fruits, nuts, and other flavors. ",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:40:58.650055",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:41:01.108820"
+  },
+  "la-forêt": {
+    "deals": [
+      {
+        "title": "Time-based Special",
+        "description": "4PM - 5PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:41:57.392049",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:41:59.578459"
+  },
+  "ronin-congress-park": {
+    "deals": [],
+    "last_updated": "2025-08-16T15:42:59.415347"
+  },
+  "shells-and-sauce": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour\n\n\nwine menu\n\n\ncatering menu\n\n\n\n\n\nthank you for joining us!please limit your dining experi",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:43:57.330815",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour is dine in onlyno happy hour during restaurant week march 7-16th, 2025happy hour food 330",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:43:57.330852",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Happy Hour",
+        "description": "happy hour feature\n\nask your server for details on todays deliciousness\n\n $10.95\n\n\n\n\nmini grilled ha",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:43:57.331014",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "0-830PM SUNDAY, TUESDAY-THURSDAY &  9PM FRIDAY & SATURDAY",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:43:57.333505",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Happy Hour Food 330-5pm,  Drinks 330-6pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:43:57.333507",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:43:59.503820"
+  },
+  "bar-max": {
+    "deals": [
+      {
+        "title": "Happy Hour",
+        "description": "happy hour wednesday, thursday, friday from 4:00 – 7:00pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:44:57.287888",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:44:59.546397"
+  },
+  "sap-sua": {
+    "deals": [
+      {
+        "title": "Time-based Special",
+        "description": "sunday - 4:30pm - 9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:45:57.360181",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "monday - 4:30pm - 9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:45:57.360185",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "wednesday - thursday 4:30pm - 9pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:45:57.360186",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "friday - saturday 4:30pm - 10pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T15:45:57.360187",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T15:45:59.548858"
+  },
+  "jax-fish-house": {
+    "deals": [
+      {
+        "title": "Sunday Special",
+        "description": "every sunday",
+        "deal_type": "happy_hour",
+        "days_of_week": [
+          "sunday"
+        ],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.050185",
+        "source_url": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder/#happy-hour",
+        "confidence_score": 0.8
+      },
+      {
+        "title": "Time-based Special",
+        "description": "3:30 PM - 9:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.054864",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "3:30 PM - 10:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.054868",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "3:30 PM - 5:00 PM",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.054870",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tues-Fri 3:30 - 5:00PM, Sat & Sun 2:00 - 5:00PM, All Night Mon 3:30 - CLOSE",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.054871",
+        "source_url": null,
+        "confidence_score": 0.4
+      },
+      {
+        "title": "Time-based Special",
+        "description": "Tuesday - Sunday 3:30 pm - 5:00 pm",
+        "deal_type": "happy_hour",
+        "days_of_week": [],
+        "start_time": null,
+        "end_time": null,
+        "price": null,
+        "is_all_day": true,
+        "special_notes": [],
+        "scraped_at": "2025-08-16T14:43:48.054872",
+        "source_url": null,
+        "confidence_score": 0.4
+      }
+    ],
+    "last_updated": "2025-08-16T14:43:50.089841"
+  }
+}
