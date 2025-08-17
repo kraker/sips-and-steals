@@ -1,0 +1,35 @@
+{
+  "restaurant_slug": "fogo-de-chão",
+  "archived_at": "2025-08-17T14:21:49.778360",
+  "deals": [
+    {
+      "title": "All Day Happy Hour",
+      "description": "Happy hour at Bar Fogo",
+      "deal_type": "happy_hour",
+      "days_of_week": [
+        "sunday",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
+      "prices": [
+        "$5 Beers",
+        "$8 Wines",
+        "$10 Cocktails"
+      ],
+      "is_all_day": true,
+      "special_notes": [],
+      "scraped_at": "2025-08-17T14:21:47.759567",
+      "source_url": null,
+      "confidence_score": 0.9
+    }
+  ]
+}

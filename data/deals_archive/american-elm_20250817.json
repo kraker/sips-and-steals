@@ -1,6 +1,6 @@
 {
   "restaurant_slug": "american-elm",
-  "archived_at": "2025-08-17T14:07:21.994238",
+  "archived_at": "2025-08-17T14:23:59.468970",
   "deals": [
     {
       "title": "Weekday Happy Hour",
@@ -21,7 +21,7 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T14:07:19.687879",
+      "scraped_at": "2025-08-17T14:23:57.237611",
       "source_url": "https://www.amelm.com/happyhour",
       "confidence_score": 0.8
     }

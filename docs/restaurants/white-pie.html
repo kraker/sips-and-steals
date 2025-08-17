@@ -26,6 +26,7 @@
     <header class="restaurant-header">
         <h1>
           White Pie
+          <span class="open-status closed">🔴 Closed</span>
         </h1>
         <div class="meta">
             Central Denver • City Park West • 🍕 Pizza        </div>
@@ -36,8 +37,22 @@
         <h3>Current Deals & Specials</h3>
         <p class="live-deals-description">
             Fresh data from White Pie's website
-• Updated 14 hours ago        </p>
+        </p>
         
+        <div class="deal-group-card schedule-group">
+            <div class="deal-group-header">
+                <h4 class="deal-group-title">Happy Hours</h4>
+                <span class="confidence-badge">🔴</span>
+            </div>
+            
+            
+            <div class="deal-group-offerings schedule-list">
+                <div class="deal-offering schedule-entry">
+                        Mon - Fri: 3:00 PM - 6:00 PM
+                </div>
+            </div>
+            
+        </div>
         <div class="deal-group-card">
             <div class="deal-group-header">
                 <h4 class="deal-group-title">Special Offers</h4>
@@ -45,20 +60,18 @@
             </div>
             
             <div class="deal-group-meta">
+                    <div class="schedule-info">
+                        <span class="schedule-days">Mon - Fri</span>
+                            <span class="schedule-time">3:00 PM - 6:00 PM</span>
+                    </div>
             </div>
             
             <div class="deal-group-offerings">
                 <div class="deal-offering">
-                            • happy hour menuseasonal specialtiesstartershouse puff$7.00garlic rosemary butterburrata$17.00cherry
-                </div>
-                <div class="deal-offering">
-                            • 10am - 2pmbrunch piesb.e.c.$16.00mozarella, bacon, double egg*, sriracha aioli*, microgreensburrata
+                            • Discounted drinks and appetizers
                 </div>
             </div>
             
-            <div class="deal-group-count">
-                <small>2 offers available</small>
-            </div>
         </div>
         
     </section>
@@ -102,6 +115,41 @@
         </section>
         
         <!-- Operating Hours -->
+        <section class="detail-section">
+            <h3>Operating Hours</h3>
+            <div class="hours-grid">
+                <div class="hours-item">
+                    <span class="day-label">Monday:</span>
+                    <span class="hours-value">
+                            15:00 - 18:00
+                    </span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Tuesday:</span>
+                    <span class="hours-value">
+                            15:00 - 18:00
+                    </span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Wednesday:</span>
+                    <span class="hours-value">
+                            15:00 - 18:00
+                    </span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Thursday:</span>
+                    <span class="hours-value">
+                            15:00 - 18:00
+                    </span>
+                </div>
+                <div class="hours-item">
+                    <span class="day-label">Friday:</span>
+                    <span class="hours-value">
+                            15:00 - 18:00
+                    </span>
+                </div>
+            </div>
+        </section>
     </div>
     
     <!-- Action Buttons -->
@@ -115,9 +163,6 @@
         <p><a href="../index.html#central-denver">Explore other restaurants in Central Denver →</a></p>
     </section>
     
-    <div class="last-updated">
-        Data last updated: 14 hours ago
-    </div>
     
     <!-- Footer -->
     <footer style="text-align: left; padding-top: 2rem; border-top: 1px solid var(--pico-muted-border-color);">

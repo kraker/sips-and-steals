@@ -124,6 +124,8 @@ class DataManager:
         # Load deals last updated timestamp
         if data.get('deals_last_updated'):
             restaurant.deals_last_updated = datetime.fromisoformat(data['deals_last_updated'])
+        else:
+            restaurant.deals_last_updated = None
         
         # Add multiple URLs support
         if 'scraping_urls' in data:
@@ -266,11 +268,16 @@ class DataManager:
             # Convert restaurant using the complete to_dict() method to include all enhanced fields
             restaurant_dict = restaurant.to_dict()
             
-            # Remove fields that shouldn't be persisted to restaurants.json
-            if 'live_deals' in restaurant_dict:
-                del restaurant_dict['live_deals']  # Live deals are saved separately
-            if 'deals_last_updated' in restaurant_dict:
-                del restaurant_dict['deals_last_updated']  # This goes in metadata below
+            # Keep live_deals in restaurants.json for single-source architecture
+            # Convert live_deals to serializable format
+            if hasattr(restaurant, 'live_deals') and restaurant.live_deals:
+                restaurant_dict['live_deals'] = [deal.to_dict() for deal in restaurant.live_deals]
+            else:
+                restaurant_dict['live_deals'] = []
+            
+            # Keep deals_last_updated for freshness tracking
+            if hasattr(restaurant, 'deals_last_updated') and restaurant.deals_last_updated:
+                restaurant_dict['deals_last_updated'] = restaurant.deals_last_updated.isoformat()
             
             # Add multiple URLs support if present
             if hasattr(restaurant, 'scraping_urls') and restaurant.scraping_urls:

@@ -1,24 +1,27 @@
 {
   "restaurant_slug": "stk",
-  "archived_at": "2025-08-17T09:06:04.995301",
+  "archived_at": "2025-08-17T14:20:45.758909",
   "deals": [
     {
       "title": "Weekday Social Hour",
       "description": "Available 2:30 PM - 6:30 PM",
       "deal_type": "happy_hour",
       "days_of_week": [
-        "friday",
-        "thursday",
         "wednesday",
+        "thursday",
         "monday",
-        "tuesday"
+        "tuesday",
+        "friday"
       ],
       "start_time": "2:30 PM",
       "end_time": "6:30 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T09:06:02.546399",
+      "scraped_at": "2025-08-17T14:20:43.465906",
       "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
       "confidence_score": 0.9
     },
@@ -32,10 +35,13 @@
       ],
       "start_time": "2:30 PM",
       "end_time": "5:30 PM",
+      "start_time_24h": null,
+      "end_time_24h": null,
+      "timezone": "America/Denver",
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T09:06:02.546658",
+      "scraped_at": "2025-08-17T14:20:43.466150",
       "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
       "confidence_score": 0.9
     }
