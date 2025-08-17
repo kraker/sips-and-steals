@@ -593,3 +593,249 @@ class UniversalHappyHourExtractor:
             return f"{section.name}{attr_str}"
         
         return "text_node"
+    
+    def _remove_duplicate_deals(self, deals: List[Deal]) -> List[Deal]:
+        """
+        Remove duplicate deals based on title, time, and days.
+        
+        Args:
+            deals: List of deals to deduplicate
+            
+        Returns:
+            List of unique deals
+        """
+        if not deals:
+            return deals
+        
+        unique_deals = []
+        seen_deals = set()
+        
+        for deal in deals:
+            # Create a signature for the deal
+            days_signature = tuple(sorted([day.value for day in deal.days_of_week]))
+            deal_signature = (
+                deal.title.lower().strip(),
+                deal.start_time,
+                deal.end_time,
+                days_signature
+            )
+            
+            if deal_signature not in seen_deals:
+                seen_deals.add(deal_signature)
+                unique_deals.append(deal)
+        
+        return unique_deals
+    
+    def extract_from_text(self, text: str, source_url: str = None) -> ExtractionResult:
+        """
+        Extract happy hour deals from plain text (e.g., from PDF extraction).
+        
+        Args:
+            text: Plain text content to analyze
+            source_url: Optional source URL for context
+        
+        Returns:
+            ExtractionResult with deals and confidence scoring
+        """
+        logger.info("Starting universal happy hour extraction from plain text")
+        
+        if not text or not text.strip():
+            logger.warning("Empty text provided for extraction")
+            return ExtractionResult(deals=[], confidence_score=0.0, 
+                                  extraction_method="text_extraction", 
+                                  content_sources=["empty_text"])
+        
+        # Create a simple wrapper to make text compatible with existing methods
+        # We'll treat the entire text as one "section" for analysis
+        deals = self._extract_deals_from_text_content(text)
+        
+        # Calculate confidence score based on extraction quality
+        confidence_score = self._calculate_text_confidence(text, deals)
+        
+        # Determine extraction method
+        extraction_method = "text_pattern_matching"
+        if source_url and source_url.endswith('.pdf'):
+            extraction_method = "pdf_text_extraction"
+        
+        content_sources = [source_url or "plain_text"]
+        
+        logger.info(f"Universal extraction found {len(deals)} deals with {confidence_score:.2f} confidence")
+        
+        return ExtractionResult(
+            deals=deals,
+            confidence_score=confidence_score,
+            extraction_method=extraction_method,
+            content_sources=content_sources
+        )
+    
+    def _extract_deals_from_text_content(self, text: str) -> List[Deal]:
+        """
+        Extract deals from plain text using pattern recognition.
+        
+        Args:
+            text: Plain text content
+            
+        Returns:
+            List of extracted deals
+        """
+        deals = []
+        
+        # Split text into lines for analysis
+        lines = text.split('\n')
+        
+        # Look for happy hour indicators in the text
+        happy_hour_sections = []
+        for i, line in enumerate(lines):
+            line_lower = line.lower()
+            if any(keyword in line_lower for keyword in self.HAPPY_HOUR_KEYWORDS):
+                # Include this line and surrounding context
+                start_idx = max(0, i - 2)
+                end_idx = min(len(lines), i + 3)
+                context = '\n'.join(lines[start_idx:end_idx])
+                happy_hour_sections.append(context)
+        
+        # If no specific happy hour sections found, analyze the entire text
+        if not happy_hour_sections:
+            happy_hour_sections = [text]
+        
+        # Extract deals from each section
+        for section_text in happy_hour_sections:
+            section_deals = self._extract_deals_from_text_section(section_text)
+            deals.extend(section_deals)
+        
+        # Remove duplicates
+        unique_deals = self._remove_duplicate_deals(deals)
+        
+        return unique_deals
+    
+    def _extract_deals_from_text_section(self, section_text: str) -> List[Deal]:
+        """
+        Extract deals from a section of plain text.
+        
+        Args:
+            section_text: Text section to analyze
+            
+        Returns:
+            List of extracted deals
+        """
+        deals = []
+        
+        # Extract time patterns
+        time_matches = []
+        for pattern in self.TIME_PATTERNS:
+            matches = re.findall(pattern, section_text, re.IGNORECASE)
+            time_matches.extend(matches)
+        
+        # Extract day patterns
+        day_matches = []
+        for pattern in self.DAY_PATTERNS:
+            matches = re.findall(pattern, section_text, re.IGNORECASE)
+            day_matches.extend(matches)
+        
+        # If we found both time and day patterns, create deals
+        if time_matches or day_matches:
+            # Create a basic deal from the patterns found
+            deal_title = "Happy Hour"
+            
+            # Try to extract more specific title from surrounding text
+            lines = section_text.split('\n')
+            for line in lines:
+                line_clean = line.strip()
+                if line_clean and any(keyword in line_clean.lower() for keyword in self.HAPPY_HOUR_KEYWORDS):
+                    # Use this line as title if it's short enough
+                    if len(line_clean) < 100:
+                        deal_title = line_clean
+                        break
+            
+            # Process time matches
+            start_time = None
+            end_time = None
+            if time_matches:
+                # Use the first valid time match
+                for match in time_matches:
+                    try:
+                        start_time, end_time = self._parse_time_match(match)
+                        if start_time and end_time:
+                            break
+                    except:
+                        continue
+            
+            # Process day matches
+            days_of_week = []
+            if day_matches:
+                for match in day_matches:
+                    try:
+                        match_days = self._parse_day_match(match[0] if isinstance(match, tuple) else match)
+                        days_of_week.extend(match_days)
+                    except:
+                        continue
+            
+            # Remove duplicates from days
+            days_of_week = list(set(days_of_week))
+            
+            # Create description
+            description_parts = []
+            if start_time and end_time:
+                description_parts.append(f"Time: {start_time} - {end_time}")
+            if days_of_week:
+                day_str = ", ".join([day.title() for day in days_of_week])
+                description_parts.append(f"Days: {day_str}")
+            
+            description = " | ".join(description_parts) if description_parts else "Found happy hour pattern"
+            
+            # Create the deal
+            if time_matches or day_matches:
+                deal = Deal(
+                    title=deal_title,
+                    description=description,
+                    deal_type=DealType.HAPPY_HOUR,
+                    days_of_week=[DayOfWeek(day) for day in days_of_week if day in [d.value for d in DayOfWeek]],
+                    start_time=start_time,
+                    end_time=end_time,
+                    is_all_day=False
+                )
+                deals.append(deal)
+        
+        return deals
+    
+    def _calculate_text_confidence(self, text: str, deals: List[Deal]) -> float:
+        """
+        Calculate confidence score for text-based extraction.
+        
+        Args:
+            text: Original text content
+            deals: Extracted deals
+            
+        Returns:
+            Confidence score between 0.0 and 1.0
+        """
+        if not deals:
+            return 0.0
+        
+        score = 0.0
+        
+        # Base score for finding deals
+        score += 0.5
+        
+        # Bonus for happy hour keywords
+        text_lower = text.lower()
+        keyword_count = sum(1 for keyword in self.HAPPY_HOUR_KEYWORDS if keyword in text_lower)
+        score += min(keyword_count * 0.1, 0.3)
+        
+        # Bonus for time patterns
+        time_pattern_count = 0
+        for pattern in self.TIME_PATTERNS:
+            time_pattern_count += len(re.findall(pattern, text, re.IGNORECASE))
+        score += min(time_pattern_count * 0.05, 0.2)
+        
+        # Bonus for day patterns
+        day_pattern_count = 0
+        for pattern in self.DAY_PATTERNS:
+            day_pattern_count += len(re.findall(pattern, text, re.IGNORECASE))
+        score += min(day_pattern_count * 0.05, 0.2)
+        
+        # Penalty for very short text (might be incomplete extraction)
+        if len(text) < 100:
+            score *= 0.8
+        
+        return min(score, 1.0)

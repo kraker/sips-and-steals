@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T15:39:04.758394",
+    "updated_at": "2025-08-17T15:42:25.246888",
     "districts": [
       "Aurora",
       "Boulder",
@@ -1834,9 +1834,9 @@
       "live_data_available": false,
       "last_updated": null
     },
-    "fogo-de-chão": {
-      "name": "Fogo de Chão",
-      "slug": "fogo-de-chão",
+    "fogo-de-ch\u00e3o": {
+      "name": "Fogo de Ch\u00e3o",
+      "slug": "fogo-de-ch\u00e3o",
       "district": "Central",
       "neighborhood": "Union Station",
       "address": {
@@ -2906,7 +2906,7 @@
       "last_updated": null
     },
     "city-o-city": {
-      "name": "City O’ City",
+      "name": "City O\u2019 City",
       "slug": "city-o-city",
       "district": "Central",
       "neighborhood": "Capitol Hill",
@@ -3179,7 +3179,7 @@
         "confidence_score": 0.8
       },
       "cuisine": "Mexican",
-      "website": "https://100deagave.com/happy-hour/",
+      "website": "https://100deagave.com/denver-capital-hills-100-percent-de-agave-happy-hours-specials",
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -4089,9 +4089,9 @@
       "live_data_available": false,
       "last_updated": null
     },
-    "la-forêt": {
-      "name": "La Forêt",
-      "slug": "la-forêt",
+    "la-for\u00eat": {
+      "name": "La For\u00eat",
+      "slug": "la-for\u00eat",
       "district": "Central",
       "neighborhood": "Speer",
       "address": {
@@ -6389,7 +6389,7 @@
       "last_updated": null
     },
     "little-ollies": {
-      "name": "Little Ollie’s",
+      "name": "Little Ollie\u2019s",
       "slug": "little-ollies",
       "district": "East & Southeast Denver",
       "neighborhood": "Cherry Creek",
@@ -6671,7 +6671,7 @@
       "last_updated": null
     },
     "officers-club": {
-      "name": "Officer’s Club",
+      "name": "Officer\u2019s Club",
       "slug": "officers-club",
       "district": "East & Southeast Denver",
       "neighborhood": "Lowry Field",
@@ -6770,7 +6770,7 @@
       "last_updated": null
     },
     "zanes-italian-bistro": {
-      "name": "Zane’s Italian Bistro",
+      "name": "Zane\u2019s Italian Bistro",
       "slug": "zanes-italian-bistro",
       "district": "East & Southeast Denver",
       "neighborhood": "Hampden South",
@@ -7222,10 +7222,10 @@
         "street_number": "4262",
         "street_name": "Lowell Blvd Denver",
         "unit": null,
-        "city": "Co 80211 ​Boulder Location(720) 756-2823 1203 13Th Street Boulder",
+        "city": "Co 80211 \u200bBoulder Location(720) 756-2823 1203 13Th Street Boulder",
         "state": "CO",
         "zip_code": "80302",
-        "formatted_address": "4262 Lowell Blvd Denver, Co 80211 ​Boulder Location(720) 756-2823 1203 13Th Street Boulder, CO 80302",
+        "formatted_address": "4262 Lowell Blvd Denver, Co 80211 \u200bBoulder Location(720) 756-2823 1203 13Th Street Boulder, CO 80302",
         "google_maps_url": "https://maps.google.com/?q=4262+Lowell+Blvd+Denver%2C+Co+80211+%E2%80%8BBoulder+Location%28720%29+756-2823+1203+13Th+Street+Boulder%2C+CO+80302",
         "confidence_score": 1.0
       },
@@ -8192,7 +8192,7 @@
       "last_updated": null
     },
     "gaetanos-eccellente-cucina-cocktails": {
-      "name": "Gaetano’s Eccellente Cucina & Cocktails",
+      "name": "Gaetano\u2019s Eccellente Cucina & Cocktails",
       "slug": "gaetanos-eccellente-cucina-cocktails",
       "district": "Northwest Denver",
       "neighborhood": "Highland",
@@ -9196,13 +9196,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:23.444733",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:26.230985",
       "scraping_urls": [
         "https://www.cambriadenverrino.com/dining"
       ],
@@ -9296,13 +9296,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:29.426480",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:32.072016",
       "scraping_urls": [
         "https://www.diomiopasta.com"
       ],
@@ -9395,13 +9395,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:35.425850",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:38.135318",
       "scraping_urls": [
         "https://sushi-rama.com/sushi-happy-hour-denver/"
       ],
@@ -9495,13 +9495,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:41.426450",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:44.200132",
       "scraping_urls": [
         "https://www.temakiden.com"
       ],
@@ -9596,13 +9596,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:47.426398",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:49.923133",
       "scraping_urls": [
         "https://uchi.uchirestaurants.com/location/denver/menu/"
       ],
@@ -9695,13 +9695,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:53.426782",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:39:55.739012",
       "scraping_urls": [
         "https://workandclassdenver.com/menus.html"
       ],
@@ -9792,13 +9792,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:59.427122",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:42:25.245755",
       "scraping_urls": [
         "https://weltonroom.com/denver-welton-room-welton-room-dining"
       ],
@@ -9891,13 +9891,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:05.428321",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
       "live_deals": [],
-      "deals_last_updated": null,
+      "deals_last_updated": "2025-08-17T15:40:07.737714",
       "scraping_urls": [
         "https://pointeasydenver.com/menus/"
       ],
@@ -10224,7 +10224,7 @@
       "last_updated": null
     },
     "reivers-bar-grill": {
-      "name": "Reiver’s Bar & Grill",
+      "name": "Reiver\u2019s Bar & Grill",
       "slug": "reivers-bar-grill",
       "district": "South",
       "neighborhood": "Washington Park",

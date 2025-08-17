@@ -243,8 +243,10 @@ class Deal:
         for pattern in patterns:
             match = re.search(pattern, time_str.upper())
             if match:
-                if len(match.groups()) == 3:  # Has AM/PM
-                    hour, minute, ampm = match.groups()
+                groups = match.groups()
+                
+                if len(groups) == 3:  # Hour:minute AM/PM (e.g., "3:00 PM")
+                    hour, minute, ampm = groups
                     hour = int(hour)
                     minute = int(minute)
                     
@@ -255,21 +257,22 @@ class Deal:
                         
                     return f"{hour:02d}:{minute:02d}"
                 
-                elif len(match.groups()) == 2:  # Just hour:minute
-                    hour, minute = match.groups()
-                    return f"{int(hour):02d}:{int(minute):02d}"
-                
-                elif len(match.groups()) == 2 and 'AM' in time_str.upper() or 'PM' in time_str.upper():
-                    # Handle cases like "3 PM"
-                    hour = int(match.groups()[0])
-                    ampm = match.groups()[1]
-                    
-                    if ampm == 'PM' and hour != 12:
-                        hour += 12
-                    elif ampm == 'AM' and hour == 12:
-                        hour = 0
+                elif len(groups) == 2:
+                    # Check if second group is AM/PM or minute
+                    if groups[1] in ('AM', 'PM'):  # Hour AM/PM (e.g., "3 PM")
+                        hour = int(groups[0])
+                        ampm = groups[1]
                         
-                    return f"{hour:02d}:00"
+                        if ampm == 'PM' and hour != 12:
+                            hour += 12
+                        elif ampm == 'AM' and hour == 12:
+                            hour = 0
+                            
+                        return f"{hour:02d}:00"
+                    
+                    else:  # Hour:minute (e.g., "15:00" or "3:00")
+                        hour, minute = groups
+                        return f"{int(hour):02d}:{int(minute):02d}"
         
         # Handle single numbers (restaurant context)
         if re.match(r'^\d{1,2}$', time_str):

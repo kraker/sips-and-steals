@@ -69,7 +69,8 @@
       "Bash(echo:*)",
       "Bash(done)",
       "Bash(for:*)",
-      "WebFetch(domain:www.jaxfishhouse.com)"
+      "WebFetch(domain:www.jaxfishhouse.com)",
+      "Bash(sed:*)"
     ],
     "deny": [],
     "ask": [],

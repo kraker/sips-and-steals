@@ -16,6 +16,7 @@ from models import Restaurant, Deal
 from .core.base import BaseScraper
 from .universal_extractor import UniversalHappyHourExtractor
 from .url_discovery import HappyHourUrlDiscovery
+from .pdf_extractor import PDFTextExtractor
 
 logger = logging.getLogger(__name__)
 
@@ -32,6 +33,7 @@ class UniversalScraper(BaseScraper):
         super().__init__(restaurant)
         self.extractor = UniversalHappyHourExtractor()
         self.url_discovery = HappyHourUrlDiscovery(timeout=8)  # Faster timeout for discovery
+        self.pdf_extractor = PDFTextExtractor()
         logger.info(f"Initialized universal scraper for {restaurant.name}")
     
     def scrape_deals(self) -> List[Deal]:
@@ -96,9 +98,31 @@ class UniversalScraper(BaseScraper):
                 logger.warning(f"HTTP {response.status_code} for {target_url}")
                 return []
             
-            # Step 4: Parse HTML and extract deals
-            soup = BeautifulSoup(response.content, 'html.parser')
-            result = self.extractor.extract_from_soup(soup, target_url)
+            # Step 4: Detect content type and extract deals accordingly
+            content_type = response.headers.get('content-type', '').lower()
+            
+            if 'application/pdf' in content_type or self.pdf_extractor.is_pdf_content(response.content):
+                # Handle PDF content
+                logger.info(f"Detected PDF content, extracting text from {target_url}")
+                
+                if not self.pdf_extractor.validate_pdf_accessibility(response.content):
+                    logger.warning(f"PDF is not accessible: {target_url}")
+                    return []
+                
+                # Extract text from PDF
+                pdf_text = self.pdf_extractor.extract_text_from_url(response.content, target_url)
+                
+                if not pdf_text:
+                    logger.warning(f"No text could be extracted from PDF: {target_url}")
+                    return []
+                
+                # Use text-based extraction
+                result = self.extractor.extract_from_text(pdf_text, target_url)
+                
+            else:
+                # Handle HTML content (default)
+                soup = BeautifulSoup(response.content, 'html.parser')
+                result = self.extractor.extract_from_soup(soup, target_url)
             
             # Step 5: Log extraction results
             if result.deals:
@@ -118,13 +142,16 @@ class UniversalScraper(BaseScraper):
         """Get information about this scraper"""
         return {
             'type': 'universal',
-            'description': 'Universal pattern recognition scraper',
+            'description': 'Universal pattern recognition scraper with PDF support',
             'requires_config': False,
             'supports_js': False,
+            'supports_pdf': True,
             'extraction_methods': [
                 'happy_hour_keywords',
-                'content_container_discovery',
+                'content_container_discovery', 
                 'context_aware_time_extraction',
-                'restaurant_type_scoring'
+                'restaurant_type_scoring',
+                'pdf_text_extraction',
+                'automatic_url_discovery'
             ]
         }
