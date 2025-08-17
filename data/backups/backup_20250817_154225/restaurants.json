@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T14:22:45.247172",
+    "updated_at": "2025-08-17T15:42:17.637960",
     "districts": [
       "Aurora",
       "Boulder",
@@ -165,11 +165,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:00.645828",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:03.220252",
       "scraping_urls": [
         "https://jovanina.com"
       ],
@@ -266,11 +268,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:06.624812",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:09.341460",
       "scraping_urls": [
         "https://www.thirstylionrestaurant.com/colorado",
         "https://www.thirstylionrestaurant.com/happyhour"
@@ -364,16 +368,111 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:38:12.626027",
+        "last_success": "2025-08-17T15:38:15.087252",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "11 AM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:38:13.072908",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "11 AM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:38:13.073018",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:38:13.073059",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 9 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "9 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:38:13.073089",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:38:15.087251",
       "scraping_urls": [
         "https://www.bluesushisakegrill.com/locations/lodo"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:38:15.087251"
     },
     "a5-steakhouse": {
       "name": "A5 Steakhouse",
@@ -439,11 +538,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:18.625487",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:21.262357",
       "scraping_urls": [
         "https://www.a5denver.com"
       ],
@@ -536,11 +637,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:24.625173",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:26.941906",
       "scraping_urls": [
         "https://www.osteriamarco.com/"
       ],
@@ -637,11 +740,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:30.625483",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:33.680832",
       "scraping_urls": [
         "http://www.riojadenver.com/menus/happy-hour-cocktails/"
       ],
@@ -738,13 +843,15 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:36.627985",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:39.721364",
       "scraping_urls": [
-        "https://stksteakhouse.com/location/denver/"
+        "https://stksteakhouse.com/happenings/happy-hour/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -835,11 +942,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:42.627145",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:45.026372",
       "scraping_urls": [
         "https://www.urbanfarmersteakhouse.com/denver-menus/"
       ],
@@ -954,16 +1063,42 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:38:48.630708",
+        "last_success": "2025-08-17T15:38:50.850979",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
-      "scraping_urls": [
-        "https://tamayodenver.com"
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 5 PM | Days: Monday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "5 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:38:48.840501",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "deals_last_updated": "2025-08-17T15:38:50.850977",
+      "scraping_urls": [
+        "https://tamayodenver.com/happy-hour"
+      ],
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:38:50.850977"
     },
     "corridor-44": {
       "name": "Corridor 44",
@@ -1029,11 +1164,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:38:54.628332",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:38:57.236949",
       "scraping_urls": [
         "https://www.corridor44.com/"
       ],
@@ -1128,11 +1265,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:00.628431",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:02.913560",
       "scraping_urls": [
         "https://www.tavernettadenver.com/menus/"
       ],
@@ -1225,11 +1364,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:06.628692",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:10.288726",
       "scraping_urls": [
         "https://ultreiadenver.com/menus/happy-hour/"
       ],
@@ -1328,11 +1469,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:12.630081",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:15.359951",
       "scraping_urls": [
         "https://www.sundayvinyl.com/menus/"
       ],
@@ -1429,16 +1572,65 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:39:18.631389",
+        "last_success": "2025-08-17T15:39:20.961190",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:39:18.835680",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - 10 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:39:18.835803",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:39:20.961189",
       "scraping_urls": [
         "https://www.foragedrestaurant.com/drink"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:39:20.961189"
     },
     "ajax-downtown": {
       "name": "Ajax Downtown",
@@ -1528,11 +1720,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:24.630370",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:27.060396",
       "scraping_urls": [
         "https://www.ajaxrestaurant.com/menu/happy-hour/",
         "https://www.ajaxrestaurant.com/location/ajax/"
@@ -1627,11 +1821,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:30.630480",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:33.038376",
       "scraping_urls": [
         "https://www.mercantiledenver.com/menus/"
       ],
@@ -1762,11 +1958,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:36.633126",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:44.355029",
       "scraping_urls": [
         "https://fogodechao.com/location/denver/"
       ],
@@ -1859,11 +2057,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:42.631426",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:45.297330",
       "scraping_urls": [
         "https://www.mechanoodlebar.com"
       ],
@@ -1958,11 +2158,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:48.632396",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:51.285349",
       "scraping_urls": [
         "https://www.wonderyard.com/menu"
       ],
@@ -2055,11 +2257,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:39:54.632511",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:39:56.915398",
       "scraping_urls": [
         "https://www.drinkdonedeal.com/menus/"
       ],
@@ -2158,16 +2362,41 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:40:00.633823",
+        "last_success": "2025-08-17T15:40:03.512321",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Tuesday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:40:01.303652",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:40:03.512320",
       "scraping_urls": [
         "https://www.bezeldenver.com/our-menus"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:40:03.512320"
     },
     "panzano": {
       "name": "Panzano",
@@ -2247,11 +2476,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:06.632552",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:09.692243",
       "scraping_urls": [
         "https://panzano-denver.com"
       ],
@@ -2344,11 +2575,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:12.634026",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:15.251983",
       "scraping_urls": [
         "https://www.guardandgrace.com/denver-menu"
       ],
@@ -2443,11 +2676,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:18.633461",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:21.251096",
       "scraping_urls": [
         "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver"
       ],
@@ -2566,11 +2801,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:24.640067",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:27.517653",
       "scraping_urls": [
         "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu"
       ],
@@ -2655,11 +2892,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:30.636732",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:33.170970",
       "scraping_urls": [
         "https://www.thearthotel.com/dine-drink/fire"
       ],
@@ -2756,16 +2995,69 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:40:36.636390",
+        "last_success": "2025-08-17T15:40:39.038139",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:40:36.842010",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - 10 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:40:36.842111",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:40:39.038138",
       "scraping_urls": [
         "https://www.cityocitydenver.com/happyhour"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:40:39.038138"
     },
     "bang-up-to-the-elephant": {
       "name": "Bang Up to the Elephant",
@@ -2857,11 +3149,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:42.635371",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:47.240018",
       "scraping_urls": [
         "https://banguptotheelephant.restaurant/specials/"
       ],
@@ -2932,11 +3226,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:48.636288",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:51.569761",
       "scraping_urls": [
         "https://100deagave.com/happy-hour/"
       ],
@@ -2999,11 +3295,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:40:54.635778",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:40:56.868820",
       "scraping_urls": [
         "http://9thdoorcapitolhill.com/happyhour"
       ],
@@ -3094,11 +3392,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:00.635678",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:03.024892",
       "scraping_urls": [
         "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA"
       ],
@@ -3183,11 +3483,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:06.636101",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:09.106206",
       "scraping_urls": [
         "https://www.watercoursefoods.com/happyhour"
       ],
@@ -3284,11 +3586,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:12.636449",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:15.702061",
       "scraping_urls": [
         "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525"
       ],
@@ -3370,11 +3674,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:18.637294",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:21.324485",
       "scraping_urls": [
         "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu"
       ],
@@ -3472,11 +3778,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:24.637860",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:27.148079",
       "scraping_urls": [
         "https://gofishsushi.com/denver-happy-hour-menu"
       ],
@@ -3569,11 +3877,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:30.637544",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:33.249779",
       "scraping_urls": [
         "https://punchbowlsocial.com/location/denver/"
       ],
@@ -3669,11 +3979,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:36.637315",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:38.945026",
       "scraping_urls": [
         "https://www.rockyyamasushi.com/happyhour"
       ],
@@ -3764,11 +4076,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:42.638859",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:45.557217",
       "scraping_urls": [
         "https://www.adriftbar.com/late-night-escape-hour/"
       ],
@@ -3861,11 +4175,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:48.638466",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:52.024441",
       "scraping_urls": [
         "https://www.laforetdenver.com"
       ],
@@ -3956,11 +4272,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:41:54.640022",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 2,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:41:57.094302",
       "scraping_urls": [
         "https://ronincongresspark.com/menu/"
       ],
@@ -4055,11 +4373,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:42:00.639939",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:42:03.003040",
       "scraping_urls": [
         "https://www.shellsandsauce.net/menus/"
       ],
@@ -4158,11 +4478,13 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
+        "last_scraped": "2025-08-17T15:42:06.639436",
         "last_success": null,
-        "consecutive_failures": 0,
+        "consecutive_failures": 1,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:42:08.888521",
       "scraping_urls": [
         "https://barmax.co/"
       ],
@@ -4256,17 +4578,70 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": null,
-        "last_success": null,
+        "last_scraped": "2025-08-17T15:42:12.642806",
+        "last_success": "2025-08-17T15:42:16.770400",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:42:14.035016",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:42:14.748486",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:42:16.770398",
       "scraping_urls": [
         "https://www.sapsua.com/hours-and-location/",
         "https://www.sapsua.com/contact/"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:42:16.770398"
     },
     "hapa-sushi": {
       "name": "Hapa Sushi",
@@ -4363,6 +4738,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://hapasushi.com/pages/landmark-at-greenwood-village"
       ],
@@ -4464,6 +4841,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials"
       ],
@@ -4539,6 +4918,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://cochinotaco.com/englewood-cochino-taco-food-menu"
       ],
@@ -4614,6 +4995,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.jingrestaurant.com/denver"
       ],
@@ -4689,6 +5072,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://pizzarepublica.com/menu/"
       ],
@@ -4764,6 +5149,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blackhaustavern.com/menu-littleton"
       ],
@@ -4895,6 +5282,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-lodo/"
       ],
@@ -4991,6 +5380,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.myneighborfelix.com/location-boulder"
       ],
@@ -5092,6 +5483,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://bartaco.com/boulderhightidehour/"
       ],
@@ -5167,6 +5560,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.besocialcolorado.com/happy-hour-bs"
       ],
@@ -5258,6 +5653,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.oliveandfinch.com/location/olive-finch-cherry-creek/"
       ],
@@ -5392,6 +5789,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blueislandoysterbar.com/specials"
       ],
@@ -5490,6 +5889,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://saltwatersocial.com/menu/?menu-choice=happy-hour%20"
       ],
@@ -5613,6 +6014,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.northitalia.com/locations/denver-co-cherry-creek-shopping-center/menus/happy-hour-menu/"
       ],
@@ -5709,6 +6112,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://solcocina.com/solde-menus/"
       ],
@@ -5825,6 +6230,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.torodenver.com/menus/"
       ],
@@ -5920,6 +6327,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://littleollies.com/menu/"
       ],
@@ -6006,6 +6415,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.halcyonhotelcherrycreek.com/local-jones"
       ],
@@ -6101,6 +6512,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.northcountydenver.com/specials/"
       ],
@@ -6198,6 +6611,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.officersclublowry.com/menu/hh-menu/"
       ],
@@ -6299,6 +6714,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.zanesbistro.com/happy-hours"
       ],
@@ -6396,6 +6813,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus/"
       ],
@@ -6513,6 +6932,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.amblidenver.com/ambliglobalatbelleviewstation"
       ],
@@ -6608,11 +7029,39 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: All Day Monday, Tuesday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "15:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": true,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:15:07.957448",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:15:10.006509",
       "scraping_urls": [
         "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:15:10.006509"
     },
     "ginger-pig": {
       "name": "Ginger Pig",
@@ -6690,6 +7139,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.gingerpig.com/denver-menus"
       ],
@@ -6776,7 +7227,7 @@
         "Plant-Based Options"
       ],
       "scraping_config": {
-        "enabled": true,
+        "enabled": false,
         "scraping_frequency_hours": 24,
         "max_retries": 3,
         "timeout_seconds": 30,
@@ -6789,6 +7240,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:14:11.364895",
       "scraping_urls": [
         "https://www.ediblebeats.com/vital-root"
       ],
@@ -6866,6 +7319,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ediblebeats.com/restaurants/el-five/"
       ],
@@ -6941,11 +7396,64 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
-      "scraping_urls": [
-        "https://www.kumoyadenver.com"
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 5 PM - 6 PM | Days: daily, daily, Every Day",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "5 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "17:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:05:53.224650",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 10 PM - 12 AM | Days: daily, daily, Every Day",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "10 PM",
+          "end_time": "12 AM",
+          "start_time_24h": "22:00",
+          "end_time_24h": "00:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:05:53.224717",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "deals_last_updated": "2025-08-17T15:05:55.565466",
+      "scraping_urls": [
+        "https://www.kumoyadenver.com/happy-hour"
+      ],
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:05:55.565466"
     },
     "alma-fonda-fina": {
       "name": "Alma Fonda Fina",
@@ -7038,6 +7546,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.almalohidenver.com/faqs"
       ],
@@ -7137,6 +7647,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://thebinderydenver.com/"
       ],
@@ -7272,11 +7784,60 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Monday - Friday, Saturday - Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:12:54.012838",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 4 PM | Days: Monday - Friday, Saturday - Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "4 PM",
+          "start_time_24h": "12:00",
+          "end_time_24h": "16:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:12:54.012934",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:12:56.350830",
       "scraping_urls": [
         "https://bamboosushi.com/location/lohi/"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:12:56.350830"
     },
     "bar-dough": {
       "name": "Bar Dough",
@@ -7371,6 +7932,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.bardoughdenver.com/menu/"
       ],
@@ -7470,6 +8033,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ediblebeats.com/root-down"
       ],
@@ -7567,6 +8132,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://gaetanositalian.com/cocktails/"
       ],
@@ -7666,6 +8233,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ediblebeats.com/linger"
       ],
@@ -7766,6 +8335,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.kawanidenver.com"
       ],
@@ -7867,6 +8438,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ashkaradenver.com/menu"
       ],
@@ -7953,7 +8526,7 @@
       ],
       "special_notes": [],
       "scraping_config": {
-        "enabled": true,
+        "enabled": false,
         "scraping_frequency_hours": 24,
         "max_retries": 3,
         "timeout_seconds": 30,
@@ -7966,6 +8539,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:09:30.699235",
       "scraping_urls": [
         "https://www.senorbeardenver.com/menus/#happy-hour",
         "https://www.senorbeardenver.com/location/senor-bear/"
@@ -8057,16 +8632,42 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": "2025-08-17T14:22:40.271206",
-        "last_success": "2025-08-17T14:22:42.765000",
+        "last_scraped": null,
+        "last_success": null,
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Weekday Happy Hour",
+          "description": "Available 6pm - Open | Days: Monday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "6:00 PM",
+          "end_time": "Open",
+          "start_time_24h": "18:00",
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:23:57.237611",
+          "source_url": "https://www.amelm.com/happyhour",
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T14:23:59.468944",
       "scraping_urls": [
         "https://www.amelm.com/happyhour"
       ],
       "live_data_available": true,
-      "last_updated": "2025-08-17T14:22:42.764998"
+      "last_updated": "2025-08-17T14:23:59.468944"
     },
     "tacos-tequila-whiskey": {
       "name": "Tacos Tequila Whiskey",
@@ -8157,6 +8758,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.tacostequilawhiskey.com/dine-in-menu"
       ],
@@ -8259,6 +8862,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://glonoodlehouse.com"
       ],
@@ -8355,6 +8960,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://neciomexicankitchen.com/denver-denver-necio-mexican-kitchen-food-menu"
       ],
@@ -8444,6 +9051,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.cambriadenverrino.com/dining"
       ],
@@ -8542,6 +9151,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.diomiopasta.com"
       ],
@@ -8639,6 +9250,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://sushi-rama.com/sushi-happy-hour-denver/"
       ],
@@ -8737,6 +9350,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.temakiden.com"
       ],
@@ -8836,6 +9451,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://uchi.uchirestaurants.com/location/denver/menu/"
       ],
@@ -8933,6 +9550,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://workandclassdenver.com/menus.html"
       ],
@@ -9028,6 +9647,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://weltonroom.com/denver-welton-room-welton-room-dining"
       ],
@@ -9125,6 +9746,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://pointeasydenver.com/menus/"
       ],
@@ -9241,6 +9864,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://bistrovendome.com/events/"
       ],
@@ -9337,6 +9962,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://lucinaeatery.co/denver-park-hill-lucina-eatery-and-bar-food-menu"
       ],
@@ -9438,6 +10065,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://maxgillandgrill.com/denver-max-gill-and-grill-happy-hours-specials"
       ],
@@ -9535,6 +10164,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.reiversbarandgrill.com/menu"
       ],
@@ -9630,6 +10261,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blackbirdpublichouse.com/happy-hour-menu"
       ],
@@ -9721,6 +10354,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.joyhilldenver.com/happy-hour-menu",
         "https://www.joyhilldenver.com/menu",
@@ -9820,6 +10455,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.quebuenosuerte.com/thefood"
       ],
@@ -9895,6 +10532,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://jacksonpearldenver.com/menus/"
       ],
@@ -9992,6 +10631,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ototoden.com/our-menu/"
       ],
@@ -10087,6 +10728,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.briarcommon.com/happyhour"
       ],
@@ -10184,6 +10827,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.annettescratchtotable.com/menu",
         "http://www.annettescratchtotable.com/contact"
@@ -10260,6 +10905,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.boychikkitchen.com/general-9-1"
       ],
@@ -10335,6 +10982,8 @@
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://tstreetroadhouse.com/happy-hour/"
       ],

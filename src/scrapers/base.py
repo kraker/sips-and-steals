@@ -1037,7 +1037,7 @@ class BaseScraper(ABC):
             if days:
                 # Special case: Check for "SUN - SAT" pattern (all week)
                 days_text = ' '.join(days).lower()
-                if ('sun' in days_text and 'sat' in days_text) or 'daily' in days_text:
+                if ('sun' in days_text and 'sat' in days_text) or 'daily' in days_text or 'every day' in days_text:
                     day_enums = [DayOfWeek.MONDAY, DayOfWeek.TUESDAY, DayOfWeek.WEDNESDAY, 
                                 DayOfWeek.THURSDAY, DayOfWeek.FRIDAY, DayOfWeek.SATURDAY, DayOfWeek.SUNDAY]
                 # Special case: if we have exactly "Monday" and "Friday", it likely means Monday through Friday

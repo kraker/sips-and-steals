@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T12:48:58.001139",
+    "updated_at": "2025-08-17T15:39:04.758394",
     "districts": [
       "Aurora",
       "Boulder",
@@ -92,14 +92,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1520 Blake St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1520+Blake+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.8
       },
       "cuisine": "Italian",
       "website": "https://jovanina.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -169,14 +168,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://jovanina.com"
       ],
@@ -200,17 +195,16 @@
         "confidence_score": 0.8999999999999999
       },
       "cuisine": null,
-      "website": "https://www.thirstylionrestaurant.com",
-      "phone": "480-608-3316",
+      "website": "https://www.thirstylionrestaurant.com/colorado",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-623-0316",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "thirstylionrestaurant",
+        "facebook": "ThirstyLionRestaurant",
         "twitter": null,
         "tiktok": null
       },
@@ -277,17 +271,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.thirstylionrestaurant.com/locations",
-        "https://www.thirstylionrestaurant.com/contact-us",
+        "https://www.thirstylionrestaurant.com/colorado",
         "https://www.thirstylionrestaurant.com/happyhour"
       ],
       "live_data_available": false,
@@ -304,25 +293,24 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1616 16th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1616+16th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Sushi",
       "website": "https://www.bluesushisakegrill.com/locations/lodo",
-      "phone": "303-640-3655",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-640-3655",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "BlueSushiSakeGrill",
+        "facebook": "BlueSushiSakeGrillLoDo",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "bluesushisake"
       },
       "dining_info": {
         "price_range": null,
@@ -383,39 +371,108 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {
-          "happy_hour_content": ".content-section, .hours-section, [class*='happy'], [class*='hours']"
-        },
-        "time_pattern_regex": "(?:Monday-Saturday|Mon-Sat)[:\\s]*(?:11am|11:00\\s*am)[\\s-]*(?:6:30pm|6:30\\s*pm)|Sunday[:\\s]*all\\s*day",
-        "day_pattern_regex": "(?:Monday-Saturday|Mon-Sat|Sunday)",
-        "price_pattern_regex": null,
-        "exclude_patterns": [
-          "Friday.*11:00 AM.*10:00 PM",
-          "Friday.*11:00 AM.*10:30 PM",
-          "Saturday.*11:00 AM.*10:30 PM",
-          "Saturday.*12:00 PM.*10:30 PM",
-          "Sunday.*12:00 PM.*10:30 PM",
-          "Sunday.*12:00 PM.*9:00 PM",
-          "Monday.*11:00 AM.*10:00 PM",
-          "Tuesday.*11:00 AM.*10:00 PM",
-          "Wednesday.*11:00 AM.*10:00 PM",
-          "Thursday.*11:00 AM.*10:00 PM",
-          "operating hours",
-          "kitchen hours",
-          "restaurant hours"
-        ],
-        "content_containers": [
-          ".location-details",
-          ".hours-section",
-          "[class*='happy']"
-        ]
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "11 AM",
+          "end_time": "10 PM",
+          "start_time_24h": "11:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:57:42.759454",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 11 AM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "11 AM",
+          "end_time": "10 PM",
+          "start_time_24h": "11:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:57:42.759507",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 10 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "10 PM",
+          "start_time_24h": "12:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:57:42.759536",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 9 PM | Days: Monday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "12:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:57:42.759558",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T14:57:44.886800",
       "scraping_urls": [
         "https://www.bluesushisakegrill.com/locations/lodo"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T14:57:44.886800"
     },
     "a5-steakhouse": {
       "name": "A5 Steakhouse",
@@ -428,23 +485,22 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1600 15th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1600+15th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": null,
       "website": "https://www.a5denver.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@A5Denver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "a5steakhouse",
+        "facebook": "A5Denver",
         "twitter": null,
         "tiktok": null
       },
@@ -485,14 +541,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.a5denver.com"
       ],
@@ -517,7 +569,6 @@
       },
       "cuisine": "Italian",
       "website": "https://www.osteriamarco.com/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -589,14 +640,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.osteriamarco.com/"
       ],
@@ -614,19 +661,18 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1431 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1431+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Mediterranean",
       "website": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
-      "phone": "303-820-2282",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-820-2282",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@riojadenver.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -697,14 +743,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "http://www.riojadenver.com/menus/happy-hour-cocktails/"
       ],
@@ -722,25 +764,24 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1550 Market St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1550+Market+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Steakhouse",
       "website": "https://stksteakhouse.com/happenings/happy-hour/",
-      "phone": "647-735-5255",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
-        "reservation_phone": null,
+        "primary_phone": "647-735-5255",
+        "reservation_phone": "720-597-8010",
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
-        "twitter": null,
-        "tiktok": null
+        "instagram": "eatstk",
+        "facebook": "eatSTK",
+        "twitter": "eatSTK",
+        "tiktok": "eatstk"
       },
       "dining_info": {
         "price_range": null,
@@ -805,16 +846,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T14:56:37.211559",
       "scraping_urls": [
-        "https://stksteakhouse.com/location/denver/"
+        "https://stksteakhouse.com/happenings/happy-hour/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -830,14 +867,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1659 Wazee St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1659+Wazee+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Steakhouse",
-      "website": "https://www.urbanfarmersteakhouse.com/denver-menus",
-      "phone": null,
+      "website": "https://www.urbanfarmersteakhouse.com/denver-menus/",
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -909,16 +945,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.urbanfarmersteakhouse.com/denver-menus"
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -934,23 +966,22 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1400 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1400+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Mexican",
       "website": "https://tamayodenver.com",
-      "phone": "720-946-1433",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-946-1433",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "tamayodenver",
+        "facebook": "tamayodenver",
         "twitter": null,
         "tiktok": null
       },
@@ -1035,36 +1066,39 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {
-          "happy_hour_times": ".hours, .time, .happy-hour-time",
-          "deal_description": ".description, .details, h2, h3, p"
-        },
-        "time_pattern_regex": "(\\d{1,2})\\s*(?::\\d{2})?\\s*(pm|am|PM|AM)\\s*-\\s*(\\d{1,2})\\s*(?::\\d{2})?\\s*(pm|am|PM|AM)",
-        "day_pattern_regex": "(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)",
-        "price_pattern_regex": null,
-        "exclude_patterns": [
-          "copyright",
-          "privacy policy",
-          "terms of service",
-          "footer",
-          "navigation",
-          "menu",
-          "contact"
-        ],
-        "content_containers": [
-          ".happy-hour-content",
-          ".hours-section",
-          ".main-content",
-          "main",
-          ".content"
-        ]
+        "last_failure_reason": null
       },
-      "scraping_urls": [
-        "https://tamayodenver.com"
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 5 PM | Days: Monday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "5 PM",
+          "start_time_24h": "15:00",
+          "end_time_24h": "17:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:55:14.093297",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "deals_last_updated": "2025-08-17T14:55:16.118442",
+      "scraping_urls": [
+        "https://tamayodenver.com/happy-hour"
+      ],
+      "live_data_available": true,
+      "last_updated": "2025-08-17T14:55:16.118442"
     },
     "corridor-44": {
       "name": "Corridor 44",
@@ -1077,14 +1111,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1433 Larimer St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1433+Larimer+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "French",
       "website": "https://www.corridor44.com/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -1134,14 +1167,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.corridor44.com/"
       ],
@@ -1166,16 +1195,15 @@
       },
       "cuisine": "Italian",
       "website": "https://www.tavernettadenver.com",
-      "phone": "720-605-1889",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-605-1889",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@tavernettadenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "tavernettadenver",
+        "facebook": "tavernettadenver",
         "twitter": null,
         "tiktok": null
       },
@@ -1240,16 +1268,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.tavernettadenver.com/menus"
+        "https://www.tavernettadenver.com/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -1265,17 +1289,16 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1970 17th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1970+17th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Tapas",
       "website": "https://ultreiadenver.com/menus/happy-hour/",
-      "phone": "303-534-1970",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-534-1970",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -1344,14 +1367,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ultreiadenver.com/menus/happy-hour/"
       ],
@@ -1369,22 +1388,21 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1803 16th St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1803+16th+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": null,
       "website": "https://www.sundayvinyl.com",
-      "phone": "720-738-1803",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-738-1803",
         "reservation_phone": null,
-        "general_email": null,
-        "reservations_email": null,
+        "general_email": "info@sundayvinyl.com",
+        "reservations_email": "reservations@sundayvinyl.com",
         "events_email": null,
-        "instagram": null,
+        "instagram": "sundayvinyldenver",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -1411,7 +1429,11 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "closed": true
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -1450,16 +1472,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.sundayvinyl.com/menus"
+        "https://www.sundayvinyl.com/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -1475,23 +1493,22 @@
         "unit": "#100",
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1825 Blake St #100, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1825+Blake+St+%23100%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Sushi",
       "website": "https://www.foragedrestaurant.com/drink",
-      "phone": "720-458-3837",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-458-3837",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@foragedrestaurant.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "foraged_restaurant",
+        "facebook": "ForagedRestaurant",
         "twitter": null,
         "tiktok": null
       },
@@ -1558,19 +1575,62 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:48:51.383670",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - 10 PM | Days: Sunday - Thursday, Late Night, Friday - Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "10 PM",
+          "start_time_24h": "21:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:48:51.383739",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T14:48:53.870039",
       "scraping_urls": [
         "https://www.foragedrestaurant.com/drink"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T14:48:53.870039"
     },
     "ajax-downtown": {
       "name": "Ajax Downtown",
@@ -1590,7 +1650,6 @@
       },
       "cuisine": null,
       "website": "https://www.ajaxrestaurant.com/menu/happy-hour/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -1664,18 +1723,13 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ajaxrestaurant.com/menu/happy-hour/",
-        "https://www.ajaxrestaurant.com/location/ajax/",
-        "https://www.ajaxrestaurant.com/contact-us/"
+        "https://www.ajaxrestaurant.com/location/ajax/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -1691,23 +1745,22 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1701 Wynkoop St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1701+Wynkoop+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "American",
       "website": "https://www.mercantiledenver.com",
-      "phone": "720-460-3733",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-460-3733",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "mercantiledenver",
+        "facebook": "mercantiledenver",
         "twitter": null,
         "tiktok": null
       },
@@ -1771,16 +1824,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.mercantiledenver.com/menus"
+        "https://www.mercantiledenver.com/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -1796,25 +1845,24 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1513 Wynkoop St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1513+Wynkoop+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.9
       },
       "cuisine": "Brazilian",
       "website": "https://fogodechao.com/location/denver/",
-      "phone": "303-623-9600",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-623-9600",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
-        "twitter": null,
-        "tiktok": null
+        "instagram": "fogo",
+        "facebook": "fogorestaurants",
+        "twitter": "fogorestaurants",
+        "tiktok": "fogodechao"
       },
       "dining_info": {
         "price_range": null,
@@ -1913,28 +1961,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {
-          "happy_hour_content": "*:contains('Happy Hour'), *:contains('All Day Happy Hour')",
-          "pricing_content": "*:contains('$5 Beers'), *:contains('$8'), *:contains('$10')"
-        },
-        "time_pattern_regex": "Happy Hour.*?(SUN).*?(SAT).*?(All Day)",
-        "day_pattern_regex": "(SUN|SAT|Sunday|Saturday)",
-        "price_pattern_regex": "\\$\\d+\\s+(?:Beers?|South American Wines?|Brazilian[\\s-]*Inspired Cocktails?)",
-        "exclude_patterns": [
-          "DINNER.*Mon - Thu.*3:00 PM",
-          "Lunch.*MON-FRI.*11:30 AM",
-          "Brunch.*SAT - SUN.*11:30 AM",
-          "operating hours",
-          "kitchen hours"
-        ],
-        "content_containers": [
-          ".content-section",
-          "[class*='happy']",
-          "[class*='bar']",
-          ".specials"
-        ]
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:15:35.856862",
       "scraping_urls": [
         "https://fogodechao.com/location/denver/"
       ],
@@ -1959,18 +1989,17 @@
       },
       "cuisine": "Asian",
       "website": "https://www.mechanoodlebar.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "Policyinfo@mechanoodlebar.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "mechanoodlebar",
+        "facebook": "mechanoodlebar",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "mechanoodlebar"
       },
       "dining_info": {
         "price_range": null,
@@ -2031,14 +2060,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.mechanoodlebar.com"
       ],
@@ -2056,14 +2081,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80205",
         "formatted_address": "2200 Larimer St, Denver, CO 80205",
         "google_maps_url": "https://maps.google.com/?q=2200+Larimer+St%2C+Denver%2C+CO+80205",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://www.wonderyard.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -2137,14 +2161,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.wonderyard.com/menu"
       ],
@@ -2169,7 +2189,6 @@
       },
       "cuisine": "Cocktail bar",
       "website": "https://www.drinkdonedeal.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -2241,16 +2260,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.drinkdonedeal.com/menus"
+        "https://www.drinkdonedeal.com/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -2273,16 +2288,15 @@
       },
       "cuisine": "Cocktail Bar",
       "website": "https://www.bezeldenver.com/our-menus",
-      "phone": "303-835-2159",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-835-2159",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "bezeldenver",
+        "facebook": "bezeldenver",
         "twitter": null,
         "tiktok": null
       },
@@ -2308,7 +2322,14 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "closed": true
+        },
+        "tuesday": {
+          "closed": true
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -2344,19 +2365,38 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Tuesday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:04:00.832448",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:04:03.196571",
       "scraping_urls": [
         "https://www.bezeldenver.com/our-menus"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:04:03.196571"
     },
     "panzano": {
       "name": "Panzano",
@@ -2366,16 +2406,15 @@
       "address": null,
       "cuisine": "Italian",
       "website": "https://panzano-denver.com",
-      "phone": "303-296-3525",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-296-3525",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "hello@panzano-denver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "panzanodenver",
+        "facebook": "panzanodenver",
         "twitter": null,
         "tiktok": null
       },
@@ -2440,14 +2479,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://panzano-denver.com"
       ],
@@ -2472,7 +2507,6 @@
       },
       "cuisine": "Steakhouse",
       "website": "https://www.guardandgrace.com/denver-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -2480,8 +2514,8 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "guardandgracesteakhouse",
+        "facebook": "guardgracedenver",
         "twitter": null,
         "tiktok": null
       },
@@ -2544,14 +2578,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.guardandgrace.com/denver-menu"
       ],
@@ -2569,14 +2599,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80202",
         "formatted_address": "1455 California St, Denver, CO 80202",
         "google_maps_url": "https://maps.google.com/?q=1455+California+St%2C+Denver%2C+CO+80202",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -2650,14 +2679,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver"
       ],
@@ -2682,15 +2707,14 @@
       },
       "cuisine": "Pizza",
       "website": "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "denverwhitepiegm@gmail.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "white_pie_pizzeria",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -2717,7 +2741,33 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "tuesday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "wednesday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "thursday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "friday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -2754,14 +2804,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu"
       ],
@@ -2776,7 +2822,6 @@
       "address": null,
       "cuisine": "American",
       "website": "https://www.thearthotel.com/dine-drink/fire",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -2850,14 +2895,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.thearthotel.com/dine-drink/fire"
       ],
@@ -2882,18 +2923,17 @@
       },
       "cuisine": "Vegetarian",
       "website": "https://www.cityocitydenver.com/happyhour",
-      "phone": "303-831-6443",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-831-6443",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@cityocitydenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "cityocity",
+        "facebook": "cityocity",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "cityocity"
       },
       "dining_info": {
         "price_range": null,
@@ -2958,45 +2998,66 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {
-          "happy_hour_times": ".hours, .time, .schedule",
-          "deal_description": "h1, h2, h3, h4, p, li, .description, .menu-item",
-          "pricing": ".price, .cost, span"
-        },
-        "time_pattern_regex": "(\\d{1,2})\\s*(?::\\d{2})?\\s*-\\s*(\\d{1,2})\\s*(?::\\d{2})?\\s*(pm|am|PM|AM)",
-        "day_pattern_regex": "(every\\s+day|daily|monday|tuesday|wednesday|thursday|friday|saturday|sunday)",
-        "price_pattern_regex": "\\$(\\d+(?:\\.\\d{2})?)",
-        "exclude_patterns": [
-          "copyright",
-          "privacy policy",
-          "terms of service",
-          "footer",
-          "navigation",
-          "header",
-          "social media",
-          "follow us",
-          "newsletter",
-          "alert your server",
-          "allergies",
-          "please note",
-          "\\n\\n\\n\\n",
-          "^\\s*0\\s*$"
-        ],
-        "content_containers": [
-          ".main-content",
-          ".content-wrapper",
-          "main",
-          ".page-content",
-          "article",
-          ".content"
-        ]
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "15:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:41:52.361618",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - 10 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "10 PM",
+          "start_time_24h": "21:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:41:52.361691",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T14:41:54.402874",
       "scraping_urls": [
         "https://www.cityocitydenver.com/happyhour"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T14:41:54.402874"
     },
     "bang-up-to-the-elephant": {
       "name": "Bang Up to the Elephant",
@@ -3015,8 +3076,7 @@
         "confidence_score": 1.0
       },
       "cuisine": "Beach / Tropical",
-      "website": "https://banguptotheelephant.restaurant/menus/specials/",
-      "phone": null,
+      "website": "https://banguptotheelephant.restaurant/specials/",
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -3092,16 +3152,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://banguptotheelephant.restaurant/menus/specials/"
+        "https://banguptotheelephant.restaurant/specials/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -3124,7 +3180,6 @@
       },
       "cuisine": "Mexican",
       "website": "https://100deagave.com/happy-hour/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -3174,14 +3229,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://100deagave.com/happy-hour/"
       ],
@@ -3196,7 +3247,6 @@
       "address": null,
       "cuisine": "Tapas",
       "website": "http://9thdoorcapitolhill.com/happyhour",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -3248,14 +3298,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "http://9thdoorcapitolhill.com/happyhour"
       ],
@@ -3280,7 +3326,6 @@
       },
       "cuisine": "Mediterranean",
       "website": "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -3350,14 +3395,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA"
       ],
@@ -3372,18 +3413,17 @@
       "address": null,
       "cuisine": "Vegetarian",
       "website": "https://www.watercoursefoods.com/happyhour",
-      "phone": "303-832-7313",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-832-7313",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "watercoursefoods",
+        "facebook": "watercoursefoods",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "watercoursefoods"
       },
       "dining_info": {
         "price_range": null,
@@ -3446,14 +3486,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.watercoursefoods.com/happyhour"
       ],
@@ -3478,17 +3514,16 @@
       },
       "cuisine": "Asian",
       "website": "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "michael@secretsaucedenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "aceeatserve",
         "facebook": null,
-        "twitter": null,
+        "twitter": "aceeatserve",
         "tiktok": null
       },
       "dining_info": {
@@ -3554,14 +3589,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525"
       ],
@@ -3576,7 +3607,6 @@
       "address": null,
       "cuisine": "Mexican",
       "website": "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -3584,7 +3614,7 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "xiquitarestaurante",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -3647,14 +3677,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu"
       ],
@@ -3679,16 +3705,15 @@
       },
       "cuisine": "Sushi",
       "website": "https://gofishsushi.com/denver-happy-hour-menu",
-      "phone": "303-733-8881",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
-        "reservation_phone": null,
+        "primary_phone": "303-733-8881",
+        "reservation_phone": "720-593-1888",
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "gofishsushi",
+        "facebook": "gofishsushidenver",
         "twitter": null,
         "tiktok": null
       },
@@ -3756,14 +3781,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://gofishsushi.com/denver-happy-hour-menu"
       ],
@@ -3788,18 +3809,17 @@
       },
       "cuisine": "American",
       "website": "https://punchbowlsocial.com/location/denver/",
-      "phone": "303-765-2695",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-765-2695",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
-        "twitter": null,
-        "tiktok": null
+        "instagram": "hts",
+        "facebook": "punchbowlsocial",
+        "twitter": "memberships",
+        "tiktok": "punchbowlsocial"
       },
       "dining_info": {
         "price_range": null,
@@ -3860,14 +3880,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://punchbowlsocial.com/location/denver/"
       ],
@@ -3892,10 +3908,9 @@
       },
       "cuisine": "Sushi",
       "website": "https://www.rockyyamasushi.com/happyhour",
-      "phone": "303-954-9562",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-954-9562",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -3967,14 +3982,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.rockyyamasushi.com/happyhour"
       ],
@@ -3998,17 +4009,16 @@
         "confidence_score": 1.0
       },
       "cuisine": "Tiki",
-      "website": "https://www.adriftbar.com/menus/happy-hour-menu/",
-      "phone": "720-784-8111",
+      "website": "https://www.adriftbar.com/late-night-escape-hour/",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-784-8111",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "adriftdenver",
+        "facebook": "adriftbar",
         "twitter": null,
         "tiktok": null
       },
@@ -4069,16 +4079,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.adriftbar.com/menus/happy-hour-menu/"
+        "https://www.adriftbar.com/late-night-escape-hour/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -4101,16 +4107,15 @@
       },
       "cuisine": "French",
       "website": "https://www.laforetdenver.com",
-      "phone": "303-351-7938",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-351-7938",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "laforetdenver",
+        "facebook": "laforetdenver",
         "twitter": null,
         "tiktok": null
       },
@@ -4173,14 +4178,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.laforetdenver.com"
       ],
@@ -4205,7 +4206,6 @@
       },
       "cuisine": "Japanese",
       "website": "https://ronincongresspark.com/menu/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -4275,14 +4275,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ronincongresspark.com/menu/"
       ],
@@ -4307,17 +4303,16 @@
       },
       "cuisine": "Italian",
       "website": "https://www.shellsandsauce.net",
-      "phone": "303-377-2091",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-377-2091",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "shellsandsauce@hotmail.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
-        "facebook": null,
-        "twitter": null,
+        "facebook": "shellsandsauce",
+        "twitter": "ShellsAndSauce",
         "tiktok": null
       },
       "dining_info": {
@@ -4381,16 +4376,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.shellsandsauce.net/menus"
+        "https://www.shellsandsauce.net/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -4413,18 +4404,17 @@
       },
       "cuisine": null,
       "website": "https://barmax.co/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "barmaxcolfax@gmail.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "barmaxcolfax",
         "facebook": null,
         "twitter": null,
-        "tiktok": null
+        "tiktok": "barmaxcolfax"
       },
       "dining_info": {
         "price_range": null,
@@ -4448,7 +4438,11 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "sunday": {
+          "closed": true
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -4487,14 +4481,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://barmax.co/"
       ],
@@ -4519,15 +4509,14 @@
       },
       "cuisine": "Vietnamese",
       "website": "https://www.sapsua.com/menus/",
-      "phone": "303-736-2303",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-736-2303",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@sapsua.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "sapsuarestaurant",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -4592,20 +4581,217 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:45.894135",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:45.894208",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:45.894237",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 10 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "10 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:45.894257",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:46.860206",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:46.860264",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 9 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "9 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "21:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:46.860287",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 10 PM | Days: daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "10 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "22:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:06:46.860306",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:06:49.350251",
       "scraping_urls": [
         "https://www.sapsua.com/hours-and-location/",
         "https://www.sapsua.com/contact/"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:06:49.350251"
     },
     "hapa-sushi": {
       "name": "Hapa Sushi",
@@ -4625,17 +4811,16 @@
       },
       "cuisine": null,
       "website": "https://hapasushi.com/pages/landmark-at-greenwood-village",
-      "phone": "303-267-8744",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-267-8744",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
-        "twitter": null,
+        "instagram": "hapasushi",
+        "facebook": "hapasushi",
+        "twitter": "HapaSushi",
         "tiktok": null
       },
       "dining_info": {
@@ -4701,14 +4886,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://hapasushi.com/pages/landmark-at-greenwood-village"
       ],
@@ -4733,12 +4914,11 @@
       },
       "cuisine": null,
       "website": "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials",
-      "phone": "720-532-1389",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-532-1389",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "532-1389jason@angelostaverna.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -4809,14 +4989,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://angeloslittleton.com/littleton-angelo-s-taverna-littleton-happy-hours-specials"
       ],
@@ -4835,13 +5011,12 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "3495 S. Downing St.",
-        "google_maps_url": "https://maps.google.com/?q=3495+S.+Downing+St.",
+        "formatted_address": "3495 S. Downing St., Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=3495%20S.%20Downing%20St.%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://cochinotaco.com/englewood-cochino-taco-food-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -4891,14 +5066,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://cochinotaco.com/englewood-cochino-taco-food-menu"
       ],
@@ -4923,10 +5094,9 @@
       },
       "cuisine": null,
       "website": "https://www.jingrestaurant.com/denver",
-      "phone": "303-779-0584",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-779-0584",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -4973,14 +5143,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.jingrestaurant.com/denver"
       ],
@@ -5005,7 +5171,6 @@
       },
       "cuisine": null,
       "website": "https://pizzarepublica.com/menu/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5013,8 +5178,8 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "pizzarepublica",
+        "facebook": "PizzaRepublicaDowntownDenver",
         "twitter": null,
         "tiktok": null
       },
@@ -5055,14 +5220,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://pizzarepublica.com/menu/"
       ],
@@ -5081,13 +5242,12 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "2439 W. Main St.",
-        "google_maps_url": "https://maps.google.com/?q=2439+W.+Main+St.",
+        "formatted_address": "2439 W. Main St., Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=2439%20W.%20Main%20St.%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://www.blackhaustavern.com/menu-littleton",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5137,14 +5297,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blackhaustavern.com/menu-littleton"
       ],
@@ -5168,37 +5324,34 @@
         "confidence_score": 1.0
       },
       "cuisine": null,
-      "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder",
-      "phone": "303-444-1811",
-      "business_status": "operational",
+      "website": "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-lodo/",
+      "business_status": "unknown",
       "contact_info": {
-        "primary_phone": "303-444-1811",
+        "primary_phone": "303-292-5767",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": "redf.securetree.com",
+        "instagram": "jaxfishhouse",
         "facebook": "JaxFishHouse",
         "twitter": null,
         "tiktok": null
       },
       "dining_info": {
-        "price_range": "$$",
+        "price_range": null,
         "dress_code": null,
-        "atmosphere": [
-          "lively"
-        ],
-        "dining_style": "bar",
+        "atmosphere": [],
+        "dining_style": null,
         "total_seats": null,
         "bar_seats": null,
         "outdoor_seats": null
       },
       "service_info": {
-        "accepts_reservations": true,
-        "opentable_url": "https://www.opentable.com/restref/client/?restref=23185&lang=en-US&ot_source=Restaurant%20website&corrid=55a019ad-68ce-48cd-8b68-c31e210bf443",
+        "accepts_reservations": false,
+        "opentable_url": null,
         "resy_url": null,
         "direct_reservation_url": null,
-        "offers_delivery": true,
+        "offers_delivery": false,
         "offers_takeout": true,
         "offers_curbside": false,
         "doordash_url": null,
@@ -5207,34 +5360,39 @@
       },
       "timezone": "America/Denver",
       "operating_hours": {
-        "sunday": {
-          "open": "15:30",
-          "close": "21:00",
-          "closed": false
-        },
-        "monday": {
-          "open": "15:30",
-          "close": "21:00",
-          "closed": false
-        },
         "tuesday": {
-          "open": "15:30",
-          "close": "21:00",
+          "open": "15:00",
+          "close": "18:00",
           "closed": false
         },
         "wednesday": {
-          "open": "15:30",
-          "close": "21:00",
+          "open": "15:00",
+          "close": "18:00",
           "closed": false
         },
         "thursday": {
-          "open": "15:30",
+          "open": "11:00",
           "close": "21:00",
           "closed": false
         },
+        "friday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
         "saturday": {
-          "open": "15:30",
-          "close": "22:00",
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "monday": {
+          "open": "16:00",
+          "close": "21:00",
+          "closed": false
+        },
+        "sunday": {
+          "open": "14:00",
+          "close": "18:00",
           "closed": false
         }
       },
@@ -5269,19 +5427,15 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": "2025-08-17T12:48:56.610474",
-        "last_success": "2025-08-17T12:48:57.000197",
+        "last_scraped": null,
+        "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-boulder"
+        "https://www.jaxfishhouse.com/location/jax-fish-house-oyster-bar-lodo/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -5304,7 +5458,6 @@
       },
       "cuisine": null,
       "website": "https://www.myneighborfelix.com/location-boulder",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5375,14 +5528,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.myneighborfelix.com/location-boulder"
       ],
@@ -5407,7 +5556,6 @@
       },
       "cuisine": null,
       "website": "https://bartaco.com/boulderhightidehour/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5415,10 +5563,10 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
-        "twitter": null,
-        "tiktok": null
+        "instagram": "bartacolife",
+        "facebook": "bartacolife",
+        "twitter": "bartacolife",
+        "tiktok": "bartacolife"
       },
       "dining_info": {
         "price_range": null,
@@ -5483,14 +5631,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://bartaco.com/boulderhightidehour/"
       ],
@@ -5515,7 +5659,6 @@
       },
       "cuisine": null,
       "website": "https://www.besocialcolorado.com/happy-hour-bs",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5523,8 +5666,8 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "besocialcolorado",
+        "facebook": "besocialcolorado",
         "twitter": null,
         "tiktok": null
       },
@@ -5565,14 +5708,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.besocialcolorado.com/happy-hour-bs"
       ],
@@ -5586,17 +5725,16 @@
       "neighborhood": "Cherry Creek",
       "address": null,
       "cuisine": "Global",
-      "website": "https://www.oliveandfinch.com/location/olive-finch-cherry-creek",
-      "phone": "303-955-0455",
+      "website": "https://www.oliveandfinch.com/location/olive-finch-cherry-creek/",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-955-0455",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
-        "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "events_email": "events@oliveandfinch.com",
+        "instagram": "littlefinchdenver",
+        "facebook": "littlefinchdenver",
         "twitter": null,
         "tiktok": null
       },
@@ -5663,16 +5801,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.oliveandfinch.com/location/olive-finch-cherry-creek"
+        "https://www.oliveandfinch.com/location/olive-finch-cherry-creek/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -5695,16 +5829,15 @@
       },
       "cuisine": "Seafood",
       "website": "https://www.blueislandoysterbar.com/specials",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "hello@shuckinggoodhospitality.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "blueislandoysterbar",
+        "facebook": "blueislandoysterbar",
         "twitter": null,
         "tiktok": null
       },
@@ -5804,14 +5937,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blueislandoysterbar.com/specials"
       ],
@@ -5836,7 +5965,6 @@
       },
       "cuisine": "Seafood",
       "website": "https://saltwatersocial.com/menu/?menu-choice=happy-hour%20",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -5844,8 +5972,8 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "eatsaltwatersocial",
+        "facebook": "profile.php",
         "twitter": null,
         "tiktok": null
       },
@@ -5909,14 +6037,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://saltwatersocial.com/menu/?menu-choice=happy-hour%20"
       ],
@@ -5941,18 +6065,17 @@
       },
       "cuisine": "Italian",
       "website": "https://www.northitalia.com/locations/denver-co-cherry-creek-shopping-center/menus/happy-hour-menu/",
-      "phone": "720-941-7700",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-941-7700",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "eatnorthitalia",
+        "facebook": "NorthItalia",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "eatnorthitalia"
       },
       "dining_info": {
         "price_range": null,
@@ -5976,7 +6099,33 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "tuesday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "wednesday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "thursday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "friday": {
+          "open": "15:00",
+          "close": "18:00",
+          "closed": false
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -6013,14 +6162,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.northitalia.com/locations/denver-co-cherry-creek-shopping-center/menus/happy-hour-menu/"
       ],
@@ -6045,7 +6190,6 @@
       },
       "cuisine": "Mexican",
       "website": "https://solcocina.com/solde-menus/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -6116,14 +6260,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://solcocina.com/solde-menus/"
       ],
@@ -6148,16 +6288,15 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.torodenver.com",
-      "phone": "303-253-3000",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-253-3000",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "torodenver",
+        "facebook": "torodenver",
         "twitter": null,
         "tiktok": null
       },
@@ -6239,16 +6378,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.torodenver.com/menus"
+        "https://www.torodenver.com/menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -6271,7 +6406,6 @@
       },
       "cuisine": "Chinese",
       "website": "https://littleollies.com/menu/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -6341,14 +6475,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://littleollies.com/menu/"
       ],
@@ -6363,16 +6493,15 @@
       "address": null,
       "cuisine": "American",
       "website": "https://www.halcyonhotelcherrycreek.com/local-jones",
-      "phone": "720-772-5022",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-772-5022",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "localjones",
+        "facebook": "localjonesdenver",
         "twitter": null,
         "tiktok": null
       },
@@ -6434,14 +6563,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.halcyonhotelcherrycreek.com/local-jones"
       ],
@@ -6466,16 +6591,15 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.northcountydenver.com/specials/",
-      "phone": "720-532-0106",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-532-0106",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@northcountydenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "northcountydenver",
+        "facebook": "northcountydenver",
         "twitter": null,
         "tiktok": null
       },
@@ -6536,14 +6660,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.northcountydenver.com/specials/"
       ],
@@ -6568,16 +6688,15 @@
       },
       "cuisine": "American",
       "website": "https://www.officersclublowry.com/menu/hh-menu/",
-      "phone": "303-284-0714",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-284-0714",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "oclowry",
+        "facebook": "officersclublowry",
         "twitter": null,
         "tiktok": null
       },
@@ -6640,14 +6759,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.officersclublowry.com/menu/hh-menu/"
       ],
@@ -6672,12 +6787,11 @@
       },
       "cuisine": "Italian",
       "website": "https://www.zanesbistro.com/happy-hours",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "770-3100zane@zanesbistro.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -6748,14 +6862,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.zanesbistro.com/happy-hours"
       ],
@@ -6779,17 +6889,16 @@
         "confidence_score": 1.0
       },
       "cuisine": "French",
-      "website": "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus",
-      "phone": null,
+      "website": "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus/",
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@lefrenchdenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "lefrenchdenver",
+        "facebook": "lefrenchbcdenver",
         "twitter": null,
         "tiktok": null
       },
@@ -6852,16 +6961,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus"
+        "https://www.lefrenchdenver.com/le-french-dtc-belleview-station-menus/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -6884,16 +6989,15 @@
       },
       "cuisine": "Global",
       "website": "https://www.amblidenver.com/ambliglobalatbelleviewstation",
-      "phone": "720-476-3164",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
-        "reservation_phone": null,
+        "primary_phone": "720-476-3164",
+        "reservation_phone": "719-308-5579",
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "amblidtc",
+        "facebook": "AmbliDTC",
         "twitter": null,
         "tiktok": null
       },
@@ -6976,14 +7080,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.amblidenver.com/ambliglobalatbelleviewstation"
       ],
@@ -7008,15 +7108,14 @@
       },
       "cuisine": "Mexican",
       "website": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@wildtacodenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "wildtacodenver",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -7078,19 +7177,41 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: All Day Monday, Tuesday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "15:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": true,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:15:07.957448",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:15:10.006509",
       "scraping_urls": [
         "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:15:10.006509"
     },
     "ginger-pig": {
       "name": "Ginger Pig",
@@ -7110,11 +7231,10 @@
       },
       "cuisine": "Asian",
       "website": "https://www.gingerpig.com/denver-menus",
-      "phone": "720-324-8416",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
-        "reservation_phone": null,
+        "primary_phone": "720-324-8416",
+        "reservation_phone": "720-756-2823",
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
@@ -7145,7 +7265,14 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "closed": true
+        },
+        "sunday": {
+          "closed": true
+        }
+      },
       "static_deals": [],
       "special_notes": [],
       "scraping_config": {
@@ -7160,14 +7287,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.gingerpig.com/denver-menus"
       ],
@@ -7192,7 +7315,6 @@
       },
       "cuisine": "Plant-Based",
       "website": "https://www.ediblebeats.com/vital-root",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -7255,7 +7377,7 @@
         "Plant-Based Options"
       ],
       "scraping_config": {
-        "enabled": true,
+        "enabled": false,
         "scraping_frequency_hours": 24,
         "max_retries": 3,
         "timeout_seconds": 30,
@@ -7266,14 +7388,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:14:11.364895",
       "scraping_urls": [
         "https://www.ediblebeats.com/vital-root"
       ],
@@ -7291,14 +7409,13 @@
         "unit": "#500",
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "2930 Umatilla St Unit \\#500, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=2930+Umatilla+St+Unit+%5C%23500%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
       },
       "cuisine": "Mediterranean",
       "website": "https://ediblebeats.com/restaurants/el-five/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -7350,14 +7467,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ediblebeats.com/restaurants/el-five/"
       ],
@@ -7382,16 +7495,15 @@
       },
       "cuisine": "Japanese",
       "website": "https://www.kumoyadenver.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "Kayla@TheCulinaryCreative.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "kumoya_denver",
+        "facebook": "people",
         "twitter": null,
         "tiktok": null
       },
@@ -7432,19 +7544,66 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
-      "scraping_urls": [
-        "https://www.kumoyadenver.com"
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 5 PM - 6 PM | Days: daily, daily, Every Day",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "5 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "17:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:05:53.224650",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 10 PM - 12 AM | Days: daily, daily, Every Day",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "10 PM",
+          "end_time": "12 AM",
+          "start_time_24h": "22:00",
+          "end_time_24h": "00:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:05:53.224717",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "deals_last_updated": "2025-08-17T15:05:55.565466",
+      "scraping_urls": [
+        "https://www.kumoyadenver.com/happy-hour"
+      ],
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:05:55.565466"
     },
     "alma-fonda-fina": {
       "name": "Alma Fonda Fina",
@@ -7464,15 +7623,14 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.almalohidenver.com/faqs",
-      "phone": "303-455-9463",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-455-9463",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@almalohidenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "almalohidenver",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -7536,14 +7694,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.almalohidenver.com/faqs"
       ],
@@ -7568,16 +7722,15 @@
       },
       "cuisine": "Global",
       "website": "https://thebinderydenver.com/",
-      "phone": "303-993-2364",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-993-2364",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@thebinderydenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "thebinderydenver",
+        "facebook": "TheBinderyDenver",
         "twitter": null,
         "tiktok": null
       },
@@ -7642,14 +7795,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://thebinderydenver.com/"
       ],
@@ -7674,16 +7823,15 @@
       },
       "cuisine": "Sushi",
       "website": "https://bamboosushi.com/location/lohi/",
-      "phone": "303-284-6600",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-284-6600",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "miranda.bopp@srgpdx.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "bamboosushi",
+        "facebook": "bamboosushipdx",
         "twitter": null,
         "tiktok": null
       },
@@ -7709,7 +7857,43 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "open": "16:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "tuesday": {
+          "open": "16:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "wednesday": {
+          "open": "16:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "thursday": {
+          "open": "16:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "friday": {
+          "open": "16:00",
+          "close": "18:00",
+          "closed": false
+        },
+        "saturday": {
+          "open": "12:00",
+          "close": "16:00",
+          "closed": false
+        },
+        "sunday": {
+          "open": "12:00",
+          "close": "16:00",
+          "closed": false
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -7748,19 +7932,62 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 4 PM - 6 PM | Days: Monday - Friday, Saturday - Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "4 PM",
+          "end_time": "6 PM",
+          "start_time_24h": "16:00",
+          "end_time_24h": "18:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:12:54.012838",
+          "source_url": null,
+          "confidence_score": 0.8
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 12 PM - 4 PM | Days: Monday - Friday, Saturday - Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "12 PM",
+          "end_time": "4 PM",
+          "start_time_24h": "12:00",
+          "end_time_24h": "16:00",
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:12:54.012934",
+          "source_url": null,
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T15:12:56.350830",
       "scraping_urls": [
         "https://bamboosushi.com/location/lohi/"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T15:12:56.350830"
     },
     "bar-dough": {
       "name": "Bar Dough",
@@ -7780,10 +8007,9 @@
       },
       "cuisine": "Italian",
       "website": "https://www.bardoughdenver.com",
-      "phone": "720-668-8506",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-668-8506",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -7854,16 +8080,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "https://www.bardoughdenver.com/menu"
+        "https://www.bardoughdenver.com/menu/"
       ],
       "live_data_available": false,
       "last_updated": null
@@ -7886,7 +8108,6 @@
       },
       "cuisine": null,
       "website": "https://www.ediblebeats.com/root-down",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -7960,14 +8181,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ediblebeats.com/root-down"
       ],
@@ -7992,10 +8209,9 @@
       },
       "cuisine": "Italian",
       "website": "https://gaetanositalian.com/cocktails/",
-      "phone": "303-455-9852",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-455-9852",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
@@ -8064,14 +8280,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://gaetanositalian.com/cocktails/"
       ],
@@ -8096,7 +8308,6 @@
       },
       "cuisine": "Global",
       "website": "https://www.ediblebeats.com/linger",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -8170,14 +8381,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ediblebeats.com/linger"
       ],
@@ -8195,23 +8402,22 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "1900 W 32nd Ave, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=1900+W+32nd+Ave%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
       },
       "cuisine": "Japanese",
       "website": "https://www.kawanidenver.com",
-      "phone": "303-455-2984",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-455-2984",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "manager@kawanidenver.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "kawa_ni_denver",
+        "facebook": "profile.php",
         "twitter": null,
         "tiktok": null
       },
@@ -8237,7 +8443,11 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "monday": {
+          "closed": true
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -8273,14 +8483,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.kawanidenver.com"
       ],
@@ -8305,7 +8511,6 @@
       },
       "cuisine": "Mediterranean",
       "website": "https://www.ashkaradenver.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -8381,14 +8586,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.ashkaradenver.com/menu"
       ],
@@ -8413,15 +8614,14 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.senorbeardenver.com/",
-      "phone": "720-572-5997",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-572-5997",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "senor_bear_",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -8476,7 +8676,7 @@
       ],
       "special_notes": [],
       "scraping_config": {
-        "enabled": true,
+        "enabled": false,
         "scraping_frequency_hours": 24,
         "max_retries": 3,
         "timeout_seconds": 30,
@@ -8487,14 +8687,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": "2025-08-17T15:09:30.699235",
       "scraping_urls": [
         "https://www.senorbeardenver.com/menus/#happy-hour",
         "https://www.senorbeardenver.com/location/senor-bear/"
@@ -8520,16 +8716,15 @@
       },
       "cuisine": null,
       "website": "https://www.amelm.com/happyhour",
-      "phone": "720-749-3186",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-749-3186",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "GROUPHello@AmElm.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "amelmdnvr",
+        "facebook": "AmElmDNVR",
         "twitter": null,
         "tiktok": null
       },
@@ -8590,19 +8785,39 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [
+        {
+          "title": "Weekday Happy Hour",
+          "description": "Available 6pm - Open | Days: Monday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "6:00 PM",
+          "end_time": "Open",
+          "start_time_24h": "18:00",
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T14:23:57.237611",
+          "source_url": "https://www.amelm.com/happyhour",
+          "confidence_score": 0.8
+        }
+      ],
+      "deals_last_updated": "2025-08-17T14:23:59.468944",
       "scraping_urls": [
         "https://www.amelm.com/happyhour"
       ],
-      "live_data_available": false,
-      "last_updated": null
+      "live_data_available": true,
+      "last_updated": "2025-08-17T14:23:59.468944"
     },
     "tacos-tequila-whiskey": {
       "name": "Tacos Tequila Whiskey",
@@ -8622,7 +8837,6 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.tacostequilawhiskey.com/dine-in-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -8692,14 +8906,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.tacostequilawhiskey.com/dine-in-menu"
       ],
@@ -8724,16 +8934,15 @@
       },
       "cuisine": "Asian",
       "website": "https://glonoodlehouse.com",
-      "phone": "303-993-4180",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-993-4180",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "glodenver",
+        "facebook": "glodenver",
         "twitter": null,
         "tiktok": null
       },
@@ -8759,7 +8968,11 @@
         "grubhub_url": null
       },
       "timezone": "America/Denver",
-      "operating_hours": {},
+      "operating_hours": {
+        "sunday": {
+          "closed": true
+        }
+      },
       "static_deals": [
         {
           "title": "Happy Hour",
@@ -8797,14 +9010,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://glonoodlehouse.com"
       ],
@@ -8829,7 +9038,6 @@
       },
       "cuisine": "Mexican",
       "website": "https://neciomexicankitchen.com/denver-denver-necio-mexican-kitchen-food-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -8900,14 +9108,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://neciomexicankitchen.com/denver-denver-necio-mexican-kitchen-food-menu"
       ],
@@ -8922,7 +9126,6 @@
       "address": null,
       "cuisine": "Colorado",
       "website": "https://www.cambriadenverrino.com/dining",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -8996,14 +9199,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.cambriadenverrino.com/dining"
       ],
@@ -9028,15 +9227,14 @@
       },
       "cuisine": "Italian",
       "website": "https://www.diomiopasta.com",
-      "phone": "303-562-1965",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-562-1965",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "info@diomiopasta.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "diomiopasta.com303.562.1965",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -9101,14 +9299,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.diomiopasta.com"
       ],
@@ -9133,7 +9327,6 @@
       },
       "cuisine": "Sushi",
       "website": "https://sushi-rama.com/sushi-happy-hour-denver/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9141,8 +9334,8 @@
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "sushi_rama_restaurants",
+        "facebook": "SushiRamaRestaurants",
         "twitter": null,
         "tiktok": null
       },
@@ -9205,14 +9398,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://sushi-rama.com/sushi-happy-hour-denver/"
       ],
@@ -9237,7 +9426,6 @@
       },
       "cuisine": "Sushi",
       "website": "https://www.temakiden.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9310,14 +9498,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.temakiden.com"
       ],
@@ -9342,7 +9526,6 @@
       },
       "cuisine": "Japanese",
       "website": "https://uchi.uchirestaurants.com/location/denver/menu/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9416,14 +9599,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://uchi.uchirestaurants.com/location/denver/menu/"
       ],
@@ -9448,7 +9627,6 @@
       },
       "cuisine": "American / Latin",
       "website": "https://workandclassdenver.com/menus.html",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9520,14 +9698,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://workandclassdenver.com/menus.html"
       ],
@@ -9552,7 +9726,6 @@
       },
       "cuisine": "American",
       "website": "https://weltonroom.com/denver-welton-room-welton-room-dining",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9622,14 +9795,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://weltonroom.com/denver-welton-room-welton-room-dining"
       ],
@@ -9654,7 +9823,6 @@
       },
       "cuisine": null,
       "website": "https://pointeasydenver.com/menus/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -9726,14 +9894,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://pointeasydenver.com/menus/"
       ],
@@ -9758,12 +9922,11 @@
       },
       "cuisine": "French",
       "website": "https://bistrovendome.com/events/",
-      "phone": "720-738-9199",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
-        "reservation_phone": null,
-        "general_email": null,
+        "primary_phone": "303-825-3232",
+        "reservation_phone": "720-738-9199",
+        "general_email": "info@bistrovendome.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -9849,14 +10012,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://bistrovendome.com/events/"
       ],
@@ -9881,15 +10040,14 @@
       },
       "cuisine": "Latin / Spanish",
       "website": "https://lucinaeatery.co/denver-park-hill-lucina-eatery-and-bar-food-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "814-1053info@lucinaeatery.co",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "lucinaeatery.co",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -9952,14 +10110,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://lucinaeatery.co/denver-park-hill-lucina-eatery-and-bar-food-menu"
       ],
@@ -9984,15 +10138,14 @@
       },
       "cuisine": "Beach",
       "website": "https://maxgillandgrill.com/denver-max-gill-and-grill-happy-hours-specials",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "722-7456kevin@maxgillandgrill.com",
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
+        "instagram": "maxgillandgrilldenver",
         "facebook": null,
         "twitter": null,
         "tiktok": null
@@ -10060,14 +10213,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://maxgillandgrill.com/denver-max-gill-and-grill-happy-hours-specials"
       ],
@@ -10086,13 +10235,12 @@
         "city": "Denver",
         "state": "CO",
         "zip_code": null,
-        "formatted_address": "1085 S. Gaylord Street",
-        "google_maps_url": "https://maps.google.com/?q=1085+S.+Gaylord+Street",
+        "formatted_address": "1085 S. Gaylord Street, Denver, CO",
+        "google_maps_url": "https://maps.google.com/?q=1085%20S.%20Gaylord%20Street%2C%20Denver%2C%20CO",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://www.reiversbarandgrill.com",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -10164,14 +10312,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.reiversbarandgrill.com/menu"
       ],
@@ -10196,7 +10340,6 @@
       },
       "cuisine": null,
       "website": "https://www.blackbirdpublichouse.com/happy-hour-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -10266,14 +10409,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.blackbirdpublichouse.com/happy-hour-menu"
       ],
@@ -10288,7 +10427,6 @@
       "address": null,
       "cuisine": "Pizza",
       "website": "https://www.joyhilldenver.com/happy-hour-menu",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -10364,14 +10502,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.joyhilldenver.com/happy-hour-menu",
         "https://www.joyhilldenver.com/menu",
@@ -10398,18 +10532,17 @@
       },
       "cuisine": "Mexican",
       "website": "https://www.quebuenosuerte.com/thefood",
-      "phone": "720-642-7322",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-642-7322",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "quebuenosuerte",
+        "facebook": "quebuenosuerte",
         "twitter": null,
-        "tiktok": null
+        "tiktok": "quebuenosuerte"
       },
       "dining_info": {
         "price_range": null,
@@ -10470,14 +10603,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.quebuenosuerte.com/thefood"
       ],
@@ -10502,7 +10631,6 @@
       },
       "cuisine": "American",
       "website": "https://jacksonpearldenver.com/menus/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -10552,14 +10680,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://jacksonpearldenver.com/menus/"
       ],
@@ -10584,12 +10708,11 @@
       },
       "cuisine": "Japanese",
       "website": "https://ototoden.com/our-menu/",
-      "phone": "303-942-1416",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-942-1416",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "ellen@getinkpr.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -10656,14 +10779,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://ototoden.com/our-menu/"
       ],
@@ -10681,14 +10800,13 @@
         "unit": null,
         "city": "Denver",
         "state": "CO",
-        "zip_code": null,
+        "zip_code": "80211",
         "formatted_address": "2298 Clay St, Denver, CO 80211",
         "google_maps_url": "https://maps.google.com/?q=2298+Clay+St%2C+Denver%2C+CO+80211",
         "confidence_score": 0.8
       },
       "cuisine": null,
       "website": "https://www.briarcommon.com/happyhour",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -10758,14 +10876,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.briarcommon.com/happyhour"
       ],
@@ -10790,16 +10904,15 @@
       },
       "cuisine": null,
       "website": "http://www.annettescratchtotable.com",
-      "phone": "720-710-9975",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "720-710-9975",
         "reservation_phone": null,
         "general_email": null,
         "reservations_email": null,
         "events_email": null,
-        "instagram": null,
-        "facebook": null,
+        "instagram": "annette_scratchtotable",
+        "facebook": "annettescratchtotable",
         "twitter": null,
         "tiktok": null
       },
@@ -10862,16 +10975,12 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
-        "http://www.annettescratchtotable.com/menu",
+        "https://www.annettescratchtotable.com/menu",
         "http://www.annettescratchtotable.com/contact"
       ],
       "live_data_available": false,
@@ -10895,12 +11004,11 @@
       },
       "cuisine": null,
       "website": "https://www.boychikkitchen.com/general-9-1",
-      "phone": "303-997-8402",
       "business_status": "unknown",
       "contact_info": {
-        "primary_phone": null,
+        "primary_phone": "303-997-8402",
         "reservation_phone": null,
-        "general_email": null,
+        "general_email": "catering@boychikkitchen.com",
         "reservations_email": null,
         "events_email": null,
         "instagram": null,
@@ -10945,14 +11053,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://www.boychikkitchen.com/general-9-1"
       ],
@@ -10977,7 +11081,6 @@
       },
       "cuisine": null,
       "website": "https://tstreetroadhouse.com/happy-hour/",
-      "phone": null,
       "business_status": "unknown",
       "contact_info": {
         "primary_phone": null,
@@ -11027,14 +11130,10 @@
         "last_scraped": null,
         "last_success": null,
         "consecutive_failures": 0,
-        "last_failure_reason": null,
-        "custom_selectors": {},
-        "time_pattern_regex": null,
-        "day_pattern_regex": null,
-        "price_pattern_regex": null,
-        "exclude_patterns": [],
-        "content_containers": []
+        "last_failure_reason": null
       },
+      "live_deals": [],
+      "deals_last_updated": null,
       "scraping_urls": [
         "https://tstreetroadhouse.com/happy-hour/"
       ],
