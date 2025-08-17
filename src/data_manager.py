@@ -84,7 +84,7 @@ class DataManager:
                 from src.models import Address
                 address = Address.from_string(address_data, confidence_score=0.5)
         
-        phone = data.get('phone')
+        # Phone is now managed through contact_info only
         
         # Create scraping config based on website availability
         website = data.get('website')
@@ -108,7 +108,6 @@ class DataManager:
             address=address,
             cuisine=data.get('cuisine'),
             website=website,
-            phone=phone,
             timezone=data.get('timezone', 'America/Denver'),
             operating_hours=data.get('operating_hours', {}),
             special_notes=data.get('special_notes', []),
@@ -136,13 +135,28 @@ class DataManager:
         if 'scraping_hints' in data:
             restaurant.scraping_hints = data['scraping_hints']
         
+        # Load contact_info if present
+        if 'contact_info' in data and data['contact_info']:
+            from src.models import ContactInfo
+            contact_data = data['contact_info']
+            restaurant.contact_info = ContactInfo(
+                primary_phone=contact_data.get('primary_phone'),
+                reservation_phone=contact_data.get('reservation_phone'),
+                general_email=contact_data.get('general_email'),
+                reservations_email=contact_data.get('reservations_email'),
+                events_email=contact_data.get('events_email'),
+                instagram=contact_data.get('instagram'),
+                facebook=contact_data.get('facebook'),
+                twitter=contact_data.get('twitter'),
+                tiktok=contact_data.get('tiktok')
+            )
+        
         return restaurant
     
     def _convert_giovanni_to_restaurant(self, data: Dict[str, Any], area: str) -> Restaurant:
         """Convert Giovanni's restaurant format to Restaurant object"""
-        # Extract phone number from address if present
+        # Extract address  
         address = data.get('address', '')
-        phone = None
         
         # Create scraping config based on website availability
         website = data.get('website')
@@ -166,7 +180,6 @@ class DataManager:
             address=address,
             cuisine=data.get('cuisine'),
             website=website,
-            phone=phone,
             static_deals=data.get('static_deals', []),
             special_notes=data.get('special_notes', []),
             scraping_config=scraping_config
@@ -427,7 +440,7 @@ class DataManager:
                 'address': restaurant.address.to_dict() if restaurant.address else None,
                 'cuisine': restaurant.cuisine,
                 'website': restaurant.website,
-                'phone': restaurant.phone,
+                'phone': restaurant.contact_info.primary_phone if restaurant.contact_info else None,
                 'operating_hours': restaurant.operating_hours,
                 'timezone': restaurant.timezone,
                 'is_open_now': restaurant.is_open_now() if restaurant.operating_hours else None,

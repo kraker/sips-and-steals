@@ -553,7 +553,6 @@ class Restaurant:
     address: Optional[Address] = None  # Structured address object
     cuisine: Optional[str] = None
     website: Optional[str] = None
-    phone: Optional[str] = None  # Legacy field - use contact_info.primary_phone for new data
     
     # Enhanced business information
     business_status: BusinessStatus = BusinessStatus.UNKNOWN
@@ -586,7 +585,6 @@ class Restaurant:
             'address': self.address.to_dict() if self.address else None,
             'cuisine': self.cuisine,
             'website': self.website,
-            'phone': self.phone,
             'business_status': self.business_status.value,
             'contact_info': self.contact_info.to_dict(),
             'dining_info': self.dining_info.to_dict(),

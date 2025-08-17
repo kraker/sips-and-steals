@@ -6,7 +6,7 @@ Solves data loss and speed issues from sequential processing
 
 import asyncio
 import logging
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional, Tuple
 from datetime import datetime
 from bs4 import BeautifulSoup
 
@@ -54,10 +54,18 @@ class AsyncContactExtractor:
                         logger.info(f"📞 Processing {restaurant.name}...")
                         
                         # Extract contact info asynchronously
-                        contact_info = await self._extract_contact_async(client, restaurant)
+                        contact_info, redirect_info = await self._extract_contact_async(client, restaurant)
+                        
+                        # Handle permanent redirects by updating URLs
+                        url_updated = False
+                        if redirect_info and redirect_info.get('has_permanent_redirect'):
+                            url_updated = self._update_restaurant_urls(restaurant, redirect_info)
                         
                         # Update restaurant object with extracted data
                         updated = self._update_restaurant_data(restaurant, contact_info)
+                        
+                        # Mark as updated if we fixed URLs
+                        updated = updated or url_updated
                         
                         if updated:
                             # Save immediately after successful extraction
@@ -150,8 +158,8 @@ class AsyncContactExtractor:
             
             return processed_results
     
-    async def _extract_contact_async(self, client: AsyncHttpClient, restaurant: Restaurant) -> Dict[str, Any]:
-        """Extract contact information asynchronously"""
+    async def _extract_contact_async(self, client: AsyncHttpClient, restaurant: Restaurant) -> Tuple[Dict[str, Any], Optional[Dict[str, Any]]]:
+        """Extract contact information asynchronously and return redirect info"""
         
         # Determine URL to scrape
         if hasattr(restaurant, 'scraping_urls') and restaurant.scraping_urls:
@@ -166,6 +174,9 @@ class AsyncContactExtractor:
         response = await client.fetch_url(url)
         soup = BeautifulSoup(response.text, 'html.parser')
         text_content = soup.get_text()
+        
+        # Extract redirect info if available
+        redirect_info = getattr(response, 'redirect_info', None)
         
         # Initialize contact extractor
         contact_extractor = ContactExtractor(base_url=url)
@@ -199,7 +210,7 @@ class AsyncContactExtractor:
         if operating_hours:
             extracted_data['operating_hours'] = operating_hours
         
-        return extracted_data
+        return extracted_data, redirect_info
     
     def _update_restaurant_data(self, restaurant: Restaurant, extracted_data: Dict[str, Any]) -> bool:
         """Update restaurant object with extracted data, return True if changes made"""
@@ -209,10 +220,7 @@ class AsyncContactExtractor:
         if extracted_data.get('contact_info'):
             contact_info_dict = extracted_data['contact_info']
             
-            # Update phone if missing or improve existing
-            if contact_info_dict.get('primary_phone') and not restaurant.phone:
-                restaurant.phone = contact_info_dict['primary_phone']
-                updated = True
+            # Phone updates are now handled through contact_info object only
             
             # Update contact info object
             if hasattr(restaurant, 'contact_info') and restaurant.contact_info:
@@ -282,6 +290,41 @@ class AsyncContactExtractor:
                 restaurant.scraping_config.last_success = datetime.now()
                 restaurant.scraping_config.consecutive_failures = 0
                 restaurant.scraping_config.last_failure_reason = None
+        
+        return updated
+    
+    def _update_restaurant_urls(self, restaurant: Restaurant, redirect_info: Dict[str, Any]) -> bool:
+        """Update restaurant URLs based on permanent redirects"""
+        if not redirect_info.get('has_permanent_redirect'):
+            return False
+        
+        original_url = redirect_info['original_url']
+        final_url = redirect_info['final_url']
+        
+        if original_url == final_url:
+            return False  # No actual change
+        
+        updated = False
+        
+        # Update main website URL if it matches
+        if hasattr(restaurant, 'website') and restaurant.website == original_url:
+            restaurant.website = final_url
+            updated = True
+            logger.info(f"Updated website URL for {restaurant.name}: {original_url} → {final_url}")
+        
+        # Update scraping URLs if they match
+        if hasattr(restaurant, 'scraping_urls') and restaurant.scraping_urls:
+            new_scraping_urls = []
+            for url in restaurant.scraping_urls:
+                if url == original_url:
+                    new_scraping_urls.append(final_url)
+                    updated = True
+                    logger.info(f"Updated scraping URL for {restaurant.name}: {original_url} → {final_url}")
+                else:
+                    new_scraping_urls.append(url)
+            
+            if updated:
+                restaurant.scraping_urls = new_scraping_urls
         
         return updated
     

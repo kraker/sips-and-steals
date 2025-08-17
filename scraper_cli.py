@@ -281,7 +281,7 @@ async def cmd_contact_async(args):
         # Restaurants missing contact data
         for slug, restaurant in data_manager.restaurants.items():
             # Check for missing phone, email, or operating hours
-            has_phone = restaurant.phone or (hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone)
+            has_phone = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone
             has_email = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.general_email
             has_hours = hasattr(restaurant, 'operating_hours') and restaurant.operating_hours and any(restaurant.operating_hours.values())
             
@@ -354,7 +354,7 @@ def cmd_contact(args):
         # Restaurants missing contact data
         for slug, restaurant in data_manager.restaurants.items():
             # Check for missing phone, email, or operating hours
-            has_phone = restaurant.phone or (hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone)
+            has_phone = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.primary_phone
             has_email = hasattr(restaurant, 'contact_info') and restaurant.contact_info and restaurant.contact_info.general_email
             has_hours = hasattr(restaurant, 'operating_hours') and restaurant.operating_hours
             
@@ -397,10 +397,7 @@ def cmd_contact(args):
             if restaurant_info.get('contact_info'):
                 contact_info_dict = restaurant_info['contact_info']
                 
-                # Update phone if missing or improve existing
-                if contact_info_dict.get('primary_phone') and not restaurant.phone:
-                    restaurant.phone = contact_info_dict['primary_phone']
-                    updated = True
+                # Phone updates are now handled through contact_info object only
                 
                 # Update contact info object
                 if hasattr(restaurant, 'contact_info') and restaurant.contact_info:

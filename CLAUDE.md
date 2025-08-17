@@ -216,6 +216,34 @@ class Deal:
 
 ## Roadmap & Future Enhancements
 
+### Geographic Redirect Validation for Multi-Location Restaurants
+**Priority**: Medium | **Effort**: Low | **Impact**: Medium
+
+Implement geographic validation for redirects to ensure Denver-specific content for multi-location restaurant chains.
+
+**Problem**: 
+Multi-location restaurant chains (like Thirsty Lion) may redirect to location-specific pages based on geolocation or default routing, potentially directing users away from Denver locations to other markets.
+
+**Example Case**: 
+Thirsty Lion redirected to `/arizona` location instead of Denver, providing irrelevant content for our Denver-focused users.
+
+**Technical Implementation**:
+- **Redirect Analysis**: Enhance redirect tracking to detect geographic redirects by analyzing URL patterns (/denver, /colorado, /arizona, etc.)
+- **Location Validation**: Check if redirect target contains Denver-relevant content vs. other geographic markets
+- **Fallback Strategy**: When geographic redirect detected, attempt alternative URLs or manual location-specific URL discovery
+- **User Preference**: For prototype, prioritize Denver metro area content only
+
+**Implementation Options**:
+1. **URL Pattern Detection**: Analyze redirect URLs for geographic indicators
+2. **Content Analysis**: Parse redirected page content for location-specific information
+3. **Manual Override**: Maintain manual URL mappings for known multi-location chains
+4. **Geolocation Spoofing**: Send Denver-specific location headers with requests
+
+**Success Metrics**:
+- Correctly identify and handle geographic redirects for 90%+ of multi-location chains
+- Maintain Denver-specific content focus for all restaurant data
+- Reduce content mismatch incidents due to wrong geographic targeting
+
 ### Timezone-Aware Time Handling & Operating Hours
 **Priority**: High | **Effort**: Medium | **Impact**: High
 
