@@ -6,6 +6,10 @@
 
 {% block body_attrs %} data-page="restaurant"{% endblock %}
 
+{% block home_link %}../index.html{% endblock %}
+
+{% block stats_link %}../stats.html{% endblock %}
+
 {% block extra_head %}{% endblock %}
 
 {% block content %}
@@ -171,12 +175,6 @@
     <!-- Action Buttons -->
     <section class="actions">
         <a href="../index.html" role="button" class="outline">← Back to All Restaurants</a>
-        
-        {% if restaurant.website %}
-        <a href="{{ restaurant.website }}" target="_blank" role="button">Visit Restaurant Website</a>
-        {% endif %}
-        
-        <a href="../stats.html" role="button" class="outline">View System Stats</a>
     </section>
     
     <!-- Similar Restaurants -->

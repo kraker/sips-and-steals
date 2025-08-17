@@ -29,13 +29,13 @@ body {
 /* Hero Section - Sophisticated Urban */
 .hero {
   text-align: center;
-  padding: 6rem 0 3rem 0;
+  padding: 3rem 0 2rem 0;
   border-bottom: 1px solid var(--pico-muted-border-color);
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
               url('../banner-sophisticated-bar.jpg') center 40%/cover;
   color: var(--urban-text);
   position: relative;
-  min-height: 400px;
+  min-height: 250px;
 }
 
 .hero .city {
