@@ -294,9 +294,8 @@ class UniversalHappyHourExtractor:
         # Extract pricing information
         prices = self._extract_prices(text)
         
-        # Combine into deals
-        if time_ranges or day_patterns:
-            deals.extend(self._create_deals_from_patterns(time_ranges, day_patterns, prices, text))
+        # Use enhanced parsing logic for better deal creation
+        deals.extend(self._extract_deals_from_text_section(text))
         
         return deals
     
@@ -829,9 +828,24 @@ class UniversalHappyHourExtractor:
             matches = re.findall(pattern, section_text, re.IGNORECASE)
             day_matches.extend(matches)
         
-        # Create separate deals for each time pattern found
-        if time_matches:
-            for time_match in time_matches:
+        # Deduplicate time matches to avoid creating duplicate deals
+        unique_time_matches = []
+        seen_time_strings = set()
+        
+        for time_match in time_matches:
+            # Create a unique signature for this time match (case-insensitive)
+            if len(time_match) >= 2:
+                time_sig = f"{time_match[0]}-{time_match[-1]}".lower()  # First and last elements, lowercase
+            else:
+                time_sig = str(time_match[0]).lower()
+            
+            if time_sig not in seen_time_strings:
+                seen_time_strings.add(time_sig)
+                unique_time_matches.append(time_match)
+        
+        # Create separate deals for each unique time pattern found
+        if unique_time_matches:
+            for time_match in unique_time_matches:
                 try:
                     start_time, end_time = self._parse_time_match(time_match)
                     if not start_time or not end_time:
@@ -945,50 +959,37 @@ class UniversalHappyHourExtractor:
         else:
             time_str = str(time_match[0])
         
-        # Find the position of the time in the text
-        time_pos = section_text.lower().find(time_str.lower())
+        # Special handling for patterns like "Daily 3-6 PM & Thurs-Sat 9PM-Close"
+        # Look for patterns where day immediately precedes time
+        section_lower = section_text.lower()
         
-        best_days = []
-        best_distance = float('inf')
-        best_priority = 0  # Higher priority for range patterns
+        # Find time position
+        time_pos = section_lower.find(time_str.lower())
         
-        # Look for day patterns near this time, prioritizing ranges
+        # Look for day patterns that directly precede this time (within 20 chars)
         for day_match in day_matches:
             day_str = day_match[0] if isinstance(day_match, tuple) else day_match
-            day_pos = section_text.lower().find(day_str.lower())
+            day_pos = section_lower.find(day_str.lower())
+            
+            if day_pos >= 0 and time_pos >= 0:
+                distance = time_pos - day_pos  # Positive if day comes before time
+                
+                # If day comes right before time (1-20 chars before), it's likely the right match
+                if 1 <= distance <= 20:
+                    return self._parse_day_match(day_str)
+        
+        # Fallback: look for closest day pattern within reasonable distance
+        best_days = []
+        best_distance = float('inf')
+        
+        for day_match in day_matches:
+            day_str = day_match[0] if isinstance(day_match, tuple) else day_match
+            day_pos = section_lower.find(day_str.lower())
             
             if day_pos >= 0 and time_pos >= 0:
                 distance = abs(day_pos - time_pos)
-                
-                # Assign priority: ranges > daily > individual days
-                priority = 0
-                if '-' in day_str:  # Range patterns like "Thurs-Sat"
-                    priority = 3
-                elif 'daily' in day_str.lower():
-                    priority = 2
-                else:  # Individual days
-                    priority = 1
-                
-                # Smart matching: prefer much closer matches even if lower priority
-                is_better = False
-                
-                if not best_days:  # First match
-                    is_better = True
-                elif priority > best_priority:  # Higher priority
-                    # Only choose higher priority if distance isn't much worse
-                    if distance <= best_distance + 5:  # Allow 5 chars worse distance
-                        is_better = True
-                elif priority == best_priority:  # Same priority, choose closer
-                    if distance < best_distance:
-                        is_better = True
-                else:  # Lower priority
-                    # Only choose if significantly closer (>50% closer)
-                    if distance < best_distance * 0.5:
-                        is_better = True
-                
-                if is_better:
+                if distance < best_distance and distance <= 30:  # Within 30 chars
                     best_distance = distance
-                    best_priority = priority
                     best_days = self._parse_day_match(day_str)
         
         # If no nearby day pattern found, use 'daily' if present, otherwise empty

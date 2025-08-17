@@ -1,7 +1,7 @@
 {
   "metadata": {
     "source": "enhanced_data_pipeline",
-    "updated_at": "2025-08-17T18:19:14.551959",
+    "updated_at": "2025-08-17T18:08:02.402968",
     "districts": [
       "Aurora",
       "Boulder",
@@ -268,15 +268,15 @@
         "requires_javascript": false,
         "scraper_class": null,
         "fallback_to_static": true,
-        "last_scraped": "2025-08-17T18:19:08.676466",
-        "last_success": "2025-08-17T18:19:14.548585",
+        "last_scraped": "2025-08-17T18:07:57.440888",
+        "last_success": "2025-08-17T18:08:00.786440",
         "consecutive_failures": 0,
         "last_failure_reason": null
       },
       "live_deals": [
         {
           "title": "Happy Hour",
-          "description": "Time: 3 PM - 6 PM | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+          "description": "Time: 3 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
           "deal_type": "happy_hour",
           "days_of_week": [
             "monday",
@@ -295,18 +295,41 @@
           "prices": [],
           "is_all_day": false,
           "special_notes": [],
-          "scraped_at": "2025-08-17T18:19:12.367886",
+          "scraped_at": "2025-08-17T18:07:58.321759",
           "source_url": null,
-          "confidence_score": 1.0
+          "confidence_score": 0.8999999999999999
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Happy hour available Monday-Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "thursday",
+            "wednesday",
+            "sunday",
+            "friday",
+            "monday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:07:58.321559",
+          "source_url": null,
+          "confidence_score": 0.5
         }
       ],
-      "deals_last_updated": "2025-08-17T18:19:14.548583",
+      "deals_last_updated": "2025-08-17T18:08:00.786440",
       "scraping_urls": [
         "https://www.thirstylionrestaurant.com/colorado",
         "https://www.thirstylionrestaurant.com/happyhour"
       ],
       "live_data_available": true,
-      "last_updated": "2025-08-17T18:19:14.548583"
+      "last_updated": "2025-08-17T18:08:00.786440"
     },
     "blue-sushi-sake-grill": {
       "name": "Blue Sushi Sake Grill",

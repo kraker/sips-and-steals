@@ -1,33 +1,10 @@
 {
   "restaurant_slug": "thirsty-lion",
-  "archived_at": "2025-08-17T17:40:42.110946",
+  "archived_at": "2025-08-17T18:19:14.548605",
   "deals": [
     {
       "title": "Happy Hour",
-      "description": "Found happy hour pattern: thu, wed",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "thursday",
-        "wednesday",
-        "sunday",
-        "friday",
-        "monday"
-      ],
-      "start_time": null,
-      "end_time": null,
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T17:40:39.810315",
-      "source_url": null,
-      "confidence_score": 0.6
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Time: 3 PM-6 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday",
+      "description": "Time: 3 PM - 6 PM | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
       "deal_type": "happy_hour",
       "days_of_week": [
         "monday",
@@ -46,30 +23,9 @@
       "prices": [],
       "is_all_day": false,
       "special_notes": [],
-      "scraped_at": "2025-08-17T17:40:39.810458",
+      "scraped_at": "2025-08-17T18:19:12.367886",
       "source_url": null,
-      "confidence_score": 0.8999999999999999
-    },
-    {
-      "title": "Happy Hour",
-      "description": "Found happy hour pattern: wed, MON",
-      "deal_type": "happy_hour",
-      "days_of_week": [
-        "wednesday",
-        "monday",
-        "friday"
-      ],
-      "start_time": null,
-      "end_time": null,
-      "start_time_24h": null,
-      "end_time_24h": null,
-      "timezone": "America/Denver",
-      "prices": [],
-      "is_all_day": false,
-      "special_notes": [],
-      "scraped_at": "2025-08-17T17:40:39.816139",
-      "source_url": null,
-      "confidence_score": 0.6
+      "confidence_score": 1.0
     }
   ]
 }
