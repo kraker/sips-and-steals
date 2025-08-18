@@ -1,0 +1,2275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Denver Happy Hours | Denver</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #d63384;
+            --primary-hover: #b02a5b;
+            --active-color: #22c55e;
+            --upcoming-color: #f59e0b;
+            --closed-color: #ef4444;
+            --unknown-color: #6b7280;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #e2e8f0;
+            min-height: 100vh;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: rgba(214, 51, 132, 0.1);
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .header h1 {
+            background: linear-gradient(45deg, #d63384, #f8f9fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .current-time {
+            font-size: 1.1rem;
+            color: #fbbf24;
+            margin-bottom: 0.5rem;
+        }
+        
+        .district-status {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(214, 51, 132, 0.3);
+            color: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: rgba(214, 51, 132, 0.3);
+            border-color: rgba(214, 51, 132, 0.6);
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .restaurant-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(214, 51, 132, 0.3);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+            position: relative;
+        }
+        
+        .restaurant-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(214, 51, 132, 0.6);
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            text-align: center;
+        }
+        
+        .status-active {
+            background: var(--active-color);
+            color: white;
+        }
+        
+        .status-upcoming {
+            background: var(--upcoming-color);
+            color: white;
+        }
+        
+        .status-closed {
+            background: var(--closed-color);
+            color: white;
+        }
+        
+        .status-unknown {
+            background: var(--unknown-color);
+            color: white;
+        }
+        
+        .restaurant-header {
+            margin-bottom: 1rem;
+        }
+        
+        .restaurant-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #f8f9fa;
+            margin-bottom: 0.25rem;
+        }
+        
+        .restaurant-meta {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+        
+        .cuisine-tag {
+            background: rgba(214, 51, 132, 0.2);
+            color: #d63384;
+            padding: 0.15rem 0.5rem;
+            border-radius: 0.75rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        
+        .happy-hour-info {
+            background: rgba(214, 51, 132, 0.1);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .happy-hour-title {
+            font-weight: bold;
+            color: #d63384;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .schedule-item {
+            margin: 0.5rem 0;
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 0.25rem;
+        }
+        
+        .schedule-days {
+            font-weight: 500;
+            color: #fbbf24;
+        }
+        
+        .schedule-times {
+            color: #e2e8f0;
+            margin-top: 0.25rem;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #cbd5e1;
+        }
+        
+        .contact-item i {
+            color: #d63384;
+            width: 16px;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            flex: 0 0 auto; /* Don't grow or shrink, size to content */
+            background: rgba(214, 51, 132, 0.2);
+            border: 1px solid rgba(214, 51, 132, 0.3);
+            color: #e2e8f0;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            text-align: center;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            white-space: nowrap;
+        }
+        
+        .action-btn:hover {
+            background: rgba(214, 51, 132, 0.4);
+            border-color: rgba(214, 51, 132, 0.6);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .price-info {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.75rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .price-item {
+            text-align: center;
+        }
+        
+        .price-label {
+            opacity: 0.7;
+            font-size: 0.8rem;
+        }
+        
+        .price-value {
+            font-weight: bold;
+            color: #22c55e;
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 3rem;
+            opacity: 0.7;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 2rem;
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .restaurant-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 200px;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .status-indicator {
+                margin-bottom: 1rem;
+                max-width: 100%;
+                display: block;
+            }
+            
+            .actions {
+                flex-direction: column; /* Stack buttons vertically on mobile */
+            }
+            
+            .action-btn {
+                flex: none;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-city"></i> Downtown Denver Happy Hours</h1>
+            <div class="current-time" id="currentTime">Loading...</div>
+            <div class="district-status" id="districtStatus">3 Districts • 70 Restaurants</div>
+        </header>
+
+        <div class="controls">
+            <button class="filter-btn active" data-filter="all">All Restaurants</button>
+            <button class="filter-btn" data-filter="active">🟢 Active Now</button>
+            <button class="filter-btn" data-filter="upcoming">🟡 Starting Soon</button>
+            <button class="filter-btn" data-filter="soon">Active + Soon</button>
+        </div>
+
+        <div class="restaurant-grid" id="restaurantGrid"></div>
+
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fas fa-search"></i>
+            <p>No restaurants match your filter criteria.</p>
+            <p><small>Try adjusting your filters or check back later.</small></p>
+        </div>
+
+        <footer class="footer">
+            <p>Downtown Denver Happy Hour Guide • Real-time status updates</p>
+            <p><small>Central • Northwest • North Districts • Data refreshed hourly</small></p>
+        </footer>
+    </div>
+
+    <script>
+        // Embedded restaurant data
+        const RESTAURANT_DATA = {
+            "jovaninas-broken-italian": {
+                        "name": "Jovanina's Broken Italian",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://jovanina.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 44,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "thirsty-lion": {
+                        "name": "Thirsty Lion",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.thirstylionrestaurant.com/colorado",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Sunday",
+                                                                        "Wednesday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 10 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Sunday",
+                                                                        "Wednesday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 11 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Sunday",
+                                                                        "Wednesday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "10 am - 11 pm"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 70,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "blue-sushi-sake-grill": {
+                        "name": "Blue Sushi Sake Grill",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://www.bluesushisakegrill.com/locations/lodo",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Monday",
+                                                                        "Thursday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 10 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Friday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 10 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "12 pm - 10 pm"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 86,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "a5-steakhouse": {
+                        "name": "A5 Steakhouse",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.a5denver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "osteria-marco": {
+                        "name": "Osteria Marco",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://www.osteriamarco.com/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "3 PM - 5 PM"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 3 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 am - 1 pm"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 148,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "rioja": {
+                        "name": "Rioja",
+                        "cuisine": "Mediterranean",
+                        "price_range": "$$",
+                        "website": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 29,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "stk": {
+                        "name": "STK",
+                        "cuisine": "Steakhouse",
+                        "price_range": "$$",
+                        "website": "https://stksteakhouse.com/happenings/happy-hour/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 7,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "urban-farmer": {
+                        "name": "Urban Farmer",
+                        "cuisine": "Steakhouse",
+                        "price_range": "$$",
+                        "website": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "9 AM - 2 PM"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "4 PM - 6 PM"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "All Day - All Day"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 33,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "tamayo": {
+                        "name": "Tamayo",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://tamayodenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 12,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "corridor-44": {
+                        "name": "Corridor 44",
+                        "cuisine": "French",
+                        "price_range": "$$",
+                        "website": "https://www.corridor44.com/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "4 pm - 6 pm"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "4 pm - 6 pm"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 16,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "tavernetta": {
+                        "name": "Tavernetta",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://www.tavernettadenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": [
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 AM - 10 PM"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "4 PM - 10 PM"
+                                                            ]
+                                                },
+                                                {
+                                                            "days": [
+                                                                        "Tuesday",
+                                                                        "Wednesday",
+                                                                        "Sunday",
+                                                                        "Thursday",
+                                                                        "Friday",
+                                                                        "Monday",
+                                                                        "Saturday"
+                                                            ],
+                                                            "times": [
+                                                                        "11 AM - 2 PM"
+                                                            ]
+                                                }
+                                    ]
+                        },
+                        "deals_summary": {
+                                    "total_deals": 80,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ultreia": {
+                        "name": "Ultreia",
+                        "cuisine": "Tapas",
+                        "price_range": "$$",
+                        "website": "https://ultreiadenver.com/menus/happy-hour/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "sunday-vinyl": {
+                        "name": "Sunday Vinyl",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.sundayvinyl.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "foraged": {
+                        "name": "Foraged",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://www.foragedrestaurant.com/drink",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ajax-downtown": {
+                        "name": "Ajax Downtown",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.ajaxrestaurant.com/menu/happy-hour/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "mercantile": {
+                        "name": "Mercantile",
+                        "cuisine": "American",
+                        "price_range": "$$",
+                        "website": "https://www.mercantiledenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "fogo-de-ch\u00e3o": {
+                        "name": "Fogo de Ch\u00e3o",
+                        "cuisine": "Brazilian",
+                        "price_range": "$$",
+                        "website": "https://fogodechao.com/location/denver/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "mecha-noodle-bar": {
+                        "name": "Mecha Noodle Bar",
+                        "cuisine": "Asian",
+                        "price_range": "$$",
+                        "website": "https://www.mechanoodlebar.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "wonderyard-garden-table": {
+                        "name": "Wonderyard Garden \\+ Table",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.wonderyard.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "done-deal": {
+                        "name": "Done Deal",
+                        "cuisine": "Cocktail bar",
+                        "price_range": "$$",
+                        "website": "https://www.drinkdonedeal.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "bezel-bar": {
+                        "name": "Bezel Bar",
+                        "cuisine": "Cocktail Bar",
+                        "price_range": "$$",
+                        "website": "https://www.bezeldenver.com/our-menus",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "panzano": {
+                        "name": "Panzano",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://panzano-denver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "guard-and-grace": {
+                        "name": "Guard and Grace",
+                        "cuisine": "Steakhouse",
+                        "price_range": "$$",
+                        "website": "https://www.guardandgrace.com/denver-menu",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "corinne-denver": {
+                        "name": "Corinne Denver",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.corinnedenver.com/corinne-restaurant-denver-menus/happy-hour-denver",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "white-pie": {
+                        "name": "White Pie",
+                        "cuisine": "Pizza",
+                        "price_range": "$$",
+                        "website": "https://whitepie.com/denver-colorado-springs-uptown-denver-downtown-colorado-springs-white-pie-food-menu",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "fire-lounge": {
+                        "name": "Fire Lounge",
+                        "cuisine": "American",
+                        "price_range": "$$",
+                        "website": "https://www.thearthotel.com/dine-drink/fire",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "city-o-city": {
+                        "name": "City O\u2019 City",
+                        "cuisine": "Vegetarian",
+                        "price_range": "$$",
+                        "website": "https://www.cityocitydenver.com/happyhour",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "bang-up-to-the-elephant": {
+                        "name": "Bang Up to the Elephant",
+                        "cuisine": "Beach / Tropical",
+                        "price_range": "$$",
+                        "website": "https://banguptotheelephant.restaurant/specials/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "100-de-agave": {
+                        "name": "100% de Agave",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://100deagave.com/specials",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "9th-door": {
+                        "name": "9th Door",
+                        "cuisine": "Tapas",
+                        "price_range": "$$",
+                        "website": "http://9thdoorcapitolhill.com/happyhour",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "vesper-lounge": {
+                        "name": "Vesper Lounge",
+                        "cuisine": "Mediterranean",
+                        "price_range": "$$",
+                        "website": "https://www.bonannoconcepts.com/restaurant/vesper-lounge/?fbclid=IwZXh0bgNhZW0CMTAAAR28QTw3V-iGWwsfqYyZ6S3WKw9Q8ul23dTn_373gNeQHQvAwjE6fqO0XGU_aem_SQYzAjAG9klx4hQzBx-yKA",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "watercourse-foods": {
+                        "name": "Watercourse Foods",
+                        "cuisine": "Vegetarian",
+                        "price_range": "$$",
+                        "website": "https://www.watercoursefoods.com/happyhour",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ace-eat-serve": {
+                        "name": "Ace Eat Serve",
+                        "cuisine": "Asian",
+                        "price_range": "$$",
+                        "website": "https://aceeatserve.com/denver-uptown-ace-eat-serve-food-menu-450525",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "xiquita-restaurante-y-bar": {
+                        "name": "Xiquita Restaurante y Bar",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://xiquita.co/denver-uptown-xiquita-restaurante-y-bar-food-menu",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "go-fish-sushi": {
+                        "name": "Go Fish Sushi",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://gofishsushi.com/denver-happy-hour-menu",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "punchbowl-social": {
+                        "name": "Punchbowl Social",
+                        "cuisine": "American",
+                        "price_range": "$$",
+                        "website": "https://punchbowlsocial.com/location/denver/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "rocky-yama-sushi": {
+                        "name": "Rocky Yama Sushi",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://www.rockyyamasushi.com/happyhour",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "adrift": {
+                        "name": "Adrift",
+                        "cuisine": "Tiki",
+                        "price_range": "$$",
+                        "website": "https://www.adriftbar.com/late-night-escape-hour/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "la-for\u00eat": {
+                        "name": "La For\u00eat",
+                        "cuisine": "French",
+                        "price_range": "$$",
+                        "website": "https://www.laforetdenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ronin-congress-park": {
+                        "name": "Ronin Congress Park",
+                        "cuisine": "Japanese",
+                        "price_range": "$$",
+                        "website": "https://ronincongresspark.com/menu/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "shells-and-sauce": {
+                        "name": "Shells and Sauce",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://www.shellsandsauce.net",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "bar-max": {
+                        "name": "Bar Max",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://barmax.co/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "sap-sua": {
+                        "name": "Sap Sua",
+                        "cuisine": "Vietnamese",
+                        "price_range": "$$",
+                        "website": "https://www.sapsua.com/menus/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "wild-taco": {
+                        "name": "Wild taco",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://wildtacodenver.com/denver-govs-park-wild-taco-denver-menu-berkeley",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ginger-pig": {
+                        "name": "Ginger Pig",
+                        "cuisine": "Asian",
+                        "price_range": "$$",
+                        "website": "https://www.gingerpig.com/denver-menus",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "vital-root": {
+                        "name": "Vital Root",
+                        "cuisine": "Plant-Based",
+                        "price_range": "$$",
+                        "website": "https://www.ediblebeats.com/vital-root",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "el-five": {
+                        "name": "El Five",
+                        "cuisine": "Mediterranean",
+                        "price_range": "$$",
+                        "website": "https://ediblebeats.com/restaurants/el-five/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "kumoya-denver": {
+                        "name": "Kumoya - Denver",
+                        "cuisine": "Japanese",
+                        "price_range": "$$",
+                        "website": "https://www.kumoyadenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "alma-fonda-fina": {
+                        "name": "Alma Fonda Fina",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://www.almalohidenver.com/faqs",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "the-bindery": {
+                        "name": "The Bindery",
+                        "cuisine": "Global",
+                        "price_range": "$$",
+                        "website": "https://thebinderydenver.com/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "bamboo-sushi": {
+                        "name": "Bamboo Sushi",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://bamboosushi.com/location/lohi/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "bar-dough": {
+                        "name": "Bar Dough",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://www.bardoughdenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "root-down": {
+                        "name": "Root Down",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.ediblebeats.com/root-down",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "gaetanos-eccellente-cucina-cocktails": {
+                        "name": "Gaetano\u2019s Eccellente Cucina & Cocktails",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://gaetanositalian.com/cocktails/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "linger": {
+                        "name": "Linger",
+                        "cuisine": "Global",
+                        "price_range": "$$",
+                        "website": "https://www.ediblebeats.com/linger",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "kawa-ni": {
+                        "name": "Kawa Ni",
+                        "cuisine": "Japanese",
+                        "price_range": "$$",
+                        "website": "https://www.kawanidenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "ashkara": {
+                        "name": "Ash'Kara",
+                        "cuisine": "Mediterranean",
+                        "price_range": "$$",
+                        "website": "https://www.ashkaradenver.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "senor-bear": {
+                        "name": "Senor Bear",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://www.senorbeardenver.com/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "american-elm": {
+                        "name": "American Elm",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://www.amelm.com/happyhour",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "tacos-tequila-whiskey": {
+                        "name": "Tacos Tequila Whiskey",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://www.tacostequilawhiskey.com/dine-in-menu",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "glo-noodle-house": {
+                        "name": "Glo Noodle House",
+                        "cuisine": "Asian",
+                        "price_range": "$$",
+                        "website": "https://glonoodlehouse.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "necio-mexican-kitchen": {
+                        "name": "Necio Mexican Kitchen",
+                        "cuisine": "Mexican",
+                        "price_range": "$$",
+                        "website": "https://neciomexicankitchen.com/specials",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "painted-rino-kitchen-bar": {
+                        "name": "Painted RiNo Kitchen \\+ Bar",
+                        "cuisine": "Colorado",
+                        "price_range": "$$",
+                        "website": "https://www.cambriadenverrino.com/dining",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "dio-mio": {
+                        "name": "Dio Mio",
+                        "cuisine": "Italian",
+                        "price_range": "$$",
+                        "website": "https://www.diomiopasta.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "sushi-rama": {
+                        "name": "Sushi Rama",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://sushi-rama.com/sushi-happy-hour-denver/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "temaki-den": {
+                        "name": "Temaki Den",
+                        "cuisine": "Sushi",
+                        "price_range": "$$",
+                        "website": "https://www.temakiden.com",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "uchi": {
+                        "name": "Uchi",
+                        "cuisine": "Japanese",
+                        "price_range": "$$",
+                        "website": "https://uchi.uchirestaurants.com/location/denver/menu/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "work-class": {
+                        "name": "Work & Class",
+                        "cuisine": "American / Latin",
+                        "price_range": "$$",
+                        "website": "https://workandclassdenver.com/menus/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "welton-room": {
+                        "name": "Welton Room",
+                        "cuisine": "American",
+                        "price_range": "$$",
+                        "website": "https://weltonroom.com/denver-welton-room-welton-room-dining",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            },
+            "point-easy-denver": {
+                        "name": "Point Easy Denver",
+                        "cuisine": null,
+                        "price_range": "$$",
+                        "website": "https://pointeasydenver.com/menus/",
+                        "contact": {},
+                        "reservations": {},
+                        "social": {},
+                        "happy_hour": {
+                                    "weekly_schedule": []
+                        },
+                        "deals_summary": {
+                                    "total_deals": 0,
+                                    "avg_food_price": 0,
+                                    "avg_drink_price": 0
+                        }
+            }
+};
+
+        // Happy Hour Status Logic
+        class HappyHourStatus {
+            constructor() {
+                this.currentTime = new Date();
+                this.currentDay = this.getCurrentDayName();
+                this.currentHour = this.currentTime.getHours();
+                this.currentMinute = this.currentTime.getMinutes();
+            }
+
+            getCurrentDayName() {
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                return days[this.currentTime.getDay()];
+            }
+
+            isWeekday() {
+                const weekdays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+                return weekdays.includes(this.currentDay);
+            }
+
+            parseTimeString(timeStr) {
+                if (!timeStr) return null;
+
+                const timeMatch = timeStr.match(/(\d{1,2}):(\d{2})\s*(AM|PM)/i);
+                if (!timeMatch) return null;
+
+                let hour = parseInt(timeMatch[1]);
+                const minute = parseInt(timeMatch[2]);
+                const period = timeMatch[3].toUpperCase();
+
+                if (period === 'PM' && hour !== 12) {
+                    hour += 12;
+                } else if (period === 'AM' && hour === 12) {
+                    hour = 0;
+                }
+
+                return { hour, minute };
+            }
+
+            parseTimeRange(timeRange) {
+                if (!timeRange || timeRange === 'All Day') {
+                    return { start: { hour: 0, minute: 0 }, end: { hour: 23, minute: 59 } };
+                }
+
+                const rangeParts = timeRange.split(' - ');
+                if (rangeParts.length !== 2) return null;
+
+                const start = this.parseTimeString(rangeParts[0].trim());
+                const end = this.parseTimeString(rangeParts[1].trim());
+
+                if (!start || !end) return null;
+
+                return { start, end };
+            }
+
+            isCurrentlyInTimeRange(timeRange) {
+                const range = this.parseTimeRange(timeRange);
+                if (!range) return false;
+
+                const currentMinutes = this.currentHour * 60 + this.currentMinute;
+                const startMinutes = range.start.hour * 60 + range.start.minute;
+                const endMinutes = range.end.hour * 60 + range.end.minute;
+
+                if (endMinutes < startMinutes) {
+                    return currentMinutes >= startMinutes || currentMinutes <= endMinutes;
+                }
+
+                return currentMinutes >= startMinutes && currentMinutes <= endMinutes;
+            }
+
+            isDayActive(daysList) {
+                if (!daysList || daysList.length === 0) return false;
+
+                for (const day of daysList) {
+                    if (day === 'Daily') return true;
+                    if (day === 'Weekdays' && this.isWeekday()) return true;
+                    if (day === this.currentDay) return true;
+                }
+
+                return false;
+            }
+
+            getHappyHourStatus(restaurant) {
+                const schedule = restaurant.happy_hour?.weekly_schedule;
+                if (!schedule || schedule.length === 0) {
+                    return {
+                        status: 'unknown',
+                        message: 'Check restaurant for details'
+                    };
+                }
+
+                let isActive = false;
+                let isUpcoming = false;
+                let activeMessage = 'No current deals';
+                let upcomingMessage = '';
+
+                // Debug info for STK specifically
+                const isSTK = restaurant.name === 'STK';
+                if (isSTK) {
+                    console.log('STK Debug:', {
+                        currentTime: `${this.currentHour}:${this.currentMinute.toString().padStart(2, '0')}`,
+                        currentDay: this.currentDay,
+                        schedule: schedule
+                    });
+                }
+
+                for (const period of schedule) {
+                    const daysActive = this.isDayActive(period.days);
+                    
+                    if (isSTK) {
+                        console.log('Period check:', {
+                            days: period.days,
+                            daysActive: daysActive,
+                            times: period.times
+                        });
+                    }
+                    
+                    if (daysActive && period.times) {
+                        for (const timeRange of period.times) {
+                            const inRange = this.isCurrentlyInTimeRange(timeRange);
+                            
+                            if (isSTK) {
+                                console.log('Time check:', {
+                                    timeRange: timeRange,
+                                    inRange: inRange
+                                });
+                            }
+                            
+                            if (inRange) {
+                                isActive = true;
+                                const endTime = timeRange.includes(' - ') ? timeRange.split(' - ')[1] : 'close';
+                                activeMessage = `Until ${endTime}`;
+                                // Don't break here - we found an active period, but let's finish logging for debug
+                                if (!isSTK) break; // Only break early if not debugging STK
+                            } else {
+                                // Check if starting soon (within next 2 hours)
+                                const upcomingInfo = this.checkUpcoming(timeRange);
+                                if (upcomingInfo && !isActive && !isUpcoming) {
+                                    isUpcoming = true;
+                                    upcomingMessage = upcomingInfo;
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (isActive && !isSTK) break; // Only break early if not debugging STK
+                }
+
+                if (isActive) {
+                    return { status: 'active', message: activeMessage };
+                } else if (isUpcoming) {
+                    return { status: 'upcoming', message: upcomingMessage };
+                } else {
+                    return { status: 'closed', message: 'No current deals' };
+                }
+            }
+
+            checkUpcoming(timeRange) {
+                if (!timeRange || timeRange === 'All Day') return null;
+
+                const range = this.parseTimeRange(timeRange);
+                if (!range) return null;
+
+                const currentMinutes = this.currentHour * 60 + this.currentMinute;
+                const startMinutes = range.start.hour * 60 + range.start.minute;
+
+                // Check if start time is in the future (today)
+                if (startMinutes > currentMinutes) {
+                    const minutesUntil = startMinutes - currentMinutes;
+                    
+                    // Only show "upcoming" if within next 2 hours (120 minutes)
+                    if (minutesUntil <= 120) {
+                        if (minutesUntil < 60) {
+                            return `Starts in ${minutesUntil} min`;
+                        } else {
+                            const hours = Math.floor(minutesUntil / 60);
+                            const mins = minutesUntil % 60;
+                            if (mins === 0) {
+                                return `Starts in ${hours}h`;
+                            } else {
+                                return `Starts in ${hours}h ${mins}m`;
+                            }
+                        }
+                    }
+                }
+
+                return null;
+            }
+
+            getStatusIcon(status) {
+                switch (status) {
+                    case 'active': return '🟢';
+                    case 'upcoming': return '🟡';
+                    case 'closed': return '🔴';
+                    default: return '⚪';
+                }
+            }
+
+            getStatusClass(status) {
+                switch (status) {
+                    case 'active': return 'status-active';
+                    case 'upcoming': return 'status-upcoming';
+                    case 'closed': return 'status-closed';
+                    default: return 'status-unknown';
+                }
+            }
+
+            formatCurrentTime() {
+                return this.currentTime.toLocaleString('en-US', {
+                    weekday: 'long',
+                    hour: 'numeric',
+                    minute: '2-digit',
+                    hour12: true
+                });
+            }
+
+            filterRestaurantsByStatus(restaurants, filterType = 'all') {
+                const filtered = {};
+                
+                for (const [slug, restaurant] of Object.entries(restaurants)) {
+                    const status = this.getHappyHourStatus(restaurant);
+                    
+                    if (filterType === 'all' || 
+                        filterType === status.status ||
+                        (filterType === 'soon' && ['active', 'upcoming'].includes(status.status))) {
+                        
+                        filtered[slug] = {
+                            ...restaurant,
+                            currentStatus: status
+                        };
+                    }
+                }
+                
+                return filtered;
+            }
+
+            sortByStatus(restaurants) {
+                const statusPriority = { 'active': 1, 'upcoming': 2, 'closed': 3, 'unknown': 4 };
+                
+                return Object.entries(restaurants).sort(([, a], [, b]) => {
+                    const aPriority = statusPriority[a.currentStatus?.status] || 4;
+                    const bPriority = statusPriority[b.currentStatus?.status] || 4;
+                    return aPriority - bPriority;
+                });
+            }
+
+            getDistrictSummary(restaurants) {
+                let activeCount = 0;
+                let totalCount = Object.keys(restaurants).length;
+
+                for (const restaurant of Object.values(restaurants)) {
+                    const status = this.getHappyHourStatus(restaurant);
+                    if (status.status === 'active') activeCount++;
+                }
+
+                return {
+                    total: totalCount,
+                    active: activeCount,
+                    message: activeCount > 0 ? 
+                        `${activeCount} happy hours active now` : 
+                        'No active happy hours'
+                };
+            }
+        }
+
+        // Dashboard App
+        class DashboardApp {
+            constructor() {
+                this.statusChecker = new HappyHourStatus();
+                this.restaurants = RESTAURANT_DATA;
+                this.currentFilter = 'all';
+                this.init();
+            }
+
+            init() {
+                this.updateCurrentTime();
+                setInterval(() => this.updateCurrentTime(), 60000);
+                
+                this.setupEventListeners();
+                this.updateDistrictStatus();
+                this.renderRestaurants();
+            }
+
+            updateCurrentTime() {
+                const timeElement = document.getElementById('currentTime');
+                timeElement.textContent = this.statusChecker.formatCurrentTime();
+            }
+
+            updateDistrictStatus() {
+                const summary = this.statusChecker.getDistrictSummary(this.restaurants);
+                const statusElement = document.getElementById('districtStatus');
+                statusElement.textContent = `Downtown Denver • ${summary.message}`;
+            }
+
+            setupEventListeners() {
+                const filterButtons = document.querySelectorAll('.filter-btn');
+                filterButtons.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        filterButtons.forEach(b => b.classList.remove('active'));
+                        e.target.classList.add('active');
+                        this.currentFilter = e.target.dataset.filter;
+                        this.renderRestaurants();
+                    });
+                });
+            }
+
+            renderRestaurants() {
+                const grid = document.getElementById('restaurantGrid');
+                const noResults = document.getElementById('noResults');
+                
+                const filtered = this.statusChecker.filterRestaurantsByStatus(this.restaurants, this.currentFilter);
+                const sorted = this.statusChecker.sortByStatus(filtered);
+                
+                if (sorted.length === 0) {
+                    grid.style.display = 'none';
+                    noResults.style.display = 'block';
+                    return;
+                }
+                
+                noResults.style.display = 'none';
+                grid.style.display = 'grid';
+                
+                grid.innerHTML = sorted.map(([slug, restaurant]) => 
+                    this.renderRestaurantCard(slug, restaurant)
+                ).join('');
+            }
+
+            renderRestaurantCard(slug, restaurant) {
+                const status = restaurant.currentStatus;
+                const contact = restaurant.contact || {};
+                const deals = restaurant.deals_summary || {};
+                
+                return `
+                    <div class="restaurant-card">
+                        <div class="status-indicator ${this.statusChecker.getStatusClass(status.status)}">
+                            ${this.statusChecker.getStatusIcon(status.status)} ${status.message}
+                        </div>
+                        
+                        <div class="restaurant-header">
+                            <div class="restaurant-name">${restaurant.name}</div>
+                            <div class="restaurant-meta">
+                                <span class="cuisine-tag">${restaurant.cuisine}</span>
+                                <span>${restaurant.price_range || '$$'}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="happy-hour-info">
+                            <div class="happy-hour-title">
+                                <i class="fas fa-clock"></i>
+                                Happy Hour Schedule
+                            </div>
+                            ${this.renderSchedule(restaurant.happy_hour)}
+                        </div>
+                        
+                        ${this.renderPriceInfo(deals)}
+                        
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>${this.formatAddress(contact.address)}</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>${contact.phone || 'Call for info'}</span>
+                            </div>
+                        </div>
+                        
+                        <div class="actions">
+                            ${this.renderActionButtons(restaurant)}
+                        </div>
+                    </div>
+                `;
+            }
+
+            renderSchedule(happyHour) {
+                if (!happyHour || !happyHour.weekly_schedule) {
+                    return '<div class="schedule-item">Check restaurant for details</div>';
+                }
+                
+                return happyHour.weekly_schedule.map(period => `
+                    <div class="schedule-item">
+                        <div class="schedule-days">${this.formatDayRange(period.days)}</div>
+                        <div class="schedule-times">${period.times.join(' • ')}</div>
+                    </div>
+                `).join('');
+            }
+
+            formatDayRange(days) {
+                if (!days || days.length === 0) return '';
+                if (days.length === 1) return days[0];
+
+                // Day order for consecutive checking
+                const dayOrder = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const dayAbbreviations = {
+                    'Sunday': 'Sun', 'Monday': 'Mon', 'Tuesday': 'Tue', 'Wednesday': 'Wed',
+                    'Thursday': 'Thu', 'Friday': 'Fri', 'Saturday': 'Sat'
+                };
+
+                // Handle special cases
+                if (days.includes('Daily')) return 'Daily';
+                if (days.includes('Weekdays')) return 'Weekdays';
+                if (days.includes('Weekends')) return 'Weekends';
+
+                // Sort days by their position in the week
+                const sortedDays = days.filter(day => dayOrder.includes(day))
+                                      .sort((a, b) => dayOrder.indexOf(a) - dayOrder.indexOf(b));
+
+                if (sortedDays.length === 0) return days.join(', ');
+
+                // Check for consecutive ranges
+                const ranges = [];
+                let rangeStart = 0;
+
+                for (let i = 1; i <= sortedDays.length; i++) {
+                    const isConsecutive = i < sortedDays.length && 
+                                         dayOrder.indexOf(sortedDays[i]) === dayOrder.indexOf(sortedDays[i-1]) + 1;
+                    
+                    if (!isConsecutive || i === sortedDays.length) {
+                        const rangeEnd = i - 1;
+                        
+                        if (rangeStart === rangeEnd) {
+                            // Single day
+                            ranges.push(dayAbbreviations[sortedDays[rangeStart]]);
+                        } else if (rangeEnd - rangeStart === 1) {
+                            // Two consecutive days
+                            ranges.push(`${dayAbbreviations[sortedDays[rangeStart]]}, ${dayAbbreviations[sortedDays[rangeEnd]]}`);
+                        } else {
+                            // Range of 3+ days
+                            ranges.push(`${dayAbbreviations[sortedDays[rangeStart]]}-${dayAbbreviations[sortedDays[rangeEnd]]}`);
+                        }
+                        
+                        rangeStart = i;
+                    }
+                }
+
+                return ranges.join(', ');
+            }
+
+            renderPriceInfo(deals) {
+                if (!deals.avg_drink_price && !deals.avg_food_price) {
+                    return '';
+                }
+                
+                let content = '<div class="price-info">';
+                
+                if (deals.avg_drink_price > 0) {
+                    content += `
+                        <div class="price-item">
+                            <div class="price-label">Avg Drinks</div>
+                            <div class="price-value">$${deals.avg_drink_price}</div>
+                        </div>
+                    `;
+                }
+                
+                if (deals.avg_food_price > 0) {
+                    content += `
+                        <div class="price-item">
+                            <div class="price-label">Avg Food</div>
+                            <div class="price-value">$${deals.avg_food_price}</div>
+                        </div>
+                    `;
+                }
+                
+                content += '</div>';
+                return content;
+            }
+
+            renderActionButtons(restaurant) {
+                const contact = restaurant.contact || {};
+                const reservations = restaurant.reservations || {};
+                const social = restaurant.social || {};
+                
+                let buttons = [];
+                
+                if (contact.phone) {
+                    buttons.push(`
+                        <a href="tel:${contact.phone.replace(/[^\d]/g, '')}" class="action-btn">
+                            <i class="fas fa-phone"></i> Call
+                        </a>
+                    `);
+                }
+                
+                if (reservations.url) {
+                    buttons.push(`
+                        <a href="${reservations.url}" target="_blank" class="action-btn">
+                            <i class="fas fa-calendar"></i> Reserve
+                        </a>
+                    `);
+                }
+                
+                if (contact.address) {
+                    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(contact.address)}`;
+                    buttons.push(`
+                        <a href="${mapsUrl}" target="_blank" class="action-btn">
+                            <i class="fas fa-directions"></i> Directions
+                        </a>
+                    `);
+                }
+                
+                if (social.website || restaurant.website) {
+                    buttons.push(`
+                        <a href="${social.website || restaurant.website}" target="_blank" class="action-btn">
+                            <i class="fas fa-globe"></i> Website
+                        </a>
+                    `);
+                }
+                
+                return buttons.join('');
+            }
+
+            formatAddress(address) {
+                if (!address) return 'Address not available';
+                return address.split(',')[0];
+            }
+        }
+
+        // Initialize dashboard when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new DashboardApp();
+        });
+    </script>
+</body>
+</html>

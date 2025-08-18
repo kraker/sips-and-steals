@@ -97,7 +97,7 @@ class HappyHourDealsSpider(scrapy.Spider):
         r'(limited\s+time|while\s+supplies\s+last)',
     ]
     
-    def __init__(self, discovered_pages_file='data/discovered_pages.json', 
+    def __init__(self, discovered_pages_file='data/discovered_urls.json', 
                  discovered_links_file='data/discovered_links.json', *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.discovered_pages_file = discovered_pages_file

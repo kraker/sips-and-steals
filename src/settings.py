@@ -88,7 +88,7 @@ LOG_FILE = 'logs/scrapy.log'
 # Custom settings for our use case
 RESTAURANT_DATA_FILE = 'data/restaurants.json'
 DEALS_OUTPUT_FILE = 'data/deals.json'
-DISCOVERY_OUTPUT_FILE = 'data/discovered_pages.json'
+DISCOVERY_OUTPUT_FILE = 'data/discovered_urls.json'
 
 # Happy hour detection settings
 HAPPY_HOUR_KEYWORDS = [

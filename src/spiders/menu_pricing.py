@@ -84,7 +84,7 @@ class MenuPricingSpider(scrapy.Spider):
         r'([A-Z][A-Za-z\s&\'-]{4,35})\s{2,}(\d{1,3})(?:\s|$)',
     ]
     
-    def __init__(self, discovered_pages_file='data/discovered_pages.json', 
+    def __init__(self, discovered_pages_file='data/discovered_urls.json', 
                  discovered_links_file='data/discovered_links.json', *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.discovered_pages_file = discovered_pages_file

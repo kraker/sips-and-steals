@@ -37,7 +37,7 @@ class ScrapyCLI:
         cmd = [
             'scrapy', 'crawl', 'discovery',
             '-s', f'RESTAURANT_DATA_FILE={self.data_dir}/restaurants.json',
-            '-s', f'DISCOVERY_OUTPUT_FILE={self.data_dir}/discovered_pages.json',
+            '-s', f'DISCOVERY_OUTPUT_FILE={self.data_dir}/discovered_urls.json',
             '-L', 'INFO'
         ]
         
@@ -61,7 +61,7 @@ class ScrapyCLI:
         print("Extracting happy hour deals with data-hungry approach")
         
         # Check if discovery has been run
-        discovered_file = self.data_dir / 'discovered_pages.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
         if not discovered_file.exists():
             print("❌ No discovered pages found. Run discovery first:")
             print("    python cli.py discover")
@@ -70,7 +70,7 @@ class ScrapyCLI:
         cmd = [
             'scrapy', 'crawl', 'extractor',
             '-s', f'INPUT_FILE={discovered_file}',
-            '-s', f'DEALS_OUTPUT_FILE={self.data_dir}/scrapy_deals.json',
+            '-s', f'DEALS_OUTPUT_FILE={self.data_dir}/deals.json',
             '-L', 'INFO'
         ]
         
@@ -187,7 +187,7 @@ class ScrapyCLI:
             return 1
         
         # Check for discovered pages
-        discovered_file = self.data_dir / 'discovered_pages.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
         if discovered_file.exists():
             with open(discovered_file, 'r') as f:
                 discovered_data = json.load(f)
@@ -202,7 +202,7 @@ class ScrapyCLI:
             print("⚠️  No discovered pages (run discovery first)")
         
         # Check for extracted deals
-        deals_file = self.data_dir / 'scrapy_deals.json'
+        deals_file = self.data_dir / 'deals.json'
         if deals_file.exists():
             with open(deals_file, 'r') as f:
                 deals_data = json.load(f)
@@ -252,7 +252,7 @@ class ScrapyCLI:
         """Analyze extraction results and show insights"""
         print("🧠 Analyzing Extraction Results...")
         
-        deals_file = self.data_dir / 'scrapy_deals.json'
+        deals_file = self.data_dir / 'deals.json'
         if not deals_file.exists():
             print("❌ No deals found. Run extraction first.")
             return 1
@@ -308,7 +308,7 @@ class ScrapyCLI:
         print("Extracting pricing data from restaurant menus and PDFs")
         
         # Check if discovered pages exist
-        discovered_file = self.data_dir / 'discovered_pages.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
         if not discovered_file.exists():
             print("❌ No discovered pages found. Run discovery first:")
             print("   python cli.py discover")
@@ -390,7 +390,7 @@ class ScrapyCLI:
     
     def _show_discovery_stats(self):
         """Show discovery statistics"""
-        discovered_file = self.data_dir / 'discovered_pages.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
         if discovered_file.exists():
             with open(discovered_file, 'r') as f:
                 data = json.load(f)
@@ -412,7 +412,7 @@ class ScrapyCLI:
     
     def _show_extraction_stats(self):
         """Show extraction statistics"""
-        deals_file = self.data_dir / 'scrapy_deals.json'
+        deals_file = self.data_dir / 'deals.json'
         if deals_file.exists():
             with open(deals_file, 'r') as f:
                 data = json.load(f)
@@ -463,8 +463,8 @@ class ScrapyCLI:
         print("\n📈 Comprehensive Pipeline Summary:")
         
         # Load all data files
-        discovered_file = self.data_dir / 'discovered_pages.json'
-        deals_file = self.data_dir / 'scrapy_deals.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
+        deals_file = self.data_dir / 'deals.json'
         profiles_file = self.data_dir / 'restaurant_profiles.json'
         
         stats = {}
@@ -514,8 +514,8 @@ class ScrapyCLI:
         print("\n📈 Pipeline Summary:")
         
         # Load all data files
-        discovered_file = self.data_dir / 'discovered_pages.json'
-        deals_file = self.data_dir / 'scrapy_deals.json'
+        discovered_file = self.data_dir / 'discovered_urls.json'
+        deals_file = self.data_dir / 'deals.json'
         
         if discovered_file.exists() and deals_file.exists():
             with open(discovered_file, 'r') as f:

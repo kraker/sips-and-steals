@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Downtown Denver Happy Hour Discovery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --background-color: #0f172a;
+            --card-background-color: #1e293b;
+            --card-border-color: #334155;
+            --color: #f1f5f9;
+            --muted-color: #94a3b8;
+        }
+        
+        body {
+            background-color: var(--background-color);
+            color: var(--color);
+        }
+        
+        .district-card {
+            background: var(--card-background-color);
+            border: 1px solid var(--card-border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+        
+        .restaurant-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .restaurant-card {
+            background: #334155;
+            border-radius: 6px;
+            padding: 1rem;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .status-active { color: #10b981; }
+        .status-unknown { color: #f59e0b; }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .stat-card {
+            text-align: center;
+            background: var(--card-background-color);
+            padding: 1rem;
+            border-radius: 6px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <header style="text-align: center; margin: 2rem 0;">
+            <h1>🍻 Downtown Denver Happy Hour Discovery</h1>
+            <p>Comprehensive happy hour guide for downtown Denver core + adjacent districts</p>
+            <small>Generated 2025-08-17</small>
+        </header>
+        
+        <section class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div>Districts</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">70</div>
+                <div>Restaurants</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">10</div>
+                <div>With Deals</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">525</div>
+                <div>Total Deals</div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>🏙️ Geographic Coverage</h2>
+            <ul><li>Central District (LoDo, Capitol Hill, CBD, Union Station)</li><li>Northwest Denver (Highland, Berkeley, Sunnyside)</li><li>North Denver (RiNo, Five Points, Curtis Park)</li></ul></section>
+        <section class="district-card">
+            <h2>📍 Central</h2>
+            <p><strong>43</strong> restaurants • <strong>525</strong> deals</p>
+            
+            <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <h4>Jovanina's Broken Italian</h4>
+                        <p><strong>LoDo</strong> • Italian</p>
+                        <p class="status-active">📊 44 deals</p>
+                        <small>1520 Blake St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Blue Sushi Sake Grill</h4>
+                        <p><strong>LoDo</strong> • Sushi</p>
+                        <p class="status-active">📊 86 deals</p>
+                        <small>1616 16th St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Osteria Marco</h4>
+                        <p><strong>LoDo</strong> • Italian</p>
+                        <p class="status-active">📊 148 deals</p>
+                        <small>1453 Larimer St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Rioja</h4>
+                        <p><strong>LoDo</strong> • Mediterranean</p>
+                        <p class="status-active">📊 29 deals</p>
+                        <small>1431 Larimer St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>STK</h4>
+                        <p><strong>LoDo</strong> • Steakhouse</p>
+                        <p class="status-active">📊 7 deals</p>
+                        <small>1550 Market St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Urban Farmer</h4>
+                        <p><strong>LoDo</strong> • Steakhouse</p>
+                        <p class="status-active">📊 33 deals</p>
+                        <small>1659 Wazee St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Tamayo</h4>
+                        <p><strong>LoDo</strong> • Mexican</p>
+                        <p class="status-active">📊 12 deals</p>
+                        <small>1400 Larimer St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Corridor 44</h4>
+                        <p><strong>LoDo</strong> • French</p>
+                        <p class="status-active">📊 16 deals</p>
+                        <small>1433 Larimer St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Thirsty Lion</h4>
+                        <p><strong>Union Station</strong> • None</p>
+                        <p class="status-active">📊 70 deals</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>A5 Steakhouse</h4>
+                        <p><strong>Union Station</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1600 15th St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Mercantile</h4>
+                        <p><strong>Union Station</strong> • American</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1701 Wynkoop St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Fogo de Chão</h4>
+                        <p><strong>Union Station</strong> • Brazilian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1513 Wynkoop St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Tavernetta</h4>
+                        <p><strong>Ballpark / Union Station</strong> • Italian</p>
+                        <p class="status-active">📊 80 deals</p>
+                        <small>1889 Sixteenth Street, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ultreia</h4>
+                        <p><strong>Ballpark / Union Station</strong> • Tapas</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1970 17th St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Sunday Vinyl</h4>
+                        <p><strong>Ballpark / Union Station</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1803 16th St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Foraged</h4>
+                        <p><strong>Ballpark / Union Station</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1825 Blake St #100, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ajax Downtown</h4>
+                        <p><strong>Ballpark / Union Station</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Mecha Noodle Bar</h4>
+                        <p><strong>Ballpark / RiNo</strong> • Asian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Wonderyard Garden \+ Table</h4>
+                        <p><strong>Ballpark / Five Points</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2200 Larimer St, Denver, CO 80205</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Done Deal</h4>
+                        <p><strong>CBD</strong> • Cocktail bar</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>4 Hero Gallery Paused, Press To Play Images Slides Playing Hero Gallery, PR</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Bezel Bar</h4>
+                        <p><strong>CBD</strong> • Cocktail Bar</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>26 Grenache Blanc, Paso Robles, CE</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Panzano</h4>
+                        <p><strong>CBD</strong> • Italian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Guard and Grace</h4>
+                        <p><strong>CBD</strong> • Steakhouse</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>18 Hot Chicken Sandwich Fried Chicken Breast, Hot Honey, DI</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Corinne Denver</h4>
+                        <p><strong>CBD</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1455 California St, Denver, CO 80202</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>White Pie</h4>
+                        <p><strong>City Park West</strong> • Pizza</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Fire Lounge</h4>
+                        <p><strong>Civic Center</strong> • American</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>City O’ City</h4>
+                        <p><strong>Capitol Hill</strong> • Vegetarian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3 Eachsmoked Black Oyster Mushroom, Chimichurri Slaw, CH</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Bang Up to the Elephant</h4>
+                        <p><strong>Capitol Hill</strong> • Beach / Tropical</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>100% de Agave</h4>
+                        <p><strong>Capitol Hill</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>975 Lincoln St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>9th Door</h4>
+                        <p><strong>Capitol Hill</strong> • Tapas</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Vesper Lounge</h4>
+                        <p><strong>Capitol Hill</strong> • Mediterranean</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>233 E 7th Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Watercourse Foods</h4>
+                        <p><strong>North Capitol Hill</strong> • Vegetarian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ace Eat Serve</h4>
+                        <p><strong>North Capitol Hill</strong> • Asian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>002 Oz. Australian Wagyu, Shiso Chimichurri, MA</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Xiquita Restaurante y Bar</h4>
+                        <p><strong>North Capitol Hill</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Go Fish Sushi</h4>
+                        <p><strong>Baker</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>None</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Punchbowl Social</h4>
+                        <p><strong>Baker</strong> • American</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>5 Arcade Card Per Day- Bonus: (1) Silent Disco Ticket Per Event (Value $10), August 8, SE</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Rocky Yama Sushi</h4>
+                        <p><strong>Lincoln Park</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>801 Santa Fe Dr</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Adrift</h4>
+                        <p><strong>Speer</strong> • Tiki</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>9 Gin, Lemon, PA</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>La Forêt</h4>
+                        <p><strong>Speer</strong> • French</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>38 S Broadway, Denver, CO</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ronin Congress Park</h4>
+                        <p><strong>Congress Park</strong> • Japanese</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1160 Madison St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Shells and Sauce</h4>
+                        <p><strong>Congress Park</strong> • Italian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2091 Facebook Twitter Email Jobs Contact Email Signup Powered By Bentobox Leave This Field Blank Email Signup Pl</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Bar Max</h4>
+                        <p><strong>Congress Park</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2412 E Colfax Avenue, Denver, CO 80206</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Sap Sua</h4>
+                        <p><strong>Congress Park</strong> • Vietnamese</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2550 E Colfax Avenue, Denver, CO 80206</small>
+                    </div></div></section>
+        <section class="district-card">
+            <h2>📍 Northwest Denver</h2>
+            <p><strong>19</strong> restaurants • <strong>0</strong> deals</p>
+            
+            <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <h4>Wild taco</h4>
+                        <p><strong>Berkeley</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>123 Organic, Denver, CO</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ginger Pig</h4>
+                        <p><strong>Berkeley</strong> • Asian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>4262 Lowell Blvd Denver, Co 80211 ​Boulder Location(720) 756-2823 1203 13Th Street Boulder, CO 80302</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Vital Root</h4>
+                        <p><strong>Berkeley</strong> • Plant-Based</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3915 Tennyson St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>El Five</h4>
+                        <p><strong>Highland</strong> • Mediterranean</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2930 Umatilla St Unit \#500, Denver, CO 80211</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Kumoya - Denver</h4>
+                        <p><strong>Highland</strong> • Japanese</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>00 Am Find A Table Submit The Reservation Form Pl</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Alma Fonda Fina</h4>
+                        <p><strong>Highland</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>5 Do We Host Private Parties? We Are Not Hosting Private Events At This Time, Denver, CO</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>The Bindery</h4>
+                        <p><strong>Highland</strong> • Global</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1817 Central Street, Denver, CO</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Bamboo Sushi</h4>
+                        <p><strong>Highland</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3000 Vallejo Street, Denver, CO</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Bar Dough</h4>
+                        <p><strong>Highland</strong> • Italian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>25 Best Restaurants By 5280 Magazine, Best Steakhouse In Denver By Tasting Table, BE</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Root Down</h4>
+                        <p><strong>Highland</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1600 W 33rd Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Gaetano’s Eccellente Cucina & Cocktails</h4>
+                        <p><strong>Highland</strong> • Italian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3760 Tejon St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Linger</h4>
+                        <p><strong>Highland</strong> • Global</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2030 W 30th Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Kawa Ni</h4>
+                        <p><strong>Highland</strong> • Japanese</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>1900 W 32nd Ave, Denver, CO 80211</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Ash'Kara</h4>
+                        <p><strong>Highland</strong> • Mediterranean</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2005 W 33rd Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Senor Bear</h4>
+                        <p><strong>Highland</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3301 Tejon St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>American Elm</h4>
+                        <p><strong>West Highland</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>4132 W 38th Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Tacos Tequila Whiskey</h4>
+                        <p><strong>West Highland</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3300 W 32nd Ave</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Glo Noodle House</h4>
+                        <p><strong>West Highland</strong> • Asian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>4450 W 38th Ave. Suite \#130</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Necio Mexican Kitchen</h4>
+                        <p><strong>Sunnyside</strong> • Mexican</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>4001 Tejon St</small>
+                    </div></div></section>
+        <section class="district-card">
+            <h2>📍 North Denver</h2>
+            <p><strong>8</strong> restaurants • <strong>0</strong> deals</p>
+            
+            <div class="restaurant-grid">
+                    <div class="restaurant-card">
+                        <h4>Painted RiNo Kitchen \+ Bar</h4>
+                        <p><strong>RiNo / Five Points</strong> • Colorado</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>Address unavailable</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Temaki Den</h4>
+                        <p><strong>RiNo / Five Points</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3350 Brighton Blvd Unit 100, Denver</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Dio Mio</h4>
+                        <p><strong>Curtis Park / Five Points</strong> • Italian</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>3264 Larimer St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Sushi Rama</h4>
+                        <p><strong>RiNo / Ballpark / Five Points</strong> • Sushi</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2615 Larimer St</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Uchi</h4>
+                        <p><strong>Curtis / Ballpark / Five Points</strong> • Japanese</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2500 lawrence st</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Work & Class</h4>
+                        <p><strong>Curtis / Ballpark / Five Points</strong> • American / Latin</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2500 Larimer St, Suite 101</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Welton Room</h4>
+                        <p><strong>Five Points</strong> • American</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2590 Welton Street</small>
+                    </div>
+                    <div class="restaurant-card">
+                        <h4>Point Easy Denver</h4>
+                        <p><strong>Whittier</strong> • None</p>
+                        <p class="status-unknown">📊 No deals found</p>
+                        <small>2000 E 28th Ave</small>
+                    </div></div></section>
+        <footer style="text-align: center; margin: 3rem 0; color: var(--muted-color);">
+            <p>🤖 Generated with <a href="https://claude.ai/code">Claude Code</a></p>
+            <p>Data sourced from restaurant websites via respectful web scraping</p>
+        </footer>
+    </main>
+</body>
+</html>

@@ -65,7 +65,7 @@ class ExtractionSpider(scrapy.Spider):
         'p', 'div', 'span', 'li'
     ]
     
-    def __init__(self, input_file='data/discovered_pages.json', *args, **kwargs):
+    def __init__(self, input_file='data/discovered_urls.json', *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.input_file = input_file
         self.discovered_pages = self._load_discovered_pages()

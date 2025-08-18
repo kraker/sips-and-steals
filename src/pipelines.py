@@ -689,7 +689,7 @@ class JSONExportPipeline:
         """Export collected data to JSON files"""
         # Export deals
         if self.deals:
-            deals_file = self.output_dir / 'scrapy_deals.json'
+            deals_file = self.output_dir / 'deals.json'
             with open(deals_file, 'w', encoding='utf-8') as f:
                 json.dump({
                     'exported_at': datetime.now().isoformat(),
@@ -701,7 +701,7 @@ class JSONExportPipeline:
         
         # Export discovered pages  
         if self.discovered_pages:
-            pages_file = self.output_dir / 'discovered_pages.json'
+            pages_file = self.output_dir / 'discovered_urls.json'
             with open(pages_file, 'w', encoding='utf-8') as f:
                 json.dump({
                     'exported_at': datetime.now().isoformat(),
@@ -870,7 +870,7 @@ class MenuPricingPipeline:
         output_dir.mkdir(exist_ok=True)
         
         # Export pricing data
-        pricing_file = output_dir / 'menu_pricing.json'
+        pricing_file = output_dir / 'cache/menu_pricing_debug.json'
         with open(pricing_file, 'w', encoding='utf-8') as f:
             json.dump({
                 'exported_at': datetime.now().isoformat(),
@@ -1060,7 +1060,7 @@ class HappyHourDealsPipeline:
         output_dir.mkdir(exist_ok=True)
         
         # Export deals data
-        deals_file = output_dir / 'happy_hour_deals.json'
+        deals_file = output_dir / 'cache/happy_hour_deals_debug.json'
         with open(deals_file, 'w', encoding='utf-8') as f:
             json.dump({
                 'exported_at': datetime.now().isoformat(),

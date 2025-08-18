@@ -211,10 +211,14 @@ No formal test framework is configured. Testing is done via direct script execut
 - **`scripts/`** - Utility tools for data processing and analysis
 - **`config/scrapers/`** - YAML configuration files for restaurant-specific settings
 
-**Single Source Data Architecture**: Consolidated data management
+**Single Source Data Architecture**: Consolidated data management (Schema v2.0)
 - **`data/restaurants.json`** - Master database with restaurant metadata and static deals
-- **`data/deals.json`** - Live scraped deals with timestamps and confidence scores  
+- **`data/deals.json`** - Consolidated live scraped deals from all sources
+- **`data/discovered_urls.json`** - Happy hour page URLs discovered by crawlers  
+- **`data/discovered_links.json`** - All links discovered during crawling
+- **`data/cache/`** - Operational status files and debug outputs
 - **`data/archives/`** - Historical deal snapshots for trend analysis
+- **`data/archive/testing/`** - Archived test data and proof-of-concept files
 - **`archive/`** - Preserved legacy systems (original scrapers, site generation)
 - 106 restaurants across 11 Denver districts with comprehensive metadata
 

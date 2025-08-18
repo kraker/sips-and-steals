@@ -1,0 +1,37 @@
+{
+  "last_updated": "2025-08-18T00:00:00.000000",
+  "schema_version": "2.0",
+  "data_files": {
+    "restaurants.json": {
+      "purpose": "Master restaurant database",
+      "total_restaurants": 106,
+      "districts": 11
+    },
+    "deals.json": {
+      "purpose": "Live scraped deals consolidated from all sources",
+      "total_deals": 525,
+      "data_quality": {
+        "high": 525,
+        "experimental": 0
+      }
+    },
+    "discovered_urls.json": {
+      "purpose": "Happy hour page URLs discovered by crawlers",
+      "total_pages": 849
+    },
+    "discovered_links.json": {
+      "purpose": "All links discovered during crawling",
+      "total_links": 7712
+    }
+  },
+  "schema_migration": {
+    "from_version": "1.0",
+    "migrated_at": "2025-08-18T00:00:00.000000",
+    "changes": [
+      "Consolidated scrapy_deals.json + happy_hour_deals.json → deals.json",
+      "Renamed discovered_pages.json → discovered_urls.json",
+      "Moved test/lodo files to archive/testing/",
+      "Removed redundant files: menu_pricing, pricing_summary, restaurant_profiles*"
+    ]
+  }
+}
