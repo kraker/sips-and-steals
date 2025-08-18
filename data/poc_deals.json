@@ -1,0 +1,1384 @@
+{
+  "metadata": {
+    "created_at": "2025-08-17T18:38:52.542888",
+    "purpose": "semantic_analysis_poc",
+    "target_restaurants": [
+      "thirsty-lion",
+      "jax-fish-house",
+      "tamayo",
+      "city-o-city",
+      "ajax-downtown"
+    ],
+    "source": "deals_archive"
+  },
+  "restaurants": {
+    "thirsty-lion": {
+      "raw_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Days: Sunday, Monday, Wednesday, Friday, Thursday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "sunday",
+            "monday",
+            "wednesday",
+            "friday",
+            "thursday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991086",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\",\"scripts_defer\",\"override_block_styles\",\"member_areas_feature\",\"nested_categories\",\"campaigns_merch_state\",\"supports_versioned_template_assets\",\"s_and_campaigns_redesign\",\"product_pages_sdk_opt_in_enabled\",\"campaigns_discount_section_in_blasts\",\"campaigns_new_image_layout_picker\",\"order_status_page_checkout_landing_enabled\",\"campaigns_thumbnail_layout\",\"marketing_landing_page\",\"i18n_beta_website_l",
+          "html_context": "<script data-name=\"static-context\">Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\",\"scripts_defer\",\"override_block_styles\",\"member_areas_feature\",\"nested_categories\",\"campaigns_merch_state\",\"supports_versioned_template_assets\",\"contacts_and_campaigns_redesign\",\"product_pages_sdk_opt_in_enabled\",\"campaigns_discount_section_in_blasts\",\"campaigns_new_image_layout_picker\",\"order_status_page_checkout_landing_enabled\",\"campaigns_thumbnail_layout\",\"marketing_landing_page\",\"i18n_beta_website_locales\",\"enable_form_submission_trigger\",\"section_sdk_product_pages_opt_in_modal\",\"campaigns_import_discounts\",\"campaigns_discount_section_in_automations\",\"marketing_automations\",\"section_sdk_product_pages_phase_two\"],\"facebookAppId\":\"314192535267336\",\"facebookApiVersion\":\"v6.0\",\"rollups\":{\"squarespace-announcement-bar\":{\"js\":\"//assets.squarespace.com/universal/scripts-compressed/announcement-bar-0d16305e6f7adcfc-min.en-US.js\"},\"squarespace-audio-player\"",
+          "extraction_patterns": [
+            "day_pattern_8"
+          ],
+          "raw_time_matches": [],
+          "raw_day_matches": [
+            "thu",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "wed",
+            "thu",
+            "thu",
+            "thu",
+            "Sun",
+            "Sun",
+            "Sun",
+            "Sun",
+            "fri",
+            "thu",
+            "Mon",
+            "Mon",
+            "Mon",
+            "Mon",
+            "mon",
+            "fri",
+            "wed",
+            "mon",
+            "Mon"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 pm - 6 pm",
+          "deal_type": "happy_hour",
+          "days_of_week": [],
+          "start_time": "3 pm",
+          "end_time": "6 pm",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991326",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close!",
+          "html_context": "<p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm &amp; Thurs -Sat from 9 pm-Close! </p>",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'pm')"
+          ],
+          "raw_day_matches": [
+            "Thurs -Sat",
+            "every day",
+            "fri",
+            "Thu",
+            "Sat"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 pm - Close",
+          "deal_type": "happy_hour",
+          "days_of_week": [],
+          "start_time": "9 pm",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.991353",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close!",
+          "html_context": "<p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm &amp; Thurs -Sat from 9 pm-Close! </p>",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3"
+          ],
+          "raw_time_matches": [
+            "('9', 'pm', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs -Sat",
+            "every day",
+            "fri",
+            "Thu",
+            "Sat"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994084",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'PM')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 pm - 6 pm | Days: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 pm",
+          "end_time": "6 pm",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994247",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('3', '', '6', 'pm')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - Close | Days: Thursday, Friday, Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994422",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('9', 'PM', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 pm - Close | Days: Thursday, Friday, Saturday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "thursday",
+            "friday",
+            "saturday"
+          ],
+          "start_time": "9 pm",
+          "end_time": "Close",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:03.994582",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and event days Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every day from 3-6 pm & Thurs -Sat from 9 pm-Close! Make your  today! HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Teq",
+          "html_context": "<main class=\"container\" id=\"page\" role=\"main\">\n<article class=\"sections\" data-page-sections=\"6137d45b46955a447b79a640\" id=\"sections\">\n<section class=\"page-section layout-engine-section background-width--full-bleed section-height--small content-width--narrow horizontal-alignment--center vertical-alignment--middle has-background black\" data-animation=\"none\" data-controller=\"SectionWrapperController\" data-current-context='{\n\"video\": {\n\"playbackSpeed\": 0.5,\n\"filter\": 1,\n\"filterStrength\": 0,\n\"zoom\": 0,\n\"videoSourceProvider\": \"none\"\n},\n\"backgroundImageId\": null,\n\"backgroundMediaEffect\": null,\n\"divider\": null,\n\"typeName\": \"page\"\n}' data-current-styles='{\n\"backgroundImage\": {\n\"id\": \"6137d615ea47387a7a5e5950\",\n\"recordType\": 2,\n\"addedOn\": 1631049237351,\n\"updatedOn\": 1743011640389,\n\"workflowState\": 1,\n\"publishOn\": 1631049237351,\n\"authorId\": \"67e43f3831779c0b384f9b78\",\n\"systemDataId\": \"2afa798e-a344-4122-b08a-f028201c02fd\",\n\"systemDataVariants\": \"1950x1300,100w,300w,500w,750w,1000w,1500w\",\n\"system",
+          "extraction_patterns": [
+            "time_pattern_0",
+            "time_pattern_3",
+            "time_pattern_4"
+          ],
+          "raw_time_matches": [
+            "('9', 'pm', 'Close')"
+          ],
+          "raw_day_matches": [
+            "Thurs-Sat",
+            "Thurs -Sat",
+            "Daily",
+            "every day",
+            "Thu",
+            "Sat",
+            "fri",
+            "Thu",
+            "Sat",
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Days: Friday, Monday, Wednesday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "friday",
+            "monday",
+            "wednesday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T18:27:04.019514",
+          "source_url": null,
+          "confidence_score": 1.0,
+          "extraction_method": "universal_html_section",
+          "source_text": "HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New Amsterdam Vodka, ginger beer, lime juice, simple syrup and a wedge lime. $ 9.95 $ 9.95 THIRSTY LION MARGARITA Sauza Hacienda Tequila, sweet & sour, agave, muddled lime and triple sec. $ 9.95 $ 7.95 LION LEMONADE Smirnoff Citrus Vodka, raspberry liqueur, lemon, Sprite, sweet & sour and simple syrup. $ 7.95 $ 9.95 SPICY MANGO MARGARITA Jalapenos, Sauza Hacienda tequila, sweet & sour, fresh lime juic",
+          "html_context": "<div class=\"content\">\n<div class=\"sqs-layout sqs-grid-12 columns-12\" data-type=\"page-section\" id=\"page-section-6137d45b46955a447b79a649\"><div class=\"row sqs-row\"><div class=\"col sqs-col-12 span-12\"><div class=\"sqs-block html-block sqs-block-html\" data-block-type=\"2\" data-border-radii='{\"topLeft\":{\"unit\":\"px\",\"value\":0.0},\"topRight\":{\"unit\":\"px\",\"value\":0.0},\"bottomLeft\":{\"unit\":\"px\",\"value\":0.0},\"bottomRight\":{\"unit\":\"px\",\"value\":0.0}}' data-sqsp-block=\"text\" id=\"block-1c2fb1937bcf3208cd9e\"><div class=\"sqs-block-content\">\n<div class=\"sqs-html-content\" data-sqsp-text-block-content=\"\">\n<h3 style=\"text-align:center;white-space:pre-wrap;\">HAPPY HOUR MENU</h3><p class=\"\" style=\"text-align:center;white-space:pre-wrap;\">*Prices vary at the Denver, CO location</p>\n</div>\n</div></div><div class=\"sqs-block menu-block sqs-block-menu\" data-block-type=\"18\" id=\"block-7d3109d955e7f892b93f\"><div class=\"sqs-block-content\">\n<div class=\"menu-wrapper menu-style-classic\">\n<div class=\"menus\">\n<div aria-labe",
+          "extraction_patterns": [
+            "day_pattern_8"
+          ],
+          "raw_time_matches": [],
+          "raw_day_matches": [
+            "wed",
+            "MON",
+            "mon",
+            "wed",
+            "mon",
+            "mon",
+            "FRI",
+            "FRI",
+            "fri",
+            "fri",
+            "FRI",
+            "fri",
+            "fri",
+            "MON",
+            "mon",
+            "FRI"
+          ]
+        }
+      ],
+      "semantic_analysis": {
+        "restaurant_slug": "thirsty-lion",
+        "total_deals": 8,
+        "analyzed_at": "2025-08-17T18:38:52.543546",
+        "time_clusters": {
+          "no_time": [
+            {
+              "deal_index": 0,
+              "start_time": null,
+              "end_time": null,
+              "raw_time_matches": [],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\","
+            },
+            {
+              "deal_index": 7,
+              "start_time": null,
+              "end_time": null,
+              "raw_time_matches": [],
+              "confidence_score": 1.0,
+              "source_text_snippet": "HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New "
+            }
+          ],
+          "3pm_6pm": [
+            {
+              "deal_index": 1,
+              "start_time": "3 pm",
+              "end_time": "6 pm",
+              "raw_time_matches": [
+                "('3', '', '6', 'pm')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every d"
+            },
+            {
+              "deal_index": 3,
+              "start_time": "3 PM",
+              "end_time": "6 PM",
+              "raw_time_matches": [
+                "('3', '', '6', 'PM')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            },
+            {
+              "deal_index": 4,
+              "start_time": "3 pm",
+              "end_time": "6 pm",
+              "raw_time_matches": [
+                "('3', '', '6', 'pm')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            }
+          ],
+          "9pm_close": [
+            {
+              "deal_index": 2,
+              "start_time": "9 pm",
+              "end_time": "Close",
+              "raw_time_matches": [
+                "('9', 'pm', 'Close')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every d"
+            },
+            {
+              "deal_index": 5,
+              "start_time": "9 PM",
+              "end_time": "Close",
+              "raw_time_matches": [
+                "('9', 'PM', 'Close')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            },
+            {
+              "deal_index": 6,
+              "start_time": "9 pm",
+              "end_time": "Close",
+              "raw_time_matches": [
+                "('9', 'pm', 'Close')"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            }
+          ]
+        },
+        "day_clusters": {
+          "friday_monday_sunday_thursday_wednesday": [
+            {
+              "deal_index": 0,
+              "days_of_week": [
+                "sunday",
+                "monday",
+                "wednesday",
+                "friday",
+                "thursday"
+              ],
+              "raw_day_matches": [
+                "thu",
+                "wed",
+                "wed",
+                "wed",
+                "wed",
+                "wed",
+                "wed",
+                "wed",
+                "thu",
+                "thu",
+                "thu",
+                "Sun",
+                "Sun",
+                "Sun",
+                "Sun",
+                "fri",
+                "thu",
+                "Mon",
+                "Mon",
+                "Mon",
+                "Mon",
+                "mon",
+                "fri",
+                "wed",
+                "mon",
+                "Mon"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Static = window.Static || {}; Static.SQUARESPACE_CONTEXT = {\"betaFeatureFlags\":[\"new_stacked_index\","
+            }
+          ],
+          "no_days": [
+            {
+              "deal_index": 1,
+              "days_of_week": [],
+              "raw_day_matches": [
+                "Thurs -Sat",
+                "every day",
+                "fri",
+                "Thu",
+                "Sat"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every d"
+            },
+            {
+              "deal_index": 2,
+              "days_of_week": [],
+              "raw_day_matches": [
+                "Thurs -Sat",
+                "every day",
+                "fri",
+                "Thu",
+                "Sat"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "Meeting up with friends after work for drinks is what it’s all about! Join us for Happy Hour every d"
+            }
+          ],
+          "daily": [
+            {
+              "deal_index": 3,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [
+                "Thurs-Sat",
+                "Thurs -Sat",
+                "Daily",
+                "every day",
+                "Thu",
+                "Sat",
+                "fri",
+                "Thu",
+                "Sat",
+                "wed",
+                "MON",
+                "mon",
+                "wed",
+                "mon",
+                "mon",
+                "FRI",
+                "FRI",
+                "fri",
+                "fri",
+                "FRI",
+                "fri",
+                "fri",
+                "MON",
+                "mon",
+                "FRI"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            },
+            {
+              "deal_index": 4,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [
+                "Thurs-Sat",
+                "Thurs -Sat",
+                "Daily",
+                "every day",
+                "Thu",
+                "Sat",
+                "fri",
+                "Thu",
+                "Sat",
+                "wed",
+                "MON",
+                "mon",
+                "wed",
+                "mon",
+                "mon",
+                "FRI",
+                "FRI",
+                "fri",
+                "fri",
+                "FRI",
+                "fri",
+                "fri",
+                "MON",
+                "mon",
+                "FRI"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            }
+          ],
+          "friday_saturday_thursday": [
+            {
+              "deal_index": 5,
+              "days_of_week": [
+                "thursday",
+                "friday",
+                "saturday"
+              ],
+              "raw_day_matches": [
+                "Thurs-Sat",
+                "Thurs -Sat",
+                "Daily",
+                "every day",
+                "Thu",
+                "Sat",
+                "fri",
+                "Thu",
+                "Sat",
+                "wed",
+                "MON",
+                "mon",
+                "wed",
+                "mon",
+                "mon",
+                "FRI",
+                "FRI",
+                "fri",
+                "fri",
+                "FRI",
+                "fri",
+                "fri",
+                "MON",
+                "mon",
+                "FRI"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            },
+            {
+              "deal_index": 6,
+              "days_of_week": [
+                "thursday",
+                "friday",
+                "saturday"
+              ],
+              "raw_day_matches": [
+                "Thurs-Sat",
+                "Thurs -Sat",
+                "Daily",
+                "every day",
+                "Thu",
+                "Sat",
+                "fri",
+                "Thu",
+                "Sat",
+                "wed",
+                "MON",
+                "mon",
+                "wed",
+                "mon",
+                "mon",
+                "FRI",
+                "FRI",
+                "fri",
+                "fri",
+                "FRI",
+                "fri",
+                "fri",
+                "MON",
+                "mon",
+                "FRI"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "JOIN US FOR HAPPY HOUR! Available Daily 3-6 PM  & Thurs-Sat 9PM-Close *Excludes some holidays and ev"
+            }
+          ],
+          "friday_monday_wednesday": [
+            {
+              "deal_index": 7,
+              "days_of_week": [
+                "friday",
+                "monday",
+                "wednesday"
+              ],
+              "raw_day_matches": [
+                "wed",
+                "MON",
+                "mon",
+                "wed",
+                "mon",
+                "mon",
+                "FRI",
+                "FRI",
+                "fri",
+                "fri",
+                "FRI",
+                "fri",
+                "fri",
+                "MON",
+                "mon",
+                "FRI"
+              ],
+              "confidence_score": 1.0,
+              "source_text_snippet": "HAPPY HOUR MENU *Prices vary at the Denver, CO location HAPPY HOUR COCKTAILS $ 9.95 MOSCOW MULE New "
+            }
+          ]
+        },
+        "semantic_groups": [
+          {
+            "content_key": "",
+            "deal_indices": [
+              0,
+              1,
+              3,
+              4,
+              7
+            ],
+            "similarity_score": 0.6800000000000002
+          },
+          {
+            "content_key": "close",
+            "deal_indices": [
+              2,
+              5,
+              6
+            ],
+            "similarity_score": 0.6000000000000001
+          }
+        ],
+        "confidence_distribution": {
+          "mean": 1.0,
+          "min": 1.0,
+          "max": 1.0,
+          "high_confidence_count": 8,
+          "low_confidence_count": 0,
+          "distribution": {
+            "1.0": 8
+          }
+        },
+        "extraction_methods": {
+          "universal_html_section": 8
+        },
+        "recommended_consolidation": [
+          {
+            "action": "merge_time_duplicates",
+            "time_signature": "no_time",
+            "source_indices": [
+              0,
+              7
+            ],
+            "recommended_representative": 0,
+            "confidence": 1.0,
+            "reasoning": "Multiple deals with identical time pattern: no_time"
+          },
+          {
+            "action": "merge_time_duplicates",
+            "time_signature": "3pm_6pm",
+            "source_indices": [
+              1,
+              3,
+              4
+            ],
+            "recommended_representative": 3,
+            "confidence": 1.0,
+            "reasoning": "Multiple deals with identical time pattern: 3pm_6pm"
+          },
+          {
+            "action": "merge_time_duplicates",
+            "time_signature": "9pm_close",
+            "source_indices": [
+              2,
+              5,
+              6
+            ],
+            "recommended_representative": 5,
+            "confidence": 1.0,
+            "reasoning": "Multiple deals with identical time pattern: 9pm_close"
+          }
+        ],
+        "quality_score": 0.75
+      },
+      "deal_count": 8
+    },
+    "jax-fish-house": {
+      "raw_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Found happy hour pattern: daily, daily",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:55:27.901464",
+          "source_url": null,
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM-5 PM | Days: monday, tuesday, wednesday, thursday, friday, saturday, sunday | Pricing: $1",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "5 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:55:27.903746",
+          "source_url": null,
+          "confidence_score": 0.9999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM-5 PM | Days: tuesday, sunday, monday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "tuesday",
+            "sunday",
+            "monday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "5 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T15:55:27.904947",
+          "source_url": null,
+          "confidence_score": 0.8999999999999999,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        }
+      ],
+      "semantic_analysis": {
+        "restaurant_slug": "jax-fish-house",
+        "total_deals": 3,
+        "analyzed_at": "2025-08-17T18:38:52.544356",
+        "time_clusters": {
+          "no_time": [
+            {
+              "deal_index": 0,
+              "start_time": null,
+              "end_time": null,
+              "raw_time_matches": [],
+              "confidence_score": 0.6,
+              "source_text_snippet": null
+            }
+          ],
+          "3pm_5pm": [
+            {
+              "deal_index": 1,
+              "start_time": "3 PM",
+              "end_time": "5 PM",
+              "raw_time_matches": [],
+              "confidence_score": 0.9999999999999999,
+              "source_text_snippet": null
+            },
+            {
+              "deal_index": 2,
+              "start_time": "3 PM",
+              "end_time": "5 PM",
+              "raw_time_matches": [],
+              "confidence_score": 0.8999999999999999,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "day_clusters": {
+          "daily": [
+            {
+              "deal_index": 0,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.6,
+              "source_text_snippet": null
+            },
+            {
+              "deal_index": 1,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.9999999999999999,
+              "source_text_snippet": null
+            }
+          ],
+          "monday_sunday_tuesday": [
+            {
+              "deal_index": 2,
+              "days_of_week": [
+                "tuesday",
+                "sunday",
+                "monday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.8999999999999999,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "semantic_groups": [],
+        "confidence_distribution": {
+          "mean": 0.8333333333333334,
+          "min": 0.6,
+          "max": 0.9999999999999999,
+          "high_confidence_count": 2,
+          "low_confidence_count": 0,
+          "distribution": {
+            "0.6": 1,
+            "1.0": 1,
+            "0.9": 1
+          }
+        },
+        "extraction_methods": {},
+        "recommended_consolidation": [
+          {
+            "action": "merge_time_duplicates",
+            "time_signature": "3pm_5pm",
+            "source_indices": [
+              1,
+              2
+            ],
+            "recommended_representative": 1,
+            "confidence": 0.9999999999999999,
+            "reasoning": "Multiple deals with identical time pattern: 3pm_5pm"
+          }
+        ],
+        "quality_score": 0.6166666666666667
+      },
+      "deal_count": 3
+    },
+    "tamayo": {
+      "raw_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 5 PM | Days: Monday - Friday",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "5 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T17:41:36.437046",
+          "source_url": null,
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        }
+      ],
+      "semantic_analysis": {
+        "restaurant_slug": "tamayo",
+        "total_deals": 1,
+        "analyzed_at": "2025-08-17T18:38:52.544654",
+        "time_clusters": {
+          "3pm_5pm": [
+            {
+              "deal_index": 0,
+              "start_time": "3 PM",
+              "end_time": "5 PM",
+              "raw_time_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "day_clusters": {
+          "weekdays": [
+            {
+              "deal_index": 0,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "semantic_groups": [],
+        "confidence_distribution": {
+          "mean": 0.8,
+          "min": 0.8,
+          "max": 0.8,
+          "high_confidence_count": 1,
+          "low_confidence_count": 0,
+          "distribution": {
+            "0.8": 1
+          }
+        },
+        "extraction_methods": {},
+        "recommended_consolidation": [],
+        "quality_score": 0.7
+      },
+      "deal_count": 1
+    },
+    "city-o-city": {
+      "raw_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Time: 3 PM - 6 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "3 PM",
+          "end_time": "6 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T17:43:31.612446",
+          "source_url": null,
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        },
+        {
+          "title": "Happy Hour",
+          "description": "Time: 9 PM - 10 PM | Days: EVERY DAY, Fri, FRI, fri, Fri",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday",
+            "saturday",
+            "sunday"
+          ],
+          "start_time": "9 PM",
+          "end_time": "10 PM",
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T17:43:31.612540",
+          "source_url": null,
+          "confidence_score": 0.8,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        }
+      ],
+      "semantic_analysis": {
+        "restaurant_slug": "city-o-city",
+        "total_deals": 2,
+        "analyzed_at": "2025-08-17T18:38:52.544924",
+        "time_clusters": {
+          "3pm_6pm": [
+            {
+              "deal_index": 0,
+              "start_time": "3 PM",
+              "end_time": "6 PM",
+              "raw_time_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            }
+          ],
+          "9pm_10pm": [
+            {
+              "deal_index": 1,
+              "start_time": "9 PM",
+              "end_time": "10 PM",
+              "raw_time_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "day_clusters": {
+          "daily": [
+            {
+              "deal_index": 0,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            },
+            {
+              "deal_index": 1,
+              "days_of_week": [
+                "monday",
+                "tuesday",
+                "wednesday",
+                "thursday",
+                "friday",
+                "saturday",
+                "sunday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.8,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "semantic_groups": [
+          {
+            "content_key": "day_every_fri",
+            "deal_indices": [
+              0,
+              1
+            ],
+            "similarity_score": 0.8
+          }
+        ],
+        "confidence_distribution": {
+          "mean": 0.8,
+          "min": 0.8,
+          "max": 0.8,
+          "high_confidence_count": 2,
+          "low_confidence_count": 0,
+          "distribution": {
+            "0.8": 2
+          }
+        },
+        "extraction_methods": {},
+        "recommended_consolidation": [
+          {
+            "action": "merge_semantic_duplicates",
+            "content_key": "day_every_fri",
+            "source_indices": [
+              0,
+              1
+            ],
+            "recommended_representative": 0,
+            "similarity_score": 0.8,
+            "reasoning": "Semantically similar deals with content: day_every_fri"
+          }
+        ],
+        "quality_score": 0.7
+      },
+      "deal_count": 2
+    },
+    "ajax-downtown": {
+      "raw_deals": [
+        {
+          "title": "Happy Hour",
+          "description": "Found happy hour pattern: FRIDAY, FRI",
+          "deal_type": "happy_hour",
+          "days_of_week": [
+            "friday"
+          ],
+          "start_time": null,
+          "end_time": null,
+          "start_time_24h": null,
+          "end_time_24h": null,
+          "timezone": "America/Denver",
+          "prices": [],
+          "is_all_day": false,
+          "special_notes": [],
+          "scraped_at": "2025-08-17T17:42:56.783943",
+          "source_url": null,
+          "confidence_score": 0.6,
+          "extraction_method": null,
+          "source_text": null,
+          "html_context": null,
+          "extraction_patterns": [],
+          "raw_time_matches": [],
+          "raw_day_matches": []
+        }
+      ],
+      "semantic_analysis": {
+        "restaurant_slug": "ajax-downtown",
+        "total_deals": 1,
+        "analyzed_at": "2025-08-17T18:38:52.545209",
+        "time_clusters": {
+          "no_time": [
+            {
+              "deal_index": 0,
+              "start_time": null,
+              "end_time": null,
+              "raw_time_matches": [],
+              "confidence_score": 0.6,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "day_clusters": {
+          "single_friday": [
+            {
+              "deal_index": 0,
+              "days_of_week": [
+                "friday"
+              ],
+              "raw_day_matches": [],
+              "confidence_score": 0.6,
+              "source_text_snippet": null
+            }
+          ]
+        },
+        "semantic_groups": [],
+        "confidence_distribution": {
+          "mean": 0.6,
+          "min": 0.6,
+          "max": 0.6,
+          "high_confidence_count": 0,
+          "low_confidence_count": 0,
+          "distribution": {
+            "0.6": 1
+          }
+        },
+        "extraction_methods": {},
+        "recommended_consolidation": [],
+        "quality_score": 0.3
+      },
+      "deal_count": 1
+    }
+  }
+}

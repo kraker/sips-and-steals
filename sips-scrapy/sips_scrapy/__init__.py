@@ -1,0 +1,1 @@
+# Sips and Steals Scrapy Project

@@ -1,0 +1,622 @@
+{
+  "exported_at": "2025-08-17T19:04:49.894384",
+  "total_links": 77,
+  "links": [
+    {
+      "url": "https://jovanina.com/#menus",
+      "anchor_text": "menus",
+      "source_url": "https://jovanina.com",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.761887"
+    },
+    {
+      "url": "https://jovanina.com/wp-content/uploads/2025/08/Dinner-Menu-8.5.2025.pdf",
+      "anchor_text": "menu",
+      "source_url": "https://jovanina.com",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.762496"
+    },
+    {
+      "url": "https://jovanina.com/wp-content/uploads/2025/05/Happy-Hour-Menu-Card8.pdf",
+      "anchor_text": "happy hour",
+      "source_url": "https://jovanina.com",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.762782"
+    },
+    {
+      "url": "https://jovanina.com",
+      "anchor_text": "menus",
+      "source_url": "https://jovanina.com",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "happy_hour_relevance_score": 0.5,
+      "discovered_at": "2025-08-17T19:04:47.763280"
+    },
+    {
+      "url": "https://www.thirstylionrestaurant.com/menu",
+      "anchor_text": "menu",
+      "source_url": "https://www.thirstylionrestaurant.com/colorado",
+      "restaurant_slug": "thirsty-lion",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.799012"
+    },
+    {
+      "url": "https://www.thirstylionrestaurant.com/menu",
+      "anchor_text": "menu",
+      "source_url": "https://www.thirstylionrestaurant.com/colorado",
+      "restaurant_slug": "thirsty-lion",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.799919"
+    },
+    {
+      "url": "https://www.thirstylionrestaurant.com/menu",
+      "anchor_text": "menu",
+      "source_url": "https://www.thirstylionrestaurant.com/colorado",
+      "restaurant_slug": "thirsty-lion",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.800548"
+    },
+    {
+      "url": "https://www.thirstylionrestaurant.com/menu",
+      "anchor_text": "view menu",
+      "source_url": "https://www.thirstylionrestaurant.com/colorado",
+      "restaurant_slug": "thirsty-lion",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.800908"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu",
+      "anchor_text": "menu",
+      "source_url": "https://www.bluesushisakegrill.com/locations/lodo",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:47.808168"
+    },
+    {
+      "url": "https://www.osteriamarco.com/#menu",
+      "anchor_text": "the food",
+      "source_url": "https://www.osteriamarco.com/",
+      "restaurant_slug": "osteria-marco",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.145796"
+    },
+    {
+      "url": "https://www.osteriamarco.com/#menu",
+      "anchor_text": "the food",
+      "source_url": "https://www.osteriamarco.com/",
+      "restaurant_slug": "osteria-marco",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.146448"
+    },
+    {
+      "url": "https://stksteakhouse.com/menus",
+      "anchor_text": "menus",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.286911"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/los-angeles/menu",
+      "anchor_text": "los angeles  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.290448"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-diego/menu",
+      "anchor_text": "san diego  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.290680"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-francisco/menu",
+      "anchor_text": "san francisco  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.290854"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/topanga/menu",
+      "anchor_text": "topanga  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291003"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/denver/menu",
+      "anchor_text": "denver  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291143"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/washington/menu",
+      "anchor_text": "washington dc  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291291"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/aventura/menu",
+      "anchor_text": "aventura  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291426"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/orlando/menu",
+      "anchor_text": "orlando  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291556"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/south-beach/menu",
+      "anchor_text": "south beach  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291719"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/atlanta/menu",
+      "anchor_text": "atlanta  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.291969"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/chicago/menu",
+      "anchor_text": "chicago  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292147"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/boston/menu",
+      "anchor_text": "boston  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292299"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/los-cabos/menu",
+      "anchor_text": "los cabos  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292441"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/las-vegas/menu",
+      "anchor_text": "las vegas  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292591"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-downtown/menu",
+      "anchor_text": "nyc – downtown  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292736"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-rooftop-downtown/menu",
+      "anchor_text": "nyc – rooftop  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.292872"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-midtown/menu",
+      "anchor_text": "nyc – midtown  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293007"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/charlotte/menu",
+      "anchor_text": "charlotte  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293155"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-juan/menu",
+      "anchor_text": "san juan  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293299"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nashville/menu",
+      "anchor_text": "nashville  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293440"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/dallas/menu",
+      "anchor_text": "dallas  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293582"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/salt-lake-city/menu",
+      "anchor_text": "salt lake city  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293738"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/bellevue/menu",
+      "anchor_text": "bellevue  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.293911"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/fallsview/menu",
+      "anchor_text": "niagara fallsview  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.294103"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/toronto/menu",
+      "anchor_text": "toronto  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.294244"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/doha/menu",
+      "anchor_text": "doha  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.294377"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/dubai/menu",
+      "anchor_text": "dubai  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.294526"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/london-stratford/menu",
+      "anchor_text": "london – stratford  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.294690"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/london-strand/menu",
+      "anchor_text": "london – strand  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.295114"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/milan/menu",
+      "anchor_text": "milan  menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.295303"
+    },
+    {
+      "url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "anchor_text": "menu",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 0.5,
+      "discovered_at": "2025-08-17T19:04:48.295605"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/menus",
+      "anchor_text": "menus",
+      "source_url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "restaurant_slug": "stk",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.296594"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/",
+      "anchor_text": "menus",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.599251"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/carryout/",
+      "anchor_text": "carryout",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.599541"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/lunch/",
+      "anchor_text": "lunch",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.599743"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/dinner/",
+      "anchor_text": "dinner",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.599894"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/brunch/",
+      "anchor_text": "brunch",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.600032"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/dessert/",
+      "anchor_text": "dessert",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.600175"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/wine-list/",
+      "anchor_text": "wine",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.600365"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "anchor_text": "happy hour/cocktails",
+      "source_url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "restaurant_slug": "rioja",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.600544"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "anchor_text": "denver",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.714589"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/philadelphia-menus/",
+      "anchor_text": "philadelphia",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.714805"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/portland-menus/",
+      "anchor_text": "portland",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.714954"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "anchor_text": "denver",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.715773"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/philadelphia-menus/",
+      "anchor_text": "philadelphia",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.715930"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/portland-menus/",
+      "anchor_text": "portland",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.716054"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/#dinner-menu-summer",
+      "anchor_text": "dinner",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.717204"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/#dessert-menu",
+      "anchor_text": "dessert",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:48.717472"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/#midday-menu",
+      "anchor_text": "midday lounge menu",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.717654"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/#happy-hour",
+      "anchor_text": "happy hour",
+      "source_url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "restaurant_slug": "urban-farmer",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:48.717802"
+    },
+    {
+      "url": "https://tamayodenver.com/menus",
+      "anchor_text": "menus",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.801367"
+    },
+    {
+      "url": "https://tamayodenver.com/specials",
+      "anchor_text": "happenings",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:49.801591"
+    },
+    {
+      "url": "https://tamayodenver.com/menus",
+      "anchor_text": "menus",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.802312"
+    },
+    {
+      "url": "https://tamayodenver.com/specials",
+      "anchor_text": "happenings",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:49.802475"
+    },
+    {
+      "url": "https://tamayodenver.com/menus",
+      "anchor_text": "menus",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.803013"
+    },
+    {
+      "url": "https://tamayodenver.com/specials",
+      "anchor_text": "happenings",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 0.6,
+      "discovered_at": "2025-08-17T19:04:49.803152"
+    },
+    {
+      "url": "https://tamayodenver.com/menus",
+      "anchor_text": "menus",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.804521"
+    },
+    {
+      "url": "https://tamayodenver.com/specials",
+      "anchor_text": "specials",
+      "source_url": "https://tamayodenver.com",
+      "restaurant_slug": "tamayo",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.804671"
+    },
+    {
+      "url": "https://www.corridor44.com/menu/",
+      "anchor_text": "dinner menu",
+      "source_url": "https://www.corridor44.com/",
+      "restaurant_slug": "corridor-44",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.873750"
+    },
+    {
+      "url": "https://www.corridor44.com/drink-menu/",
+      "anchor_text": "drink menu",
+      "source_url": "https://www.corridor44.com/",
+      "restaurant_slug": "corridor-44",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.873978"
+    },
+    {
+      "url": "https://www.corridor44.com/drink-menu/",
+      "anchor_text": "view drink menu",
+      "source_url": "https://www.corridor44.com/",
+      "restaurant_slug": "corridor-44",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.874315"
+    },
+    {
+      "url": "https://www.corridor44.com/menu/",
+      "anchor_text": "view dinner menu",
+      "source_url": "https://www.corridor44.com/",
+      "restaurant_slug": "corridor-44",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.874472"
+    },
+    {
+      "url": "https://www.tavernettadenver.com/menus/",
+      "anchor_text": "menus & wine list",
+      "source_url": "https://www.tavernettadenver.com",
+      "restaurant_slug": "tavernetta",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.888508"
+    },
+    {
+      "url": "https://www.tavernettadenver.com/menus/",
+      "anchor_text": "menus & wine list",
+      "source_url": "https://www.tavernettadenver.com",
+      "restaurant_slug": "tavernetta",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.889552"
+    },
+    {
+      "url": "https://www.tavernettadenver.com/menus",
+      "anchor_text": "view menus",
+      "source_url": "https://www.tavernettadenver.com",
+      "restaurant_slug": "tavernetta",
+      "happy_hour_relevance_score": 1.0,
+      "discovered_at": "2025-08-17T19:04:49.890967"
+    }
+  ]
+}

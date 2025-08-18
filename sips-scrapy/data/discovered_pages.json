@@ -1,0 +1,194 @@
+{
+  "exported_at": "2025-08-17T19:04:49.894093",
+  "total_pages": 10,
+  "pages": [
+    {
+      "url": "https://jovanina.com",
+      "title": "Jovanina's – broken italian",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "restaurant_name": "Jovanina's Broken Italian",
+      "happy_hour_likelihood": 0.6000000000000001,
+      "content_keywords": [
+        "saturday",
+        "happy hour",
+        "thursday",
+        "tuesday",
+        "friday"
+      ],
+      "discovered_at": "2025-08-17T19:04:47.761260",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n \n \n \n jovanina's – broken italian \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n \n \n \n/* <![cdata[ */\nwindow._wpemojisettings = {\"baseurl\":\"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/16.0.1\\/72x72\\/\",\"ext\":\".png\",\"svgurl\":\"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/16.0.1\\/svg\\/\",\"svgext\":\".svg\",\"source\":{\"concatemoji\":\"https:\\/\\/jovanina.com\\/wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.8.2\"}};\n/*! this file is auto-generated */\n!function(s,n)"
+    },
+    {
+      "url": "https://www.thirstylionrestaurant.com/colorado",
+      "title": "Colorado — Thirsty Lion",
+      "restaurant_slug": "thirsty-lion",
+      "restaurant_name": "Thirsty Lion",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "saturday",
+        "11pm",
+        "11am",
+        "sunday",
+        "10pm",
+        "10am"
+      ],
+      "discovered_at": "2025-08-17T19:04:47.796553",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n colorado — thirsty lion \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!ro"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/locations/lodo",
+      "title": "LoDo",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "saturday",
+        "12pm",
+        "happy hour",
+        "thursday",
+        "11am",
+        "monday",
+        "sunday",
+        "friday",
+        "10pm",
+        "10:30pm"
+      ],
+      "discovered_at": "2025-08-17T19:04:47.807811",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "lodo !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'scrip"
+    },
+    {
+      "url": "https://www.osteriamarco.com/",
+      "title": "Osteria Marco - Bonanno Concepts",
+      "restaurant_slug": "osteria-marco",
+      "restaurant_name": "Osteria Marco",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "happy hour",
+        "11am",
+        "3pm",
+        "monday",
+        "daily",
+        "sunday",
+        "5pm"
+      ],
+      "discovered_at": "2025-08-17T19:04:48.144731",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n      \n     \n     \n     \n     \n     \n\n     \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t\n\t \n\t osteria marco - bonanno concepts \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"webpage\",\"@id\":\"https://www.osteriamarco.com/\",\"url\":\"https://www.osteriamarco.com/\",\"name\":\"osteria marco - bonanno concepts\",\"ispartof\":{\"@id\":\"https://bonanno.wpenginepowered.com/#website\"},\"about\":{\"@id\":\"https://bonan"
+    },
+    {
+      "url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "title": "$3 $6 $9 Happy Hour - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "happy hour",
+        "weekend"
+      ],
+      "discovered_at": "2025-08-17T19:04:48.285882",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "title": "happy hour/cocktails | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "7 am",
+        "happy hour",
+        "4am"
+      ],
+      "discovered_at": "2025-08-17T19:04:48.598407",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t happy hour/cocktails | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jque"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "title": "Denver | Menu | Urban Farmer",
+      "restaurant_slug": "urban-farmer",
+      "restaurant_name": "Urban Farmer",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "saturday",
+        "9 am",
+        "happy hour",
+        "26am",
+        "2 pm",
+        "monday",
+        "sunday",
+        "2pm"
+      ],
+      "discovered_at": "2025-08-17T19:04:48.712627",
+      "content_type": "text/html; charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n     \n      \n\t \n\t \n\t \n\t denver | menu | urban farmer \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t \n\t \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\n\t \n\t \n\t \n\t \n\t \n\t \n\t\n\t\t  \n\t\n\n\t\n\t\n\t\n\t\n\t \n\t\n\t\n\t\n\t\n\t \n\n\t\n\t \n\t\t\twebfont.load({custom: { families: [\"super claredon\", \"logioso\", \"logisosonew\"] }, typekit: { id : \"ptf0nrl\" }  , google: { families: [\"playfair+display&display=swap\"] }});\n\t\t \n\t\t\t \n\t\t\t     \n\t\t\t    \t<link href=\"https://fonts.googleapis.com/css?family=playfair+display&display=swap&display=swap\" rel=\"stylesheet\" "
+    },
+    {
+      "url": "https://tamayodenver.com",
+      "title": "Best Mexican Restaurant in Downtown Denver | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "specials",
+        "thursday",
+        "tuesday",
+        "wednesday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T19:04:49.800475",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n best mexican restaurant in downtown denver | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runti"
+    },
+    {
+      "url": "https://www.corridor44.com/",
+      "title": "Corridor 44 | Denver's only Champagne Bar",
+      "restaurant_slug": "corridor-44",
+      "restaurant_name": "Corridor 44",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "friday",
+        "monday",
+        "happy hour",
+        "6pm"
+      ],
+      "discovered_at": "2025-08-17T19:04:49.873068",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\n\t corridor 44 | denver's only champagne bar \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if"
+    },
+    {
+      "url": "https://www.tavernettadenver.com",
+      "title": "Tavernetta | Italian Restaurant in Denver, CO",
+      "restaurant_slug": "tavernetta",
+      "restaurant_name": "Tavernetta",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "11:30 am",
+        "4 pm",
+        "saturday",
+        "happy hour",
+        "monday",
+        "sunday",
+        "friday",
+        "10 pm"
+      ],
+      "discovered_at": "2025-08-17T19:04:49.887724",
+      "content_type": "text/html; charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n     \n      \n\t \n\t \n\t \n\t tavernetta | italian restaurant in denver, co \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t \n\t \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\n\t \n\t \n\t \n\t \n\t \n\t \n\t\n\t\t  \n\t\n\n\t\n\t\n\t\n\t\n\t\n\t\n\t\n\t \n\n\t\n\t \n\t\t\twebfont.load({custom: { families: [\"brandongrotesque\"] }  , google: { families: [\"crimson text\", \"brawler\", \"reem+kufi&display=swap\"] }});\n\t\t \n\t\t\t \n\t\t\t     \n\t\t\t    \t<link href=\"https://fonts.googleapis.com/css?family=crimson text|brawler|reem+kufi&display=swap&display=swap\" rel=\"stylesheet\" type=\"t"
+    }
+  ]
+}
