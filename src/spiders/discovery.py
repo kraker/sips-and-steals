@@ -32,16 +32,57 @@ class DiscoverySpider(scrapy.Spider):
         r'\bdaily\s*specials?\b',
     ]
     
-    # URL patterns that often contain happy hour info
+    # URL patterns that often contain happy hour info and menu/pricing data
     URL_PATTERNS = [
         r'happy.*hour',
         r'specials?',
         r'deals?',
         r'menu',
+        r'food',
+        r'dining',
+        r'eat',
         r'drink',
         r'apr[eè]s',
         r'bar',
         r'lounge',
+        r'brunch',
+        r'lunch',
+        r'dinner',
+        r'prix.*fixe',
+        r'tasting.*menu',
+        r'chef.*menu',
+    ]
+    
+    # Menu-specific patterns for enhanced menu discovery
+    MENU_PATTERNS = [
+        r'\bmenu\b',
+        r'\bfood\b',
+        r'\bdining\b',
+        r'\beat\b',
+        r'\bbrunch\b',
+        r'\blunch\b',
+        r'\bdinner\b',
+        r'\bappetizers?\b',
+        r'\bentr[eé]es?\b',
+        r'\bmains?\b',
+        r'\bdesserts?\b',
+        r'\bbeverage\b',
+        r'\bcocktails?\b',
+        r'\bwine\s*list\b',
+        r'\bprix\s*fixe\b',
+        r'\btasting\s*menu\b',
+        r'\bchef.*menu\b',
+        r'\bseasonal\s*menu\b',
+    ]
+    
+    # Pricing indicators for content analysis  
+    PRICING_INDICATORS = [
+        r'\$\d+',           # $15
+        r'\$\d+\.\d{2}',    # $15.99
+        r'\$\d+\s*[-–]\s*\$?\d+',  # $10-15, $10-$15
+        r'market\s*price',
+        r'seasonal\s*price',
+        r'mp\b',            # Market Price abbreviation
     ]
     
     def __init__(self, restaurant_file='data/restaurants.json', *args, **kwargs):
@@ -193,13 +234,23 @@ class DiscoverySpider(scrapy.Spider):
         return None
     
     def _calculate_happy_hour_likelihood(self, text_content: str, url: str, title: str) -> float:
-        """Calculate likelihood that this page contains happy hour information"""
+        """Calculate likelihood that this page contains happy hour information and menu/pricing data"""
         score = 0.0
         
         # Check content for happy hour patterns
         for pattern in self.HAPPY_HOUR_PATTERNS:
             matches = len(re.findall(pattern, text_content, re.IGNORECASE))
             score += matches * 0.2  # Each match adds 0.2
+        
+        # Check content for menu patterns (NEW: menu discovery enhancement)
+        for pattern in self.MENU_PATTERNS:
+            matches = len(re.findall(pattern, text_content, re.IGNORECASE))
+            score += matches * 0.15  # Menu content is valuable for pricing
+        
+        # Check content for pricing indicators (NEW: pricing detection)
+        for pattern in self.PRICING_INDICATORS:
+            matches = len(re.findall(pattern, text_content, re.IGNORECASE))
+            score += matches * 0.25  # Pricing content is highly valuable
         
         # Check URL for relevant patterns
         url_lower = url.lower()
@@ -209,7 +260,7 @@ class DiscoverySpider(scrapy.Spider):
         
         # Check title for relevant terms
         title_lower = title.lower()
-        for pattern in self.HAPPY_HOUR_PATTERNS:
+        for pattern in self.HAPPY_HOUR_PATTERNS + self.MENU_PATTERNS:
             if re.search(pattern, title_lower):
                 score += 0.4
         
@@ -217,12 +268,15 @@ class DiscoverySpider(scrapy.Spider):
         time_patterns = [
             r'\d{1,2}\s*(?::\d{2})?\s*(?:am|pm)',  # Time mentions
             r'monday|tuesday|wednesday|thursday|friday|saturday|sunday',  # Days
-            r'\$\d+',  # Pricing
         ]
         for pattern in time_patterns:
             matches = len(re.findall(pattern, text_content, re.IGNORECASE))
             score += matches * 0.1
         
+        # Boost for PDF files (often contain menus with pricing)
+        if url_lower.endswith('.pdf'):
+            score += 0.5
+            
         # Normalize score to 0-1 range
         return min(score, 1.0)
     
@@ -301,13 +355,18 @@ class DiscoverySpider(scrapy.Spider):
                 )
     
     def _calculate_link_relevance(self, href: str, anchor_text: str) -> float:
-        """Calculate how relevant a link is for happy hour discovery"""
+        """Calculate how relevant a link is for happy hour discovery and menu/pricing content"""
         score = 0.0
         
         # Check anchor text for happy hour indicators
         for pattern in self.HAPPY_HOUR_PATTERNS:
             if re.search(pattern, anchor_text, re.IGNORECASE):
                 score += 0.4
+        
+        # Check anchor text for menu patterns (NEW: enhanced menu discovery)
+        for pattern in self.MENU_PATTERNS:
+            if re.search(pattern, anchor_text, re.IGNORECASE):
+                score += 0.35  # Menu content is valuable for pricing
         
         # Check URL for relevant patterns
         href_lower = href.lower()
@@ -321,6 +380,31 @@ class DiscoverySpider(scrapy.Spider):
             if term in anchor_text:
                 score += 0.5
             if term in href_lower:
+                score += 0.3
+        
+        # ENHANCED: Boost for menu-specific high-value terms
+        menu_high_value_terms = ['food menu', 'dinner menu', 'lunch menu', 'brunch menu', 
+                                'drink menu', 'cocktail menu', 'wine list', 'prix fixe', 
+                                'tasting menu', 'chef menu', 'seasonal menu']
+        for term in menu_high_value_terms:
+            if term in anchor_text:
+                score += 0.6  # Higher boost for specific menu types
+            if term in href_lower:
+                score += 0.4
+        
+        # ENHANCED: Boost for pricing-related terms
+        pricing_terms = ['prices', 'pricing', 'cost', '$', 'price list']
+        for term in pricing_terms:
+            if term in anchor_text:
+                score += 0.4
+            if term in href_lower:
+                score += 0.3
+        
+        # ENHANCED: Boost for PDF files (often contain menus with pricing)
+        if href_lower.endswith('.pdf'):
+            score += 0.5
+            # Extra boost if PDF has menu-related keywords
+            if any(keyword in href_lower for keyword in ['menu', 'food', 'drink', 'price']):
                 score += 0.3
         
         return min(score, 1.0)

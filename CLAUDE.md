@@ -67,6 +67,23 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - CSV data export for Excel compatibility
 - Command-line interface for manual execution
 
+### 🏗️ **Milestone 5: Repository Reorganization & Public Demo** (August 18, 2025)
+**Status**: ✅ COMPLETED
+
+**Goals Achieved**:
+- **Scrapy-First Architecture**: Promoted Scrapy framework to primary codebase (`src/`)
+- **Legacy Preservation**: Archived original scraper architecture and site generation
+- **Concise Organization**: Implemented consistent, professional naming conventions
+- **Public GitHub Pages Demo**: Created live LoDo dashboard showcasing capabilities
+- **Streamlined Structure**: Consolidated data, scripts, and configuration for clarity
+
+**Technical Deliverables**:
+- Reorganized `src/` to house Scrapy framework (spiders, pipelines, settings)
+- Created `scripts/` directory with concise utility names (`cli.py`, `fix_urls.py`, etc.)
+- Archived legacy systems to `archive/` (original scrapers, site generation, data)
+- Deployed interactive LoDo dashboard at GitHub Pages for public demonstration
+- Updated all configuration paths and import statements for new structure
+
 ---
 
 ## Recent Work (Current Sprint)
@@ -121,6 +138,11 @@ EOF
 - **Atomic scope**: One logical change per commit
 - **No fear of many commits**: Better to have 5 focused commits than 1 mixed commit
 
+### Documentation Maintenance
+- **README.md Updates**: Always update README.md when reaching significant milestones
+- **Architecture Changes**: Update both CLAUDE.md and README.md for major structural changes
+- **Public-Facing Features**: Ensure README reflects new capabilities for stakeholder presentation
+
 ### Examples by Type
 - **Data fixes**: `Fix duplicate neighborhoods in district metadata`
 - **Scraper updates**: `Add Bamboo Sushi day pattern validation`
@@ -139,24 +161,30 @@ All code in this project follows established style standards:
 
 ### Core Commands
 ```bash
-# Install dependencies (all pip dependencies managed via requirements.txt)
+# Install dependencies
 pip install -r requirements.txt
 playwright install chromium  # Required for JavaScript support
 
-# Run scraping system for live deals (now with JavaScript support)
-python scraper_cli.py scrape --district "Central" --workers 2
+# Main CLI interface (Scrapy-based)
+python scripts/cli.py status                     # System status
+python scripts/cli.py discover                   # Discover happy hour pages
+python scripts/cli.py extract                    # Extract deals from pages
+python scripts/cli.py pipeline                   # Run discovery + extraction
+python scripts/cli.py comprehensive              # Full discovery + extraction + profiling
 
-# Generate multi-page static website with live data
-python generate_site.py
+# Direct Scrapy commands
+python -m scrapy list                            # List available spiders
+python -m scrapy crawl discovery                 # Run discovery spider
+python -m scrapy crawl happy_hour_deals          # Extract happy hour deals
 
-# URL discovery and fixing
-python fix_restaurant_urls.py  # Dry run to identify broken URLs
-python fix_restaurant_urls.py --apply  # Apply URL fixes
-python fix_restaurant_urls.py --restaurant "restaurant-slug" --apply  # Fix specific restaurant
+# Data processing utilities
+python scripts/enrich_data.py                    # Add contact information
+python scripts/fix_times.py                      # Clean time parsing issues
+python scripts/fix_urls.py                       # Discover and fix broken URLs
+python scripts/district_analysis.py              # Generate district reports
 
-# System status and monitoring
-python scraper_cli.py status
-python scraper_cli.py quality --export
+# Public site (GitHub Pages)
+# Live demo available at: https://[username].github.io/sips-and-steals/
 ```
 
 ### Testing
@@ -166,19 +194,26 @@ No formal test framework is configured. Testing is done via direct script execut
 
 ### Core Components
 
-**Single Source Data Architecture**: Live scraping-based approach
-- **`data/restaurants.json`** - Single source of truth containing all restaurant data, static happy hour data, and scraping metadata
-- **`data/deals.json`** - Current live scraped deals with timestamps and confidence scores
-- **`data/deals_archive/`** - Historical deal archives for data persistence and analysis
-- **`legacy_archive/`** - Archived original Giovanni markdown and parser (legacy)
+**Scrapy-Based Data Mining Platform**: Production-ready web scraping framework
+- **`src/`** - Main Scrapy framework with spiders, pipelines, and settings
+- **`src/spiders/`** - Restaurant website crawlers and data extractors
+- **`src/pipelines.py`** - Data validation, cleaning, and export pipelines
+- **`scripts/`** - Utility tools for data processing and analysis
+- **`config/scrapers/`** - YAML configuration files for restaurant-specific settings
+
+**Single Source Data Architecture**: Consolidated data management
+- **`data/restaurants.json`** - Master database with restaurant metadata and static deals
+- **`data/deals.json`** - Live scraped deals with timestamps and confidence scores  
+- **`data/archives/`** - Historical deal snapshots for trend analysis
+- **`archive/`** - Preserved legacy systems (original scrapers, site generation)
 - 106 restaurants across 11 Denver districts with comprehensive metadata
 
-**Enhanced Scraper Framework**: Production-ready scraping system
-- `BaseScraper` class (`src/scrapers/base.py`) with robots.txt compliance
-- Built-in circuit breakers, retry logic, and adaptive delays to avoid bot detection
-- Individual restaurant scrapers inherit and implement custom scraping logic
-- Quality validation and confidence scoring for all scraped deals
-- Concurrent execution with configurable worker pools
+**Scrapy Framework**: Enterprise-grade crawling system
+- Respectful robots.txt compliance with adaptive delays
+- JavaScript support via Playwright for dynamic content sites
+- Multi-format processing: HTML, PDF, JSON-LD structured data
+- Quality validation and confidence scoring for all extracted deals
+- Concurrent execution with circuit breakers and retry logic
 
 **Enhanced Deal Data Structure**: Comprehensive deal objects with validation:
 ```python
@@ -201,16 +236,23 @@ class Deal:
 ### Key Workflows
 
 **Adding New Restaurant Scrapers**:
-1. Create new file in `src/scrapers/` (e.g., `restaurant_name.py`)
-2. Inherit from `BaseScraper`
-3. Implement custom `scrape_deals()` method returning List[Deal]
-4. Restaurant automatically included based on website URL in `data/restaurants.json`
+1. Create YAML config in `config/scrapers/restaurant-name.yaml` with URL patterns and selectors
+2. For complex sites: Create custom spider in `src/spiders/` inheriting from base spider classes
+3. Restaurant automatically discovered when added to `data/restaurants.json`
+4. Test extraction using `python scripts/cli.py extract --restaurant restaurant-name`
 
-**Data Processing Flow**:
-1. **Live Scraping**: `scraper_cli.py` collects live deals from restaurant websites and stores in `data/deals.json`
-2. **Data Merge**: `DataManager` prioritizes live deals over static data (3-tier fallback system)
-3. **Website Generation**: `generate_site.py` creates multi-page static website with live deal display
-4. **Archival**: Deals automatically archived to `data/deals_archive/` with timestamps
+**Scrapy Data Processing Pipeline**:
+1. **Discovery**: `discovery` spider crawls restaurant websites and identifies happy hour pages
+2. **Extraction**: `happy_hour_deals` spider processes discovered pages and extracts deal data
+3. **Validation**: Pipelines validate, clean, and score extracted deals for quality
+4. **Storage**: Processed deals saved to `data/deals.json` with metadata and timestamps
+5. **Archival**: Historical snapshots preserved in `data/archives/` for trend analysis
+
+**CLI Workflow**:
+1. **Status Check**: `python scripts/cli.py status` - View system health and coverage metrics
+2. **Full Pipeline**: `python scripts/cli.py comprehensive` - Run discovery + extraction + profiling
+3. **Data Enhancement**: `python scripts/enrich_data.py` - Add contact info and operational details
+4. **Quality Analysis**: `python scripts/cli.py analyze` - Generate quality reports and insights
 
 **Data Prioritization** (3-tier fallback system):
 1. **Fresh live deals** (< 7 days old) - highest priority
@@ -238,20 +280,25 @@ class Deal:
 - **Briar Common Brewery**: Fixed URL scraping (5 deals, confidence: 1.00)
 
 ### Web Output
-**Enhanced Multi-page Architecture**: 
-- `generate_site.py` creates a static site using Jinja2 templates and Pico CSS
-- Dark theme optimized for "The Discerning Urban Explorer" persona  
-- Responsive grid layout with restaurant cards and live data indicators
-- Individual restaurant profile pages (`docs/restaurants/{slug}.html`) with live deal sections
-- Semantic HTML with filtering by day, district, and cuisine
-- 106 restaurant pages + main index + statistics page with scraping metrics
-- Live vs. static data clearly distinguished with confidence indicators
+**GitHub Pages Public Demo**: Live demonstration of LoDo happy hour discovery
+- **`docs/index.html`** - Interactive LoDo dashboard with real-time status detection
+- **Dark theme** optimized for "The Discerning Urban Explorer" persona  
+- **Real-time features**: "Starting soon" alerts, current time awareness, live filtering
+- **Mobile-responsive**: Touch-friendly interface with embedded restaurant data
+- **Embedded data**: Self-contained HTML with restaurant profiles and deal information
+- **Public accessibility**: Deployed via GitHub Pages for stakeholder demonstration
 
-**Template System**:
-- `templates/base.html` - Base template with Pico CSS and dark theme
-- `templates/index.html` - Restaurant grid with live data badges and filtering
-- `templates/restaurant.html` - Individual restaurant profiles with live deal display
-- Custom Jinja2 filters for day range formatting ("Mon - Fri", "Daily", etc.)
+**Dashboard Features**:
+- **Status Indicators**: 🟢 Active Now, 🟡 Starting Soon, 🔴 Closed for each restaurant
+- **Time Intelligence**: Current day/time display with automatic status updates
+- **Contact Integration**: One-click calling, reservations, directions, website links
+- **Smart Filtering**: Filter by active status, upcoming deals, or view all restaurants
+- **Day Range Formatting**: Intelligent consecutive day display ("Mon-Fri", "Weekends")
+
+**Archive System**: Legacy site generation preserved
+- **`archive/site-generation/`** - Original Jinja2 template system and static site generator
+- **`archive/site-generation/docs/`** - Previous 106-restaurant static website
+- **`archive/site-generation/templates/`** - Original template architecture
 
 ## Roadmap & Future Enhancements
 

@@ -19,7 +19,7 @@ class ScrapyCLI:
     """Simple CLI for Scrapy-based scraping system"""
     
     def __init__(self):
-        self.project_dir = Path(__file__).parent
+        self.project_dir = Path(__file__).parent.parent  # Go up from scripts/ to root
         self.data_dir = self.project_dir / 'data'
         
         # Setup logging
@@ -85,6 +85,61 @@ class ScrapyCLI:
         except subprocess.CalledProcessError as e:
             print(f"❌ Extraction failed: {e}")
             return 1
+        
+        return 0
+    
+    def run_profile_extraction(self, args):
+        """Run restaurant profile extraction spider"""
+        print("🏢 Starting Restaurant Profile Extraction...")
+        print("Extracting comprehensive restaurant data from main pages")
+        
+        cmd = [
+            'scrapy', 'crawl', 'restaurant_profiler',
+            '-s', f'INPUT_FILE={self.data_dir}/restaurants.json',
+            '-s', f'PROFILES_OUTPUT_FILE={self.data_dir}/restaurant_profiles.json',
+            '-L', 'INFO'
+        ]
+        
+        if args.restaurant:
+            # TODO: Add restaurant filtering
+            print(f"Filtering to restaurant: {args.restaurant}")
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Profile extraction completed successfully!")
+            self._show_profile_stats()
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Profile extraction failed: {e}")
+            return 1
+        
+        return 0
+    
+    def run_comprehensive_pipeline(self, args):
+        """Run complete discovery + extraction + profiling pipeline"""
+        print("🚀 Starting Comprehensive Pipeline...")
+        print("Running discovery, deal extraction, and profile extraction")
+        
+        # Run discovery
+        discovery_result = self.run_discovery(args)
+        if discovery_result != 0:
+            return discovery_result
+        
+        print("\n" + "="*50)
+        
+        # Run deal extraction
+        extraction_result = self.run_extraction(args)
+        if extraction_result != 0:
+            return extraction_result
+        
+        print("\n" + "="*50)
+        
+        # Run profile extraction
+        profile_result = self.run_profile_extraction(args)
+        if profile_result != 0:
+            return profile_result
+        
+        print("\n🎉 Comprehensive pipeline completed successfully!")
+        self._show_comprehensive_summary()
         
         return 0
     
@@ -170,6 +225,27 @@ class ScrapyCLI:
         else:
             print("⚠️  No extracted deals (run extraction first)")
         
+        # Check for restaurant profiles
+        profiles_file = self.data_dir / 'restaurant_profiles.json'
+        if profiles_file.exists():
+            with open(profiles_file, 'r') as f:
+                profiles_data = json.load(f)
+            
+            profile_count = len(profiles_data.get('profiles', []))
+            print(f"🏢 Restaurant profiles: {profile_count}")
+            
+            # Show profile timestamp
+            exported_at = profiles_data.get('exported_at', 'Unknown')
+            print(f"📅 Last profiling: {exported_at}")
+            
+            # Show average completeness
+            profiles = profiles_data.get('profiles', [])
+            if profiles:
+                avg_completeness = sum(p.get('completeness_score', 0) for p in profiles) / len(profiles)
+                print(f"📊 Avg profile completeness: {avg_completeness:.2f}")
+        else:
+            print("⚠️  No restaurant profiles (run profile extraction)")
+        
         return 0
     
     def analyze_results(self, args):
@@ -226,6 +302,92 @@ class ScrapyCLI:
         
         return 0
     
+    def run_pricing_extraction(self, args):
+        """Run menu pricing extraction on discovered pages"""
+        print("💰 Starting Menu Pricing Extraction...")
+        print("Extracting pricing data from restaurant menus and PDFs")
+        
+        # Check if discovered pages exist
+        discovered_file = self.data_dir / 'discovered_pages.json'
+        if not discovered_file.exists():
+            print("❌ No discovered pages found. Run discovery first:")
+            print("   python cli.py discover")
+            return 1
+        
+        cmd = [
+            'scrapy', 'crawl', 'menu_pricing',
+            '-L', 'INFO'
+        ]
+        
+        if args.restaurant:
+            # TODO: Add restaurant filtering capability
+            print(f"Filtering to restaurant: {args.restaurant}")
+        
+        try:
+            import os
+            env = os.environ.copy()
+            env['PYTHONPATH'] = str(self.project_dir)
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True, env=env)
+            print("✅ Menu pricing extraction completed successfully!")
+            
+            # Show pricing summary
+            self._show_pricing_summary()
+            
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Menu pricing extraction failed: {e}")
+            return 1
+    
+    def _show_pricing_summary(self):
+        """Show summary of pricing extraction results"""
+        pricing_file = self.data_dir / 'menu_pricing.json'
+        summary_file = self.data_dir / 'pricing_summary.json'
+        
+        if summary_file.exists():
+            with open(summary_file, 'r') as f:
+                data = json.load(f)
+            
+            total_restaurants = data.get('total_restaurants_with_pricing', 0)
+            pricing_summary = data.get('pricing_summary', {})
+            
+            print(f"\n📊 Pricing Extraction Summary:")
+            print(f"   Restaurants with pricing data: {total_restaurants}")
+            
+            # Show price range distribution
+            range_counts = {}
+            total_items = 0
+            
+            for restaurant_slug, summary in pricing_summary.items():
+                price_range = summary.get('overall_price_range', '$')
+                range_counts[price_range] = range_counts.get(price_range, 0) + 1
+                total_items += summary.get('total_price_items', 0)
+            
+            print(f"   Total menu items extracted: {total_items}")
+            print("\n   Price Range Distribution:")
+            for price_range in ['$', '$$', '$$$', '$$$$']:
+                count = range_counts.get(price_range, 0)
+                if count > 0:
+                    percentage = count / total_restaurants * 100
+                    print(f"     {price_range}: {count} restaurants ({percentage:.1f}%)")
+            
+            # Show top restaurants by price item count
+            if pricing_summary:
+                top_restaurants = sorted(
+                    pricing_summary.items(),
+                    key=lambda x: x[1].get('total_price_items', 0),
+                    reverse=True
+                )[:3]
+                
+                print("\n🏆 Top Restaurants by Menu Items Extracted:")
+                for slug, summary in top_restaurants:
+                    name = summary.get('restaurant_name', slug)
+                    items = summary.get('total_price_items', 0)
+                    price_range = summary.get('overall_price_range', '$')
+                    avg_price = summary.get('overall_average_price', 0)
+                    print(f"     {name}: {items} items ({price_range}, avg: ${avg_price})")
+        else:
+            print("\n⚠️  No pricing summary found")
+    
     def _show_discovery_stats(self):
         """Show discovery statistics"""
         discovered_file = self.data_dir / 'discovered_pages.json'
@@ -265,6 +427,87 @@ class ScrapyCLI:
                     restaurants_with_deals.add(deal['restaurant_slug'])
             
             print(f"🍽️  Found deals for {len(restaurants_with_deals)} restaurants")
+    
+    def _show_profile_stats(self):
+        """Show profile extraction statistics"""
+        profiles_file = self.data_dir / 'restaurant_profiles.json'
+        if profiles_file.exists():
+            with open(profiles_file, 'r') as f:
+                data = json.load(f)
+            
+            profile_count = len(data.get('profiles', []))
+            print(f"📊 Extracted {profile_count} restaurant profiles")
+            
+            # Show completeness statistics
+            profiles = data.get('profiles', [])
+            if profiles:
+                completeness_scores = [p.get('completeness_score', 0) for p in profiles]
+                avg_completeness = sum(completeness_scores) / len(completeness_scores)
+                high_completeness = len([s for s in completeness_scores if s >= 0.5])
+                
+                print(f"📈 Avg completeness: {avg_completeness:.2f}")
+                print(f"🎯 High completeness profiles (≥0.5): {high_completeness}/{profile_count}")
+                
+                # Show top complete profiles
+                profiles_by_completeness = sorted(profiles, 
+                                                key=lambda x: x.get('completeness_score', 0), 
+                                                reverse=True)[:5]
+                print("🏆 Most complete profiles:")
+                for profile in profiles_by_completeness:
+                    name = profile.get('restaurant_name', 'Unknown')
+                    score = profile.get('completeness_score', 0)
+                    print(f"   {name}: {score:.2f}")
+    
+    def _show_comprehensive_summary(self):
+        """Show comprehensive pipeline summary"""
+        print("\n📈 Comprehensive Pipeline Summary:")
+        
+        # Load all data files
+        discovered_file = self.data_dir / 'discovered_pages.json'
+        deals_file = self.data_dir / 'scrapy_deals.json'
+        profiles_file = self.data_dir / 'restaurant_profiles.json'
+        
+        stats = {}
+        
+        if discovered_file.exists():
+            with open(discovered_file, 'r') as f:
+                discovered_data = json.load(f)
+            stats['pages'] = len(discovered_data.get('pages', []))
+        
+        if deals_file.exists():
+            with open(deals_file, 'r') as f:
+                deals_data = json.load(f)
+            stats['deals'] = len(deals_data.get('deals', []))
+            
+            # Count restaurants with deals
+            restaurants_with_deals = set()
+            for deal in deals_data.get('deals', []):
+                if deal.get('restaurant_slug'):
+                    restaurants_with_deals.add(deal['restaurant_slug'])
+            stats['restaurants_with_deals'] = len(restaurants_with_deals)
+        
+        if profiles_file.exists():
+            with open(profiles_file, 'r') as f:
+                profiles_data = json.load(f)
+            stats['profiles'] = len(profiles_data.get('profiles', []))
+            
+            # Calculate average completeness
+            profiles = profiles_data.get('profiles', [])
+            if profiles:
+                avg_completeness = sum(p.get('completeness_score', 0) for p in profiles) / len(profiles)
+                stats['avg_completeness'] = avg_completeness
+        
+        # Display comprehensive stats
+        if 'pages' in stats and 'deals' in stats:
+            print(f"   Discovery → Deals: {stats['pages']} pages → {stats['deals']} deals")
+        
+        if 'profiles' in stats:
+            print(f"   Restaurant Profiling: {stats['profiles']} comprehensive profiles")
+            if 'avg_completeness' in stats:
+                print(f"   Average Profile Completeness: {stats['avg_completeness']:.2f}")
+        
+        if 'restaurants_with_deals' in stats and 'profiles' in stats:
+            print(f"   Total Restaurant Coverage: {max(stats['restaurants_with_deals'], stats['profiles'])} restaurants")
     
     def _show_pipeline_summary(self):
         """Show complete pipeline summary"""
@@ -308,8 +551,10 @@ def main():
         epilog="""
 Examples:
   python cli.py discover                    # Discover happy hour pages
-  python cli.py extract                     # Extract deals from discovered pages  
-  python cli.py pipeline                    # Run full discovery + extraction
+  python cli.py extract                     # Extract deals from discovered pages
+  python cli.py profile                     # Extract restaurant profiles
+  python cli.py pipeline                    # Run discovery + extraction (deals only)
+  python cli.py comprehensive               # Run full discovery + extraction + profiling
   python cli.py status                      # Show system status
   python cli.py analyze                     # Analyze extraction results
         """
@@ -325,15 +570,27 @@ Examples:
     extract_parser = subparsers.add_parser('extract', help='Extract deals from discovered pages')
     extract_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
-    # Pipeline command
-    pipeline_parser = subparsers.add_parser('pipeline', help='Run full discovery + extraction pipeline')
+    # Profile extraction command
+    profile_parser = subparsers.add_parser('profile', help='Extract comprehensive restaurant profiles')
+    profile_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
+    
+    # Pipeline command (deals only)
+    pipeline_parser = subparsers.add_parser('pipeline', help='Run discovery + extraction pipeline (deals only)')
     pipeline_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
+    
+    # Comprehensive pipeline command (deals + profiles)
+    comprehensive_parser = subparsers.add_parser('comprehensive', help='Run full discovery + extraction + profiling pipeline')
+    comprehensive_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
     # Status command
     status_parser = subparsers.add_parser('status', help='Show system status')
     
     # Analysis command
     analyze_parser = subparsers.add_parser('analyze', help='Analyze extraction results')
+    
+    # Pricing command  
+    pricing_parser = subparsers.add_parser('pricing', help='Run menu pricing extraction on discovered pages')
+    pricing_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
     args = parser.parse_args()
     
@@ -348,12 +605,18 @@ Examples:
         return cli.run_discovery(args)
     elif args.command == 'extract':
         return cli.run_extraction(args)
+    elif args.command == 'profile':
+        return cli.run_profile_extraction(args)
     elif args.command == 'pipeline':
         return cli.run_full_pipeline(args)
+    elif args.command == 'comprehensive':
+        return cli.run_comprehensive_pipeline(args)
     elif args.command == 'status':
         return cli.show_status(args)
     elif args.command == 'analyze':
         return cli.analyze_results(args)
+    elif args.command == 'pricing':
+        return cli.run_pricing_extraction(args)
     else:
         parser.print_help()
         return 1

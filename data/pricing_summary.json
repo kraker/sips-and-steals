@@ -1,0 +1,23 @@
+{
+  "exported_at": "2025-08-17T20:28:43.459989",
+  "total_restaurants_with_pricing": 1,
+  "pricing_summary": {
+    "jovaninas-broken-italian": {
+      "restaurant_slug": "jovaninas-broken-italian",
+      "restaurant_name": "Jovaninas Broken Italian",
+      "pricing_data_available": true,
+      "price_ranges_by_menu": {
+        "happy_hour": "$$$$"
+      },
+      "overall_price_range": "$$$$",
+      "menu_types_found": [
+        "happy_hour"
+      ],
+      "total_price_items": 12,
+      "overall_average_price": 61.67,
+      "price_range_min": 61.67,
+      "price_range_max": 61.67,
+      "overall_confidence": 1.0
+    }
+  }
+}

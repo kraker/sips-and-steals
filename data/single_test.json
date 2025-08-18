@@ -1,0 +1,13 @@
+{
+  "metadata": {
+    "source": "test"
+  },
+  "restaurants": {
+    "jovaninas-broken-italian": {
+      "name": "Jovaninas Broken Italian",
+      "slug": "jovaninas-broken-italian",
+      "district": "Central",
+      "website": "https://jovanina.com"
+    }
+  }
+}

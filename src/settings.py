@@ -6,9 +6,9 @@ with focus on discovery and content extraction.
 """
 
 # Basic project settings
-BOT_NAME = 'sips_scrapy'
-SPIDER_MODULES = ['sips_scrapy.spiders']
-NEWSPIDER_MODULE = 'sips_scrapy.spiders'
+BOT_NAME = 'src'
+SPIDER_MODULES = ['src.spiders']
+NEWSPIDER_MODULE = 'src.spiders'
 
 # Respectful crawling - be a good web citizen
 ROBOTSTXT_OBEY = True
@@ -25,10 +25,10 @@ AUTOTHROTTLE_TARGET_CONCURRENCY = 2.0
 AUTOTHROTTLE_DEBUG = False  # Enable to see throttling stats
 
 # User agent - identify ourselves properly
-USER_AGENT = 'sips_scrapy (+https://sips-and-steals.com)'
+USER_AGENT = 'src (+https://sips-and-steals.com)'
 
 # Request/Response handling
-DOWNLOAD_TIMEOUT = 30  # 30 second timeout
+DOWNLOAD_TIMEOUT = 15  # 15 second timeout for faster testing
 RETRY_TIMES = 3
 RETRY_HTTP_CODES = [500, 502, 503, 504, 408, 429]
 
@@ -44,9 +44,12 @@ EXTENSIONS = {
 
 # Configure pipelines
 ITEM_PIPELINES = {
-    'sips_scrapy.pipelines.DealValidationPipeline': 100,
-    'sips_scrapy.pipelines.SemanticAnalysisPipeline': 200,
-    'sips_scrapy.pipelines.JSONExportPipeline': 300,
+    'src.pipelines.DealValidationPipeline': 100,
+    'src.pipelines.RestaurantProfilePipeline': 150,  # Process restaurant profiles
+    'src.pipelines.MenuPricingPipeline': 175,  # Process menu pricing data
+    'src.pipelines.HappyHourDealsPipeline': 180,  # Process happy hour deals
+    'src.pipelines.SemanticAnalysisPipeline': 200,
+    'src.pipelines.JSONExportPipeline': 300,
 }
 
 # Configure middlewares

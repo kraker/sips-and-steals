@@ -1,1 +1,1 @@
-# Sips and Steals - Happy Hour Deal Scraper
+# Sips and Steals Scrapy Project

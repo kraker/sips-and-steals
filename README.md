@@ -1,8 +1,8 @@
 # Sips and Steals
 
-An intelligent restaurant deal discovery platform that aggregates and curates Denver's best happy hour offerings through automated web scraping and smart data consolidation.
+An advanced restaurant data mining platform powered by Scrapy that discovers and aggregates Denver's premium happy hour offerings through intelligent web scraping and real-time status detection.
 
-🌐 **Live Site**: [Sips and Steals](https://kraker.github.io/sips-and-steals/)
+🌐 **Live Demo**: [LoDo Happy Hours](https://kraker.github.io/sips-and-steals/) - Interactive dashboard showcasing Lower Downtown restaurants
 
 ## Target User
 
@@ -10,93 +10,114 @@ An intelligent restaurant deal discovery platform that aggregates and curates De
 
 ## Key Features
 
-### 🤖 **Intelligent Scraping System**
-- **Live Deal Extraction**: Automated scraping of 106 Denver restaurants across 11 districts
-- **Config-Based Architecture**: YAML-driven scraper configurations for rapid restaurant onboarding
-- **Quality Validation**: Confidence scoring and deal validation with automatic data quality checks
-- **Robots.txt Compliance**: Respectful scraping with built-in robots.txt checking and circuit breakers
+### 🕷️ **Scrapy-Powered Data Mining**
+- **Enterprise-Grade Framework**: Production-ready Scrapy spiders with respectful crawling
+- **JavaScript Support**: Playwright integration for dynamic content sites (Urban Farmer, Ginger Pig, etc.)
+- **Multi-Format Processing**: HTML, PDF, and JSON-LD structured data extraction
+- **106 Restaurants**: Comprehensive coverage across 11 Denver districts
+- **Quality Validation**: Confidence scoring and automated data validation pipelines
 
-### 📊 **Data Management**
-- **Single Source Architecture**: `restaurants.json` as unified restaurant metadata and static deal storage
-- **Live Data Integration**: Real-time deal aggregation with 3-tier fallback system (live → cached → static)
-- **Historical Archives**: Automated daily deal archiving for trend analysis and data persistence
-- **Smart Backups**: Automatic backup management during data operations
+### 📊 **Intelligent Data Architecture**
+- **Discovery Pipeline**: Automated happy hour page discovery and content analysis
+- **Real-Time Processing**: Live deal extraction with timestamp tracking and archival
+- **Smart Fallback**: 3-tier data prioritization (fresh live → cached live → static)
+- **Historical Archives**: Automated deal snapshots for trend analysis
+- **Backup Management**: Comprehensive data protection and recovery systems
 
-### 🌐 **Enhanced Website Generation**
-- **Multi-Page Static Site**: Responsive website with individual restaurant profiles
-- **Live Data Indicators**: Clear distinction between live scraped and static data with confidence badges
-- **Advanced Filtering**: Filter by day, district, neighborhood, and cuisine with dynamic neighborhood updates
-- **Time-Based Relevance**: Smart deal scoring based on current time and day of week
+### 🎯 **Live Dashboard Experience**
+- **Real-Time Status**: 🟢 Active Now, 🟡 Starting Soon, 🔴 Closed indicators
+- **Time Intelligence**: Current time awareness with "starts in X minutes" alerts
+- **Contact Integration**: One-click calling, reservations, directions, website access
+- **Mobile-Responsive**: Touch-optimized interface for on-the-go discovery
+- **Smart Filtering**: Filter by active status, upcoming deals, or browse all
 
-### 🔧 **Developer Experience**
-- **Modular Architecture**: Separated concerns with specialized processors and managers
-- **CLI Interface**: Full-featured command-line tool for scraping, quality analysis, and data export
-- **Comprehensive Logging**: Detailed logging with performance metrics and error tracking
+### 🛠️ **Developer Experience**
+- **Modular CLI**: Comprehensive command-line interface for all operations
+- **Scrapy Integration**: Direct spider execution with `python -m scrapy crawl`
+- **Data Enhancement**: Contact enrichment, time parsing, and URL discovery tools
+- **Quality Analysis**: Coverage metrics, extraction success rates, and performance monitoring
 
 ## Current Coverage
 
 - **106 Restaurants** across 11 Denver districts
-- **37 Restaurants** with live deal data (34.9% coverage)
-- **4 Working Northwest Denver Scrapers** (American Elm, Bamboo Sushi, Wild Taco, Kumoya)
-- **Confidence-Scored Deals** with source URL tracking
+- **JavaScript Extraction**: 8 dynamic content sites successfully automated
+- **PDF Processing**: Automated menu extraction (Jovanina's Happy Hour PDF)
+- **Multi-Format Support**: HTML scraping, JSON-LD parsing, PDF text extraction
+- **Real-Time Demo**: Live LoDo dashboard with 6 premium establishments
 
 ## Tech Stack
 
-- **Backend**: Python 3.x with requests, BeautifulSoup4, and Jinja2
-- **Data**: JSON-based storage with automatic backup management
-- **Frontend**: Static HTML/CSS/JS generated from Jinja2 templates
-- **Deployment**: GitHub Pages with automated builds
-- **Architecture**: Config-driven scrapers with modular processing pipeline
+- **Core Framework**: Scrapy 2.x with Python 3.x
+- **Browser Automation**: Playwright for JavaScript-heavy sites
+- **PDF Processing**: PyPDF2 for menu document extraction
+- **Data Storage**: JSON-based with automated backup management
+- **Frontend**: Self-contained HTML with embedded data and real-time JavaScript
+- **Deployment**: GitHub Pages for public demonstration
 
 ## Quick Start
 
 ```bash
 # Install dependencies
 pip install -r requirements.txt
+playwright install chromium  # Required for JavaScript support
 
-# Run scraping system for Central district
-python scraper_cli.py scrape --district "Central" --workers 2
+# System status and monitoring
+python scripts/cli.py status
 
-# Generate static website
-python generate_site.py
+# Run full discovery and extraction pipeline
+python scripts/cli.py comprehensive
 
-# View system status
-python scraper_cli.py status
+# Run individual components
+python scripts/cli.py discover                   # Discover happy hour pages
+python scripts/cli.py extract                    # Extract deals from pages
+python scripts/cli.py profile                    # Extract restaurant profiles
 
-# Export quality analysis
-python scraper_cli.py quality --export
+# Direct Scrapy execution
+python -m scrapy list                            # List available spiders
+python -m scrapy crawl discovery                 # Run discovery spider
+python -m scrapy crawl happy_hour_deals          # Extract happy hour deals
+
+# Data processing utilities
+python scripts/enrich_data.py                    # Add contact information
+python scripts/fix_times.py                      # Clean time parsing issues
+python scripts/fix_urls.py                       # Discover and fix broken URLs
 ```
 
 ## Project Structure
 
 ```
 sips-and-steals/
-├── src/
-│   ├── scrapers/              # Modular scraping system
-│   │   ├── core/             # Base classes and HTTP client
-│   │   ├── processors/       # Text and post-processing
-│   │   └── exceptions.py     # Custom error handling
-│   ├── config_manager.py     # YAML configuration management
-│   ├── data_manager.py       # JSON data operations
-│   └── scheduler.py          # Concurrent scraping orchestration
-├── config/scrapers/          # YAML scraper configurations
+├── src/                      # Main Scrapy framework
+│   ├── spiders/             # Restaurant crawlers and extractors
+│   │   ├── discovery.py     # Happy hour page discovery
+│   │   ├── happy_hour_deals.py  # Deal extraction
+│   │   └── restaurant_profiler.py  # Profile extraction
+│   ├── pipelines.py         # Data validation and processing
+│   ├── items.py            # Data models and structures
+│   └── settings.py         # Scrapy configuration
+├── scripts/                 # Utility tools and CLI
+│   ├── cli.py              # Main command interface
+│   ├── enrich_data.py      # Contact data enhancement
+│   ├── fix_times.py        # Time parsing cleanup
+│   └── fix_urls.py         # URL discovery and repair
+├── config/scrapers/         # YAML scraper configurations
 ├── data/
-│   ├── restaurants.json      # Master restaurant database
-│   ├── deals.json           # Current live deals
-│   ├── deals_archive/       # Historical deal snapshots
-│   └── backups/             # Automatic data backups
-├── docs/                    # Generated static website
-│   ├── restaurants/         # Individual restaurant pages
-│   └── index.html          # Main directory
-├── templates/               # Jinja2 website templates
-├── scraper_cli.py          # Command-line interface
-├── generate_site.py        # Website generation
-└── models.py               # Data models and validation
+│   ├── restaurants.json     # Master restaurant database
+│   ├── deals.json          # Current live deals
+│   └── archives/           # Historical deal snapshots
+├── docs/                   # GitHub Pages public demo
+│   ├── index.html          # Interactive LoDo dashboard
+│   └── assets/             # CSS, JS, and embedded data
+├── archive/                # Preserved legacy systems
+│   ├── src/                # Original scraper architecture
+│   ├── site-generation/    # Previous Jinja2 site generator
+│   └── data/               # Historical data archives
+└── scrapy.cfg              # Scrapy project configuration
 ```
 
 ## Adding New Restaurants
 
-### Method 1: Config-Based (Recommended)
+### Method 1: YAML Configuration (Recommended)
 ```yaml
 # config/scrapers/restaurant-name.yaml
 restaurant_name: "Restaurant Name"
@@ -110,39 +131,63 @@ scraping_patterns:
     - pattern: "Monday - Friday: (\\d{1,2}[ap]m) - (\\d{1,2}[ap]m)"
       groups: [start_time, end_time]
       confidence: 0.9
-  
-  day_patterns:
-    - pattern: "(Monday - Friday)"
-      groups: [days]
-      confidence: 0.9
 ```
 
-### Method 2: Custom Scraper
+### Method 2: Custom Scrapy Spider
 ```python
-# src/scrapers/restaurant_name.py
-from .core.base import BaseScraper
+# src/spiders/restaurant_name.py
+from scrapy import Spider
+from ..items import HappyHourDeal
 
-class RestaurantNameScraper(BaseScraper):
-    def scrape_deals(self) -> List[Deal]:
-        content = self.fetch_page()
-        # Custom scraping logic
-        return deals
+class RestaurantNameSpider(Spider):
+    name = 'restaurant_name'
+    
+    def parse(self, response):
+        # Custom extraction logic
+        yield HappyHourDeal(
+            title=deal_title,
+            description=deal_description,
+            # ... other fields
+        )
 ```
 
-## Recent Improvements
+### Method 3: Add to Restaurant Database
+```bash
+# Add restaurant to data/restaurants.json
+# Test extraction
+python scripts/cli.py extract --restaurant "restaurant-slug"
+```
 
-- **Enhanced Northwest Denver Coverage**: Fixed American Elm and Bamboo Sushi scrapers
-- **Data Quality**: Added source URL tracking and improved text spacing
-- **Robots.txt Compliance**: Added blocking status tracking for 5 restaurants
-- **UI/UX**: Improved time indicators and deal status badges
-- **Performance**: Concurrent scraping with configurable worker pools
+## Recent Milestones
+
+### 🏗️ **Milestone 5: Repository Reorganization** (August 18, 2025)
+- **Scrapy-First Architecture**: Promoted Scrapy to primary framework (`src/`)
+- **Public Demo**: Created interactive LoDo dashboard for GitHub Pages
+- **Legacy Preservation**: Archived all original systems while maintaining clean structure
+- **Professional Organization**: Implemented concise, consistent naming conventions
+
+### 🚀 **Milestone 4: JavaScript & Advanced Discovery** (August 17, 2025)
+- **Browser Automation**: Playwright integration for dynamic content sites
+- **URL Discovery**: Automated restaurant URL repair and discovery
+- **Coverage Breakthrough**: Achieved 44.3% live data coverage
+
+### 🎯 **Previous Milestones**: Production platform, enhanced data architecture, and proof of concept
+- See [CLAUDE.md](CLAUDE.md) for complete milestone history and technical details
 
 ## Contributing
 
-1. Add restaurant to `data/restaurants.json`
-2. Create scraper config in `config/scrapers/` or custom scraper in `src/scrapers/`
-3. Test with `python scraper_cli.py scrape --restaurant "restaurant-slug"`
-4. Generate site with `python generate_site.py`
+1. **Add Restaurant**: Update `data/restaurants.json` with restaurant metadata
+2. **Configure Scraper**: Create YAML config in `config/scrapers/` or custom spider in `src/spiders/`
+3. **Test Extraction**: Run `python scripts/cli.py extract --restaurant "restaurant-slug"`
+4. **Validate Quality**: Use `python scripts/cli.py analyze` for quality metrics
+
+## Public Demo
+
+Visit our **[Live LoDo Dashboard](https://kraker.github.io/sips-and-steals/)** to see the platform in action:
+- Real-time happy hour status detection
+- Interactive restaurant filtering
+- Mobile-responsive design
+- One-click contact integration
 
 ## License
 
