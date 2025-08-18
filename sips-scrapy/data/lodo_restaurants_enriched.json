@@ -1,0 +1,259 @@
+{
+  "metadata": {
+    "source": "lodo_filter",
+    "created_at": "2025-08-17T20:55:00.000000",
+    "description": "LoDo (Lower Downtown) restaurants for targeted happy hour extraction",
+    "total_restaurants": 8,
+    "target_district": "Central",
+    "target_neighborhood": "LoDo",
+    "enriched_at": "2025-08-17T21:18:55.463329",
+    "enrichment_version": "1.0"
+  },
+  "restaurants": {
+    "jovaninas-broken-italian": {
+      "name": "Jovanina's Broken Italian",
+      "slug": "jovaninas-broken-italian",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://jovanina.com",
+      "cuisine": "Italian",
+      "expected_deals": "wine, aperitivo, small plates",
+      "contact": {
+        "address": "1520 Blake St, Denver, CO 80202",
+        "phone": "(303) 997-3700",
+        "coordinates": {
+          "lat": 39.7525,
+          "lng": -104.9964
+        }
+      },
+      "hours": {
+        "monday": "Closed",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "happy_hour_schedule": {
+        "tuesday_wednesday": "5:00 PM - 6:00 PM",
+        "friday_saturday": "9:00 PM - 10:00 PM",
+        "wednesday_all_day": "All Day"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/jovaninas-broken-italian"
+      },
+      "social": {
+        "instagram": "@jovaninasbrokenitalian",
+        "website": "https://jovanina.com"
+      },
+      "price_range": "$$"
+    },
+    "blue-sushi-sake-grill": {
+      "name": "Blue Sushi Sake Grill",
+      "slug": "blue-sushi-sake-grill",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.bluesushisakegrill.com",
+      "cuisine": "Japanese",
+      "expected_deals": "sake, sushi, appetizers"
+    },
+    "osteria-marco": {
+      "name": "Osteria Marco",
+      "slug": "osteria-marco",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.osteriamarco.com",
+      "cuisine": "Italian",
+      "expected_deals": "wine, aperitivo, antipasti",
+      "contact": {
+        "address": "1453 Larimer St, Denver, CO 80202",
+        "phone": "(303) 534-5855",
+        "coordinates": {
+          "lat": 39.7517,
+          "lng": -104.9968
+        }
+      },
+      "hours": {
+        "monday": "5:00 PM - 10:00 PM",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "happy_hour_schedule": {
+        "daily": "5:00 PM - 6:30 PM"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/osteria-marco"
+      },
+      "social": {
+        "instagram": "@osteriamarco",
+        "website": "https://www.osteriamarco.com"
+      },
+      "price_range": "$$$"
+    },
+    "rioja": {
+      "name": "Rioja",
+      "slug": "rioja",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://riojadenver.com",
+      "cuisine": "Mediterranean",
+      "expected_deals": "wine, small plates, cocktails",
+      "contact": {
+        "address": "1431 Larimer St, Denver, CO 80202",
+        "phone": "(303) 820-2282",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "tuesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "wednesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "thursday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "friday": "11:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "saturday": "10:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "sunday": "10:00 AM - 2:30 PM, 4:00 PM - 10:00 PM"
+      },
+      "happy_hour_schedule": {
+        "daily": "2:30 PM - 5:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/rioja-denver"
+      },
+      "social": {
+        "instagram": "@riojadenver",
+        "website": "https://www.riojadenver.com/"
+      },
+      "price_range": "$$$"
+    },
+    "stk": {
+      "name": "STK",
+      "slug": "stk",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://stksteakhouse.com",
+      "cuisine": "Steakhouse",
+      "expected_deals": "premium cocktails, wine, appetizers",
+      "contact": {
+        "address": "1550 Market St, Denver, CO 80202",
+        "phone": "(303) 318-8888",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 11:00 PM",
+        "tuesday": "11:00 AM - 11:00 PM",
+        "wednesday": "11:00 AM - 11:00 PM",
+        "thursday": "11:00 AM - 11:00 PM",
+        "friday": "11:00 AM - 12:00 AM",
+        "saturday": "10:00 AM - 12:00 AM",
+        "sunday": "10:00 AM - 11:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/stk-denver"
+      },
+      "social": {
+        "facebook": "https://www.facebook.com/STKDenver/",
+        "instagram": "@stkdenver"
+      },
+      "price_range": "$$$"
+    },
+    "urban-farmer": {
+      "name": "Urban Farmer",
+      "slug": "urban-farmer",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.urbanfarmerdenver.com",
+      "cuisine": "American",
+      "expected_deals": "craft cocktails, local beer, farm-to-table",
+      "contact": {
+        "address": "1659 Wazee St, Denver, CO 80202",
+        "phone": "(303) 991-6328",
+        "coordinates": {
+          "lat": 39.7503,
+          "lng": -104.9942
+        }
+      },
+      "hours": {
+        "monday": "6:30 AM - 10:00 PM",
+        "tuesday": "6:30 AM - 10:00 PM",
+        "wednesday": "6:30 AM - 10:00 PM",
+        "thursday": "6:30 AM - 10:00 PM",
+        "friday": "6:30 AM - 11:00 PM",
+        "saturday": "7:00 AM - 11:00 PM",
+        "sunday": "7:00 AM - 10:00 PM"
+      },
+      "happy_hour_schedule": {
+        "daily": "3:00 PM - 6:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/urban-farmer-denver"
+      },
+      "social": {
+        "instagram": "@urbanfarmerdenver",
+        "website": "https://www.urbanfarmerdenver.com"
+      },
+      "price_range": "$$$"
+    },
+    "tamayo": {
+      "name": "Tamayo",
+      "slug": "tamayo",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://tamayodenver.com",
+      "cuisine": "Mexican",
+      "expected_deals": "margaritas, tequila, tacos"
+    },
+    "corridor-44": {
+      "name": "Corridor 44",
+      "slug": "corridor-44",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://corridor44.com",
+      "cuisine": "American",
+      "expected_deals": "beer, cocktails, bar food",
+      "contact": {
+        "address": "1433 17th St, Denver, CO 80202",
+        "phone": "(303) 825-0844",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 12:00 AM",
+        "tuesday": "11:00 AM - 12:00 AM",
+        "wednesday": "11:00 AM - 12:00 AM",
+        "thursday": "11:00 AM - 12:00 AM",
+        "friday": "11:00 AM - 2:00 AM",
+        "saturday": "9:00 AM - 2:00 AM",
+        "sunday": "9:00 AM - 12:00 AM"
+      },
+      "happy_hour_schedule": {
+        "weekdays": "3:00 PM - 6:00 PM"
+      },
+      "reservations": {
+        "platform": "Phone",
+        "url": "tel:+13038250844"
+      },
+      "social": {
+        "instagram": "@corridor44",
+        "website": "https://corridor44.com"
+      },
+      "price_range": "$$"
+    }
+  }
+}

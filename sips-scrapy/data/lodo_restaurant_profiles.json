@@ -1,0 +1,339 @@
+{
+  "generated_at": "2025-08-17T21:07:28.088512",
+  "district": "LoDo (Lower Downtown)",
+  "total_restaurants": 6,
+  "profiles": {
+    "stk": {
+      "rank": 1,
+      "name": "Stk",
+      "slug": "stk",
+      "cuisine": "Steakhouse",
+      "website": "https://stksteakhouse.com",
+      "expected_deals": "premium cocktails, wine, appetizers",
+      "deal_metrics": {
+        "total_deals": 521,
+        "food_deals": 2,
+        "drink_deals": 6,
+        "avg_food_price": 3.0,
+        "avg_drink_price": 10.0,
+        "confidence_score": 1.0
+      },
+      "schedule": {
+        "timeframes": [
+          "10:30 - PM",
+          "00:00 PM - 5:00 PM",
+          "2:30 - 6:30",
+          "6:30 - pm",
+          "3:00 PM - 6:00 PM"
+        ],
+        "days": [
+          "Friday",
+          "Thursday",
+          "Monday",
+          "Saturday",
+          "Weekdays",
+          "Weekends",
+          "Daily",
+          "Sunday"
+        ]
+      },
+      "value_assessment": {
+        "overall_rating": "Good",
+        "price_category": "Mid-Range",
+        "best_for": [
+          "Business Dining",
+          "Special Occasions",
+          "Premium Cocktails",
+          "LoDo Exploration"
+        ],
+        "value_score": 7.0
+      },
+      "strategic_insights": [
+        "\ud83c\udfaf **Deal Leader**: 521 deals - extensive happy hour program",
+        "\u2696\ufe0f **Balanced Pricing**: $10.00 avg drinks - good value",
+        "\ud83c\udf7d\ufe0f **Food Value**: $3.00 avg food - affordable bites",
+        "\u23f0 **All-Day Specials**: Flexible timing for any schedule",
+        "\ud83e\udd69 **Premium Dining**: Upscale happy hour in steakhouse setting",
+        "\ud83c\udf79 **Drink-Focused**: Strong beverage program and cocktail culture"
+      ],
+      "data_quality": {
+        "rating": "Excellent",
+        "reliability": "High",
+        "completeness": "Comprehensive",
+        "recommendations": []
+      }
+    },
+    "rioja": {
+      "rank": 2,
+      "name": "Rioja",
+      "slug": "rioja",
+      "cuisine": "Mediterranean",
+      "website": "https://riojadenver.com",
+      "expected_deals": "wine, small plates, cocktails",
+      "deal_metrics": {
+        "total_deals": 78,
+        "food_deals": 0,
+        "drink_deals": 8,
+        "avg_food_price": 0,
+        "avg_drink_price": 10.25,
+        "confidence_score": 1.0
+      },
+      "schedule": {
+        "timeframes": [
+          "10:00 PM - 2:00 PM",
+          "1:00 PM - 4:00 PM",
+          "1:00 PM - 6:00 PM",
+          "5:00 PM - 8:00 PM",
+          "84:00 PM - 1:00 PM"
+        ],
+        "days": [
+          "Friday",
+          "Sunday",
+          "Saturday"
+        ]
+      },
+      "value_assessment": {
+        "overall_rating": "Good",
+        "price_category": "Mid-Range",
+        "best_for": [
+          "Wine Enthusiasts",
+          "Healthy Options",
+          "Cultural Experience",
+          "LoDo Exploration"
+        ],
+        "value_score": 7.0
+      },
+      "strategic_insights": [
+        "\ud83d\udcca **Strong Offering**: 78 deals - solid happy hour selection",
+        "\u2696\ufe0f **Balanced Pricing**: $10.25 avg drinks - good value",
+        "\ud83e\uded2 **Mediterranean Flair**: Wine-focused with regional specialties",
+        "\ud83c\udf79 **Drink-Focused**: Strong beverage program and cocktail culture"
+      ],
+      "data_quality": {
+        "rating": "Excellent",
+        "reliability": "High",
+        "completeness": "Comprehensive",
+        "recommendations": []
+      }
+    },
+    "jovaninas-broken-italian": {
+      "rank": 3,
+      "name": "Jovaninas-Broken-Italian",
+      "slug": "jovaninas-broken-italian",
+      "cuisine": "Italian",
+      "website": "https://jovanina.com",
+      "expected_deals": "wine, aperitivo, small plates",
+      "deal_metrics": {
+        "total_deals": 73,
+        "food_deals": 1,
+        "drink_deals": 2,
+        "avg_food_price": 15.0,
+        "avg_drink_price": 7.0,
+        "confidence_score": 1.0
+      },
+      "schedule": {
+        "timeframes": [
+          "9:00 PM - 10:00 PM",
+          "5:00 PM - 6:00 PM",
+          "All Day"
+        ],
+        "days": [
+          "Friday",
+          "Saturday",
+          "Daily",
+          "Sunday",
+          "Tuesday",
+          "Thursday",
+          "Wednesday"
+        ]
+      },
+      "value_assessment": {
+        "overall_rating": "Very Good",
+        "price_category": "Budget-Friendly",
+        "best_for": [
+          "Wine Lovers",
+          "Date Nights",
+          "Authentic Cuisine",
+          "LoDo Exploration"
+        ],
+        "value_score": 8.0
+      },
+      "strategic_insights": [
+        "\ud83d\udcca **Strong Offering**: 73 deals - solid happy hour selection",
+        "\ud83d\udcb0 **Excellent Value**: $7.00 avg drinks - budget-friendly",
+        "\u23f0 **All-Day Specials**: Flexible timing for any schedule",
+        "\ud83d\udcc5 **Weekday Strength**: Strong after-work offerings",
+        "\ud83c\udf77 **Italian Excellence**: Expect quality wine and aperitivo culture"
+      ],
+      "data_quality": {
+        "rating": "Excellent",
+        "reliability": "High",
+        "completeness": "Comprehensive",
+        "recommendations": []
+      }
+    },
+    "corridor-44": {
+      "rank": 4,
+      "name": "Corridor-44",
+      "slug": "corridor-44",
+      "cuisine": "American",
+      "website": "https://corridor44.com",
+      "expected_deals": "beer, cocktails, bar food",
+      "deal_metrics": {
+        "total_deals": 30,
+        "food_deals": 1,
+        "drink_deals": 1,
+        "avg_food_price": 21.0,
+        "avg_drink_price": 24.0,
+        "confidence_score": 0.7
+      },
+      "schedule": {
+        "timeframes": [
+          "16:00 PM - 9:00 PM",
+          "1:00 PM - 4:00 PM",
+          "3:00 PM - 2:00 PM",
+          "1:00 PM - 6:00 PM",
+          "3:00 PM - 5:00 PM"
+        ],
+        "days": []
+      },
+      "value_assessment": {
+        "overall_rating": "Good",
+        "price_category": "Premium",
+        "best_for": [
+          "Casual Dining",
+          "Groups",
+          "Familiar Menu",
+          "LoDo Exploration"
+        ],
+        "value_score": 6.5
+      },
+      "strategic_insights": [
+        "\ud83e\udd42 **Premium Experience**: $24.00 avg drinks - craft focus",
+        "\ud83c\udf74 **Elevated Dining**: $21.00 avg food - quality focus",
+        "\ud83c\uddfa\ud83c\uddf8 **Classic American**: Broad appeal with familiar favorites"
+      ],
+      "data_quality": {
+        "rating": "Good",
+        "reliability": "High",
+        "completeness": "Good",
+        "recommendations": []
+      }
+    },
+    "urban-farmer": {
+      "rank": 5,
+      "name": "Urban-Farmer",
+      "slug": "urban-farmer",
+      "cuisine": "American",
+      "website": "https://www.urbanfarmerdenver.com",
+      "expected_deals": "craft cocktails, local beer, farm-to-table",
+      "deal_metrics": {
+        "total_deals": 26,
+        "food_deals": 0,
+        "drink_deals": 4,
+        "avg_food_price": 0,
+        "avg_drink_price": 17.25,
+        "confidence_score": 1.0
+      },
+      "schedule": {
+        "timeframes": [
+          "25:00 PM - 13:00 PM",
+          "1:00 - PM",
+          "7:00 - PM",
+          "9:30 - pm",
+          "9:00 - AM"
+        ],
+        "days": [
+          "Friday",
+          "Monday",
+          "Saturday",
+          "Daily",
+          "Sunday",
+          "Thursday"
+        ]
+      },
+      "value_assessment": {
+        "overall_rating": "Good",
+        "price_category": "Premium",
+        "best_for": [
+          "Casual Dining",
+          "Groups",
+          "Familiar Menu",
+          "LoDo Exploration"
+        ],
+        "value_score": 6.5
+      },
+      "strategic_insights": [
+        "\ud83e\udd42 **Premium Experience**: $17.25 avg drinks - craft focus",
+        "\ud83c\uddfa\ud83c\uddf8 **Classic American**: Broad appeal with familiar favorites",
+        "\ud83c\udf79 **Drink-Focused**: Strong beverage program and cocktail culture"
+      ],
+      "data_quality": {
+        "rating": "Excellent",
+        "reliability": "High",
+        "completeness": "Comprehensive",
+        "recommendations": []
+      }
+    },
+    "osteria-marco": {
+      "rank": 6,
+      "name": "Osteria-Marco",
+      "slug": "osteria-marco",
+      "cuisine": "Italian",
+      "website": "https://www.osteriamarco.com",
+      "expected_deals": "wine, aperitivo, antipasti",
+      "deal_metrics": {
+        "total_deals": 3,
+        "food_deals": 0,
+        "drink_deals": 0,
+        "avg_food_price": 0,
+        "avg_drink_price": 0,
+        "confidence_score": 0.5
+      },
+      "schedule": {
+        "timeframes": [
+          "16:00 PM - 9:00 PM",
+          "3:00 PM - 2:00 PM",
+          "1 PM",
+          "11:30 - am",
+          "47:00 PM - 1:00 PM"
+        ],
+        "days": [
+          "Friday",
+          "Thursday",
+          "Sunday",
+          "Monday",
+          "Saturday",
+          "Weekends",
+          "Tuesday",
+          "Wednesday"
+        ]
+      },
+      "value_assessment": {
+        "overall_rating": "Good",
+        "price_category": "Mid-Range",
+        "best_for": [
+          "Wine Lovers",
+          "Date Nights",
+          "Authentic Cuisine",
+          "LoDo Exploration"
+        ],
+        "value_score": 7.0
+      },
+      "strategic_insights": [
+        "\ud83d\udcc8 **Limited Data**: 3 deals - potential for enhanced extraction",
+        "\ud83d\udcc5 **Weekday Strength**: Strong after-work offerings",
+        "\ud83c\udf77 **Italian Excellence**: Expect quality wine and aperitivo culture"
+      ],
+      "data_quality": {
+        "rating": "Limited",
+        "reliability": "Medium",
+        "completeness": "Partial",
+        "recommendations": [
+          "Enhanced extraction needed",
+          "Data validation required"
+        ]
+      }
+    }
+  }
+}

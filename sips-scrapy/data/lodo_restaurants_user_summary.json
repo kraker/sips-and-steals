@@ -1,0 +1,175 @@
+{
+  "generated_at": "2025-08-17T21:18:55.463657",
+  "district": "LoDo (Lower Downtown)",
+  "total_restaurants": 8,
+  "restaurants": {
+    "jovaninas-broken-italian": {
+      "name": "Jovanina's Broken Italian",
+      "cuisine": "Italian",
+      "address": "1520 Blake St, Denver, CO 80202",
+      "phone": "(303) 997-3700",
+      "website": "https://jovanina.com",
+      "price_range": "$$",
+      "hours": {
+        "monday": "Closed",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "happy_hour": {
+        "tuesday_wednesday": "5:00 PM - 6:00 PM",
+        "friday_saturday": "9:00 PM - 10:00 PM",
+        "wednesday_all_day": "All Day"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/jovaninas-broken-italian"
+      },
+      "social": {
+        "instagram": "@jovaninasbrokenitalian",
+        "website": "https://jovanina.com"
+      }
+    },
+    "osteria-marco": {
+      "name": "Osteria Marco",
+      "cuisine": "Italian",
+      "address": "1453 Larimer St, Denver, CO 80202",
+      "phone": "(303) 534-5855",
+      "website": "https://www.osteriamarco.com",
+      "price_range": "$$$",
+      "hours": {
+        "monday": "5:00 PM - 10:00 PM",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "happy_hour": {
+        "daily": "5:00 PM - 6:30 PM"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/osteria-marco"
+      },
+      "social": {
+        "instagram": "@osteriamarco",
+        "website": "https://www.osteriamarco.com"
+      }
+    },
+    "rioja": {
+      "name": "Rioja",
+      "cuisine": "Mediterranean",
+      "address": "1431 Larimer St, Denver, CO 80202",
+      "phone": "(303) 820-2282",
+      "website": "https://riojadenver.com",
+      "price_range": "$$$",
+      "hours": {
+        "monday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "tuesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "wednesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "thursday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "friday": "11:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "saturday": "10:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "sunday": "10:00 AM - 2:30 PM, 4:00 PM - 10:00 PM"
+      },
+      "happy_hour": {
+        "daily": "2:30 PM - 5:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/rioja-denver"
+      },
+      "social": {
+        "instagram": "@riojadenver",
+        "website": "https://www.riojadenver.com/"
+      }
+    },
+    "stk": {
+      "name": "STK",
+      "cuisine": "Steakhouse",
+      "address": "1550 Market St, Denver, CO 80202",
+      "phone": "(303) 318-8888",
+      "website": "https://stksteakhouse.com",
+      "price_range": "$$$",
+      "hours": {
+        "monday": "11:00 AM - 11:00 PM",
+        "tuesday": "11:00 AM - 11:00 PM",
+        "wednesday": "11:00 AM - 11:00 PM",
+        "thursday": "11:00 AM - 11:00 PM",
+        "friday": "11:00 AM - 12:00 AM",
+        "saturday": "10:00 AM - 12:00 AM",
+        "sunday": "10:00 AM - 11:00 PM"
+      },
+      "happy_hour": {},
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/stk-denver"
+      },
+      "social": {
+        "facebook": "https://www.facebook.com/STKDenver/",
+        "instagram": "@stkdenver"
+      }
+    },
+    "urban-farmer": {
+      "name": "Urban Farmer",
+      "cuisine": "American",
+      "address": "1659 Wazee St, Denver, CO 80202",
+      "phone": "(303) 991-6328",
+      "website": "https://www.urbanfarmerdenver.com",
+      "price_range": "$$$",
+      "hours": {
+        "monday": "6:30 AM - 10:00 PM",
+        "tuesday": "6:30 AM - 10:00 PM",
+        "wednesday": "6:30 AM - 10:00 PM",
+        "thursday": "6:30 AM - 10:00 PM",
+        "friday": "6:30 AM - 11:00 PM",
+        "saturday": "7:00 AM - 11:00 PM",
+        "sunday": "7:00 AM - 10:00 PM"
+      },
+      "happy_hour": {
+        "daily": "3:00 PM - 6:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/urban-farmer-denver"
+      },
+      "social": {
+        "instagram": "@urbanfarmerdenver",
+        "website": "https://www.urbanfarmerdenver.com"
+      }
+    },
+    "corridor-44": {
+      "name": "Corridor 44",
+      "cuisine": "American",
+      "address": "1433 17th St, Denver, CO 80202",
+      "phone": "(303) 825-0844",
+      "website": "https://corridor44.com",
+      "price_range": "$$",
+      "hours": {
+        "monday": "11:00 AM - 12:00 AM",
+        "tuesday": "11:00 AM - 12:00 AM",
+        "wednesday": "11:00 AM - 12:00 AM",
+        "thursday": "11:00 AM - 12:00 AM",
+        "friday": "11:00 AM - 2:00 AM",
+        "saturday": "9:00 AM - 2:00 AM",
+        "sunday": "9:00 AM - 12:00 AM"
+      },
+      "happy_hour": {
+        "weekdays": "3:00 PM - 6:00 PM"
+      },
+      "reservations": {
+        "platform": "Phone",
+        "url": "tel:+13038250844"
+      },
+      "social": {
+        "instagram": "@corridor44",
+        "website": "https://corridor44.com"
+      }
+    }
+  }
+}

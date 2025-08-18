@@ -1,0 +1,2312 @@
+{
+  "exported_at": "2025-08-17T20:52:49.849990",
+  "total_pages": 115,
+  "pages": [
+    {
+      "url": "https://jovanina.com",
+      "title": "Jovanina's \u2013 broken italian",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "restaurant_name": "Jovanina's Broken Italian",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "happy hour",
+        "friday",
+        "saturday",
+        "thursday"
+      ],
+      "discovered_at": "2025-08-17T20:28:50.653007",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n \n \n \n jovanina's \u2013 broken italian \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n \n \n \n/* <![cdata[ */\nwindow._wpemojisettings = {\"baseurl\":\"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/16.0.1\\/72x72\\/\",\"ext\":\".png\",\"svgurl\":\"https:\\/\\/s.w.org\\/images\\/core\\/emoji\\/16.0.1\\/svg\\/\",\"svgext\":\".svg\",\"source\":{\"concatemoji\":\"https:\\/\\/jovanina.com\\/wp-includes\\/js\\/wp-emoji-release.min.js?ver=6.8.2\"}};\n/*! this file is auto-generated */\n!function(s,n)"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/locations/lodo",
+      "title": "LoDo",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "happy hour",
+        "sunday",
+        "12pm",
+        "10pm",
+        "friday",
+        "11am",
+        "saturday",
+        "thursday",
+        "10:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:28:50.724627",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "lodo !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'scrip"
+    },
+    {
+      "url": "https://www.osteriamarco.com/",
+      "title": "Osteria Marco - Bonanno Concepts",
+      "restaurant_slug": "osteria-marco",
+      "restaurant_name": "Osteria Marco",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "happy hour",
+        "5pm",
+        "sunday",
+        "11am",
+        "3pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:50.975673",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n      \n     \n     \n     \n     \n     \n\n     \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t\n\t \n\t osteria marco - bonanno concepts \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"webpage\",\"@id\":\"https://www.osteriamarco.com/\",\"url\":\"https://www.osteriamarco.com/\",\"name\":\"osteria marco - bonanno concepts\",\"ispartof\":{\"@id\":\"https://bonanno.wpenginepowered.com/#website\"},\"about\":{\"@id\":\"https://bonan"
+    },
+    {
+      "url": "http://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "title": "happy hour/cocktails | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "7 am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:28:51.051769",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t happy hour/cocktails | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jque"
+    },
+    {
+      "url": "https://stksteakhouse.com/happenings/happy-hour/",
+      "title": "$3 $6 $9 Happy Hour - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "weekend",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:28:51.092002",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/denver-menus/",
+      "title": "Denver | Menu | Urban Farmer",
+      "restaurant_slug": "urban-farmer",
+      "restaurant_name": "Urban Farmer",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "2pm",
+        "26am",
+        "happy hour",
+        "sunday",
+        "2 pm",
+        "saturday",
+        "9 am",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:51.346302",
+      "content_type": "text/html; charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n     \n      \n\t \n\t \n\t \n\t denver | menu | urban farmer \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t \n\t \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\n\t \n\t \n\t \n\t \n\t \n\t \n\t\n\t\t  \n\t\n\n\t\n\t\n\t\n\t\n\t \n\t\n\t\n\t\n\t\n\t \n\n\t\n\t \n\t\t\twebfont.load({custom: { families: [\"super claredon\", \"logioso\", \"logisosonew\"] }, typekit: { id : \"ptf0nrl\" }  , google: { families: [\"playfair+display&display=swap\"] }});\n\t\t \n\t\t\t \n\t\t\t     \n\t\t\t    \t<link href=\"https://fonts.googleapis.com/css?family=playfair+display&display=swap&display=swap\" rel=\"stylesheet\" "
+    },
+    {
+      "url": "https://tamayodenver.com",
+      "title": "Best Mexican Restaurant in Downtown Denver | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:52.784150",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n best mexican restaurant in downtown denver | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runti"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu",
+      "title": "Menus",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:28:52.789924",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "menus !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'scri"
+    },
+    {
+      "url": "https://www.osteriamarco.com/drag-brunch/",
+      "title": "Drag Brunch - Bonanno Concepts",
+      "restaurant_slug": "osteria-marco",
+      "restaurant_name": "Osteria Marco",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "1pm",
+        "sunday",
+        "10:30am",
+        "11:30am",
+        "11am",
+        "weekend",
+        "9pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:52.828784",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n      \n     \n     \n     \n     \n     \n\n     \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t\n\t \n\t drag brunch - bonanno concepts \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t \n\t {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"webpage\",\"@id\":\"https://www.osteriamarco.com/drag-brunch/\",\"url\":\"https://www.osteriamarco.com/drag-brunch/\",\"name\":\"drag brunch - bonanno concepts\",\"ispartof\":{\"@id\":\"https://bonanno.wpenginepowered.com/#website\"},\"datepublished\":\"2023"
+    },
+    {
+      "url": "https://www.corridor44.com/",
+      "title": "Corridor 44 | Denver's only Champagne Bar",
+      "restaurant_slug": "corridor-44",
+      "restaurant_name": "Corridor 44",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "friday",
+        "6pm",
+        "monday",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:28:52.915730",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\n\t corridor 44 | denver's only champagne bar \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/portland-menus/",
+      "title": "Portland Menus | Urban Farmer in Portland, OR",
+      "restaurant_slug": "urban-farmer",
+      "restaurant_name": "Urban Farmer",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "26am",
+        "daily",
+        "special",
+        "happy hour",
+        "5pm",
+        "sunday",
+        "11 am",
+        "7 am",
+        "3pm",
+        "friday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:53.337250",
+      "content_type": "text/html; charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n     \n      \n\t \n\t \n\t \n\t portland menus | urban farmer in portland, or \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t \n\t \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\n\t \n\t \n\t \n\t \n\t \n\t \n\t\n\t\t  \n\t\n\n\t\n\t\n\t\n\t\n\t \n\t\n\t\n\t\n\t\n\t \n\n\t\n\t \n\t\t\twebfont.load({custom: { families: [\"super claredon\", \"logioso\", \"logisosonew\"] }, typekit: { id : \"ptf0nrl\" }  , google: { families: [\"playfair+display&display=swap\"] }});\n\t\t \n\t\t\t \n\t\t\t     \n\t\t\t    \t<link href=\"https://fonts.googleapis.com/css?family=playfair+display&display=swap&display=swap\" "
+    },
+    {
+      "url": "https://www.corridor44.com/drink-menu/",
+      "title": "Drink Menu | Corridor 44",
+      "restaurant_slug": "corridor-44",
+      "restaurant_name": "Corridor 44",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special"
+      ],
+      "discovered_at": "2025-08-17T20:28:54.803895",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\n\t drink menu | corridor 44 \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)re"
+    },
+    {
+      "url": "https://stksteakhouse.com/happenings/weekend-brunch/",
+      "title": "Weekend Brunch - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "sunday",
+        "weekend",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:28:55.120121",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.urbanfarmersteakhouse.com/philadelphia-menus/",
+      "title": "Philadelphia | Menu | Urban Farmer",
+      "restaurant_slug": "urban-farmer",
+      "restaurant_name": "Urban Farmer",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "10 pm",
+        "daily",
+        "happy hour",
+        "sunday",
+        "2 pm",
+        "7 am",
+        "saturday",
+        "4 pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:55.338189",
+      "content_type": "text/html; charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n     \n      \n\t \n\t \n\t \n\t philadelphia | menu | urban farmer \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t \n\t \n\t \n\t \n\t\t \n\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\t\t \n\t\t \n\t\t\t \n\t\t\t \n\n\t \n\t \n\t \n\t \n\t \n\t \n\t\n\t\t  \n\t\n\n\t\n\t\n\t\n\t\n\t \n\t\n\t\n\t\n\t\n\t \n\n\t\n\t \n\t\t\twebfont.load({custom: { families: [\"super claredon\", \"logioso\", \"logisosonew\"] }, typekit: { id : \"ptf0nrl\" }  , google: { families: [\"playfair+display&display=swap\"] }});\n\t\t \n\t\t\t \n\t\t\t     \n\t\t\t    \t<link href=\"https://fonts.googleapis.com/css?family=playfair+display&display=swap&display=swap\" rel=\"styles"
+    },
+    {
+      "url": "https://tamayodenver.com/specials",
+      "title": "Find Our Restaurant Specials & Events | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "happy hour",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:55.390957",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n find our restaurant specials & events | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea"
+    },
+    {
+      "url": "https://www.corridor44.com/menu/",
+      "title": "Menu | Corridor 44",
+      "restaurant_slug": "corridor-44",
+      "restaurant_name": "Corridor 44",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "28 \n \n am"
+      ],
+      "discovered_at": "2025-08-17T20:28:56.780133",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\n\t menu | corridor 44 \n \n\t img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } \n\t \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return j"
+    },
+    {
+      "url": "https://tamayodenver.com/menus",
+      "title": "Try Our Modern Mexican Food Menus in Denver | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "happy hour",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:57.187347",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n try our modern mexican food menus in denver | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runt"
+    },
+    {
+      "url": "https://tamayodenver.com/holidays/labor-day",
+      "title": "Labor Day Bottomless Brunch in Downtown Denver | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "special",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:28:59.255962",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n labor day bottomless brunch in downtown denver | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-r"
+    },
+    {
+      "url": "https://tamayodenver.com/dinnerandashow",
+      "title": "Dinner & A Show | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:01.264209",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n dinner & a show | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3d93ea4-"
+    },
+    {
+      "url": "https://tamayodenver.com/happy-hour",
+      "title": "Find the Best Happy Hour in Denver | Tamayo",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "tuesday",
+        "wednesday",
+        "3 pm",
+        "happy hour",
+        "specials",
+        "thursday",
+        "5 pm"
+      ],
+      "discovered_at": "2025-08-17T20:29:03.259717",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n find the best happy hour in denver | tamayo \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/menus/",
+      "title": "Menus - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [],
+      "discovered_at": "2025-08-17T20:29:03.307390",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://tamayodenver.com/menus/kids",
+      "title": "Kids Menu | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:05.264329",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n kids menu | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3d93ea4-min.en"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/milan/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:29:05.377600",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://tamayodenver.com/dessert",
+      "title": "Modern Mexican Dessert | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:07.262277",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n modern mexican dessert | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/london-strand/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "7pm",
+        "4:30pm",
+        "special",
+        "happy hour",
+        "sunday",
+        "12pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:07.457403",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/london-stratford/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4:30pm",
+        "special",
+        "happy hour",
+        "7 pm",
+        "sunday",
+        "12pm",
+        "weekday"
+      ],
+      "discovered_at": "2025-08-17T20:29:09.448146",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://tamayodenver.com/brunch",
+      "title": "Bottomless Brunch in Downtown | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "10:30 am",
+        "wednesday",
+        "tuesday",
+        "2 pm",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:11.261616",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n bottomless brunch in downtown | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea8"
+    },
+    {
+      "url": "https://tamayodenver.com/menus/dinner",
+      "title": "Dinner Menu | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "10 pm",
+        "monday",
+        "tuesday",
+        "9 pm",
+        "wednesday",
+        "specials",
+        "thursday",
+        "4 pm",
+        "5 pm"
+      ],
+      "discovered_at": "2025-08-17T20:29:13.269990",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n dinner menu | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3d93ea4-min."
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/milan/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:29:27.386153",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/london-strand/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "7pm",
+        "4:30pm",
+        "special",
+        "happy hour",
+        "sunday",
+        "12pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:29:29.459889",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/london-stratford/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4:30pm",
+        "special",
+        "happy hour",
+        "7 pm",
+        "sunday",
+        "12pm",
+        "weekday"
+      ],
+      "discovered_at": "2025-08-17T20:29:33.465622",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/dubai/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "saturday",
+        "special",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:29:35.368983",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/doha/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "5pm",
+        "8pm",
+        "saturday",
+        "thursday"
+      ],
+      "discovered_at": "2025-08-17T20:29:37.354943",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/toronto/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "19  \n         \n                     \n\n     \n         am",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10pm",
+        "weekend",
+        "saturday",
+        "14  \n         \n                     \n\n     \n         am",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:29:39.432694",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/fallsview/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special"
+      ],
+      "discovered_at": "2025-08-17T20:29:41.380654",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/bellevue/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:29:47.463777",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/salt-lake-city/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:29:59.437626",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/dallas/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "5:30pm",
+        "3pm",
+        "friday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:01.906429",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/nashville/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:05.475419",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/san-juan/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "sunday",
+        "6pm",
+        "thursday"
+      ],
+      "discovered_at": "2025-08-17T20:30:07.450393",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/charlotte/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:09.468876",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/nyc-midtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:11.470177",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/nyc-rooftop-downtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:13.471219",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/nyc-downtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:19.483946",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/las-vegas/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "weekend",
+        "5:30pm",
+        "10:30 pm",
+        "saturday",
+        "friday"
+      ],
+      "discovered_at": "2025-08-17T20:30:31.529061",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/los-cabos/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special"
+      ],
+      "discovered_at": "2025-08-17T20:30:33.384674",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/boston/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:37.499476",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/chicago/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "5:30pm",
+        "3pm",
+        "friday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:39.495611",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/atlanta/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:41.498178",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/south-beach/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:43.497549",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/orlando/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:45.524107",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/aventura/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:30:51.519985",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://tamayodenver.com/menus/lunch",
+      "title": "Lunch Menu | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "3 pm",
+        "specials",
+        "11 am",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:51.574786",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n lunch menu | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3d93ea4-min.e"
+    },
+    {
+      "url": "https://tamayodenver.com/menus/tequila",
+      "title": "Tequila List | Tamayo Denver",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "specials",
+        "thursday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:53.494139",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n tequila list | tamayo denver \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-css-runtime-ea87b1a6e3d93ea4-min"
+    },
+    {
+      "url": "https://tamayodenver.com/4hands",
+      "title": "4 Hands Dinner With Chefs Richard Sandoval & Frank Bonnano",
+      "restaurant_slug": "tamayo",
+      "restaurant_name": "Tamayo",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "tuesday",
+        "9 pm",
+        "specials",
+        "thursday",
+        "9pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:55.451764",
+      "content_type": "text/html;charset=utf-8",
+      "status_code": 200,
+      "content_preview": "\n   \n     \n     \n     \n \n \n 4 hands dinner with chefs richard sandoval & frank bonnano \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n document.documentelement.classlist.add('wf-loading') \n @keyframes fonts-loading { 0%, 99% { color: transparent; } } html.wf-loading * { animation: fonts-loading 3s; } \n \n \n \n squarespace_rollups = {}; \n (function(rollups, name) { if (!rollups[name]) { rollups[name] = {}; } rollups[name].js = [\"//assets.squarespace.com/universal/scripts-compressed/extract-cs"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/gluten-sensitive",
+      "title": "Gluten Sensitive",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:30:55.636372",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "gluten sensitive !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,doc"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/catering",
+      "title": "Catering",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:30:57.481225",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "catering !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'s"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/locations",
+      "title": "Locations",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "happy hour",
+        "sunday",
+        "12pm",
+        "10pm",
+        "friday",
+        "11am",
+        "saturday",
+        "thursday",
+        "9pm",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:30:59.512896",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "locations !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/daily-specials",
+      "title": "Daily Specials",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "happy hour",
+        "daily specials",
+        "specials"
+      ],
+      "discovered_at": "2025-08-17T20:31:01.476127",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "daily specials !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,docum"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/washington/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:03.544137",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/dessert",
+      "title": "Dessert",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:31:03.567628",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "dessert !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'sc"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/kids-menu",
+      "title": "Kids Menu",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:31:05.481556",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "kids menu !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/denver/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:05.934507",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/happy-hour",
+      "title": "Happy Hour",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:31:07.499309",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "happy hour !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/topanga/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:07.980590",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/san-francisco/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:09.933283",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/drinks",
+      "title": "Drinks",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials"
+      ],
+      "discovered_at": "2025-08-17T20:31:11.492138",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "drinks !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'scr"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/san-diego/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:11.976112",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menus/main-menu",
+      "title": "Main Menu",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily specials",
+        "daily",
+        "specials",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:31:13.526443",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "main menu !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\nnew date().gettime(),event:'gtm.js'});var f=d.getelementsbytagname(s)[0],\nj=d.createelement(s),dl=l!='datalayer'?'&l='+l:'';j.async=true;j.src=\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentnode.insertbefore(j,f);\n})(window,document,'"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-gb/location/los-angeles/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:13.901464",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/lunch-specials",
+      "title": "Lunch Specials",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:15.484127",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "lunch specials @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/kids-menu",
+      "title": "Kids Menu",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:17.516880",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "kids menu @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].p"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/catering",
+      "title": "Catering",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:19.495940",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "catering @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pu"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/gluten-senstive",
+      "title": "Gluten Sensitive",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:21.498921",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "gluten sensitive @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[]"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/dessert",
+      "title": "Dessert",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:23.492442",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "dessert @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].pus"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/daily-specials",
+      "title": "Daily Specials",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:25.499868",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "daily specials @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/happy-hour",
+      "title": "Happy Hour",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:27.494703",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "happy hour @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l]."
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/lunch",
+      "title": "Lunch",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:29.501805",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "lunch @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push("
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/drinks",
+      "title": "Drinks",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:31.498970",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "drinks @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push"
+    },
+    {
+      "url": "https://www.bluesushisakegrill.com/menu/main-menu",
+      "title": "Main Menu",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "restaurant_name": "Blue Sushi Sake Grill",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "tuesday",
+        "daily",
+        "special",
+        "happy hour",
+        "daily specials",
+        "specials",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:31:33.523380",
+      "content_type": "text/html",
+      "status_code": 200,
+      "content_preview": "main menu @media (max-width:767px) and (min-width:480px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}}@media (max-width:479px) {html.w-mod-js:not(.w-mod-ix) [data-w-id=\"1a42f0be-5032-3650-1364-dbd4d76a3fa5\"] {height:80px;}} !function(o,c){var n=c.documentelement,t=\" w-mod-\";n.classname+=t+\"js\",(\"ontouchstart\"in o||o.documenttouch&&c instanceof documenttouch)&&(n.classname+=t+\"touch\")}(window,document); \n (function(w,d,s,l,i){w[l]=w[l]||[];w[l].p"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/dubai/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "wednesday",
+        "saturday",
+        "special",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:31:33.672469",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/doha/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "5pm",
+        "8pm",
+        "saturday",
+        "thursday"
+      ],
+      "discovered_at": "2025-08-17T20:31:43.650408",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/toronto/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "19  \n         \n                     \n\n     \n         am",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10pm",
+        "weekend",
+        "saturday",
+        "14  \n         \n                     \n\n     \n         am",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:48.175278",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/fallsview/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special"
+      ],
+      "discovered_at": "2025-08-17T20:31:52.178145",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/bellevue/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:31:56.202443",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/salt-lake-city/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:01.738866",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/dallas/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "5:30pm",
+        "3pm",
+        "friday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:32:05.748700",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nashville/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:10.186152",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-juan/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "sunday",
+        "6pm",
+        "thursday"
+      ],
+      "discovered_at": "2025-08-17T20:32:14.106341",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/charlotte/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:15.752349",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-midtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:19.808109",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-rooftop-downtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:23.773864",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/nyc-downtown/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:28.167277",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/las-vegas/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special",
+        "happy hour",
+        "weekend",
+        "5:30pm",
+        "10:30 pm",
+        "saturday",
+        "friday"
+      ],
+      "discovered_at": "2025-08-17T20:32:33.815608",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/los-cabos/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "special"
+      ],
+      "discovered_at": "2025-08-17T20:32:38.110378",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/boston/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:41.795553",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/chicago/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "10:00pm",
+        "sunday",
+        "11am",
+        "5:30pm",
+        "3pm",
+        "friday",
+        "monday"
+      ],
+      "discovered_at": "2025-08-17T20:32:46.216925",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/atlanta/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:48.184105",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/south-beach/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:52.228386",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/orlando/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "5:30pm",
+        "weekend",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:32:55.814737",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/aventura/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:00.206150",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/washington/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "sunday",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:06.230865",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/happy-hour-cocktails/",
+      "title": "happy hour/cocktails | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "7 am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:06.296235",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t happy hour/cocktails | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jque"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/wine-list/",
+      "title": "wine | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:07.303314",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t wine | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=functio"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/dessert/",
+      "title": "dessert | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "16 \n \n \n \n am",
+        "4am",
+        "15 \n \n \n \n \n \n \n \n am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:09.348852",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t dessert | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=func"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/denver/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:09.810172",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/brunch/",
+      "title": "brunch | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:11.372856",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t brunch | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=funct"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/dinner/",
+      "title": "dinner | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:13.353609",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t dinner | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=funct"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/topanga/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:14.232328",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/lunch/",
+      "title": "lunch | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:15.317750",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t lunch | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=functi"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-francisco/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "monday",
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "sunday",
+        "9:00pm",
+        "11am",
+        "3pm",
+        "5:30pm",
+        "friday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:15.817348",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/carryout/",
+      "title": "carryout | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "4am",
+        "happy hour"
+      ],
+      "discovered_at": "2025-08-17T20:33:17.306698",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t carryout | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=fun"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/san-diego/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "9:00pm",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:18.320551",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    },
+    {
+      "url": "https://www.riojadenver.com/menus/",
+      "title": "menus | Rioja",
+      "restaurant_slug": "rioja",
+      "restaurant_name": "Rioja",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "2:00 pm",
+        "happy hour",
+        "10:00 am",
+        "sunday",
+        "10:00 pm",
+        "saturday",
+        "4:00 pm",
+        "11:00 am"
+      ],
+      "discovered_at": "2025-08-17T20:33:19.293836",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n\t \n \n\t \n\n\t \n\t\tdocument.documentelement.classname = 'js';\n\t \n\t\n\t menus | rioja \n \n \n\t\t\tlet jqueryparams=[],jquery=function(r){return jqueryparams=[...jqueryparams,r],jquery},$=function(r){return jqueryparams=[...jqueryparams,r],$};window.jquery=jquery,window.$=jquery;let customheadscripts=!1;jquery.fn=jquery.prototype={},$.fn=jquery.prototype={},jquery.noconflict=function(r){if(window.jquery)return jquery=window.jquery,$=window.jquery,customheadscripts=!0,jquery.noconflict},jquery.ready=functi"
+    },
+    {
+      "url": "https://stksteakhouse.com/en-us/location/los-angeles/menu/",
+      "title": "Menu - STK Steakhouse",
+      "restaurant_slug": "stk",
+      "restaurant_name": "STK",
+      "happy_hour_likelihood": 1.0,
+      "content_keywords": [
+        "daily",
+        "special",
+        "happy hour",
+        "late night",
+        "10:00pm",
+        "sunday",
+        "5:30pm",
+        "weekend",
+        "weekday",
+        "6:30pm"
+      ],
+      "discovered_at": "2025-08-17T20:33:20.200571",
+      "content_type": "text/html; charset=UTF-8",
+      "status_code": 200,
+      "content_preview": "\n \n \n        window.datalayer = window.datalayer || [];\n        function gtag() {\n            datalayer.push(arguments);\n        }\n        gtag(\"consent\", \"default\", {\n            ad_personalization: \"denied\",\n            ad_storage: \"denied\",\n            ad_user_data: \"denied\",\n            analytics_storage: \"denied\",\n            functionality_storage: \"denied\",\n            personalization_storage: \"denied\",\n            security_storage: \"granted\",\n            wait_for_update: 2000,\n        });"
+    }
+  ],
+  "filter_applied": "LoDo restaurants only",
+  "original_total": 849
+}

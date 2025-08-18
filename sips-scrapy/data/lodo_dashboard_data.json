@@ -1,0 +1,337 @@
+{
+  "generated_at": "2025-08-17T21:19:52.001900",
+  "district": "LoDo (Lower Downtown)",
+  "restaurants": {
+    "stk": {
+      "name": "STK",
+      "cuisine": "Steakhouse",
+      "price_range": "$$$",
+      "contact": {
+        "address": "1550 Market St, Denver, CO 80202",
+        "phone": "(303) 318-8888",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 11:00 PM",
+        "tuesday": "11:00 AM - 11:00 PM",
+        "wednesday": "11:00 AM - 11:00 PM",
+        "thursday": "11:00 AM - 11:00 PM",
+        "friday": "11:00 AM - 12:00 AM",
+        "saturday": "10:00 AM - 12:00 AM",
+        "sunday": "10:00 AM - 11:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/stk-denver"
+      },
+      "social": {
+        "facebook": "https://www.facebook.com/STKDenver/",
+        "instagram": "@stkdenver"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Friday",
+              "Thursday",
+              "Monday",
+              "Saturday",
+              "Weekdays",
+              "Weekends",
+              "Daily",
+              "Sunday"
+            ],
+            "times": [
+              "8:00 PM - 3:00 PM",
+              "5:30 PM",
+              "All Day"
+            ]
+          }
+        ],
+        "quick_summary": "Friday, Thursday, Monday \u2022 8:00 PM - 3:00 PM"
+      },
+      "deals_summary": {
+        "total_deals": 521,
+        "avg_food_price": 3.0,
+        "avg_drink_price": 10.0
+      }
+    },
+    "rioja": {
+      "name": "Rioja",
+      "cuisine": "Mediterranean",
+      "price_range": "$$$",
+      "contact": {
+        "address": "1431 Larimer St, Denver, CO 80202",
+        "phone": "(303) 820-2282",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "tuesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "wednesday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "thursday": "11:00 AM - 2:30 PM, 4:00 PM - 10:00 PM",
+        "friday": "11:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "saturday": "10:00 AM - 2:30 PM, 4:00 PM - 11:00 PM",
+        "sunday": "10:00 AM - 2:30 PM, 4:00 PM - 10:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/rioja-denver"
+      },
+      "social": {
+        "instagram": "@riojadenver",
+        "website": "https://www.riojadenver.com/"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Daily"
+            ],
+            "times": [
+              "2:30 PM - 5:00 PM"
+            ]
+          }
+        ],
+        "quick_summary": "Daily \u2022 2:30 PM - 5:00 PM"
+      },
+      "deals_summary": {
+        "total_deals": 78,
+        "avg_food_price": 0,
+        "avg_drink_price": 10.25
+      }
+    },
+    "jovaninas-broken-italian": {
+      "name": "Jovanina's Broken Italian",
+      "cuisine": "Italian",
+      "price_range": "$$",
+      "contact": {
+        "address": "1520 Blake St, Denver, CO 80202",
+        "phone": "(303) 997-3700",
+        "coordinates": {
+          "lat": 39.7525,
+          "lng": -104.9964
+        }
+      },
+      "hours": {
+        "monday": "Closed",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/jovaninas-broken-italian"
+      },
+      "social": {
+        "instagram": "@jovaninasbrokenitalian",
+        "website": "https://jovanina.com"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Tuesday, Wednesday"
+            ],
+            "times": [
+              "5:00 PM - 6:00 PM"
+            ]
+          },
+          {
+            "days": [
+              "Friday, Saturday"
+            ],
+            "times": [
+              "9:00 PM - 10:00 PM"
+            ]
+          },
+          {
+            "days": [
+              "Wednesday, All, Day"
+            ],
+            "times": [
+              "All Day"
+            ]
+          }
+        ],
+        "quick_summary": "Tuesday, Wednesday \u2022 5:00 PM - 6:00 PM"
+      },
+      "deals_summary": {
+        "total_deals": 73,
+        "avg_food_price": 15.0,
+        "avg_drink_price": 7.0
+      }
+    },
+    "osteria-marco": {
+      "name": "Osteria Marco",
+      "cuisine": "Italian",
+      "price_range": "$$$",
+      "contact": {
+        "address": "1453 Larimer St, Denver, CO 80202",
+        "phone": "(303) 534-5855",
+        "coordinates": {
+          "lat": 39.7517,
+          "lng": -104.9968
+        }
+      },
+      "hours": {
+        "monday": "5:00 PM - 10:00 PM",
+        "tuesday": "5:00 PM - 10:00 PM",
+        "wednesday": "5:00 PM - 10:00 PM",
+        "thursday": "5:00 PM - 10:00 PM",
+        "friday": "5:00 PM - 11:00 PM",
+        "saturday": "5:00 PM - 11:00 PM",
+        "sunday": "5:00 PM - 10:00 PM"
+      },
+      "reservations": {
+        "platform": "Resy",
+        "url": "https://resy.com/cities/denver/osteria-marco"
+      },
+      "social": {
+        "instagram": "@osteriamarco",
+        "website": "https://www.osteriamarco.com"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Daily"
+            ],
+            "times": [
+              "5:00 PM - 6:30 PM"
+            ]
+          }
+        ],
+        "quick_summary": "Daily \u2022 5:00 PM - 6:30 PM"
+      },
+      "deals_summary": {
+        "total_deals": 3,
+        "avg_food_price": 0,
+        "avg_drink_price": 0
+      }
+    },
+    "urban-farmer": {
+      "name": "Urban Farmer",
+      "cuisine": "American",
+      "price_range": "$$$",
+      "contact": {
+        "address": "1659 Wazee St, Denver, CO 80202",
+        "phone": "(303) 991-6328",
+        "coordinates": {
+          "lat": 39.7503,
+          "lng": -104.9942
+        }
+      },
+      "hours": {
+        "monday": "6:30 AM - 10:00 PM",
+        "tuesday": "6:30 AM - 10:00 PM",
+        "wednesday": "6:30 AM - 10:00 PM",
+        "thursday": "6:30 AM - 10:00 PM",
+        "friday": "6:30 AM - 11:00 PM",
+        "saturday": "7:00 AM - 11:00 PM",
+        "sunday": "7:00 AM - 10:00 PM"
+      },
+      "reservations": {
+        "platform": "OpenTable",
+        "url": "https://www.opentable.com/r/urban-farmer-denver"
+      },
+      "social": {
+        "instagram": "@urbanfarmerdenver",
+        "website": "https://www.urbanfarmerdenver.com"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Daily"
+            ],
+            "times": [
+              "3:00 PM - 6:00 PM"
+            ]
+          }
+        ],
+        "quick_summary": "Daily \u2022 3:00 PM - 6:00 PM"
+      },
+      "deals_summary": {
+        "total_deals": 26,
+        "avg_food_price": 0,
+        "avg_drink_price": 17.25
+      }
+    },
+    "corridor-44": {
+      "name": "Corridor 44",
+      "cuisine": "American",
+      "price_range": "$$",
+      "contact": {
+        "address": "1433 17th St, Denver, CO 80202",
+        "phone": "(303) 825-0844",
+        "coordinates": {
+          "lat": 39.7516,
+          "lng": -104.9969
+        }
+      },
+      "hours": {
+        "monday": "11:00 AM - 12:00 AM",
+        "tuesday": "11:00 AM - 12:00 AM",
+        "wednesday": "11:00 AM - 12:00 AM",
+        "thursday": "11:00 AM - 12:00 AM",
+        "friday": "11:00 AM - 2:00 AM",
+        "saturday": "9:00 AM - 2:00 AM",
+        "sunday": "9:00 AM - 12:00 AM"
+      },
+      "reservations": {
+        "platform": "Phone",
+        "url": "tel:+13038250844"
+      },
+      "social": {
+        "instagram": "@corridor44",
+        "website": "https://corridor44.com"
+      },
+      "happy_hour": {
+        "status": "unknown",
+        "next_happy_hour": null,
+        "current_deals": [],
+        "weekly_schedule": [
+          {
+            "days": [
+              "Weekdays"
+            ],
+            "times": [
+              "3:00 PM - 6:00 PM"
+            ]
+          }
+        ],
+        "quick_summary": "Weekdays \u2022 3:00 PM - 6:00 PM"
+      },
+      "deals_summary": {
+        "total_deals": 30,
+        "avg_food_price": 21.0,
+        "avg_drink_price": 24.0
+      }
+    }
+  }
+}

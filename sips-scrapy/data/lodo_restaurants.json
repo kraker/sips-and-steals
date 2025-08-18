@@ -1,0 +1,84 @@
+{
+  "metadata": {
+    "source": "lodo_filter",
+    "created_at": "2025-08-17T20:55:00.000000",
+    "description": "LoDo (Lower Downtown) restaurants for targeted happy hour extraction",
+    "total_restaurants": 8,
+    "target_district": "Central",
+    "target_neighborhood": "LoDo"
+  },
+  "restaurants": {
+    "jovaninas-broken-italian": {
+      "name": "Jovanina's Broken Italian",
+      "slug": "jovaninas-broken-italian",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://jovanina.com",
+      "cuisine": "Italian",
+      "expected_deals": "wine, aperitivo, small plates"
+    },
+    "blue-sushi-sake-grill": {
+      "name": "Blue Sushi Sake Grill", 
+      "slug": "blue-sushi-sake-grill",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.bluesushisakegrill.com",
+      "cuisine": "Japanese",
+      "expected_deals": "sake, sushi, appetizers"
+    },
+    "osteria-marco": {
+      "name": "Osteria Marco",
+      "slug": "osteria-marco", 
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.osteriamarco.com",
+      "cuisine": "Italian",
+      "expected_deals": "wine, aperitivo, antipasti"
+    },
+    "rioja": {
+      "name": "Rioja",
+      "slug": "rioja",
+      "district": "Central", 
+      "neighborhood": "LoDo",
+      "website": "https://riojadenver.com",
+      "cuisine": "Mediterranean",
+      "expected_deals": "wine, small plates, cocktails"
+    },
+    "stk": {
+      "name": "STK",
+      "slug": "stk",
+      "district": "Central",
+      "neighborhood": "LoDo", 
+      "website": "https://stksteakhouse.com",
+      "cuisine": "Steakhouse",
+      "expected_deals": "premium cocktails, wine, appetizers"
+    },
+    "urban-farmer": {
+      "name": "Urban Farmer",
+      "slug": "urban-farmer",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://www.urbanfarmerdenver.com",
+      "cuisine": "American",
+      "expected_deals": "craft cocktails, local beer, farm-to-table"
+    },
+    "tamayo": {
+      "name": "Tamayo", 
+      "slug": "tamayo",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://tamayodenver.com",
+      "cuisine": "Mexican",
+      "expected_deals": "margaritas, tequila, tacos"
+    },
+    "corridor-44": {
+      "name": "Corridor 44",
+      "slug": "corridor-44",
+      "district": "Central",
+      "neighborhood": "LoDo",
+      "website": "https://corridor44.com", 
+      "cuisine": "American",
+      "expected_deals": "beer, cocktails, bar food"
+    }
+  }
+}
