@@ -2,6 +2,16 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project Context Loading
+
+When starting work on this project, always read these files first to understand the current state and guidelines:
+
+1. **README.md** - Project overview, current architecture, and public demo information
+2. **STYLE_GUIDE.md** - Python PEP 8 compliance and coding standards
+3. **UX_DESIGN_GUIDE.md** - UI/UX patterns and design principles from successful LoDo dashboard
+
+These files contain essential context for maintaining consistency with established patterns and avoiding architectural drift.
+
 ## Project Milestones
 
 ### 🚀 **Milestone 4: JavaScript & Advanced URL Discovery** (August 17, 2025)
