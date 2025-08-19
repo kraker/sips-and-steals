@@ -1,0 +1,2611 @@
+{
+  "refined_at": "2025-08-18T21:05:49.466726",
+  "total_schedules": 60,
+  "schedules": [
+    {
+      "id": "thirsty-lion-happy_hour-friday-monday-saturday-sunday-wednesday-11:00-22:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "wednesday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "6ad2dc68-b946-4e22-943f-c8ff93a5a5a7",
+        "55c078d3-cbcb-489e-b1d5-5cafdc5936ca",
+        "265d914f-a78e-4d30-8bd1-8275de8b3025",
+        "fc3b778f-6437-4620-9bf9-2863613ccce7",
+        "e4514999-a8cf-4c60-b37b-94c7745f1e61",
+        "e0380dbc-ec55-4479-a1ce-94aa63963a61",
+        "d7542563-47cb-43b5-9b92-a9abbc2e89b5",
+        "86828936-ee9e-4d4b-afec-a8b44888e073",
+        "748e9b94-3d57-4a14-b0fc-13ffce897241",
+        "2c045f94-fd90-48e3-96f2-153c32557a5e",
+        "7d94f34d-91f6-42c4-8f41-62b60b7a1bd4",
+        "de79343b-0959-4d2e-8c7b-1199642313aa",
+        "51866c99-99da-4bac-9893-a26ff9156ff5",
+        "783a3154-b493-4eaf-966f-12d65b158015"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "thirsty-lion-happy_hour-friday-monday-saturday-sunday-wednesday-11:00-23:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "wednesday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "23:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "25640cfb-c763-4c1a-929f-70a22298df53",
+        "561b288d-a110-4045-911a-cf687b88eaf6",
+        "44aba079-3912-4ddf-9171-bc1128b781e2",
+        "eb39d485-6c69-43dd-8ee0-3def7a8b20eb",
+        "00733fab-e7ac-4f84-b95d-c010f43ee4e7",
+        "9d371a68-5fd1-4de6-bd9c-423763afa3f0",
+        "81bc5cdc-9970-4d59-b905-76e40407951e",
+        "1beccfa8-d0fc-41c4-bdb3-872a01eec7b7",
+        "03975ac9-f950-44d8-b7a5-0301370db79f",
+        "d3eb6c96-0090-4dc6-913f-1c64a87de73c",
+        "64c42411-c84f-4245-9979-96b481ebe515",
+        "cfd4513a-182f-4afa-8dfc-2a4950c504d9",
+        "255df36d-94e8-4c28-96cd-8e13b15c5b19",
+        "44cca924-e45d-4eac-bd8b-e550c7642489"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "thirsty-lion-happy_hour-friday-monday-saturday-sunday-wednesday-10:00-23:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "wednesday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "23:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "72874ae5-4aa0-453a-88a4-ce3606a881a5",
+        "5ad453b2-ca31-4f35-b223-b13be31a6a0e",
+        "03d5282d-0a81-4c88-bf23-4b710bb84964",
+        "d8cd7e97-ce4a-4627-a08b-3cd11d9b1e9b",
+        "6a452e49-2185-4d66-95b4-7404bfc06cdb",
+        "69aaf311-9e15-4cca-9ebd-3ec6141b3414",
+        "8f7b242d-1ce9-4c30-b388-143e88d56a11",
+        "39794214-8f7c-4bd5-907d-d47d538ed9d9",
+        "6300be5a-5098-4d5b-b44c-1419b9208df9",
+        "847f5952-2496-4ebd-a72a-5755334ac7a6",
+        "630e32a3-3ec7-44e4-accd-372b1409c14c",
+        "4e0bab6a-1b02-44d2-b1f4-be0fb7f24ad9",
+        "51e2e45c-8264-482b-9c03-c542e7ffb4b3",
+        "45553d49-2c95-4e3e-9536-9fec73e15e59"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "thirsty-lion-happy_hour-friday-monday-saturday-sunday-wednesday-10:00-22:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "wednesday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "a58d7332-ca52-4221-94be-d11b434f031a",
+        "a00bfcfc-127c-4548-898b-4dd25092d419",
+        "2a1eac3e-55c1-4b8e-ae46-9a40da358b7f",
+        "a6d4dc7b-db5b-4640-93e2-c7e2ccfaff06",
+        "1f993527-576f-42f9-94af-32935b27070e",
+        "398ee4ac-d705-445b-9a1a-af2f41bc9751",
+        "24e92990-4858-491f-8970-a553f6846875",
+        "18576a30-8fb2-4a36-8df1-825799c0b357",
+        "90481a1b-45ab-4b31-9ab0-e08e0678d49a",
+        "a0c903b6-77df-4495-9a2c-376d8359101d",
+        "e6fe9802-db9c-4eb4-aaa9-d8ad952fe294",
+        "160aa15f-2d88-42f6-8168-acfbfe982e04",
+        "0a066fea-15bb-4179-be9f-1abe58d5d67d",
+        "399308a0-2d96-4e46-b833-6ed7f8b9599b"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "thirsty-lion-happy_hour-friday-monday-saturday-sunday-wednesday-10:00-14:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "wednesday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "f96eccb5-87f6-4515-92e8-215c7584490e",
+        "5f76905a-3339-4900-923d-e650bb116176",
+        "48d11cd2-84bb-4ef8-b781-2e92028f1900",
+        "1454c7ce-dbaa-4cf5-859e-9c702784c4af",
+        "d13d5115-9dea-465c-a09a-f59b99a584ff",
+        "7dff1a5a-201e-48ac-a619-7bf0f7109317",
+        "04bc3e34-6f30-4f86-b027-c4726a4da872",
+        "106a6968-beb7-455a-93af-0eb667583bb2",
+        "aad518b1-c711-4ca5-806a-03d069a15764",
+        "f461a144-1425-4da7-b89a-2d1b858e8ce9",
+        "10394d5c-35d1-4411-8845-6da7433c3ffa",
+        "8764e52e-0a00-4eb2-9016-7487bae630e9",
+        "084f2b72-1802-41ee-908f-ef7e9811d373"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "thirsty-lion-weekend-saturday-sunday-10:00-14:00",
+      "restaurant_slug": "thirsty-lion",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.thirstylionrestaurant.com/colorado"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "e1430b30-505b-4f80-89ae-4d122be765d3"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-15:00-17:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "90451e6b-fa5e-41f0-837d-1617021cfa7a",
+        "31f705dc-25f3-4aae-925f-1f42c8d74cd0",
+        "bd30f8ca-6477-426c-a176-a2e72214c8ce",
+        "01f18cd6-7a22-4eea-98ac-a794206d112c",
+        "d967794c-5ace-4cbe-85fc-73c92378188a",
+        "dcf35977-1f5c-46bd-ba65-7684fee01810",
+        "4e28b365-69dd-44d0-a22a-55efb4a38d41",
+        "57a59db2-ef2c-40fb-8a2d-07c7310973ee"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "stk-weekend-saturday-sunday-any-any",
+      "restaurant_slug": "stk",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://stksteakhouse.com/happenings/happy-hour/"
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "5bf1657e-3f1e-428f-9d29-ecf1cd968f3b",
+        "f7ec5ac1-240f-4364-9174-05e3ed370429",
+        "3d62a7f9-86f4-4285-9f61-ddffe7079516"
+      ],
+      "average_confidence": 0.7999999999999999
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-monday-thursday-11:00-22:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "monday",
+        "thursday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "11240c67-77f7-41df-b6cb-aa07412fd2b6"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "urban-farmer-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-09:00-14:00",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "09:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "7023d724-3092-4437-bd56-62f9fb5295ad",
+        "faf0d059-a6eb-44b6-8ef2-804acab03177",
+        "4553d979-5c99-44af-b3b8-e4fcd6dc2026",
+        "9fa2e7d1-7d21-4cb5-9f21-5a734af6386b",
+        "f772bf92-b625-4288-aace-29fa9b9c7d29",
+        "87e31e1d-611d-4ff8-bdeb-637a5d7fa94b"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-15:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "84b898de-644c-4ba8-864b-9316cc106e0e",
+        "64588494-73de-4359-896f-f1ffccda0169",
+        "6feddb0b-c629-4d90-9f5e-d19a6d2f7aef",
+        "26a2747b-4c3c-4f12-8f09-f62420895a99",
+        "bdca0052-7331-41d7-b8fc-647f390b762b",
+        "42ad50e9-2a76-4485-8db3-2d3002324025",
+        "b69236bf-6754-4b93-a537-56bf5c699bd4",
+        "163e0603-05ef-4359-9e48-118a52b105fe",
+        "e62caafa-675c-464c-a01b-19f22cbdd706",
+        "ff5e250a-b305-4bd2-b79d-44fb66dfeeb9",
+        "23616170-e6cd-4c5a-b6f1-5d726dc919f4"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-13:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "dc10f6c2-50f6-431d-9a5f-f825c2d91101",
+        "5b772fc9-4fcc-4a10-8ae2-5d1f9b2246d7",
+        "39b813f5-8edd-4313-b66c-85783091830f",
+        "a7e29374-14b6-4ea8-8d1a-2c3965d62548",
+        "4ebdecd0-fd4e-4ecc-a369-bb659ce4ed6e",
+        "eccdf835-8fc0-4442-9811-824dc308cb25",
+        "49fd840b-f531-4244-bfc9-cbdb682d7a4e",
+        "156d1496-195e-46e1-9926-a6967a234e78",
+        "8abab690-3cb6-4a08-955c-3b3d8b5a85cb",
+        "79ff7d12-bd68-46f4-bf56-bfbd2f105367",
+        "f84e0772-b586-4362-93ad-a0c7fb99c47d"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-14:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "477242c9-ddbf-4baa-9b55-77d05392a963",
+        "93f58b8e-3dff-466c-8a8b-96e05f949f71",
+        "9e0508b4-3d9d-4514-9cdf-5fc3e44bf097",
+        "44b196d7-da3b-44f5-8e26-2d6901d56d57",
+        "d8aa3769-1b85-4556-aa7a-1a0e2b6b67a0",
+        "26a3b0a6-8bce-4705-b354-4ba66d41de91",
+        "86ad3874-1b0e-4a72-8148-1069317274b4",
+        "d59bdecf-af9e-42e7-9388-b3dde019667e",
+        "1d9804d5-e663-4baf-bd8c-dee2740d6007",
+        "33dd510d-f948-4c61-b11a-4bb7dbd5bbc3",
+        "cdd427e5-aa35-46c1-a24c-7072870ea1dc",
+        "60de311e-f635-4ac5-b185-e575b26c9cdb"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "077dd654-bb0c-4238-b36a-9fac7a10fb76",
+        "eaac53df-45a3-4b18-8a9a-1f14935a664d",
+        "b6bbe490-7577-4cf3-894f-0f3cc4cc1893",
+        "c117bbe0-72dc-4c91-8e88-0250f4b70849",
+        "e135503f-bccf-4844-8324-04bf02cb5d21",
+        "09b143bf-e7b2-4b69-8d9b-febbfbf65d5c",
+        "7c180fad-7676-498a-b24c-6bd915894a7c",
+        "70aa2f4c-b129-4c5c-b133-a43392ba0501",
+        "cdaac380-a5ad-44ea-b22a-f0def4b8a0d8",
+        "97834159-65cd-4fba-aaff-829a89e497c2",
+        "acf55da2-5c37-4312-a1bc-c4bed545ffe0",
+        "fa9999a1-61af-44d2-8043-aca893cb0077",
+        "adab3360-6a0c-4303-b342-14c22a8c6f99",
+        "d4f49618-b6a8-4d2f-ac26-a1e56f93b39f",
+        "718e966d-0050-478e-b25b-fe0c8ea8bc07",
+        "1bc788c2-fa83-4df4-bac9-60eff2a6ae19",
+        "6779e7d8-691d-4e68-a776-4724429e537e",
+        "e0c5e978-ea4b-4306-bbfd-271b35f3a9b6",
+        "384383c1-61dc-4f9d-85c9-25d76cd4baf8",
+        "2fa63207-a676-43d9-9400-e5612348a3c6",
+        "1ebedebb-ece7-408d-8bab-9bb21e77ba80",
+        "f52544b9-33e8-41f1-ac72-5cebf1c11fa0",
+        "19cba049-f917-465d-8195-b93f9a7960f8",
+        "ed24676c-2973-4e0e-8f3d-0a12c7503beb",
+        "b6e72682-d00c-4dd8-aa46-ad0378e76895",
+        "f32fee0a-0956-4f76-b058-240920c91c51",
+        "2315b97a-e7b8-4c27-b58c-0e176fcde4d6",
+        "852086bc-bdf3-4af0-b122-90ca32707da6",
+        "dedf9803-76b5-43d6-83da-caf98a4923aa",
+        "1827f00d-347f-460c-8f14-dca1e8386b88",
+        "71ae6119-00a2-43c5-bf36-ec4f54b560e3",
+        "499cd645-2ec8-418a-a8e6-63ff2743c280",
+        "b4cb294b-ed3b-45e4-989d-9c94474611d0",
+        "4cef4af0-a785-4fe5-a629-43e83337bb8f",
+        "cc57eb5a-8029-45a3-bf92-4dd521f6c00d",
+        "70a1fa35-a1b6-4784-b336-a00c55363712",
+        "c9dcf1db-11bf-4a0d-b26a-58c549860380",
+        "e5936340-ae6e-49a3-af90-189285209b53",
+        "1921cffb-cc24-4f4e-b4cb-69034670d4c8",
+        "e789356f-7a86-4b1e-8525-31148de15d6c",
+        "c6b2a723-9b2a-40b9-a167-c55269167ea0",
+        "716d24c2-4ef6-4028-8c09-aa6ba0b32950",
+        "de2c0fce-750d-41cf-82c7-53374dc0418c",
+        "dd03f86d-51ce-4142-8746-b440b0fe97a6",
+        "544924c3-6599-4689-a582-353e4905303b",
+        "3d091477-7801-436a-939b-e7b1ae21d49b",
+        "ff7fdc9c-9a8a-4eb7-8397-02f3c3094f5c",
+        "8e8385ed-ea83-4e6f-b3ca-1c3887304e91",
+        "b034a978-551a-42a6-a8c3-1ea4dcb70472",
+        "d1f3182c-ced7-46ea-ab33-872a5ca8302f",
+        "cb5aab83-2eb2-493a-b124-4933ce048fe0",
+        "c7ff1fbd-a388-4cdb-89b5-8a26ac2a1409",
+        "4c2df3aa-d5a6-4bc9-a568-ab1485520211",
+        "b802d1b6-bfb7-4163-9fcc-01e82d8af4fc",
+        "28708182-d336-4165-bd64-f700d4d87797",
+        "cf292209-916d-44fa-981a-70bc9d42a39f",
+        "e0ad398f-0c31-424a-9df6-341e0c33f558",
+        "28d03c11-f7dc-4c09-8063-78b041812b3d",
+        "504b2e53-ff69-4b4c-8493-8c7c0a354e04",
+        "d1caf60d-8343-495c-a657-2d2e5611187c",
+        "ac9b74d3-1ac4-4e89-8ed2-da7e69d14cfc",
+        "ff27b6c1-8d88-46fe-bb6e-a30da2392fcb",
+        "2f2b9d63-c410-4234-8531-ee6a93ecae43",
+        "4983b472-cc0a-4dac-9e68-73edc5e6a72a"
+      ],
+      "average_confidence": 0.9953125
+    },
+    {
+      "id": "osteria-marco-happy_hour-monday-thursday-11:00-21:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "monday",
+        "thursday"
+      ],
+      "start_time": "11:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "9a3b4d9c-0702-4c12-af63-5248f09eda9e"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-saturday-11:00-22:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "friday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "38f31b7c-d1e6-420b-b410-b7df8576c23a"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-10:00-21:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "97f2738f-2cae-43d2-8772-3c409155ee80"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-21:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "84ec55d0-3566-477f-80ce-4654d11ef229"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-22:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "fc35e515-3a9a-4a93-a48d-85f12863b060"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-weekend-sunday-any-any",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "weekend",
+      "name": "Sunday Weekend",
+      "days": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "7095f917-2204-4a9e-862c-fd0bc6dc299b",
+        "30c41d3f-4d44-44f3-ab77-9c768e24b0a4",
+        "fc961c8c-79cf-4a5a-85ad-e92edf3a416f",
+        "edee2ef5-e2e8-425f-b4ae-65dad5bb1237",
+        "fbc74643-a0c2-437d-a2d4-5ced5bb3a1b1",
+        "e501e809-3f20-4981-bc30-b879549c852f",
+        "b35784c3-84ca-4173-b862-58e847583bf1",
+        "704cbccc-7e34-4cc2-b7de-5b5256bf02b5",
+        "d8b3082b-194b-4a28-8029-301d72474367",
+        "c38c92d3-ec25-412a-8a1b-a723524d65fe",
+        "acb544f8-932b-4527-bd05-fbe452dd216c",
+        "48928fe2-39e4-4d3d-96d1-a2cf4147b723"
+      ],
+      "average_confidence": 0.7999999999999999
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-thursday-tuesday-wednesday-15:00-17:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "333560e0-9839-4483-838f-671960c4b97a",
+        "37176cf6-00f6-4be4-bf6c-c104727d4702",
+        "64d2e843-44c2-433d-b400-1ddaa74aab82",
+        "154f5a7d-4ab3-404c-b544-9a6930489722",
+        "beb15a41-40bd-4f0e-9c33-6d137206d582"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-11:00-22:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Friday Happy Hour",
+      "days": [
+        "friday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "0a0321de-61e3-46d2-9d50-b93ee88f8e08"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-weekend-saturday-12:00-22:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "weekend",
+      "name": "Saturday Weekend",
+      "days": [
+        "saturday"
+      ],
+      "start_time": "12:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "2969e5d3-3af3-40e7-bd78-4af709ab842a"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-monday-saturday-11:00-18:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "25b01509-ac43-42c2-bcca-30d2b0969a1c"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-monday-saturday-sunday-thursday-11:00-22:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "155f6f3f-6488-48bf-a837-3888219d296e",
+        "e3350f1c-c74a-4cb8-8723-03ce0f8439ba",
+        "425ce4cb-ca65-4251-b288-ad82a9aec5a7",
+        "0277b0a4-5588-4866-86be-f674f1feb137",
+        "794fcdfa-fc4f-496d-8f80-e93f68ced0ff",
+        "61ac3e44-681c-4fdd-a81e-36d14e67de76",
+        "e32abcf0-2198-4a6e-823d-d1647ee4b095",
+        "249f226a-86ac-4699-84f8-bad0239e144f",
+        "6b2cf5b3-12e5-4ca8-8ceb-e296c74fbe22",
+        "3880ceb4-59d2-40b8-afc1-b13926607353",
+        "3365aa1c-5b3b-44cd-886c-82924c755f17",
+        "7dad3f55-246b-4fb7-8c28-efa4ac18684b",
+        "9ff67856-2834-41b3-bdff-bda5b44022be",
+        "b70781bc-24fd-447b-a907-d850bc6a3b82",
+        "80579ae6-4f0a-4100-939a-9ac0ebd5bd04",
+        "64e694bf-4a35-4333-9dd7-99620fb8b048",
+        "c30b3224-4d41-4420-8e1f-e9a5e83aac5a",
+        "07164fd7-ff40-4386-ba06-45fc3b5d9a94",
+        "3492bded-84c9-4f41-b30a-96fcb1612342",
+        "cf0ed84b-7d05-443f-b164-31576fdfff82",
+        "d6e0e792-fcc9-4c1e-b668-8eb4fabdff8f",
+        "77903741-edb6-433b-86c2-bff3639ddea6",
+        "8cdc3b13-f9a9-485a-a7ea-ab3f83c07f6f",
+        "a9e5aa0d-d9e5-4d90-858e-72d7e7aeecfe"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-monday-saturday-sunday-thursday-12:00-22:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "12:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "055330a2-0074-4a3b-acef-a6552dfa9146",
+        "e50ecfab-4bb3-41d7-aacf-4d9af0129936",
+        "954cae09-fe6e-4d2c-baad-ab0f89c09f8b",
+        "827db1fa-5bf4-413c-aa68-53b5b979de85",
+        "16c920e0-4efe-4ebc-9059-38b2278f0860",
+        "524c9ebb-8d27-401e-9083-a536d1a7ea0a",
+        "634c3e64-99c9-44cc-9b4d-94a262cb166c",
+        "dfae49e0-f819-44de-9eef-e96c78a8162b",
+        "76092449-e8a2-4222-ad43-a46be1e6bc37",
+        "d0b16739-cd24-4a92-96f5-3fe8cb00ad2d",
+        "6861d2df-d556-49ec-a8bf-2fc458370bf0",
+        "33516e6c-76f0-4771-a26b-733d579ab7f8"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-monday-saturday-sunday-thursday-12:00-21:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "12:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "fbe94353-c5ce-4cfe-bf42-01177a56ae10",
+        "0854400a-c4ff-4f3a-8a98-50235578cb51",
+        "54405419-ed5d-4ba7-8024-ebaef6fbec53",
+        "3500e8b3-ee4d-4c27-97b2-41f0851e4b42",
+        "4fc7fdb5-840b-4bc8-be86-dcee3f72c72d",
+        "588f13af-dfc8-46dd-ae9d-6b42d8797698",
+        "2d60c7ec-7a88-42d6-bd61-db59d29d39c2",
+        "eca0df52-6fe8-4857-a067-d0de048ad3ac",
+        "8419d759-0fc7-42fb-a0c1-bc25439f0b15",
+        "6c65dfa8-0755-4d0c-923d-84b10e90fe0e",
+        "7f8fbc39-c207-41e9-9a76-01e6ddd768e8",
+        "502976e7-7c52-4f64-8177-8045ff0b99ea"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-monday-saturday-sunday-thursday-11:00-18:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "b5b24d09-b89f-4702-b4fb-84bf304d7661",
+        "693d7ff7-cc69-4f62-87ee-5cb294eec7fc",
+        "10810620-96a5-4ce9-acf2-fe6b8dcce9e9",
+        "acf7723e-ef30-42f0-ae1c-3955152148fb",
+        "87ffcfca-19c0-4fb2-8385-20de67641a0e",
+        "6ca04c6d-6663-4286-b811-b9a9cb90c099",
+        "27430943-00ec-4552-af1e-b2f10103988a",
+        "1ca832c3-7ec2-4e17-9bf3-c3a7c3142f70",
+        "d95be182-5501-4842-8d1e-81fbfa029515"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-friday-monday-saturday-sunday-thursday-any-any",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": true,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "784d7da7-84d3-488a-b591-ca836d179bfd",
+        "3fd7f3df-b883-40a8-9080-55d7c9e13c6c",
+        "4505b1f5-8e06-44c0-8637-9138ee05610d",
+        "9c7c47e6-2391-4176-99db-9e25bf576cca",
+        "582f7031-a1ed-4590-94c3-dd7c6c6c35b1",
+        "54b33227-e9e2-434d-b39f-e743dd89c486",
+        "23ffe3af-b5c3-407a-b80f-3cf44d04cd38",
+        "e171ad21-0b81-4f65-8270-49e6370d542f",
+        "0eae771a-5afe-4f19-b15d-884474c835a2",
+        "d19ded27-1712-4fd0-b4d6-e64a93322185",
+        "dba02ef3-25c7-406c-8cc9-6e513f6d6676",
+        "0f9b3603-a7e0-447c-b4fd-8e4a716310a9",
+        "513cf534-6209-43d5-b0b7-24d4d90e5335"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-monday-saturday-sunday-11:00-18:00",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "monday",
+        "sunday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "aff1f56c-821e-45df-948c-5e8582c0592a",
+        "c577b07e-7a80-4a18-a0ee-0fbcb67193b7"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "blue-sushi-sake-grill-happy_hour-monday-saturday-sunday-any-any",
+      "restaurant_slug": "blue-sushi-sake-grill",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "monday",
+        "sunday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": true,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.bluesushisakegrill.com/locations/lodo"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "737fb2f8-385d-4e49-85b8-b02ec5dbfdac",
+        "73b57c5f-8cb0-4b64-89b2-3b8c7301b464"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "urban-farmer-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-16:00-18:00",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "0b7b6c1d-b6c8-437c-b619-098165924392",
+        "c174ed78-8521-498b-802b-8416268685e6",
+        "5f5cdf28-c1ed-4ec9-8d0f-b8c82ec8c1f7",
+        "9eb32b12-9313-41be-974d-9c49093d3c01",
+        "0df63576-b750-4c23-8ccb-0c5f254f01e6",
+        "5cf73a5e-55d5-4791-aff7-95f00abaf1d4",
+        "74e84e12-d2ec-4dd5-b8a9-277124352951"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "urban-farmer-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "ba58f38c-491c-4b96-a83d-e6b6c2b9439d",
+        "4c12ad5a-bd51-413c-9fc1-96603ef80348",
+        "b34b3227-5d4c-46e6-bf27-5ac1735bc9c8",
+        "c399a921-0bc6-4f32-9915-cfba3f6a6f54",
+        "d426da4e-43c3-4d71-8eb8-b4a872c7fae5",
+        "98e46834-f9c3-40b4-9287-0234e48dd720",
+        "5a987a6f-eaab-47a7-92c8-5ee8f7725d56",
+        "77c3f09a-34f8-485a-ab12-2b98ad46a6b8",
+        "3dd75930-0312-4d9d-a863-1acdead338bd",
+        "5d079139-d950-404d-b04a-7187d6935248",
+        "ad86fe24-a706-44d4-a43c-6b33ad9c8e1b",
+        "38e4c3b1-bbdb-42d5-98f4-cfae54758226"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "urban-farmer-weekend-saturday-sunday-09:00-14:00",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": "09:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "5453f584-57b5-4f02-9abb-ac09ba9dabd5",
+        "3fad6313-0780-4a4a-8562-1c0f4853c224",
+        "46bd4fe1-d30c-4908-ad1a-3d9c4344fae7"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "urban-farmer-weekend-saturday-sunday-any-any",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "1e1421ac-9b8d-4a82-b785-16ed79a5678a",
+        "5412f9bb-3740-40fb-bc9d-86b4cba9bb76",
+        "ef8a24ab-4a2e-4c3c-8721-50c8324186d2"
+      ],
+      "average_confidence": 0.6999999999999998
+    },
+    {
+      "id": "urban-farmer-happy_hour-friday-monday-thursday-tuesday-wednesday-16:00-18:00",
+      "restaurant_slug": "urban-farmer",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.urbanfarmersteakhouse.com/denver-menus/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "c9e68eb3-695c-4807-b337-0c5e12fd88d4",
+        "3a13ab33-66ae-45a0-b5d7-2c5282e655fc"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-weekend-sunday-11:00-15:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "weekend",
+      "name": "Sunday Weekend",
+      "days": [
+        "sunday"
+      ],
+      "start_time": "11:00",
+      "end_time": "15:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "fa36b3cd-652b-4012-9f36-d871f7005e78",
+        "3cb7448c-e3ed-4d7e-a6db-7bf1d13d3ba9"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-weekend-sunday-11:00-13:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "weekend",
+      "name": "Sunday Weekend",
+      "days": [
+        "sunday"
+      ],
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "09f91119-9be7-46a7-b026-f6b0b1aa07b1",
+        "405858ba-a040-4739-bbf5-2fba4418a66d"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-weekend-unknown-11:00-14:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "weekend",
+      "name": "Weekend",
+      "days": [],
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "medium",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        0.8,
+        0.8,
+        0.8,
+        0.8
+      ],
+      "raw_extraction_ids": [
+        "d1cdf4fc-79c9-4e08-99d4-fae7223c9446",
+        "31512da6-44b3-421d-a9fb-971436d0c8a3",
+        "e5a8ad46-9972-48db-93d8-7c81bd115d7e",
+        "09f6d74b-da64-46ee-bfa9-f2401f03e48d"
+      ],
+      "average_confidence": 0.8
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-10:00-21:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "10:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "4411170d-1fdf-4054-bf0d-d9236125b3fd",
+        "f00133c6-c61b-4af1-84b1-595101166fe4",
+        "faf0a919-0fde-4cfd-8a27-80d43a3ee773",
+        "227e6e65-5061-42fa-9a0d-5f4e3a12d696"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-11:00-21:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "21:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "b96e6858-5ad1-4ce5-b1f9-4fb1d4c38b25",
+        "efe83f82-7af9-44f2-8205-848acdfbdad0",
+        "4708fd61-609e-4107-ac62-ac182a57d50f",
+        "879a9203-30de-4736-875a-239be9ead82f"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "osteria-marco-happy_hour-friday-monday-saturday-sunday-thursday-11:00-22:00",
+      "restaurant_slug": "osteria-marco",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.osteriamarco.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "6534936f-d963-4a31-ba5c-f33b6a169d11",
+        "9f3f80bf-9c68-450a-aeb2-a79a66f16286",
+        "54a1c89d-328c-4237-a48d-90bec2935ad6",
+        "3a44c80e-13e9-4edc-a0b3-e4310078d8b7"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "rioja-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "rioja",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "http://www.riojadenver.com/menus/happy-hour-cocktails/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "0214ab31-810e-4a52-96b3-af301fcab819",
+        "76d4abc5-a766-459e-a0ab-8e8af9241c01",
+        "1b70ede6-e277-4d8e-be1a-bce300d8d1a8",
+        "0ccb1935-8012-4b93-b1b9-67ab1eb8d8c9",
+        "cc609b00-0e6c-49c9-9022-9b9a11de020a",
+        "7b47a1c3-436a-4a52-b618-5181563d43ae",
+        "1416f0d6-eca6-4a77-8a04-947942c3bed8",
+        "edfdadab-fc92-4dc0-ab06-9092f6c73913",
+        "4b7d013e-05dd-43b6-af0b-0f69e73588e7",
+        "63e89e2a-2108-47e8-b753-c77c08a8895e",
+        "a372bd3a-c539-40f7-a4f2-7d1b5d4d6e51",
+        "35811d47-75b4-4247-95db-681584410d7b",
+        "94386121-4ba6-4f2c-8592-2d720dabc804"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "rioja-happy_hour-friday-saturday-sunday-any-any",
+      "restaurant_slug": "rioja",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "sunday",
+        "friday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "http://www.riojadenver.com/menus/happy-hour-cocktails/"
+      ],
+      "confidence_scores": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "594864fd-b616-4313-bac3-c5f9f353753c",
+        "396a3319-dab7-459b-8c07-bfce56514899",
+        "4c1f39d7-cc37-4022-a7c8-43b4546faef5",
+        "3dda3045-5a44-42cd-81fa-0a2584eeaaba",
+        "4906ac0b-37f1-4725-86a8-7098a4552f58",
+        "e2e96ae6-43e1-47e0-8991-d0dcd279fdc4",
+        "f55037b5-cd6f-41fa-a76c-dae1d1353fdd"
+      ],
+      "average_confidence": 0.7
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-22:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "b8f123c4-4ce1-4718-af6c-e3ce862c1da1",
+        "8b671e99-a9a9-458c-95ea-20574257c62e",
+        "cb34afbf-4fdf-47d9-9cdd-31c5c989c2e4",
+        "3cbe26df-e5f4-4e16-bdc8-f663c2f41032",
+        "658ed9cb-3e65-410b-bfd3-4c02ecfb9a9c",
+        "86ae9620-24d8-419a-bc19-42b1bebe19eb",
+        "1fdfd844-0ec0-4b5d-9881-0a404a549ef6"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "jovaninas-broken-italian-happy_hour-friday-saturday-thursday-tuesday-any-any",
+      "restaurant_slug": "jovaninas-broken-italian",
+      "deal_type": "happy_hour",
+      "name": "Happy Hour",
+      "days": [
+        "tuesday",
+        "friday",
+        "saturday",
+        "thursday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://jovanina.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        0.7,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "47416869-a55d-42c3-9a42-5aea9a2720df",
+        "01ae50ca-4b06-4aa1-b2dc-d9a82ce43395",
+        "10a45122-230b-488c-a56a-c5460c941078",
+        "d6f4b8c8-42bd-4866-ace9-218a9e668753",
+        "2d568c4a-c67b-417a-a9c0-7203f92e3d9c",
+        "07523c3c-0159-48d6-b90c-a638c130474c",
+        "fcc3b97b-18e2-4166-8e34-62af75116439",
+        "52fdc52e-e3cd-40d6-90cf-f1fcdc7fee4f",
+        "3766d555-ec95-4a2f-8cd2-082ad4c19ed8",
+        "83c4726c-05e7-48be-816c-e075791a4775",
+        "bbb7b393-59c4-4cfc-889f-3a2c8871c743",
+        "5d14708f-69a7-48f5-bf6f-50511ca8ae93",
+        "af5ba794-2d40-475b-bd14-f962164a0762",
+        "b6f156fd-1c9a-43b5-890a-f3296b379d41",
+        "617c7982-81fd-4063-8036-61ef357149d5",
+        "049db9f7-96dd-41a9-b616-e99885d880c1",
+        "649b95bc-b8b6-49bb-8df1-916b122d4082",
+        "14ed5f6f-ce73-4bea-805e-774de8149c89",
+        "46264744-4d3f-41d6-be3d-0c3966d3cd4d",
+        "caaa2fd5-774c-4575-bcb5-464e1e66450f",
+        "ba648e31-9dc5-42c9-a34e-5fe93f8fde47",
+        "e8550649-dcb7-43d4-b1d7-012de879b30d",
+        "29654a7e-0d7d-4213-b482-af14bc38e92e",
+        "5557290d-1894-420f-a8e1-d7c07aac4fed",
+        "e589c2e7-70b8-4f61-9ced-1e495444f22a",
+        "bbaf0222-e200-405f-b323-77f013f787ee",
+        "f3ddcb90-815e-413e-a32f-aa5971078751",
+        "44a597cf-2083-4adf-8c35-3e58714c8852"
+      ],
+      "average_confidence": 0.807142857142857
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-16:00-22:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "16:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "94c9f88b-cde9-401c-80a9-15426dbfa10d",
+        "bc6e1c25-cb4c-4fa7-88a9-da061d60e274",
+        "1ca17e93-23c4-4e58-b1e8-dc24bee5a6ed",
+        "6bb002aa-374b-4b09-97c3-e2094e4209ce",
+        "cd8992ce-2be0-4432-afdd-8549cc8e0af6",
+        "75cc504e-5dc4-4947-89c4-f927debe761e",
+        "4e8a13c4-52e4-433d-8ec7-0dcdf569a87b"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-11:00-14:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "bd76bf05-b7f9-4d7e-bd04-104ec149770b",
+        "a699378d-6d8b-4576-bc4f-ef0664724a9d",
+        "33d79eef-0b11-4ed5-a14a-dc7d62a235d7",
+        "921f14cf-ab25-4483-bc0a-6df7d103f9ae",
+        "3deb0fa7-8f19-4400-ac34-363102bf9315",
+        "31e06289-5561-4588-9c40-6ec7948335b6",
+        "ceba1e21-6411-46d1-badf-036a1d73106a"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-15:00-18:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "15:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "8849f9eb-3002-4810-bb3d-99b2a1b15a80",
+        "e4edbbfd-e230-4f10-8cc9-3d4d5f19e5cf",
+        "946d9257-8dce-472b-b5c4-68a22669eafc",
+        "848698ba-4107-4d4b-93e7-dd1705056c0a",
+        "83fcee53-c898-45e1-8165-54d06e732192",
+        "61c812f4-ebc1-49dc-9cbb-e7729c5226ca",
+        "330ea87b-dd7f-4b06-a4a8-b2d80633e8bf"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-17:00-22:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "17:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "9e45cb24-58f2-4501-97c6-d3d76b79c79c",
+        "b0ff0952-8bde-4a9b-b609-12086c73b2ff",
+        "6c315aab-1020-46ee-a67a-4578d4fe4925",
+        "a0f619f4-9123-4224-b5ec-99d7dcc30686",
+        "b53cd604-edf2-4a75-b141-2299d233bc17",
+        "63e34763-8d7b-47dc-a32f-924c6ae4b58d",
+        "a7bab2a0-9c27-4296-bcae-362c626aff50"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": true,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "5f4de830-5409-473e-adad-8e23029ca753",
+        "cc73f0b0-9263-461c-a84a-c6cda92ad101",
+        "2837669e-b551-4e85-9d80-c8c46d7e934b",
+        "0688827f-aac3-43ff-9a18-c5f67ab927e3",
+        "f57f545a-f8dd-4bd8-8f4a-87668635f3b5",
+        "67f318b5-a3c8-4ac5-893a-663beb764c6b",
+        "110311e7-4843-4012-b0fd-d90649b75166",
+        "19c28b2a-7e98-465a-a2d1-fb1824ea62ca",
+        "0022c948-4b11-433a-b612-1e88ef729cd4",
+        "3891dedd-ffbd-4d8f-a216-3b99c3472c20",
+        "acd3427c-e5c9-47a2-89a5-a7c9902e5f90",
+        "6a8a8058-28a8-4c62-88c6-c7568c9cfba5",
+        "1471a588-c7a4-4093-a26a-59e5a476304d",
+        "5175f557-acd4-4a64-95a9-9cf0aced10d2",
+        "6ed816ad-628b-4a0f-aa69-8e9f7d3bad39",
+        "e2053a9c-2f0e-4de1-a9b9-7bcc1172a1a2",
+        "051579d6-50ce-4f62-8ecc-470a1e183cb5",
+        "ff0b63c6-9e23-4f74-91c2-5cfdac823da8",
+        "0d6efc36-fe5b-41fa-ad19-b31f220154fd",
+        "e0005079-6c71-4155-bc89-77b05eb61160",
+        "3b2b7450-3581-4096-a85a-819ae13fa179"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-weekend-saturday-sunday-any-any",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        0.7999999999999999,
+        0.7999999999999999,
+        0.7,
+        0.7999999999999999,
+        0.7999999999999999,
+        0.7999999999999999,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "de9ea69d-3ca2-45c7-8b33-ac4c595914c6",
+        "5d7020f1-4e8c-4974-a657-d3fe81d2282e",
+        "f8f8a17b-a5f0-4e36-acde-df1eb740f3a0",
+        "994301d9-55dc-42a7-a616-68fa25619685",
+        "c85b0efa-314b-4b0a-857a-af2f0ff12617",
+        "395530d2-49d9-4c37-b826-92207526021c",
+        "930902e9-b404-4d2d-868a-ce3694362860"
+      ],
+      "average_confidence": 0.7714285714285714
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-thursday-tuesday-wednesday-11:00-22:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": "11:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "9409cb67-2e25-4929-b558-8e8392b6bc47",
+        "d4c87bc8-7231-4526-a052-5c3787524e86"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-weekend-saturday-sunday-16:00-22:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "weekend",
+      "name": "Weekend Weekend",
+      "days": [
+        "sunday",
+        "saturday"
+      ],
+      "start_time": "16:00",
+      "end_time": "22:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "089cdd3d-4956-4dad-af8b-01e414b12749",
+        "fb691045-ed99-4c22-855e-a098345df8fd"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": true,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "fa83421a-391f-4ac7-8da1-dcaa702b69a7",
+        "d8ee1f4f-a2c1-4e55-9575-2ad4421b4b17"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "tavernetta-weekend-sunday-any-any",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "weekend",
+      "name": "Sunday Weekend",
+      "days": [
+        "sunday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "0da307d2-18ff-4f5b-ba07-7d83a40870e3",
+        "7e8b26eb-9fd4-49c8-ae54-570d50d5e27f",
+        "07445bab-9986-45bc-a7dd-a1d2e52cb91a",
+        "6b9bf7c0-37ae-4265-8798-9d98129b7227",
+        "6a4f6d27-dac5-4aa5-aea8-d6751e192c94",
+        "a33ebe5d-fc7f-45af-96b4-5461b1447bf6",
+        "47792d39-3d80-4162-a511-4d6fbc5048ab",
+        "100e6849-8de8-4d4e-9124-880862698ae4",
+        "f273f94d-bd32-42f7-8b25-1603440c886c",
+        "230041ab-891f-4dd4-9f48-a684090d74b4"
+      ],
+      "average_confidence": 0.7
+    },
+    {
+      "id": "tavernetta-happy_hour-friday-monday-thursday-tuesday-wednesday-11:00-14:00",
+      "restaurant_slug": "tavernetta",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": "11:00",
+      "end_time": "14:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.tavernettadenver.com"
+      ],
+      "confidence_scores": [
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "2bf530e2-2014-411c-8a3c-fd13b4b7c64f"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "corridor-44-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-16:00-18:00",
+      "restaurant_slug": "corridor-44",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.corridor44.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "9ea97b25-f7a4-4c06-8863-919375a08ff3",
+        "2137d538-79dd-4851-877a-13b8d900cb23",
+        "a3b04613-6158-48fe-a95f-e8cf1543856a",
+        "b625b582-516a-4710-8e4d-b301570cf17d",
+        "d5d42806-d517-4b78-b117-e24e5d12a963",
+        "1a88b56d-078c-4546-ab9e-99f5e84e03d7",
+        "d9bd1316-5a22-40be-8b4e-64e29c6d700f"
+      ],
+      "average_confidence": 1.0
+    },
+    {
+      "id": "corridor-44-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-any-any",
+      "restaurant_slug": "corridor-44",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "sunday",
+        "thursday",
+        "friday",
+        "monday",
+        "saturday"
+      ],
+      "start_time": null,
+      "end_time": null,
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.corridor44.com/"
+      ],
+      "confidence_scores": [
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7,
+        0.7
+      ],
+      "raw_extraction_ids": [
+        "016f3f80-8df1-409c-a061-a9799c204c48",
+        "af586144-47b3-4c30-905c-744177b0d135",
+        "481ea8a4-6b32-4605-88b9-cfaadbad10b1",
+        "cf009deb-3d8c-42b4-ae71-4a89305d9609",
+        "0001088a-9e82-40f3-b360-f7d72714cf3c",
+        "1ab542e8-e99a-480c-9656-2bba3a91f814"
+      ],
+      "average_confidence": 0.6999999999999998
+    },
+    {
+      "id": "corridor-44-happy_hour-friday-monday-thursday-tuesday-wednesday-16:00-18:00",
+      "restaurant_slug": "corridor-44",
+      "deal_type": "happy_hour",
+      "name": "Weekday Happy Hour",
+      "days": [
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "monday"
+      ],
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "timezone": "America/Denver",
+      "is_all_day": false,
+      "active_status": "active",
+      "last_verified": "2025-08-17",
+      "data_quality": "high",
+      "source_urls": [
+        "https://www.corridor44.com/"
+      ],
+      "confidence_scores": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "raw_extraction_ids": [
+        "bfd8bddd-9479-4655-80b5-af0b44ef7f29",
+        "c6301e95-761a-4ef4-b7da-0d20c71ebdeb",
+        "864f9547-a0e6-4dec-90dc-1e7efe09b947"
+      ],
+      "average_confidence": 1.0
+    }
+  ]
+}

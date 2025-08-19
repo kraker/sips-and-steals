@@ -2,79 +2,91 @@
 """
 Restaurant URL Fixer
 
-Automatically discovers and fixes broken restaurant URLs using the enhanced
-URL discovery system. Updates restaurant data with working URLs.
+Validates and fixes broken restaurant URLs by testing accessibility
+and suggesting common URL patterns when sites are unreachable.
 """
 
 import json
 import logging
+import requests
 from typing import Dict, List, Optional
-from urllib.parse import urlparse
-import sys
-
-# Add src to path for imports
-sys.path.append('./src')
-from scrapers.url_discovery import HappyHourUrlDiscovery
+from urllib.parse import urlparse, urljoin
+import time
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
 class RestaurantUrlFixer:
-    """Fixes broken restaurant URLs using intelligent discovery"""
+    """Fixes broken restaurant URLs by testing accessibility"""
     
     def __init__(self):
-        self.discovery = HappyHourUrlDiscovery()
+        self.session = requests.Session()
+        self.session.headers.update({
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        })
         self.fixes_applied = 0
         self.restaurants_checked = 0
+        
+        # Common URL patterns to try when main URL fails
+        self.url_patterns = [
+            '',  # Original URL
+            '/menu',
+            '/specials',
+            '/happy-hour',
+            '/deals',
+            '/events'
+        ]
+    
+    def test_url(self, url: str, timeout: int = 10) -> bool:
+        """Test if a URL is accessible"""
+        try:
+            response = self.session.head(url, timeout=timeout, allow_redirects=True)
+            return response.status_code == 200
+        except Exception:
+            return False
     
     def check_and_fix_url(self, restaurant_slug: str, website: str) -> Optional[str]:
         """
-        Check if a restaurant URL works, and if not, find a better one.
+        Check if a restaurant URL works, and if not, try common patterns.
         
         Args:
             restaurant_slug: Restaurant identifier
             website: Current website URL
             
         Returns:
-            Fixed URL if found, None if no fix available
+            Fixed URL if found, original URL if working, None if no fix available
         """
         if not website:
             return None
         
         logger.info(f"Checking URL for {restaurant_slug}: {website}")
         
-        try:
-            # Test current URL
-            response = self.discovery.session.head(website)
-            if response.status_code == 200:
-                logger.info(f"✅ {restaurant_slug}: Current URL works")
-                return website
-        except Exception as e:
-            logger.warning(f"❌ {restaurant_slug}: Current URL failed: {e}")
+        # Test current URL
+        if self.test_url(website):
+            logger.info(f"✅ {restaurant_slug}: Current URL works")
+            return website
         
-        # URL is broken, try to discover alternatives
+        logger.warning(f"❌ {restaurant_slug}: Current URL failed")
+        
+        # URL is broken, try alternatives
         parsed = urlparse(website)
         base_domain = f"{parsed.scheme}://{parsed.netloc}"
         
-        logger.info(f"🔍 Discovering alternatives for {restaurant_slug} from {base_domain}")
+        logger.info(f"🔍 Trying alternatives for {restaurant_slug} from {base_domain}")
         
-        # Use our URL discovery system
-        discovered = self.discovery.discover_urls(base_domain)
-        
-        if discovered and discovered[0]['score'] > 0.1:  # Lower threshold for fixes
-            best_url = discovered[0]['url']
-            logger.info(f"🎯 Found better URL for {restaurant_slug}: {best_url} (score: {discovered[0]['score']:.2f})")
-            return best_url
+        # Try common URL patterns
+        for pattern in self.url_patterns[1:]:  # Skip empty pattern (already tested)
+            test_url = urljoin(base_domain, pattern)
+            if self.test_url(test_url):
+                logger.info(f"🎯 Found working URL for {restaurant_slug}: {test_url}")
+                return test_url
+            time.sleep(0.5)  # Be respectful
         
         # Try just the base domain as last resort
-        try:
-            response = self.discovery.session.head(base_domain)
-            if response.status_code == 200:
-                logger.info(f"🏠 Using base domain for {restaurant_slug}: {base_domain}")
-                return base_domain
-        except:
-            pass
+        if self.test_url(base_domain):
+            logger.info(f"🏠 Using base domain for {restaurant_slug}: {base_domain}")
+            return base_domain
         
         logger.warning(f"❌ No working URL found for {restaurant_slug}")
         return None

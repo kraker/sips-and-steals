@@ -8,7 +8,7 @@ Focuses on building comprehensive pricing intelligence for restaurants.
 import scrapy
 import json
 import re
-import PyPDF2
+import pypdf as PyPDF2
 import io
 from urllib.parse import urlparse
 from datetime import datetime

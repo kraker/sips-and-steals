@@ -88,7 +88,12 @@
       "Bash(GOOGLE_PLACES_API_KEY=* python scripts/test_google_places.py)",
       "Bash(GOOGLE_PLACES_API_KEY=* python scripts/enrich_with_new_places_api.py)",
       "Bash(GOOGLE_PLACES_API_KEY=* python scripts/run_google_enrichment.py *)",
-      "Bash(tree:*)"
+      "Bash(tree:*)",
+      "WebFetch(domain:blog.gitguardian.com)",
+      "Bash(wget:*)",
+      "Bash(java:*)",
+      "Bash(git gc:*)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": [],

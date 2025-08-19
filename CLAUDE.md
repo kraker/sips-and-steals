@@ -100,15 +100,16 @@ These files contain essential context for maintaining consistency with establish
 
 ## Target User
 
-**The Discerning Urban Explorer**: Our target user is a sophisticated food and beverage enthusiast who views happy hour not as budget dining, but as smart luxury. They appreciate:
+**The Value-Driven Culinary Adventurer**: Our target user is a spontaneous foodie who seeks authentic culinary experiences and smart luxury through strategic timing. They are characterized by:
 
-- **Quality over quantity** - Seeking expertly crafted cocktails, artisanal dishes, and elevated cuisine rather than generic bar food
-- **Culinary adventure** - Drawn to diverse, high-caliber cuisines and unique dining experiences  
-- **Strategic dining** - Uses happy hour timing to access premium experiences at accessible price points
-- **Urban sophistication** - Gravitates toward established neighborhoods with walkable restaurant clusters
-- **Experience-focused** - Values atmosphere, craft, and storytelling behind dishes/drinks - not just the discount
+- **Value-driven** - Seeking maximum experience value, not just lowest price; happy hour as "smart luxury" access to premium experiences
+- **Experience-focused** - Values memorable dining experiences, atmosphere, and quality over pure cost savings
+- **Foodie mentality** - Passionate about food quality, flavors, and culinary craftsmanship, appreciating both accessible gems and elevated cuisine
+- **Culinary adventurer** - Eager to explore diverse cuisines, try new dishes, and discover hidden gems across Denver's food scene
+- **Spontaneous decision-making** - Makes dining decisions on-the-go, often checking apps for current deals and "what's available now"
+- **Smart luxury mindset** - Uses happy hour timing to access premium restaurants and craft experiences they value, regardless of original price point
 
-This user doesn't want "cheap eats" - they want to discover Denver's culinary gems during their most approachable hours, building a personal map of quality establishments worth returning to at full price.
+This user wants to maximize their culinary experiences through strategic timing, using happy hour as an opportunity to access "smart luxury" - high-value experiences at accessible prices - while prioritizing taste, authenticity, atmosphere, and memorable dining moments.
 
 ## Git Commit Style Guide
 
@@ -169,31 +170,45 @@ All code in this project follows established style standards:
 
 ## Commands
 
-### Core Commands
+### Installation
 ```bash
 # Install dependencies
 pip install -r requirements.txt
 playwright install chromium  # Required for JavaScript support
+```
 
-# Main CLI interface (Scrapy-based)
-python scripts/cli.py status                     # System status
+### Unified CLI Interface
+All operations now available through the main CLI:
+
+```bash
+# Core Scrapy Operations
+python scripts/cli.py status                     # System status and coverage metrics
 python scripts/cli.py discover                   # Discover happy hour pages
-python scripts/cli.py extract                    # Extract deals from pages
-python scripts/cli.py pipeline                   # Run discovery + extraction
+python scripts/cli.py extract                    # Extract deals from discovered pages
+python scripts/cli.py profile                    # Extract restaurant profiles
+python scripts/cli.py pipeline                   # Run discovery + extraction (deals only)
 python scripts/cli.py comprehensive              # Full discovery + extraction + profiling
+python scripts/cli.py analyze                    # Analyze extraction results
+python scripts/cli.py pricing                    # Extract menu pricing data
 
-# Direct Scrapy commands
+# Data Utilities
+python scripts/cli.py enrich                     # Enrich restaurant data with contact info
+python scripts/cli.py fix-times                  # Clean and normalize time data
+python scripts/cli.py fix-urls                   # Discover and repair broken URLs
+python scripts/cli.py district                   # Generate district analysis reports
+python scripts/cli.py schema                     # Show data schema summary
+python scripts/cli.py profiles                   # Generate individual restaurant profiles
+```
+
+### Direct Scrapy Commands (Advanced)
+```bash
 python -m scrapy list                            # List available spiders
-python -m scrapy crawl discovery                 # Run discovery spider
-python -m scrapy crawl happy_hour_deals          # Extract happy hour deals
+python -m scrapy crawl discovery                 # Run discovery spider directly
+python -m scrapy crawl happy_hour_deals          # Extract happy hour deals directly
+```
 
-# Data processing utilities
-python scripts/enrich_data.py                    # Add contact information
-python scripts/fix_times.py                      # Clean time parsing issues
-python scripts/fix_urls.py                       # Discover and fix broken URLs
-python scripts/district_analysis.py              # Generate district reports
-
-# Public site (GitHub Pages)
+### GitHub Pages Demo
+```bash
 # Live demo available at: https://[username].github.io/sips-and-steals/
 ```
 
@@ -265,7 +280,7 @@ class Deal:
 **CLI Workflow**:
 1. **Status Check**: `python scripts/cli.py status` - View system health and coverage metrics
 2. **Full Pipeline**: `python scripts/cli.py comprehensive` - Run discovery + extraction + profiling
-3. **Data Enhancement**: `python scripts/enrich_data.py` - Add contact info and operational details
+3. **Data Enhancement**: `python scripts/cli.py enrich` - Add contact info and operational details
 4. **Quality Analysis**: `python scripts/cli.py analyze` - Generate quality reports and insights
 
 **Data Prioritization** (3-tier fallback system):

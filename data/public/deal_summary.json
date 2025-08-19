@@ -1,0 +1,23 @@
+{
+  "generated_at": "2025-08-18T21:05:49.469199",
+  "total_active_deals": 60,
+  "total_restaurants": 9,
+  "deal_types_count": {
+    "happy_hour": 48,
+    "weekend": 12
+  },
+  "data_quality_stats": {
+    "high": 53,
+    "medium": 7,
+    "low": 0
+  },
+  "refinement_stats": {
+    "raw_items_processed": 525,
+    "schedules_created": 65,
+    "schedules_updated": 460,
+    "menus_created": 0,
+    "items_extracted": 0,
+    "duplicates_merged": 0,
+    "quality_improvements": 60
+  }
+}

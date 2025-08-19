@@ -8,7 +8,7 @@ Focuses on timeframes, days, prices, and deal specifics rather than general menu
 import scrapy
 import json
 import re
-import PyPDF2
+import pypdf as PyPDF2
 import io
 from urllib.parse import urlparse
 from datetime import datetime
@@ -38,8 +38,20 @@ class HappyHourDealsSpider(scrapy.Spider):
     name = 'happy_hour_deals'
     allowed_domains = []
     
-    # Enhanced patterns for happy hour deal extraction
+    # Enhanced patterns for happy hour deal extraction (optimized for premium experiences)
     DEAL_PATTERNS = [
+        # Premium format: "$X craft cocktails" / "$X artisanal drinks"
+        r'\$(\d+(?:\.\d{2})?)\s+(craft\s+cocktails?|artisanal\s+drinks?|signature\s+cocktails?|house\s+cocktails?)',
+        # Percentage off format: "X% off wine" / "Half off appetizers"
+        r'(\d+%|Half|50%)\s+off\s+([a-z\s]{3,30})',
+        # Premium wine format: "$X wine" / "$X glasses of wine"
+        r'\$(\d+(?:\.\d{2})?)\s+(wine|glasses?\s+of\s+wine|wine\s+flights?|by\s+the\s+glass)',
+        # Specific drink pricing: "$X [drink name]"
+        r'\$(\d+(?:\.\d{2})?)\s+([A-Z][A-Za-z\s&\'-]{3,30}(?:cocktails?|martinis?|negronis?|spritzs?|mules?))',
+        # Food specials: "$X [food item]" 
+        r'\$(\d+(?:\.\d{2})?)\s+([a-z][a-z\s&\'-]{3,30}(?:appetizers?|plates?|oysters?|shareables?))',
+        # Range pricing: "$X-$Y [item]"
+        r'\$(\d+(?:\.\d{2})?)-\$(\d+(?:\.\d{2})?)\s+([a-z\s]{3,30})',
         # Jovanina's format: "ITEM NAME description   price" (space-separated, no $)
         r'([A-Z][A-Z\s&\'-]{3,30})\s+([a-z][^0-9\n]*?)\s{2,}(\d{1,2})(?:\s|$)',
         # "ITEM NAME description — $price" format 
@@ -54,6 +66,8 @@ class HappyHourDealsSpider(scrapy.Spider):
         r'\$(\d+(?:\.\d{2})?)\s+([A-Z][A-Za-z\s&\'-]{3,30})',
         # Simple format: "ITEM NAME   price" (for items without description)
         r'([A-Z][A-Z\s&\'-]{3,30})\s{2,}(\d{1,2})(?:\s|$)',
+        # Premium descriptive format: "Expertly crafted [item] for $X"
+        r'(expertly\s+crafted|artfully\s+prepared|chef\'s\s+selection)\s+([a-z\s]{3,30})\s+for\s+\$(\d+(?:\.\d{2})?)',
     ]
     
     # Time patterns for extracting happy hour schedules
@@ -78,14 +92,19 @@ class HappyHourDealsSpider(scrapy.Spider):
         r'\b(Weekday|Weekend|Daily)\b',
     ]
     
-    # Category classification patterns
+    # Category classification patterns (enhanced for premium experiences)
     CATEGORY_PATTERNS = {
-        'appetizers': ['appetizer', 'small plate', 'starter', 'shareables', 'bites'],
-        'cocktails': ['cocktail', 'mixed drink', 'spritz', 'negroni', 'martini'],
-        'wine': ['wine', 'chardonnay', 'pinot', 'cabernet', 'merlot', 'rosé'],
-        'beer': ['beer', 'pilsner', 'stout', 'lager', 'ale', 'brewing'],
-        'spirits': ['whiskey', 'vodka', 'gin', 'rum', 'tequila', 'bourbon'],
-        'food': ['panino', 'pizza', 'oyster', 'cheese', 'salad', 'pasta']
+        'craft_cocktails': ['craft cocktail', 'artisanal drink', 'signature cocktail', 'house cocktail', 'mixologist special'],
+        'premium_cocktails': ['negroni', 'martini', 'old fashioned', 'manhattan', 'sazerac', 'boulevardier'],
+        'wine': ['wine', 'chardonnay', 'pinot', 'cabernet', 'merlot', 'rosé', 'wine flight', 'by the glass'],
+        'beer': ['beer', 'pilsner', 'stout', 'lager', 'ale', 'brewing', 'craft beer', 'local beer'],
+        'premium_spirits': ['whiskey', 'bourbon', 'rye', 'scotch', 'vodka', 'gin', 'rum', 'tequila', 'mezcal'],
+        'appetizers': ['appetizer', 'small plate', 'starter', 'shareables', 'bites', 'amuse bouche'],
+        'oysters': ['oyster', 'raw bar', 'shellfish', 'bivalve'],
+        'charcuterie': ['charcuterie', 'cheese board', 'cured meat', 'artisanal cheese'],
+        'elevated_food': ['chef selection', 'seasonal special', 'artfully prepared', 'expertly crafted'],
+        'international': ['panino', 'pizza', 'pasta', 'sushi', 'tapas', 'dim sum'],
+        'seafood': ['crudo', 'ceviche', 'seafood', 'fish', 'salmon', 'tuna']
     }
     
     # Location/restriction patterns
@@ -386,15 +405,29 @@ class HappyHourDealsSpider(scrapy.Spider):
         """Create a HappyHourDeal object from a regex match"""
         try:
             # Handle different pattern formats
-            if len(match) == 3:  # (title, description, price)
-                title, description, price = match
-                title = title.strip()
-                description = description.strip() if description else None
-                # Add $ if not present
-                if not price.startswith('$'):
-                    price = f"${price}"
+            if len(match) == 4:  # Range pricing: (price1, price2, item)
+                price1, price2, item = match[0], match[1], match[2]
+                title = item.strip()
+                description = f"{price1}-{price2} pricing"
+                price = f"${price1}-${price2}"
+            elif len(match) == 3:
+                # Check if first element is percentage off
+                if 'off' in pattern and ('%' in match[0] or 'Half' in match[0]):
+                    # Percentage off format: (percentage, item)
+                    percentage, item = match[0], match[1]
+                    title = item.strip()
+                    description = f"{percentage} off"
+                    price = percentage
+                else:
+                    # Standard (title, description, price) format
+                    title, description, price = match
+                    title = title.strip()
+                    description = description.strip() if description else None
+                    # Add $ if not present
+                    if not price.startswith('$'):
+                        price = f"${price}"
             elif len(match) == 2:  # (title, price) or (price, title)
-                if match[0].replace('.', '').isdigit():  # price first
+                if match[0].replace('.', '').replace('$', '').isdigit():  # price first
                     price, title = match
                     if not price.startswith('$'):
                         price = f"${price}"
@@ -418,11 +451,26 @@ class HappyHourDealsSpider(scrapy.Spider):
             
             # Validate price range (reasonable happy hour pricing)
             try:
-                price_float = float(price.replace('$', ''))
-                if price_float < 3 or price_float > 50:  # Reasonable happy hour range
-                    return None
+                # Handle percentage-based deals
+                if '%' in price or 'Half' in price:
+                    # Percentage deals are always valid
+                    pass  
+                elif '-' in price:
+                    # Range pricing - validate both ends
+                    price_parts = price.replace('$', '').split('-')
+                    if len(price_parts) == 2:
+                        low, high = float(price_parts[0]), float(price_parts[1])
+                        if low < 3 or high > 50:  # Reasonable happy hour range
+                            return None
+                else:
+                    # Single price validation
+                    price_float = float(price.replace('$', ''))
+                    if price_float < 3 or price_float > 50:  # Reasonable happy hour range
+                        return None
             except ValueError:
-                return None
+                # If we can't parse price, skip validation for percentage deals
+                if not ('%' in price or 'Half' in price or 'off' in price):
+                    return None
             
             return HappyHourDeal(
                 title=title,
@@ -521,7 +569,7 @@ class HappyHourDealsSpider(scrapy.Spider):
         return restrictions
     
     def _calculate_confidence_score(self, deals: List[HappyHourDeal], content: str) -> float:
-        """Calculate confidence score for extracted deals"""
+        """Calculate confidence score for extracted deals (enhanced for premium experiences)"""
         if not deals:
             return 0.0
         
@@ -538,6 +586,23 @@ class HappyHourDealsSpider(scrapy.Spider):
         deals_with_prices = [d for d in deals if d.price]
         if deals_with_prices:
             score += 0.2
+        
+        # Premium experience bonuses
+        premium_keywords = ['craft', 'artisanal', 'signature', 'house', 'expertly', 'artfully', 'chef']
+        for deal in deals:
+            combined_text = f"{deal.title} {deal.description or ''}".lower()
+            
+            # Bonus for premium language
+            if any(keyword in combined_text for keyword in premium_keywords):
+                score += 0.1
+            
+            # Bonus for specific pricing (vs generic "Happy Hour")
+            if deal.price and ('$' in deal.price or '%' in deal.price):
+                score += 0.1
+            
+            # Bonus for category classification
+            if deal.category:
+                score += 0.05
         
         return min(score, 1.0)
     
