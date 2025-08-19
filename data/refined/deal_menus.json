@@ -1,5 +1,116 @@
 {
-  "refined_at": "2025-08-18T21:05:49.468139",
-  "total_menus": 0,
-  "menus": []
+  "refined_at": "2025-08-19T00:58:23.430109",
+  "total_menus": 3,
+  "menus": [
+    {
+      "schedule_id": "tavernetta-happy_hour-friday-monday-saturday-sunday-thursday-tuesday-wednesday-15:00-18:00",
+      "restaurant_slug": "tavernetta",
+      "menu_type": "combo",
+      "items": [
+        {
+          "name": "Alici (Anchovy)",
+          "category": "appetizers",
+          "deal_price": 5.0,
+          "confidence_score": 1.0
+        },
+        {
+          "name": "Marcona Almond",
+          "category": "appetizers",
+          "deal_price": 6.0,
+          "confidence_score": 1.0
+        },
+        {
+          "name": "Focaccia",
+          "category": "appetizers",
+          "deal_price": 7.0,
+          "confidence_score": 1.0
+        },
+        {
+          "name": "Venetian Spritz",
+          "category": "cocktails",
+          "deal_price": 8.0,
+          "confidence_score": 1.0
+        },
+        {
+          "name": "Scarpetta Wines",
+          "category": "wine",
+          "deal_price": 9.0,
+          "confidence_score": 1.0
+        },
+        {
+          "name": "Burrata",
+          "category": "appetizers",
+          "deal_price": 21.0,
+          "confidence_score": 1.0
+        }
+      ],
+      "source": "website",
+      "menu_url": "https://www.tavernettadenver.com/menus/#happy-hour",
+      "last_updated": "2025-08-19",
+      "data_quality": "high",
+      "item_count": 6,
+      "categories": [
+        "appetizers",
+        "cocktails",
+        "wine"
+      ],
+      "price_range": "$5-21"
+    },
+    {
+      "schedule_id": "thirsty-lion-happy_hour-friday-monday-thursday-tuesday-wednesday-15:00-18:00",
+      "restaurant_slug": "thirsty-lion",
+      "menu_type": "unknown",
+      "items": [
+        {
+          "name": "",
+          "category": "unknown",
+          "deal_price": 10.0,
+          "confidence_score": 0.6
+        },
+        {
+          "name": "",
+          "category": "unknown",
+          "deal_price": 2.0,
+          "confidence_score": 0.6
+        }
+      ],
+      "source": "website",
+      "menu_url": "https://www.thirstylionrestaurant.com/menu",
+      "last_updated": "2025-08-19",
+      "data_quality": "high",
+      "item_count": 2,
+      "categories": [
+        "unknown"
+      ],
+      "price_range": "$2-10"
+    },
+    {
+      "schedule_id": "thirsty-lion-late_night-friday-saturday-thursday-21:00-any",
+      "restaurant_slug": "thirsty-lion",
+      "menu_type": "unknown",
+      "items": [
+        {
+          "name": "",
+          "category": "unknown",
+          "deal_price": 10.0,
+          "confidence_score": 0.6
+        },
+        {
+          "name": "",
+          "category": "unknown",
+          "deal_price": 2.0,
+          "confidence_score": 0.6
+        }
+      ],
+      "source": "website",
+      "menu_url": "https://www.thirstylionrestaurant.com/menu",
+      "last_updated": "2025-08-19",
+      "data_quality": "medium",
+      "item_count": 2,
+      "categories": [
+        "unknown"
+      ],
+      "price_range": "$2-10"
+    }
+  ]
 }

@@ -1531,7 +1531,8 @@
       },
       "deals_last_updated": "2025-08-17T15:57:07.171823",
       "scraping_urls": [
-        "https://www.tavernettadenver.com/menus/"
+        "https://www.tavernettadenver.com/menus/",
+        "https://www.tavernettadenver.com/menus/#happy-hour"
       ],
       "live_data_available": true,
       "last_updated": "2025-08-18T20:08:36.346529",
