@@ -6,7 +6,7 @@ An advanced restaurant data mining platform powered by Scrapy that discovers and
 
 ## Target User
 
-**The Discerning Urban Explorer** - sophisticated food and beverage enthusiasts who view happy hour as smart luxury, not budget dining. They seek expertly crafted cocktails and elevated cuisine at accessible prices, using strategic timing to discover Denver's culinary gems worth returning to at full price.
+**The Value-Driven Culinary Adventurer** - spontaneous foodies who seek authentic culinary experiences and "smart luxury" through strategic timing. They're passionate about exploring Denver's diverse food scene, using happy hour to access premium experiences and discover both accessible gems and elevated cuisine. They make on-the-go dining decisions based on current deals that offer maximum experience value.
 
 ## Key Features
 
@@ -16,6 +16,13 @@ An advanced restaurant data mining platform powered by Scrapy that discovers and
 - **Multi-Format Processing**: HTML, PDF, and JSON-LD structured data extraction
 - **106 Restaurants**: Comprehensive coverage across 11 Denver districts
 - **Quality Validation**: Confidence scoring and automated data validation pipelines
+
+### 🌟 **Google Places API Integration** ✅ *COMPLETED*
+- **Perfect Data Quality**: 99-100% coverage for addresses, phones, hours, and business status
+- **Cost-Effective Success**: $3.60 for 106 restaurants vs hours of debugging scraping logic
+- **Smart Hybrid Architecture**: Google's verified metadata + focused deal extraction
+- **Real-Time Business Data**: Operational status, ratings, and precise geocoding
+- **Architectural Cleanup**: Removed 1,857+ lines of redundant metadata extraction code
 
 ### 📊 **Intelligent Data Architecture**
 - **Discovery Pipeline**: Automated happy hour page discovery and content analysis
@@ -67,20 +74,34 @@ python scripts/cli.py status
 # Run full discovery and extraction pipeline
 python scripts/cli.py comprehensive
 
-# Run individual components
+# Core operations
 python scripts/cli.py discover                   # Discover happy hour pages
 python scripts/cli.py extract                    # Extract deals from pages
 python scripts/cli.py profile                    # Extract restaurant profiles
+python scripts/cli.py pipeline                   # Discovery + extraction (deals only)
+python scripts/cli.py analyze                    # Analyze extraction results
+python scripts/cli.py pricing                    # Extract menu pricing data
 
-# Direct Scrapy execution
+# Data utilities (unified CLI interface)
+python scripts/cli.py enrich                     # Add contact information
+python scripts/cli.py fix-times                  # Clean time parsing issues
+python scripts/cli.py fix-urls                   # Discover and fix broken URLs
+python scripts/cli.py district                   # Generate district reports
+python scripts/cli.py schema                     # Show data architecture
+python scripts/cli.py profiles                   # Generate restaurant profiles
+
+# Google Places API integration (enhanced data quality)
+python scripts/cli.py fix-addresses              # Fix malformed address formats
+python scripts/cli.py google-enrich              # Enrich with Google Places API data
+python scripts/cli.py google-update daily        # Update business status & hours
+python scripts/cli.py google-update weekly       # Update contact info & hours
+python scripts/cli.py google-update monthly      # Update ratings & metadata
+python scripts/cli.py google-update report       # Show data quality report
+
+# Direct Scrapy execution (advanced)
 python -m scrapy list                            # List available spiders
 python -m scrapy crawl discovery                 # Run discovery spider
 python -m scrapy crawl happy_hour_deals          # Extract happy hour deals
-
-# Data processing utilities
-python scripts/enrich_data.py                    # Add contact information
-python scripts/fix_times.py                      # Clean time parsing issues
-python scripts/fix_urls.py                       # Discover and fix broken URLs
 ```
 
 ## Project Structure
@@ -95,11 +116,14 @@ sips-and-steals/
 │   ├── pipelines.py         # Data validation and processing
 │   ├── items.py            # Data models and structures
 │   └── settings.py         # Scrapy configuration
-├── scripts/                 # Utility tools and CLI
-│   ├── cli.py              # Main command interface
+├── scripts/                 # Utility tools and unified CLI
+│   ├── cli.py              # Main command interface (all operations)
 │   ├── enrich_data.py      # Contact data enhancement
 │   ├── fix_times.py        # Time parsing cleanup
-│   └── fix_urls.py         # URL discovery and repair
+│   ├── fix_urls.py         # URL discovery and repair
+│   ├── district_analysis.py # District-level analysis
+│   ├── data_schema_summary.py # Data architecture documentation
+│   └── restaurant_profiles.py # Individual restaurant profiles
 ├── config/scrapers/         # YAML scraper configurations
 ├── data/
 │   ├── restaurants.json     # Master restaurant database
@@ -111,6 +135,7 @@ sips-and-steals/
 ├── archive/                # Preserved legacy systems
 │   ├── src/                # Original scraper architecture
 │   ├── site-generation/    # Previous Jinja2 site generator
+│   ├── scripts/            # One-time migration/demo scripts
 │   └── data/               # Historical data archives
 └── scrapy.cfg              # Scrapy project configuration
 ```

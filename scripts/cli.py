@@ -89,12 +89,12 @@ class ScrapyCLI:
         return 0
     
     def run_profile_extraction(self, args):
-        """Run restaurant profile extraction spider"""
-        print("🏢 Starting Restaurant Profile Extraction...")
-        print("Extracting comprehensive restaurant data from main pages")
+        """Run deals-focused profile extraction spider"""
+        print("🏢 Starting Deals Profile Extraction...")
+        print("Extracting deal-specific content (Google Places handles metadata)")
         
         cmd = [
-            'scrapy', 'crawl', 'restaurant_profiler',
+            'scrapy', 'crawl', 'deals_profiler',
             '-s', f'INPUT_FILE={self.data_dir}/restaurants.json',
             '-s', f'PROFILES_OUTPUT_FILE={self.data_dir}/restaurant_profiles.json',
             '-L', 'INFO'
@@ -338,6 +338,144 @@ class ScrapyCLI:
             print(f"❌ Menu pricing extraction failed: {e}")
             return 1
     
+    def run_enrich_data(self, args):
+        """Run enrich_data.py to add contact information"""
+        print("📞 Starting Data Enrichment...")
+        print("Adding contact information and operational details")
+        
+        cmd = ['python', 'scripts/enrich_data.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Data enrichment completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Data enrichment failed: {e}")
+            return 1
+    
+    def run_fix_times(self, args):
+        """Run fix_times.py to clean time data"""
+        print("🕐 Starting Time Data Cleanup...")
+        print("Cleaning and normalizing happy hour time patterns")
+        
+        cmd = ['python', 'scripts/fix_times.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Time data cleanup completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Time data cleanup failed: {e}")
+            return 1
+    
+    def run_fix_urls(self, args):
+        """Run fix_urls.py to discover and repair broken URLs"""
+        print("🔗 Starting URL Discovery and Repair...")
+        print("Testing and fixing broken restaurant URLs")
+        
+        cmd = ['python', 'scripts/fix_urls.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ URL discovery and repair completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ URL discovery and repair failed: {e}")
+            return 1
+    
+    def run_district_analysis(self, args):
+        """Run district_analysis.py to generate reports"""
+        print("🏙️  Starting District Analysis...")
+        print("Generating comprehensive district-level reports")
+        
+        cmd = ['python', 'scripts/district_analysis.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ District analysis completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ District analysis failed: {e}")
+            return 1
+    
+    def run_google_enrich(self, args):
+        """Run Google Places API enrichment"""
+        print("🌟 Starting Google Places API Enrichment...")
+        print("Enhancing restaurant data with Google's reliable business information")
+        
+        cmd = ['python', 'scripts/enrich_with_google_places.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Google Places enrichment completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Google Places enrichment failed: {e}")
+            print("💡 Make sure GOOGLE_PLACES_API_KEY is set. See GOOGLE_PLACES_SETUP.md")
+            return 1
+    
+    def run_google_update(self, args):
+        """Run Google Places data updates"""
+        update_type = args.update_type if hasattr(args, 'update_type') else 'report'
+        
+        print(f"📅 Running Google Places {update_type.title()} Update...")
+        
+        cmd = ['python', 'scripts/update_google_data.py', update_type]
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print(f"✅ Google Places {update_type} update completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Google Places {update_type} update failed: {e}")
+            print("💡 Make sure GOOGLE_PLACES_API_KEY is set. See GOOGLE_PLACES_SETUP.md")
+            return 1
+    
+    def run_fix_addresses(self, args):
+        """Run address format fixer"""
+        print("🏠 Starting Address Format Fix...")
+        print("Converting malformed address objects to clean formatted strings")
+        
+        cmd = ['python', 'scripts/fix_address_format.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Address format fix completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Address format fix failed: {e}")
+            return 1
+    
+    def run_schema_summary(self, args):
+        """Run data_schema_summary.py to show architecture"""
+        print("📋 Starting Schema Documentation...")
+        print("Displaying data architecture and schema summary")
+        
+        cmd = ['python', 'scripts/data_schema_summary.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Schema summary completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Schema summary failed: {e}")
+            return 1
+    
+    def run_restaurant_profiles(self, args):
+        """Run restaurant_profiles.py to generate profiles"""
+        print("👤 Starting Restaurant Profile Generation...")
+        print("Creating detailed individual restaurant profiles")
+        
+        cmd = ['python', 'scripts/restaurant_profiles.py']
+        
+        try:
+            result = subprocess.run(cmd, cwd=self.project_dir, check=True)
+            print("✅ Restaurant profiles completed successfully!")
+            return 0
+        except subprocess.CalledProcessError as e:
+            print(f"❌ Restaurant profiles failed: {e}")
+            return 1
+    
     def _show_pricing_summary(self):
         """Show summary of pricing extraction results"""
         pricing_file = self.data_dir / 'menu_pricing.json'
@@ -549,7 +687,7 @@ def main():
         description='Sips and Steals Scrapy CLI - Minimal Viable Architecture',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
-Examples:
+Core Commands:
   python cli.py discover                    # Discover happy hour pages
   python cli.py extract                     # Extract deals from discovered pages
   python cli.py profile                     # Extract restaurant profiles
@@ -557,6 +695,15 @@ Examples:
   python cli.py comprehensive               # Run full discovery + extraction + profiling
   python cli.py status                      # Show system status
   python cli.py analyze                     # Analyze extraction results
+  python cli.py pricing                     # Extract menu pricing data
+
+Utility Commands:
+  python cli.py enrich                      # Enrich restaurant data with contact info
+  python cli.py fix-times                   # Clean and normalize time data
+  python cli.py fix-urls                    # Discover and repair broken URLs
+  python cli.py district                    # Generate district analysis reports
+  python cli.py schema                      # Show data schema summary
+  python cli.py profiles                    # Generate individual restaurant profiles
         """
     )
     
@@ -570,8 +717,8 @@ Examples:
     extract_parser = subparsers.add_parser('extract', help='Extract deals from discovered pages')
     extract_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
-    # Profile extraction command
-    profile_parser = subparsers.add_parser('profile', help='Extract comprehensive restaurant profiles')
+    # Profile extraction command (deals-focused)
+    profile_parser = subparsers.add_parser('profile', help='Extract deal-specific content (Google Places handles metadata)')
     profile_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
     # Pipeline command (deals only)
@@ -579,7 +726,7 @@ Examples:
     pipeline_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
     # Comprehensive pipeline command (deals + profiles)
-    comprehensive_parser = subparsers.add_parser('comprehensive', help='Run full discovery + extraction + profiling pipeline')
+    comprehensive_parser = subparsers.add_parser('comprehensive', help='Run full discovery + extraction + deal profiling pipeline')
     comprehensive_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
     
     # Status command
@@ -591,6 +738,29 @@ Examples:
     # Pricing command  
     pricing_parser = subparsers.add_parser('pricing', help='Run menu pricing extraction on discovered pages')
     pricing_parser.add_argument('--restaurant', help='Filter to specific restaurant slug')
+    
+    # Utility commands
+    enrich_parser = subparsers.add_parser('enrich', help='Enrich restaurant data with contact information')
+    
+    fix_times_parser = subparsers.add_parser('fix-times', help='Clean and normalize time data')
+    
+    fix_urls_parser = subparsers.add_parser('fix-urls', help='Discover and repair broken restaurant URLs')
+    
+    district_parser = subparsers.add_parser('district', help='Generate district-level analysis reports')
+    
+    schema_parser = subparsers.add_parser('schema', help='Show data schema summary and architecture')
+    
+    profiles_parser = subparsers.add_parser('profiles', help='Generate individual restaurant profiles')
+    
+    # Google Places API commands
+    google_enrich_parser = subparsers.add_parser('google-enrich', help='Enrich restaurants with Google Places API data')
+    
+    google_update_parser = subparsers.add_parser('google-update', help='Update Google Places data (daily/weekly/monthly/report)')
+    google_update_parser.add_argument('update_type', nargs='?', default='report', 
+                                     choices=['daily', 'weekly', 'monthly', 'report', 'check'],
+                                     help='Type of update to perform (default: report)')
+    
+    fix_addresses_parser = subparsers.add_parser('fix-addresses', help='Fix malformed address format issues')
     
     args = parser.parse_args()
     
@@ -617,6 +787,24 @@ Examples:
         return cli.analyze_results(args)
     elif args.command == 'pricing':
         return cli.run_pricing_extraction(args)
+    elif args.command == 'enrich':
+        return cli.run_enrich_data(args)
+    elif args.command == 'fix-times':
+        return cli.run_fix_times(args)
+    elif args.command == 'fix-urls':
+        return cli.run_fix_urls(args)
+    elif args.command == 'district':
+        return cli.run_district_analysis(args)
+    elif args.command == 'schema':
+        return cli.run_schema_summary(args)
+    elif args.command == 'profiles':
+        return cli.run_restaurant_profiles(args)
+    elif args.command == 'google-enrich':
+        return cli.run_google_enrich(args)
+    elif args.command == 'google-update':
+        return cli.run_google_update(args)
+    elif args.command == 'fix-addresses':
+        return cli.run_fix_addresses(args)
     else:
         parser.print_help()
         return 1
