@@ -148,7 +148,7 @@ python scripts/enrichment_impact_summary.py
 
 #### Environment Setup
 ```bash
-export GOOGLE_PLACES_API_KEY='***REMOVED***'
+export GOOGLE_PLACES_API_KEY='your-api-key-here'
 ```
 
 #### API Endpoints Used

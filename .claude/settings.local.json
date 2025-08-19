@@ -84,7 +84,11 @@
       "Bash(PYTHONPATH=. scrapy crawl happy_hour_deals -L INFO)",
       "Bash(PYTHONPATH=. scrapy crawl happy_hour_deals -a discovered_pages_file=data/lodo_discovered_pages.json -a discovered_links_file=data/lodo_discovered_links.json -L INFO)",
       "Bash(open /home/stovepipe/repos/sips-and-steals/sips-scrapy/lodo_dashboard.html)",
-      "Bash(xdg-open:*)"
+      "Bash(xdg-open:*)",
+      "Bash(GOOGLE_PLACES_API_KEY=* python scripts/test_google_places.py)",
+      "Bash(GOOGLE_PLACES_API_KEY=* python scripts/enrich_with_new_places_api.py)",
+      "Bash(GOOGLE_PLACES_API_KEY=* python scripts/run_google_enrichment.py *)",
+      "Bash(tree:*)"
     ],
     "deny": [],
     "ask": [],

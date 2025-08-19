@@ -47,3 +47,20 @@ Thumbs.db
 
 # Test files
 test_*.py
+
+# Environment files with secrets
+.env
+.env.local
+.env.production
+.env.staging
+
+# API keys and secrets
+**/settings.local.json
+**/*api_key*
+**/*secret*
+credentials.json
+auth.json
+
+# Google Cloud credentials
+google-credentials.json
+service-account.json
